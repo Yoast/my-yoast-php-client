@@ -286,6 +286,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserPrototypeCountTransactions
+     *
+     * Counts transactions of MyYoastUser..
+     *
+     */
+    public function testMyYoastUserPrototypeCountTransactions()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserPrototypeCreateAccessTokens
      *
      * Creates a new instance in accessTokens of this model..
@@ -325,6 +336,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testMyYoastUserPrototypeCreateSites()
+    {
+
+    }
+
+    /**
+     * Test case for myYoastUserPrototypeCreateTransactions
+     *
+     * Creates a new instance in transactions of this model..
+     *
+     */
+    public function testMyYoastUserPrototypeCreateTransactions()
     {
 
     }
@@ -374,6 +396,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserPrototypeDeleteTransactions
+     *
+     * Deletes all transactions of this model..
+     *
+     */
+    public function testMyYoastUserPrototypeDeleteTransactions()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserPrototypeDestroyByIdAccessTokens
      *
      * Delete a related item by id for accessTokens..
@@ -413,6 +446,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testMyYoastUserPrototypeDestroyByIdSites()
+    {
+
+    }
+
+    /**
+     * Test case for myYoastUserPrototypeDestroyByIdTransactions
+     *
+     * Delete a related item by id for transactions..
+     *
+     */
+    public function testMyYoastUserPrototypeDestroyByIdTransactions()
     {
 
     }
@@ -462,6 +506,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserPrototypeFindByIdTransactions
+     *
+     * Find a related item by id for transactions..
+     *
+     */
+    public function testMyYoastUserPrototypeFindByIdTransactions()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserPrototypeGetAccessTokens
      *
      * Queries accessTokens of MyYoastUser..
@@ -501,6 +556,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testMyYoastUserPrototypeGetSites()
+    {
+
+    }
+
+    /**
+     * Test case for myYoastUserPrototypeGetTransactions
+     *
+     * Queries transactions of MyYoastUser..
+     *
+     */
+    public function testMyYoastUserPrototypeGetTransactions()
     {
 
     }
@@ -556,6 +622,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testMyYoastUserPrototypeUpdateByIdSites()
+    {
+
+    }
+
+    /**
+     * Test case for myYoastUserPrototypeUpdateByIdTransactions
+     *
+     * Update a related item by id for transactions..
+     *
+     */
+    public function testMyYoastUserPrototypeUpdateByIdTransactions()
     {
 
     }

@@ -23,31 +23,38 @@ Method | HTTP request | Description
 [**myYoastUserPrototypeCountCredentials**](MyYoastUserApi.md#myYoastUserPrototypeCountCredentials) | **GET** /MyYoastUsers/{id}/credentials/count | Counts credentials of MyYoastUser.
 [**myYoastUserPrototypeCountIdentities**](MyYoastUserApi.md#myYoastUserPrototypeCountIdentities) | **GET** /MyYoastUsers/{id}/identities/count | Counts identities of MyYoastUser.
 [**myYoastUserPrototypeCountSites**](MyYoastUserApi.md#myYoastUserPrototypeCountSites) | **GET** /MyYoastUsers/{id}/sites/count | Counts sites of MyYoastUser.
+[**myYoastUserPrototypeCountTransactions**](MyYoastUserApi.md#myYoastUserPrototypeCountTransactions) | **GET** /MyYoastUsers/{id}/transactions/count | Counts transactions of MyYoastUser.
 [**myYoastUserPrototypeCreateAccessTokens**](MyYoastUserApi.md#myYoastUserPrototypeCreateAccessTokens) | **POST** /MyYoastUsers/{id}/accessTokens | Creates a new instance in accessTokens of this model.
 [**myYoastUserPrototypeCreateCredentials**](MyYoastUserApi.md#myYoastUserPrototypeCreateCredentials) | **POST** /MyYoastUsers/{id}/credentials | Creates a new instance in credentials of this model.
 [**myYoastUserPrototypeCreateIdentities**](MyYoastUserApi.md#myYoastUserPrototypeCreateIdentities) | **POST** /MyYoastUsers/{id}/identities | Creates a new instance in identities of this model.
 [**myYoastUserPrototypeCreateSites**](MyYoastUserApi.md#myYoastUserPrototypeCreateSites) | **POST** /MyYoastUsers/{id}/sites | Creates a new instance in sites of this model.
+[**myYoastUserPrototypeCreateTransactions**](MyYoastUserApi.md#myYoastUserPrototypeCreateTransactions) | **POST** /MyYoastUsers/{id}/transactions | Creates a new instance in transactions of this model.
 [**myYoastUserPrototypeDeleteAccessTokens**](MyYoastUserApi.md#myYoastUserPrototypeDeleteAccessTokens) | **DELETE** /MyYoastUsers/{id}/accessTokens | Deletes all accessTokens of this model.
 [**myYoastUserPrototypeDeleteCredentials**](MyYoastUserApi.md#myYoastUserPrototypeDeleteCredentials) | **DELETE** /MyYoastUsers/{id}/credentials | Deletes all credentials of this model.
 [**myYoastUserPrototypeDeleteIdentities**](MyYoastUserApi.md#myYoastUserPrototypeDeleteIdentities) | **DELETE** /MyYoastUsers/{id}/identities | Deletes all identities of this model.
 [**myYoastUserPrototypeDeleteSites**](MyYoastUserApi.md#myYoastUserPrototypeDeleteSites) | **DELETE** /MyYoastUsers/{id}/sites | Deletes all sites of this model.
+[**myYoastUserPrototypeDeleteTransactions**](MyYoastUserApi.md#myYoastUserPrototypeDeleteTransactions) | **DELETE** /MyYoastUsers/{id}/transactions | Deletes all transactions of this model.
 [**myYoastUserPrototypeDestroyByIdAccessTokens**](MyYoastUserApi.md#myYoastUserPrototypeDestroyByIdAccessTokens) | **DELETE** /MyYoastUsers/{id}/accessTokens/{fk} | Delete a related item by id for accessTokens.
 [**myYoastUserPrototypeDestroyByIdCredentials**](MyYoastUserApi.md#myYoastUserPrototypeDestroyByIdCredentials) | **DELETE** /MyYoastUsers/{id}/credentials/{fk} | Delete a related item by id for credentials.
 [**myYoastUserPrototypeDestroyByIdIdentities**](MyYoastUserApi.md#myYoastUserPrototypeDestroyByIdIdentities) | **DELETE** /MyYoastUsers/{id}/identities/{fk} | Delete a related item by id for identities.
 [**myYoastUserPrototypeDestroyByIdSites**](MyYoastUserApi.md#myYoastUserPrototypeDestroyByIdSites) | **DELETE** /MyYoastUsers/{id}/sites/{fk} | Delete a related item by id for sites.
+[**myYoastUserPrototypeDestroyByIdTransactions**](MyYoastUserApi.md#myYoastUserPrototypeDestroyByIdTransactions) | **DELETE** /MyYoastUsers/{id}/transactions/{fk} | Delete a related item by id for transactions.
 [**myYoastUserPrototypeFindByIdAccessTokens**](MyYoastUserApi.md#myYoastUserPrototypeFindByIdAccessTokens) | **GET** /MyYoastUsers/{id}/accessTokens/{fk} | Find a related item by id for accessTokens.
 [**myYoastUserPrototypeFindByIdCredentials**](MyYoastUserApi.md#myYoastUserPrototypeFindByIdCredentials) | **GET** /MyYoastUsers/{id}/credentials/{fk} | Find a related item by id for credentials.
 [**myYoastUserPrototypeFindByIdIdentities**](MyYoastUserApi.md#myYoastUserPrototypeFindByIdIdentities) | **GET** /MyYoastUsers/{id}/identities/{fk} | Find a related item by id for identities.
 [**myYoastUserPrototypeFindByIdSites**](MyYoastUserApi.md#myYoastUserPrototypeFindByIdSites) | **GET** /MyYoastUsers/{id}/sites/{fk} | Find a related item by id for sites.
+[**myYoastUserPrototypeFindByIdTransactions**](MyYoastUserApi.md#myYoastUserPrototypeFindByIdTransactions) | **GET** /MyYoastUsers/{id}/transactions/{fk} | Find a related item by id for transactions.
 [**myYoastUserPrototypeGetAccessTokens**](MyYoastUserApi.md#myYoastUserPrototypeGetAccessTokens) | **GET** /MyYoastUsers/{id}/accessTokens | Queries accessTokens of MyYoastUser.
 [**myYoastUserPrototypeGetCredentials**](MyYoastUserApi.md#myYoastUserPrototypeGetCredentials) | **GET** /MyYoastUsers/{id}/credentials | Queries credentials of MyYoastUser.
 [**myYoastUserPrototypeGetIdentities**](MyYoastUserApi.md#myYoastUserPrototypeGetIdentities) | **GET** /MyYoastUsers/{id}/identities | Queries identities of MyYoastUser.
 [**myYoastUserPrototypeGetSites**](MyYoastUserApi.md#myYoastUserPrototypeGetSites) | **GET** /MyYoastUsers/{id}/sites | Queries sites of MyYoastUser.
+[**myYoastUserPrototypeGetTransactions**](MyYoastUserApi.md#myYoastUserPrototypeGetTransactions) | **GET** /MyYoastUsers/{id}/transactions | Queries transactions of MyYoastUser.
 [**myYoastUserPrototypePatchAttributes**](MyYoastUserApi.md#myYoastUserPrototypePatchAttributes) | **PATCH** /MyYoastUsers/{id} | Patch attributes for a model instance and persist it into the data source.
 [**myYoastUserPrototypeUpdateByIdAccessTokens**](MyYoastUserApi.md#myYoastUserPrototypeUpdateByIdAccessTokens) | **PUT** /MyYoastUsers/{id}/accessTokens/{fk} | Update a related item by id for accessTokens.
 [**myYoastUserPrototypeUpdateByIdCredentials**](MyYoastUserApi.md#myYoastUserPrototypeUpdateByIdCredentials) | **PUT** /MyYoastUsers/{id}/credentials/{fk} | Update a related item by id for credentials.
 [**myYoastUserPrototypeUpdateByIdIdentities**](MyYoastUserApi.md#myYoastUserPrototypeUpdateByIdIdentities) | **PUT** /MyYoastUsers/{id}/identities/{fk} | Update a related item by id for identities.
 [**myYoastUserPrototypeUpdateByIdSites**](MyYoastUserApi.md#myYoastUserPrototypeUpdateByIdSites) | **PUT** /MyYoastUsers/{id}/sites/{fk} | Update a related item by id for sites.
+[**myYoastUserPrototypeUpdateByIdTransactions**](MyYoastUserApi.md#myYoastUserPrototypeUpdateByIdTransactions) | **PUT** /MyYoastUsers/{id}/transactions/{fk} | Update a related item by id for transactions.
 [**myYoastUserReplaceByIdPostMyYoastUsersidReplace**](MyYoastUserApi.md#myYoastUserReplaceByIdPostMyYoastUsersidReplace) | **POST** /MyYoastUsers/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 [**myYoastUserReplaceByIdPutMyYoastUsersid**](MyYoastUserApi.md#myYoastUserReplaceByIdPutMyYoastUsersid) | **PUT** /MyYoastUsers/{id} | Replace attributes for a model instance and persist it into the data source.
 [**myYoastUserReplaceOrCreatePostMyYoastUsersReplaceOrCreate**](MyYoastUserApi.md#myYoastUserReplaceOrCreatePostMyYoastUsersReplaceOrCreate) | **POST** /MyYoastUsers/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -884,6 +891,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **myYoastUserPrototypeCountTransactions**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2002 myYoastUserPrototypeCountTransactions($id, $where)
+
+Counts transactions of MyYoastUser.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
+$id = "id_example"; // string | MyYoastUser id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->myYoastUserPrototypeCountTransactions($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeCountTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| MyYoastUser id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **myYoastUserPrototypeCreateAccessTokens**
 > \Yoast\MyYoastApiClient\Model\AccessToken myYoastUserPrototypeCreateAccessTokens($id, $data)
 
@@ -1064,6 +1116,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **myYoastUserPrototypeCreateTransactions**
+> \Yoast\MyYoastApiClient\Model\Transaction myYoastUserPrototypeCreateTransactions($id, $data)
+
+Creates a new instance in transactions of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
+$id = "id_example"; // string | MyYoastUser id
+$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | 
+
+try {
+    $result = $api_instance->myYoastUserPrototypeCreateTransactions($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeCreateTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| MyYoastUser id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/\Yoast\MyYoastApiClient\Model\Transaction.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **myYoastUserPrototypeDeleteAccessTokens**
 > myYoastUserPrototypeDeleteAccessTokens($id)
 
@@ -1207,6 +1304,48 @@ try {
     $api_instance->myYoastUserPrototypeDeleteSites($id);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeDeleteSites: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| MyYoastUser id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **myYoastUserPrototypeDeleteTransactions**
+> myYoastUserPrototypeDeleteTransactions($id)
+
+Deletes all transactions of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
+$id = "id_example"; // string | MyYoastUser id
+
+try {
+    $api_instance->myYoastUserPrototypeDeleteTransactions($id);
+} catch (Exception $e) {
+    echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeDeleteTransactions: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1408,6 +1547,50 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **myYoastUserPrototypeDestroyByIdTransactions**
+> myYoastUserPrototypeDestroyByIdTransactions($fk, $id)
+
+Delete a related item by id for transactions.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
+$fk = "fk_example"; // string | Foreign key for transactions
+$id = "id_example"; // string | MyYoastUser id
+
+try {
+    $api_instance->myYoastUserPrototypeDestroyByIdTransactions($fk, $id);
+} catch (Exception $e) {
+    echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeDestroyByIdTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fk** | **string**| Foreign key for transactions |
+ **id** | **string**| MyYoastUser id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **myYoastUserPrototypeFindByIdAccessTokens**
 > \Yoast\MyYoastApiClient\Model\AccessToken myYoastUserPrototypeFindByIdAccessTokens($fk, $id)
 
@@ -1588,6 +1771,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **myYoastUserPrototypeFindByIdTransactions**
+> \Yoast\MyYoastApiClient\Model\Transaction myYoastUserPrototypeFindByIdTransactions($fk, $id)
+
+Find a related item by id for transactions.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
+$fk = "fk_example"; // string | Foreign key for transactions
+$id = "id_example"; // string | MyYoastUser id
+
+try {
+    $result = $api_instance->myYoastUserPrototypeFindByIdTransactions($fk, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeFindByIdTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fk** | **string**| Foreign key for transactions |
+ **id** | **string**| MyYoastUser id |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **myYoastUserPrototypeGetAccessTokens**
 > \Yoast\MyYoastApiClient\Model\AccessToken[] myYoastUserPrototypeGetAccessTokens($id, $filter)
 
@@ -1756,6 +1984,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Site[]**](../Model/Site.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **myYoastUserPrototypeGetTransactions**
+> \Yoast\MyYoastApiClient\Model\Transaction[] myYoastUserPrototypeGetTransactions($id, $filter)
+
+Queries transactions of MyYoastUser.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
+$id = "id_example"; // string | MyYoastUser id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->myYoastUserPrototypeGetTransactions($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeGetTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| MyYoastUser id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Transaction[]**](../Model/Transaction.md)
 
 ### Authorization
 
@@ -1989,6 +2262,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **myYoastUserPrototypeUpdateByIdTransactions**
+> \Yoast\MyYoastApiClient\Model\Transaction myYoastUserPrototypeUpdateByIdTransactions($fk, $id, $data)
+
+Update a related item by id for transactions.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
+$fk = "fk_example"; // string | Foreign key for transactions
+$id = "id_example"; // string | MyYoastUser id
+$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | 
+
+try {
+    $result = $api_instance->myYoastUserPrototypeUpdateByIdTransactions($fk, $id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeUpdateByIdTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fk** | **string**| Foreign key for transactions |
+ **id** | **string**| MyYoastUser id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/\Yoast\MyYoastApiClient\Model\Transaction.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
 
 ### Authorization
 

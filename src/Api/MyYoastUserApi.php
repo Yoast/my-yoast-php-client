@@ -1672,6 +1672,97 @@ class MyYoastUserApi
     }
 
     /**
+     * Operation myYoastUserPrototypeCountTransactions
+     *
+     * Counts transactions of MyYoastUser.
+     *
+     * @param string $id MyYoastUser id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
+     */
+    public function myYoastUserPrototypeCountTransactions($id, $where = null)
+    {
+        list($response) = $this->myYoastUserPrototypeCountTransactionsWithHttpInfo($id, $where);
+        return $response;
+    }
+
+    /**
+     * Operation myYoastUserPrototypeCountTransactionsWithHttpInfo
+     *
+     * Counts transactions of MyYoastUser.
+     *
+     * @param string $id MyYoastUser id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function myYoastUserPrototypeCountTransactionsWithHttpInfo($id, $where = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCountTransactions');
+        }
+        // parse inputs
+        $resourcePath = "/MyYoastUsers/{id}/transactions/count";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($where !== null) {
+            $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
+                '/MyYoastUsers/{id}/transactions/count'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation myYoastUserPrototypeCreateAccessTokens
      *
      * Creates a new instance in accessTokens of this model.
@@ -2040,6 +2131,98 @@ class MyYoastUserApi
     }
 
     /**
+     * Operation myYoastUserPrototypeCreateTransactions
+     *
+     * Creates a new instance in transactions of this model.
+     *
+     * @param string $id MyYoastUser id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Transaction $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     */
+    public function myYoastUserPrototypeCreateTransactions($id, $data = null)
+    {
+        list($response) = $this->myYoastUserPrototypeCreateTransactionsWithHttpInfo($id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation myYoastUserPrototypeCreateTransactionsWithHttpInfo
+     *
+     * Creates a new instance in transactions of this model.
+     *
+     * @param string $id MyYoastUser id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Transaction $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function myYoastUserPrototypeCreateTransactionsWithHttpInfo($id, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCreateTransactions');
+        }
+        // parse inputs
+        $resourcePath = "/MyYoastUsers/{id}/transactions";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Transaction',
+                '/MyYoastUsers/{id}/transactions'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation myYoastUserPrototypeDeleteAccessTokens
      *
      * Deletes all accessTokens of this model.
@@ -2352,6 +2535,87 @@ class MyYoastUserApi
                 $headerParams,
                 null,
                 '/MyYoastUsers/{id}/sites'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation myYoastUserPrototypeDeleteTransactions
+     *
+     * Deletes all transactions of this model.
+     *
+     * @param string $id MyYoastUser id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function myYoastUserPrototypeDeleteTransactions($id)
+    {
+        list($response) = $this->myYoastUserPrototypeDeleteTransactionsWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation myYoastUserPrototypeDeleteTransactionsWithHttpInfo
+     *
+     * Deletes all transactions of this model.
+     *
+     * @param string $id MyYoastUser id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function myYoastUserPrototypeDeleteTransactionsWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDeleteTransactions');
+        }
+        // parse inputs
+        $resourcePath = "/MyYoastUsers/{id}/transactions";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/MyYoastUsers/{id}/transactions'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -2732,6 +2996,101 @@ class MyYoastUserApi
                 $headerParams,
                 null,
                 '/MyYoastUsers/{id}/sites/{fk}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation myYoastUserPrototypeDestroyByIdTransactions
+     *
+     * Delete a related item by id for transactions.
+     *
+     * @param string $fk Foreign key for transactions (required)
+     * @param string $id MyYoastUser id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function myYoastUserPrototypeDestroyByIdTransactions($fk, $id)
+    {
+        list($response) = $this->myYoastUserPrototypeDestroyByIdTransactionsWithHttpInfo($fk, $id);
+        return $response;
+    }
+
+    /**
+     * Operation myYoastUserPrototypeDestroyByIdTransactionsWithHttpInfo
+     *
+     * Delete a related item by id for transactions.
+     *
+     * @param string $fk Foreign key for transactions (required)
+     * @param string $id MyYoastUser id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function myYoastUserPrototypeDestroyByIdTransactionsWithHttpInfo($fk, $id)
+    {
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdTransactions');
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdTransactions');
+        }
+        // parse inputs
+        $resourcePath = "/MyYoastUsers/{id}/transactions/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/MyYoastUsers/{id}/transactions/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -3140,6 +3499,105 @@ class MyYoastUserApi
     }
 
     /**
+     * Operation myYoastUserPrototypeFindByIdTransactions
+     *
+     * Find a related item by id for transactions.
+     *
+     * @param string $fk Foreign key for transactions (required)
+     * @param string $id MyYoastUser id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     */
+    public function myYoastUserPrototypeFindByIdTransactions($fk, $id)
+    {
+        list($response) = $this->myYoastUserPrototypeFindByIdTransactionsWithHttpInfo($fk, $id);
+        return $response;
+    }
+
+    /**
+     * Operation myYoastUserPrototypeFindByIdTransactionsWithHttpInfo
+     *
+     * Find a related item by id for transactions.
+     *
+     * @param string $fk Foreign key for transactions (required)
+     * @param string $id MyYoastUser id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function myYoastUserPrototypeFindByIdTransactionsWithHttpInfo($fk, $id)
+    {
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdTransactions');
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdTransactions');
+        }
+        // parse inputs
+        $resourcePath = "/MyYoastUsers/{id}/transactions/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Transaction',
+                '/MyYoastUsers/{id}/transactions/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation myYoastUserPrototypeGetAccessTokens
      *
      * Queries accessTokens of MyYoastUser.
@@ -3495,6 +3953,97 @@ class MyYoastUserApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Site[]', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation myYoastUserPrototypeGetTransactions
+     *
+     * Queries transactions of MyYoastUser.
+     *
+     * @param string $id MyYoastUser id (required)
+     * @param string $filter  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Transaction[]
+     */
+    public function myYoastUserPrototypeGetTransactions($id, $filter = null)
+    {
+        list($response) = $this->myYoastUserPrototypeGetTransactionsWithHttpInfo($id, $filter);
+        return $response;
+    }
+
+    /**
+     * Operation myYoastUserPrototypeGetTransactionsWithHttpInfo
+     *
+     * Queries transactions of MyYoastUser.
+     *
+     * @param string $id MyYoastUser id (required)
+     * @param string $filter  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Transaction[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function myYoastUserPrototypeGetTransactionsWithHttpInfo($id, $filter = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeGetTransactions');
+        }
+        // parse inputs
+        $resourcePath = "/MyYoastUsers/{id}/transactions";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Transaction[]',
+                '/MyYoastUsers/{id}/transactions'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction[]', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -4011,6 +4560,112 @@ class MyYoastUserApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Site', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation myYoastUserPrototypeUpdateByIdTransactions
+     *
+     * Update a related item by id for transactions.
+     *
+     * @param string $fk Foreign key for transactions (required)
+     * @param string $id MyYoastUser id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Transaction $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     */
+    public function myYoastUserPrototypeUpdateByIdTransactions($fk, $id, $data = null)
+    {
+        list($response) = $this->myYoastUserPrototypeUpdateByIdTransactionsWithHttpInfo($fk, $id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation myYoastUserPrototypeUpdateByIdTransactionsWithHttpInfo
+     *
+     * Update a related item by id for transactions.
+     *
+     * @param string $fk Foreign key for transactions (required)
+     * @param string $id MyYoastUser id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Transaction $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function myYoastUserPrototypeUpdateByIdTransactionsWithHttpInfo($fk, $id, $data = null)
+    {
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdTransactions');
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdTransactions');
+        }
+        // parse inputs
+        $resourcePath = "/MyYoastUsers/{id}/transactions/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Transaction',
+                '/MyYoastUsers/{id}/transactions/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

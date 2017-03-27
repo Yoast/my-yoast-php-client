@@ -56,15 +56,14 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$uid = "uid_example"; // string | 
-$token = "token_example"; // string | 
-$redirect = "redirect_example"; // string | 
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
+$where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $api_instance->myYoastUserConfirm($uid, $token, $redirect);
+    $result = $api_instance->discountLineItemCount($where);
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MyYoastUserApi->myYoastUserConfirm: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DiscountLineItemApi->discountLineItemCount: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -76,6 +75,51 @@ All URIs are relative to *https://localhost/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DiscountLineItemApi* | [**discountLineItemCount**](docs/Api/DiscountLineItemApi.md#discountlineitemcount) | **GET** /DiscountLineItems/count | Count instances of the model matched by where from the data source.
+*DiscountLineItemApi* | [**discountLineItemCreate**](docs/Api/DiscountLineItemApi.md#discountlineitemcreate) | **POST** /DiscountLineItems | Create a new instance of the model and persist it into the data source.
+*DiscountLineItemApi* | [**discountLineItemCreateChangeStreamGetDiscountLineItemsChangeStream**](docs/Api/DiscountLineItemApi.md#discountlineitemcreatechangestreamgetdiscountlineitemschangestream) | **GET** /DiscountLineItems/change-stream | Create a change stream.
+*DiscountLineItemApi* | [**discountLineItemCreateChangeStreamPostDiscountLineItemsChangeStream**](docs/Api/DiscountLineItemApi.md#discountlineitemcreatechangestreampostdiscountlineitemschangestream) | **POST** /DiscountLineItems/change-stream | Create a change stream.
+*DiscountLineItemApi* | [**discountLineItemDeleteById**](docs/Api/DiscountLineItemApi.md#discountlineitemdeletebyid) | **DELETE** /DiscountLineItems/{id} | Delete a model instance by {{id}} from the data source.
+*DiscountLineItemApi* | [**discountLineItemExistsGetDiscountLineItemsidExists**](docs/Api/DiscountLineItemApi.md#discountlineitemexistsgetdiscountlineitemsidexists) | **GET** /DiscountLineItems/{id}/exists | Check whether a model instance exists in the data source.
+*DiscountLineItemApi* | [**discountLineItemExistsHeadDiscountLineItemsid**](docs/Api/DiscountLineItemApi.md#discountlineitemexistsheaddiscountlineitemsid) | **HEAD** /DiscountLineItems/{id} | Check whether a model instance exists in the data source.
+*DiscountLineItemApi* | [**discountLineItemFind**](docs/Api/DiscountLineItemApi.md#discountlineitemfind) | **GET** /DiscountLineItems | Find all instances of the model matched by filter from the data source.
+*DiscountLineItemApi* | [**discountLineItemFindById**](docs/Api/DiscountLineItemApi.md#discountlineitemfindbyid) | **GET** /DiscountLineItems/{id} | Find a model instance by {{id}} from the data source.
+*DiscountLineItemApi* | [**discountLineItemFindOne**](docs/Api/DiscountLineItemApi.md#discountlineitemfindone) | **GET** /DiscountLineItems/findOne | Find first instance of the model matched by filter from the data source.
+*DiscountLineItemApi* | [**discountLineItemPatchOrCreate**](docs/Api/DiscountLineItemApi.md#discountlineitempatchorcreate) | **PATCH** /DiscountLineItems | Patch an existing model instance or insert a new one into the data source.
+*DiscountLineItemApi* | [**discountLineItemPrototypeGetLineItem**](docs/Api/DiscountLineItemApi.md#discountlineitemprototypegetlineitem) | **GET** /DiscountLineItems/{id}/lineItem | Fetches belongsTo relation lineItem.
+*DiscountLineItemApi* | [**discountLineItemPrototypePatchAttributes**](docs/Api/DiscountLineItemApi.md#discountlineitemprototypepatchattributes) | **PATCH** /DiscountLineItems/{id} | Patch attributes for a model instance and persist it into the data source.
+*DiscountLineItemApi* | [**discountLineItemReplaceByIdPostDiscountLineItemsidReplace**](docs/Api/DiscountLineItemApi.md#discountlineitemreplacebyidpostdiscountlineitemsidreplace) | **POST** /DiscountLineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*DiscountLineItemApi* | [**discountLineItemReplaceByIdPutDiscountLineItemsid**](docs/Api/DiscountLineItemApi.md#discountlineitemreplacebyidputdiscountlineitemsid) | **PUT** /DiscountLineItems/{id} | Replace attributes for a model instance and persist it into the data source.
+*DiscountLineItemApi* | [**discountLineItemReplaceOrCreatePostDiscountLineItemsReplaceOrCreate**](docs/Api/DiscountLineItemApi.md#discountlineitemreplaceorcreatepostdiscountlineitemsreplaceorcreate) | **POST** /DiscountLineItems/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*DiscountLineItemApi* | [**discountLineItemReplaceOrCreatePutDiscountLineItems**](docs/Api/DiscountLineItemApi.md#discountlineitemreplaceorcreateputdiscountlineitems) | **PUT** /DiscountLineItems | Replace an existing model instance or insert a new one into the data source.
+*DiscountLineItemApi* | [**discountLineItemUpdateAll**](docs/Api/DiscountLineItemApi.md#discountlineitemupdateall) | **POST** /DiscountLineItems/update | Update instances of the model matched by {{where}} from the data source.
+*DiscountLineItemApi* | [**discountLineItemUpsertWithWhere**](docs/Api/DiscountLineItemApi.md#discountlineitemupsertwithwhere) | **POST** /DiscountLineItems/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*LineItemApi* | [**lineItemCount**](docs/Api/LineItemApi.md#lineitemcount) | **GET** /LineItems/count | Count instances of the model matched by where from the data source.
+*LineItemApi* | [**lineItemCreate**](docs/Api/LineItemApi.md#lineitemcreate) | **POST** /LineItems | Create a new instance of the model and persist it into the data source.
+*LineItemApi* | [**lineItemCreateChangeStreamGetLineItemsChangeStream**](docs/Api/LineItemApi.md#lineitemcreatechangestreamgetlineitemschangestream) | **GET** /LineItems/change-stream | Create a change stream.
+*LineItemApi* | [**lineItemCreateChangeStreamPostLineItemsChangeStream**](docs/Api/LineItemApi.md#lineitemcreatechangestreampostlineitemschangestream) | **POST** /LineItems/change-stream | Create a change stream.
+*LineItemApi* | [**lineItemDeleteById**](docs/Api/LineItemApi.md#lineitemdeletebyid) | **DELETE** /LineItems/{id} | Delete a model instance by {{id}} from the data source.
+*LineItemApi* | [**lineItemExistsGetLineItemsidExists**](docs/Api/LineItemApi.md#lineitemexistsgetlineitemsidexists) | **GET** /LineItems/{id}/exists | Check whether a model instance exists in the data source.
+*LineItemApi* | [**lineItemExistsHeadLineItemsid**](docs/Api/LineItemApi.md#lineitemexistsheadlineitemsid) | **HEAD** /LineItems/{id} | Check whether a model instance exists in the data source.
+*LineItemApi* | [**lineItemFind**](docs/Api/LineItemApi.md#lineitemfind) | **GET** /LineItems | Find all instances of the model matched by filter from the data source.
+*LineItemApi* | [**lineItemFindById**](docs/Api/LineItemApi.md#lineitemfindbyid) | **GET** /LineItems/{id} | Find a model instance by {{id}} from the data source.
+*LineItemApi* | [**lineItemFindOne**](docs/Api/LineItemApi.md#lineitemfindone) | **GET** /LineItems/findOne | Find first instance of the model matched by filter from the data source.
+*LineItemApi* | [**lineItemPatchOrCreate**](docs/Api/LineItemApi.md#lineitempatchorcreate) | **PATCH** /LineItems | Patch an existing model instance or insert a new one into the data source.
+*LineItemApi* | [**lineItemPrototypeCountDiscounts**](docs/Api/LineItemApi.md#lineitemprototypecountdiscounts) | **GET** /LineItems/{id}/discounts/count | Counts discounts of LineItem.
+*LineItemApi* | [**lineItemPrototypeCreateDiscounts**](docs/Api/LineItemApi.md#lineitemprototypecreatediscounts) | **POST** /LineItems/{id}/discounts | Creates a new instance in discounts of this model.
+*LineItemApi* | [**lineItemPrototypeDeleteDiscounts**](docs/Api/LineItemApi.md#lineitemprototypedeletediscounts) | **DELETE** /LineItems/{id}/discounts | Deletes all discounts of this model.
+*LineItemApi* | [**lineItemPrototypeDestroyByIdDiscounts**](docs/Api/LineItemApi.md#lineitemprototypedestroybyiddiscounts) | **DELETE** /LineItems/{id}/discounts/{fk} | Delete a related item by id for discounts.
+*LineItemApi* | [**lineItemPrototypeFindByIdDiscounts**](docs/Api/LineItemApi.md#lineitemprototypefindbyiddiscounts) | **GET** /LineItems/{id}/discounts/{fk} | Find a related item by id for discounts.
+*LineItemApi* | [**lineItemPrototypeGetDiscounts**](docs/Api/LineItemApi.md#lineitemprototypegetdiscounts) | **GET** /LineItems/{id}/discounts | Queries discounts of LineItem.
+*LineItemApi* | [**lineItemPrototypeGetTransaction**](docs/Api/LineItemApi.md#lineitemprototypegettransaction) | **GET** /LineItems/{id}/transaction | Fetches belongsTo relation transaction.
+*LineItemApi* | [**lineItemPrototypePatchAttributes**](docs/Api/LineItemApi.md#lineitemprototypepatchattributes) | **PATCH** /LineItems/{id} | Patch attributes for a model instance and persist it into the data source.
+*LineItemApi* | [**lineItemPrototypeUpdateByIdDiscounts**](docs/Api/LineItemApi.md#lineitemprototypeupdatebyiddiscounts) | **PUT** /LineItems/{id}/discounts/{fk} | Update a related item by id for discounts.
+*LineItemApi* | [**lineItemReplaceByIdPostLineItemsidReplace**](docs/Api/LineItemApi.md#lineitemreplacebyidpostlineitemsidreplace) | **POST** /LineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*LineItemApi* | [**lineItemReplaceByIdPutLineItemsid**](docs/Api/LineItemApi.md#lineitemreplacebyidputlineitemsid) | **PUT** /LineItems/{id} | Replace attributes for a model instance and persist it into the data source.
+*LineItemApi* | [**lineItemReplaceOrCreatePostLineItemsReplaceOrCreate**](docs/Api/LineItemApi.md#lineitemreplaceorcreatepostlineitemsreplaceorcreate) | **POST** /LineItems/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*LineItemApi* | [**lineItemReplaceOrCreatePutLineItems**](docs/Api/LineItemApi.md#lineitemreplaceorcreateputlineitems) | **PUT** /LineItems | Replace an existing model instance or insert a new one into the data source.
+*LineItemApi* | [**lineItemUpdateAll**](docs/Api/LineItemApi.md#lineitemupdateall) | **POST** /LineItems/update | Update instances of the model matched by {{where}} from the data source.
+*LineItemApi* | [**lineItemUpsertWithWhere**](docs/Api/LineItemApi.md#lineitemupsertwithwhere) | **POST** /LineItems/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 *MyYoastUserApi* | [**myYoastUserConfirm**](docs/Api/MyYoastUserApi.md#myyoastuserconfirm) | **GET** /MyYoastUsers/confirm | Confirm a user registration with email verification token.
 *MyYoastUserApi* | [**myYoastUserCount**](docs/Api/MyYoastUserApi.md#myyoastusercount) | **GET** /MyYoastUsers/count | Count instances of the model matched by where from the data source.
 *MyYoastUserApi* | [**myYoastUserCreate**](docs/Api/MyYoastUserApi.md#myyoastusercreate) | **POST** /MyYoastUsers | Create a new instance of the model and persist it into the data source.
@@ -95,31 +139,38 @@ Class | Method | HTTP request | Description
 *MyYoastUserApi* | [**myYoastUserPrototypeCountCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecountcredentials) | **GET** /MyYoastUsers/{id}/credentials/count | Counts credentials of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeCountIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecountidentities) | **GET** /MyYoastUsers/{id}/identities/count | Counts identities of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeCountSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecountsites) | **GET** /MyYoastUsers/{id}/sites/count | Counts sites of MyYoastUser.
+*MyYoastUserApi* | [**myYoastUserPrototypeCountTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecounttransactions) | **GET** /MyYoastUsers/{id}/transactions/count | Counts transactions of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeCreateAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreateaccesstokens) | **POST** /MyYoastUsers/{id}/accessTokens | Creates a new instance in accessTokens of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeCreateCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreatecredentials) | **POST** /MyYoastUsers/{id}/credentials | Creates a new instance in credentials of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeCreateIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreateidentities) | **POST** /MyYoastUsers/{id}/identities | Creates a new instance in identities of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeCreateSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreatesites) | **POST** /MyYoastUsers/{id}/sites | Creates a new instance in sites of this model.
+*MyYoastUserApi* | [**myYoastUserPrototypeCreateTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreatetransactions) | **POST** /MyYoastUsers/{id}/transactions | Creates a new instance in transactions of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeDeleteAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeleteaccesstokens) | **DELETE** /MyYoastUsers/{id}/accessTokens | Deletes all accessTokens of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeDeleteCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeletecredentials) | **DELETE** /MyYoastUsers/{id}/credentials | Deletes all credentials of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeDeleteIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeleteidentities) | **DELETE** /MyYoastUsers/{id}/identities | Deletes all identities of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeDeleteSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeletesites) | **DELETE** /MyYoastUsers/{id}/sites | Deletes all sites of this model.
+*MyYoastUserApi* | [**myYoastUserPrototypeDeleteTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeletetransactions) | **DELETE** /MyYoastUsers/{id}/transactions | Deletes all transactions of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyidaccesstokens) | **DELETE** /MyYoastUsers/{id}/accessTokens/{fk} | Delete a related item by id for accessTokens.
 *MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyidcredentials) | **DELETE** /MyYoastUsers/{id}/credentials/{fk} | Delete a related item by id for credentials.
 *MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyididentities) | **DELETE** /MyYoastUsers/{id}/identities/{fk} | Delete a related item by id for identities.
 *MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyidsites) | **DELETE** /MyYoastUsers/{id}/sites/{fk} | Delete a related item by id for sites.
+*MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyidtransactions) | **DELETE** /MyYoastUsers/{id}/transactions/{fk} | Delete a related item by id for transactions.
 *MyYoastUserApi* | [**myYoastUserPrototypeFindByIdAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyidaccesstokens) | **GET** /MyYoastUsers/{id}/accessTokens/{fk} | Find a related item by id for accessTokens.
 *MyYoastUserApi* | [**myYoastUserPrototypeFindByIdCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyidcredentials) | **GET** /MyYoastUsers/{id}/credentials/{fk} | Find a related item by id for credentials.
 *MyYoastUserApi* | [**myYoastUserPrototypeFindByIdIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyididentities) | **GET** /MyYoastUsers/{id}/identities/{fk} | Find a related item by id for identities.
 *MyYoastUserApi* | [**myYoastUserPrototypeFindByIdSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyidsites) | **GET** /MyYoastUsers/{id}/sites/{fk} | Find a related item by id for sites.
+*MyYoastUserApi* | [**myYoastUserPrototypeFindByIdTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyidtransactions) | **GET** /MyYoastUsers/{id}/transactions/{fk} | Find a related item by id for transactions.
 *MyYoastUserApi* | [**myYoastUserPrototypeGetAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegetaccesstokens) | **GET** /MyYoastUsers/{id}/accessTokens | Queries accessTokens of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeGetCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegetcredentials) | **GET** /MyYoastUsers/{id}/credentials | Queries credentials of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeGetIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegetidentities) | **GET** /MyYoastUsers/{id}/identities | Queries identities of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeGetSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegetsites) | **GET** /MyYoastUsers/{id}/sites | Queries sites of MyYoastUser.
+*MyYoastUserApi* | [**myYoastUserPrototypeGetTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegettransactions) | **GET** /MyYoastUsers/{id}/transactions | Queries transactions of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypePatchAttributes**](docs/Api/MyYoastUserApi.md#myyoastuserprototypepatchattributes) | **PATCH** /MyYoastUsers/{id} | Patch attributes for a model instance and persist it into the data source.
 *MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyidaccesstokens) | **PUT** /MyYoastUsers/{id}/accessTokens/{fk} | Update a related item by id for accessTokens.
 *MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyidcredentials) | **PUT** /MyYoastUsers/{id}/credentials/{fk} | Update a related item by id for credentials.
 *MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyididentities) | **PUT** /MyYoastUsers/{id}/identities/{fk} | Update a related item by id for identities.
 *MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyidsites) | **PUT** /MyYoastUsers/{id}/sites/{fk} | Update a related item by id for sites.
+*MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyidtransactions) | **PUT** /MyYoastUsers/{id}/transactions/{fk} | Update a related item by id for transactions.
 *MyYoastUserApi* | [**myYoastUserReplaceByIdPostMyYoastUsersidReplace**](docs/Api/MyYoastUserApi.md#myyoastuserreplacebyidpostmyyoastusersidreplace) | **POST** /MyYoastUsers/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *MyYoastUserApi* | [**myYoastUserReplaceByIdPutMyYoastUsersid**](docs/Api/MyYoastUserApi.md#myyoastuserreplacebyidputmyyoastusersid) | **PUT** /MyYoastUsers/{id} | Replace attributes for a model instance and persist it into the data source.
 *MyYoastUserApi* | [**myYoastUserReplaceOrCreatePostMyYoastUsersReplaceOrCreate**](docs/Api/MyYoastUserApi.md#myyoastuserreplaceorcreatepostmyyoastusersreplaceorcreate) | **POST** /MyYoastUsers/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -146,17 +197,46 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**siteReplaceOrCreatePutSites**](docs/Api/SiteApi.md#sitereplaceorcreateputsites) | **PUT** /Sites | Replace an existing model instance or insert a new one into the data source.
 *SiteApi* | [**siteUpdateAll**](docs/Api/SiteApi.md#siteupdateall) | **POST** /Sites/update | Update instances of the model matched by {{where}} from the data source.
 *SiteApi* | [**siteUpsertWithWhere**](docs/Api/SiteApi.md#siteupsertwithwhere) | **POST** /Sites/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*TransactionApi* | [**transactionCount**](docs/Api/TransactionApi.md#transactioncount) | **GET** /Transactions/count | Count instances of the model matched by where from the data source.
+*TransactionApi* | [**transactionCreate**](docs/Api/TransactionApi.md#transactioncreate) | **POST** /Transactions | Create a new instance of the model and persist it into the data source.
+*TransactionApi* | [**transactionCreateChangeStreamGetTransactionsChangeStream**](docs/Api/TransactionApi.md#transactioncreatechangestreamgettransactionschangestream) | **GET** /Transactions/change-stream | Create a change stream.
+*TransactionApi* | [**transactionCreateChangeStreamPostTransactionsChangeStream**](docs/Api/TransactionApi.md#transactioncreatechangestreamposttransactionschangestream) | **POST** /Transactions/change-stream | Create a change stream.
+*TransactionApi* | [**transactionDeleteById**](docs/Api/TransactionApi.md#transactiondeletebyid) | **DELETE** /Transactions/{id} | Delete a model instance by {{id}} from the data source.
+*TransactionApi* | [**transactionExistsGetTransactionsidExists**](docs/Api/TransactionApi.md#transactionexistsgettransactionsidexists) | **GET** /Transactions/{id}/exists | Check whether a model instance exists in the data source.
+*TransactionApi* | [**transactionExistsHeadTransactionsid**](docs/Api/TransactionApi.md#transactionexistsheadtransactionsid) | **HEAD** /Transactions/{id} | Check whether a model instance exists in the data source.
+*TransactionApi* | [**transactionFind**](docs/Api/TransactionApi.md#transactionfind) | **GET** /Transactions | Find all instances of the model matched by filter from the data source.
+*TransactionApi* | [**transactionFindById**](docs/Api/TransactionApi.md#transactionfindbyid) | **GET** /Transactions/{id} | Find a model instance by {{id}} from the data source.
+*TransactionApi* | [**transactionFindOne**](docs/Api/TransactionApi.md#transactionfindone) | **GET** /Transactions/findOne | Find first instance of the model matched by filter from the data source.
+*TransactionApi* | [**transactionPatchOrCreate**](docs/Api/TransactionApi.md#transactionpatchorcreate) | **PATCH** /Transactions | Patch an existing model instance or insert a new one into the data source.
+*TransactionApi* | [**transactionPrototypeCountItems**](docs/Api/TransactionApi.md#transactionprototypecountitems) | **GET** /Transactions/{id}/items/count | Counts items of Transaction.
+*TransactionApi* | [**transactionPrototypeCreateItems**](docs/Api/TransactionApi.md#transactionprototypecreateitems) | **POST** /Transactions/{id}/items | Creates a new instance in items of this model.
+*TransactionApi* | [**transactionPrototypeDeleteItems**](docs/Api/TransactionApi.md#transactionprototypedeleteitems) | **DELETE** /Transactions/{id}/items | Deletes all items of this model.
+*TransactionApi* | [**transactionPrototypeDestroyByIdItems**](docs/Api/TransactionApi.md#transactionprototypedestroybyiditems) | **DELETE** /Transactions/{id}/items/{fk} | Delete a related item by id for items.
+*TransactionApi* | [**transactionPrototypeFindByIdItems**](docs/Api/TransactionApi.md#transactionprototypefindbyiditems) | **GET** /Transactions/{id}/items/{fk} | Find a related item by id for items.
+*TransactionApi* | [**transactionPrototypeGetCustomer**](docs/Api/TransactionApi.md#transactionprototypegetcustomer) | **GET** /Transactions/{id}/customer | Fetches belongsTo relation customer.
+*TransactionApi* | [**transactionPrototypeGetItems**](docs/Api/TransactionApi.md#transactionprototypegetitems) | **GET** /Transactions/{id}/items | Queries items of Transaction.
+*TransactionApi* | [**transactionPrototypePatchAttributes**](docs/Api/TransactionApi.md#transactionprototypepatchattributes) | **PATCH** /Transactions/{id} | Patch attributes for a model instance and persist it into the data source.
+*TransactionApi* | [**transactionPrototypeUpdateByIdItems**](docs/Api/TransactionApi.md#transactionprototypeupdatebyiditems) | **PUT** /Transactions/{id}/items/{fk} | Update a related item by id for items.
+*TransactionApi* | [**transactionReplaceByIdPostTransactionsidReplace**](docs/Api/TransactionApi.md#transactionreplacebyidposttransactionsidreplace) | **POST** /Transactions/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*TransactionApi* | [**transactionReplaceByIdPutTransactionsid**](docs/Api/TransactionApi.md#transactionreplacebyidputtransactionsid) | **PUT** /Transactions/{id} | Replace attributes for a model instance and persist it into the data source.
+*TransactionApi* | [**transactionReplaceOrCreatePostTransactionsReplaceOrCreate**](docs/Api/TransactionApi.md#transactionreplaceorcreateposttransactionsreplaceorcreate) | **POST** /Transactions/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*TransactionApi* | [**transactionReplaceOrCreatePutTransactions**](docs/Api/TransactionApi.md#transactionreplaceorcreateputtransactions) | **PUT** /Transactions | Replace an existing model instance or insert a new one into the data source.
+*TransactionApi* | [**transactionUpdateAll**](docs/Api/TransactionApi.md#transactionupdateall) | **POST** /Transactions/update | Update instances of the model matched by {{where}} from the data source.
+*TransactionApi* | [**transactionUpsertWithWhere**](docs/Api/TransactionApi.md#transactionupsertwithwhere) | **POST** /Transactions/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
 
 ## Documentation For Models
 
  - [AccessToken](docs/Model/AccessToken.md)
+ - [DiscountLineItem](docs/Model/DiscountLineItem.md)
  - [InlineResponse200](docs/Model/InlineResponse200.md)
  - [InlineResponse2001](docs/Model/InlineResponse2001.md)
  - [InlineResponse2002](docs/Model/InlineResponse2002.md)
  - [InlineResponse2003](docs/Model/InlineResponse2003.md)
+ - [LineItem](docs/Model/LineItem.md)
  - [MyYoastUser](docs/Model/MyYoastUser.md)
  - [Site](docs/Model/Site.md)
+ - [Transaction](docs/Model/Transaction.md)
  - [UserCredential](docs/Model/UserCredential.md)
  - [UserIdentity](docs/Model/UserIdentity.md)
 
