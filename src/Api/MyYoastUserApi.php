@@ -996,7 +996,7 @@ class MyYoastUserApi
      *
      * @param double $id  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return object
+     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
      */
     public function myYoastUserFindYoastComUser($id)
     {
@@ -1011,7 +1011,7 @@ class MyYoastUserApi
      *
      * @param double $id  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
      */
     public function myYoastUserFindYoastComUserWithHttpInfo($id)
     {
@@ -1053,15 +1053,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                'object',
+                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
                 '/MyYoastUsers/findYoastComUser'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
