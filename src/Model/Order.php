@@ -64,7 +64,8 @@ class Order implements ArrayAccess
         'payment_gateway' => 'string',
         'payment_reference' => 'string',
         'vat_total' => 'double',
-        'gl_number' => 'string'
+        'gl_number' => 'string',
+        'shop_id' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -87,7 +88,8 @@ class Order implements ArrayAccess
         'payment_gateway' => 'paymentGateway',
         'payment_reference' => 'paymentReference',
         'vat_total' => 'vatTotal',
-        'gl_number' => 'glNumber'
+        'gl_number' => 'glNumber',
+        'shop_id' => 'shopId'
     ];
 
 
@@ -106,7 +108,8 @@ class Order implements ArrayAccess
         'payment_gateway' => 'setPaymentGateway',
         'payment_reference' => 'setPaymentReference',
         'vat_total' => 'setVatTotal',
-        'gl_number' => 'setGlNumber'
+        'gl_number' => 'setGlNumber',
+        'shop_id' => 'setShopId'
     ];
 
 
@@ -125,7 +128,8 @@ class Order implements ArrayAccess
         'payment_gateway' => 'getPaymentGateway',
         'payment_reference' => 'getPaymentReference',
         'vat_total' => 'getVatTotal',
-        'gl_number' => 'getGlNumber'
+        'gl_number' => 'getGlNumber',
+        'shop_id' => 'getShopId'
     ];
 
     public static function attributeMap()
@@ -170,6 +174,7 @@ class Order implements ArrayAccess
         $this->container['payment_reference'] = isset($data['payment_reference']) ? $data['payment_reference'] : null;
         $this->container['vat_total'] = isset($data['vat_total']) ? $data['vat_total'] : 0.0;
         $this->container['gl_number'] = isset($data['gl_number']) ? $data['gl_number'] : null;
+        $this->container['shop_id'] = isset($data['shop_id']) ? $data['shop_id'] : null;
     }
 
     /**
@@ -208,6 +213,9 @@ class Order implements ArrayAccess
         if ($this->container['vat_total'] === null) {
             $invalid_properties[] = "'vat_total' can't be null";
         }
+        if ($this->container['shop_id'] === null) {
+            $invalid_properties[] = "'shop_id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -245,6 +253,9 @@ class Order implements ArrayAccess
             return false;
         }
         if ($this->container['vat_total'] === null) {
+            return false;
+        }
+        if ($this->container['shop_id'] === null) {
             return false;
         }
         return true;
@@ -478,6 +489,27 @@ class Order implements ArrayAccess
     public function setGlNumber($gl_number)
     {
         $this->container['gl_number'] = $gl_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_id
+     * @return double
+     */
+    public function getShopId()
+    {
+        return $this->container['shop_id'];
+    }
+
+    /**
+     * Sets shop_id
+     * @param double $shop_id
+     * @return $this
+     */
+    public function setShopId($shop_id)
+    {
+        $this->container['shop_id'] = $shop_id;
 
         return $this;
     }

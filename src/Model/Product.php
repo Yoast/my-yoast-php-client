@@ -82,7 +82,7 @@ class Product implements ArrayAccess
         'download_url' => 'downloadUrl',
         'is_download_only' => 'isDownloadOnly',
         'icon' => 'icon',
-        'shop_id' => 'shop_id',
+        'shop_id' => 'shopId',
         'subscription_id' => 'subscriptionId'
     ];
 
