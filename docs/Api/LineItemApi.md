@@ -21,7 +21,8 @@ Method | HTTP request | Description
 [**lineItemPrototypeDestroyByIdDiscounts**](LineItemApi.md#lineItemPrototypeDestroyByIdDiscounts) | **DELETE** /LineItems/{id}/discounts/{fk} | Delete a related item by id for discounts.
 [**lineItemPrototypeFindByIdDiscounts**](LineItemApi.md#lineItemPrototypeFindByIdDiscounts) | **GET** /LineItems/{id}/discounts/{fk} | Find a related item by id for discounts.
 [**lineItemPrototypeGetDiscounts**](LineItemApi.md#lineItemPrototypeGetDiscounts) | **GET** /LineItems/{id}/discounts | Queries discounts of LineItem.
-[**lineItemPrototypeGetTransaction**](LineItemApi.md#lineItemPrototypeGetTransaction) | **GET** /LineItems/{id}/transaction | Fetches belongsTo relation transaction.
+[**lineItemPrototypeGetOrder**](LineItemApi.md#lineItemPrototypeGetOrder) | **GET** /LineItems/{id}/order | Fetches belongsTo relation order.
+[**lineItemPrototypeGetProduct**](LineItemApi.md#lineItemPrototypeGetProduct) | **GET** /LineItems/{id}/product | Fetches belongsTo relation product.
 [**lineItemPrototypePatchAttributes**](LineItemApi.md#lineItemPrototypePatchAttributes) | **PATCH** /LineItems/{id} | Patch attributes for a model instance and persist it into the data source.
 [**lineItemPrototypeUpdateByIdDiscounts**](LineItemApi.md#lineItemPrototypeUpdateByIdDiscounts) | **PUT** /LineItems/{id}/discounts/{fk} | Update a related item by id for discounts.
 [**lineItemReplaceByIdPostLineItemsidReplace**](LineItemApi.md#lineItemReplaceByIdPostLineItemsidReplace) | **POST** /LineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
@@ -33,7 +34,7 @@ Method | HTTP request | Description
 
 
 # **lineItemCount**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2002 lineItemCount($where)
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 lineItemCount($where)
 
 Count instances of the model matched by where from the data source.
 
@@ -62,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -248,7 +249,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lineItemExistsGetLineItemsidExists**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 lineItemExistsGetLineItemsidExists($id)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2001 lineItemExistsGetLineItemsidExists($id)
 
 Check whether a model instance exists in the data source.
 
@@ -277,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -291,7 +292,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lineItemExistsHeadLineItemsid**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 lineItemExistsHeadLineItemsid($id)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2001 lineItemExistsHeadLineItemsid($id)
 
 Check whether a model instance exists in the data source.
 
@@ -320,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -508,7 +509,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lineItemPrototypeCountDiscounts**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2002 lineItemPrototypeCountDiscounts($id, $where)
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 lineItemPrototypeCountDiscounts($id, $where)
 
 Counts discounts of LineItem.
 
@@ -539,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -773,10 +774,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **lineItemPrototypeGetTransaction**
-> \Yoast\MyYoastApiClient\Model\Transaction lineItemPrototypeGetTransaction($id, $refresh)
+# **lineItemPrototypeGetOrder**
+> \Yoast\MyYoastApiClient\Model\Order lineItemPrototypeGetOrder($id, $refresh)
 
-Fetches belongsTo relation transaction.
+Fetches belongsTo relation order.
 
 ### Example
 ```php
@@ -788,10 +789,10 @@ $id = "id_example"; // string | LineItem id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->lineItemPrototypeGetTransaction($id, $refresh);
+    $result = $api_instance->lineItemPrototypeGetOrder($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling LineItemApi->lineItemPrototypeGetTransaction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LineItemApi->lineItemPrototypeGetOrder: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -805,7 +806,52 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **lineItemPrototypeGetProduct**
+> \Yoast\MyYoastApiClient\Model\Product lineItemPrototypeGetProduct($id, $refresh)
+
+Fetches belongsTo relation product.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$id = "id_example"; // string | LineItem id
+$refresh = true; // bool | 
+
+try {
+    $result = $api_instance->lineItemPrototypeGetProduct($id, $refresh);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LineItemApi->lineItemPrototypeGetProduct: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| LineItem id |
+ **refresh** | **bool**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
 
 ### Authorization
 
@@ -1087,7 +1133,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lineItemUpdateAll**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 lineItemUpdateAll($where, $data)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2002 lineItemUpdateAll($where, $data)
 
 Update instances of the model matched by {{where}} from the data source.
 
@@ -1118,7 +1164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 

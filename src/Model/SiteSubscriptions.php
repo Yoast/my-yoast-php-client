@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001
+ * SiteSubscriptions
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * InlineResponse2001 Class Doc Comment
+ * SiteSubscriptions Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2001 implements ArrayAccess
+class SiteSubscriptions implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,16 @@ class InlineResponse2001 implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_1';
+    protected static $swaggerModelName = 'SiteSubscriptions';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'exists' => 'bool'
+        'site_id' => 'string',
+        'subscription_id' => 'string',
+        'id' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +69,9 @@ class InlineResponse2001 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'exists' => 'exists'
+        'site_id' => 'siteId',
+        'subscription_id' => 'subscriptionId',
+        'id' => 'id'
     ];
 
 
@@ -76,7 +80,9 @@ class InlineResponse2001 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'exists' => 'setExists'
+        'site_id' => 'setSiteId',
+        'subscription_id' => 'setSubscriptionId',
+        'id' => 'setId'
     ];
 
 
@@ -85,7 +91,9 @@ class InlineResponse2001 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'exists' => 'getExists'
+        'site_id' => 'getSiteId',
+        'subscription_id' => 'getSubscriptionId',
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -119,7 +127,9 @@ class InlineResponse2001 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['exists'] = isset($data['exists']) ? $data['exists'] : null;
+        $this->container['site_id'] = isset($data['site_id']) ? $data['site_id'] : null;
+        $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -131,6 +141,12 @@ class InlineResponse2001 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['site_id'] === null) {
+            $invalid_properties[] = "'site_id' can't be null";
+        }
+        if ($this->container['subscription_id'] === null) {
+            $invalid_properties[] = "'subscription_id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -143,27 +159,75 @@ class InlineResponse2001 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['site_id'] === null) {
+            return false;
+        }
+        if ($this->container['subscription_id'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets exists
-     * @return bool
+     * Gets site_id
+     * @return string
      */
-    public function getExists()
+    public function getSiteId()
     {
-        return $this->container['exists'];
+        return $this->container['site_id'];
     }
 
     /**
-     * Sets exists
-     * @param bool $exists
+     * Sets site_id
+     * @param string $site_id
      * @return $this
      */
-    public function setExists($exists)
+    public function setSiteId($site_id)
     {
-        $this->container['exists'] = $exists;
+        $this->container['site_id'] = $site_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_id
+     * @return string
+     */
+    public function getSubscriptionId()
+    {
+        return $this->container['subscription_id'];
+    }
+
+    /**
+     * Sets subscription_id
+     * @param string $subscription_id
+     * @return $this
+     */
+    public function setSubscriptionId($subscription_id)
+    {
+        $this->container['subscription_id'] = $subscription_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return double
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param double $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

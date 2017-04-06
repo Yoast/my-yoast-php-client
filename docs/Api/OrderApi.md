@@ -1,39 +1,43 @@
-# Yoast\MyYoastApiClient\TransactionApi
+# Yoast\MyYoastApiClient\OrderApi
 
 All URIs are relative to *https://localhost/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**transactionCount**](TransactionApi.md#transactionCount) | **GET** /Transactions/count | Count instances of the model matched by where from the data source.
-[**transactionCreate**](TransactionApi.md#transactionCreate) | **POST** /Transactions | Create a new instance of the model and persist it into the data source.
-[**transactionCreateChangeStreamGetTransactionsChangeStream**](TransactionApi.md#transactionCreateChangeStreamGetTransactionsChangeStream) | **GET** /Transactions/change-stream | Create a change stream.
-[**transactionCreateChangeStreamPostTransactionsChangeStream**](TransactionApi.md#transactionCreateChangeStreamPostTransactionsChangeStream) | **POST** /Transactions/change-stream | Create a change stream.
-[**transactionDeleteById**](TransactionApi.md#transactionDeleteById) | **DELETE** /Transactions/{id} | Delete a model instance by {{id}} from the data source.
-[**transactionExistsGetTransactionsidExists**](TransactionApi.md#transactionExistsGetTransactionsidExists) | **GET** /Transactions/{id}/exists | Check whether a model instance exists in the data source.
-[**transactionExistsHeadTransactionsid**](TransactionApi.md#transactionExistsHeadTransactionsid) | **HEAD** /Transactions/{id} | Check whether a model instance exists in the data source.
-[**transactionFind**](TransactionApi.md#transactionFind) | **GET** /Transactions | Find all instances of the model matched by filter from the data source.
-[**transactionFindById**](TransactionApi.md#transactionFindById) | **GET** /Transactions/{id} | Find a model instance by {{id}} from the data source.
-[**transactionFindOne**](TransactionApi.md#transactionFindOne) | **GET** /Transactions/findOne | Find first instance of the model matched by filter from the data source.
-[**transactionPatchOrCreate**](TransactionApi.md#transactionPatchOrCreate) | **PATCH** /Transactions | Patch an existing model instance or insert a new one into the data source.
-[**transactionPrototypeCountItems**](TransactionApi.md#transactionPrototypeCountItems) | **GET** /Transactions/{id}/items/count | Counts items of Transaction.
-[**transactionPrototypeCreateItems**](TransactionApi.md#transactionPrototypeCreateItems) | **POST** /Transactions/{id}/items | Creates a new instance in items of this model.
-[**transactionPrototypeDeleteItems**](TransactionApi.md#transactionPrototypeDeleteItems) | **DELETE** /Transactions/{id}/items | Deletes all items of this model.
-[**transactionPrototypeDestroyByIdItems**](TransactionApi.md#transactionPrototypeDestroyByIdItems) | **DELETE** /Transactions/{id}/items/{fk} | Delete a related item by id for items.
-[**transactionPrototypeFindByIdItems**](TransactionApi.md#transactionPrototypeFindByIdItems) | **GET** /Transactions/{id}/items/{fk} | Find a related item by id for items.
-[**transactionPrototypeGetCustomer**](TransactionApi.md#transactionPrototypeGetCustomer) | **GET** /Transactions/{id}/customer | Fetches belongsTo relation customer.
-[**transactionPrototypeGetItems**](TransactionApi.md#transactionPrototypeGetItems) | **GET** /Transactions/{id}/items | Queries items of Transaction.
-[**transactionPrototypePatchAttributes**](TransactionApi.md#transactionPrototypePatchAttributes) | **PATCH** /Transactions/{id} | Patch attributes for a model instance and persist it into the data source.
-[**transactionPrototypeUpdateByIdItems**](TransactionApi.md#transactionPrototypeUpdateByIdItems) | **PUT** /Transactions/{id}/items/{fk} | Update a related item by id for items.
-[**transactionReplaceByIdPostTransactionsidReplace**](TransactionApi.md#transactionReplaceByIdPostTransactionsidReplace) | **POST** /Transactions/{id}/replace | Replace attributes for a model instance and persist it into the data source.
-[**transactionReplaceByIdPutTransactionsid**](TransactionApi.md#transactionReplaceByIdPutTransactionsid) | **PUT** /Transactions/{id} | Replace attributes for a model instance and persist it into the data source.
-[**transactionReplaceOrCreatePostTransactionsReplaceOrCreate**](TransactionApi.md#transactionReplaceOrCreatePostTransactionsReplaceOrCreate) | **POST** /Transactions/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
-[**transactionReplaceOrCreatePutTransactions**](TransactionApi.md#transactionReplaceOrCreatePutTransactions) | **PUT** /Transactions | Replace an existing model instance or insert a new one into the data source.
-[**transactionUpdateAll**](TransactionApi.md#transactionUpdateAll) | **POST** /Transactions/update | Update instances of the model matched by {{where}} from the data source.
-[**transactionUpsertWithWhere**](TransactionApi.md#transactionUpsertWithWhere) | **POST** /Transactions/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+[**orderCount**](OrderApi.md#orderCount) | **GET** /Orders/count | Count instances of the model matched by where from the data source.
+[**orderCreate**](OrderApi.md#orderCreate) | **POST** /Orders | Create a new instance of the model and persist it into the data source.
+[**orderCreateChangeStreamGetOrdersChangeStream**](OrderApi.md#orderCreateChangeStreamGetOrdersChangeStream) | **GET** /Orders/change-stream | Create a change stream.
+[**orderCreateChangeStreamPostOrdersChangeStream**](OrderApi.md#orderCreateChangeStreamPostOrdersChangeStream) | **POST** /Orders/change-stream | Create a change stream.
+[**orderDeleteById**](OrderApi.md#orderDeleteById) | **DELETE** /Orders/{id} | Delete a model instance by {{id}} from the data source.
+[**orderExistsGetOrdersidExists**](OrderApi.md#orderExistsGetOrdersidExists) | **GET** /Orders/{id}/exists | Check whether a model instance exists in the data source.
+[**orderExistsHeadOrdersid**](OrderApi.md#orderExistsHeadOrdersid) | **HEAD** /Orders/{id} | Check whether a model instance exists in the data source.
+[**orderFind**](OrderApi.md#orderFind) | **GET** /Orders | Find all instances of the model matched by filter from the data source.
+[**orderFindById**](OrderApi.md#orderFindById) | **GET** /Orders/{id} | Find a model instance by {{id}} from the data source.
+[**orderFindOne**](OrderApi.md#orderFindOne) | **GET** /Orders/findOne | Find first instance of the model matched by filter from the data source.
+[**orderPatchOrCreate**](OrderApi.md#orderPatchOrCreate) | **PATCH** /Orders | Patch an existing model instance or insert a new one into the data source.
+[**orderPrototypeCountItems**](OrderApi.md#orderPrototypeCountItems) | **GET** /Orders/{id}/items/count | Counts items of Order.
+[**orderPrototypeCreateItems**](OrderApi.md#orderPrototypeCreateItems) | **POST** /Orders/{id}/items | Creates a new instance in items of this model.
+[**orderPrototypeCreateSubscription**](OrderApi.md#orderPrototypeCreateSubscription) | **POST** /Orders/{id}/subscription | Creates a new instance in subscription of this model.
+[**orderPrototypeDeleteItems**](OrderApi.md#orderPrototypeDeleteItems) | **DELETE** /Orders/{id}/items | Deletes all items of this model.
+[**orderPrototypeDestroyByIdItems**](OrderApi.md#orderPrototypeDestroyByIdItems) | **DELETE** /Orders/{id}/items/{fk} | Delete a related item by id for items.
+[**orderPrototypeDestroySubscription**](OrderApi.md#orderPrototypeDestroySubscription) | **DELETE** /Orders/{id}/subscription | Deletes subscription of this model.
+[**orderPrototypeFindByIdItems**](OrderApi.md#orderPrototypeFindByIdItems) | **GET** /Orders/{id}/items/{fk} | Find a related item by id for items.
+[**orderPrototypeGetCustomer**](OrderApi.md#orderPrototypeGetCustomer) | **GET** /Orders/{id}/customer | Fetches belongsTo relation customer.
+[**orderPrototypeGetItems**](OrderApi.md#orderPrototypeGetItems) | **GET** /Orders/{id}/items | Queries items of Order.
+[**orderPrototypeGetSubscription**](OrderApi.md#orderPrototypeGetSubscription) | **GET** /Orders/{id}/subscription | Fetches hasOne relation subscription.
+[**orderPrototypePatchAttributes**](OrderApi.md#orderPrototypePatchAttributes) | **PATCH** /Orders/{id} | Patch attributes for a model instance and persist it into the data source.
+[**orderPrototypeUpdateByIdItems**](OrderApi.md#orderPrototypeUpdateByIdItems) | **PUT** /Orders/{id}/items/{fk} | Update a related item by id for items.
+[**orderPrototypeUpdateSubscription**](OrderApi.md#orderPrototypeUpdateSubscription) | **PUT** /Orders/{id}/subscription | Update subscription of this model.
+[**orderReplaceByIdPostOrdersidReplace**](OrderApi.md#orderReplaceByIdPostOrdersidReplace) | **POST** /Orders/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+[**orderReplaceByIdPutOrdersid**](OrderApi.md#orderReplaceByIdPutOrdersid) | **PUT** /Orders/{id} | Replace attributes for a model instance and persist it into the data source.
+[**orderReplaceOrCreatePostOrdersReplaceOrCreate**](OrderApi.md#orderReplaceOrCreatePostOrdersReplaceOrCreate) | **POST** /Orders/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+[**orderReplaceOrCreatePutOrders**](OrderApi.md#orderReplaceOrCreatePutOrders) | **PUT** /Orders | Replace an existing model instance or insert a new one into the data source.
+[**orderUpdateAll**](OrderApi.md#orderUpdateAll) | **POST** /Orders/update | Update instances of the model matched by {{where}} from the data source.
+[**orderUpsertWithWhere**](OrderApi.md#orderUpsertWithWhere) | **POST** /Orders/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
 
-# **transactionCount**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2002 transactionCount($where)
+# **orderCount**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 orderCount($where)
 
 Count instances of the model matched by where from the data source.
 
@@ -42,14 +46,14 @@ Count instances of the model matched by where from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->transactionCount($where);
+    $result = $api_instance->orderCount($where);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionCount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderCount: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -62,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -75,8 +79,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionCreate**
-> \Yoast\MyYoastApiClient\Model\Transaction transactionCreate($data)
+# **orderCreate**
+> \Yoast\MyYoastApiClient\Model\Order orderCreate($data)
 
 Create a new instance of the model and persist it into the data source.
 
@@ -85,14 +89,14 @@ Create a new instance of the model and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
-$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $api_instance->transactionCreate($data);
+    $result = $api_instance->orderCreate($data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionCreate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderCreate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -101,11 +105,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/\Yoast\MyYoastApiClient\Model\Transaction.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -118,8 +122,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionCreateChangeStreamGetTransactionsChangeStream**
-> \SplFileObject transactionCreateChangeStreamGetTransactionsChangeStream($options)
+# **orderCreateChangeStreamGetOrdersChangeStream**
+> \SplFileObject orderCreateChangeStreamGetOrdersChangeStream($options)
 
 Create a change stream.
 
@@ -128,14 +132,14 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->transactionCreateChangeStreamGetTransactionsChangeStream($options);
+    $result = $api_instance->orderCreateChangeStreamGetOrdersChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionCreateChangeStreamGetTransactionsChangeStream: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderCreateChangeStreamGetOrdersChangeStream: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -161,8 +165,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionCreateChangeStreamPostTransactionsChangeStream**
-> \SplFileObject transactionCreateChangeStreamPostTransactionsChangeStream($options)
+# **orderCreateChangeStreamPostOrdersChangeStream**
+> \SplFileObject orderCreateChangeStreamPostOrdersChangeStream($options)
 
 Create a change stream.
 
@@ -171,14 +175,14 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->transactionCreateChangeStreamPostTransactionsChangeStream($options);
+    $result = $api_instance->orderCreateChangeStreamPostOrdersChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionCreateChangeStreamPostTransactionsChangeStream: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderCreateChangeStreamPostOrdersChangeStream: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -204,8 +208,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionDeleteById**
-> object transactionDeleteById($id)
+# **orderDeleteById**
+> object orderDeleteById($id)
 
 Delete a model instance by {{id}} from the data source.
 
@@ -214,14 +218,14 @@ Delete a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->transactionDeleteById($id);
+    $result = $api_instance->orderDeleteById($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionDeleteById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderDeleteById: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -247,8 +251,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionExistsGetTransactionsidExists**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 transactionExistsGetTransactionsidExists($id)
+# **orderExistsGetOrdersidExists**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2001 orderExistsGetOrdersidExists($id)
 
 Check whether a model instance exists in the data source.
 
@@ -257,14 +261,14 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->transactionExistsGetTransactionsidExists($id);
+    $result = $api_instance->orderExistsGetOrdersidExists($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionExistsGetTransactionsidExists: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderExistsGetOrdersidExists: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -277,7 +281,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -290,8 +294,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionExistsHeadTransactionsid**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 transactionExistsHeadTransactionsid($id)
+# **orderExistsHeadOrdersid**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2001 orderExistsHeadOrdersid($id)
 
 Check whether a model instance exists in the data source.
 
@@ -300,14 +304,14 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->transactionExistsHeadTransactionsid($id);
+    $result = $api_instance->orderExistsHeadOrdersid($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionExistsHeadTransactionsid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderExistsHeadOrdersid: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -320,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -333,8 +337,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionFind**
-> \Yoast\MyYoastApiClient\Model\Transaction[] transactionFind($filter)
+# **orderFind**
+> \Yoast\MyYoastApiClient\Model\Order[] orderFind($filter)
 
 Find all instances of the model matched by filter from the data source.
 
@@ -343,14 +347,14 @@ Find all instances of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
 
 try {
-    $result = $api_instance->transactionFind($filter);
+    $result = $api_instance->orderFind($filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionFind: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderFind: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -363,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction[]**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\Order[]**](../Model/Order.md)
 
 ### Authorization
 
@@ -376,8 +380,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionFindById**
-> \Yoast\MyYoastApiClient\Model\Transaction transactionFindById($id, $filter)
+# **orderFindById**
+> \Yoast\MyYoastApiClient\Model\Order orderFindById($id, $filter)
 
 Find a model instance by {{id}} from the data source.
 
@@ -386,15 +390,15 @@ Find a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
 $filter = "filter_example"; // string | Filter defining fields and include
 
 try {
-    $result = $api_instance->transactionFindById($id, $filter);
+    $result = $api_instance->orderFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionFindById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderFindById: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -408,7 +412,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -421,8 +425,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionFindOne**
-> \Yoast\MyYoastApiClient\Model\Transaction transactionFindOne($filter)
+# **orderFindOne**
+> \Yoast\MyYoastApiClient\Model\Order orderFindOne($filter)
 
 Find first instance of the model matched by filter from the data source.
 
@@ -431,14 +435,14 @@ Find first instance of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
 
 try {
-    $result = $api_instance->transactionFindOne($filter);
+    $result = $api_instance->orderFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionFindOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderFindOne: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -451,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -464,8 +468,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionPatchOrCreate**
-> \Yoast\MyYoastApiClient\Model\Transaction transactionPatchOrCreate($data)
+# **orderPatchOrCreate**
+> \Yoast\MyYoastApiClient\Model\Order orderPatchOrCreate($data)
 
 Patch an existing model instance or insert a new one into the data source.
 
@@ -474,14 +478,14 @@ Patch an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
-$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $api_instance->transactionPatchOrCreate($data);
+    $result = $api_instance->orderPatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionPatchOrCreate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPatchOrCreate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -490,11 +494,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/\Yoast\MyYoastApiClient\Model\Transaction.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -507,25 +511,25 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionPrototypeCountItems**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2002 transactionPrototypeCountItems($id, $where)
+# **orderPrototypeCountItems**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 orderPrototypeCountItems($id, $where)
 
-Counts items of Transaction.
+Counts items of Order.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
-$id = "id_example"; // string | Transaction id
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->transactionPrototypeCountItems($id, $where);
+    $result = $api_instance->orderPrototypeCountItems($id, $where);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionPrototypeCountItems: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeCountItems: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -534,12 +538,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Transaction id |
+ **id** | **string**| Order id |
  **where** | **string**| Criteria to match model instances | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -552,8 +556,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionPrototypeCreateItems**
-> \Yoast\MyYoastApiClient\Model\LineItem transactionPrototypeCreateItems($id, $data)
+# **orderPrototypeCreateItems**
+> \Yoast\MyYoastApiClient\Model\LineItem orderPrototypeCreateItems($id, $data)
 
 Creates a new instance in items of this model.
 
@@ -562,15 +566,15 @@ Creates a new instance in items of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
-$id = "id_example"; // string | Transaction id
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | 
 
 try {
-    $result = $api_instance->transactionPrototypeCreateItems($id, $data);
+    $result = $api_instance->orderPrototypeCreateItems($id, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionPrototypeCreateItems: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeCreateItems: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -579,7 +583,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Transaction id |
+ **id** | **string**| Order id |
  **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)|  | [optional]
 
 ### Return type
@@ -597,8 +601,53 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionPrototypeDeleteItems**
-> transactionPrototypeDeleteItems($id)
+# **orderPrototypeCreateSubscription**
+> \Yoast\MyYoastApiClient\Model\SubscriptionOrders orderPrototypeCreateSubscription($id, $data)
+
+Creates a new instance in subscription of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$data = new \Yoast\MyYoastApiClient\Model\SubscriptionOrders(); // \Yoast\MyYoastApiClient\Model\SubscriptionOrders | 
+
+try {
+    $result = $api_instance->orderPrototypeCreateSubscription($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeCreateSubscription: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/\Yoast\MyYoastApiClient\Model\SubscriptionOrders.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/SubscriptionOrders.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeDeleteItems**
+> orderPrototypeDeleteItems($id)
 
 Deletes all items of this model.
 
@@ -607,13 +656,13 @@ Deletes all items of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
-$id = "id_example"; // string | Transaction id
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
 
 try {
-    $api_instance->transactionPrototypeDeleteItems($id);
+    $api_instance->orderPrototypeDeleteItems($id);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionPrototypeDeleteItems: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeDeleteItems: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -622,7 +671,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Transaction id |
+ **id** | **string**| Order id |
 
 ### Return type
 
@@ -639,8 +688,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionPrototypeDestroyByIdItems**
-> transactionPrototypeDestroyByIdItems($fk, $id)
+# **orderPrototypeDestroyByIdItems**
+> orderPrototypeDestroyByIdItems($fk, $id)
 
 Delete a related item by id for items.
 
@@ -649,14 +698,14 @@ Delete a related item by id for items.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $fk = "fk_example"; // string | Foreign key for items
-$id = "id_example"; // string | Transaction id
+$id = "id_example"; // string | Order id
 
 try {
-    $api_instance->transactionPrototypeDestroyByIdItems($fk, $id);
+    $api_instance->orderPrototypeDestroyByIdItems($fk, $id);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionPrototypeDestroyByIdItems: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdItems: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -666,7 +715,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fk** | **string**| Foreign key for items |
- **id** | **string**| Transaction id |
+ **id** | **string**| Order id |
 
 ### Return type
 
@@ -683,8 +732,50 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionPrototypeFindByIdItems**
-> \Yoast\MyYoastApiClient\Model\LineItem transactionPrototypeFindByIdItems($fk, $id)
+# **orderPrototypeDestroySubscription**
+> orderPrototypeDestroySubscription($id)
+
+Deletes subscription of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+
+try {
+    $api_instance->orderPrototypeDestroySubscription($id);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeDestroySubscription: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeFindByIdItems**
+> \Yoast\MyYoastApiClient\Model\LineItem orderPrototypeFindByIdItems($fk, $id)
 
 Find a related item by id for items.
 
@@ -693,15 +784,15 @@ Find a related item by id for items.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $fk = "fk_example"; // string | Foreign key for items
-$id = "id_example"; // string | Transaction id
+$id = "id_example"; // string | Order id
 
 try {
-    $result = $api_instance->transactionPrototypeFindByIdItems($fk, $id);
+    $result = $api_instance->orderPrototypeFindByIdItems($fk, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionPrototypeFindByIdItems: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeFindByIdItems: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -711,7 +802,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fk** | **string**| Foreign key for items |
- **id** | **string**| Transaction id |
+ **id** | **string**| Order id |
 
 ### Return type
 
@@ -728,8 +819,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionPrototypeGetCustomer**
-> \Yoast\MyYoastApiClient\Model\MyYoastUser transactionPrototypeGetCustomer($id, $refresh)
+# **orderPrototypeGetCustomer**
+> \Yoast\MyYoastApiClient\Model\MyYoastUser orderPrototypeGetCustomer($id, $refresh)
 
 Fetches belongsTo relation customer.
 
@@ -738,15 +829,15 @@ Fetches belongsTo relation customer.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
-$id = "id_example"; // string | Transaction id
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->transactionPrototypeGetCustomer($id, $refresh);
+    $result = $api_instance->orderPrototypeGetCustomer($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionPrototypeGetCustomer: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeGetCustomer: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -755,7 +846,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Transaction id |
+ **id** | **string**| Order id |
  **refresh** | **bool**|  | [optional]
 
 ### Return type
@@ -773,25 +864,25 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionPrototypeGetItems**
-> \Yoast\MyYoastApiClient\Model\LineItem[] transactionPrototypeGetItems($id, $filter)
+# **orderPrototypeGetItems**
+> \Yoast\MyYoastApiClient\Model\LineItem[] orderPrototypeGetItems($id, $filter)
 
-Queries items of Transaction.
+Queries items of Order.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
-$id = "id_example"; // string | Transaction id
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $api_instance->transactionPrototypeGetItems($id, $filter);
+    $result = $api_instance->orderPrototypeGetItems($id, $filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionPrototypeGetItems: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeGetItems: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -800,7 +891,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Transaction id |
+ **id** | **string**| Order id |
  **filter** | **string**|  | [optional]
 
 ### Return type
@@ -818,25 +909,25 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionPrototypePatchAttributes**
-> \Yoast\MyYoastApiClient\Model\Transaction transactionPrototypePatchAttributes($id, $data)
+# **orderPrototypeGetSubscription**
+> \Yoast\MyYoastApiClient\Model\SubscriptionOrders orderPrototypeGetSubscription($id, $refresh)
 
-Patch attributes for a model instance and persist it into the data source.
+Fetches hasOne relation subscription.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
-$id = "id_example"; // string | Transaction id
-$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | An object of model property name/value pairs
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$refresh = true; // bool | 
 
 try {
-    $result = $api_instance->transactionPrototypePatchAttributes($id, $data);
+    $result = $api_instance->orderPrototypeGetSubscription($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeGetSubscription: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -845,12 +936,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Transaction id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/\Yoast\MyYoastApiClient\Model\Transaction.md)| An object of model property name/value pairs | [optional]
+ **id** | **string**| Order id |
+ **refresh** | **bool**|  | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/SubscriptionOrders.md)
 
 ### Authorization
 
@@ -863,8 +954,53 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionPrototypeUpdateByIdItems**
-> \Yoast\MyYoastApiClient\Model\LineItem transactionPrototypeUpdateByIdItems($fk, $id, $data)
+# **orderPrototypePatchAttributes**
+> \Yoast\MyYoastApiClient\Model\Order orderPrototypePatchAttributes($id, $data)
+
+Patch attributes for a model instance and persist it into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | An object of model property name/value pairs
+
+try {
+    $result = $api_instance->orderPrototypePatchAttributes($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| An object of model property name/value pairs | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeUpdateByIdItems**
+> \Yoast\MyYoastApiClient\Model\LineItem orderPrototypeUpdateByIdItems($fk, $id, $data)
 
 Update a related item by id for items.
 
@@ -873,16 +1009,16 @@ Update a related item by id for items.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $fk = "fk_example"; // string | Foreign key for items
-$id = "id_example"; // string | Transaction id
+$id = "id_example"; // string | Order id
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | 
 
 try {
-    $result = $api_instance->transactionPrototypeUpdateByIdItems($fk, $id, $data);
+    $result = $api_instance->orderPrototypeUpdateByIdItems($fk, $id, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionPrototypeUpdateByIdItems: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdItems: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -892,7 +1028,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fk** | **string**| Foreign key for items |
- **id** | **string**| Transaction id |
+ **id** | **string**| Order id |
  **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)|  | [optional]
 
 ### Return type
@@ -910,8 +1046,53 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionReplaceByIdPostTransactionsidReplace**
-> \Yoast\MyYoastApiClient\Model\Transaction transactionReplaceByIdPostTransactionsidReplace($id, $data)
+# **orderPrototypeUpdateSubscription**
+> \Yoast\MyYoastApiClient\Model\SubscriptionOrders orderPrototypeUpdateSubscription($id, $data)
+
+Update subscription of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$data = new \Yoast\MyYoastApiClient\Model\SubscriptionOrders(); // \Yoast\MyYoastApiClient\Model\SubscriptionOrders | 
+
+try {
+    $result = $api_instance->orderPrototypeUpdateSubscription($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeUpdateSubscription: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/\Yoast\MyYoastApiClient\Model\SubscriptionOrders.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/SubscriptionOrders.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderReplaceByIdPostOrdersidReplace**
+> \Yoast\MyYoastApiClient\Model\Order orderReplaceByIdPostOrdersidReplace($id, $data)
 
 Replace attributes for a model instance and persist it into the data source.
 
@@ -920,15 +1101,15 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
+$data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $api_instance->transactionReplaceByIdPostTransactionsidReplace($id, $data);
+    $result = $api_instance->orderReplaceByIdPostOrdersidReplace($id, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionReplaceByIdPostTransactionsidReplace: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderReplaceByIdPostOrdersidReplace: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -938,11 +1119,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/\Yoast\MyYoastApiClient\Model\Transaction.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -955,8 +1136,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionReplaceByIdPutTransactionsid**
-> \Yoast\MyYoastApiClient\Model\Transaction transactionReplaceByIdPutTransactionsid($id, $data)
+# **orderReplaceByIdPutOrdersid**
+> \Yoast\MyYoastApiClient\Model\Order orderReplaceByIdPutOrdersid($id, $data)
 
 Replace attributes for a model instance and persist it into the data source.
 
@@ -965,15 +1146,15 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
+$data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $api_instance->transactionReplaceByIdPutTransactionsid($id, $data);
+    $result = $api_instance->orderReplaceByIdPutOrdersid($id, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionReplaceByIdPutTransactionsid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderReplaceByIdPutOrdersid: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -983,11 +1164,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/\Yoast\MyYoastApiClient\Model\Transaction.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -1000,8 +1181,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionReplaceOrCreatePostTransactionsReplaceOrCreate**
-> \Yoast\MyYoastApiClient\Model\Transaction transactionReplaceOrCreatePostTransactionsReplaceOrCreate($data)
+# **orderReplaceOrCreatePostOrdersReplaceOrCreate**
+> \Yoast\MyYoastApiClient\Model\Order orderReplaceOrCreatePostOrdersReplaceOrCreate($data)
 
 Replace an existing model instance or insert a new one into the data source.
 
@@ -1010,14 +1191,14 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
-$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $api_instance->transactionReplaceOrCreatePostTransactionsReplaceOrCreate($data);
+    $result = $api_instance->orderReplaceOrCreatePostOrdersReplaceOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionReplaceOrCreatePostTransactionsReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderReplaceOrCreatePostOrdersReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1026,11 +1207,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/\Yoast\MyYoastApiClient\Model\Transaction.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -1043,8 +1224,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionReplaceOrCreatePutTransactions**
-> \Yoast\MyYoastApiClient\Model\Transaction transactionReplaceOrCreatePutTransactions($data)
+# **orderReplaceOrCreatePutOrders**
+> \Yoast\MyYoastApiClient\Model\Order orderReplaceOrCreatePutOrders($data)
 
 Replace an existing model instance or insert a new one into the data source.
 
@@ -1053,14 +1234,14 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
-$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $api_instance->transactionReplaceOrCreatePutTransactions($data);
+    $result = $api_instance->orderReplaceOrCreatePutOrders($data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionReplaceOrCreatePutTransactions: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderReplaceOrCreatePutOrders: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1069,11 +1250,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/\Yoast\MyYoastApiClient\Model\Transaction.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -1086,8 +1267,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionUpdateAll**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 transactionUpdateAll($where, $data)
+# **orderUpdateAll**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2002 orderUpdateAll($where, $data)
 
 Update instances of the model matched by {{where}} from the data source.
 
@@ -1096,15 +1277,15 @@ Update instances of the model matched by {{where}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | An object of model property name/value pairs
+$data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->transactionUpdateAll($where, $data);
+    $result = $api_instance->orderUpdateAll($where, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionUpdateAll: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderUpdateAll: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1114,11 +1295,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/\Yoast\MyYoastApiClient\Model\Transaction.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 
@@ -1131,8 +1312,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **transactionUpsertWithWhere**
-> \Yoast\MyYoastApiClient\Model\Transaction transactionUpsertWithWhere($where, $data)
+# **orderUpsertWithWhere**
+> \Yoast\MyYoastApiClient\Model\Order orderUpsertWithWhere($where, $data)
 
 Update an existing model instance or insert a new one into the data source based on the where criteria.
 
@@ -1141,15 +1322,15 @@ Update an existing model instance or insert a new one into the data source based
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | An object of model property name/value pairs
+$data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->transactionUpsertWithWhere($where, $data);
+    $result = $api_instance->orderUpsertWithWhere($where, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling TransactionApi->transactionUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1159,11 +1340,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/\Yoast\MyYoastApiClient\Model\Transaction.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 

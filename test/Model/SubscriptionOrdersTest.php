@@ -1,6 +1,6 @@
 <?php
 /**
- * MyYoastUserTest
+ * SubscriptionOrdersTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * MyYoastUserTest Class Doc Comment
+ * SubscriptionOrdersTest Class Doc Comment
  *
  * @category    Class */
-// * @description MyYoastUser
+// * @description SubscriptionOrders
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MyYoastUserTest extends \PHPUnit_Framework_TestCase
+class SubscriptionOrdersTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -75,49 +75,9 @@ class MyYoastUserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "MyYoastUser"
+     * Test "SubscriptionOrders"
      */
-    public function testMyYoastUser()
-    {
-
-    }
-
-    /**
-     * Test attribute "realm"
-     */
-    public function testPropertyRealm()
-    {
-
-    }
-
-    /**
-     * Test attribute "username"
-     */
-    public function testPropertyUsername()
-    {
-
-    }
-
-    /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
-    {
-
-    }
-
-    /**
-     * Test attribute "email_verified"
-     */
-    public function testPropertyEmailVerified()
-    {
-
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
+    public function testSubscriptionOrders()
     {
 
     }
@@ -126,6 +86,22 @@ class MyYoastUserTest extends \PHPUnit_Framework_TestCase
      * Test attribute "subscription_id"
      */
     public function testPropertySubscriptionId()
+    {
+
+    }
+
+    /**
+     * Test attribute "order_id"
+     */
+    public function testPropertyOrderId()
+    {
+
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
     {
 
     }

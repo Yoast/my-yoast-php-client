@@ -94,7 +94,7 @@ class DiscountLineItemApi
      *
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
     public function discountLineItemCount($where = null)
     {
@@ -109,7 +109,7 @@ class DiscountLineItemApi
      *
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
     public function discountLineItemCountWithHttpInfo($where = null)
     {
@@ -147,15 +147,15 @@ class DiscountLineItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
                 '/DiscountLineItems/count'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -488,7 +488,7 @@ class DiscountLineItemApi
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
     public function discountLineItemExistsGetDiscountLineItemsidExists($id)
     {
@@ -503,7 +503,7 @@ class DiscountLineItemApi
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function discountLineItemExistsGetDiscountLineItemsidExistsWithHttpInfo($id)
     {
@@ -549,15 +549,15 @@ class DiscountLineItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
                 '/DiscountLineItems/{id}/exists'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -573,7 +573,7 @@ class DiscountLineItemApi
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
     public function discountLineItemExistsHeadDiscountLineItemsid($id)
     {
@@ -588,7 +588,7 @@ class DiscountLineItemApi
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function discountLineItemExistsHeadDiscountLineItemsidWithHttpInfo($id)
     {
@@ -634,15 +634,15 @@ class DiscountLineItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
                 '/DiscountLineItems/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1505,7 +1505,7 @@ class DiscountLineItemApi
      * @param string $where Criteria to match model instances (optional)
      * @param \Yoast\MyYoastApiClient\Model\DiscountLineItem $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
      */
     public function discountLineItemUpdateAll($where = null, $data = null)
     {
@@ -1521,7 +1521,7 @@ class DiscountLineItemApi
      * @param string $where Criteria to match model instances (optional)
      * @param \Yoast\MyYoastApiClient\Model\DiscountLineItem $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
     public function discountLineItemUpdateAllWithHttpInfo($where = null, $data = null)
     {
@@ -1564,15 +1564,15 @@ class DiscountLineItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
                 '/DiscountLineItems/update'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -111,7 +111,8 @@ Class | Method | HTTP request | Description
 *LineItemApi* | [**lineItemPrototypeDestroyByIdDiscounts**](docs/Api/LineItemApi.md#lineitemprototypedestroybyiddiscounts) | **DELETE** /LineItems/{id}/discounts/{fk} | Delete a related item by id for discounts.
 *LineItemApi* | [**lineItemPrototypeFindByIdDiscounts**](docs/Api/LineItemApi.md#lineitemprototypefindbyiddiscounts) | **GET** /LineItems/{id}/discounts/{fk} | Find a related item by id for discounts.
 *LineItemApi* | [**lineItemPrototypeGetDiscounts**](docs/Api/LineItemApi.md#lineitemprototypegetdiscounts) | **GET** /LineItems/{id}/discounts | Queries discounts of LineItem.
-*LineItemApi* | [**lineItemPrototypeGetTransaction**](docs/Api/LineItemApi.md#lineitemprototypegettransaction) | **GET** /LineItems/{id}/transaction | Fetches belongsTo relation transaction.
+*LineItemApi* | [**lineItemPrototypeGetOrder**](docs/Api/LineItemApi.md#lineitemprototypegetorder) | **GET** /LineItems/{id}/order | Fetches belongsTo relation order.
+*LineItemApi* | [**lineItemPrototypeGetProduct**](docs/Api/LineItemApi.md#lineitemprototypegetproduct) | **GET** /LineItems/{id}/product | Fetches belongsTo relation product.
 *LineItemApi* | [**lineItemPrototypePatchAttributes**](docs/Api/LineItemApi.md#lineitemprototypepatchattributes) | **PATCH** /LineItems/{id} | Patch attributes for a model instance and persist it into the data source.
 *LineItemApi* | [**lineItemPrototypeUpdateByIdDiscounts**](docs/Api/LineItemApi.md#lineitemprototypeupdatebyiddiscounts) | **PUT** /LineItems/{id}/discounts/{fk} | Update a related item by id for discounts.
 *LineItemApi* | [**lineItemReplaceByIdPostLineItemsidReplace**](docs/Api/LineItemApi.md#lineitemreplacebyidpostlineitemsidreplace) | **POST** /LineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
@@ -138,39 +139,46 @@ Class | Method | HTTP request | Description
 *MyYoastUserApi* | [**myYoastUserPrototypeCountAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecountaccesstokens) | **GET** /MyYoastUsers/{id}/accessTokens/count | Counts accessTokens of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeCountCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecountcredentials) | **GET** /MyYoastUsers/{id}/credentials/count | Counts credentials of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeCountIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecountidentities) | **GET** /MyYoastUsers/{id}/identities/count | Counts identities of MyYoastUser.
+*MyYoastUserApi* | [**myYoastUserPrototypeCountOrders**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecountorders) | **GET** /MyYoastUsers/{id}/orders/count | Counts orders of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeCountSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecountsites) | **GET** /MyYoastUsers/{id}/sites/count | Counts sites of MyYoastUser.
-*MyYoastUserApi* | [**myYoastUserPrototypeCountTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecounttransactions) | **GET** /MyYoastUsers/{id}/transactions/count | Counts transactions of MyYoastUser.
+*MyYoastUserApi* | [**myYoastUserPrototypeCountSubscriptions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecountsubscriptions) | **GET** /MyYoastUsers/{id}/subscriptions/count | Counts subscriptions of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeCreateAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreateaccesstokens) | **POST** /MyYoastUsers/{id}/accessTokens | Creates a new instance in accessTokens of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeCreateCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreatecredentials) | **POST** /MyYoastUsers/{id}/credentials | Creates a new instance in credentials of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeCreateIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreateidentities) | **POST** /MyYoastUsers/{id}/identities | Creates a new instance in identities of this model.
+*MyYoastUserApi* | [**myYoastUserPrototypeCreateOrders**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreateorders) | **POST** /MyYoastUsers/{id}/orders | Creates a new instance in orders of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeCreateSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreatesites) | **POST** /MyYoastUsers/{id}/sites | Creates a new instance in sites of this model.
-*MyYoastUserApi* | [**myYoastUserPrototypeCreateTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreatetransactions) | **POST** /MyYoastUsers/{id}/transactions | Creates a new instance in transactions of this model.
+*MyYoastUserApi* | [**myYoastUserPrototypeCreateSubscriptions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypecreatesubscriptions) | **POST** /MyYoastUsers/{id}/subscriptions | Creates a new instance in subscriptions of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeDeleteAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeleteaccesstokens) | **DELETE** /MyYoastUsers/{id}/accessTokens | Deletes all accessTokens of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeDeleteCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeletecredentials) | **DELETE** /MyYoastUsers/{id}/credentials | Deletes all credentials of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeDeleteIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeleteidentities) | **DELETE** /MyYoastUsers/{id}/identities | Deletes all identities of this model.
+*MyYoastUserApi* | [**myYoastUserPrototypeDeleteOrders**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeleteorders) | **DELETE** /MyYoastUsers/{id}/orders | Deletes all orders of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeDeleteSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeletesites) | **DELETE** /MyYoastUsers/{id}/sites | Deletes all sites of this model.
-*MyYoastUserApi* | [**myYoastUserPrototypeDeleteTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeletetransactions) | **DELETE** /MyYoastUsers/{id}/transactions | Deletes all transactions of this model.
+*MyYoastUserApi* | [**myYoastUserPrototypeDeleteSubscriptions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedeletesubscriptions) | **DELETE** /MyYoastUsers/{id}/subscriptions | Deletes all subscriptions of this model.
 *MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyidaccesstokens) | **DELETE** /MyYoastUsers/{id}/accessTokens/{fk} | Delete a related item by id for accessTokens.
 *MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyidcredentials) | **DELETE** /MyYoastUsers/{id}/credentials/{fk} | Delete a related item by id for credentials.
 *MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyididentities) | **DELETE** /MyYoastUsers/{id}/identities/{fk} | Delete a related item by id for identities.
+*MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdOrders**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyidorders) | **DELETE** /MyYoastUsers/{id}/orders/{fk} | Delete a related item by id for orders.
 *MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyidsites) | **DELETE** /MyYoastUsers/{id}/sites/{fk} | Delete a related item by id for sites.
-*MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyidtransactions) | **DELETE** /MyYoastUsers/{id}/transactions/{fk} | Delete a related item by id for transactions.
+*MyYoastUserApi* | [**myYoastUserPrototypeDestroyByIdSubscriptions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypedestroybyidsubscriptions) | **DELETE** /MyYoastUsers/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
 *MyYoastUserApi* | [**myYoastUserPrototypeFindByIdAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyidaccesstokens) | **GET** /MyYoastUsers/{id}/accessTokens/{fk} | Find a related item by id for accessTokens.
 *MyYoastUserApi* | [**myYoastUserPrototypeFindByIdCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyidcredentials) | **GET** /MyYoastUsers/{id}/credentials/{fk} | Find a related item by id for credentials.
 *MyYoastUserApi* | [**myYoastUserPrototypeFindByIdIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyididentities) | **GET** /MyYoastUsers/{id}/identities/{fk} | Find a related item by id for identities.
+*MyYoastUserApi* | [**myYoastUserPrototypeFindByIdOrders**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyidorders) | **GET** /MyYoastUsers/{id}/orders/{fk} | Find a related item by id for orders.
 *MyYoastUserApi* | [**myYoastUserPrototypeFindByIdSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyidsites) | **GET** /MyYoastUsers/{id}/sites/{fk} | Find a related item by id for sites.
-*MyYoastUserApi* | [**myYoastUserPrototypeFindByIdTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyidtransactions) | **GET** /MyYoastUsers/{id}/transactions/{fk} | Find a related item by id for transactions.
+*MyYoastUserApi* | [**myYoastUserPrototypeFindByIdSubscriptions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypefindbyidsubscriptions) | **GET** /MyYoastUsers/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
 *MyYoastUserApi* | [**myYoastUserPrototypeGetAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegetaccesstokens) | **GET** /MyYoastUsers/{id}/accessTokens | Queries accessTokens of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeGetCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegetcredentials) | **GET** /MyYoastUsers/{id}/credentials | Queries credentials of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeGetIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegetidentities) | **GET** /MyYoastUsers/{id}/identities | Queries identities of MyYoastUser.
+*MyYoastUserApi* | [**myYoastUserPrototypeGetOrders**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegetorders) | **GET** /MyYoastUsers/{id}/orders | Queries orders of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypeGetSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegetsites) | **GET** /MyYoastUsers/{id}/sites | Queries sites of MyYoastUser.
-*MyYoastUserApi* | [**myYoastUserPrototypeGetTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegettransactions) | **GET** /MyYoastUsers/{id}/transactions | Queries transactions of MyYoastUser.
+*MyYoastUserApi* | [**myYoastUserPrototypeGetSubscriptions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypegetsubscriptions) | **GET** /MyYoastUsers/{id}/subscriptions | Queries subscriptions of MyYoastUser.
 *MyYoastUserApi* | [**myYoastUserPrototypePatchAttributes**](docs/Api/MyYoastUserApi.md#myyoastuserprototypepatchattributes) | **PATCH** /MyYoastUsers/{id} | Patch attributes for a model instance and persist it into the data source.
 *MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdAccessTokens**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyidaccesstokens) | **PUT** /MyYoastUsers/{id}/accessTokens/{fk} | Update a related item by id for accessTokens.
 *MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdCredentials**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyidcredentials) | **PUT** /MyYoastUsers/{id}/credentials/{fk} | Update a related item by id for credentials.
 *MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdIdentities**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyididentities) | **PUT** /MyYoastUsers/{id}/identities/{fk} | Update a related item by id for identities.
+*MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdOrders**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyidorders) | **PUT** /MyYoastUsers/{id}/orders/{fk} | Update a related item by id for orders.
 *MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdSites**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyidsites) | **PUT** /MyYoastUsers/{id}/sites/{fk} | Update a related item by id for sites.
-*MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdTransactions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyidtransactions) | **PUT** /MyYoastUsers/{id}/transactions/{fk} | Update a related item by id for transactions.
+*MyYoastUserApi* | [**myYoastUserPrototypeUpdateByIdSubscriptions**](docs/Api/MyYoastUserApi.md#myyoastuserprototypeupdatebyidsubscriptions) | **PUT** /MyYoastUsers/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
 *MyYoastUserApi* | [**myYoastUserReplaceByIdPostMyYoastUsersidReplace**](docs/Api/MyYoastUserApi.md#myyoastuserreplacebyidpostmyyoastusersidreplace) | **POST** /MyYoastUsers/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *MyYoastUserApi* | [**myYoastUserReplaceByIdPutMyYoastUsersid**](docs/Api/MyYoastUserApi.md#myyoastuserreplacebyidputmyyoastusersid) | **PUT** /MyYoastUsers/{id} | Replace attributes for a model instance and persist it into the data source.
 *MyYoastUserApi* | [**myYoastUserReplaceOrCreatePostMyYoastUsersReplaceOrCreate**](docs/Api/MyYoastUserApi.md#myyoastuserreplaceorcreatepostmyyoastusersreplaceorcreate) | **POST** /MyYoastUsers/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -178,6 +186,68 @@ Class | Method | HTTP request | Description
 *MyYoastUserApi* | [**myYoastUserResetPassword**](docs/Api/MyYoastUserApi.md#myyoastuserresetpassword) | **POST** /MyYoastUsers/reset | Reset password for a user with email.
 *MyYoastUserApi* | [**myYoastUserUpdateAll**](docs/Api/MyYoastUserApi.md#myyoastuserupdateall) | **POST** /MyYoastUsers/update | Update instances of the model matched by {{where}} from the data source.
 *MyYoastUserApi* | [**myYoastUserUpsertWithWhere**](docs/Api/MyYoastUserApi.md#myyoastuserupsertwithwhere) | **POST** /MyYoastUsers/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*OrderApi* | [**orderCount**](docs/Api/OrderApi.md#ordercount) | **GET** /Orders/count | Count instances of the model matched by where from the data source.
+*OrderApi* | [**orderCreate**](docs/Api/OrderApi.md#ordercreate) | **POST** /Orders | Create a new instance of the model and persist it into the data source.
+*OrderApi* | [**orderCreateChangeStreamGetOrdersChangeStream**](docs/Api/OrderApi.md#ordercreatechangestreamgetorderschangestream) | **GET** /Orders/change-stream | Create a change stream.
+*OrderApi* | [**orderCreateChangeStreamPostOrdersChangeStream**](docs/Api/OrderApi.md#ordercreatechangestreampostorderschangestream) | **POST** /Orders/change-stream | Create a change stream.
+*OrderApi* | [**orderDeleteById**](docs/Api/OrderApi.md#orderdeletebyid) | **DELETE** /Orders/{id} | Delete a model instance by {{id}} from the data source.
+*OrderApi* | [**orderExistsGetOrdersidExists**](docs/Api/OrderApi.md#orderexistsgetordersidexists) | **GET** /Orders/{id}/exists | Check whether a model instance exists in the data source.
+*OrderApi* | [**orderExistsHeadOrdersid**](docs/Api/OrderApi.md#orderexistsheadordersid) | **HEAD** /Orders/{id} | Check whether a model instance exists in the data source.
+*OrderApi* | [**orderFind**](docs/Api/OrderApi.md#orderfind) | **GET** /Orders | Find all instances of the model matched by filter from the data source.
+*OrderApi* | [**orderFindById**](docs/Api/OrderApi.md#orderfindbyid) | **GET** /Orders/{id} | Find a model instance by {{id}} from the data source.
+*OrderApi* | [**orderFindOne**](docs/Api/OrderApi.md#orderfindone) | **GET** /Orders/findOne | Find first instance of the model matched by filter from the data source.
+*OrderApi* | [**orderPatchOrCreate**](docs/Api/OrderApi.md#orderpatchorcreate) | **PATCH** /Orders | Patch an existing model instance or insert a new one into the data source.
+*OrderApi* | [**orderPrototypeCountItems**](docs/Api/OrderApi.md#orderprototypecountitems) | **GET** /Orders/{id}/items/count | Counts items of Order.
+*OrderApi* | [**orderPrototypeCreateItems**](docs/Api/OrderApi.md#orderprototypecreateitems) | **POST** /Orders/{id}/items | Creates a new instance in items of this model.
+*OrderApi* | [**orderPrototypeCreateSubscription**](docs/Api/OrderApi.md#orderprototypecreatesubscription) | **POST** /Orders/{id}/subscription | Creates a new instance in subscription of this model.
+*OrderApi* | [**orderPrototypeDeleteItems**](docs/Api/OrderApi.md#orderprototypedeleteitems) | **DELETE** /Orders/{id}/items | Deletes all items of this model.
+*OrderApi* | [**orderPrototypeDestroyByIdItems**](docs/Api/OrderApi.md#orderprototypedestroybyiditems) | **DELETE** /Orders/{id}/items/{fk} | Delete a related item by id for items.
+*OrderApi* | [**orderPrototypeDestroySubscription**](docs/Api/OrderApi.md#orderprototypedestroysubscription) | **DELETE** /Orders/{id}/subscription | Deletes subscription of this model.
+*OrderApi* | [**orderPrototypeFindByIdItems**](docs/Api/OrderApi.md#orderprototypefindbyiditems) | **GET** /Orders/{id}/items/{fk} | Find a related item by id for items.
+*OrderApi* | [**orderPrototypeGetCustomer**](docs/Api/OrderApi.md#orderprototypegetcustomer) | **GET** /Orders/{id}/customer | Fetches belongsTo relation customer.
+*OrderApi* | [**orderPrototypeGetItems**](docs/Api/OrderApi.md#orderprototypegetitems) | **GET** /Orders/{id}/items | Queries items of Order.
+*OrderApi* | [**orderPrototypeGetSubscription**](docs/Api/OrderApi.md#orderprototypegetsubscription) | **GET** /Orders/{id}/subscription | Fetches hasOne relation subscription.
+*OrderApi* | [**orderPrototypePatchAttributes**](docs/Api/OrderApi.md#orderprototypepatchattributes) | **PATCH** /Orders/{id} | Patch attributes for a model instance and persist it into the data source.
+*OrderApi* | [**orderPrototypeUpdateByIdItems**](docs/Api/OrderApi.md#orderprototypeupdatebyiditems) | **PUT** /Orders/{id}/items/{fk} | Update a related item by id for items.
+*OrderApi* | [**orderPrototypeUpdateSubscription**](docs/Api/OrderApi.md#orderprototypeupdatesubscription) | **PUT** /Orders/{id}/subscription | Update subscription of this model.
+*OrderApi* | [**orderReplaceByIdPostOrdersidReplace**](docs/Api/OrderApi.md#orderreplacebyidpostordersidreplace) | **POST** /Orders/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*OrderApi* | [**orderReplaceByIdPutOrdersid**](docs/Api/OrderApi.md#orderreplacebyidputordersid) | **PUT** /Orders/{id} | Replace attributes for a model instance and persist it into the data source.
+*OrderApi* | [**orderReplaceOrCreatePostOrdersReplaceOrCreate**](docs/Api/OrderApi.md#orderreplaceorcreatepostordersreplaceorcreate) | **POST** /Orders/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*OrderApi* | [**orderReplaceOrCreatePutOrders**](docs/Api/OrderApi.md#orderreplaceorcreateputorders) | **PUT** /Orders | Replace an existing model instance or insert a new one into the data source.
+*OrderApi* | [**orderUpdateAll**](docs/Api/OrderApi.md#orderupdateall) | **POST** /Orders/update | Update instances of the model matched by {{where}} from the data source.
+*OrderApi* | [**orderUpsertWithWhere**](docs/Api/OrderApi.md#orderupsertwithwhere) | **POST** /Orders/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*ProductApi* | [**productCount**](docs/Api/ProductApi.md#productcount) | **GET** /Products/count | Count instances of the model matched by where from the data source.
+*ProductApi* | [**productCreate**](docs/Api/ProductApi.md#productcreate) | **POST** /Products | Create a new instance of the model and persist it into the data source.
+*ProductApi* | [**productCreateChangeStreamGetProductsChangeStream**](docs/Api/ProductApi.md#productcreatechangestreamgetproductschangestream) | **GET** /Products/change-stream | Create a change stream.
+*ProductApi* | [**productCreateChangeStreamPostProductsChangeStream**](docs/Api/ProductApi.md#productcreatechangestreampostproductschangestream) | **POST** /Products/change-stream | Create a change stream.
+*ProductApi* | [**productDeleteById**](docs/Api/ProductApi.md#productdeletebyid) | **DELETE** /Products/{id} | Delete a model instance by {{id}} from the data source.
+*ProductApi* | [**productExistsGetProductsidExists**](docs/Api/ProductApi.md#productexistsgetproductsidexists) | **GET** /Products/{id}/exists | Check whether a model instance exists in the data source.
+*ProductApi* | [**productExistsHeadProductsid**](docs/Api/ProductApi.md#productexistsheadproductsid) | **HEAD** /Products/{id} | Check whether a model instance exists in the data source.
+*ProductApi* | [**productFind**](docs/Api/ProductApi.md#productfind) | **GET** /Products | Find all instances of the model matched by filter from the data source.
+*ProductApi* | [**productFindById**](docs/Api/ProductApi.md#productfindbyid) | **GET** /Products/{id} | Find a model instance by {{id}} from the data source.
+*ProductApi* | [**productFindOne**](docs/Api/ProductApi.md#productfindone) | **GET** /Products/findOne | Find first instance of the model matched by filter from the data source.
+*ProductApi* | [**productPatchOrCreate**](docs/Api/ProductApi.md#productpatchorcreate) | **PATCH** /Products | Patch an existing model instance or insert a new one into the data source.
+*ProductApi* | [**productPrototypeCountLineItems**](docs/Api/ProductApi.md#productprototypecountlineitems) | **GET** /Products/{id}/lineItems/count | Counts lineItems of Product.
+*ProductApi* | [**productPrototypeCountSubscriptions**](docs/Api/ProductApi.md#productprototypecountsubscriptions) | **GET** /Products/{id}/subscriptions/count | Counts subscriptions of Product.
+*ProductApi* | [**productPrototypeCreateLineItems**](docs/Api/ProductApi.md#productprototypecreatelineitems) | **POST** /Products/{id}/lineItems | Creates a new instance in lineItems of this model.
+*ProductApi* | [**productPrototypeCreateSubscriptions**](docs/Api/ProductApi.md#productprototypecreatesubscriptions) | **POST** /Products/{id}/subscriptions | Creates a new instance in subscriptions of this model.
+*ProductApi* | [**productPrototypeDeleteLineItems**](docs/Api/ProductApi.md#productprototypedeletelineitems) | **DELETE** /Products/{id}/lineItems | Deletes all lineItems of this model.
+*ProductApi* | [**productPrototypeDeleteSubscriptions**](docs/Api/ProductApi.md#productprototypedeletesubscriptions) | **DELETE** /Products/{id}/subscriptions | Deletes all subscriptions of this model.
+*ProductApi* | [**productPrototypeDestroyByIdLineItems**](docs/Api/ProductApi.md#productprototypedestroybyidlineitems) | **DELETE** /Products/{id}/lineItems/{fk} | Delete a related item by id for lineItems.
+*ProductApi* | [**productPrototypeDestroyByIdSubscriptions**](docs/Api/ProductApi.md#productprototypedestroybyidsubscriptions) | **DELETE** /Products/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
+*ProductApi* | [**productPrototypeFindByIdLineItems**](docs/Api/ProductApi.md#productprototypefindbyidlineitems) | **GET** /Products/{id}/lineItems/{fk} | Find a related item by id for lineItems.
+*ProductApi* | [**productPrototypeFindByIdSubscriptions**](docs/Api/ProductApi.md#productprototypefindbyidsubscriptions) | **GET** /Products/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
+*ProductApi* | [**productPrototypeGetLineItems**](docs/Api/ProductApi.md#productprototypegetlineitems) | **GET** /Products/{id}/lineItems | Queries lineItems of Product.
+*ProductApi* | [**productPrototypeGetSubscriptions**](docs/Api/ProductApi.md#productprototypegetsubscriptions) | **GET** /Products/{id}/subscriptions | Queries subscriptions of Product.
+*ProductApi* | [**productPrototypePatchAttributes**](docs/Api/ProductApi.md#productprototypepatchattributes) | **PATCH** /Products/{id} | Patch attributes for a model instance and persist it into the data source.
+*ProductApi* | [**productPrototypeUpdateByIdLineItems**](docs/Api/ProductApi.md#productprototypeupdatebyidlineitems) | **PUT** /Products/{id}/lineItems/{fk} | Update a related item by id for lineItems.
+*ProductApi* | [**productPrototypeUpdateByIdSubscriptions**](docs/Api/ProductApi.md#productprototypeupdatebyidsubscriptions) | **PUT** /Products/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
+*ProductApi* | [**productReplaceByIdPostProductsidReplace**](docs/Api/ProductApi.md#productreplacebyidpostproductsidreplace) | **POST** /Products/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*ProductApi* | [**productReplaceByIdPutProductsid**](docs/Api/ProductApi.md#productreplacebyidputproductsid) | **PUT** /Products/{id} | Replace attributes for a model instance and persist it into the data source.
+*ProductApi* | [**productReplaceOrCreatePostProductsReplaceOrCreate**](docs/Api/ProductApi.md#productreplaceorcreatepostproductsreplaceorcreate) | **POST** /Products/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*ProductApi* | [**productReplaceOrCreatePutProducts**](docs/Api/ProductApi.md#productreplaceorcreateputproducts) | **PUT** /Products | Replace an existing model instance or insert a new one into the data source.
+*ProductApi* | [**productUpdateAll**](docs/Api/ProductApi.md#productupdateall) | **POST** /Products/update | Update instances of the model matched by {{where}} from the data source.
+*ProductApi* | [**productUpsertWithWhere**](docs/Api/ProductApi.md#productupsertwithwhere) | **POST** /Products/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 *SiteApi* | [**siteCount**](docs/Api/SiteApi.md#sitecount) | **GET** /Sites/count | Count instances of the model matched by where from the data source.
 *SiteApi* | [**siteCreate**](docs/Api/SiteApi.md#sitecreate) | **POST** /Sites | Create a new instance of the model and persist it into the data source.
 *SiteApi* | [**siteCreateChangeStreamGetSitesChangeStream**](docs/Api/SiteApi.md#sitecreatechangestreamgetsiteschangestream) | **GET** /Sites/change-stream | Create a change stream.
@@ -189,40 +259,70 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**siteFindById**](docs/Api/SiteApi.md#sitefindbyid) | **GET** /Sites/{id} | Find a model instance by {{id}} from the data source.
 *SiteApi* | [**siteFindOne**](docs/Api/SiteApi.md#sitefindone) | **GET** /Sites/findOne | Find first instance of the model matched by filter from the data source.
 *SiteApi* | [**sitePatchOrCreate**](docs/Api/SiteApi.md#sitepatchorcreate) | **PATCH** /Sites | Patch an existing model instance or insert a new one into the data source.
+*SiteApi* | [**sitePrototypeCountSubscriptions**](docs/Api/SiteApi.md#siteprototypecountsubscriptions) | **GET** /Sites/{id}/subscriptions/count | Counts subscriptions of Site.
+*SiteApi* | [**sitePrototypeCreateSubscriptions**](docs/Api/SiteApi.md#siteprototypecreatesubscriptions) | **POST** /Sites/{id}/subscriptions | Creates a new instance in subscriptions of this model.
+*SiteApi* | [**sitePrototypeDeleteSubscriptions**](docs/Api/SiteApi.md#siteprototypedeletesubscriptions) | **DELETE** /Sites/{id}/subscriptions | Deletes all subscriptions of this model.
+*SiteApi* | [**sitePrototypeDestroyByIdSubscriptions**](docs/Api/SiteApi.md#siteprototypedestroybyidsubscriptions) | **DELETE** /Sites/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
+*SiteApi* | [**sitePrototypeExistsSubscriptions**](docs/Api/SiteApi.md#siteprototypeexistssubscriptions) | **HEAD** /Sites/{id}/subscriptions/rel/{fk} | Check the existence of subscriptions relation to an item by id.
+*SiteApi* | [**sitePrototypeFindByIdSubscriptions**](docs/Api/SiteApi.md#siteprototypefindbyidsubscriptions) | **GET** /Sites/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
+*SiteApi* | [**sitePrototypeGetSubscriptions**](docs/Api/SiteApi.md#siteprototypegetsubscriptions) | **GET** /Sites/{id}/subscriptions | Queries subscriptions of Site.
 *SiteApi* | [**sitePrototypeGetUser**](docs/Api/SiteApi.md#siteprototypegetuser) | **GET** /Sites/{id}/user | Fetches belongsTo relation user.
+*SiteApi* | [**sitePrototypeLinkSubscriptions**](docs/Api/SiteApi.md#siteprototypelinksubscriptions) | **PUT** /Sites/{id}/subscriptions/rel/{fk} | Add a related item by id for subscriptions.
 *SiteApi* | [**sitePrototypePatchAttributes**](docs/Api/SiteApi.md#siteprototypepatchattributes) | **PATCH** /Sites/{id} | Patch attributes for a model instance and persist it into the data source.
+*SiteApi* | [**sitePrototypeUnlinkSubscriptions**](docs/Api/SiteApi.md#siteprototypeunlinksubscriptions) | **DELETE** /Sites/{id}/subscriptions/rel/{fk} | Remove the subscriptions relation to an item by id.
+*SiteApi* | [**sitePrototypeUpdateByIdSubscriptions**](docs/Api/SiteApi.md#siteprototypeupdatebyidsubscriptions) | **PUT** /Sites/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
 *SiteApi* | [**siteReplaceByIdPostSitesidReplace**](docs/Api/SiteApi.md#sitereplacebyidpostsitesidreplace) | **POST** /Sites/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *SiteApi* | [**siteReplaceByIdPutSitesid**](docs/Api/SiteApi.md#sitereplacebyidputsitesid) | **PUT** /Sites/{id} | Replace attributes for a model instance and persist it into the data source.
 *SiteApi* | [**siteReplaceOrCreatePostSitesReplaceOrCreate**](docs/Api/SiteApi.md#sitereplaceorcreatepostsitesreplaceorcreate) | **POST** /Sites/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 *SiteApi* | [**siteReplaceOrCreatePutSites**](docs/Api/SiteApi.md#sitereplaceorcreateputsites) | **PUT** /Sites | Replace an existing model instance or insert a new one into the data source.
 *SiteApi* | [**siteUpdateAll**](docs/Api/SiteApi.md#siteupdateall) | **POST** /Sites/update | Update instances of the model matched by {{where}} from the data source.
 *SiteApi* | [**siteUpsertWithWhere**](docs/Api/SiteApi.md#siteupsertwithwhere) | **POST** /Sites/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
-*TransactionApi* | [**transactionCount**](docs/Api/TransactionApi.md#transactioncount) | **GET** /Transactions/count | Count instances of the model matched by where from the data source.
-*TransactionApi* | [**transactionCreate**](docs/Api/TransactionApi.md#transactioncreate) | **POST** /Transactions | Create a new instance of the model and persist it into the data source.
-*TransactionApi* | [**transactionCreateChangeStreamGetTransactionsChangeStream**](docs/Api/TransactionApi.md#transactioncreatechangestreamgettransactionschangestream) | **GET** /Transactions/change-stream | Create a change stream.
-*TransactionApi* | [**transactionCreateChangeStreamPostTransactionsChangeStream**](docs/Api/TransactionApi.md#transactioncreatechangestreamposttransactionschangestream) | **POST** /Transactions/change-stream | Create a change stream.
-*TransactionApi* | [**transactionDeleteById**](docs/Api/TransactionApi.md#transactiondeletebyid) | **DELETE** /Transactions/{id} | Delete a model instance by {{id}} from the data source.
-*TransactionApi* | [**transactionExistsGetTransactionsidExists**](docs/Api/TransactionApi.md#transactionexistsgettransactionsidexists) | **GET** /Transactions/{id}/exists | Check whether a model instance exists in the data source.
-*TransactionApi* | [**transactionExistsHeadTransactionsid**](docs/Api/TransactionApi.md#transactionexistsheadtransactionsid) | **HEAD** /Transactions/{id} | Check whether a model instance exists in the data source.
-*TransactionApi* | [**transactionFind**](docs/Api/TransactionApi.md#transactionfind) | **GET** /Transactions | Find all instances of the model matched by filter from the data source.
-*TransactionApi* | [**transactionFindById**](docs/Api/TransactionApi.md#transactionfindbyid) | **GET** /Transactions/{id} | Find a model instance by {{id}} from the data source.
-*TransactionApi* | [**transactionFindOne**](docs/Api/TransactionApi.md#transactionfindone) | **GET** /Transactions/findOne | Find first instance of the model matched by filter from the data source.
-*TransactionApi* | [**transactionPatchOrCreate**](docs/Api/TransactionApi.md#transactionpatchorcreate) | **PATCH** /Transactions | Patch an existing model instance or insert a new one into the data source.
-*TransactionApi* | [**transactionPrototypeCountItems**](docs/Api/TransactionApi.md#transactionprototypecountitems) | **GET** /Transactions/{id}/items/count | Counts items of Transaction.
-*TransactionApi* | [**transactionPrototypeCreateItems**](docs/Api/TransactionApi.md#transactionprototypecreateitems) | **POST** /Transactions/{id}/items | Creates a new instance in items of this model.
-*TransactionApi* | [**transactionPrototypeDeleteItems**](docs/Api/TransactionApi.md#transactionprototypedeleteitems) | **DELETE** /Transactions/{id}/items | Deletes all items of this model.
-*TransactionApi* | [**transactionPrototypeDestroyByIdItems**](docs/Api/TransactionApi.md#transactionprototypedestroybyiditems) | **DELETE** /Transactions/{id}/items/{fk} | Delete a related item by id for items.
-*TransactionApi* | [**transactionPrototypeFindByIdItems**](docs/Api/TransactionApi.md#transactionprototypefindbyiditems) | **GET** /Transactions/{id}/items/{fk} | Find a related item by id for items.
-*TransactionApi* | [**transactionPrototypeGetCustomer**](docs/Api/TransactionApi.md#transactionprototypegetcustomer) | **GET** /Transactions/{id}/customer | Fetches belongsTo relation customer.
-*TransactionApi* | [**transactionPrototypeGetItems**](docs/Api/TransactionApi.md#transactionprototypegetitems) | **GET** /Transactions/{id}/items | Queries items of Transaction.
-*TransactionApi* | [**transactionPrototypePatchAttributes**](docs/Api/TransactionApi.md#transactionprototypepatchattributes) | **PATCH** /Transactions/{id} | Patch attributes for a model instance and persist it into the data source.
-*TransactionApi* | [**transactionPrototypeUpdateByIdItems**](docs/Api/TransactionApi.md#transactionprototypeupdatebyiditems) | **PUT** /Transactions/{id}/items/{fk} | Update a related item by id for items.
-*TransactionApi* | [**transactionReplaceByIdPostTransactionsidReplace**](docs/Api/TransactionApi.md#transactionreplacebyidposttransactionsidreplace) | **POST** /Transactions/{id}/replace | Replace attributes for a model instance and persist it into the data source.
-*TransactionApi* | [**transactionReplaceByIdPutTransactionsid**](docs/Api/TransactionApi.md#transactionreplacebyidputtransactionsid) | **PUT** /Transactions/{id} | Replace attributes for a model instance and persist it into the data source.
-*TransactionApi* | [**transactionReplaceOrCreatePostTransactionsReplaceOrCreate**](docs/Api/TransactionApi.md#transactionreplaceorcreateposttransactionsreplaceorcreate) | **POST** /Transactions/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
-*TransactionApi* | [**transactionReplaceOrCreatePutTransactions**](docs/Api/TransactionApi.md#transactionreplaceorcreateputtransactions) | **PUT** /Transactions | Replace an existing model instance or insert a new one into the data source.
-*TransactionApi* | [**transactionUpdateAll**](docs/Api/TransactionApi.md#transactionupdateall) | **POST** /Transactions/update | Update instances of the model matched by {{where}} from the data source.
-*TransactionApi* | [**transactionUpsertWithWhere**](docs/Api/TransactionApi.md#transactionupsertwithwhere) | **POST** /Transactions/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*SubscriptionApi* | [**subscriptionCount**](docs/Api/SubscriptionApi.md#subscriptioncount) | **GET** /Subscriptions/count | Count instances of the model matched by where from the data source.
+*SubscriptionApi* | [**subscriptionCreate**](docs/Api/SubscriptionApi.md#subscriptioncreate) | **POST** /Subscriptions | Create a new instance of the model and persist it into the data source.
+*SubscriptionApi* | [**subscriptionCreateChangeStreamGetSubscriptionsChangeStream**](docs/Api/SubscriptionApi.md#subscriptioncreatechangestreamgetsubscriptionschangestream) | **GET** /Subscriptions/change-stream | Create a change stream.
+*SubscriptionApi* | [**subscriptionCreateChangeStreamPostSubscriptionsChangeStream**](docs/Api/SubscriptionApi.md#subscriptioncreatechangestreampostsubscriptionschangestream) | **POST** /Subscriptions/change-stream | Create a change stream.
+*SubscriptionApi* | [**subscriptionDeleteById**](docs/Api/SubscriptionApi.md#subscriptiondeletebyid) | **DELETE** /Subscriptions/{id} | Delete a model instance by {{id}} from the data source.
+*SubscriptionApi* | [**subscriptionExistsGetSubscriptionsidExists**](docs/Api/SubscriptionApi.md#subscriptionexistsgetsubscriptionsidexists) | **GET** /Subscriptions/{id}/exists | Check whether a model instance exists in the data source.
+*SubscriptionApi* | [**subscriptionExistsHeadSubscriptionsid**](docs/Api/SubscriptionApi.md#subscriptionexistsheadsubscriptionsid) | **HEAD** /Subscriptions/{id} | Check whether a model instance exists in the data source.
+*SubscriptionApi* | [**subscriptionFind**](docs/Api/SubscriptionApi.md#subscriptionfind) | **GET** /Subscriptions | Find all instances of the model matched by filter from the data source.
+*SubscriptionApi* | [**subscriptionFindById**](docs/Api/SubscriptionApi.md#subscriptionfindbyid) | **GET** /Subscriptions/{id} | Find a model instance by {{id}} from the data source.
+*SubscriptionApi* | [**subscriptionFindOne**](docs/Api/SubscriptionApi.md#subscriptionfindone) | **GET** /Subscriptions/findOne | Find first instance of the model matched by filter from the data source.
+*SubscriptionApi* | [**subscriptionPatchOrCreate**](docs/Api/SubscriptionApi.md#subscriptionpatchorcreate) | **PATCH** /Subscriptions | Patch an existing model instance or insert a new one into the data source.
+*SubscriptionApi* | [**subscriptionPrototypeCountOrders**](docs/Api/SubscriptionApi.md#subscriptionprototypecountorders) | **GET** /Subscriptions/{id}/orders/count | Counts orders of Subscription.
+*SubscriptionApi* | [**subscriptionPrototypeCountSites**](docs/Api/SubscriptionApi.md#subscriptionprototypecountsites) | **GET** /Subscriptions/{id}/sites/count | Counts sites of Subscription.
+*SubscriptionApi* | [**subscriptionPrototypeCreateOrders**](docs/Api/SubscriptionApi.md#subscriptionprototypecreateorders) | **POST** /Subscriptions/{id}/orders | Creates a new instance in orders of this model.
+*SubscriptionApi* | [**subscriptionPrototypeCreateProduct**](docs/Api/SubscriptionApi.md#subscriptionprototypecreateproduct) | **POST** /Subscriptions/{id}/product | Creates a new instance in product of this model.
+*SubscriptionApi* | [**subscriptionPrototypeCreateSites**](docs/Api/SubscriptionApi.md#subscriptionprototypecreatesites) | **POST** /Subscriptions/{id}/sites | Creates a new instance in sites of this model.
+*SubscriptionApi* | [**subscriptionPrototypeCreateSubscriber**](docs/Api/SubscriptionApi.md#subscriptionprototypecreatesubscriber) | **POST** /Subscriptions/{id}/subscriber | Creates a new instance in subscriber of this model.
+*SubscriptionApi* | [**subscriptionPrototypeDeleteOrders**](docs/Api/SubscriptionApi.md#subscriptionprototypedeleteorders) | **DELETE** /Subscriptions/{id}/orders | Deletes all orders of this model.
+*SubscriptionApi* | [**subscriptionPrototypeDeleteSites**](docs/Api/SubscriptionApi.md#subscriptionprototypedeletesites) | **DELETE** /Subscriptions/{id}/sites | Deletes all sites of this model.
+*SubscriptionApi* | [**subscriptionPrototypeDestroyByIdOrders**](docs/Api/SubscriptionApi.md#subscriptionprototypedestroybyidorders) | **DELETE** /Subscriptions/{id}/orders/{fk} | Delete a related item by id for orders.
+*SubscriptionApi* | [**subscriptionPrototypeDestroyByIdSites**](docs/Api/SubscriptionApi.md#subscriptionprototypedestroybyidsites) | **DELETE** /Subscriptions/{id}/sites/{fk} | Delete a related item by id for sites.
+*SubscriptionApi* | [**subscriptionPrototypeDestroyProduct**](docs/Api/SubscriptionApi.md#subscriptionprototypedestroyproduct) | **DELETE** /Subscriptions/{id}/product | Deletes product of this model.
+*SubscriptionApi* | [**subscriptionPrototypeDestroySubscriber**](docs/Api/SubscriptionApi.md#subscriptionprototypedestroysubscriber) | **DELETE** /Subscriptions/{id}/subscriber | Deletes subscriber of this model.
+*SubscriptionApi* | [**subscriptionPrototypeExistsOrders**](docs/Api/SubscriptionApi.md#subscriptionprototypeexistsorders) | **HEAD** /Subscriptions/{id}/orders/rel/{fk} | Check the existence of orders relation to an item by id.
+*SubscriptionApi* | [**subscriptionPrototypeExistsSites**](docs/Api/SubscriptionApi.md#subscriptionprototypeexistssites) | **HEAD** /Subscriptions/{id}/sites/rel/{fk} | Check the existence of sites relation to an item by id.
+*SubscriptionApi* | [**subscriptionPrototypeFindByIdOrders**](docs/Api/SubscriptionApi.md#subscriptionprototypefindbyidorders) | **GET** /Subscriptions/{id}/orders/{fk} | Find a related item by id for orders.
+*SubscriptionApi* | [**subscriptionPrototypeFindByIdSites**](docs/Api/SubscriptionApi.md#subscriptionprototypefindbyidsites) | **GET** /Subscriptions/{id}/sites/{fk} | Find a related item by id for sites.
+*SubscriptionApi* | [**subscriptionPrototypeGetOrders**](docs/Api/SubscriptionApi.md#subscriptionprototypegetorders) | **GET** /Subscriptions/{id}/orders | Queries orders of Subscription.
+*SubscriptionApi* | [**subscriptionPrototypeGetProduct**](docs/Api/SubscriptionApi.md#subscriptionprototypegetproduct) | **GET** /Subscriptions/{id}/product | Fetches hasOne relation product.
+*SubscriptionApi* | [**subscriptionPrototypeGetSites**](docs/Api/SubscriptionApi.md#subscriptionprototypegetsites) | **GET** /Subscriptions/{id}/sites | Queries sites of Subscription.
+*SubscriptionApi* | [**subscriptionPrototypeGetSubscriber**](docs/Api/SubscriptionApi.md#subscriptionprototypegetsubscriber) | **GET** /Subscriptions/{id}/subscriber | Fetches hasOne relation subscriber.
+*SubscriptionApi* | [**subscriptionPrototypeLinkOrders**](docs/Api/SubscriptionApi.md#subscriptionprototypelinkorders) | **PUT** /Subscriptions/{id}/orders/rel/{fk} | Add a related item by id for orders.
+*SubscriptionApi* | [**subscriptionPrototypeLinkSites**](docs/Api/SubscriptionApi.md#subscriptionprototypelinksites) | **PUT** /Subscriptions/{id}/sites/rel/{fk} | Add a related item by id for sites.
+*SubscriptionApi* | [**subscriptionPrototypePatchAttributes**](docs/Api/SubscriptionApi.md#subscriptionprototypepatchattributes) | **PATCH** /Subscriptions/{id} | Patch attributes for a model instance and persist it into the data source.
+*SubscriptionApi* | [**subscriptionPrototypeUnlinkOrders**](docs/Api/SubscriptionApi.md#subscriptionprototypeunlinkorders) | **DELETE** /Subscriptions/{id}/orders/rel/{fk} | Remove the orders relation to an item by id.
+*SubscriptionApi* | [**subscriptionPrototypeUnlinkSites**](docs/Api/SubscriptionApi.md#subscriptionprototypeunlinksites) | **DELETE** /Subscriptions/{id}/sites/rel/{fk} | Remove the sites relation to an item by id.
+*SubscriptionApi* | [**subscriptionPrototypeUpdateByIdOrders**](docs/Api/SubscriptionApi.md#subscriptionprototypeupdatebyidorders) | **PUT** /Subscriptions/{id}/orders/{fk} | Update a related item by id for orders.
+*SubscriptionApi* | [**subscriptionPrototypeUpdateByIdSites**](docs/Api/SubscriptionApi.md#subscriptionprototypeupdatebyidsites) | **PUT** /Subscriptions/{id}/sites/{fk} | Update a related item by id for sites.
+*SubscriptionApi* | [**subscriptionPrototypeUpdateProduct**](docs/Api/SubscriptionApi.md#subscriptionprototypeupdateproduct) | **PUT** /Subscriptions/{id}/product | Update product of this model.
+*SubscriptionApi* | [**subscriptionPrototypeUpdateSubscriber**](docs/Api/SubscriptionApi.md#subscriptionprototypeupdatesubscriber) | **PUT** /Subscriptions/{id}/subscriber | Update subscriber of this model.
+*SubscriptionApi* | [**subscriptionReplaceByIdPostSubscriptionsidReplace**](docs/Api/SubscriptionApi.md#subscriptionreplacebyidpostsubscriptionsidreplace) | **POST** /Subscriptions/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*SubscriptionApi* | [**subscriptionReplaceByIdPutSubscriptionsid**](docs/Api/SubscriptionApi.md#subscriptionreplacebyidputsubscriptionsid) | **PUT** /Subscriptions/{id} | Replace attributes for a model instance and persist it into the data source.
+*SubscriptionApi* | [**subscriptionReplaceOrCreatePostSubscriptionsReplaceOrCreate**](docs/Api/SubscriptionApi.md#subscriptionreplaceorcreatepostsubscriptionsreplaceorcreate) | **POST** /Subscriptions/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*SubscriptionApi* | [**subscriptionReplaceOrCreatePutSubscriptions**](docs/Api/SubscriptionApi.md#subscriptionreplaceorcreateputsubscriptions) | **PUT** /Subscriptions | Replace an existing model instance or insert a new one into the data source.
+*SubscriptionApi* | [**subscriptionUpdateAll**](docs/Api/SubscriptionApi.md#subscriptionupdateall) | **POST** /Subscriptions/update | Update instances of the model matched by {{where}} from the data source.
+*SubscriptionApi* | [**subscriptionUpsertWithWhere**](docs/Api/SubscriptionApi.md#subscriptionupsertwithwhere) | **POST** /Subscriptions/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
 
 ## Documentation For Models
@@ -235,8 +335,12 @@ Class | Method | HTTP request | Description
  - [InlineResponse2003](docs/Model/InlineResponse2003.md)
  - [LineItem](docs/Model/LineItem.md)
  - [MyYoastUser](docs/Model/MyYoastUser.md)
+ - [Order](docs/Model/Order.md)
+ - [Product](docs/Model/Product.md)
  - [Site](docs/Model/Site.md)
- - [Transaction](docs/Model/Transaction.md)
+ - [SiteSubscriptions](docs/Model/SiteSubscriptions.md)
+ - [Subscription](docs/Model/Subscription.md)
+ - [SubscriptionOrders](docs/Model/SubscriptionOrders.md)
  - [UserCredential](docs/Model/UserCredential.md)
  - [UserIdentity](docs/Model/UserIdentity.md)
 

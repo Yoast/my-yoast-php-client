@@ -1,13 +1,15 @@
-# MyYoastUser
+# Product
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**realm** | **string** |  | [optional] 
-**username** | **string** |  | [optional] 
-**email** | **string** |  | 
-**email_verified** | **bool** |  | [optional] 
-**id** | **double** |  | [optional] 
+**id** | **string** |  | 
+**name** | **string** |  | 
+**description** | **string** |  | [optional] 
+**store_url** | **string** |  | 
+**download_url** | **string** |  | [optional] 
+**is_download_only** | **bool** |  | [default to false]
+**icon** | **string** |  | [optional] 
 **subscription_id** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

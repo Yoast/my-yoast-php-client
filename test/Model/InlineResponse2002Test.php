@@ -33,7 +33,7 @@ namespace Yoast\MyYoastApiClient;
  * InlineResponse2002Test Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse2002
+// * @description Information related to the outcome of the operation
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team

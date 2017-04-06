@@ -94,7 +94,7 @@ class LineItemApi
      *
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
     public function lineItemCount($where = null)
     {
@@ -109,7 +109,7 @@ class LineItemApi
      *
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
     public function lineItemCountWithHttpInfo($where = null)
     {
@@ -147,15 +147,15 @@ class LineItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
                 '/LineItems/count'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -488,7 +488,7 @@ class LineItemApi
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
     public function lineItemExistsGetLineItemsidExists($id)
     {
@@ -503,7 +503,7 @@ class LineItemApi
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function lineItemExistsGetLineItemsidExistsWithHttpInfo($id)
     {
@@ -549,15 +549,15 @@ class LineItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
                 '/LineItems/{id}/exists'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -573,7 +573,7 @@ class LineItemApi
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
     public function lineItemExistsHeadLineItemsid($id)
     {
@@ -588,7 +588,7 @@ class LineItemApi
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function lineItemExistsHeadLineItemsidWithHttpInfo($id)
     {
@@ -634,15 +634,15 @@ class LineItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
                 '/LineItems/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -982,7 +982,7 @@ class LineItemApi
      * @param string $id LineItem id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
     public function lineItemPrototypeCountDiscounts($id, $where = null)
     {
@@ -998,7 +998,7 @@ class LineItemApi
      * @param string $id LineItem id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
     public function lineItemPrototypeCountDiscountsWithHttpInfo($id, $where = null)
     {
@@ -1048,15 +1048,15 @@ class LineItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
                 '/LineItems/{id}/discounts/count'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1524,39 +1524,39 @@ class LineItemApi
     }
 
     /**
-     * Operation lineItemPrototypeGetTransaction
+     * Operation lineItemPrototypeGetOrder
      *
-     * Fetches belongsTo relation transaction.
+     * Fetches belongsTo relation order.
      *
      * @param string $id LineItem id (required)
      * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function lineItemPrototypeGetTransaction($id, $refresh = null)
+    public function lineItemPrototypeGetOrder($id, $refresh = null)
     {
-        list($response) = $this->lineItemPrototypeGetTransactionWithHttpInfo($id, $refresh);
+        list($response) = $this->lineItemPrototypeGetOrderWithHttpInfo($id, $refresh);
         return $response;
     }
 
     /**
-     * Operation lineItemPrototypeGetTransactionWithHttpInfo
+     * Operation lineItemPrototypeGetOrderWithHttpInfo
      *
-     * Fetches belongsTo relation transaction.
+     * Fetches belongsTo relation order.
      *
      * @param string $id LineItem id (required)
      * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lineItemPrototypeGetTransactionWithHttpInfo($id, $refresh = null)
+    public function lineItemPrototypeGetOrderWithHttpInfo($id, $refresh = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeGetTransaction');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeGetOrder');
         }
         // parse inputs
-        $resourcePath = "/LineItems/{id}/transaction";
+        $resourcePath = "/LineItems/{id}/order";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1597,15 +1597,106 @@ class LineItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction',
-                '/LineItems/{id}/transaction'
+                '\Yoast\MyYoastApiClient\Model\Order',
+                '/LineItems/{id}/order'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Order', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Order', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation lineItemPrototypeGetProduct
+     *
+     * Fetches belongsTo relation product.
+     *
+     * @param string $id LineItem id (required)
+     * @param bool $refresh  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Product
+     */
+    public function lineItemPrototypeGetProduct($id, $refresh = null)
+    {
+        list($response) = $this->lineItemPrototypeGetProductWithHttpInfo($id, $refresh);
+        return $response;
+    }
+
+    /**
+     * Operation lineItemPrototypeGetProductWithHttpInfo
+     *
+     * Fetches belongsTo relation product.
+     *
+     * @param string $id LineItem id (required)
+     * @param bool $refresh  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function lineItemPrototypeGetProductWithHttpInfo($id, $refresh = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeGetProduct');
+        }
+        // parse inputs
+        $resourcePath = "/LineItems/{id}/product";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($refresh !== null) {
+            $queryParams['refresh'] = $this->apiClient->getSerializer()->toQueryValue($refresh);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/LineItems/{id}/product'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2160,7 +2251,7 @@ class LineItemApi
      * @param string $where Criteria to match model instances (optional)
      * @param \Yoast\MyYoastApiClient\Model\LineItem $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
      */
     public function lineItemUpdateAll($where = null, $data = null)
     {
@@ -2176,7 +2267,7 @@ class LineItemApi
      * @param string $where Criteria to match model instances (optional)
      * @param \Yoast\MyYoastApiClient\Model\LineItem $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
     public function lineItemUpdateAllWithHttpInfo($where = null, $data = null)
     {
@@ -2219,15 +2310,15 @@ class LineItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
                 '/LineItems/update'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

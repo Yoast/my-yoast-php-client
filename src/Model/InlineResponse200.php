@@ -54,7 +54,7 @@ class InlineResponse200 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'exists' => 'bool'
+        'count' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class InlineResponse200 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'exists' => 'exists'
+        'count' => 'count'
     ];
 
 
@@ -76,7 +76,7 @@ class InlineResponse200 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'exists' => 'setExists'
+        'count' => 'setCount'
     ];
 
 
@@ -85,7 +85,7 @@ class InlineResponse200 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'exists' => 'getExists'
+        'count' => 'getCount'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class InlineResponse200 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['exists'] = isset($data['exists']) ? $data['exists'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
     }
 
     /**
@@ -148,22 +148,22 @@ class InlineResponse200 implements ArrayAccess
 
 
     /**
-     * Gets exists
-     * @return bool
+     * Gets count
+     * @return double
      */
-    public function getExists()
+    public function getCount()
     {
-        return $this->container['exists'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets exists
-     * @param bool $exists
+     * Sets count
+     * @param double $count
      * @return $this
      */
-    public function setExists($exists)
+    public function setCount($count)
     {
-        $this->container['exists'] = $exists;
+        $this->container['count'] = $count;
 
         return $this;
     }

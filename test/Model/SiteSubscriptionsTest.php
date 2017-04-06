@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionTest
+ * SiteSubscriptionsTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * TransactionTest Class Doc Comment
+ * SiteSubscriptionsTest Class Doc Comment
  *
  * @category    Class */
-// * @description Transaction
+// * @description SiteSubscriptions
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class TransactionTest extends \PHPUnit_Framework_TestCase
+class SiteSubscriptionsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -75,9 +75,25 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Transaction"
+     * Test "SiteSubscriptions"
      */
-    public function testTransaction()
+    public function testSiteSubscriptions()
+    {
+
+    }
+
+    /**
+     * Test attribute "site_id"
+     */
+    public function testPropertySiteId()
+    {
+
+    }
+
+    /**
+     * Test attribute "subscription_id"
+     */
+    public function testPropertySubscriptionId()
     {
 
     }
@@ -86,86 +102,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      * Test attribute "id"
      */
     public function testPropertyId()
-    {
-
-    }
-
-    /**
-     * Test attribute "total_amount"
-     */
-    public function testPropertyTotalAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "date"
-     */
-    public function testPropertyDate()
-    {
-
-    }
-
-    /**
-     * Test attribute "vat_number"
-     */
-    public function testPropertyVatNumber()
-    {
-
-    }
-
-    /**
-     * Test attribute "customer_id"
-     */
-    public function testPropertyCustomerId()
-    {
-
-    }
-
-    /**
-     * Test attribute "country_of_origin"
-     */
-    public function testPropertyCountryOfOrigin()
-    {
-
-    }
-
-    /**
-     * Test attribute "payment_provider"
-     */
-    public function testPropertyPaymentProvider()
-    {
-
-    }
-
-    /**
-     * Test attribute "payment_gateway"
-     */
-    public function testPropertyPaymentGateway()
-    {
-
-    }
-
-    /**
-     * Test attribute "payment_reference"
-     */
-    public function testPropertyPaymentReference()
-    {
-
-    }
-
-    /**
-     * Test attribute "vat_total"
-     */
-    public function testPropertyVatTotal()
-    {
-
-    }
-
-    /**
-     * Test attribute "gl_number"
-     */
-    public function testPropertyGlNumber()
     {
 
     }

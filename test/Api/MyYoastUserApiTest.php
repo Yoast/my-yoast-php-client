@@ -275,6 +275,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserPrototypeCountOrders
+     *
+     * Counts orders of MyYoastUser..
+     *
+     */
+    public function testMyYoastUserPrototypeCountOrders()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserPrototypeCountSites
      *
      * Counts sites of MyYoastUser..
@@ -286,12 +297,12 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for myYoastUserPrototypeCountTransactions
+     * Test case for myYoastUserPrototypeCountSubscriptions
      *
-     * Counts transactions of MyYoastUser..
+     * Counts subscriptions of MyYoastUser..
      *
      */
-    public function testMyYoastUserPrototypeCountTransactions()
+    public function testMyYoastUserPrototypeCountSubscriptions()
     {
 
     }
@@ -330,6 +341,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserPrototypeCreateOrders
+     *
+     * Creates a new instance in orders of this model..
+     *
+     */
+    public function testMyYoastUserPrototypeCreateOrders()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserPrototypeCreateSites
      *
      * Creates a new instance in sites of this model..
@@ -341,12 +363,12 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for myYoastUserPrototypeCreateTransactions
+     * Test case for myYoastUserPrototypeCreateSubscriptions
      *
-     * Creates a new instance in transactions of this model..
+     * Creates a new instance in subscriptions of this model..
      *
      */
-    public function testMyYoastUserPrototypeCreateTransactions()
+    public function testMyYoastUserPrototypeCreateSubscriptions()
     {
 
     }
@@ -385,6 +407,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserPrototypeDeleteOrders
+     *
+     * Deletes all orders of this model..
+     *
+     */
+    public function testMyYoastUserPrototypeDeleteOrders()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserPrototypeDeleteSites
      *
      * Deletes all sites of this model..
@@ -396,12 +429,12 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for myYoastUserPrototypeDeleteTransactions
+     * Test case for myYoastUserPrototypeDeleteSubscriptions
      *
-     * Deletes all transactions of this model..
+     * Deletes all subscriptions of this model..
      *
      */
-    public function testMyYoastUserPrototypeDeleteTransactions()
+    public function testMyYoastUserPrototypeDeleteSubscriptions()
     {
 
     }
@@ -440,6 +473,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserPrototypeDestroyByIdOrders
+     *
+     * Delete a related item by id for orders..
+     *
+     */
+    public function testMyYoastUserPrototypeDestroyByIdOrders()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserPrototypeDestroyByIdSites
      *
      * Delete a related item by id for sites..
@@ -451,12 +495,12 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for myYoastUserPrototypeDestroyByIdTransactions
+     * Test case for myYoastUserPrototypeDestroyByIdSubscriptions
      *
-     * Delete a related item by id for transactions..
+     * Delete a related item by id for subscriptions..
      *
      */
-    public function testMyYoastUserPrototypeDestroyByIdTransactions()
+    public function testMyYoastUserPrototypeDestroyByIdSubscriptions()
     {
 
     }
@@ -495,6 +539,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserPrototypeFindByIdOrders
+     *
+     * Find a related item by id for orders..
+     *
+     */
+    public function testMyYoastUserPrototypeFindByIdOrders()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserPrototypeFindByIdSites
      *
      * Find a related item by id for sites..
@@ -506,12 +561,12 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for myYoastUserPrototypeFindByIdTransactions
+     * Test case for myYoastUserPrototypeFindByIdSubscriptions
      *
-     * Find a related item by id for transactions..
+     * Find a related item by id for subscriptions..
      *
      */
-    public function testMyYoastUserPrototypeFindByIdTransactions()
+    public function testMyYoastUserPrototypeFindByIdSubscriptions()
     {
 
     }
@@ -550,6 +605,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserPrototypeGetOrders
+     *
+     * Queries orders of MyYoastUser..
+     *
+     */
+    public function testMyYoastUserPrototypeGetOrders()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserPrototypeGetSites
      *
      * Queries sites of MyYoastUser..
@@ -561,12 +627,12 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for myYoastUserPrototypeGetTransactions
+     * Test case for myYoastUserPrototypeGetSubscriptions
      *
-     * Queries transactions of MyYoastUser..
+     * Queries subscriptions of MyYoastUser..
      *
      */
-    public function testMyYoastUserPrototypeGetTransactions()
+    public function testMyYoastUserPrototypeGetSubscriptions()
     {
 
     }
@@ -616,6 +682,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserPrototypeUpdateByIdOrders
+     *
+     * Update a related item by id for orders..
+     *
+     */
+    public function testMyYoastUserPrototypeUpdateByIdOrders()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserPrototypeUpdateByIdSites
      *
      * Update a related item by id for sites..
@@ -627,12 +704,12 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for myYoastUserPrototypeUpdateByIdTransactions
+     * Test case for myYoastUserPrototypeUpdateByIdSubscriptions
      *
-     * Update a related item by id for transactions..
+     * Update a related item by id for subscriptions..
      *
      */
-    public function testMyYoastUserPrototypeUpdateByIdTransactions()
+    public function testMyYoastUserPrototypeUpdateByIdSubscriptions()
     {
 
     }

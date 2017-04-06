@@ -1,6 +1,6 @@
 <?php
 /**
- * MyYoastUserTest
+ * SubscriptionTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * MyYoastUserTest Class Doc Comment
+ * SubscriptionTest Class Doc Comment
  *
  * @category    Class */
-// * @description MyYoastUser
+// * @description Subscription
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MyYoastUserTest extends \PHPUnit_Framework_TestCase
+class SubscriptionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -75,41 +75,9 @@ class MyYoastUserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "MyYoastUser"
+     * Test "Subscription"
      */
-    public function testMyYoastUser()
-    {
-
-    }
-
-    /**
-     * Test attribute "realm"
-     */
-    public function testPropertyRealm()
-    {
-
-    }
-
-    /**
-     * Test attribute "username"
-     */
-    public function testPropertyUsername()
-    {
-
-    }
-
-    /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
-    {
-
-    }
-
-    /**
-     * Test attribute "email_verified"
-     */
-    public function testPropertyEmailVerified()
+    public function testSubscription()
     {
 
     }
@@ -123,9 +91,41 @@ class MyYoastUserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "subscription_id"
+     * Test attribute "product_id"
      */
-    public function testPropertySubscriptionId()
+    public function testPropertyProductId()
+    {
+
+    }
+
+    /**
+     * Test attribute "start_date"
+     */
+    public function testPropertyStartDate()
+    {
+
+    }
+
+    /**
+     * Test attribute "end_date"
+     */
+    public function testPropertyEndDate()
+    {
+
+    }
+
+    /**
+     * Test attribute "reoccurring"
+     */
+    public function testPropertyReoccurring()
+    {
+
+    }
+
+    /**
+     * Test attribute "my_yoast_user_id"
+     */
+    public function testPropertyMyYoastUserId()
     {
 
     }

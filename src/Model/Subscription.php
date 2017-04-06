@@ -1,6 +1,6 @@
 <?php
 /**
- * LineItem
+ * Subscription
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * LineItem Class Doc Comment
+ * Subscription Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LineItem implements ArrayAccess
+class Subscription implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class LineItem implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'LineItem';
+    protected static $swaggerModelName = 'Subscription';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,12 +55,11 @@ class LineItem implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'order_id' => 'string',
-        'price' => 'double',
-        'vat_amount' => 'double',
-        'vat_scale_id' => 'string',
         'product_id' => 'string',
-        'product_name' => 'string'
+        'start_date' => '\DateTime',
+        'end_date' => '\DateTime',
+        'reoccurring' => 'bool',
+        'my_yoast_user_id' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -74,12 +73,11 @@ class LineItem implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'order_id' => 'orderId',
-        'price' => 'price',
-        'vat_amount' => 'vatAmount',
-        'vat_scale_id' => 'vatScaleId',
         'product_id' => 'productId',
-        'product_name' => 'productName'
+        'start_date' => 'startDate',
+        'end_date' => 'endDate',
+        'reoccurring' => 'reoccurring',
+        'my_yoast_user_id' => 'myYoastUserId'
     ];
 
 
@@ -89,12 +87,11 @@ class LineItem implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'order_id' => 'setOrderId',
-        'price' => 'setPrice',
-        'vat_amount' => 'setVatAmount',
-        'vat_scale_id' => 'setVatScaleId',
         'product_id' => 'setProductId',
-        'product_name' => 'setProductName'
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate',
+        'reoccurring' => 'setReoccurring',
+        'my_yoast_user_id' => 'setMyYoastUserId'
     ];
 
 
@@ -104,12 +101,11 @@ class LineItem implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'order_id' => 'getOrderId',
-        'price' => 'getPrice',
-        'vat_amount' => 'getVatAmount',
-        'vat_scale_id' => 'getVatScaleId',
         'product_id' => 'getProductId',
-        'product_name' => 'getProductName'
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate',
+        'reoccurring' => 'getReoccurring',
+        'my_yoast_user_id' => 'getMyYoastUserId'
     ];
 
     public static function attributeMap()
@@ -144,12 +140,11 @@ class LineItem implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['vat_amount'] = isset($data['vat_amount']) ? $data['vat_amount'] : 0.0;
-        $this->container['vat_scale_id'] = isset($data['vat_scale_id']) ? $data['vat_scale_id'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
-        $this->container['product_name'] = isset($data['product_name']) ? $data['product_name'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['reoccurring'] = isset($data['reoccurring']) ? $data['reoccurring'] : true;
+        $this->container['my_yoast_user_id'] = isset($data['my_yoast_user_id']) ? $data['my_yoast_user_id'] : null;
     }
 
     /**
@@ -164,20 +159,17 @@ class LineItem implements ArrayAccess
         if ($this->container['id'] === null) {
             $invalid_properties[] = "'id' can't be null";
         }
-        if ($this->container['order_id'] === null) {
-            $invalid_properties[] = "'order_id' can't be null";
-        }
-        if ($this->container['price'] === null) {
-            $invalid_properties[] = "'price' can't be null";
-        }
-        if ($this->container['vat_amount'] === null) {
-            $invalid_properties[] = "'vat_amount' can't be null";
-        }
         if ($this->container['product_id'] === null) {
             $invalid_properties[] = "'product_id' can't be null";
         }
-        if ($this->container['product_name'] === null) {
-            $invalid_properties[] = "'product_name' can't be null";
+        if ($this->container['start_date'] === null) {
+            $invalid_properties[] = "'start_date' can't be null";
+        }
+        if ($this->container['end_date'] === null) {
+            $invalid_properties[] = "'end_date' can't be null";
+        }
+        if ($this->container['reoccurring'] === null) {
+            $invalid_properties[] = "'reoccurring' can't be null";
         }
         return $invalid_properties;
     }
@@ -194,19 +186,16 @@ class LineItem implements ArrayAccess
         if ($this->container['id'] === null) {
             return false;
         }
-        if ($this->container['order_id'] === null) {
-            return false;
-        }
-        if ($this->container['price'] === null) {
-            return false;
-        }
-        if ($this->container['vat_amount'] === null) {
-            return false;
-        }
         if ($this->container['product_id'] === null) {
             return false;
         }
-        if ($this->container['product_name'] === null) {
+        if ($this->container['start_date'] === null) {
+            return false;
+        }
+        if ($this->container['end_date'] === null) {
+            return false;
+        }
+        if ($this->container['reoccurring'] === null) {
             return false;
         }
         return true;
@@ -235,90 +224,6 @@ class LineItem implements ArrayAccess
     }
 
     /**
-     * Gets order_id
-     * @return string
-     */
-    public function getOrderId()
-    {
-        return $this->container['order_id'];
-    }
-
-    /**
-     * Sets order_id
-     * @param string $order_id
-     * @return $this
-     */
-    public function setOrderId($order_id)
-    {
-        $this->container['order_id'] = $order_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets price
-     * @return double
-     */
-    public function getPrice()
-    {
-        return $this->container['price'];
-    }
-
-    /**
-     * Sets price
-     * @param double $price
-     * @return $this
-     */
-    public function setPrice($price)
-    {
-        $this->container['price'] = $price;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat_amount
-     * @return double
-     */
-    public function getVatAmount()
-    {
-        return $this->container['vat_amount'];
-    }
-
-    /**
-     * Sets vat_amount
-     * @param double $vat_amount
-     * @return $this
-     */
-    public function setVatAmount($vat_amount)
-    {
-        $this->container['vat_amount'] = $vat_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat_scale_id
-     * @return string
-     */
-    public function getVatScaleId()
-    {
-        return $this->container['vat_scale_id'];
-    }
-
-    /**
-     * Sets vat_scale_id
-     * @param string $vat_scale_id
-     * @return $this
-     */
-    public function setVatScaleId($vat_scale_id)
-    {
-        $this->container['vat_scale_id'] = $vat_scale_id;
-
-        return $this;
-    }
-
-    /**
      * Gets product_id
      * @return string
      */
@@ -340,22 +245,85 @@ class LineItem implements ArrayAccess
     }
 
     /**
-     * Gets product_name
-     * @return string
+     * Gets start_date
+     * @return \DateTime
      */
-    public function getProductName()
+    public function getStartDate()
     {
-        return $this->container['product_name'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets product_name
-     * @param string $product_name
+     * Sets start_date
+     * @param \DateTime $start_date
      * @return $this
      */
-    public function setProductName($product_name)
+    public function setStartDate($start_date)
     {
-        $this->container['product_name'] = $product_name;
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_date
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     * @param \DateTime $end_date
+     * @return $this
+     */
+    public function setEndDate($end_date)
+    {
+        $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets reoccurring
+     * @return bool
+     */
+    public function getReoccurring()
+    {
+        return $this->container['reoccurring'];
+    }
+
+    /**
+     * Sets reoccurring
+     * @param bool $reoccurring
+     * @return $this
+     */
+    public function setReoccurring($reoccurring)
+    {
+        $this->container['reoccurring'] = $reoccurring;
+
+        return $this;
+    }
+
+    /**
+     * Gets my_yoast_user_id
+     * @return double
+     */
+    public function getMyYoastUserId()
+    {
+        return $this->container['my_yoast_user_id'];
+    }
+
+    /**
+     * Sets my_yoast_user_id
+     * @param double $my_yoast_user_id
+     * @return $this
+     */
+    public function setMyYoastUserId($my_yoast_user_id)
+    {
+        $this->container['my_yoast_user_id'] = $my_yoast_user_id;
 
         return $this;
     }

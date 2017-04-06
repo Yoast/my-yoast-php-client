@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionApiTest
+ * OrderApiTest
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Yoast\MyYoastApiClient\ApiException;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * TransactionApiTest Class Doc Comment
+ * OrderApiTest Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionApiTest extends \PHPUnit_Framework_TestCase
+class OrderApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -77,287 +77,331 @@ class TransactionApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for transactionCount
+     * Test case for orderCount
      *
      * Count instances of the model matched by where from the data source..
      *
      */
-    public function testTransactionCount()
+    public function testOrderCount()
     {
 
     }
 
     /**
-     * Test case for transactionCreate
+     * Test case for orderCreate
      *
      * Create a new instance of the model and persist it into the data source..
      *
      */
-    public function testTransactionCreate()
+    public function testOrderCreate()
     {
 
     }
 
     /**
-     * Test case for transactionCreateChangeStreamGetTransactionsChangeStream
+     * Test case for orderCreateChangeStreamGetOrdersChangeStream
      *
      * Create a change stream..
      *
      */
-    public function testTransactionCreateChangeStreamGetTransactionsChangeStream()
+    public function testOrderCreateChangeStreamGetOrdersChangeStream()
     {
 
     }
 
     /**
-     * Test case for transactionCreateChangeStreamPostTransactionsChangeStream
+     * Test case for orderCreateChangeStreamPostOrdersChangeStream
      *
      * Create a change stream..
      *
      */
-    public function testTransactionCreateChangeStreamPostTransactionsChangeStream()
+    public function testOrderCreateChangeStreamPostOrdersChangeStream()
     {
 
     }
 
     /**
-     * Test case for transactionDeleteById
+     * Test case for orderDeleteById
      *
      * Delete a model instance by {{id}} from the data source..
      *
      */
-    public function testTransactionDeleteById()
+    public function testOrderDeleteById()
     {
 
     }
 
     /**
-     * Test case for transactionExistsGetTransactionsidExists
+     * Test case for orderExistsGetOrdersidExists
      *
      * Check whether a model instance exists in the data source..
      *
      */
-    public function testTransactionExistsGetTransactionsidExists()
+    public function testOrderExistsGetOrdersidExists()
     {
 
     }
 
     /**
-     * Test case for transactionExistsHeadTransactionsid
+     * Test case for orderExistsHeadOrdersid
      *
      * Check whether a model instance exists in the data source..
      *
      */
-    public function testTransactionExistsHeadTransactionsid()
+    public function testOrderExistsHeadOrdersid()
     {
 
     }
 
     /**
-     * Test case for transactionFind
+     * Test case for orderFind
      *
      * Find all instances of the model matched by filter from the data source..
      *
      */
-    public function testTransactionFind()
+    public function testOrderFind()
     {
 
     }
 
     /**
-     * Test case for transactionFindById
+     * Test case for orderFindById
      *
      * Find a model instance by {{id}} from the data source..
      *
      */
-    public function testTransactionFindById()
+    public function testOrderFindById()
     {
 
     }
 
     /**
-     * Test case for transactionFindOne
+     * Test case for orderFindOne
      *
      * Find first instance of the model matched by filter from the data source..
      *
      */
-    public function testTransactionFindOne()
+    public function testOrderFindOne()
     {
 
     }
 
     /**
-     * Test case for transactionPatchOrCreate
+     * Test case for orderPatchOrCreate
      *
      * Patch an existing model instance or insert a new one into the data source..
      *
      */
-    public function testTransactionPatchOrCreate()
+    public function testOrderPatchOrCreate()
     {
 
     }
 
     /**
-     * Test case for transactionPrototypeCountItems
+     * Test case for orderPrototypeCountItems
      *
-     * Counts items of Transaction..
+     * Counts items of Order..
      *
      */
-    public function testTransactionPrototypeCountItems()
+    public function testOrderPrototypeCountItems()
     {
 
     }
 
     /**
-     * Test case for transactionPrototypeCreateItems
+     * Test case for orderPrototypeCreateItems
      *
      * Creates a new instance in items of this model..
      *
      */
-    public function testTransactionPrototypeCreateItems()
+    public function testOrderPrototypeCreateItems()
     {
 
     }
 
     /**
-     * Test case for transactionPrototypeDeleteItems
+     * Test case for orderPrototypeCreateSubscription
+     *
+     * Creates a new instance in subscription of this model..
+     *
+     */
+    public function testOrderPrototypeCreateSubscription()
+    {
+
+    }
+
+    /**
+     * Test case for orderPrototypeDeleteItems
      *
      * Deletes all items of this model..
      *
      */
-    public function testTransactionPrototypeDeleteItems()
+    public function testOrderPrototypeDeleteItems()
     {
 
     }
 
     /**
-     * Test case for transactionPrototypeDestroyByIdItems
+     * Test case for orderPrototypeDestroyByIdItems
      *
      * Delete a related item by id for items..
      *
      */
-    public function testTransactionPrototypeDestroyByIdItems()
+    public function testOrderPrototypeDestroyByIdItems()
     {
 
     }
 
     /**
-     * Test case for transactionPrototypeFindByIdItems
+     * Test case for orderPrototypeDestroySubscription
+     *
+     * Deletes subscription of this model..
+     *
+     */
+    public function testOrderPrototypeDestroySubscription()
+    {
+
+    }
+
+    /**
+     * Test case for orderPrototypeFindByIdItems
      *
      * Find a related item by id for items..
      *
      */
-    public function testTransactionPrototypeFindByIdItems()
+    public function testOrderPrototypeFindByIdItems()
     {
 
     }
 
     /**
-     * Test case for transactionPrototypeGetCustomer
+     * Test case for orderPrototypeGetCustomer
      *
      * Fetches belongsTo relation customer..
      *
      */
-    public function testTransactionPrototypeGetCustomer()
+    public function testOrderPrototypeGetCustomer()
     {
 
     }
 
     /**
-     * Test case for transactionPrototypeGetItems
+     * Test case for orderPrototypeGetItems
      *
-     * Queries items of Transaction..
+     * Queries items of Order..
      *
      */
-    public function testTransactionPrototypeGetItems()
+    public function testOrderPrototypeGetItems()
     {
 
     }
 
     /**
-     * Test case for transactionPrototypePatchAttributes
+     * Test case for orderPrototypeGetSubscription
+     *
+     * Fetches hasOne relation subscription..
+     *
+     */
+    public function testOrderPrototypeGetSubscription()
+    {
+
+    }
+
+    /**
+     * Test case for orderPrototypePatchAttributes
      *
      * Patch attributes for a model instance and persist it into the data source..
      *
      */
-    public function testTransactionPrototypePatchAttributes()
+    public function testOrderPrototypePatchAttributes()
     {
 
     }
 
     /**
-     * Test case for transactionPrototypeUpdateByIdItems
+     * Test case for orderPrototypeUpdateByIdItems
      *
      * Update a related item by id for items..
      *
      */
-    public function testTransactionPrototypeUpdateByIdItems()
+    public function testOrderPrototypeUpdateByIdItems()
     {
 
     }
 
     /**
-     * Test case for transactionReplaceByIdPostTransactionsidReplace
+     * Test case for orderPrototypeUpdateSubscription
+     *
+     * Update subscription of this model..
+     *
+     */
+    public function testOrderPrototypeUpdateSubscription()
+    {
+
+    }
+
+    /**
+     * Test case for orderReplaceByIdPostOrdersidReplace
      *
      * Replace attributes for a model instance and persist it into the data source..
      *
      */
-    public function testTransactionReplaceByIdPostTransactionsidReplace()
+    public function testOrderReplaceByIdPostOrdersidReplace()
     {
 
     }
 
     /**
-     * Test case for transactionReplaceByIdPutTransactionsid
+     * Test case for orderReplaceByIdPutOrdersid
      *
      * Replace attributes for a model instance and persist it into the data source..
      *
      */
-    public function testTransactionReplaceByIdPutTransactionsid()
+    public function testOrderReplaceByIdPutOrdersid()
     {
 
     }
 
     /**
-     * Test case for transactionReplaceOrCreatePostTransactionsReplaceOrCreate
+     * Test case for orderReplaceOrCreatePostOrdersReplaceOrCreate
      *
      * Replace an existing model instance or insert a new one into the data source..
      *
      */
-    public function testTransactionReplaceOrCreatePostTransactionsReplaceOrCreate()
+    public function testOrderReplaceOrCreatePostOrdersReplaceOrCreate()
     {
 
     }
 
     /**
-     * Test case for transactionReplaceOrCreatePutTransactions
+     * Test case for orderReplaceOrCreatePutOrders
      *
      * Replace an existing model instance or insert a new one into the data source..
      *
      */
-    public function testTransactionReplaceOrCreatePutTransactions()
+    public function testOrderReplaceOrCreatePutOrders()
     {
 
     }
 
     /**
-     * Test case for transactionUpdateAll
+     * Test case for orderUpdateAll
      *
      * Update instances of the model matched by {{where}} from the data source..
      *
      */
-    public function testTransactionUpdateAll()
+    public function testOrderUpdateAll()
     {
 
     }
 
     /**
-     * Test case for transactionUpsertWithWhere
+     * Test case for orderUpsertWithWhere
      *
      * Update an existing model instance or insert a new one into the data source based on the where criteria..
      *
      */
-    public function testTransactionUpsertWithWhere()
+    public function testOrderUpsertWithWhere()
     {
 
     }

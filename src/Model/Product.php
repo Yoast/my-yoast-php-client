@@ -1,6 +1,6 @@
 <?php
 /**
- * LineItem
+ * Product
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * LineItem Class Doc Comment
+ * Product Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LineItem implements ArrayAccess
+class Product implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class LineItem implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'LineItem';
+    protected static $swaggerModelName = 'Product';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,12 +55,13 @@ class LineItem implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'order_id' => 'string',
-        'price' => 'double',
-        'vat_amount' => 'double',
-        'vat_scale_id' => 'string',
-        'product_id' => 'string',
-        'product_name' => 'string'
+        'name' => 'string',
+        'description' => 'string',
+        'store_url' => 'string',
+        'download_url' => 'string',
+        'is_download_only' => 'bool',
+        'icon' => 'string',
+        'subscription_id' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -74,12 +75,13 @@ class LineItem implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'order_id' => 'orderId',
-        'price' => 'price',
-        'vat_amount' => 'vatAmount',
-        'vat_scale_id' => 'vatScaleId',
-        'product_id' => 'productId',
-        'product_name' => 'productName'
+        'name' => 'name',
+        'description' => 'description',
+        'store_url' => 'storeUrl',
+        'download_url' => 'downloadUrl',
+        'is_download_only' => 'isDownloadOnly',
+        'icon' => 'icon',
+        'subscription_id' => 'subscriptionId'
     ];
 
 
@@ -89,12 +91,13 @@ class LineItem implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'order_id' => 'setOrderId',
-        'price' => 'setPrice',
-        'vat_amount' => 'setVatAmount',
-        'vat_scale_id' => 'setVatScaleId',
-        'product_id' => 'setProductId',
-        'product_name' => 'setProductName'
+        'name' => 'setName',
+        'description' => 'setDescription',
+        'store_url' => 'setStoreUrl',
+        'download_url' => 'setDownloadUrl',
+        'is_download_only' => 'setIsDownloadOnly',
+        'icon' => 'setIcon',
+        'subscription_id' => 'setSubscriptionId'
     ];
 
 
@@ -104,12 +107,13 @@ class LineItem implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'order_id' => 'getOrderId',
-        'price' => 'getPrice',
-        'vat_amount' => 'getVatAmount',
-        'vat_scale_id' => 'getVatScaleId',
-        'product_id' => 'getProductId',
-        'product_name' => 'getProductName'
+        'name' => 'getName',
+        'description' => 'getDescription',
+        'store_url' => 'getStoreUrl',
+        'download_url' => 'getDownloadUrl',
+        'is_download_only' => 'getIsDownloadOnly',
+        'icon' => 'getIcon',
+        'subscription_id' => 'getSubscriptionId'
     ];
 
     public static function attributeMap()
@@ -144,12 +148,13 @@ class LineItem implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
-        $this->container['vat_amount'] = isset($data['vat_amount']) ? $data['vat_amount'] : 0.0;
-        $this->container['vat_scale_id'] = isset($data['vat_scale_id']) ? $data['vat_scale_id'] : null;
-        $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
-        $this->container['product_name'] = isset($data['product_name']) ? $data['product_name'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['store_url'] = isset($data['store_url']) ? $data['store_url'] : null;
+        $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
+        $this->container['is_download_only'] = isset($data['is_download_only']) ? $data['is_download_only'] : false;
+        $this->container['icon'] = isset($data['icon']) ? $data['icon'] : null;
+        $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
     }
 
     /**
@@ -164,20 +169,14 @@ class LineItem implements ArrayAccess
         if ($this->container['id'] === null) {
             $invalid_properties[] = "'id' can't be null";
         }
-        if ($this->container['order_id'] === null) {
-            $invalid_properties[] = "'order_id' can't be null";
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['price'] === null) {
-            $invalid_properties[] = "'price' can't be null";
+        if ($this->container['store_url'] === null) {
+            $invalid_properties[] = "'store_url' can't be null";
         }
-        if ($this->container['vat_amount'] === null) {
-            $invalid_properties[] = "'vat_amount' can't be null";
-        }
-        if ($this->container['product_id'] === null) {
-            $invalid_properties[] = "'product_id' can't be null";
-        }
-        if ($this->container['product_name'] === null) {
-            $invalid_properties[] = "'product_name' can't be null";
+        if ($this->container['is_download_only'] === null) {
+            $invalid_properties[] = "'is_download_only' can't be null";
         }
         return $invalid_properties;
     }
@@ -194,19 +193,13 @@ class LineItem implements ArrayAccess
         if ($this->container['id'] === null) {
             return false;
         }
-        if ($this->container['order_id'] === null) {
+        if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['price'] === null) {
+        if ($this->container['store_url'] === null) {
             return false;
         }
-        if ($this->container['vat_amount'] === null) {
-            return false;
-        }
-        if ($this->container['product_id'] === null) {
-            return false;
-        }
-        if ($this->container['product_name'] === null) {
+        if ($this->container['is_download_only'] === null) {
             return false;
         }
         return true;
@@ -235,127 +228,148 @@ class LineItem implements ArrayAccess
     }
 
     /**
-     * Gets order_id
+     * Gets name
      * @return string
      */
-    public function getOrderId()
+    public function getName()
     {
-        return $this->container['order_id'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets order_id
-     * @param string $order_id
+     * Sets name
+     * @param string $name
      * @return $this
      */
-    public function setOrderId($order_id)
+    public function setName($name)
     {
-        $this->container['order_id'] = $order_id;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets price
-     * @return double
-     */
-    public function getPrice()
-    {
-        return $this->container['price'];
-    }
-
-    /**
-     * Sets price
-     * @param double $price
-     * @return $this
-     */
-    public function setPrice($price)
-    {
-        $this->container['price'] = $price;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat_amount
-     * @return double
-     */
-    public function getVatAmount()
-    {
-        return $this->container['vat_amount'];
-    }
-
-    /**
-     * Sets vat_amount
-     * @param double $vat_amount
-     * @return $this
-     */
-    public function setVatAmount($vat_amount)
-    {
-        $this->container['vat_amount'] = $vat_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat_scale_id
+     * Gets description
      * @return string
      */
-    public function getVatScaleId()
+    public function getDescription()
     {
-        return $this->container['vat_scale_id'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets vat_scale_id
-     * @param string $vat_scale_id
+     * Sets description
+     * @param string $description
      * @return $this
      */
-    public function setVatScaleId($vat_scale_id)
+    public function setDescription($description)
     {
-        $this->container['vat_scale_id'] = $vat_scale_id;
+        $this->container['description'] = $description;
 
         return $this;
     }
 
     /**
-     * Gets product_id
+     * Gets store_url
      * @return string
      */
-    public function getProductId()
+    public function getStoreUrl()
     {
-        return $this->container['product_id'];
+        return $this->container['store_url'];
     }
 
     /**
-     * Sets product_id
-     * @param string $product_id
+     * Sets store_url
+     * @param string $store_url
      * @return $this
      */
-    public function setProductId($product_id)
+    public function setStoreUrl($store_url)
     {
-        $this->container['product_id'] = $product_id;
+        $this->container['store_url'] = $store_url;
 
         return $this;
     }
 
     /**
-     * Gets product_name
+     * Gets download_url
      * @return string
      */
-    public function getProductName()
+    public function getDownloadUrl()
     {
-        return $this->container['product_name'];
+        return $this->container['download_url'];
     }
 
     /**
-     * Sets product_name
-     * @param string $product_name
+     * Sets download_url
+     * @param string $download_url
      * @return $this
      */
-    public function setProductName($product_name)
+    public function setDownloadUrl($download_url)
     {
-        $this->container['product_name'] = $product_name;
+        $this->container['download_url'] = $download_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_download_only
+     * @return bool
+     */
+    public function getIsDownloadOnly()
+    {
+        return $this->container['is_download_only'];
+    }
+
+    /**
+     * Sets is_download_only
+     * @param bool $is_download_only
+     * @return $this
+     */
+    public function setIsDownloadOnly($is_download_only)
+    {
+        $this->container['is_download_only'] = $is_download_only;
+
+        return $this;
+    }
+
+    /**
+     * Gets icon
+     * @return string
+     */
+    public function getIcon()
+    {
+        return $this->container['icon'];
+    }
+
+    /**
+     * Sets icon
+     * @param string $icon
+     * @return $this
+     */
+    public function setIcon($icon)
+    {
+        $this->container['icon'] = $icon;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_id
+     * @return string
+     */
+    public function getSubscriptionId()
+    {
+        return $this->container['subscription_id'];
+    }
+
+    /**
+     * Sets subscription_id
+     * @param string $subscription_id
+     * @return $this
+     */
+    public function setSubscriptionId($subscription_id)
+    {
+        $this->container['subscription_id'] = $subscription_id;
 
         return $this;
     }

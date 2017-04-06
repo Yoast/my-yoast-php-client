@@ -58,7 +58,8 @@ class MyYoastUser implements ArrayAccess
         'username' => 'string',
         'email' => 'string',
         'email_verified' => 'bool',
-        'id' => 'double'
+        'id' => 'double',
+        'subscription_id' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -75,7 +76,8 @@ class MyYoastUser implements ArrayAccess
         'username' => 'username',
         'email' => 'email',
         'email_verified' => 'emailVerified',
-        'id' => 'id'
+        'id' => 'id',
+        'subscription_id' => 'subscriptionId'
     ];
 
 
@@ -88,7 +90,8 @@ class MyYoastUser implements ArrayAccess
         'username' => 'setUsername',
         'email' => 'setEmail',
         'email_verified' => 'setEmailVerified',
-        'id' => 'setId'
+        'id' => 'setId',
+        'subscription_id' => 'setSubscriptionId'
     ];
 
 
@@ -101,7 +104,8 @@ class MyYoastUser implements ArrayAccess
         'username' => 'getUsername',
         'email' => 'getEmail',
         'email_verified' => 'getEmailVerified',
-        'id' => 'getId'
+        'id' => 'getId',
+        'subscription_id' => 'getSubscriptionId'
     ];
 
     public static function attributeMap()
@@ -140,6 +144,7 @@ class MyYoastUser implements ArrayAccess
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['email_verified'] = isset($data['email_verified']) ? $data['email_verified'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
     }
 
     /**
@@ -274,6 +279,27 @@ class MyYoastUser implements ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_id
+     * @return string
+     */
+    public function getSubscriptionId()
+    {
+        return $this->container['subscription_id'];
+    }
+
+    /**
+     * Sets subscription_id
+     * @param string $subscription_id
+     * @return $this
+     */
+    public function setSubscriptionId($subscription_id)
+    {
+        $this->container['subscription_id'] = $subscription_id;
 
         return $this;
     }

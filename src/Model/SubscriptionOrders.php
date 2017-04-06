@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001
+ * SubscriptionOrders
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * InlineResponse2001 Class Doc Comment
+ * SubscriptionOrders Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2001 implements ArrayAccess
+class SubscriptionOrders implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,16 @@ class InlineResponse2001 implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_1';
+    protected static $swaggerModelName = 'SubscriptionOrders';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'exists' => 'bool'
+        'subscription_id' => 'string',
+        'order_id' => 'string',
+        'id' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +69,9 @@ class InlineResponse2001 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'exists' => 'exists'
+        'subscription_id' => 'subscriptionId',
+        'order_id' => 'orderId',
+        'id' => 'id'
     ];
 
 
@@ -76,7 +80,9 @@ class InlineResponse2001 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'exists' => 'setExists'
+        'subscription_id' => 'setSubscriptionId',
+        'order_id' => 'setOrderId',
+        'id' => 'setId'
     ];
 
 
@@ -85,7 +91,9 @@ class InlineResponse2001 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'exists' => 'getExists'
+        'subscription_id' => 'getSubscriptionId',
+        'order_id' => 'getOrderId',
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -119,7 +127,9 @@ class InlineResponse2001 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['exists'] = isset($data['exists']) ? $data['exists'] : null;
+        $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
+        $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -131,6 +141,12 @@ class InlineResponse2001 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['subscription_id'] === null) {
+            $invalid_properties[] = "'subscription_id' can't be null";
+        }
+        if ($this->container['order_id'] === null) {
+            $invalid_properties[] = "'order_id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -143,27 +159,75 @@ class InlineResponse2001 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['subscription_id'] === null) {
+            return false;
+        }
+        if ($this->container['order_id'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets exists
-     * @return bool
+     * Gets subscription_id
+     * @return string
      */
-    public function getExists()
+    public function getSubscriptionId()
     {
-        return $this->container['exists'];
+        return $this->container['subscription_id'];
     }
 
     /**
-     * Sets exists
-     * @param bool $exists
+     * Sets subscription_id
+     * @param string $subscription_id
      * @return $this
      */
-    public function setExists($exists)
+    public function setSubscriptionId($subscription_id)
     {
-        $this->container['exists'] = $exists;
+        $this->container['subscription_id'] = $subscription_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_id
+     * @return string
+     */
+    public function getOrderId()
+    {
+        return $this->container['order_id'];
+    }
+
+    /**
+     * Sets order_id
+     * @param string $order_id
+     * @return $this
+     */
+    public function setOrderId($order_id)
+    {
+        $this->container['order_id'] = $order_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return double
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param double $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

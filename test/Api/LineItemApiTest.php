@@ -264,12 +264,23 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for lineItemPrototypeGetTransaction
+     * Test case for lineItemPrototypeGetOrder
      *
-     * Fetches belongsTo relation transaction..
+     * Fetches belongsTo relation order..
      *
      */
-    public function testLineItemPrototypeGetTransaction()
+    public function testLineItemPrototypeGetOrder()
+    {
+
+    }
+
+    /**
+     * Test case for lineItemPrototypeGetProduct
+     *
+     * Fetches belongsTo relation product..
+     *
+     */
+    public function testLineItemPrototypeGetProduct()
     {
 
     }

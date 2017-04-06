@@ -83,9 +83,9 @@ class InlineResponse200Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "exists"
+     * Test attribute "count"
      */
-    public function testPropertyExists()
+    public function testPropertyCount()
     {
 
     }

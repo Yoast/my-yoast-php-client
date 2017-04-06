@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 
 # **discountLineItemCount**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2002 discountLineItemCount($where)
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 discountLineItemCount($where)
 
 Count instances of the model matched by where from the data source.
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **discountLineItemExistsGetDiscountLineItemsidExists**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 discountLineItemExistsGetDiscountLineItemsidExists($id)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2001 discountLineItemExistsGetDiscountLineItemsidExists($id)
 
 Check whether a model instance exists in the data source.
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **discountLineItemExistsHeadDiscountLineItemsid**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 discountLineItemExistsHeadDiscountLineItemsid($id)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2001 discountLineItemExistsHeadDiscountLineItemsid($id)
 
 Check whether a model instance exists in the data source.
 
@@ -313,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -767,7 +767,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **discountLineItemUpdateAll**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 discountLineItemUpdateAll($where, $data)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2002 discountLineItemUpdateAll($where, $data)
 
 Update instances of the model matched by {{where}} from the data source.
 
@@ -798,7 +798,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
 
 ### Authorization
 

@@ -35,6 +35,7 @@ use \ArrayAccess;
  * InlineResponse2002 Class Doc Comment
  *
  * @category    Class
+ * @description Information related to the outcome of the operation
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -158,7 +159,7 @@ class InlineResponse2002 implements ArrayAccess
 
     /**
      * Sets count
-     * @param double $count
+     * @param double $count The number of instances updated
      * @return $this
      */
     public function setCount($count)

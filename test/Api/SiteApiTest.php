@@ -198,6 +198,83 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sitePrototypeCountSubscriptions
+     *
+     * Counts subscriptions of Site..
+     *
+     */
+    public function testSitePrototypeCountSubscriptions()
+    {
+
+    }
+
+    /**
+     * Test case for sitePrototypeCreateSubscriptions
+     *
+     * Creates a new instance in subscriptions of this model..
+     *
+     */
+    public function testSitePrototypeCreateSubscriptions()
+    {
+
+    }
+
+    /**
+     * Test case for sitePrototypeDeleteSubscriptions
+     *
+     * Deletes all subscriptions of this model..
+     *
+     */
+    public function testSitePrototypeDeleteSubscriptions()
+    {
+
+    }
+
+    /**
+     * Test case for sitePrototypeDestroyByIdSubscriptions
+     *
+     * Delete a related item by id for subscriptions..
+     *
+     */
+    public function testSitePrototypeDestroyByIdSubscriptions()
+    {
+
+    }
+
+    /**
+     * Test case for sitePrototypeExistsSubscriptions
+     *
+     * Check the existence of subscriptions relation to an item by id..
+     *
+     */
+    public function testSitePrototypeExistsSubscriptions()
+    {
+
+    }
+
+    /**
+     * Test case for sitePrototypeFindByIdSubscriptions
+     *
+     * Find a related item by id for subscriptions..
+     *
+     */
+    public function testSitePrototypeFindByIdSubscriptions()
+    {
+
+    }
+
+    /**
+     * Test case for sitePrototypeGetSubscriptions
+     *
+     * Queries subscriptions of Site..
+     *
+     */
+    public function testSitePrototypeGetSubscriptions()
+    {
+
+    }
+
+    /**
      * Test case for sitePrototypeGetUser
      *
      * Fetches belongsTo relation user..
@@ -209,12 +286,45 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sitePrototypeLinkSubscriptions
+     *
+     * Add a related item by id for subscriptions..
+     *
+     */
+    public function testSitePrototypeLinkSubscriptions()
+    {
+
+    }
+
+    /**
      * Test case for sitePrototypePatchAttributes
      *
      * Patch attributes for a model instance and persist it into the data source..
      *
      */
     public function testSitePrototypePatchAttributes()
+    {
+
+    }
+
+    /**
+     * Test case for sitePrototypeUnlinkSubscriptions
+     *
+     * Remove the subscriptions relation to an item by id..
+     *
+     */
+    public function testSitePrototypeUnlinkSubscriptions()
+    {
+
+    }
+
+    /**
+     * Test case for sitePrototypeUpdateByIdSubscriptions
+     *
+     * Update a related item by id for subscriptions..
+     *
+     */
+    public function testSitePrototypeUpdateByIdSubscriptions()
     {
 
     }

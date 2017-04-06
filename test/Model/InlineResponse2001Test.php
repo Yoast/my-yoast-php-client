@@ -33,7 +33,7 @@ namespace Yoast\MyYoastApiClient;
  * InlineResponse2001Test Class Doc Comment
  *
  * @category    Class */
-// * @description Information related to the outcome of the operation
+// * @description InlineResponse2001
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
@@ -83,9 +83,9 @@ class InlineResponse2001Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "count"
+     * Test attribute "exists"
      */
-    public function testPropertyCount()
+    public function testPropertyExists()
     {
 
     }

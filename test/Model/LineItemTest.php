@@ -91,9 +91,9 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "transaction_id"
+     * Test attribute "order_id"
      */
-    public function testPropertyTransactionId()
+    public function testPropertyOrderId()
     {
 
     }

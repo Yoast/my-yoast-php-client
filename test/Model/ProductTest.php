@@ -1,6 +1,6 @@
 <?php
 /**
- * MyYoastUserTest
+ * ProductTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * MyYoastUserTest Class Doc Comment
+ * ProductTest Class Doc Comment
  *
  * @category    Class */
-// * @description MyYoastUser
+// * @description Product
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MyYoastUserTest extends \PHPUnit_Framework_TestCase
+class ProductTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -75,41 +75,9 @@ class MyYoastUserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "MyYoastUser"
+     * Test "Product"
      */
-    public function testMyYoastUser()
-    {
-
-    }
-
-    /**
-     * Test attribute "realm"
-     */
-    public function testPropertyRealm()
-    {
-
-    }
-
-    /**
-     * Test attribute "username"
-     */
-    public function testPropertyUsername()
-    {
-
-    }
-
-    /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
-    {
-
-    }
-
-    /**
-     * Test attribute "email_verified"
-     */
-    public function testPropertyEmailVerified()
+    public function testProduct()
     {
 
     }
@@ -118,6 +86,54 @@ class MyYoastUserTest extends \PHPUnit_Framework_TestCase
      * Test attribute "id"
      */
     public function testPropertyId()
+    {
+
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+
+    }
+
+    /**
+     * Test attribute "store_url"
+     */
+    public function testPropertyStoreUrl()
+    {
+
+    }
+
+    /**
+     * Test attribute "download_url"
+     */
+    public function testPropertyDownloadUrl()
+    {
+
+    }
+
+    /**
+     * Test attribute "is_download_only"
+     */
+    public function testPropertyIsDownloadOnly()
+    {
+
+    }
+
+    /**
+     * Test attribute "icon"
+     */
+    public function testPropertyIcon()
     {
 
     }

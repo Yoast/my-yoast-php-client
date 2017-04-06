@@ -1,6 +1,6 @@
 <?php
 /**
- * TransactionApi
+ * ProductApi
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Yoast\MyYoastApiClient\Configuration;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * TransactionApi Class Doc Comment
+ * ProductApi Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class TransactionApi
+class ProductApi
 {
     /**
      * API Client
@@ -79,7 +79,7 @@ class TransactionApi
      *
      * @param \Yoast\MyYoastApiClient\ApiClient $apiClient set the API client
      *
-     * @return TransactionApi
+     * @return ProductApi
      */
     public function setApiClient(\Yoast\MyYoastApiClient\ApiClient $apiClient)
     {
@@ -88,33 +88,33 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionCount
+     * Operation productCount
      *
      * Count instances of the model matched by where from the data source.
      *
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function transactionCount($where = null)
+    public function productCount($where = null)
     {
-        list($response) = $this->transactionCountWithHttpInfo($where);
+        list($response) = $this->productCountWithHttpInfo($where);
         return $response;
     }
 
     /**
-     * Operation transactionCountWithHttpInfo
+     * Operation productCountWithHttpInfo
      *
      * Count instances of the model matched by where from the data source.
      *
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionCountWithHttpInfo($where = null)
+    public function productCountWithHttpInfo($where = null)
     {
         // parse inputs
-        $resourcePath = "/Transactions/count";
+        $resourcePath = "/Products/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -147,15 +147,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
-                '/Transactions/count'
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '/Products/count'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -165,33 +165,33 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionCreate
+     * Operation productCreate
      *
      * Create a new instance of the model and persist it into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function transactionCreate($data = null)
+    public function productCreate($data = null)
     {
-        list($response) = $this->transactionCreateWithHttpInfo($data);
+        list($response) = $this->productCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation transactionCreateWithHttpInfo
+     * Operation productCreateWithHttpInfo
      *
      * Create a new instance of the model and persist it into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionCreateWithHttpInfo($data = null)
+    public function productCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/Transactions";
+        $resourcePath = "/Products";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -225,15 +225,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction',
-                '/Transactions'
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/Products'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -243,7 +243,7 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionCreateChangeStreamGetTransactionsChangeStream
+     * Operation productCreateChangeStreamGetProductsChangeStream
      *
      * Create a change stream.
      *
@@ -251,14 +251,14 @@ class TransactionApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function transactionCreateChangeStreamGetTransactionsChangeStream($options = null)
+    public function productCreateChangeStreamGetProductsChangeStream($options = null)
     {
-        list($response) = $this->transactionCreateChangeStreamGetTransactionsChangeStreamWithHttpInfo($options);
+        list($response) = $this->productCreateChangeStreamGetProductsChangeStreamWithHttpInfo($options);
         return $response;
     }
 
     /**
-     * Operation transactionCreateChangeStreamGetTransactionsChangeStreamWithHttpInfo
+     * Operation productCreateChangeStreamGetProductsChangeStreamWithHttpInfo
      *
      * Create a change stream.
      *
@@ -266,10 +266,10 @@ class TransactionApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionCreateChangeStreamGetTransactionsChangeStreamWithHttpInfo($options = null)
+    public function productCreateChangeStreamGetProductsChangeStreamWithHttpInfo($options = null)
     {
         // parse inputs
-        $resourcePath = "/Transactions/change-stream";
+        $resourcePath = "/Products/change-stream";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -303,7 +303,7 @@ class TransactionApi
                 $httpBody,
                 $headerParams,
                 '\SplFileObject',
-                '/Transactions/change-stream'
+                '/Products/change-stream'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader), $statusCode, $httpHeader];
@@ -320,7 +320,7 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionCreateChangeStreamPostTransactionsChangeStream
+     * Operation productCreateChangeStreamPostProductsChangeStream
      *
      * Create a change stream.
      *
@@ -328,14 +328,14 @@ class TransactionApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function transactionCreateChangeStreamPostTransactionsChangeStream($options = null)
+    public function productCreateChangeStreamPostProductsChangeStream($options = null)
     {
-        list($response) = $this->transactionCreateChangeStreamPostTransactionsChangeStreamWithHttpInfo($options);
+        list($response) = $this->productCreateChangeStreamPostProductsChangeStreamWithHttpInfo($options);
         return $response;
     }
 
     /**
-     * Operation transactionCreateChangeStreamPostTransactionsChangeStreamWithHttpInfo
+     * Operation productCreateChangeStreamPostProductsChangeStreamWithHttpInfo
      *
      * Create a change stream.
      *
@@ -343,10 +343,10 @@ class TransactionApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionCreateChangeStreamPostTransactionsChangeStreamWithHttpInfo($options = null)
+    public function productCreateChangeStreamPostProductsChangeStreamWithHttpInfo($options = null)
     {
         // parse inputs
-        $resourcePath = "/Transactions/change-stream";
+        $resourcePath = "/Products/change-stream";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -380,7 +380,7 @@ class TransactionApi
                 $httpBody,
                 $headerParams,
                 '\SplFileObject',
-                '/Transactions/change-stream'
+                '/Products/change-stream'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader), $statusCode, $httpHeader];
@@ -397,7 +397,7 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionDeleteById
+     * Operation productDeleteById
      *
      * Delete a model instance by {{id}} from the data source.
      *
@@ -405,14 +405,14 @@ class TransactionApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return object
      */
-    public function transactionDeleteById($id)
+    public function productDeleteById($id)
     {
-        list($response) = $this->transactionDeleteByIdWithHttpInfo($id);
+        list($response) = $this->productDeleteByIdWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation transactionDeleteByIdWithHttpInfo
+     * Operation productDeleteByIdWithHttpInfo
      *
      * Delete a model instance by {{id}} from the data source.
      *
@@ -420,14 +420,14 @@ class TransactionApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionDeleteByIdWithHttpInfo($id)
+    public function productDeleteByIdWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionDeleteById');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productDeleteById');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}";
+        $resourcePath = "/Products/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -465,7 +465,7 @@ class TransactionApi
                 $httpBody,
                 $headerParams,
                 'object',
-                '/Transactions/{id}'
+                '/Products/{id}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
@@ -482,37 +482,37 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionExistsGetTransactionsidExists
+     * Operation productExistsGetProductsidExists
      *
      * Check whether a model instance exists in the data source.
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
-    public function transactionExistsGetTransactionsidExists($id)
+    public function productExistsGetProductsidExists($id)
     {
-        list($response) = $this->transactionExistsGetTransactionsidExistsWithHttpInfo($id);
+        list($response) = $this->productExistsGetProductsidExistsWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation transactionExistsGetTransactionsidExistsWithHttpInfo
+     * Operation productExistsGetProductsidExistsWithHttpInfo
      *
      * Check whether a model instance exists in the data source.
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionExistsGetTransactionsidExistsWithHttpInfo($id)
+    public function productExistsGetProductsidExistsWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionExistsGetTransactionsidExists');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productExistsGetProductsidExists');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}/exists";
+        $resourcePath = "/Products/{id}/exists";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -549,15 +549,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/Transactions/{id}/exists'
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
+                '/Products/{id}/exists'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -567,37 +567,37 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionExistsHeadTransactionsid
+     * Operation productExistsHeadProductsid
      *
      * Check whether a model instance exists in the data source.
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
-    public function transactionExistsHeadTransactionsid($id)
+    public function productExistsHeadProductsid($id)
     {
-        list($response) = $this->transactionExistsHeadTransactionsidWithHttpInfo($id);
+        list($response) = $this->productExistsHeadProductsidWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation transactionExistsHeadTransactionsidWithHttpInfo
+     * Operation productExistsHeadProductsidWithHttpInfo
      *
      * Check whether a model instance exists in the data source.
      *
      * @param string $id Model id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionExistsHeadTransactionsidWithHttpInfo($id)
+    public function productExistsHeadProductsidWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionExistsHeadTransactionsid');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productExistsHeadProductsid');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}";
+        $resourcePath = "/Products/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -634,15 +634,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/Transactions/{id}'
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
+                '/Products/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -652,33 +652,33 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionFind
+     * Operation productFind
      *
      * Find all instances of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction[]
+     * @return \Yoast\MyYoastApiClient\Model\Product[]
      */
-    public function transactionFind($filter = null)
+    public function productFind($filter = null)
     {
-        list($response) = $this->transactionFindWithHttpInfo($filter);
+        list($response) = $this->productFindWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation transactionFindWithHttpInfo
+     * Operation productFindWithHttpInfo
      *
      * Find all instances of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Product[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionFindWithHttpInfo($filter = null)
+    public function productFindWithHttpInfo($filter = null)
     {
         // parse inputs
-        $resourcePath = "/Transactions";
+        $resourcePath = "/Products";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -711,15 +711,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction[]',
-                '/Transactions'
+                '\Yoast\MyYoastApiClient\Model\Product[]',
+                '/Products'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -729,39 +729,39 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionFindById
+     * Operation productFindById
      *
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
      * @param string $filter Filter defining fields and include (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function transactionFindById($id, $filter = null)
+    public function productFindById($id, $filter = null)
     {
-        list($response) = $this->transactionFindByIdWithHttpInfo($id, $filter);
+        list($response) = $this->productFindByIdWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation transactionFindByIdWithHttpInfo
+     * Operation productFindByIdWithHttpInfo
      *
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
      * @param string $filter Filter defining fields and include (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionFindByIdWithHttpInfo($id, $filter = null)
+    public function productFindByIdWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionFindById');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productFindById');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}";
+        $resourcePath = "/Products/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -802,15 +802,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction',
-                '/Transactions/{id}'
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/Products/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -820,33 +820,33 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionFindOne
+     * Operation productFindOne
      *
      * Find first instance of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function transactionFindOne($filter = null)
+    public function productFindOne($filter = null)
     {
-        list($response) = $this->transactionFindOneWithHttpInfo($filter);
+        list($response) = $this->productFindOneWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation transactionFindOneWithHttpInfo
+     * Operation productFindOneWithHttpInfo
      *
      * Find first instance of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionFindOneWithHttpInfo($filter = null)
+    public function productFindOneWithHttpInfo($filter = null)
     {
         // parse inputs
-        $resourcePath = "/Transactions/findOne";
+        $resourcePath = "/Products/findOne";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -879,15 +879,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction',
-                '/Transactions/findOne'
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/Products/findOne'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -897,33 +897,33 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionPatchOrCreate
+     * Operation productPatchOrCreate
      *
      * Patch an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function transactionPatchOrCreate($data = null)
+    public function productPatchOrCreate($data = null)
     {
-        list($response) = $this->transactionPatchOrCreateWithHttpInfo($data);
+        list($response) = $this->productPatchOrCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation transactionPatchOrCreateWithHttpInfo
+     * Operation productPatchOrCreateWithHttpInfo
      *
      * Patch an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionPatchOrCreateWithHttpInfo($data = null)
+    public function productPatchOrCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/Transactions";
+        $resourcePath = "/Products";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -957,15 +957,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction',
-                '/Transactions'
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/Products'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -975,39 +975,39 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionPrototypeCountItems
+     * Operation productPrototypeCountLineItems
      *
-     * Counts items of Transaction.
+     * Counts lineItems of Product.
      *
-     * @param string $id Transaction id (required)
+     * @param string $id Product id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function transactionPrototypeCountItems($id, $where = null)
+    public function productPrototypeCountLineItems($id, $where = null)
     {
-        list($response) = $this->transactionPrototypeCountItemsWithHttpInfo($id, $where);
+        list($response) = $this->productPrototypeCountLineItemsWithHttpInfo($id, $where);
         return $response;
     }
 
     /**
-     * Operation transactionPrototypeCountItemsWithHttpInfo
+     * Operation productPrototypeCountLineItemsWithHttpInfo
      *
-     * Counts items of Transaction.
+     * Counts lineItems of Product.
      *
-     * @param string $id Transaction id (required)
+     * @param string $id Product id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionPrototypeCountItemsWithHttpInfo($id, $where = null)
+    public function productPrototypeCountLineItemsWithHttpInfo($id, $where = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionPrototypeCountItems');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeCountLineItems');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}/items/count";
+        $resourcePath = "/Products/{id}/lineItems/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1048,15 +1048,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
-                '/Transactions/{id}/items/count'
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '/Products/{id}/lineItems/count'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1066,39 +1066,130 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionPrototypeCreateItems
+     * Operation productPrototypeCountSubscriptions
      *
-     * Creates a new instance in items of this model.
+     * Counts subscriptions of Product.
      *
-     * @param string $id Transaction id (required)
-     * @param \Yoast\MyYoastApiClient\Model\LineItem $data  (optional)
+     * @param string $id Product id (required)
+     * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\LineItem
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function transactionPrototypeCreateItems($id, $data = null)
+    public function productPrototypeCountSubscriptions($id, $where = null)
     {
-        list($response) = $this->transactionPrototypeCreateItemsWithHttpInfo($id, $data);
+        list($response) = $this->productPrototypeCountSubscriptionsWithHttpInfo($id, $where);
         return $response;
     }
 
     /**
-     * Operation transactionPrototypeCreateItemsWithHttpInfo
+     * Operation productPrototypeCountSubscriptionsWithHttpInfo
      *
-     * Creates a new instance in items of this model.
+     * Counts subscriptions of Product.
      *
-     * @param string $id Transaction id (required)
+     * @param string $id Product id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productPrototypeCountSubscriptionsWithHttpInfo($id, $where = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeCountSubscriptions');
+        }
+        // parse inputs
+        $resourcePath = "/Products/{id}/subscriptions/count";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($where !== null) {
+            $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '/Products/{id}/subscriptions/count'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productPrototypeCreateLineItems
+     *
+     * Creates a new instance in lineItems of this model.
+     *
+     * @param string $id Product id (required)
+     * @param \Yoast\MyYoastApiClient\Model\LineItem $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\LineItem
+     */
+    public function productPrototypeCreateLineItems($id, $data = null)
+    {
+        list($response) = $this->productPrototypeCreateLineItemsWithHttpInfo($id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation productPrototypeCreateLineItemsWithHttpInfo
+     *
+     * Creates a new instance in lineItems of this model.
+     *
+     * @param string $id Product id (required)
      * @param \Yoast\MyYoastApiClient\Model\LineItem $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionPrototypeCreateItemsWithHttpInfo($id, $data = null)
+    public function productPrototypeCreateLineItemsWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionPrototypeCreateItems');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeCreateLineItems');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}/items";
+        $resourcePath = "/Products/{id}/lineItems";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1141,7 +1232,7 @@ class TransactionApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\LineItem',
-                '/Transactions/{id}/items'
+                '/Products/{id}/lineItems'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\LineItem', $httpHeader), $statusCode, $httpHeader];
@@ -1158,37 +1249,129 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionPrototypeDeleteItems
+     * Operation productPrototypeCreateSubscriptions
      *
-     * Deletes all items of this model.
+     * Creates a new instance in subscriptions of this model.
      *
-     * @param string $id Transaction id (required)
+     * @param string $id Product id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function transactionPrototypeDeleteItems($id)
+    public function productPrototypeCreateSubscriptions($id, $data = null)
     {
-        list($response) = $this->transactionPrototypeDeleteItemsWithHttpInfo($id);
+        list($response) = $this->productPrototypeCreateSubscriptionsWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation transactionPrototypeDeleteItemsWithHttpInfo
+     * Operation productPrototypeCreateSubscriptionsWithHttpInfo
      *
-     * Deletes all items of this model.
+     * Creates a new instance in subscriptions of this model.
      *
-     * @param string $id Transaction id (required)
+     * @param string $id Product id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionPrototypeDeleteItemsWithHttpInfo($id)
+    public function productPrototypeCreateSubscriptionsWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionPrototypeDeleteItems');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeCreateSubscriptions');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}/items";
+        $resourcePath = "/Products/{id}/subscriptions";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Subscription',
+                '/Products/{id}/subscriptions'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Subscription', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Subscription', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productPrototypeDeleteLineItems
+     *
+     * Deletes all lineItems of this model.
+     *
+     * @param string $id Product id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function productPrototypeDeleteLineItems($id)
+    {
+        list($response) = $this->productPrototypeDeleteLineItemsWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation productPrototypeDeleteLineItemsWithHttpInfo
+     *
+     * Deletes all lineItems of this model.
+     *
+     * @param string $id Product id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productPrototypeDeleteLineItemsWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeDeleteLineItems');
+        }
+        // parse inputs
+        $resourcePath = "/Products/{id}/lineItems";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1226,7 +1409,7 @@ class TransactionApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/Transactions/{id}/items'
+                '/Products/{id}/lineItems'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -1239,43 +1422,124 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionPrototypeDestroyByIdItems
+     * Operation productPrototypeDeleteSubscriptions
      *
-     * Delete a related item by id for items.
+     * Deletes all subscriptions of this model.
      *
-     * @param string $fk Foreign key for items (required)
-     * @param string $id Transaction id (required)
+     * @param string $id Product id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function transactionPrototypeDestroyByIdItems($fk, $id)
+    public function productPrototypeDeleteSubscriptions($id)
     {
-        list($response) = $this->transactionPrototypeDestroyByIdItemsWithHttpInfo($fk, $id);
+        list($response) = $this->productPrototypeDeleteSubscriptionsWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation transactionPrototypeDestroyByIdItemsWithHttpInfo
+     * Operation productPrototypeDeleteSubscriptionsWithHttpInfo
      *
-     * Delete a related item by id for items.
+     * Deletes all subscriptions of this model.
      *
-     * @param string $fk Foreign key for items (required)
-     * @param string $id Transaction id (required)
+     * @param string $id Product id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionPrototypeDestroyByIdItemsWithHttpInfo($fk, $id)
+    public function productPrototypeDeleteSubscriptionsWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeDeleteSubscriptions');
+        }
+        // parse inputs
+        $resourcePath = "/Products/{id}/subscriptions";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/Products/{id}/subscriptions'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productPrototypeDestroyByIdLineItems
+     *
+     * Delete a related item by id for lineItems.
+     *
+     * @param string $fk Foreign key for lineItems (required)
+     * @param string $id Product id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function productPrototypeDestroyByIdLineItems($fk, $id)
+    {
+        list($response) = $this->productPrototypeDestroyByIdLineItemsWithHttpInfo($fk, $id);
+        return $response;
+    }
+
+    /**
+     * Operation productPrototypeDestroyByIdLineItemsWithHttpInfo
+     *
+     * Delete a related item by id for lineItems.
+     *
+     * @param string $fk Foreign key for lineItems (required)
+     * @param string $id Product id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productPrototypeDestroyByIdLineItemsWithHttpInfo($fk, $id)
     {
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling transactionPrototypeDestroyByIdItems');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeDestroyByIdLineItems');
         }
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionPrototypeDestroyByIdItems');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeDestroyByIdLineItems');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}/items/{fk}";
+        $resourcePath = "/Products/{id}/lineItems/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1321,7 +1585,7 @@ class TransactionApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/Transactions/{id}/items/{fk}'
+                '/Products/{id}/lineItems/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -1334,43 +1598,138 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionPrototypeFindByIdItems
+     * Operation productPrototypeDestroyByIdSubscriptions
      *
-     * Find a related item by id for items.
+     * Delete a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for items (required)
-     * @param string $id Transaction id (required)
+     * @param string $fk Foreign key for subscriptions (required)
+     * @param string $id Product id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\LineItem
+     * @return void
      */
-    public function transactionPrototypeFindByIdItems($fk, $id)
+    public function productPrototypeDestroyByIdSubscriptions($fk, $id)
     {
-        list($response) = $this->transactionPrototypeFindByIdItemsWithHttpInfo($fk, $id);
+        list($response) = $this->productPrototypeDestroyByIdSubscriptionsWithHttpInfo($fk, $id);
         return $response;
     }
 
     /**
-     * Operation transactionPrototypeFindByIdItemsWithHttpInfo
+     * Operation productPrototypeDestroyByIdSubscriptionsWithHttpInfo
      *
-     * Find a related item by id for items.
+     * Delete a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for items (required)
-     * @param string $id Transaction id (required)
+     * @param string $fk Foreign key for subscriptions (required)
+     * @param string $id Product id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionPrototypeFindByIdItemsWithHttpInfo($fk, $id)
+    public function productPrototypeDestroyByIdSubscriptionsWithHttpInfo($fk, $id)
     {
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling transactionPrototypeFindByIdItems');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeDestroyByIdSubscriptions');
         }
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionPrototypeFindByIdItems');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeDestroyByIdSubscriptions');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}/items/{fk}";
+        $resourcePath = "/Products/{id}/subscriptions/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/Products/{id}/subscriptions/{fk}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productPrototypeFindByIdLineItems
+     *
+     * Find a related item by id for lineItems.
+     *
+     * @param string $fk Foreign key for lineItems (required)
+     * @param string $id Product id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\LineItem
+     */
+    public function productPrototypeFindByIdLineItems($fk, $id)
+    {
+        list($response) = $this->productPrototypeFindByIdLineItemsWithHttpInfo($fk, $id);
+        return $response;
+    }
+
+    /**
+     * Operation productPrototypeFindByIdLineItemsWithHttpInfo
+     *
+     * Find a related item by id for lineItems.
+     *
+     * @param string $fk Foreign key for lineItems (required)
+     * @param string $id Product id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productPrototypeFindByIdLineItemsWithHttpInfo($fk, $id)
+    {
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeFindByIdLineItems');
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeFindByIdLineItems');
+        }
+        // parse inputs
+        $resourcePath = "/Products/{id}/lineItems/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1416,7 +1775,7 @@ class TransactionApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\LineItem',
-                '/Transactions/{id}/items/{fk}'
+                '/Products/{id}/lineItems/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\LineItem', $httpHeader), $statusCode, $httpHeader];
@@ -1433,39 +1792,43 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionPrototypeGetCustomer
+     * Operation productPrototypeFindByIdSubscriptions
      *
-     * Fetches belongsTo relation customer.
+     * Find a related item by id for subscriptions.
      *
-     * @param string $id Transaction id (required)
-     * @param bool $refresh  (optional)
+     * @param string $fk Foreign key for subscriptions (required)
+     * @param string $id Product id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function transactionPrototypeGetCustomer($id, $refresh = null)
+    public function productPrototypeFindByIdSubscriptions($fk, $id)
     {
-        list($response) = $this->transactionPrototypeGetCustomerWithHttpInfo($id, $refresh);
+        list($response) = $this->productPrototypeFindByIdSubscriptionsWithHttpInfo($fk, $id);
         return $response;
     }
 
     /**
-     * Operation transactionPrototypeGetCustomerWithHttpInfo
+     * Operation productPrototypeFindByIdSubscriptionsWithHttpInfo
      *
-     * Fetches belongsTo relation customer.
+     * Find a related item by id for subscriptions.
      *
-     * @param string $id Transaction id (required)
-     * @param bool $refresh  (optional)
+     * @param string $fk Foreign key for subscriptions (required)
+     * @param string $id Product id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionPrototypeGetCustomerWithHttpInfo($id, $refresh = null)
+    public function productPrototypeFindByIdSubscriptionsWithHttpInfo($fk, $id)
     {
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeFindByIdSubscriptions');
+        }
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionPrototypeGetCustomer');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeFindByIdSubscriptions');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}/customer";
+        $resourcePath = "/Products/{id}/subscriptions/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1476,9 +1839,13 @@ class TransactionApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
-        // query params
-        if ($refresh !== null) {
-            $queryParams['refresh'] = $this->apiClient->getSerializer()->toQueryValue($refresh);
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
         }
         // path params
         if ($id !== null) {
@@ -1506,15 +1873,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/Transactions/{id}/customer'
+                '\Yoast\MyYoastApiClient\Model\Subscription',
+                '/Products/{id}/subscriptions/{fk}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Subscription', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Subscription', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1524,39 +1891,39 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionPrototypeGetItems
+     * Operation productPrototypeGetLineItems
      *
-     * Queries items of Transaction.
+     * Queries lineItems of Product.
      *
-     * @param string $id Transaction id (required)
+     * @param string $id Product id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\LineItem[]
      */
-    public function transactionPrototypeGetItems($id, $filter = null)
+    public function productPrototypeGetLineItems($id, $filter = null)
     {
-        list($response) = $this->transactionPrototypeGetItemsWithHttpInfo($id, $filter);
+        list($response) = $this->productPrototypeGetLineItemsWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation transactionPrototypeGetItemsWithHttpInfo
+     * Operation productPrototypeGetLineItemsWithHttpInfo
      *
-     * Queries items of Transaction.
+     * Queries lineItems of Product.
      *
-     * @param string $id Transaction id (required)
+     * @param string $id Product id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\LineItem[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionPrototypeGetItemsWithHttpInfo($id, $filter = null)
+    public function productPrototypeGetLineItemsWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionPrototypeGetItems');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeGetLineItems');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}/items";
+        $resourcePath = "/Products/{id}/lineItems";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1598,7 +1965,7 @@ class TransactionApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\LineItem[]',
-                '/Transactions/{id}/items'
+                '/Products/{id}/lineItems'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\LineItem[]', $httpHeader), $statusCode, $httpHeader];
@@ -1615,39 +1982,130 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionPrototypePatchAttributes
+     * Operation productPrototypeGetSubscriptions
      *
-     * Patch attributes for a model instance and persist it into the data source.
+     * Queries subscriptions of Product.
      *
-     * @param string $id Transaction id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data An object of model property name/value pairs (optional)
+     * @param string $id Product id (required)
+     * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     * @return \Yoast\MyYoastApiClient\Model\Subscription[]
      */
-    public function transactionPrototypePatchAttributes($id, $data = null)
+    public function productPrototypeGetSubscriptions($id, $filter = null)
     {
-        list($response) = $this->transactionPrototypePatchAttributesWithHttpInfo($id, $data);
+        list($response) = $this->productPrototypeGetSubscriptionsWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation transactionPrototypePatchAttributesWithHttpInfo
+     * Operation productPrototypeGetSubscriptionsWithHttpInfo
      *
-     * Patch attributes for a model instance and persist it into the data source.
+     * Queries subscriptions of Product.
      *
-     * @param string $id Transaction id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data An object of model property name/value pairs (optional)
+     * @param string $id Product id (required)
+     * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Subscription[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionPrototypePatchAttributesWithHttpInfo($id, $data = null)
+    public function productPrototypeGetSubscriptionsWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionPrototypePatchAttributes');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeGetSubscriptions');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}";
+        $resourcePath = "/Products/{id}/subscriptions";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Subscription[]',
+                '/Products/{id}/subscriptions'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Subscription[]', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Subscription[]', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productPrototypePatchAttributes
+     *
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param string $id Product id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data An object of model property name/value pairs (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Product
+     */
+    public function productPrototypePatchAttributes($id, $data = null)
+    {
+        list($response) = $this->productPrototypePatchAttributesWithHttpInfo($id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation productPrototypePatchAttributesWithHttpInfo
+     *
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param string $id Product id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data An object of model property name/value pairs (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productPrototypePatchAttributesWithHttpInfo($id, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypePatchAttributes');
+        }
+        // parse inputs
+        $resourcePath = "/Products/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1689,15 +2147,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction',
-                '/Transactions/{id}'
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/Products/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1707,45 +2165,45 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionPrototypeUpdateByIdItems
+     * Operation productPrototypeUpdateByIdLineItems
      *
-     * Update a related item by id for items.
+     * Update a related item by id for lineItems.
      *
-     * @param string $fk Foreign key for items (required)
-     * @param string $id Transaction id (required)
+     * @param string $fk Foreign key for lineItems (required)
+     * @param string $id Product id (required)
      * @param \Yoast\MyYoastApiClient\Model\LineItem $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\LineItem
      */
-    public function transactionPrototypeUpdateByIdItems($fk, $id, $data = null)
+    public function productPrototypeUpdateByIdLineItems($fk, $id, $data = null)
     {
-        list($response) = $this->transactionPrototypeUpdateByIdItemsWithHttpInfo($fk, $id, $data);
+        list($response) = $this->productPrototypeUpdateByIdLineItemsWithHttpInfo($fk, $id, $data);
         return $response;
     }
 
     /**
-     * Operation transactionPrototypeUpdateByIdItemsWithHttpInfo
+     * Operation productPrototypeUpdateByIdLineItemsWithHttpInfo
      *
-     * Update a related item by id for items.
+     * Update a related item by id for lineItems.
      *
-     * @param string $fk Foreign key for items (required)
-     * @param string $id Transaction id (required)
+     * @param string $fk Foreign key for lineItems (required)
+     * @param string $id Product id (required)
      * @param \Yoast\MyYoastApiClient\Model\LineItem $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionPrototypeUpdateByIdItemsWithHttpInfo($fk, $id, $data = null)
+    public function productPrototypeUpdateByIdLineItemsWithHttpInfo($fk, $id, $data = null)
     {
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling transactionPrototypeUpdateByIdItems');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeUpdateByIdLineItems');
         }
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionPrototypeUpdateByIdItems');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeUpdateByIdLineItems');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}/items/{fk}";
+        $resourcePath = "/Products/{id}/lineItems/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1796,7 +2254,7 @@ class TransactionApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\LineItem',
-                '/Transactions/{id}/items/{fk}'
+                '/Products/{id}/lineItems/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\LineItem', $httpHeader), $statusCode, $httpHeader];
@@ -1813,39 +2271,145 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionReplaceByIdPostTransactionsidReplace
+     * Operation productPrototypeUpdateByIdSubscriptions
      *
-     * Replace attributes for a model instance and persist it into the data source.
+     * Update a related item by id for subscriptions.
      *
-     * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param string $fk Foreign key for subscriptions (required)
+     * @param string $id Product id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function transactionReplaceByIdPostTransactionsidReplace($id, $data = null)
+    public function productPrototypeUpdateByIdSubscriptions($fk, $id, $data = null)
     {
-        list($response) = $this->transactionReplaceByIdPostTransactionsidReplaceWithHttpInfo($id, $data);
+        list($response) = $this->productPrototypeUpdateByIdSubscriptionsWithHttpInfo($fk, $id, $data);
         return $response;
     }
 
     /**
-     * Operation transactionReplaceByIdPostTransactionsidReplaceWithHttpInfo
+     * Operation productPrototypeUpdateByIdSubscriptionsWithHttpInfo
+     *
+     * Update a related item by id for subscriptions.
+     *
+     * @param string $fk Foreign key for subscriptions (required)
+     * @param string $id Product id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productPrototypeUpdateByIdSubscriptionsWithHttpInfo($fk, $id, $data = null)
+    {
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeUpdateByIdSubscriptions');
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeUpdateByIdSubscriptions');
+        }
+        // parse inputs
+        $resourcePath = "/Products/{id}/subscriptions/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Subscription',
+                '/Products/{id}/subscriptions/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Subscription', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Subscription', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productReplaceByIdPostProductsidReplace
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function transactionReplaceByIdPostTransactionsidReplaceWithHttpInfo($id, $data = null)
+    public function productReplaceByIdPostProductsidReplace($id, $data = null)
+    {
+        list($response) = $this->productReplaceByIdPostProductsidReplaceWithHttpInfo($id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation productReplaceByIdPostProductsidReplaceWithHttpInfo
+     *
+     * Replace attributes for a model instance and persist it into the data source.
+     *
+     * @param string $id Model id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productReplaceByIdPostProductsidReplaceWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionReplaceByIdPostTransactionsidReplace');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productReplaceByIdPostProductsidReplace');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}/replace";
+        $resourcePath = "/Products/{id}/replace";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1887,15 +2451,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction',
-                '/Transactions/{id}/replace'
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/Products/{id}/replace'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1905,39 +2469,39 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionReplaceByIdPutTransactionsid
+     * Operation productReplaceByIdPutProductsid
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function transactionReplaceByIdPutTransactionsid($id, $data = null)
+    public function productReplaceByIdPutProductsid($id, $data = null)
     {
-        list($response) = $this->transactionReplaceByIdPutTransactionsidWithHttpInfo($id, $data);
+        list($response) = $this->productReplaceByIdPutProductsidWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation transactionReplaceByIdPutTransactionsidWithHttpInfo
+     * Operation productReplaceByIdPutProductsidWithHttpInfo
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionReplaceByIdPutTransactionsidWithHttpInfo($id, $data = null)
+    public function productReplaceByIdPutProductsidWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling transactionReplaceByIdPutTransactionsid');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productReplaceByIdPutProductsid');
         }
         // parse inputs
-        $resourcePath = "/Transactions/{id}";
+        $resourcePath = "/Products/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1979,15 +2543,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction',
-                '/Transactions/{id}'
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/Products/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1997,33 +2561,33 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionReplaceOrCreatePostTransactionsReplaceOrCreate
+     * Operation productReplaceOrCreatePostProductsReplaceOrCreate
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function transactionReplaceOrCreatePostTransactionsReplaceOrCreate($data = null)
+    public function productReplaceOrCreatePostProductsReplaceOrCreate($data = null)
     {
-        list($response) = $this->transactionReplaceOrCreatePostTransactionsReplaceOrCreateWithHttpInfo($data);
+        list($response) = $this->productReplaceOrCreatePostProductsReplaceOrCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation transactionReplaceOrCreatePostTransactionsReplaceOrCreateWithHttpInfo
+     * Operation productReplaceOrCreatePostProductsReplaceOrCreateWithHttpInfo
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionReplaceOrCreatePostTransactionsReplaceOrCreateWithHttpInfo($data = null)
+    public function productReplaceOrCreatePostProductsReplaceOrCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/Transactions/replaceOrCreate";
+        $resourcePath = "/Products/replaceOrCreate";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2057,15 +2621,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction',
-                '/Transactions/replaceOrCreate'
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/Products/replaceOrCreate'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2075,33 +2639,33 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionReplaceOrCreatePutTransactions
+     * Operation productReplaceOrCreatePutProducts
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function transactionReplaceOrCreatePutTransactions($data = null)
+    public function productReplaceOrCreatePutProducts($data = null)
     {
-        list($response) = $this->transactionReplaceOrCreatePutTransactionsWithHttpInfo($data);
+        list($response) = $this->productReplaceOrCreatePutProductsWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation transactionReplaceOrCreatePutTransactionsWithHttpInfo
+     * Operation productReplaceOrCreatePutProductsWithHttpInfo
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionReplaceOrCreatePutTransactionsWithHttpInfo($data = null)
+    public function productReplaceOrCreatePutProductsWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/Transactions";
+        $resourcePath = "/Products";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2135,15 +2699,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction',
-                '/Transactions'
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/Products'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2153,35 +2717,35 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionUpdateAll
+     * Operation productUpdateAll
      *
      * Update instances of the model matched by {{where}} from the data source.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
      */
-    public function transactionUpdateAll($where = null, $data = null)
+    public function productUpdateAll($where = null, $data = null)
     {
-        list($response) = $this->transactionUpdateAllWithHttpInfo($where, $data);
+        list($response) = $this->productUpdateAllWithHttpInfo($where, $data);
         return $response;
     }
 
     /**
-     * Operation transactionUpdateAllWithHttpInfo
+     * Operation productUpdateAllWithHttpInfo
      *
      * Update instances of the model matched by {{where}} from the data source.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionUpdateAllWithHttpInfo($where = null, $data = null)
+    public function productUpdateAllWithHttpInfo($where = null, $data = null)
     {
         // parse inputs
-        $resourcePath = "/Transactions/update";
+        $resourcePath = "/Products/update";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2219,15 +2783,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
-                '/Transactions/update'
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
+                '/Products/update'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2237,35 +2801,35 @@ class TransactionApi
     }
 
     /**
-     * Operation transactionUpsertWithWhere
+     * Operation productUpsertWithWhere
      *
      * Update an existing model instance or insert a new one into the data source based on the where criteria.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Transaction
+     * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function transactionUpsertWithWhere($where = null, $data = null)
+    public function productUpsertWithWhere($where = null, $data = null)
     {
-        list($response) = $this->transactionUpsertWithWhereWithHttpInfo($where, $data);
+        list($response) = $this->productUpsertWithWhereWithHttpInfo($where, $data);
         return $response;
     }
 
     /**
-     * Operation transactionUpsertWithWhereWithHttpInfo
+     * Operation productUpsertWithWhereWithHttpInfo
      *
      * Update an existing model instance or insert a new one into the data source based on the where criteria.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\Transaction $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Transaction, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transactionUpsertWithWhereWithHttpInfo($where = null, $data = null)
+    public function productUpsertWithWhereWithHttpInfo($where = null, $data = null)
     {
         // parse inputs
-        $resourcePath = "/Transactions/upsertWithWhere";
+        $resourcePath = "/Products/upsertWithWhere";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2303,15 +2867,15 @@ class TransactionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Transaction',
-                '/Transactions/upsertWithWhere'
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/Products/upsertWithWhere'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Transaction', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Transaction', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
