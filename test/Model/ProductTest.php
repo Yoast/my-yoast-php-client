@@ -139,6 +139,14 @@ class ProductTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "shop_id"
+     */
+    public function testPropertyShopId()
+    {
+
+    }
+
+    /**
      * Test attribute "subscription_id"
      */
     public function testPropertySubscriptionId()

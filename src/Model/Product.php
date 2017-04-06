@@ -61,6 +61,7 @@ class Product implements ArrayAccess
         'download_url' => 'string',
         'is_download_only' => 'bool',
         'icon' => 'string',
+        'shop_id' => 'double',
         'subscription_id' => 'string'
     ];
 
@@ -81,6 +82,7 @@ class Product implements ArrayAccess
         'download_url' => 'downloadUrl',
         'is_download_only' => 'isDownloadOnly',
         'icon' => 'icon',
+        'shop_id' => 'shop_id',
         'subscription_id' => 'subscriptionId'
     ];
 
@@ -97,6 +99,7 @@ class Product implements ArrayAccess
         'download_url' => 'setDownloadUrl',
         'is_download_only' => 'setIsDownloadOnly',
         'icon' => 'setIcon',
+        'shop_id' => 'setShopId',
         'subscription_id' => 'setSubscriptionId'
     ];
 
@@ -113,6 +116,7 @@ class Product implements ArrayAccess
         'download_url' => 'getDownloadUrl',
         'is_download_only' => 'getIsDownloadOnly',
         'icon' => 'getIcon',
+        'shop_id' => 'getShopId',
         'subscription_id' => 'getSubscriptionId'
     ];
 
@@ -154,6 +158,7 @@ class Product implements ArrayAccess
         $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
         $this->container['is_download_only'] = isset($data['is_download_only']) ? $data['is_download_only'] : false;
         $this->container['icon'] = isset($data['icon']) ? $data['icon'] : null;
+        $this->container['shop_id'] = isset($data['shop_id']) ? $data['shop_id'] : null;
         $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
     }
 
@@ -178,6 +183,9 @@ class Product implements ArrayAccess
         if ($this->container['is_download_only'] === null) {
             $invalid_properties[] = "'is_download_only' can't be null";
         }
+        if ($this->container['shop_id'] === null) {
+            $invalid_properties[] = "'shop_id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -200,6 +208,9 @@ class Product implements ArrayAccess
             return false;
         }
         if ($this->container['is_download_only'] === null) {
+            return false;
+        }
+        if ($this->container['shop_id'] === null) {
             return false;
         }
         return true;
@@ -349,6 +360,27 @@ class Product implements ArrayAccess
     public function setIcon($icon)
     {
         $this->container['icon'] = $icon;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_id
+     * @return double
+     */
+    public function getShopId()
+    {
+        return $this->container['shop_id'];
+    }
+
+    /**
+     * Sets shop_id
+     * @param double $shop_id
+     * @return $this
+     */
+    public function setShopId($shop_id)
+    {
+        $this->container['shop_id'] = $shop_id;
 
         return $this;
     }
