@@ -171,6 +171,14 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "shop_status"
+     */
+    public function testPropertyShopStatus()
+    {
+
+    }
+
+    /**
      * Test attribute "shop_id"
      */
     public function testPropertyShopId()

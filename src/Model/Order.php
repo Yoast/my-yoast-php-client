@@ -65,6 +65,7 @@ class Order implements ArrayAccess
         'payment_reference' => 'string',
         'vat_total' => 'double',
         'gl_number' => 'string',
+        'shop_status' => 'string',
         'shop_id' => 'double'
     ];
 
@@ -89,6 +90,7 @@ class Order implements ArrayAccess
         'payment_reference' => 'paymentReference',
         'vat_total' => 'vatTotal',
         'gl_number' => 'glNumber',
+        'shop_status' => 'shopStatus',
         'shop_id' => 'shopId'
     ];
 
@@ -109,6 +111,7 @@ class Order implements ArrayAccess
         'payment_reference' => 'setPaymentReference',
         'vat_total' => 'setVatTotal',
         'gl_number' => 'setGlNumber',
+        'shop_status' => 'setShopStatus',
         'shop_id' => 'setShopId'
     ];
 
@@ -129,6 +132,7 @@ class Order implements ArrayAccess
         'payment_reference' => 'getPaymentReference',
         'vat_total' => 'getVatTotal',
         'gl_number' => 'getGlNumber',
+        'shop_status' => 'getShopStatus',
         'shop_id' => 'getShopId'
     ];
 
@@ -174,6 +178,7 @@ class Order implements ArrayAccess
         $this->container['payment_reference'] = isset($data['payment_reference']) ? $data['payment_reference'] : null;
         $this->container['vat_total'] = isset($data['vat_total']) ? $data['vat_total'] : 0.0;
         $this->container['gl_number'] = isset($data['gl_number']) ? $data['gl_number'] : null;
+        $this->container['shop_status'] = isset($data['shop_status']) ? $data['shop_status'] : null;
         $this->container['shop_id'] = isset($data['shop_id']) ? $data['shop_id'] : null;
     }
 
@@ -207,11 +212,11 @@ class Order implements ArrayAccess
         if ($this->container['payment_gateway'] === null) {
             $invalid_properties[] = "'payment_gateway' can't be null";
         }
-        if ($this->container['payment_reference'] === null) {
-            $invalid_properties[] = "'payment_reference' can't be null";
-        }
         if ($this->container['vat_total'] === null) {
             $invalid_properties[] = "'vat_total' can't be null";
+        }
+        if ($this->container['shop_status'] === null) {
+            $invalid_properties[] = "'shop_status' can't be null";
         }
         if ($this->container['shop_id'] === null) {
             $invalid_properties[] = "'shop_id' can't be null";
@@ -249,10 +254,10 @@ class Order implements ArrayAccess
         if ($this->container['payment_gateway'] === null) {
             return false;
         }
-        if ($this->container['payment_reference'] === null) {
+        if ($this->container['vat_total'] === null) {
             return false;
         }
-        if ($this->container['vat_total'] === null) {
+        if ($this->container['shop_status'] === null) {
             return false;
         }
         if ($this->container['shop_id'] === null) {
@@ -489,6 +494,27 @@ class Order implements ArrayAccess
     public function setGlNumber($gl_number)
     {
         $this->container['gl_number'] = $gl_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_status
+     * @return string
+     */
+    public function getShopStatus()
+    {
+        return $this->container['shop_status'];
+    }
+
+    /**
+     * Sets shop_status
+     * @param string $shop_status
+     * @return $this
+     */
+    public function setShopStatus($shop_status)
+    {
+        $this->container['shop_status'] = $shop_status;
 
         return $this;
     }
