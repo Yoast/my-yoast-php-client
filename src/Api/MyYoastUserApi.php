@@ -990,6 +990,87 @@ class MyYoastUserApi
     }
 
     /**
+     * Operation myYoastUserFindYoastComUser
+     *
+     * 
+     *
+     * @param double $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return object
+     */
+    public function myYoastUserFindYoastComUser($id)
+    {
+        list($response) = $this->myYoastUserFindYoastComUserWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation myYoastUserFindYoastComUserWithHttpInfo
+     *
+     * 
+     *
+     * @param double $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function myYoastUserFindYoastComUserWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserFindYoastComUser');
+        }
+        // parse inputs
+        $resourcePath = "/MyYoastUsers/findYoastComUser";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($id !== null) {
+            $queryParams['id'] = $this->apiClient->getSerializer()->toQueryValue($id);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/MyYoastUsers/findYoastComUser'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation myYoastUserLogin
      *
      * Login a user with username/email and password.

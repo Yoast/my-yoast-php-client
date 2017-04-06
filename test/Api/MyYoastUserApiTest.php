@@ -198,6 +198,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserFindYoastComUser
+     *
+     * .
+     *
+     */
+    public function testMyYoastUserFindYoastComUser()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserLogin
      *
      * Login a user with username/email and password..

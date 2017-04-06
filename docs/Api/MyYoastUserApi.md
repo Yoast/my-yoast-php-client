@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**myYoastUserFind**](MyYoastUserApi.md#myYoastUserFind) | **GET** /MyYoastUsers | Find all instances of the model matched by filter from the data source.
 [**myYoastUserFindById**](MyYoastUserApi.md#myYoastUserFindById) | **GET** /MyYoastUsers/{id} | Find a model instance by {{id}} from the data source.
 [**myYoastUserFindOne**](MyYoastUserApi.md#myYoastUserFindOne) | **GET** /MyYoastUsers/findOne | Find first instance of the model matched by filter from the data source.
+[**myYoastUserFindYoastComUser**](MyYoastUserApi.md#myYoastUserFindYoastComUser) | **GET** /MyYoastUsers/findYoastComUser | 
 [**myYoastUserLogin**](MyYoastUserApi.md#myYoastUserLogin) | **POST** /MyYoastUsers/login | Login a user with username/email and password.
 [**myYoastUserLogout**](MyYoastUserApi.md#myYoastUserLogout) | **POST** /MyYoastUsers/logout | Logout a user with access token.
 [**myYoastUserPatchOrCreate**](MyYoastUserApi.md#myYoastUserPatchOrCreate) | **PATCH** /MyYoastUsers | Patch an existing model instance or insert a new one into the data source.
@@ -537,6 +538,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\MyYoastUser**](../Model/MyYoastUser.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **myYoastUserFindYoastComUser**
+> object myYoastUserFindYoastComUser($id)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
+$id = 1.2; // double | 
+
+try {
+    $result = $api_instance->myYoastUserFindYoastComUser($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MyYoastUserApi->myYoastUserFindYoastComUser: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **double**|  |
+
+### Return type
+
+**object**
 
 ### Authorization
 

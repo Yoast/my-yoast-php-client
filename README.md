@@ -132,6 +132,7 @@ Class | Method | HTTP request | Description
 *MyYoastUserApi* | [**myYoastUserFind**](docs/Api/MyYoastUserApi.md#myyoastuserfind) | **GET** /MyYoastUsers | Find all instances of the model matched by filter from the data source.
 *MyYoastUserApi* | [**myYoastUserFindById**](docs/Api/MyYoastUserApi.md#myyoastuserfindbyid) | **GET** /MyYoastUsers/{id} | Find a model instance by {{id}} from the data source.
 *MyYoastUserApi* | [**myYoastUserFindOne**](docs/Api/MyYoastUserApi.md#myyoastuserfindone) | **GET** /MyYoastUsers/findOne | Find first instance of the model matched by filter from the data source.
+*MyYoastUserApi* | [**myYoastUserFindYoastComUser**](docs/Api/MyYoastUserApi.md#myyoastuserfindyoastcomuser) | **GET** /MyYoastUsers/findYoastComUser | 
 *MyYoastUserApi* | [**myYoastUserLogin**](docs/Api/MyYoastUserApi.md#myyoastuserlogin) | **POST** /MyYoastUsers/login | Login a user with username/email and password.
 *MyYoastUserApi* | [**myYoastUserLogout**](docs/Api/MyYoastUserApi.md#myyoastuserlogout) | **POST** /MyYoastUsers/logout | Logout a user with access token.
 *MyYoastUserApi* | [**myYoastUserPatchOrCreate**](docs/Api/MyYoastUserApi.md#myyoastuserpatchorcreate) | **PATCH** /MyYoastUsers | Patch an existing model instance or insert a new one into the data source.
