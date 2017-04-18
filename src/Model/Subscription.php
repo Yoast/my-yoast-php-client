@@ -59,6 +59,8 @@ class Subscription implements ArrayAccess
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'reoccurring' => 'bool',
+        'shop_subscription_id' => 'double',
+        'shop_subscription_line_item_id' => 'double',
         'my_yoast_user_id' => 'double'
     ];
 
@@ -77,6 +79,8 @@ class Subscription implements ArrayAccess
         'start_date' => 'startDate',
         'end_date' => 'endDate',
         'reoccurring' => 'reoccurring',
+        'shop_subscription_id' => 'shopSubscriptionId',
+        'shop_subscription_line_item_id' => 'shopSubscriptionLineItemId',
         'my_yoast_user_id' => 'myYoastUserId'
     ];
 
@@ -91,6 +95,8 @@ class Subscription implements ArrayAccess
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'reoccurring' => 'setReoccurring',
+        'shop_subscription_id' => 'setShopSubscriptionId',
+        'shop_subscription_line_item_id' => 'setShopSubscriptionLineItemId',
         'my_yoast_user_id' => 'setMyYoastUserId'
     ];
 
@@ -105,6 +111,8 @@ class Subscription implements ArrayAccess
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'reoccurring' => 'getReoccurring',
+        'shop_subscription_id' => 'getShopSubscriptionId',
+        'shop_subscription_line_item_id' => 'getShopSubscriptionLineItemId',
         'my_yoast_user_id' => 'getMyYoastUserId'
     ];
 
@@ -144,6 +152,8 @@ class Subscription implements ArrayAccess
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['reoccurring'] = isset($data['reoccurring']) ? $data['reoccurring'] : true;
+        $this->container['shop_subscription_id'] = isset($data['shop_subscription_id']) ? $data['shop_subscription_id'] : null;
+        $this->container['shop_subscription_line_item_id'] = isset($data['shop_subscription_line_item_id']) ? $data['shop_subscription_line_item_id'] : null;
         $this->container['my_yoast_user_id'] = isset($data['my_yoast_user_id']) ? $data['my_yoast_user_id'] : null;
     }
 
@@ -303,6 +313,48 @@ class Subscription implements ArrayAccess
     public function setReoccurring($reoccurring)
     {
         $this->container['reoccurring'] = $reoccurring;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_subscription_id
+     * @return double
+     */
+    public function getShopSubscriptionId()
+    {
+        return $this->container['shop_subscription_id'];
+    }
+
+    /**
+     * Sets shop_subscription_id
+     * @param double $shop_subscription_id
+     * @return $this
+     */
+    public function setShopSubscriptionId($shop_subscription_id)
+    {
+        $this->container['shop_subscription_id'] = $shop_subscription_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_subscription_line_item_id
+     * @return double
+     */
+    public function getShopSubscriptionLineItemId()
+    {
+        return $this->container['shop_subscription_line_item_id'];
+    }
+
+    /**
+     * Sets shop_subscription_line_item_id
+     * @param double $shop_subscription_line_item_id
+     * @return $this
+     */
+    public function setShopSubscriptionLineItemId($shop_subscription_line_item_id)
+    {
+        $this->container['shop_subscription_line_item_id'] = $shop_subscription_line_item_id;
 
         return $this;
     }

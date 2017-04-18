@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **vat_total** | **double** |  | [default to 0.0]
 **gl_number** | **string** |  | [optional] 
 **shop_status** | **string** |  | 
-**shop_id** | **double** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -123,6 +123,22 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "shop_subscription_id"
+     */
+    public function testPropertyShopSubscriptionId()
+    {
+
+    }
+
+    /**
+     * Test attribute "shop_subscription_line_item_id"
+     */
+    public function testPropertyShopSubscriptionLineItemId()
+    {
+
+    }
+
+    /**
      * Test attribute "my_yoast_user_id"
      */
     public function testPropertyMyYoastUserId()

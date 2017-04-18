@@ -54,7 +54,6 @@ class MyYoastUser implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'shop_id' => 'double',
         'realm' => 'string',
         'username' => 'string',
         'email' => 'string',
@@ -73,7 +72,6 @@ class MyYoastUser implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'shop_id' => 'shopId',
         'realm' => 'realm',
         'username' => 'username',
         'email' => 'email',
@@ -88,7 +86,6 @@ class MyYoastUser implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'shop_id' => 'setShopId',
         'realm' => 'setRealm',
         'username' => 'setUsername',
         'email' => 'setEmail',
@@ -103,7 +100,6 @@ class MyYoastUser implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'shop_id' => 'getShopId',
         'realm' => 'getRealm',
         'username' => 'getUsername',
         'email' => 'getEmail',
@@ -143,7 +139,6 @@ class MyYoastUser implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['shop_id'] = isset($data['shop_id']) ? $data['shop_id'] : null;
         $this->container['realm'] = isset($data['realm']) ? $data['realm'] : null;
         $this->container['username'] = isset($data['username']) ? $data['username'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
@@ -182,27 +177,6 @@ class MyYoastUser implements ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets shop_id
-     * @return double
-     */
-    public function getShopId()
-    {
-        return $this->container['shop_id'];
-    }
-
-    /**
-     * Sets shop_id
-     * @param double $shop_id
-     * @return $this
-     */
-    public function setShopId($shop_id)
-    {
-        $this->container['shop_id'] = $shop_id;
-
-        return $this;
-    }
 
     /**
      * Gets realm

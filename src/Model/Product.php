@@ -61,7 +61,12 @@ class Product implements ArrayAccess
         'download_url' => 'string',
         'is_download_only' => 'bool',
         'icon' => 'string',
-        'shop_id' => 'double',
+        'shop_product_type' => 'string',
+        'shop_status' => 'string',
+        'price' => 'double',
+        'shop_regular_price' => 'double',
+        'shop_tax_status' => 'string',
+        'shop_tax_class' => 'string',
         'subscription_id' => 'string'
     ];
 
@@ -82,7 +87,12 @@ class Product implements ArrayAccess
         'download_url' => 'downloadUrl',
         'is_download_only' => 'isDownloadOnly',
         'icon' => 'icon',
-        'shop_id' => 'shopId',
+        'shop_product_type' => 'shopProductType',
+        'shop_status' => 'shopStatus',
+        'price' => 'price',
+        'shop_regular_price' => 'shopRegularPrice',
+        'shop_tax_status' => 'shopTaxStatus',
+        'shop_tax_class' => 'shopTaxClass',
         'subscription_id' => 'subscriptionId'
     ];
 
@@ -99,7 +109,12 @@ class Product implements ArrayAccess
         'download_url' => 'setDownloadUrl',
         'is_download_only' => 'setIsDownloadOnly',
         'icon' => 'setIcon',
-        'shop_id' => 'setShopId',
+        'shop_product_type' => 'setShopProductType',
+        'shop_status' => 'setShopStatus',
+        'price' => 'setPrice',
+        'shop_regular_price' => 'setShopRegularPrice',
+        'shop_tax_status' => 'setShopTaxStatus',
+        'shop_tax_class' => 'setShopTaxClass',
         'subscription_id' => 'setSubscriptionId'
     ];
 
@@ -116,7 +131,12 @@ class Product implements ArrayAccess
         'download_url' => 'getDownloadUrl',
         'is_download_only' => 'getIsDownloadOnly',
         'icon' => 'getIcon',
-        'shop_id' => 'getShopId',
+        'shop_product_type' => 'getShopProductType',
+        'shop_status' => 'getShopStatus',
+        'price' => 'getPrice',
+        'shop_regular_price' => 'getShopRegularPrice',
+        'shop_tax_status' => 'getShopTaxStatus',
+        'shop_tax_class' => 'getShopTaxClass',
         'subscription_id' => 'getSubscriptionId'
     ];
 
@@ -158,7 +178,12 @@ class Product implements ArrayAccess
         $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
         $this->container['is_download_only'] = isset($data['is_download_only']) ? $data['is_download_only'] : false;
         $this->container['icon'] = isset($data['icon']) ? $data['icon'] : null;
-        $this->container['shop_id'] = isset($data['shop_id']) ? $data['shop_id'] : null;
+        $this->container['shop_product_type'] = isset($data['shop_product_type']) ? $data['shop_product_type'] : null;
+        $this->container['shop_status'] = isset($data['shop_status']) ? $data['shop_status'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['shop_regular_price'] = isset($data['shop_regular_price']) ? $data['shop_regular_price'] : null;
+        $this->container['shop_tax_status'] = isset($data['shop_tax_status']) ? $data['shop_tax_status'] : null;
+        $this->container['shop_tax_class'] = isset($data['shop_tax_class']) ? $data['shop_tax_class'] : null;
         $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
     }
 
@@ -180,12 +205,6 @@ class Product implements ArrayAccess
         if ($this->container['store_url'] === null) {
             $invalid_properties[] = "'store_url' can't be null";
         }
-        if ($this->container['is_download_only'] === null) {
-            $invalid_properties[] = "'is_download_only' can't be null";
-        }
-        if ($this->container['shop_id'] === null) {
-            $invalid_properties[] = "'shop_id' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -205,12 +224,6 @@ class Product implements ArrayAccess
             return false;
         }
         if ($this->container['store_url'] === null) {
-            return false;
-        }
-        if ($this->container['is_download_only'] === null) {
-            return false;
-        }
-        if ($this->container['shop_id'] === null) {
             return false;
         }
         return true;
@@ -365,22 +378,127 @@ class Product implements ArrayAccess
     }
 
     /**
-     * Gets shop_id
-     * @return double
+     * Gets shop_product_type
+     * @return string
      */
-    public function getShopId()
+    public function getShopProductType()
     {
-        return $this->container['shop_id'];
+        return $this->container['shop_product_type'];
     }
 
     /**
-     * Sets shop_id
-     * @param double $shop_id
+     * Sets shop_product_type
+     * @param string $shop_product_type
      * @return $this
      */
-    public function setShopId($shop_id)
+    public function setShopProductType($shop_product_type)
     {
-        $this->container['shop_id'] = $shop_id;
+        $this->container['shop_product_type'] = $shop_product_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_status
+     * @return string
+     */
+    public function getShopStatus()
+    {
+        return $this->container['shop_status'];
+    }
+
+    /**
+     * Sets shop_status
+     * @param string $shop_status
+     * @return $this
+     */
+    public function setShopStatus($shop_status)
+    {
+        $this->container['shop_status'] = $shop_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     * @return double
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     * @param double $price
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_regular_price
+     * @return double
+     */
+    public function getShopRegularPrice()
+    {
+        return $this->container['shop_regular_price'];
+    }
+
+    /**
+     * Sets shop_regular_price
+     * @param double $shop_regular_price
+     * @return $this
+     */
+    public function setShopRegularPrice($shop_regular_price)
+    {
+        $this->container['shop_regular_price'] = $shop_regular_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_tax_status
+     * @return string
+     */
+    public function getShopTaxStatus()
+    {
+        return $this->container['shop_tax_status'];
+    }
+
+    /**
+     * Sets shop_tax_status
+     * @param string $shop_tax_status
+     * @return $this
+     */
+    public function setShopTaxStatus($shop_tax_status)
+    {
+        $this->container['shop_tax_status'] = $shop_tax_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets shop_tax_class
+     * @return string
+     */
+    public function getShopTaxClass()
+    {
+        return $this->container['shop_tax_class'];
+    }
+
+    /**
+     * Sets shop_tax_class
+     * @param string $shop_tax_class
+     * @return $this
+     */
+    public function setShopTaxClass($shop_tax_class)
+    {
+        $this->container['shop_tax_class'] = $shop_tax_class;
 
         return $this;
     }

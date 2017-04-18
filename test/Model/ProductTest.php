@@ -139,9 +139,49 @@ class ProductTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "shop_id"
+     * Test attribute "shop_product_type"
      */
-    public function testPropertyShopId()
+    public function testPropertyShopProductType()
+    {
+
+    }
+
+    /**
+     * Test attribute "shop_status"
+     */
+    public function testPropertyShopStatus()
+    {
+
+    }
+
+    /**
+     * Test attribute "price"
+     */
+    public function testPropertyPrice()
+    {
+
+    }
+
+    /**
+     * Test attribute "shop_regular_price"
+     */
+    public function testPropertyShopRegularPrice()
+    {
+
+    }
+
+    /**
+     * Test attribute "shop_tax_status"
+     */
+    public function testPropertyShopTaxStatus()
+    {
+
+    }
+
+    /**
+     * Test attribute "shop_tax_class"
+     */
+    public function testPropertyShopTaxClass()
     {
 
     }

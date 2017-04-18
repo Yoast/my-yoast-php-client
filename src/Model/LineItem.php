@@ -60,8 +60,7 @@ class LineItem implements ArrayAccess
         'vat_amount' => 'double',
         'vat_scale_id' => 'string',
         'product_id' => 'string',
-        'product_name' => 'string',
-        'shop_id' => 'double'
+        'product_name' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -80,8 +79,7 @@ class LineItem implements ArrayAccess
         'vat_amount' => 'vatAmount',
         'vat_scale_id' => 'vatScaleId',
         'product_id' => 'productId',
-        'product_name' => 'productName',
-        'shop_id' => 'shopId'
+        'product_name' => 'productName'
     ];
 
 
@@ -96,8 +94,7 @@ class LineItem implements ArrayAccess
         'vat_amount' => 'setVatAmount',
         'vat_scale_id' => 'setVatScaleId',
         'product_id' => 'setProductId',
-        'product_name' => 'setProductName',
-        'shop_id' => 'setShopId'
+        'product_name' => 'setProductName'
     ];
 
 
@@ -112,8 +109,7 @@ class LineItem implements ArrayAccess
         'vat_amount' => 'getVatAmount',
         'vat_scale_id' => 'getVatScaleId',
         'product_id' => 'getProductId',
-        'product_name' => 'getProductName',
-        'shop_id' => 'getShopId'
+        'product_name' => 'getProductName'
     ];
 
     public static function attributeMap()
@@ -154,7 +150,6 @@ class LineItem implements ArrayAccess
         $this->container['vat_scale_id'] = isset($data['vat_scale_id']) ? $data['vat_scale_id'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['product_name'] = isset($data['product_name']) ? $data['product_name'] : null;
-        $this->container['shop_id'] = isset($data['shop_id']) ? $data['shop_id'] : null;
     }
 
     /**
@@ -184,9 +179,6 @@ class LineItem implements ArrayAccess
         if ($this->container['product_name'] === null) {
             $invalid_properties[] = "'product_name' can't be null";
         }
-        if ($this->container['shop_id'] === null) {
-            $invalid_properties[] = "'shop_id' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -215,9 +207,6 @@ class LineItem implements ArrayAccess
             return false;
         }
         if ($this->container['product_name'] === null) {
-            return false;
-        }
-        if ($this->container['shop_id'] === null) {
             return false;
         }
         return true;
@@ -367,27 +356,6 @@ class LineItem implements ArrayAccess
     public function setProductName($product_name)
     {
         $this->container['product_name'] = $product_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets shop_id
-     * @return double
-     */
-    public function getShopId()
-    {
-        return $this->container['shop_id'];
-    }
-
-    /**
-     * Sets shop_id
-     * @param double $shop_id
-     * @return $this
-     */
-    public function setShopId($shop_id)
-    {
-        $this->container['shop_id'] = $shop_id;
 
         return $this;
     }

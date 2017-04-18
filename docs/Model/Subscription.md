@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **start_date** | [**\DateTime**](Date.md) |  | 
 **end_date** | [**\DateTime**](Date.md) |  | 
 **reoccurring** | **bool** |  | [default to true]
+**shop_subscription_id** | **double** |  | [optional] 
+**shop_subscription_line_item_id** | **double** |  | [optional] 
 **my_yoast_user_id** | **double** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
