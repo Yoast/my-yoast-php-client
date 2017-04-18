@@ -903,7 +903,7 @@ class SubscriptionApi
      *
      * @param string $subscription_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Subscription
+     * @return \Yoast\MyYoastApiClient\Model\Subscription[]
      */
     public function subscriptionFromWooCommerce($subscription_data)
     {
@@ -918,7 +918,7 @@ class SubscriptionApi
      *
      * @param string $subscription_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Subscription[], HTTP status code, HTTP response headers (array of strings)
      */
     public function subscriptionFromWooCommerceWithHttpInfo($subscription_data)
     {
@@ -960,15 +960,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Subscription',
+                '\Yoast\MyYoastApiClient\Model\Subscription[]',
                 '/Subscriptions/fromWooCommerce'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Subscription', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Subscription[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Subscription', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Subscription[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
