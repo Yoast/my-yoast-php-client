@@ -132,7 +132,7 @@ Class | Method | HTTP request | Description
 *MyYoastUserApi* | [**myYoastUserFind**](docs/Api/MyYoastUserApi.md#myyoastuserfind) | **GET** /MyYoastUsers | Find all instances of the model matched by filter from the data source.
 *MyYoastUserApi* | [**myYoastUserFindById**](docs/Api/MyYoastUserApi.md#myyoastuserfindbyid) | **GET** /MyYoastUsers/{id} | Find a model instance by {{id}} from the data source.
 *MyYoastUserApi* | [**myYoastUserFindOne**](docs/Api/MyYoastUserApi.md#myyoastuserfindone) | **GET** /MyYoastUsers/findOne | Find first instance of the model matched by filter from the data source.
-*MyYoastUserApi* | [**myYoastUserFindYoastComUser**](docs/Api/MyYoastUserApi.md#myyoastuserfindyoastcomuser) | **GET** /MyYoastUsers/findYoastComUser | 
+*MyYoastUserApi* | [**myYoastUserFromWooCommerce**](docs/Api/MyYoastUserApi.md#myyoastuserfromwoocommerce) | **PUT** /MyYoastUsers/fromWooCommerce | 
 *MyYoastUserApi* | [**myYoastUserLogin**](docs/Api/MyYoastUserApi.md#myyoastuserlogin) | **POST** /MyYoastUsers/login | Login a user with username/email and password.
 *MyYoastUserApi* | [**myYoastUserLogout**](docs/Api/MyYoastUserApi.md#myyoastuserlogout) | **POST** /MyYoastUsers/logout | Logout a user with access token.
 *MyYoastUserApi* | [**myYoastUserPatchOrCreate**](docs/Api/MyYoastUserApi.md#myyoastuserpatchorcreate) | **PATCH** /MyYoastUsers | Patch an existing model instance or insert a new one into the data source.
@@ -197,6 +197,7 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderFind**](docs/Api/OrderApi.md#orderfind) | **GET** /Orders | Find all instances of the model matched by filter from the data source.
 *OrderApi* | [**orderFindById**](docs/Api/OrderApi.md#orderfindbyid) | **GET** /Orders/{id} | Find a model instance by {{id}} from the data source.
 *OrderApi* | [**orderFindOne**](docs/Api/OrderApi.md#orderfindone) | **GET** /Orders/findOne | Find first instance of the model matched by filter from the data source.
+*OrderApi* | [**orderFromWooCommerce**](docs/Api/OrderApi.md#orderfromwoocommerce) | **PUT** /Orders/fromWooCommerce | 
 *OrderApi* | [**orderPatchOrCreate**](docs/Api/OrderApi.md#orderpatchorcreate) | **PATCH** /Orders | Patch an existing model instance or insert a new one into the data source.
 *OrderApi* | [**orderPrototypeCountItems**](docs/Api/OrderApi.md#orderprototypecountitems) | **GET** /Orders/{id}/items/count | Counts items of Order.
 *OrderApi* | [**orderPrototypeCreateItems**](docs/Api/OrderApi.md#orderprototypecreateitems) | **POST** /Orders/{id}/items | Creates a new instance in items of this model.

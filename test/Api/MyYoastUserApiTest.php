@@ -198,12 +198,12 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for myYoastUserFindYoastComUser
+     * Test case for myYoastUserFromWooCommerce
      *
      * .
      *
      */
-    public function testMyYoastUserFindYoastComUser()
+    public function testMyYoastUserFromWooCommerce()
     {
 
     }

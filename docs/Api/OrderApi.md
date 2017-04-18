@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**orderFind**](OrderApi.md#orderFind) | **GET** /Orders | Find all instances of the model matched by filter from the data source.
 [**orderFindById**](OrderApi.md#orderFindById) | **GET** /Orders/{id} | Find a model instance by {{id}} from the data source.
 [**orderFindOne**](OrderApi.md#orderFindOne) | **GET** /Orders/findOne | Find first instance of the model matched by filter from the data source.
+[**orderFromWooCommerce**](OrderApi.md#orderFromWooCommerce) | **PUT** /Orders/fromWooCommerce | 
 [**orderPatchOrCreate**](OrderApi.md#orderPatchOrCreate) | **PATCH** /Orders | Patch an existing model instance or insert a new one into the data source.
 [**orderPrototypeCountItems**](OrderApi.md#orderPrototypeCountItems) | **GET** /Orders/{id}/items/count | Counts items of Order.
 [**orderPrototypeCreateItems**](OrderApi.md#orderPrototypeCreateItems) | **POST** /Orders/{id}/items | Creates a new instance in items of this model.
@@ -452,6 +453,51 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string**| Filter defining fields, where, include, order, offset, and limit | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderFromWooCommerce**
+> \Yoast\MyYoastApiClient\Model\Order orderFromWooCommerce($order_data, $extra_data)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$order_data = "order_data_example"; // string | 
+$extra_data = "extra_data_example"; // string | 
+
+try {
+    $result = $api_instance->orderFromWooCommerce($order_data, $extra_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderFromWooCommerce: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **order_data** | **string**|  |
+ **extra_data** | **string**|  |
 
 ### Return type
 

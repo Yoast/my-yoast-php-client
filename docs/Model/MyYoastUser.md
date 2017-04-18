@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**shop_id** | **double** |  | [optional] 
 **realm** | **string** |  | [optional] 
 **username** | **string** |  | [optional] 
 **email** | **string** |  | 

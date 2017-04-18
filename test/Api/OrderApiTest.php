@@ -187,6 +187,17 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for orderFromWooCommerce
+     *
+     * .
+     *
+     */
+    public function testOrderFromWooCommerce()
+    {
+
+    }
+
+    /**
      * Test case for orderPatchOrCreate
      *
      * Patch an existing model instance or insert a new one into the data source..

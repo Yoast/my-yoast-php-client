@@ -990,37 +990,37 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserFindYoastComUser
+     * Operation myYoastUserFromWooCommerce
      *
      * 
      *
-     * @param double $id  (required)
+     * @param string $customer_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
      */
-    public function myYoastUserFindYoastComUser($id)
+    public function myYoastUserFromWooCommerce($customer_data)
     {
-        list($response) = $this->myYoastUserFindYoastComUserWithHttpInfo($id);
+        list($response) = $this->myYoastUserFromWooCommerceWithHttpInfo($customer_data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserFindYoastComUserWithHttpInfo
+     * Operation myYoastUserFromWooCommerceWithHttpInfo
      *
      * 
      *
-     * @param double $id  (required)
+     * @param string $customer_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserFindYoastComUserWithHttpInfo($id)
+    public function myYoastUserFromWooCommerceWithHttpInfo($customer_data)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserFindYoastComUser');
+        // verify the required parameter 'customer_data' is set
+        if ($customer_data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $customer_data when calling myYoastUserFromWooCommerce');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/findYoastComUser";
+        $resourcePath = "/MyYoastUsers/fromWooCommerce";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1031,13 +1031,13 @@ class MyYoastUserApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
-        // query params
-        if ($id !== null) {
-            $queryParams['id'] = $this->apiClient->getSerializer()->toQueryValue($id);
-        }
         // default format to json
         $resourcePath = str_replace("{format}", "json", $resourcePath);
 
+        // form params
+        if ($customer_data !== null) {
+            $formParams['customerData'] = $this->apiClient->getSerializer()->toFormValue($customer_data);
+        }
         
         // for model (json/xml)
         if (isset($_tempBody)) {
@@ -1049,12 +1049,12 @@ class MyYoastUserApi
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath,
-                'GET',
+                'PUT',
                 $queryParams,
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers/findYoastComUser'
+                '/MyYoastUsers/fromWooCommerce'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];

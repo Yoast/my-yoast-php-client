@@ -897,6 +897,97 @@ class OrderApi
     }
 
     /**
+     * Operation orderFromWooCommerce
+     *
+     * 
+     *
+     * @param string $order_data  (required)
+     * @param string $extra_data  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Order
+     */
+    public function orderFromWooCommerce($order_data, $extra_data)
+    {
+        list($response) = $this->orderFromWooCommerceWithHttpInfo($order_data, $extra_data);
+        return $response;
+    }
+
+    /**
+     * Operation orderFromWooCommerceWithHttpInfo
+     *
+     * 
+     *
+     * @param string $order_data  (required)
+     * @param string $extra_data  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderFromWooCommerceWithHttpInfo($order_data, $extra_data)
+    {
+        // verify the required parameter 'order_data' is set
+        if ($order_data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $order_data when calling orderFromWooCommerce');
+        }
+        // verify the required parameter 'extra_data' is set
+        if ($extra_data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $extra_data when calling orderFromWooCommerce');
+        }
+        // parse inputs
+        $resourcePath = "/Orders/fromWooCommerce";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // form params
+        if ($order_data !== null) {
+            $formParams['orderData'] = $this->apiClient->getSerializer()->toFormValue($order_data);
+        }
+        // form params
+        if ($extra_data !== null) {
+            $formParams['extraData'] = $this->apiClient->getSerializer()->toFormValue($extra_data);
+        }
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Order',
+                '/Orders/fromWooCommerce'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Order', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Order', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation orderPatchOrCreate
      *
      * Patch an existing model instance or insert a new one into the data source.
