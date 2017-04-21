@@ -351,7 +351,7 @@ Find all instances of the model matched by filter from the data source.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->productFind($filter);
@@ -366,7 +366,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit | [optional]
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -395,7 +395,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
 $id = "id_example"; // string | Model id
-$filter = "filter_example"; // string | Filter defining fields and include
+$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->productFindById($id, $filter);
@@ -411,7 +411,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **filter** | **string**| Filter defining fields and include | [optional]
+ **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -439,7 +439,7 @@ Find first instance of the model matched by filter from the data source.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->productFindOne($filter);
@@ -454,7 +454,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit | [optional]
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -472,7 +472,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productFromWooCommerce**
-> \Yoast\MyYoastApiClient\Model\Product productFromWooCommerce($product_data)
+> \Yoast\MyYoastApiClient\Model\Product productFromWooCommerce($product_data, $extra_data)
 
 
 
@@ -483,9 +483,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
 $product_data = "product_data_example"; // string | 
+$extra_data = "extra_data_example"; // string | 
 
 try {
-    $result = $api_instance->productFromWooCommerce($product_data);
+    $result = $api_instance->productFromWooCommerce($product_data, $extra_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productFromWooCommerce: ', $e->getMessage(), PHP_EOL;
@@ -498,6 +499,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **product_data** | **string**|  |
+ **extra_data** | **string**|  |
 
 ### Return type
 
@@ -822,7 +824,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productPrototypeDestroyByIdLineItems**
-> productPrototypeDestroyByIdLineItems($fk, $id)
+> productPrototypeDestroyByIdLineItems($id, $fk)
 
 Delete a related item by id for lineItems.
 
@@ -832,11 +834,11 @@ Delete a related item by id for lineItems.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
-$fk = "fk_example"; // string | Foreign key for lineItems
 $id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for lineItems
 
 try {
-    $api_instance->productPrototypeDestroyByIdLineItems($fk, $id);
+    $api_instance->productPrototypeDestroyByIdLineItems($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productPrototypeDestroyByIdLineItems: ', $e->getMessage(), PHP_EOL;
 }
@@ -847,8 +849,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for lineItems |
  **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for lineItems |
 
 ### Return type
 
@@ -866,7 +868,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productPrototypeDestroyByIdSubscriptions**
-> productPrototypeDestroyByIdSubscriptions($fk, $id)
+> productPrototypeDestroyByIdSubscriptions($id, $fk)
 
 Delete a related item by id for subscriptions.
 
@@ -876,11 +878,11 @@ Delete a related item by id for subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $api_instance->productPrototypeDestroyByIdSubscriptions($fk, $id);
+    $api_instance->productPrototypeDestroyByIdSubscriptions($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productPrototypeDestroyByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
@@ -891,8 +893,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for subscriptions |
 
 ### Return type
 
@@ -910,7 +912,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productPrototypeFindByIdLineItems**
-> \Yoast\MyYoastApiClient\Model\LineItem productPrototypeFindByIdLineItems($fk, $id)
+> \Yoast\MyYoastApiClient\Model\LineItem productPrototypeFindByIdLineItems($id, $fk)
 
 Find a related item by id for lineItems.
 
@@ -920,11 +922,11 @@ Find a related item by id for lineItems.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
-$fk = "fk_example"; // string | Foreign key for lineItems
 $id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for lineItems
 
 try {
-    $result = $api_instance->productPrototypeFindByIdLineItems($fk, $id);
+    $result = $api_instance->productPrototypeFindByIdLineItems($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productPrototypeFindByIdLineItems: ', $e->getMessage(), PHP_EOL;
@@ -936,8 +938,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for lineItems |
  **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for lineItems |
 
 ### Return type
 
@@ -955,7 +957,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productPrototypeFindByIdSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription productPrototypeFindByIdSubscriptions($fk, $id)
+> \Yoast\MyYoastApiClient\Model\Subscription productPrototypeFindByIdSubscriptions($id, $fk)
 
 Find a related item by id for subscriptions.
 
@@ -965,11 +967,11 @@ Find a related item by id for subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $result = $api_instance->productPrototypeFindByIdSubscriptions($fk, $id);
+    $result = $api_instance->productPrototypeFindByIdSubscriptions($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productPrototypeFindByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -981,8 +983,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for subscriptions |
 
 ### Return type
 
@@ -1135,7 +1137,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productPrototypeUpdateByIdLineItems**
-> \Yoast\MyYoastApiClient\Model\LineItem productPrototypeUpdateByIdLineItems($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\LineItem productPrototypeUpdateByIdLineItems($id, $fk, $data)
 
 Update a related item by id for lineItems.
 
@@ -1145,12 +1147,12 @@ Update a related item by id for lineItems.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
-$fk = "fk_example"; // string | Foreign key for lineItems
 $id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for lineItems
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | 
 
 try {
-    $result = $api_instance->productPrototypeUpdateByIdLineItems($fk, $id, $data);
+    $result = $api_instance->productPrototypeUpdateByIdLineItems($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productPrototypeUpdateByIdLineItems: ', $e->getMessage(), PHP_EOL;
@@ -1162,8 +1164,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for lineItems |
  **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for lineItems |
  **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)|  | [optional]
 
 ### Return type
@@ -1182,7 +1184,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productPrototypeUpdateByIdSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription productPrototypeUpdateByIdSubscriptions($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\Subscription productPrototypeUpdateByIdSubscriptions($id, $fk, $data)
 
 Update a related item by id for subscriptions.
 
@@ -1192,12 +1194,12 @@ Update a related item by id for subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 $data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
 
 try {
-    $result = $api_instance->productPrototypeUpdateByIdSubscriptions($fk, $id, $data);
+    $result = $api_instance->productPrototypeUpdateByIdSubscriptions($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->productPrototypeUpdateByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -1209,8 +1211,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for subscriptions |
  **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)|  | [optional]
 
 ### Return type

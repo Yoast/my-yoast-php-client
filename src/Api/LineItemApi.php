@@ -656,7 +656,7 @@ class LineItemApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\LineItem[]
      */
@@ -671,7 +671,7 @@ class LineItemApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\LineItem[], HTTP status code, HTTP response headers (array of strings)
      */
@@ -734,7 +734,7 @@ class LineItemApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\LineItem
      */
@@ -750,7 +750,7 @@ class LineItemApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
      */
@@ -824,7 +824,7 @@ class LineItemApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\LineItem
      */
@@ -839,7 +839,7 @@ class LineItemApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
      */
@@ -1243,14 +1243,14 @@ class LineItemApi
      *
      * Delete a related item by id for discounts.
      *
-     * @param string $fk Foreign key for discounts (required)
      * @param string $id LineItem id (required)
+     * @param string $fk Foreign key for discounts (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function lineItemPrototypeDestroyByIdDiscounts($fk, $id)
+    public function lineItemPrototypeDestroyByIdDiscounts($id, $fk)
     {
-        list($response) = $this->lineItemPrototypeDestroyByIdDiscountsWithHttpInfo($fk, $id);
+        list($response) = $this->lineItemPrototypeDestroyByIdDiscountsWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -1259,20 +1259,20 @@ class LineItemApi
      *
      * Delete a related item by id for discounts.
      *
-     * @param string $fk Foreign key for discounts (required)
      * @param string $id LineItem id (required)
+     * @param string $fk Foreign key for discounts (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lineItemPrototypeDestroyByIdDiscountsWithHttpInfo($fk, $id)
+    public function lineItemPrototypeDestroyByIdDiscountsWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling lineItemPrototypeDestroyByIdDiscounts');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeDestroyByIdDiscounts');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling lineItemPrototypeDestroyByIdDiscounts');
         }
         // parse inputs
         $resourcePath = "/LineItems/{id}/discounts/{fk}";
@@ -1287,18 +1287,18 @@ class LineItemApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -1338,14 +1338,14 @@ class LineItemApi
      *
      * Find a related item by id for discounts.
      *
-     * @param string $fk Foreign key for discounts (required)
      * @param string $id LineItem id (required)
+     * @param string $fk Foreign key for discounts (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\DiscountLineItem
      */
-    public function lineItemPrototypeFindByIdDiscounts($fk, $id)
+    public function lineItemPrototypeFindByIdDiscounts($id, $fk)
     {
-        list($response) = $this->lineItemPrototypeFindByIdDiscountsWithHttpInfo($fk, $id);
+        list($response) = $this->lineItemPrototypeFindByIdDiscountsWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -1354,20 +1354,20 @@ class LineItemApi
      *
      * Find a related item by id for discounts.
      *
-     * @param string $fk Foreign key for discounts (required)
      * @param string $id LineItem id (required)
+     * @param string $fk Foreign key for discounts (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\DiscountLineItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lineItemPrototypeFindByIdDiscountsWithHttpInfo($fk, $id)
+    public function lineItemPrototypeFindByIdDiscountsWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling lineItemPrototypeFindByIdDiscounts');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeFindByIdDiscounts');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling lineItemPrototypeFindByIdDiscounts');
         }
         // parse inputs
         $resourcePath = "/LineItems/{id}/discounts/{fk}";
@@ -1382,18 +1382,18 @@ class LineItemApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -1802,15 +1802,15 @@ class LineItemApi
      *
      * Update a related item by id for discounts.
      *
-     * @param string $fk Foreign key for discounts (required)
      * @param string $id LineItem id (required)
+     * @param string $fk Foreign key for discounts (required)
      * @param \Yoast\MyYoastApiClient\Model\DiscountLineItem $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\DiscountLineItem
      */
-    public function lineItemPrototypeUpdateByIdDiscounts($fk, $id, $data = null)
+    public function lineItemPrototypeUpdateByIdDiscounts($id, $fk, $data = null)
     {
-        list($response) = $this->lineItemPrototypeUpdateByIdDiscountsWithHttpInfo($fk, $id, $data);
+        list($response) = $this->lineItemPrototypeUpdateByIdDiscountsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -1819,21 +1819,21 @@ class LineItemApi
      *
      * Update a related item by id for discounts.
      *
-     * @param string $fk Foreign key for discounts (required)
      * @param string $id LineItem id (required)
+     * @param string $fk Foreign key for discounts (required)
      * @param \Yoast\MyYoastApiClient\Model\DiscountLineItem $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\DiscountLineItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function lineItemPrototypeUpdateByIdDiscountsWithHttpInfo($fk, $id, $data = null)
+    public function lineItemPrototypeUpdateByIdDiscountsWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling lineItemPrototypeUpdateByIdDiscounts');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeUpdateByIdDiscounts');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling lineItemPrototypeUpdateByIdDiscounts');
         }
         // parse inputs
         $resourcePath = "/LineItems/{id}/discounts/{fk}";
@@ -1848,18 +1848,18 @@ class LineItemApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }

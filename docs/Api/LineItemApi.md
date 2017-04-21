@@ -345,7 +345,7 @@ Find all instances of the model matched by filter from the data source.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->lineItemFind($filter);
@@ -360,7 +360,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit | [optional]
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -389,7 +389,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
 $id = "id_example"; // string | Model id
-$filter = "filter_example"; // string | Filter defining fields and include
+$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->lineItemFindById($id, $filter);
@@ -405,7 +405,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **filter** | **string**| Filter defining fields and include | [optional]
+ **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -433,7 +433,7 @@ Find first instance of the model matched by filter from the data source.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->lineItemFindOne($filter);
@@ -448,7 +448,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit | [optional]
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -641,7 +641,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lineItemPrototypeDestroyByIdDiscounts**
-> lineItemPrototypeDestroyByIdDiscounts($fk, $id)
+> lineItemPrototypeDestroyByIdDiscounts($id, $fk)
 
 Delete a related item by id for discounts.
 
@@ -651,11 +651,11 @@ Delete a related item by id for discounts.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$fk = "fk_example"; // string | Foreign key for discounts
 $id = "id_example"; // string | LineItem id
+$fk = "fk_example"; // string | Foreign key for discounts
 
 try {
-    $api_instance->lineItemPrototypeDestroyByIdDiscounts($fk, $id);
+    $api_instance->lineItemPrototypeDestroyByIdDiscounts($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeDestroyByIdDiscounts: ', $e->getMessage(), PHP_EOL;
 }
@@ -666,8 +666,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for discounts |
  **id** | **string**| LineItem id |
+ **fk** | **string**| Foreign key for discounts |
 
 ### Return type
 
@@ -685,7 +685,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lineItemPrototypeFindByIdDiscounts**
-> \Yoast\MyYoastApiClient\Model\DiscountLineItem lineItemPrototypeFindByIdDiscounts($fk, $id)
+> \Yoast\MyYoastApiClient\Model\DiscountLineItem lineItemPrototypeFindByIdDiscounts($id, $fk)
 
 Find a related item by id for discounts.
 
@@ -695,11 +695,11 @@ Find a related item by id for discounts.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$fk = "fk_example"; // string | Foreign key for discounts
 $id = "id_example"; // string | LineItem id
+$fk = "fk_example"; // string | Foreign key for discounts
 
 try {
-    $result = $api_instance->lineItemPrototypeFindByIdDiscounts($fk, $id);
+    $result = $api_instance->lineItemPrototypeFindByIdDiscounts($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeFindByIdDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -711,8 +711,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for discounts |
  **id** | **string**| LineItem id |
+ **fk** | **string**| Foreign key for discounts |
 
 ### Return type
 
@@ -910,7 +910,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **lineItemPrototypeUpdateByIdDiscounts**
-> \Yoast\MyYoastApiClient\Model\DiscountLineItem lineItemPrototypeUpdateByIdDiscounts($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\DiscountLineItem lineItemPrototypeUpdateByIdDiscounts($id, $fk, $data)
 
 Update a related item by id for discounts.
 
@@ -920,12 +920,12 @@ Update a related item by id for discounts.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$fk = "fk_example"; // string | Foreign key for discounts
 $id = "id_example"; // string | LineItem id
+$fk = "fk_example"; // string | Foreign key for discounts
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | 
 
 try {
-    $result = $api_instance->lineItemPrototypeUpdateByIdDiscounts($fk, $id, $data);
+    $result = $api_instance->lineItemPrototypeUpdateByIdDiscounts($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeUpdateByIdDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -937,8 +937,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for discounts |
  **id** | **string**| LineItem id |
+ **fk** | **string**| Foreign key for discounts |
  **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)|  | [optional]
 
 ### Return type

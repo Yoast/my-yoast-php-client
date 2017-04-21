@@ -656,7 +656,7 @@ class OrderApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Order[]
      */
@@ -671,7 +671,7 @@ class OrderApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      */
@@ -734,7 +734,7 @@ class OrderApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
@@ -750,7 +750,7 @@ class OrderApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
@@ -824,7 +824,7 @@ class OrderApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
@@ -839,7 +839,7 @@ class OrderApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
@@ -979,6 +979,91 @@ class OrderApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Order', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderInvoice
+     *
+     * 
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2004
+     */
+    public function orderInvoice($id)
+    {
+        list($response) = $this->orderInvoiceWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation orderInvoiceWithHttpInfo
+     *
+     * 
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderInvoiceWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderInvoice');
+        }
+        // parse inputs
+        $resourcePath = "/Orders/{id}/invoice";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2004',
+                '/Orders/{id}/invoice'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2004', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2004', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1141,6 +1226,97 @@ class OrderApi
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
                 '/Orders/{id}/items/count'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderPrototypeCountSubscription
+     *
+     * Counts subscription of Order.
+     *
+     * @param string $id Order id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     */
+    public function orderPrototypeCountSubscription($id, $where = null)
+    {
+        list($response) = $this->orderPrototypeCountSubscriptionWithHttpInfo($id, $where);
+        return $response;
+    }
+
+    /**
+     * Operation orderPrototypeCountSubscriptionWithHttpInfo
+     *
+     * Counts subscription of Order.
+     *
+     * @param string $id Order id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderPrototypeCountSubscriptionWithHttpInfo($id, $where = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeCountSubscription');
+        }
+        // parse inputs
+        $resourcePath = "/Orders/{id}/subscription/count";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($where !== null) {
+            $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '/Orders/{id}/subscription/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -1422,129 +1598,34 @@ class OrderApi
     }
 
     /**
-     * Operation orderPrototypeDestroyByIdItems
+     * Operation orderPrototypeDeleteSubscription
      *
-     * Delete a related item by id for items.
-     *
-     * @param string $fk Foreign key for items (required)
-     * @param string $id Order id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return void
-     */
-    public function orderPrototypeDestroyByIdItems($fk, $id)
-    {
-        list($response) = $this->orderPrototypeDestroyByIdItemsWithHttpInfo($fk, $id);
-        return $response;
-    }
-
-    /**
-     * Operation orderPrototypeDestroyByIdItemsWithHttpInfo
-     *
-     * Delete a related item by id for items.
-     *
-     * @param string $fk Foreign key for items (required)
-     * @param string $id Order id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function orderPrototypeDestroyByIdItemsWithHttpInfo($fk, $id)
-    {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling orderPrototypeDestroyByIdItems');
-        }
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeDestroyByIdItems');
-        }
-        // parse inputs
-        $resourcePath = "/Orders/{id}/items/{fk}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/Orders/{id}/items/{fk}'
-            );
-
-            return [null, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation orderPrototypeDestroySubscription
-     *
-     * Deletes subscription of this model.
+     * Deletes all subscription of this model.
      *
      * @param string $id Order id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function orderPrototypeDestroySubscription($id)
+    public function orderPrototypeDeleteSubscription($id)
     {
-        list($response) = $this->orderPrototypeDestroySubscriptionWithHttpInfo($id);
+        list($response) = $this->orderPrototypeDeleteSubscriptionWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation orderPrototypeDestroySubscriptionWithHttpInfo
+     * Operation orderPrototypeDeleteSubscriptionWithHttpInfo
      *
-     * Deletes subscription of this model.
+     * Deletes all subscription of this model.
      *
      * @param string $id Order id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderPrototypeDestroySubscriptionWithHttpInfo($id)
+    public function orderPrototypeDeleteSubscriptionWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeDestroySubscription');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeDeleteSubscription');
         }
         // parse inputs
         $resourcePath = "/Orders/{id}/subscription";
@@ -1598,40 +1679,40 @@ class OrderApi
     }
 
     /**
-     * Operation orderPrototypeFindByIdItems
+     * Operation orderPrototypeDestroyByIdItems
      *
-     * Find a related item by id for items.
+     * Delete a related item by id for items.
      *
-     * @param string $fk Foreign key for items (required)
      * @param string $id Order id (required)
+     * @param string $fk Foreign key for items (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\LineItem
+     * @return void
      */
-    public function orderPrototypeFindByIdItems($fk, $id)
+    public function orderPrototypeDestroyByIdItems($id, $fk)
     {
-        list($response) = $this->orderPrototypeFindByIdItemsWithHttpInfo($fk, $id);
+        list($response) = $this->orderPrototypeDestroyByIdItemsWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation orderPrototypeFindByIdItemsWithHttpInfo
+     * Operation orderPrototypeDestroyByIdItemsWithHttpInfo
      *
-     * Find a related item by id for items.
+     * Delete a related item by id for items.
      *
-     * @param string $fk Foreign key for items (required)
      * @param string $id Order id (required)
+     * @param string $fk Foreign key for items (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderPrototypeFindByIdItemsWithHttpInfo($fk, $id)
+    public function orderPrototypeDestroyByIdItemsWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling orderPrototypeFindByIdItems');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeFindByIdItems');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeDestroyByIdItems');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling orderPrototypeDestroyByIdItems');
         }
         // parse inputs
         $resourcePath = "/Orders/{id}/items/{fk}";
@@ -1646,6 +1727,14 @@ class OrderApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
         if ($fk !== null) {
             $resourcePath = str_replace(
                 "{" . "fk" . "}",
@@ -1653,11 +1742,193 @@ class OrderApi
                 $resourcePath
             );
         }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/Orders/{id}/items/{fk}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderPrototypeDestroyByIdSubscription
+     *
+     * Delete a related item by id for subscription.
+     *
+     * @param string $id Order id (required)
+     * @param string $fk Foreign key for subscription (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function orderPrototypeDestroyByIdSubscription($id, $fk)
+    {
+        list($response) = $this->orderPrototypeDestroyByIdSubscriptionWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation orderPrototypeDestroyByIdSubscriptionWithHttpInfo
+     *
+     * Delete a related item by id for subscription.
+     *
+     * @param string $id Order id (required)
+     * @param string $fk Foreign key for subscription (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderPrototypeDestroyByIdSubscriptionWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeDestroyByIdSubscription');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling orderPrototypeDestroyByIdSubscription');
+        }
+        // parse inputs
+        $resourcePath = "/Orders/{id}/subscription/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/Orders/{id}/subscription/{fk}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderPrototypeFindByIdItems
+     *
+     * Find a related item by id for items.
+     *
+     * @param string $id Order id (required)
+     * @param string $fk Foreign key for items (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\LineItem
+     */
+    public function orderPrototypeFindByIdItems($id, $fk)
+    {
+        list($response) = $this->orderPrototypeFindByIdItemsWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation orderPrototypeFindByIdItemsWithHttpInfo
+     *
+     * Find a related item by id for items.
+     *
+     * @param string $id Order id (required)
+     * @param string $fk Foreign key for items (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderPrototypeFindByIdItemsWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeFindByIdItems');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling orderPrototypeFindByIdItems');
+        }
+        // parse inputs
+        $resourcePath = "/Orders/{id}/items/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -1688,6 +1959,105 @@ class OrderApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\LineItem', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation orderPrototypeFindByIdSubscription
+     *
+     * Find a related item by id for subscription.
+     *
+     * @param string $id Order id (required)
+     * @param string $fk Foreign key for subscription (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\SubscriptionOrders
+     */
+    public function orderPrototypeFindByIdSubscription($id, $fk)
+    {
+        list($response) = $this->orderPrototypeFindByIdSubscriptionWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation orderPrototypeFindByIdSubscriptionWithHttpInfo
+     *
+     * Find a related item by id for subscription.
+     *
+     * @param string $id Order id (required)
+     * @param string $fk Foreign key for subscription (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionOrders, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function orderPrototypeFindByIdSubscriptionWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeFindByIdSubscription');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling orderPrototypeFindByIdSubscription');
+        }
+        // parse inputs
+        $resourcePath = "/Orders/{id}/subscription/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\SubscriptionOrders',
+                '/Orders/{id}/subscription/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\SubscriptionOrders', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\SubscriptionOrders', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1881,30 +2251,30 @@ class OrderApi
     /**
      * Operation orderPrototypeGetSubscription
      *
-     * Fetches hasOne relation subscription.
+     * Queries subscription of Order.
      *
      * @param string $id Order id (required)
-     * @param bool $refresh  (optional)
+     * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\SubscriptionOrders
+     * @return \Yoast\MyYoastApiClient\Model\SubscriptionOrders[]
      */
-    public function orderPrototypeGetSubscription($id, $refresh = null)
+    public function orderPrototypeGetSubscription($id, $filter = null)
     {
-        list($response) = $this->orderPrototypeGetSubscriptionWithHttpInfo($id, $refresh);
+        list($response) = $this->orderPrototypeGetSubscriptionWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
      * Operation orderPrototypeGetSubscriptionWithHttpInfo
      *
-     * Fetches hasOne relation subscription.
+     * Queries subscription of Order.
      *
      * @param string $id Order id (required)
-     * @param bool $refresh  (optional)
+     * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionOrders, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionOrders[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderPrototypeGetSubscriptionWithHttpInfo($id, $refresh = null)
+    public function orderPrototypeGetSubscriptionWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -1923,8 +2293,8 @@ class OrderApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // query params
-        if ($refresh !== null) {
-            $queryParams['refresh'] = $this->apiClient->getSerializer()->toQueryValue($refresh);
+        if ($filter !== null) {
+            $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
         }
         // path params
         if ($id !== null) {
@@ -1952,15 +2322,15 @@ class OrderApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\SubscriptionOrders',
+                '\Yoast\MyYoastApiClient\Model\SubscriptionOrders[]',
                 '/Orders/{id}/subscription'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\SubscriptionOrders', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\SubscriptionOrders[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\SubscriptionOrders', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\SubscriptionOrders[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2066,15 +2436,15 @@ class OrderApi
      *
      * Update a related item by id for items.
      *
-     * @param string $fk Foreign key for items (required)
      * @param string $id Order id (required)
+     * @param string $fk Foreign key for items (required)
      * @param \Yoast\MyYoastApiClient\Model\LineItem $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\LineItem
      */
-    public function orderPrototypeUpdateByIdItems($fk, $id, $data = null)
+    public function orderPrototypeUpdateByIdItems($id, $fk, $data = null)
     {
-        list($response) = $this->orderPrototypeUpdateByIdItemsWithHttpInfo($fk, $id, $data);
+        list($response) = $this->orderPrototypeUpdateByIdItemsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -2083,21 +2453,21 @@ class OrderApi
      *
      * Update a related item by id for items.
      *
-     * @param string $fk Foreign key for items (required)
      * @param string $id Order id (required)
+     * @param string $fk Foreign key for items (required)
      * @param \Yoast\MyYoastApiClient\Model\LineItem $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderPrototypeUpdateByIdItemsWithHttpInfo($fk, $id, $data = null)
+    public function orderPrototypeUpdateByIdItemsWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling orderPrototypeUpdateByIdItems');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeUpdateByIdItems');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling orderPrototypeUpdateByIdItems');
         }
         // parse inputs
         $resourcePath = "/Orders/{id}/items/{fk}";
@@ -2112,18 +2482,18 @@ class OrderApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -2168,39 +2538,45 @@ class OrderApi
     }
 
     /**
-     * Operation orderPrototypeUpdateSubscription
+     * Operation orderPrototypeUpdateByIdSubscription
      *
-     * Update subscription of this model.
+     * Update a related item by id for subscription.
      *
      * @param string $id Order id (required)
+     * @param string $fk Foreign key for subscription (required)
      * @param \Yoast\MyYoastApiClient\Model\SubscriptionOrders $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\SubscriptionOrders
      */
-    public function orderPrototypeUpdateSubscription($id, $data = null)
+    public function orderPrototypeUpdateByIdSubscription($id, $fk, $data = null)
     {
-        list($response) = $this->orderPrototypeUpdateSubscriptionWithHttpInfo($id, $data);
+        list($response) = $this->orderPrototypeUpdateByIdSubscriptionWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation orderPrototypeUpdateSubscriptionWithHttpInfo
+     * Operation orderPrototypeUpdateByIdSubscriptionWithHttpInfo
      *
-     * Update subscription of this model.
+     * Update a related item by id for subscription.
      *
      * @param string $id Order id (required)
+     * @param string $fk Foreign key for subscription (required)
      * @param \Yoast\MyYoastApiClient\Model\SubscriptionOrders $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionOrders, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderPrototypeUpdateSubscriptionWithHttpInfo($id, $data = null)
+    public function orderPrototypeUpdateByIdSubscriptionWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeUpdateSubscription');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling orderPrototypeUpdateByIdSubscription');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling orderPrototypeUpdateByIdSubscription');
         }
         // parse inputs
-        $resourcePath = "/Orders/{id}/subscription";
+        $resourcePath = "/Orders/{id}/subscription/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2216,6 +2592,14 @@ class OrderApi
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -2243,7 +2627,7 @@ class OrderApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\SubscriptionOrders',
-                '/Orders/{id}/subscription'
+                '/Orders/{id}/subscription/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\SubscriptionOrders', $httpHeader), $statusCode, $httpHeader];

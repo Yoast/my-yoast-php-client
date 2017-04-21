@@ -1,6 +1,6 @@
 <?php
 /**
- * SiteTest
+ * InlineResponse2004Test
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * SiteTest Class Doc Comment
+ * InlineResponse2004Test Class Doc Comment
  *
  * @category    Class */
-// * @description Site
+// * @description InlineResponse2004
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SiteTest extends \PHPUnit_Framework_TestCase
+class InlineResponse2004Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -75,57 +75,25 @@ class SiteTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Site"
+     * Test "InlineResponse2004"
      */
-    public function testSite()
+    public function testInlineResponse2004()
     {
 
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "body"
      */
-    public function testPropertyId()
+    public function testPropertyBody()
     {
 
     }
 
     /**
-     * Test attribute "url"
+     * Test attribute "content_type"
      */
-    public function testPropertyUrl()
-    {
-
-    }
-
-    /**
-     * Test attribute "header"
-     */
-    public function testPropertyHeader()
-    {
-
-    }
-
-    /**
-     * Test attribute "icon"
-     */
-    public function testPropertyIcon()
-    {
-
-    }
-
-    /**
-     * Test attribute "creation_date"
-     */
-    public function testPropertyCreationDate()
-    {
-
-    }
-
-    /**
-     * Test attribute "user_id"
-     */
-    public function testPropertyUserId()
+    public function testPropertyContentType()
     {
 
     }

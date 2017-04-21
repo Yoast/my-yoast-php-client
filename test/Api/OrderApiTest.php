@@ -198,6 +198,17 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for orderInvoice
+     *
+     * .
+     *
+     */
+    public function testOrderInvoice()
+    {
+
+    }
+
+    /**
      * Test case for orderPatchOrCreate
      *
      * Patch an existing model instance or insert a new one into the data source..
@@ -215,6 +226,17 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testOrderPrototypeCountItems()
+    {
+
+    }
+
+    /**
+     * Test case for orderPrototypeCountSubscription
+     *
+     * Counts subscription of Order..
+     *
+     */
+    public function testOrderPrototypeCountSubscription()
     {
 
     }
@@ -253,6 +275,17 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for orderPrototypeDeleteSubscription
+     *
+     * Deletes all subscription of this model..
+     *
+     */
+    public function testOrderPrototypeDeleteSubscription()
+    {
+
+    }
+
+    /**
      * Test case for orderPrototypeDestroyByIdItems
      *
      * Delete a related item by id for items..
@@ -264,12 +297,12 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for orderPrototypeDestroySubscription
+     * Test case for orderPrototypeDestroyByIdSubscription
      *
-     * Deletes subscription of this model..
+     * Delete a related item by id for subscription..
      *
      */
-    public function testOrderPrototypeDestroySubscription()
+    public function testOrderPrototypeDestroyByIdSubscription()
     {
 
     }
@@ -281,6 +314,17 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testOrderPrototypeFindByIdItems()
+    {
+
+    }
+
+    /**
+     * Test case for orderPrototypeFindByIdSubscription
+     *
+     * Find a related item by id for subscription..
+     *
+     */
+    public function testOrderPrototypeFindByIdSubscription()
     {
 
     }
@@ -310,7 +354,7 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for orderPrototypeGetSubscription
      *
-     * Fetches hasOne relation subscription..
+     * Queries subscription of Order..
      *
      */
     public function testOrderPrototypeGetSubscription()
@@ -341,12 +385,12 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for orderPrototypeUpdateSubscription
+     * Test case for orderPrototypeUpdateByIdSubscription
      *
-     * Update subscription of this model..
+     * Update a related item by id for subscription..
      *
      */
-    public function testOrderPrototypeUpdateSubscription()
+    public function testOrderPrototypeUpdateByIdSubscription()
     {
 
     }

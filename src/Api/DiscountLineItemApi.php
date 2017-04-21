@@ -656,7 +656,7 @@ class DiscountLineItemApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\DiscountLineItem[]
      */
@@ -671,7 +671,7 @@ class DiscountLineItemApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\DiscountLineItem[], HTTP status code, HTTP response headers (array of strings)
      */
@@ -734,7 +734,7 @@ class DiscountLineItemApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\DiscountLineItem
      */
@@ -750,7 +750,7 @@ class DiscountLineItemApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\DiscountLineItem, HTTP status code, HTTP response headers (array of strings)
      */
@@ -824,7 +824,7 @@ class DiscountLineItemApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\DiscountLineItem
      */
@@ -839,7 +839,7 @@ class DiscountLineItemApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\DiscountLineItem, HTTP status code, HTTP response headers (array of strings)
      */

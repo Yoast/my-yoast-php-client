@@ -121,6 +121,7 @@ Class | Method | HTTP request | Description
 *LineItemApi* | [**lineItemReplaceOrCreatePutLineItems**](docs/Api/LineItemApi.md#lineitemreplaceorcreateputlineitems) | **PUT** /LineItems | Replace an existing model instance or insert a new one into the data source.
 *LineItemApi* | [**lineItemUpdateAll**](docs/Api/LineItemApi.md#lineitemupdateall) | **POST** /LineItems/update | Update instances of the model matched by {{where}} from the data source.
 *LineItemApi* | [**lineItemUpsertWithWhere**](docs/Api/LineItemApi.md#lineitemupsertwithwhere) | **POST** /LineItems/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*MyYoastUserApi* | [**myYoastUserChangePassword**](docs/Api/MyYoastUserApi.md#myyoastuserchangepassword) | **POST** /MyYoastUsers/change-password | Change a user&#39;s password.
 *MyYoastUserApi* | [**myYoastUserConfirm**](docs/Api/MyYoastUserApi.md#myyoastuserconfirm) | **GET** /MyYoastUsers/confirm | Confirm a user registration with email verification token.
 *MyYoastUserApi* | [**myYoastUserCount**](docs/Api/MyYoastUserApi.md#myyoastusercount) | **GET** /MyYoastUsers/count | Count instances of the model matched by where from the data source.
 *MyYoastUserApi* | [**myYoastUserCreate**](docs/Api/MyYoastUserApi.md#myyoastusercreate) | **POST** /MyYoastUsers | Create a new instance of the model and persist it into the data source.
@@ -198,20 +199,24 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderFindById**](docs/Api/OrderApi.md#orderfindbyid) | **GET** /Orders/{id} | Find a model instance by {{id}} from the data source.
 *OrderApi* | [**orderFindOne**](docs/Api/OrderApi.md#orderfindone) | **GET** /Orders/findOne | Find first instance of the model matched by filter from the data source.
 *OrderApi* | [**orderFromWooCommerce**](docs/Api/OrderApi.md#orderfromwoocommerce) | **PUT** /Orders/fromWooCommerce | 
+*OrderApi* | [**orderInvoice**](docs/Api/OrderApi.md#orderinvoice) | **GET** /Orders/{id}/invoice | 
 *OrderApi* | [**orderPatchOrCreate**](docs/Api/OrderApi.md#orderpatchorcreate) | **PATCH** /Orders | Patch an existing model instance or insert a new one into the data source.
 *OrderApi* | [**orderPrototypeCountItems**](docs/Api/OrderApi.md#orderprototypecountitems) | **GET** /Orders/{id}/items/count | Counts items of Order.
+*OrderApi* | [**orderPrototypeCountSubscription**](docs/Api/OrderApi.md#orderprototypecountsubscription) | **GET** /Orders/{id}/subscription/count | Counts subscription of Order.
 *OrderApi* | [**orderPrototypeCreateItems**](docs/Api/OrderApi.md#orderprototypecreateitems) | **POST** /Orders/{id}/items | Creates a new instance in items of this model.
 *OrderApi* | [**orderPrototypeCreateSubscription**](docs/Api/OrderApi.md#orderprototypecreatesubscription) | **POST** /Orders/{id}/subscription | Creates a new instance in subscription of this model.
 *OrderApi* | [**orderPrototypeDeleteItems**](docs/Api/OrderApi.md#orderprototypedeleteitems) | **DELETE** /Orders/{id}/items | Deletes all items of this model.
+*OrderApi* | [**orderPrototypeDeleteSubscription**](docs/Api/OrderApi.md#orderprototypedeletesubscription) | **DELETE** /Orders/{id}/subscription | Deletes all subscription of this model.
 *OrderApi* | [**orderPrototypeDestroyByIdItems**](docs/Api/OrderApi.md#orderprototypedestroybyiditems) | **DELETE** /Orders/{id}/items/{fk} | Delete a related item by id for items.
-*OrderApi* | [**orderPrototypeDestroySubscription**](docs/Api/OrderApi.md#orderprototypedestroysubscription) | **DELETE** /Orders/{id}/subscription | Deletes subscription of this model.
+*OrderApi* | [**orderPrototypeDestroyByIdSubscription**](docs/Api/OrderApi.md#orderprototypedestroybyidsubscription) | **DELETE** /Orders/{id}/subscription/{fk} | Delete a related item by id for subscription.
 *OrderApi* | [**orderPrototypeFindByIdItems**](docs/Api/OrderApi.md#orderprototypefindbyiditems) | **GET** /Orders/{id}/items/{fk} | Find a related item by id for items.
+*OrderApi* | [**orderPrototypeFindByIdSubscription**](docs/Api/OrderApi.md#orderprototypefindbyidsubscription) | **GET** /Orders/{id}/subscription/{fk} | Find a related item by id for subscription.
 *OrderApi* | [**orderPrototypeGetCustomer**](docs/Api/OrderApi.md#orderprototypegetcustomer) | **GET** /Orders/{id}/customer | Fetches belongsTo relation customer.
 *OrderApi* | [**orderPrototypeGetItems**](docs/Api/OrderApi.md#orderprototypegetitems) | **GET** /Orders/{id}/items | Queries items of Order.
-*OrderApi* | [**orderPrototypeGetSubscription**](docs/Api/OrderApi.md#orderprototypegetsubscription) | **GET** /Orders/{id}/subscription | Fetches hasOne relation subscription.
+*OrderApi* | [**orderPrototypeGetSubscription**](docs/Api/OrderApi.md#orderprototypegetsubscription) | **GET** /Orders/{id}/subscription | Queries subscription of Order.
 *OrderApi* | [**orderPrototypePatchAttributes**](docs/Api/OrderApi.md#orderprototypepatchattributes) | **PATCH** /Orders/{id} | Patch attributes for a model instance and persist it into the data source.
 *OrderApi* | [**orderPrototypeUpdateByIdItems**](docs/Api/OrderApi.md#orderprototypeupdatebyiditems) | **PUT** /Orders/{id}/items/{fk} | Update a related item by id for items.
-*OrderApi* | [**orderPrototypeUpdateSubscription**](docs/Api/OrderApi.md#orderprototypeupdatesubscription) | **PUT** /Orders/{id}/subscription | Update subscription of this model.
+*OrderApi* | [**orderPrototypeUpdateByIdSubscription**](docs/Api/OrderApi.md#orderprototypeupdatebyidsubscription) | **PUT** /Orders/{id}/subscription/{fk} | Update a related item by id for subscription.
 *OrderApi* | [**orderReplaceByIdPostOrdersidReplace**](docs/Api/OrderApi.md#orderreplacebyidpostordersidreplace) | **POST** /Orders/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *OrderApi* | [**orderReplaceByIdPutOrdersid**](docs/Api/OrderApi.md#orderreplacebyidputordersid) | **PUT** /Orders/{id} | Replace attributes for a model instance and persist it into the data source.
 *OrderApi* | [**orderReplaceOrCreatePostOrdersReplaceOrCreate**](docs/Api/OrderApi.md#orderreplaceorcreatepostordersreplaceorcreate) | **POST** /Orders/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -337,6 +342,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse2001](docs/Model/InlineResponse2001.md)
  - [InlineResponse2002](docs/Model/InlineResponse2002.md)
  - [InlineResponse2003](docs/Model/InlineResponse2003.md)
+ - [InlineResponse2004](docs/Model/InlineResponse2004.md)
  - [LineItem](docs/Model/LineItem.md)
  - [MyYoastUser](docs/Model/MyYoastUser.md)
  - [Order](docs/Model/Order.md)

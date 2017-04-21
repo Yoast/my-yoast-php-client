@@ -656,7 +656,7 @@ class ProductApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Product[]
      */
@@ -671,7 +671,7 @@ class ProductApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Product[], HTTP status code, HTTP response headers (array of strings)
      */
@@ -734,7 +734,7 @@ class ProductApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Product
      */
@@ -750,7 +750,7 @@ class ProductApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
@@ -824,7 +824,7 @@ class ProductApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Product
      */
@@ -839,7 +839,7 @@ class ProductApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
@@ -902,12 +902,13 @@ class ProductApi
      * 
      *
      * @param string $product_data  (required)
+     * @param string $extra_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function productFromWooCommerce($product_data)
+    public function productFromWooCommerce($product_data, $extra_data)
     {
-        list($response) = $this->productFromWooCommerceWithHttpInfo($product_data);
+        list($response) = $this->productFromWooCommerceWithHttpInfo($product_data, $extra_data);
         return $response;
     }
 
@@ -917,14 +918,19 @@ class ProductApi
      * 
      *
      * @param string $product_data  (required)
+     * @param string $extra_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productFromWooCommerceWithHttpInfo($product_data)
+    public function productFromWooCommerceWithHttpInfo($product_data, $extra_data)
     {
         // verify the required parameter 'product_data' is set
         if ($product_data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $product_data when calling productFromWooCommerce');
+        }
+        // verify the required parameter 'extra_data' is set
+        if ($extra_data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $extra_data when calling productFromWooCommerce');
         }
         // parse inputs
         $resourcePath = "/Products/fromWooCommerce";
@@ -944,6 +950,10 @@ class ProductApi
         // form params
         if ($product_data !== null) {
             $formParams['productData'] = $this->apiClient->getSerializer()->toFormValue($product_data);
+        }
+        // form params
+        if ($extra_data !== null) {
+            $formParams['extraData'] = $this->apiClient->getSerializer()->toFormValue($extra_data);
         }
         
         // for model (json/xml)
@@ -1588,14 +1598,14 @@ class ProductApi
      *
      * Delete a related item by id for lineItems.
      *
-     * @param string $fk Foreign key for lineItems (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for lineItems (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function productPrototypeDestroyByIdLineItems($fk, $id)
+    public function productPrototypeDestroyByIdLineItems($id, $fk)
     {
-        list($response) = $this->productPrototypeDestroyByIdLineItemsWithHttpInfo($fk, $id);
+        list($response) = $this->productPrototypeDestroyByIdLineItemsWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -1604,20 +1614,20 @@ class ProductApi
      *
      * Delete a related item by id for lineItems.
      *
-     * @param string $fk Foreign key for lineItems (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for lineItems (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeDestroyByIdLineItemsWithHttpInfo($fk, $id)
+    public function productPrototypeDestroyByIdLineItemsWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeDestroyByIdLineItems');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeDestroyByIdLineItems');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeDestroyByIdLineItems');
         }
         // parse inputs
         $resourcePath = "/Products/{id}/lineItems/{fk}";
@@ -1632,18 +1642,18 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -1683,14 +1693,14 @@ class ProductApi
      *
      * Delete a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function productPrototypeDestroyByIdSubscriptions($fk, $id)
+    public function productPrototypeDestroyByIdSubscriptions($id, $fk)
     {
-        list($response) = $this->productPrototypeDestroyByIdSubscriptionsWithHttpInfo($fk, $id);
+        list($response) = $this->productPrototypeDestroyByIdSubscriptionsWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -1699,20 +1709,20 @@ class ProductApi
      *
      * Delete a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeDestroyByIdSubscriptionsWithHttpInfo($fk, $id)
+    public function productPrototypeDestroyByIdSubscriptionsWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeDestroyByIdSubscriptions');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeDestroyByIdSubscriptions');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeDestroyByIdSubscriptions');
         }
         // parse inputs
         $resourcePath = "/Products/{id}/subscriptions/{fk}";
@@ -1727,18 +1737,18 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -1778,14 +1788,14 @@ class ProductApi
      *
      * Find a related item by id for lineItems.
      *
-     * @param string $fk Foreign key for lineItems (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for lineItems (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\LineItem
      */
-    public function productPrototypeFindByIdLineItems($fk, $id)
+    public function productPrototypeFindByIdLineItems($id, $fk)
     {
-        list($response) = $this->productPrototypeFindByIdLineItemsWithHttpInfo($fk, $id);
+        list($response) = $this->productPrototypeFindByIdLineItemsWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -1794,20 +1804,20 @@ class ProductApi
      *
      * Find a related item by id for lineItems.
      *
-     * @param string $fk Foreign key for lineItems (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for lineItems (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeFindByIdLineItemsWithHttpInfo($fk, $id)
+    public function productPrototypeFindByIdLineItemsWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeFindByIdLineItems');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeFindByIdLineItems');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeFindByIdLineItems');
         }
         // parse inputs
         $resourcePath = "/Products/{id}/lineItems/{fk}";
@@ -1822,18 +1832,18 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -1877,14 +1887,14 @@ class ProductApi
      *
      * Find a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function productPrototypeFindByIdSubscriptions($fk, $id)
+    public function productPrototypeFindByIdSubscriptions($id, $fk)
     {
-        list($response) = $this->productPrototypeFindByIdSubscriptionsWithHttpInfo($fk, $id);
+        list($response) = $this->productPrototypeFindByIdSubscriptionsWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -1893,20 +1903,20 @@ class ProductApi
      *
      * Find a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeFindByIdSubscriptionsWithHttpInfo($fk, $id)
+    public function productPrototypeFindByIdSubscriptionsWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeFindByIdSubscriptions');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeFindByIdSubscriptions');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeFindByIdSubscriptions');
         }
         // parse inputs
         $resourcePath = "/Products/{id}/subscriptions/{fk}";
@@ -1921,18 +1931,18 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -2250,15 +2260,15 @@ class ProductApi
      *
      * Update a related item by id for lineItems.
      *
-     * @param string $fk Foreign key for lineItems (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for lineItems (required)
      * @param \Yoast\MyYoastApiClient\Model\LineItem $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\LineItem
      */
-    public function productPrototypeUpdateByIdLineItems($fk, $id, $data = null)
+    public function productPrototypeUpdateByIdLineItems($id, $fk, $data = null)
     {
-        list($response) = $this->productPrototypeUpdateByIdLineItemsWithHttpInfo($fk, $id, $data);
+        list($response) = $this->productPrototypeUpdateByIdLineItemsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -2267,21 +2277,21 @@ class ProductApi
      *
      * Update a related item by id for lineItems.
      *
-     * @param string $fk Foreign key for lineItems (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for lineItems (required)
      * @param \Yoast\MyYoastApiClient\Model\LineItem $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeUpdateByIdLineItemsWithHttpInfo($fk, $id, $data = null)
+    public function productPrototypeUpdateByIdLineItemsWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeUpdateByIdLineItems');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeUpdateByIdLineItems');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeUpdateByIdLineItems');
         }
         // parse inputs
         $resourcePath = "/Products/{id}/lineItems/{fk}";
@@ -2296,18 +2306,18 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -2356,15 +2366,15 @@ class ProductApi
      *
      * Update a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function productPrototypeUpdateByIdSubscriptions($fk, $id, $data = null)
+    public function productPrototypeUpdateByIdSubscriptions($id, $fk, $data = null)
     {
-        list($response) = $this->productPrototypeUpdateByIdSubscriptionsWithHttpInfo($fk, $id, $data);
+        list($response) = $this->productPrototypeUpdateByIdSubscriptionsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -2373,21 +2383,21 @@ class ProductApi
      *
      * Update a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id Product id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeUpdateByIdSubscriptionsWithHttpInfo($fk, $id, $data = null)
+    public function productPrototypeUpdateByIdSubscriptionsWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeUpdateByIdSubscriptions');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeUpdateByIdSubscriptions');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeUpdateByIdSubscriptions');
         }
         // parse inputs
         $resourcePath = "/Products/{id}/subscriptions/{fk}";
@@ -2402,18 +2412,18 @@ class ProductApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }

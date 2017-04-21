@@ -123,17 +123,49 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "shop_subscription_id"
+     * Test attribute "status"
      */
-    public function testPropertyShopSubscriptionId()
+    public function testPropertyStatus()
     {
 
     }
 
     /**
-     * Test attribute "shop_subscription_line_item_id"
+     * Test attribute "currency"
      */
-    public function testPropertyShopSubscriptionLineItemId()
+    public function testPropertyCurrency()
+    {
+
+    }
+
+    /**
+     * Test attribute "date"
+     */
+    public function testPropertyDate()
+    {
+
+    }
+
+    /**
+     * Test attribute "price"
+     */
+    public function testPropertyPrice()
+    {
+
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+
+    }
+
+    /**
+     * Test attribute "next_payment"
+     */
+    public function testPropertyNextPayment()
     {
 
     }

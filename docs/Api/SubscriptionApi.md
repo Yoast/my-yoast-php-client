@@ -365,7 +365,7 @@ Find all instances of the model matched by filter from the data source.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->subscriptionFind($filter);
@@ -380,7 +380,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit | [optional]
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -409,7 +409,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
 $id = "id_example"; // string | Model id
-$filter = "filter_example"; // string | Filter defining fields and include
+$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->subscriptionFindById($id, $filter);
@@ -425,7 +425,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **filter** | **string**| Filter defining fields and include | [optional]
+ **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -453,7 +453,7 @@ Find first instance of the model matched by filter from the data source.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->subscriptionFindOne($filter);
@@ -468,7 +468,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit | [optional]
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -486,7 +486,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionFromWooCommerce**
-> \Yoast\MyYoastApiClient\Model\Subscription[] subscriptionFromWooCommerce($subscription_data)
+> \Yoast\MyYoastApiClient\Model\Subscription[] subscriptionFromWooCommerce($subscription_data, $extra_data)
 
 
 
@@ -497,9 +497,10 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
 $subscription_data = "subscription_data_example"; // string | 
+$extra_data = "extra_data_example"; // string | 
 
 try {
-    $result = $api_instance->subscriptionFromWooCommerce($subscription_data);
+    $result = $api_instance->subscriptionFromWooCommerce($subscription_data, $extra_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionFromWooCommerce: ', $e->getMessage(), PHP_EOL;
@@ -512,6 +513,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_data** | **string**|  |
+ **extra_data** | **string**|  |
 
 ### Return type
 
@@ -926,7 +928,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeDestroyByIdOrders**
-> subscriptionPrototypeDestroyByIdOrders($fk, $id)
+> subscriptionPrototypeDestroyByIdOrders($id, $fk)
 
 Delete a related item by id for orders.
 
@@ -936,11 +938,11 @@ Delete a related item by id for orders.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for orders
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for orders
 
 try {
-    $api_instance->subscriptionPrototypeDestroyByIdOrders($fk, $id);
+    $api_instance->subscriptionPrototypeDestroyByIdOrders($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeDestroyByIdOrders: ', $e->getMessage(), PHP_EOL;
 }
@@ -951,8 +953,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for orders |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for orders |
 
 ### Return type
 
@@ -970,7 +972,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeDestroyByIdSites**
-> subscriptionPrototypeDestroyByIdSites($fk, $id)
+> subscriptionPrototypeDestroyByIdSites($id, $fk)
 
 Delete a related item by id for sites.
 
@@ -980,11 +982,11 @@ Delete a related item by id for sites.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for sites
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for sites
 
 try {
-    $api_instance->subscriptionPrototypeDestroyByIdSites($fk, $id);
+    $api_instance->subscriptionPrototypeDestroyByIdSites($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeDestroyByIdSites: ', $e->getMessage(), PHP_EOL;
 }
@@ -995,8 +997,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for sites |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for sites |
 
 ### Return type
 
@@ -1098,7 +1100,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeExistsOrders**
-> bool subscriptionPrototypeExistsOrders($fk, $id)
+> bool subscriptionPrototypeExistsOrders($id, $fk)
 
 Check the existence of orders relation to an item by id.
 
@@ -1108,11 +1110,11 @@ Check the existence of orders relation to an item by id.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for orders
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for orders
 
 try {
-    $result = $api_instance->subscriptionPrototypeExistsOrders($fk, $id);
+    $result = $api_instance->subscriptionPrototypeExistsOrders($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeExistsOrders: ', $e->getMessage(), PHP_EOL;
@@ -1124,8 +1126,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for orders |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for orders |
 
 ### Return type
 
@@ -1143,7 +1145,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeExistsSites**
-> bool subscriptionPrototypeExistsSites($fk, $id)
+> bool subscriptionPrototypeExistsSites($id, $fk)
 
 Check the existence of sites relation to an item by id.
 
@@ -1153,11 +1155,11 @@ Check the existence of sites relation to an item by id.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for sites
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for sites
 
 try {
-    $result = $api_instance->subscriptionPrototypeExistsSites($fk, $id);
+    $result = $api_instance->subscriptionPrototypeExistsSites($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeExistsSites: ', $e->getMessage(), PHP_EOL;
@@ -1169,8 +1171,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for sites |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for sites |
 
 ### Return type
 
@@ -1188,7 +1190,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeFindByIdOrders**
-> \Yoast\MyYoastApiClient\Model\Order subscriptionPrototypeFindByIdOrders($fk, $id)
+> \Yoast\MyYoastApiClient\Model\Order subscriptionPrototypeFindByIdOrders($id, $fk)
 
 Find a related item by id for orders.
 
@@ -1198,11 +1200,11 @@ Find a related item by id for orders.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for orders
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for orders
 
 try {
-    $result = $api_instance->subscriptionPrototypeFindByIdOrders($fk, $id);
+    $result = $api_instance->subscriptionPrototypeFindByIdOrders($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeFindByIdOrders: ', $e->getMessage(), PHP_EOL;
@@ -1214,8 +1216,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for orders |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for orders |
 
 ### Return type
 
@@ -1233,7 +1235,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeFindByIdSites**
-> \Yoast\MyYoastApiClient\Model\SiteSubscriptions subscriptionPrototypeFindByIdSites($fk, $id)
+> \Yoast\MyYoastApiClient\Model\SiteSubscriptions subscriptionPrototypeFindByIdSites($id, $fk)
 
 Find a related item by id for sites.
 
@@ -1243,11 +1245,11 @@ Find a related item by id for sites.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for sites
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for sites
 
 try {
-    $result = $api_instance->subscriptionPrototypeFindByIdSites($fk, $id);
+    $result = $api_instance->subscriptionPrototypeFindByIdSites($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeFindByIdSites: ', $e->getMessage(), PHP_EOL;
@@ -1259,8 +1261,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for sites |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for sites |
 
 ### Return type
 
@@ -1458,7 +1460,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeLinkOrders**
-> \Yoast\MyYoastApiClient\Model\SubscriptionOrders subscriptionPrototypeLinkOrders($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\SubscriptionOrders subscriptionPrototypeLinkOrders($id, $fk, $data)
 
 Add a related item by id for orders.
 
@@ -1468,12 +1470,12 @@ Add a related item by id for orders.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for orders
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for orders
 $data = new \Yoast\MyYoastApiClient\Model\SubscriptionOrders(); // \Yoast\MyYoastApiClient\Model\SubscriptionOrders | 
 
 try {
-    $result = $api_instance->subscriptionPrototypeLinkOrders($fk, $id, $data);
+    $result = $api_instance->subscriptionPrototypeLinkOrders($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeLinkOrders: ', $e->getMessage(), PHP_EOL;
@@ -1485,8 +1487,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for orders |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for orders |
  **data** | [**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/\Yoast\MyYoastApiClient\Model\SubscriptionOrders.md)|  | [optional]
 
 ### Return type
@@ -1505,7 +1507,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeLinkSites**
-> \Yoast\MyYoastApiClient\Model\SiteSubscriptions subscriptionPrototypeLinkSites($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\SiteSubscriptions subscriptionPrototypeLinkSites($id, $fk, $data)
 
 Add a related item by id for sites.
 
@@ -1515,12 +1517,12 @@ Add a related item by id for sites.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for sites
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for sites
 $data = new \Yoast\MyYoastApiClient\Model\SiteSubscriptions(); // \Yoast\MyYoastApiClient\Model\SiteSubscriptions | 
 
 try {
-    $result = $api_instance->subscriptionPrototypeLinkSites($fk, $id, $data);
+    $result = $api_instance->subscriptionPrototypeLinkSites($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeLinkSites: ', $e->getMessage(), PHP_EOL;
@@ -1532,8 +1534,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for sites |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for sites |
  **data** | [**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/\Yoast\MyYoastApiClient\Model\SiteSubscriptions.md)|  | [optional]
 
 ### Return type
@@ -1597,7 +1599,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeUnlinkOrders**
-> subscriptionPrototypeUnlinkOrders($fk, $id)
+> subscriptionPrototypeUnlinkOrders($id, $fk)
 
 Remove the orders relation to an item by id.
 
@@ -1607,11 +1609,11 @@ Remove the orders relation to an item by id.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for orders
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for orders
 
 try {
-    $api_instance->subscriptionPrototypeUnlinkOrders($fk, $id);
+    $api_instance->subscriptionPrototypeUnlinkOrders($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeUnlinkOrders: ', $e->getMessage(), PHP_EOL;
 }
@@ -1622,8 +1624,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for orders |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for orders |
 
 ### Return type
 
@@ -1641,7 +1643,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeUnlinkSites**
-> subscriptionPrototypeUnlinkSites($fk, $id)
+> subscriptionPrototypeUnlinkSites($id, $fk)
 
 Remove the sites relation to an item by id.
 
@@ -1651,11 +1653,11 @@ Remove the sites relation to an item by id.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for sites
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for sites
 
 try {
-    $api_instance->subscriptionPrototypeUnlinkSites($fk, $id);
+    $api_instance->subscriptionPrototypeUnlinkSites($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeUnlinkSites: ', $e->getMessage(), PHP_EOL;
 }
@@ -1666,8 +1668,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for sites |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for sites |
 
 ### Return type
 
@@ -1685,7 +1687,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeUpdateByIdOrders**
-> \Yoast\MyYoastApiClient\Model\Order subscriptionPrototypeUpdateByIdOrders($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\Order subscriptionPrototypeUpdateByIdOrders($id, $fk, $data)
 
 Update a related item by id for orders.
 
@@ -1695,12 +1697,12 @@ Update a related item by id for orders.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for orders
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for orders
 $data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | 
 
 try {
-    $result = $api_instance->subscriptionPrototypeUpdateByIdOrders($fk, $id, $data);
+    $result = $api_instance->subscriptionPrototypeUpdateByIdOrders($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeUpdateByIdOrders: ', $e->getMessage(), PHP_EOL;
@@ -1712,8 +1714,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for orders |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for orders |
  **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)|  | [optional]
 
 ### Return type
@@ -1732,7 +1734,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeUpdateByIdSites**
-> \Yoast\MyYoastApiClient\Model\SiteSubscriptions subscriptionPrototypeUpdateByIdSites($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\SiteSubscriptions subscriptionPrototypeUpdateByIdSites($id, $fk, $data)
 
 Update a related item by id for sites.
 
@@ -1742,12 +1744,12 @@ Update a related item by id for sites.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$fk = "fk_example"; // string | Foreign key for sites
 $id = "id_example"; // string | Subscription id
+$fk = "fk_example"; // string | Foreign key for sites
 $data = new \Yoast\MyYoastApiClient\Model\SiteSubscriptions(); // \Yoast\MyYoastApiClient\Model\SiteSubscriptions | 
 
 try {
-    $result = $api_instance->subscriptionPrototypeUpdateByIdSites($fk, $id, $data);
+    $result = $api_instance->subscriptionPrototypeUpdateByIdSites($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->subscriptionPrototypeUpdateByIdSites: ', $e->getMessage(), PHP_EOL;
@@ -1759,8 +1761,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for sites |
  **id** | **string**| Subscription id |
+ **fk** | **string**| Foreign key for sites |
  **data** | [**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/\Yoast\MyYoastApiClient\Model\SiteSubscriptions.md)|  | [optional]
 
 ### Return type

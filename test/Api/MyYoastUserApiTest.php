@@ -77,6 +77,17 @@ class MyYoastUserApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for myYoastUserChangePassword
+     *
+     * Change a user's password..
+     *
+     */
+    public function testMyYoastUserChangePassword()
+    {
+
+    }
+
+    /**
      * Test case for myYoastUserConfirm
      *
      * Confirm a user registration with email verification token..

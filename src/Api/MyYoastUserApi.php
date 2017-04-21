@@ -88,6 +88,93 @@ class MyYoastUserApi
     }
 
     /**
+     * Operation myYoastUserChangePassword
+     *
+     * Change a user's password.
+     *
+     * @param string $old_password  (required)
+     * @param string $new_password  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function myYoastUserChangePassword($old_password, $new_password)
+    {
+        list($response) = $this->myYoastUserChangePasswordWithHttpInfo($old_password, $new_password);
+        return $response;
+    }
+
+    /**
+     * Operation myYoastUserChangePasswordWithHttpInfo
+     *
+     * Change a user's password.
+     *
+     * @param string $old_password  (required)
+     * @param string $new_password  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function myYoastUserChangePasswordWithHttpInfo($old_password, $new_password)
+    {
+        // verify the required parameter 'old_password' is set
+        if ($old_password === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $old_password when calling myYoastUserChangePassword');
+        }
+        // verify the required parameter 'new_password' is set
+        if ($new_password === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $new_password when calling myYoastUserChangePassword');
+        }
+        // parse inputs
+        $resourcePath = "/MyYoastUsers/change-password";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // form params
+        if ($old_password !== null) {
+            $formParams['oldPassword'] = $this->apiClient->getSerializer()->toFormValue($old_password);
+        }
+        // form params
+        if ($new_password !== null) {
+            $formParams['newPassword'] = $this->apiClient->getSerializer()->toFormValue($new_password);
+        }
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/MyYoastUsers/change-password'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation myYoastUserConfirm
      *
      * Confirm a user registration with email verification token.
@@ -749,7 +836,7 @@ class MyYoastUserApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\MyYoastUser[]
      */
@@ -764,7 +851,7 @@ class MyYoastUserApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser[], HTTP status code, HTTP response headers (array of strings)
      */
@@ -827,7 +914,7 @@ class MyYoastUserApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
      */
@@ -843,7 +930,7 @@ class MyYoastUserApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
      */
@@ -917,7 +1004,7 @@ class MyYoastUserApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
      */
@@ -932,7 +1019,7 @@ class MyYoastUserApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
      */
@@ -2977,14 +3064,14 @@ class MyYoastUserApi
      *
      * Delete a related item by id for accessTokens.
      *
-     * @param string $fk Foreign key for accessTokens (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for accessTokens (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdAccessTokens($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdAccessTokens($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdAccessTokensWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeDestroyByIdAccessTokensWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -2993,20 +3080,20 @@ class MyYoastUserApi
      *
      * Delete a related item by id for accessTokens.
      *
-     * @param string $fk Foreign key for accessTokens (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for accessTokens (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdAccessTokensWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdAccessTokensWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdAccessTokens');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdAccessTokens');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdAccessTokens');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/accessTokens/{fk}";
@@ -3021,18 +3108,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3072,14 +3159,14 @@ class MyYoastUserApi
      *
      * Delete a related item by id for credentials.
      *
-     * @param string $fk Foreign key for credentials (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for credentials (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdCredentials($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdCredentials($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdCredentialsWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeDestroyByIdCredentialsWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3088,20 +3175,20 @@ class MyYoastUserApi
      *
      * Delete a related item by id for credentials.
      *
-     * @param string $fk Foreign key for credentials (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for credentials (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdCredentialsWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdCredentialsWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdCredentials');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdCredentials');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdCredentials');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/credentials/{fk}";
@@ -3116,18 +3203,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3167,14 +3254,14 @@ class MyYoastUserApi
      *
      * Delete a related item by id for identities.
      *
-     * @param string $fk Foreign key for identities (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for identities (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdIdentities($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdIdentities($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdIdentitiesWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeDestroyByIdIdentitiesWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3183,20 +3270,20 @@ class MyYoastUserApi
      *
      * Delete a related item by id for identities.
      *
-     * @param string $fk Foreign key for identities (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for identities (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdIdentitiesWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdIdentitiesWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdIdentities');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdIdentities');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdIdentities');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/identities/{fk}";
@@ -3211,18 +3298,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3262,14 +3349,14 @@ class MyYoastUserApi
      *
      * Delete a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdOrders($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdOrders($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdOrdersWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeDestroyByIdOrdersWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3278,20 +3365,20 @@ class MyYoastUserApi
      *
      * Delete a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdOrdersWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdOrdersWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdOrders');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdOrders');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdOrders');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/orders/{fk}";
@@ -3306,18 +3393,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3357,14 +3444,14 @@ class MyYoastUserApi
      *
      * Delete a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdSites($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdSites($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdSitesWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeDestroyByIdSitesWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3373,20 +3460,20 @@ class MyYoastUserApi
      *
      * Delete a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdSitesWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdSitesWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdSites');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdSites');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdSites');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/sites/{fk}";
@@ -3401,18 +3488,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3452,14 +3539,14 @@ class MyYoastUserApi
      *
      * Delete a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdSubscriptions($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdSubscriptions($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdSubscriptionsWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeDestroyByIdSubscriptionsWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3468,20 +3555,20 @@ class MyYoastUserApi
      *
      * Delete a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdSubscriptionsWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeDestroyByIdSubscriptionsWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdSubscriptions');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdSubscriptions');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdSubscriptions');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/subscriptions/{fk}";
@@ -3496,18 +3583,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3547,14 +3634,14 @@ class MyYoastUserApi
      *
      * Find a related item by id for accessTokens.
      *
-     * @param string $fk Foreign key for accessTokens (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for accessTokens (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\AccessToken
      */
-    public function myYoastUserPrototypeFindByIdAccessTokens($fk, $id)
+    public function myYoastUserPrototypeFindByIdAccessTokens($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdAccessTokensWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeFindByIdAccessTokensWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3563,20 +3650,20 @@ class MyYoastUserApi
      *
      * Find a related item by id for accessTokens.
      *
-     * @param string $fk Foreign key for accessTokens (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for accessTokens (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\AccessToken, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdAccessTokensWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeFindByIdAccessTokensWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdAccessTokens');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdAccessTokens');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdAccessTokens');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/accessTokens/{fk}";
@@ -3591,18 +3678,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3646,14 +3733,14 @@ class MyYoastUserApi
      *
      * Find a related item by id for credentials.
      *
-     * @param string $fk Foreign key for credentials (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for credentials (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserCredential
      */
-    public function myYoastUserPrototypeFindByIdCredentials($fk, $id)
+    public function myYoastUserPrototypeFindByIdCredentials($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdCredentialsWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeFindByIdCredentialsWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3662,20 +3749,20 @@ class MyYoastUserApi
      *
      * Find a related item by id for credentials.
      *
-     * @param string $fk Foreign key for credentials (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for credentials (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserCredential, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdCredentialsWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeFindByIdCredentialsWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdCredentials');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdCredentials');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdCredentials');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/credentials/{fk}";
@@ -3690,18 +3777,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3745,14 +3832,14 @@ class MyYoastUserApi
      *
      * Find a related item by id for identities.
      *
-     * @param string $fk Foreign key for identities (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for identities (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserIdentity
      */
-    public function myYoastUserPrototypeFindByIdIdentities($fk, $id)
+    public function myYoastUserPrototypeFindByIdIdentities($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdIdentitiesWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeFindByIdIdentitiesWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3761,20 +3848,20 @@ class MyYoastUserApi
      *
      * Find a related item by id for identities.
      *
-     * @param string $fk Foreign key for identities (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for identities (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserIdentity, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdIdentitiesWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeFindByIdIdentitiesWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdIdentities');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdIdentities');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdIdentities');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/identities/{fk}";
@@ -3789,18 +3876,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3844,14 +3931,14 @@ class MyYoastUserApi
      *
      * Find a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function myYoastUserPrototypeFindByIdOrders($fk, $id)
+    public function myYoastUserPrototypeFindByIdOrders($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdOrdersWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeFindByIdOrdersWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3860,20 +3947,20 @@ class MyYoastUserApi
      *
      * Find a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdOrdersWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeFindByIdOrdersWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdOrders');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdOrders');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdOrders');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/orders/{fk}";
@@ -3888,18 +3975,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3943,14 +4030,14 @@ class MyYoastUserApi
      *
      * Find a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Site
      */
-    public function myYoastUserPrototypeFindByIdSites($fk, $id)
+    public function myYoastUserPrototypeFindByIdSites($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdSitesWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeFindByIdSitesWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3959,20 +4046,20 @@ class MyYoastUserApi
      *
      * Find a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdSitesWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeFindByIdSitesWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdSites');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdSites');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdSites');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/sites/{fk}";
@@ -3987,18 +4074,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -4042,14 +4129,14 @@ class MyYoastUserApi
      *
      * Find a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function myYoastUserPrototypeFindByIdSubscriptions($fk, $id)
+    public function myYoastUserPrototypeFindByIdSubscriptions($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdSubscriptionsWithHttpInfo($fk, $id);
+        list($response) = $this->myYoastUserPrototypeFindByIdSubscriptionsWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -4058,20 +4145,20 @@ class MyYoastUserApi
      *
      * Find a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdSubscriptionsWithHttpInfo($fk, $id)
+    public function myYoastUserPrototypeFindByIdSubscriptionsWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdSubscriptions');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdSubscriptions');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdSubscriptions');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/subscriptions/{fk}";
@@ -4086,18 +4173,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -4779,15 +4866,15 @@ class MyYoastUserApi
      *
      * Update a related item by id for accessTokens.
      *
-     * @param string $fk Foreign key for accessTokens (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for accessTokens (required)
      * @param \Yoast\MyYoastApiClient\Model\AccessToken $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\AccessToken
      */
-    public function myYoastUserPrototypeUpdateByIdAccessTokens($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdAccessTokens($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdAccessTokensWithHttpInfo($fk, $id, $data);
+        list($response) = $this->myYoastUserPrototypeUpdateByIdAccessTokensWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -4796,21 +4883,21 @@ class MyYoastUserApi
      *
      * Update a related item by id for accessTokens.
      *
-     * @param string $fk Foreign key for accessTokens (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for accessTokens (required)
      * @param \Yoast\MyYoastApiClient\Model\AccessToken $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\AccessToken, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdAccessTokensWithHttpInfo($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdAccessTokensWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdAccessTokens');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdAccessTokens');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdAccessTokens');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/accessTokens/{fk}";
@@ -4825,18 +4912,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -4885,15 +4972,15 @@ class MyYoastUserApi
      *
      * Update a related item by id for credentials.
      *
-     * @param string $fk Foreign key for credentials (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for credentials (required)
      * @param \Yoast\MyYoastApiClient\Model\UserCredential $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserCredential
      */
-    public function myYoastUserPrototypeUpdateByIdCredentials($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdCredentials($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdCredentialsWithHttpInfo($fk, $id, $data);
+        list($response) = $this->myYoastUserPrototypeUpdateByIdCredentialsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -4902,21 +4989,21 @@ class MyYoastUserApi
      *
      * Update a related item by id for credentials.
      *
-     * @param string $fk Foreign key for credentials (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for credentials (required)
      * @param \Yoast\MyYoastApiClient\Model\UserCredential $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserCredential, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdCredentialsWithHttpInfo($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdCredentialsWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdCredentials');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdCredentials');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdCredentials');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/credentials/{fk}";
@@ -4931,18 +5018,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -4991,15 +5078,15 @@ class MyYoastUserApi
      *
      * Update a related item by id for identities.
      *
-     * @param string $fk Foreign key for identities (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for identities (required)
      * @param \Yoast\MyYoastApiClient\Model\UserIdentity $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserIdentity
      */
-    public function myYoastUserPrototypeUpdateByIdIdentities($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdIdentities($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdIdentitiesWithHttpInfo($fk, $id, $data);
+        list($response) = $this->myYoastUserPrototypeUpdateByIdIdentitiesWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -5008,21 +5095,21 @@ class MyYoastUserApi
      *
      * Update a related item by id for identities.
      *
-     * @param string $fk Foreign key for identities (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for identities (required)
      * @param \Yoast\MyYoastApiClient\Model\UserIdentity $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserIdentity, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdIdentitiesWithHttpInfo($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdIdentitiesWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdIdentities');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdIdentities');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdIdentities');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/identities/{fk}";
@@ -5037,18 +5124,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -5097,15 +5184,15 @@ class MyYoastUserApi
      *
      * Update a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for orders (required)
      * @param \Yoast\MyYoastApiClient\Model\Order $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function myYoastUserPrototypeUpdateByIdOrders($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdOrders($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdOrdersWithHttpInfo($fk, $id, $data);
+        list($response) = $this->myYoastUserPrototypeUpdateByIdOrdersWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -5114,21 +5201,21 @@ class MyYoastUserApi
      *
      * Update a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for orders (required)
      * @param \Yoast\MyYoastApiClient\Model\Order $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdOrdersWithHttpInfo($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdOrdersWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdOrders');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdOrders');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdOrders');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/orders/{fk}";
@@ -5143,18 +5230,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -5203,15 +5290,15 @@ class MyYoastUserApi
      *
      * Update a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for sites (required)
      * @param \Yoast\MyYoastApiClient\Model\Site $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Site
      */
-    public function myYoastUserPrototypeUpdateByIdSites($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdSites($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdSitesWithHttpInfo($fk, $id, $data);
+        list($response) = $this->myYoastUserPrototypeUpdateByIdSitesWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -5220,21 +5307,21 @@ class MyYoastUserApi
      *
      * Update a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for sites (required)
      * @param \Yoast\MyYoastApiClient\Model\Site $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdSitesWithHttpInfo($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdSitesWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdSites');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdSites');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdSites');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/sites/{fk}";
@@ -5249,18 +5336,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -5309,15 +5396,15 @@ class MyYoastUserApi
      *
      * Update a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function myYoastUserPrototypeUpdateByIdSubscriptions($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdSubscriptions($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdSubscriptionsWithHttpInfo($fk, $id, $data);
+        list($response) = $this->myYoastUserPrototypeUpdateByIdSubscriptionsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -5326,21 +5413,21 @@ class MyYoastUserApi
      *
      * Update a related item by id for subscriptions.
      *
-     * @param string $fk Foreign key for subscriptions (required)
      * @param string $id MyYoastUser id (required)
+     * @param string $fk Foreign key for subscriptions (required)
      * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdSubscriptionsWithHttpInfo($fk, $id, $data = null)
+    public function myYoastUserPrototypeUpdateByIdSubscriptionsWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdSubscriptions');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdSubscriptions');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdSubscriptions');
         }
         // parse inputs
         $resourcePath = "/MyYoastUsers/{id}/subscriptions/{fk}";
@@ -5355,18 +5442,18 @@ class MyYoastUserApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }

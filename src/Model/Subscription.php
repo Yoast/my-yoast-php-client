@@ -59,8 +59,12 @@ class Subscription implements ArrayAccess
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'reoccurring' => 'bool',
-        'shop_subscription_id' => 'double',
-        'shop_subscription_line_item_id' => 'double',
+        'status' => 'string',
+        'currency' => 'string',
+        'date' => '\DateTime',
+        'price' => 'double',
+        'name' => 'string',
+        'next_payment' => '\DateTime',
         'my_yoast_user_id' => 'double'
     ];
 
@@ -79,8 +83,12 @@ class Subscription implements ArrayAccess
         'start_date' => 'startDate',
         'end_date' => 'endDate',
         'reoccurring' => 'reoccurring',
-        'shop_subscription_id' => 'shopSubscriptionId',
-        'shop_subscription_line_item_id' => 'shopSubscriptionLineItemId',
+        'status' => 'status',
+        'currency' => 'currency',
+        'date' => 'date',
+        'price' => 'price',
+        'name' => 'name',
+        'next_payment' => 'nextPayment',
         'my_yoast_user_id' => 'myYoastUserId'
     ];
 
@@ -95,8 +103,12 @@ class Subscription implements ArrayAccess
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'reoccurring' => 'setReoccurring',
-        'shop_subscription_id' => 'setShopSubscriptionId',
-        'shop_subscription_line_item_id' => 'setShopSubscriptionLineItemId',
+        'status' => 'setStatus',
+        'currency' => 'setCurrency',
+        'date' => 'setDate',
+        'price' => 'setPrice',
+        'name' => 'setName',
+        'next_payment' => 'setNextPayment',
         'my_yoast_user_id' => 'setMyYoastUserId'
     ];
 
@@ -111,8 +123,12 @@ class Subscription implements ArrayAccess
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'reoccurring' => 'getReoccurring',
-        'shop_subscription_id' => 'getShopSubscriptionId',
-        'shop_subscription_line_item_id' => 'getShopSubscriptionLineItemId',
+        'status' => 'getStatus',
+        'currency' => 'getCurrency',
+        'date' => 'getDate',
+        'price' => 'getPrice',
+        'name' => 'getName',
+        'next_payment' => 'getNextPayment',
         'my_yoast_user_id' => 'getMyYoastUserId'
     ];
 
@@ -152,8 +168,12 @@ class Subscription implements ArrayAccess
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['reoccurring'] = isset($data['reoccurring']) ? $data['reoccurring'] : true;
-        $this->container['shop_subscription_id'] = isset($data['shop_subscription_id']) ? $data['shop_subscription_id'] : null;
-        $this->container['shop_subscription_line_item_id'] = isset($data['shop_subscription_line_item_id']) ? $data['shop_subscription_line_item_id'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['next_payment'] = isset($data['next_payment']) ? $data['next_payment'] : null;
         $this->container['my_yoast_user_id'] = isset($data['my_yoast_user_id']) ? $data['my_yoast_user_id'] : null;
     }
 
@@ -318,43 +338,127 @@ class Subscription implements ArrayAccess
     }
 
     /**
-     * Gets shop_subscription_id
-     * @return double
+     * Gets status
+     * @return string
      */
-    public function getShopSubscriptionId()
+    public function getStatus()
     {
-        return $this->container['shop_subscription_id'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets shop_subscription_id
-     * @param double $shop_subscription_id
+     * Sets status
+     * @param string $status
      * @return $this
      */
-    public function setShopSubscriptionId($shop_subscription_id)
+    public function setStatus($status)
     {
-        $this->container['shop_subscription_id'] = $shop_subscription_id;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets shop_subscription_line_item_id
-     * @return double
+     * Gets currency
+     * @return string
      */
-    public function getShopSubscriptionLineItemId()
+    public function getCurrency()
     {
-        return $this->container['shop_subscription_line_item_id'];
+        return $this->container['currency'];
     }
 
     /**
-     * Sets shop_subscription_line_item_id
-     * @param double $shop_subscription_line_item_id
+     * Sets currency
+     * @param string $currency
      * @return $this
      */
-    public function setShopSubscriptionLineItemId($shop_subscription_line_item_id)
+    public function setCurrency($currency)
     {
-        $this->container['shop_subscription_line_item_id'] = $shop_subscription_line_item_id;
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets date
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->container['date'];
+    }
+
+    /**
+     * Sets date
+     * @param \DateTime $date
+     * @return $this
+     */
+    public function setDate($date)
+    {
+        $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets price
+     * @return double
+     */
+    public function getPrice()
+    {
+        return $this->container['price'];
+    }
+
+    /**
+     * Sets price
+     * @param double $price
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->container['price'] = $price;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     * @param string $name
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets next_payment
+     * @return \DateTime
+     */
+    public function getNextPayment()
+    {
+        return $this->container['next_payment'];
+    }
+
+    /**
+     * Sets next_payment
+     * @param \DateTime $next_payment
+     * @return $this
+     */
+    public function setNextPayment($next_payment)
+    {
+        $this->container['next_payment'] = $next_payment;
 
         return $this;
     }

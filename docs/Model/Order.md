@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
 **total_amount** | **double** |  | 
-**date** | [**\DateTime**](Date.md) |  | 
+**date** | [**\DateTime**](\DateTime.md) |  | 
 **vat_number** | **string** |  | [optional] 
 **customer_id** | **double** |  | 
 **country_of_origin** | **string** |  | 

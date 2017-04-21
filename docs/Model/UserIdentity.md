@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **external_id** | **string** |  | [optional] 
 **profile** | **object** |  | [optional] 
 **credentials** | **object** |  | [optional] 
-**created** | [**\DateTime**](Date.md) |  | [optional] 
-**modified** | [**\DateTime**](Date.md) |  | [optional] 
+**created** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **id** | **double** |  | [optional] 
 **user_id** | **double** |  | [optional] 
 

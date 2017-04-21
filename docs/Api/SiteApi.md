@@ -347,7 +347,7 @@ Find all instances of the model matched by filter from the data source.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->siteFind($filter);
@@ -362,7 +362,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit | [optional]
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -391,7 +391,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
 $id = "id_example"; // string | Model id
-$filter = "filter_example"; // string | Filter defining fields and include
+$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->siteFindById($id, $filter);
@@ -407,7 +407,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **filter** | **string**| Filter defining fields and include | [optional]
+ **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -435,7 +435,7 @@ Find first instance of the model matched by filter from the data source.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->siteFindOne($filter);
@@ -450,7 +450,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit | [optional]
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -643,7 +643,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sitePrototypeDestroyByIdSubscriptions**
-> sitePrototypeDestroyByIdSubscriptions($fk, $id)
+> sitePrototypeDestroyByIdSubscriptions($id, $fk)
 
 Delete a related item by id for subscriptions.
 
@@ -653,11 +653,11 @@ Delete a related item by id for subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | Site id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $api_instance->sitePrototypeDestroyByIdSubscriptions($fk, $id);
+    $api_instance->sitePrototypeDestroyByIdSubscriptions($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeDestroyByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
@@ -668,8 +668,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| Site id |
+ **fk** | **string**| Foreign key for subscriptions |
 
 ### Return type
 
@@ -687,7 +687,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sitePrototypeExistsSubscriptions**
-> bool sitePrototypeExistsSubscriptions($fk, $id)
+> bool sitePrototypeExistsSubscriptions($id, $fk)
 
 Check the existence of subscriptions relation to an item by id.
 
@@ -697,11 +697,11 @@ Check the existence of subscriptions relation to an item by id.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | Site id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $result = $api_instance->sitePrototypeExistsSubscriptions($fk, $id);
+    $result = $api_instance->sitePrototypeExistsSubscriptions($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeExistsSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -713,8 +713,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| Site id |
+ **fk** | **string**| Foreign key for subscriptions |
 
 ### Return type
 
@@ -732,7 +732,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sitePrototypeFindByIdSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription sitePrototypeFindByIdSubscriptions($fk, $id)
+> \Yoast\MyYoastApiClient\Model\Subscription sitePrototypeFindByIdSubscriptions($id, $fk)
 
 Find a related item by id for subscriptions.
 
@@ -742,11 +742,11 @@ Find a related item by id for subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | Site id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $result = $api_instance->sitePrototypeFindByIdSubscriptions($fk, $id);
+    $result = $api_instance->sitePrototypeFindByIdSubscriptions($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeFindByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -758,8 +758,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| Site id |
+ **fk** | **string**| Foreign key for subscriptions |
 
 ### Return type
 
@@ -867,7 +867,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sitePrototypeLinkSubscriptions**
-> \Yoast\MyYoastApiClient\Model\SiteSubscriptions sitePrototypeLinkSubscriptions($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\SiteSubscriptions sitePrototypeLinkSubscriptions($id, $fk, $data)
 
 Add a related item by id for subscriptions.
 
@@ -877,12 +877,12 @@ Add a related item by id for subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | Site id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 $data = new \Yoast\MyYoastApiClient\Model\SiteSubscriptions(); // \Yoast\MyYoastApiClient\Model\SiteSubscriptions | 
 
 try {
-    $result = $api_instance->sitePrototypeLinkSubscriptions($fk, $id, $data);
+    $result = $api_instance->sitePrototypeLinkSubscriptions($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeLinkSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -894,8 +894,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| Site id |
+ **fk** | **string**| Foreign key for subscriptions |
  **data** | [**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/\Yoast\MyYoastApiClient\Model\SiteSubscriptions.md)|  | [optional]
 
 ### Return type
@@ -959,7 +959,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sitePrototypeUnlinkSubscriptions**
-> sitePrototypeUnlinkSubscriptions($fk, $id)
+> sitePrototypeUnlinkSubscriptions($id, $fk)
 
 Remove the subscriptions relation to an item by id.
 
@@ -969,11 +969,11 @@ Remove the subscriptions relation to an item by id.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | Site id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $api_instance->sitePrototypeUnlinkSubscriptions($fk, $id);
+    $api_instance->sitePrototypeUnlinkSubscriptions($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeUnlinkSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
@@ -984,8 +984,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| Site id |
+ **fk** | **string**| Foreign key for subscriptions |
 
 ### Return type
 
@@ -1003,7 +1003,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sitePrototypeUpdateByIdSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription sitePrototypeUpdateByIdSubscriptions($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\Subscription sitePrototypeUpdateByIdSubscriptions($id, $fk, $data)
 
 Update a related item by id for subscriptions.
 
@@ -1013,12 +1013,12 @@ Update a related item by id for subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | Site id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 $data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
 
 try {
-    $result = $api_instance->sitePrototypeUpdateByIdSubscriptions($fk, $id, $data);
+    $result = $api_instance->sitePrototypeUpdateByIdSubscriptions($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeUpdateByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -1030,8 +1030,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| Site id |
+ **fk** | **string**| Foreign key for subscriptions |
  **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)|  | [optional]
 
 ### Return type

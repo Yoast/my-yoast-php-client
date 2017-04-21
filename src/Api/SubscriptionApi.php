@@ -656,7 +656,7 @@ class SubscriptionApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription[]
      */
@@ -671,7 +671,7 @@ class SubscriptionApi
      *
      * Find all instances of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription[], HTTP status code, HTTP response headers (array of strings)
      */
@@ -734,7 +734,7 @@ class SubscriptionApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
@@ -750,7 +750,7 @@ class SubscriptionApi
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
-     * @param string $filter Filter defining fields and include (optional)
+     * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
@@ -824,7 +824,7 @@ class SubscriptionApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
@@ -839,7 +839,7 @@ class SubscriptionApi
      *
      * Find first instance of the model matched by filter from the data source.
      *
-     * @param string $filter Filter defining fields, where, include, order, offset, and limit (optional)
+     * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
@@ -902,12 +902,13 @@ class SubscriptionApi
      * 
      *
      * @param string $subscription_data  (required)
+     * @param string $extra_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription[]
      */
-    public function subscriptionFromWooCommerce($subscription_data)
+    public function subscriptionFromWooCommerce($subscription_data, $extra_data)
     {
-        list($response) = $this->subscriptionFromWooCommerceWithHttpInfo($subscription_data);
+        list($response) = $this->subscriptionFromWooCommerceWithHttpInfo($subscription_data, $extra_data);
         return $response;
     }
 
@@ -917,14 +918,19 @@ class SubscriptionApi
      * 
      *
      * @param string $subscription_data  (required)
+     * @param string $extra_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionFromWooCommerceWithHttpInfo($subscription_data)
+    public function subscriptionFromWooCommerceWithHttpInfo($subscription_data, $extra_data)
     {
         // verify the required parameter 'subscription_data' is set
         if ($subscription_data === null) {
             throw new \InvalidArgumentException('Missing the required parameter $subscription_data when calling subscriptionFromWooCommerce');
+        }
+        // verify the required parameter 'extra_data' is set
+        if ($extra_data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $extra_data when calling subscriptionFromWooCommerce');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/fromWooCommerce";
@@ -944,6 +950,10 @@ class SubscriptionApi
         // form params
         if ($subscription_data !== null) {
             $formParams['subscriptionData'] = $this->apiClient->getSerializer()->toFormValue($subscription_data);
+        }
+        // form params
+        if ($extra_data !== null) {
+            $formParams['extraData'] = $this->apiClient->getSerializer()->toFormValue($extra_data);
         }
         
         // for model (json/xml)
@@ -1772,14 +1782,14 @@ class SubscriptionApi
      *
      * Delete a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function subscriptionPrototypeDestroyByIdOrders($fk, $id)
+    public function subscriptionPrototypeDestroyByIdOrders($id, $fk)
     {
-        list($response) = $this->subscriptionPrototypeDestroyByIdOrdersWithHttpInfo($fk, $id);
+        list($response) = $this->subscriptionPrototypeDestroyByIdOrdersWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -1788,20 +1798,20 @@ class SubscriptionApi
      *
      * Delete a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeDestroyByIdOrdersWithHttpInfo($fk, $id)
+    public function subscriptionPrototypeDestroyByIdOrdersWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeDestroyByIdOrders');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeDestroyByIdOrders');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeDestroyByIdOrders');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/orders/{fk}";
@@ -1816,18 +1826,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -1867,14 +1877,14 @@ class SubscriptionApi
      *
      * Delete a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function subscriptionPrototypeDestroyByIdSites($fk, $id)
+    public function subscriptionPrototypeDestroyByIdSites($id, $fk)
     {
-        list($response) = $this->subscriptionPrototypeDestroyByIdSitesWithHttpInfo($fk, $id);
+        list($response) = $this->subscriptionPrototypeDestroyByIdSitesWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -1883,20 +1893,20 @@ class SubscriptionApi
      *
      * Delete a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeDestroyByIdSitesWithHttpInfo($fk, $id)
+    public function subscriptionPrototypeDestroyByIdSitesWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeDestroyByIdSites');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeDestroyByIdSites');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeDestroyByIdSites');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/sites/{fk}";
@@ -1911,18 +1921,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -2124,14 +2134,14 @@ class SubscriptionApi
      *
      * Check the existence of orders relation to an item by id.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return bool
      */
-    public function subscriptionPrototypeExistsOrders($fk, $id)
+    public function subscriptionPrototypeExistsOrders($id, $fk)
     {
-        list($response) = $this->subscriptionPrototypeExistsOrdersWithHttpInfo($fk, $id);
+        list($response) = $this->subscriptionPrototypeExistsOrdersWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -2140,20 +2150,20 @@ class SubscriptionApi
      *
      * Check the existence of orders relation to an item by id.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of bool, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeExistsOrdersWithHttpInfo($fk, $id)
+    public function subscriptionPrototypeExistsOrdersWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeExistsOrders');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeExistsOrders');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeExistsOrders');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/orders/rel/{fk}";
@@ -2168,18 +2178,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -2223,14 +2233,14 @@ class SubscriptionApi
      *
      * Check the existence of sites relation to an item by id.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return bool
      */
-    public function subscriptionPrototypeExistsSites($fk, $id)
+    public function subscriptionPrototypeExistsSites($id, $fk)
     {
-        list($response) = $this->subscriptionPrototypeExistsSitesWithHttpInfo($fk, $id);
+        list($response) = $this->subscriptionPrototypeExistsSitesWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -2239,20 +2249,20 @@ class SubscriptionApi
      *
      * Check the existence of sites relation to an item by id.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of bool, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeExistsSitesWithHttpInfo($fk, $id)
+    public function subscriptionPrototypeExistsSitesWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeExistsSites');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeExistsSites');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeExistsSites');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/sites/rel/{fk}";
@@ -2267,18 +2277,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -2322,14 +2332,14 @@ class SubscriptionApi
      *
      * Find a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function subscriptionPrototypeFindByIdOrders($fk, $id)
+    public function subscriptionPrototypeFindByIdOrders($id, $fk)
     {
-        list($response) = $this->subscriptionPrototypeFindByIdOrdersWithHttpInfo($fk, $id);
+        list($response) = $this->subscriptionPrototypeFindByIdOrdersWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -2338,20 +2348,20 @@ class SubscriptionApi
      *
      * Find a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeFindByIdOrdersWithHttpInfo($fk, $id)
+    public function subscriptionPrototypeFindByIdOrdersWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeFindByIdOrders');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeFindByIdOrders');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeFindByIdOrders');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/orders/{fk}";
@@ -2366,18 +2376,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -2421,14 +2431,14 @@ class SubscriptionApi
      *
      * Find a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\SiteSubscriptions
      */
-    public function subscriptionPrototypeFindByIdSites($fk, $id)
+    public function subscriptionPrototypeFindByIdSites($id, $fk)
     {
-        list($response) = $this->subscriptionPrototypeFindByIdSitesWithHttpInfo($fk, $id);
+        list($response) = $this->subscriptionPrototypeFindByIdSitesWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -2437,20 +2447,20 @@ class SubscriptionApi
      *
      * Find a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\SiteSubscriptions, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeFindByIdSitesWithHttpInfo($fk, $id)
+    public function subscriptionPrototypeFindByIdSitesWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeFindByIdSites');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeFindByIdSites');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeFindByIdSites');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/sites/{fk}";
@@ -2465,18 +2475,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -2884,15 +2894,15 @@ class SubscriptionApi
      *
      * Add a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @param \Yoast\MyYoastApiClient\Model\SubscriptionOrders $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\SubscriptionOrders
      */
-    public function subscriptionPrototypeLinkOrders($fk, $id, $data = null)
+    public function subscriptionPrototypeLinkOrders($id, $fk, $data = null)
     {
-        list($response) = $this->subscriptionPrototypeLinkOrdersWithHttpInfo($fk, $id, $data);
+        list($response) = $this->subscriptionPrototypeLinkOrdersWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -2901,21 +2911,21 @@ class SubscriptionApi
      *
      * Add a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @param \Yoast\MyYoastApiClient\Model\SubscriptionOrders $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionOrders, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeLinkOrdersWithHttpInfo($fk, $id, $data = null)
+    public function subscriptionPrototypeLinkOrdersWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeLinkOrders');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeLinkOrders');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeLinkOrders');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/orders/rel/{fk}";
@@ -2930,18 +2940,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -2990,15 +3000,15 @@ class SubscriptionApi
      *
      * Add a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @param \Yoast\MyYoastApiClient\Model\SiteSubscriptions $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\SiteSubscriptions
      */
-    public function subscriptionPrototypeLinkSites($fk, $id, $data = null)
+    public function subscriptionPrototypeLinkSites($id, $fk, $data = null)
     {
-        list($response) = $this->subscriptionPrototypeLinkSitesWithHttpInfo($fk, $id, $data);
+        list($response) = $this->subscriptionPrototypeLinkSitesWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -3007,21 +3017,21 @@ class SubscriptionApi
      *
      * Add a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @param \Yoast\MyYoastApiClient\Model\SiteSubscriptions $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\SiteSubscriptions, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeLinkSitesWithHttpInfo($fk, $id, $data = null)
+    public function subscriptionPrototypeLinkSitesWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeLinkSites');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeLinkSites');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeLinkSites');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/sites/rel/{fk}";
@@ -3036,18 +3046,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3188,14 +3198,14 @@ class SubscriptionApi
      *
      * Remove the orders relation to an item by id.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function subscriptionPrototypeUnlinkOrders($fk, $id)
+    public function subscriptionPrototypeUnlinkOrders($id, $fk)
     {
-        list($response) = $this->subscriptionPrototypeUnlinkOrdersWithHttpInfo($fk, $id);
+        list($response) = $this->subscriptionPrototypeUnlinkOrdersWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3204,20 +3214,20 @@ class SubscriptionApi
      *
      * Remove the orders relation to an item by id.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeUnlinkOrdersWithHttpInfo($fk, $id)
+    public function subscriptionPrototypeUnlinkOrdersWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeUnlinkOrders');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeUnlinkOrders');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeUnlinkOrders');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/orders/rel/{fk}";
@@ -3232,18 +3242,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3283,14 +3293,14 @@ class SubscriptionApi
      *
      * Remove the sites relation to an item by id.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function subscriptionPrototypeUnlinkSites($fk, $id)
+    public function subscriptionPrototypeUnlinkSites($id, $fk)
     {
-        list($response) = $this->subscriptionPrototypeUnlinkSitesWithHttpInfo($fk, $id);
+        list($response) = $this->subscriptionPrototypeUnlinkSitesWithHttpInfo($id, $fk);
         return $response;
     }
 
@@ -3299,20 +3309,20 @@ class SubscriptionApi
      *
      * Remove the sites relation to an item by id.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeUnlinkSitesWithHttpInfo($fk, $id)
+    public function subscriptionPrototypeUnlinkSitesWithHttpInfo($id, $fk)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeUnlinkSites');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeUnlinkSites');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeUnlinkSites');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/sites/rel/{fk}";
@@ -3327,18 +3337,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3378,15 +3388,15 @@ class SubscriptionApi
      *
      * Update a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @param \Yoast\MyYoastApiClient\Model\Order $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function subscriptionPrototypeUpdateByIdOrders($fk, $id, $data = null)
+    public function subscriptionPrototypeUpdateByIdOrders($id, $fk, $data = null)
     {
-        list($response) = $this->subscriptionPrototypeUpdateByIdOrdersWithHttpInfo($fk, $id, $data);
+        list($response) = $this->subscriptionPrototypeUpdateByIdOrdersWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -3395,21 +3405,21 @@ class SubscriptionApi
      *
      * Update a related item by id for orders.
      *
-     * @param string $fk Foreign key for orders (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for orders (required)
      * @param \Yoast\MyYoastApiClient\Model\Order $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeUpdateByIdOrdersWithHttpInfo($fk, $id, $data = null)
+    public function subscriptionPrototypeUpdateByIdOrdersWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeUpdateByIdOrders');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeUpdateByIdOrders');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeUpdateByIdOrders');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/orders/{fk}";
@@ -3424,18 +3434,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -3484,15 +3494,15 @@ class SubscriptionApi
      *
      * Update a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @param \Yoast\MyYoastApiClient\Model\SiteSubscriptions $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\SiteSubscriptions
      */
-    public function subscriptionPrototypeUpdateByIdSites($fk, $id, $data = null)
+    public function subscriptionPrototypeUpdateByIdSites($id, $fk, $data = null)
     {
-        list($response) = $this->subscriptionPrototypeUpdateByIdSitesWithHttpInfo($fk, $id, $data);
+        list($response) = $this->subscriptionPrototypeUpdateByIdSitesWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
@@ -3501,21 +3511,21 @@ class SubscriptionApi
      *
      * Update a related item by id for sites.
      *
-     * @param string $fk Foreign key for sites (required)
      * @param string $id Subscription id (required)
+     * @param string $fk Foreign key for sites (required)
      * @param \Yoast\MyYoastApiClient\Model\SiteSubscriptions $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\SiteSubscriptions, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionPrototypeUpdateByIdSitesWithHttpInfo($fk, $id, $data = null)
+    public function subscriptionPrototypeUpdateByIdSitesWithHttpInfo($id, $fk, $data = null)
     {
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeUpdateByIdSites');
-        }
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeUpdateByIdSites');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling subscriptionPrototypeUpdateByIdSites');
         }
         // parse inputs
         $resourcePath = "/Subscriptions/{id}/sites/{fk}";
@@ -3530,18 +3540,18 @@ class SubscriptionApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }

@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**myYoastUserChangePassword**](MyYoastUserApi.md#myYoastUserChangePassword) | **POST** /MyYoastUsers/change-password | Change a user&#39;s password.
 [**myYoastUserConfirm**](MyYoastUserApi.md#myYoastUserConfirm) | **GET** /MyYoastUsers/confirm | Confirm a user registration with email verification token.
 [**myYoastUserCount**](MyYoastUserApi.md#myYoastUserCount) | **GET** /MyYoastUsers/count | Count instances of the model matched by where from the data source.
 [**myYoastUserCreate**](MyYoastUserApi.md#myYoastUserCreate) | **POST** /MyYoastUsers | Create a new instance of the model and persist it into the data source.
@@ -71,6 +72,50 @@ Method | HTTP request | Description
 [**myYoastUserUpdateAll**](MyYoastUserApi.md#myYoastUserUpdateAll) | **POST** /MyYoastUsers/update | Update instances of the model matched by {{where}} from the data source.
 [**myYoastUserUpsertWithWhere**](MyYoastUserApi.md#myYoastUserUpsertWithWhere) | **POST** /MyYoastUsers/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
+
+# **myYoastUserChangePassword**
+> myYoastUserChangePassword($old_password, $new_password)
+
+Change a user's password.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
+$old_password = "old_password_example"; // string | 
+$new_password = "new_password_example"; // string | 
+
+try {
+    $api_instance->myYoastUserChangePassword($old_password, $new_password);
+} catch (Exception $e) {
+    echo 'Exception when calling MyYoastUserApi->myYoastUserChangePassword: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **old_password** | **string**|  |
+ **new_password** | **string**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserConfirm**
 > myYoastUserConfirm($uid, $token, $redirect)
@@ -430,7 +475,7 @@ Find all instances of the model matched by filter from the data source.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->myYoastUserFind($filter);
@@ -445,7 +490,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit | [optional]
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -474,7 +519,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
 $id = "id_example"; // string | Model id
-$filter = "filter_example"; // string | Filter defining fields and include
+$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->myYoastUserFindById($id, $filter);
@@ -490,7 +535,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **filter** | **string**| Filter defining fields and include | [optional]
+ **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -518,7 +563,7 @@ Find first instance of the model matched by filter from the data source.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
     $result = $api_instance->myYoastUserFindOne($filter);
@@ -533,7 +578,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit | [optional]
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -1555,7 +1600,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeDestroyByIdAccessTokens**
-> myYoastUserPrototypeDestroyByIdAccessTokens($fk, $id)
+> myYoastUserPrototypeDestroyByIdAccessTokens($id, $fk)
 
 Delete a related item by id for accessTokens.
 
@@ -1565,11 +1610,11 @@ Delete a related item by id for accessTokens.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for accessTokens
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for accessTokens
 
 try {
-    $api_instance->myYoastUserPrototypeDestroyByIdAccessTokens($fk, $id);
+    $api_instance->myYoastUserPrototypeDestroyByIdAccessTokens($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeDestroyByIdAccessTokens: ', $e->getMessage(), PHP_EOL;
 }
@@ -1580,8 +1625,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for accessTokens |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for accessTokens |
 
 ### Return type
 
@@ -1599,7 +1644,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeDestroyByIdCredentials**
-> myYoastUserPrototypeDestroyByIdCredentials($fk, $id)
+> myYoastUserPrototypeDestroyByIdCredentials($id, $fk)
 
 Delete a related item by id for credentials.
 
@@ -1609,11 +1654,11 @@ Delete a related item by id for credentials.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for credentials
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for credentials
 
 try {
-    $api_instance->myYoastUserPrototypeDestroyByIdCredentials($fk, $id);
+    $api_instance->myYoastUserPrototypeDestroyByIdCredentials($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeDestroyByIdCredentials: ', $e->getMessage(), PHP_EOL;
 }
@@ -1624,8 +1669,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for credentials |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for credentials |
 
 ### Return type
 
@@ -1643,7 +1688,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeDestroyByIdIdentities**
-> myYoastUserPrototypeDestroyByIdIdentities($fk, $id)
+> myYoastUserPrototypeDestroyByIdIdentities($id, $fk)
 
 Delete a related item by id for identities.
 
@@ -1653,11 +1698,11 @@ Delete a related item by id for identities.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for identities
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for identities
 
 try {
-    $api_instance->myYoastUserPrototypeDestroyByIdIdentities($fk, $id);
+    $api_instance->myYoastUserPrototypeDestroyByIdIdentities($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeDestroyByIdIdentities: ', $e->getMessage(), PHP_EOL;
 }
@@ -1668,8 +1713,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for identities |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for identities |
 
 ### Return type
 
@@ -1687,7 +1732,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeDestroyByIdOrders**
-> myYoastUserPrototypeDestroyByIdOrders($fk, $id)
+> myYoastUserPrototypeDestroyByIdOrders($id, $fk)
 
 Delete a related item by id for orders.
 
@@ -1697,11 +1742,11 @@ Delete a related item by id for orders.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for orders
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for orders
 
 try {
-    $api_instance->myYoastUserPrototypeDestroyByIdOrders($fk, $id);
+    $api_instance->myYoastUserPrototypeDestroyByIdOrders($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeDestroyByIdOrders: ', $e->getMessage(), PHP_EOL;
 }
@@ -1712,8 +1757,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for orders |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for orders |
 
 ### Return type
 
@@ -1731,7 +1776,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeDestroyByIdSites**
-> myYoastUserPrototypeDestroyByIdSites($fk, $id)
+> myYoastUserPrototypeDestroyByIdSites($id, $fk)
 
 Delete a related item by id for sites.
 
@@ -1741,11 +1786,11 @@ Delete a related item by id for sites.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for sites
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for sites
 
 try {
-    $api_instance->myYoastUserPrototypeDestroyByIdSites($fk, $id);
+    $api_instance->myYoastUserPrototypeDestroyByIdSites($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeDestroyByIdSites: ', $e->getMessage(), PHP_EOL;
 }
@@ -1756,8 +1801,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for sites |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for sites |
 
 ### Return type
 
@@ -1775,7 +1820,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeDestroyByIdSubscriptions**
-> myYoastUserPrototypeDestroyByIdSubscriptions($fk, $id)
+> myYoastUserPrototypeDestroyByIdSubscriptions($id, $fk)
 
 Delete a related item by id for subscriptions.
 
@@ -1785,11 +1830,11 @@ Delete a related item by id for subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $api_instance->myYoastUserPrototypeDestroyByIdSubscriptions($fk, $id);
+    $api_instance->myYoastUserPrototypeDestroyByIdSubscriptions($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeDestroyByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
@@ -1800,8 +1845,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for subscriptions |
 
 ### Return type
 
@@ -1819,7 +1864,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeFindByIdAccessTokens**
-> \Yoast\MyYoastApiClient\Model\AccessToken myYoastUserPrototypeFindByIdAccessTokens($fk, $id)
+> \Yoast\MyYoastApiClient\Model\AccessToken myYoastUserPrototypeFindByIdAccessTokens($id, $fk)
 
 Find a related item by id for accessTokens.
 
@@ -1829,11 +1874,11 @@ Find a related item by id for accessTokens.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for accessTokens
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for accessTokens
 
 try {
-    $result = $api_instance->myYoastUserPrototypeFindByIdAccessTokens($fk, $id);
+    $result = $api_instance->myYoastUserPrototypeFindByIdAccessTokens($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeFindByIdAccessTokens: ', $e->getMessage(), PHP_EOL;
@@ -1845,8 +1890,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for accessTokens |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for accessTokens |
 
 ### Return type
 
@@ -1864,7 +1909,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeFindByIdCredentials**
-> \Yoast\MyYoastApiClient\Model\UserCredential myYoastUserPrototypeFindByIdCredentials($fk, $id)
+> \Yoast\MyYoastApiClient\Model\UserCredential myYoastUserPrototypeFindByIdCredentials($id, $fk)
 
 Find a related item by id for credentials.
 
@@ -1874,11 +1919,11 @@ Find a related item by id for credentials.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for credentials
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for credentials
 
 try {
-    $result = $api_instance->myYoastUserPrototypeFindByIdCredentials($fk, $id);
+    $result = $api_instance->myYoastUserPrototypeFindByIdCredentials($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeFindByIdCredentials: ', $e->getMessage(), PHP_EOL;
@@ -1890,8 +1935,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for credentials |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for credentials |
 
 ### Return type
 
@@ -1909,7 +1954,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeFindByIdIdentities**
-> \Yoast\MyYoastApiClient\Model\UserIdentity myYoastUserPrototypeFindByIdIdentities($fk, $id)
+> \Yoast\MyYoastApiClient\Model\UserIdentity myYoastUserPrototypeFindByIdIdentities($id, $fk)
 
 Find a related item by id for identities.
 
@@ -1919,11 +1964,11 @@ Find a related item by id for identities.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for identities
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for identities
 
 try {
-    $result = $api_instance->myYoastUserPrototypeFindByIdIdentities($fk, $id);
+    $result = $api_instance->myYoastUserPrototypeFindByIdIdentities($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeFindByIdIdentities: ', $e->getMessage(), PHP_EOL;
@@ -1935,8 +1980,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for identities |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for identities |
 
 ### Return type
 
@@ -1954,7 +1999,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeFindByIdOrders**
-> \Yoast\MyYoastApiClient\Model\Order myYoastUserPrototypeFindByIdOrders($fk, $id)
+> \Yoast\MyYoastApiClient\Model\Order myYoastUserPrototypeFindByIdOrders($id, $fk)
 
 Find a related item by id for orders.
 
@@ -1964,11 +2009,11 @@ Find a related item by id for orders.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for orders
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for orders
 
 try {
-    $result = $api_instance->myYoastUserPrototypeFindByIdOrders($fk, $id);
+    $result = $api_instance->myYoastUserPrototypeFindByIdOrders($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeFindByIdOrders: ', $e->getMessage(), PHP_EOL;
@@ -1980,8 +2025,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for orders |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for orders |
 
 ### Return type
 
@@ -1999,7 +2044,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeFindByIdSites**
-> \Yoast\MyYoastApiClient\Model\Site myYoastUserPrototypeFindByIdSites($fk, $id)
+> \Yoast\MyYoastApiClient\Model\Site myYoastUserPrototypeFindByIdSites($id, $fk)
 
 Find a related item by id for sites.
 
@@ -2009,11 +2054,11 @@ Find a related item by id for sites.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for sites
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for sites
 
 try {
-    $result = $api_instance->myYoastUserPrototypeFindByIdSites($fk, $id);
+    $result = $api_instance->myYoastUserPrototypeFindByIdSites($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeFindByIdSites: ', $e->getMessage(), PHP_EOL;
@@ -2025,8 +2070,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for sites |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for sites |
 
 ### Return type
 
@@ -2044,7 +2089,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeFindByIdSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription myYoastUserPrototypeFindByIdSubscriptions($fk, $id)
+> \Yoast\MyYoastApiClient\Model\Subscription myYoastUserPrototypeFindByIdSubscriptions($id, $fk)
 
 Find a related item by id for subscriptions.
 
@@ -2054,11 +2099,11 @@ Find a related item by id for subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $result = $api_instance->myYoastUserPrototypeFindByIdSubscriptions($fk, $id);
+    $result = $api_instance->myYoastUserPrototypeFindByIdSubscriptions($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeFindByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -2070,8 +2115,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for subscriptions |
 
 ### Return type
 
@@ -2404,7 +2449,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeUpdateByIdAccessTokens**
-> \Yoast\MyYoastApiClient\Model\AccessToken myYoastUserPrototypeUpdateByIdAccessTokens($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\AccessToken myYoastUserPrototypeUpdateByIdAccessTokens($id, $fk, $data)
 
 Update a related item by id for accessTokens.
 
@@ -2414,12 +2459,12 @@ Update a related item by id for accessTokens.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for accessTokens
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for accessTokens
 $data = new \Yoast\MyYoastApiClient\Model\AccessToken(); // \Yoast\MyYoastApiClient\Model\AccessToken | 
 
 try {
-    $result = $api_instance->myYoastUserPrototypeUpdateByIdAccessTokens($fk, $id, $data);
+    $result = $api_instance->myYoastUserPrototypeUpdateByIdAccessTokens($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeUpdateByIdAccessTokens: ', $e->getMessage(), PHP_EOL;
@@ -2431,8 +2476,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for accessTokens |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for accessTokens |
  **data** | [**\Yoast\MyYoastApiClient\Model\AccessToken**](../Model/\Yoast\MyYoastApiClient\Model\AccessToken.md)|  | [optional]
 
 ### Return type
@@ -2451,7 +2496,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeUpdateByIdCredentials**
-> \Yoast\MyYoastApiClient\Model\UserCredential myYoastUserPrototypeUpdateByIdCredentials($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\UserCredential myYoastUserPrototypeUpdateByIdCredentials($id, $fk, $data)
 
 Update a related item by id for credentials.
 
@@ -2461,12 +2506,12 @@ Update a related item by id for credentials.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for credentials
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for credentials
 $data = new \Yoast\MyYoastApiClient\Model\UserCredential(); // \Yoast\MyYoastApiClient\Model\UserCredential | 
 
 try {
-    $result = $api_instance->myYoastUserPrototypeUpdateByIdCredentials($fk, $id, $data);
+    $result = $api_instance->myYoastUserPrototypeUpdateByIdCredentials($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeUpdateByIdCredentials: ', $e->getMessage(), PHP_EOL;
@@ -2478,8 +2523,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for credentials |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for credentials |
  **data** | [**\Yoast\MyYoastApiClient\Model\UserCredential**](../Model/\Yoast\MyYoastApiClient\Model\UserCredential.md)|  | [optional]
 
 ### Return type
@@ -2498,7 +2543,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeUpdateByIdIdentities**
-> \Yoast\MyYoastApiClient\Model\UserIdentity myYoastUserPrototypeUpdateByIdIdentities($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\UserIdentity myYoastUserPrototypeUpdateByIdIdentities($id, $fk, $data)
 
 Update a related item by id for identities.
 
@@ -2508,12 +2553,12 @@ Update a related item by id for identities.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for identities
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for identities
 $data = new \Yoast\MyYoastApiClient\Model\UserIdentity(); // \Yoast\MyYoastApiClient\Model\UserIdentity | 
 
 try {
-    $result = $api_instance->myYoastUserPrototypeUpdateByIdIdentities($fk, $id, $data);
+    $result = $api_instance->myYoastUserPrototypeUpdateByIdIdentities($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeUpdateByIdIdentities: ', $e->getMessage(), PHP_EOL;
@@ -2525,8 +2570,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for identities |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for identities |
  **data** | [**\Yoast\MyYoastApiClient\Model\UserIdentity**](../Model/\Yoast\MyYoastApiClient\Model\UserIdentity.md)|  | [optional]
 
 ### Return type
@@ -2545,7 +2590,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeUpdateByIdOrders**
-> \Yoast\MyYoastApiClient\Model\Order myYoastUserPrototypeUpdateByIdOrders($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\Order myYoastUserPrototypeUpdateByIdOrders($id, $fk, $data)
 
 Update a related item by id for orders.
 
@@ -2555,12 +2600,12 @@ Update a related item by id for orders.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for orders
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for orders
 $data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | 
 
 try {
-    $result = $api_instance->myYoastUserPrototypeUpdateByIdOrders($fk, $id, $data);
+    $result = $api_instance->myYoastUserPrototypeUpdateByIdOrders($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeUpdateByIdOrders: ', $e->getMessage(), PHP_EOL;
@@ -2572,8 +2617,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for orders |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for orders |
  **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)|  | [optional]
 
 ### Return type
@@ -2592,7 +2637,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeUpdateByIdSites**
-> \Yoast\MyYoastApiClient\Model\Site myYoastUserPrototypeUpdateByIdSites($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\Site myYoastUserPrototypeUpdateByIdSites($id, $fk, $data)
 
 Update a related item by id for sites.
 
@@ -2602,12 +2647,12 @@ Update a related item by id for sites.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for sites
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for sites
 $data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | 
 
 try {
-    $result = $api_instance->myYoastUserPrototypeUpdateByIdSites($fk, $id, $data);
+    $result = $api_instance->myYoastUserPrototypeUpdateByIdSites($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeUpdateByIdSites: ', $e->getMessage(), PHP_EOL;
@@ -2619,8 +2664,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for sites |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for sites |
  **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/\Yoast\MyYoastApiClient\Model\Site.md)|  | [optional]
 
 ### Return type
@@ -2639,7 +2684,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **myYoastUserPrototypeUpdateByIdSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription myYoastUserPrototypeUpdateByIdSubscriptions($fk, $id, $data)
+> \Yoast\MyYoastApiClient\Model\Subscription myYoastUserPrototypeUpdateByIdSubscriptions($id, $fk, $data)
 
 Update a related item by id for subscriptions.
 
@@ -2649,12 +2694,12 @@ Update a related item by id for subscriptions.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\MyYoastUserApi();
-$fk = "fk_example"; // string | Foreign key for subscriptions
 $id = "id_example"; // string | MyYoastUser id
+$fk = "fk_example"; // string | Foreign key for subscriptions
 $data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
 
 try {
-    $result = $api_instance->myYoastUserPrototypeUpdateByIdSubscriptions($fk, $id, $data);
+    $result = $api_instance->myYoastUserPrototypeUpdateByIdSubscriptions($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MyYoastUserApi->myYoastUserPrototypeUpdateByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -2666,8 +2711,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fk** | **string**| Foreign key for subscriptions |
  **id** | **string**| MyYoastUser id |
+ **fk** | **string**| Foreign key for subscriptions |
  **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)|  | [optional]
 
 ### Return type
