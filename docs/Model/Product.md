@@ -16,7 +16,9 @@ Name | Type | Description | Notes
 **shop_regular_price** | **double** |  | [optional] 
 **shop_tax_status** | **string** |  | [optional] 
 **shop_tax_class** | **string** |  | [optional] 
-**subscription_id** | **string** |  | [optional] 
+**last_updated** | [**\DateTime**](\DateTime.md) |  | 
+**current_version** | **double** |  | 
+**changelog** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

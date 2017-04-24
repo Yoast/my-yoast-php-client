@@ -19,23 +19,19 @@ Method | HTTP request | Description
 [**subscriptionPrototypeCountOrders**](SubscriptionApi.md#subscriptionPrototypeCountOrders) | **GET** /Subscriptions/{id}/orders/count | Counts orders of Subscription.
 [**subscriptionPrototypeCountSites**](SubscriptionApi.md#subscriptionPrototypeCountSites) | **GET** /Subscriptions/{id}/sites/count | Counts sites of Subscription.
 [**subscriptionPrototypeCreateOrders**](SubscriptionApi.md#subscriptionPrototypeCreateOrders) | **POST** /Subscriptions/{id}/orders | Creates a new instance in orders of this model.
-[**subscriptionPrototypeCreateProduct**](SubscriptionApi.md#subscriptionPrototypeCreateProduct) | **POST** /Subscriptions/{id}/product | Creates a new instance in product of this model.
 [**subscriptionPrototypeCreateSites**](SubscriptionApi.md#subscriptionPrototypeCreateSites) | **POST** /Subscriptions/{id}/sites | Creates a new instance in sites of this model.
-[**subscriptionPrototypeCreateSubscriber**](SubscriptionApi.md#subscriptionPrototypeCreateSubscriber) | **POST** /Subscriptions/{id}/subscriber | Creates a new instance in subscriber of this model.
 [**subscriptionPrototypeDeleteOrders**](SubscriptionApi.md#subscriptionPrototypeDeleteOrders) | **DELETE** /Subscriptions/{id}/orders | Deletes all orders of this model.
 [**subscriptionPrototypeDeleteSites**](SubscriptionApi.md#subscriptionPrototypeDeleteSites) | **DELETE** /Subscriptions/{id}/sites | Deletes all sites of this model.
 [**subscriptionPrototypeDestroyByIdOrders**](SubscriptionApi.md#subscriptionPrototypeDestroyByIdOrders) | **DELETE** /Subscriptions/{id}/orders/{fk} | Delete a related item by id for orders.
 [**subscriptionPrototypeDestroyByIdSites**](SubscriptionApi.md#subscriptionPrototypeDestroyByIdSites) | **DELETE** /Subscriptions/{id}/sites/{fk} | Delete a related item by id for sites.
-[**subscriptionPrototypeDestroyProduct**](SubscriptionApi.md#subscriptionPrototypeDestroyProduct) | **DELETE** /Subscriptions/{id}/product | Deletes product of this model.
-[**subscriptionPrototypeDestroySubscriber**](SubscriptionApi.md#subscriptionPrototypeDestroySubscriber) | **DELETE** /Subscriptions/{id}/subscriber | Deletes subscriber of this model.
 [**subscriptionPrototypeExistsOrders**](SubscriptionApi.md#subscriptionPrototypeExistsOrders) | **HEAD** /Subscriptions/{id}/orders/rel/{fk} | Check the existence of orders relation to an item by id.
 [**subscriptionPrototypeExistsSites**](SubscriptionApi.md#subscriptionPrototypeExistsSites) | **HEAD** /Subscriptions/{id}/sites/rel/{fk} | Check the existence of sites relation to an item by id.
 [**subscriptionPrototypeFindByIdOrders**](SubscriptionApi.md#subscriptionPrototypeFindByIdOrders) | **GET** /Subscriptions/{id}/orders/{fk} | Find a related item by id for orders.
 [**subscriptionPrototypeFindByIdSites**](SubscriptionApi.md#subscriptionPrototypeFindByIdSites) | **GET** /Subscriptions/{id}/sites/{fk} | Find a related item by id for sites.
 [**subscriptionPrototypeGetOrders**](SubscriptionApi.md#subscriptionPrototypeGetOrders) | **GET** /Subscriptions/{id}/orders | Queries orders of Subscription.
-[**subscriptionPrototypeGetProduct**](SubscriptionApi.md#subscriptionPrototypeGetProduct) | **GET** /Subscriptions/{id}/product | Fetches hasOne relation product.
+[**subscriptionPrototypeGetProduct**](SubscriptionApi.md#subscriptionPrototypeGetProduct) | **GET** /Subscriptions/{id}/product | Fetches belongsTo relation product.
 [**subscriptionPrototypeGetSites**](SubscriptionApi.md#subscriptionPrototypeGetSites) | **GET** /Subscriptions/{id}/sites | Queries sites of Subscription.
-[**subscriptionPrototypeGetSubscriber**](SubscriptionApi.md#subscriptionPrototypeGetSubscriber) | **GET** /Subscriptions/{id}/subscriber | Fetches hasOne relation subscriber.
+[**subscriptionPrototypeGetSubscriber**](SubscriptionApi.md#subscriptionPrototypeGetSubscriber) | **GET** /Subscriptions/{id}/subscriber | Fetches belongsTo relation subscriber.
 [**subscriptionPrototypeLinkOrders**](SubscriptionApi.md#subscriptionPrototypeLinkOrders) | **PUT** /Subscriptions/{id}/orders/rel/{fk} | Add a related item by id for orders.
 [**subscriptionPrototypeLinkSites**](SubscriptionApi.md#subscriptionPrototypeLinkSites) | **PUT** /Subscriptions/{id}/sites/rel/{fk} | Add a related item by id for sites.
 [**subscriptionPrototypePatchAttributes**](SubscriptionApi.md#subscriptionPrototypePatchAttributes) | **PATCH** /Subscriptions/{id} | Patch attributes for a model instance and persist it into the data source.
@@ -43,8 +39,6 @@ Method | HTTP request | Description
 [**subscriptionPrototypeUnlinkSites**](SubscriptionApi.md#subscriptionPrototypeUnlinkSites) | **DELETE** /Subscriptions/{id}/sites/rel/{fk} | Remove the sites relation to an item by id.
 [**subscriptionPrototypeUpdateByIdOrders**](SubscriptionApi.md#subscriptionPrototypeUpdateByIdOrders) | **PUT** /Subscriptions/{id}/orders/{fk} | Update a related item by id for orders.
 [**subscriptionPrototypeUpdateByIdSites**](SubscriptionApi.md#subscriptionPrototypeUpdateByIdSites) | **PUT** /Subscriptions/{id}/sites/{fk} | Update a related item by id for sites.
-[**subscriptionPrototypeUpdateProduct**](SubscriptionApi.md#subscriptionPrototypeUpdateProduct) | **PUT** /Subscriptions/{id}/product | Update product of this model.
-[**subscriptionPrototypeUpdateSubscriber**](SubscriptionApi.md#subscriptionPrototypeUpdateSubscriber) | **PUT** /Subscriptions/{id}/subscriber | Update subscriber of this model.
 [**subscriptionReplaceByIdPostSubscriptionsidReplace**](SubscriptionApi.md#subscriptionReplaceByIdPostSubscriptionsidReplace) | **POST** /Subscriptions/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 [**subscriptionReplaceByIdPutSubscriptionsid**](SubscriptionApi.md#subscriptionReplaceByIdPutSubscriptionsid) | **PUT** /Subscriptions/{id} | Replace attributes for a model instance and persist it into the data source.
 [**subscriptionReplaceOrCreatePostSubscriptionsReplaceOrCreate**](SubscriptionApi.md#subscriptionReplaceOrCreatePostSubscriptionsReplaceOrCreate) | **POST** /Subscriptions/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -708,53 +702,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **subscriptionPrototypeCreateProduct**
-> \Yoast\MyYoastApiClient\Model\Product subscriptionPrototypeCreateProduct($id, $data)
-
-Creates a new instance in product of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$id = "id_example"; // string | Subscription id
-$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
-
-try {
-    $result = $api_instance->subscriptionPrototypeCreateProduct($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->subscriptionPrototypeCreateProduct: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Subscription id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/\Yoast\MyYoastApiClient\Model\Product.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **subscriptionPrototypeCreateSites**
-> \Yoast\MyYoastApiClient\Model\SiteSubscriptions subscriptionPrototypeCreateSites($id, $data)
+> \Yoast\MyYoastApiClient\Model\Site subscriptionPrototypeCreateSites($id, $data)
 
 Creates a new instance in sites of this model.
 
@@ -765,7 +714,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
 $id = "id_example"; // string | Subscription id
-$data = new \Yoast\MyYoastApiClient\Model\SiteSubscriptions(); // \Yoast\MyYoastApiClient\Model\SiteSubscriptions | 
+$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | 
 
 try {
     $result = $api_instance->subscriptionPrototypeCreateSites($id, $data);
@@ -781,56 +730,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription id |
- **data** | [**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/\Yoast\MyYoastApiClient\Model\SiteSubscriptions.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/\Yoast\MyYoastApiClient\Model\Site.md)|  | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/SiteSubscriptions.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **subscriptionPrototypeCreateSubscriber**
-> \Yoast\MyYoastApiClient\Model\MyYoastUser subscriptionPrototypeCreateSubscriber($id, $data)
-
-Creates a new instance in subscriber of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$id = "id_example"; // string | Subscription id
-$data = new \Yoast\MyYoastApiClient\Model\MyYoastUser(); // \Yoast\MyYoastApiClient\Model\MyYoastUser | 
-
-try {
-    $result = $api_instance->subscriptionPrototypeCreateSubscriber($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->subscriptionPrototypeCreateSubscriber: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Subscription id |
- **data** | [**\Yoast\MyYoastApiClient\Model\MyYoastUser**](../Model/\Yoast\MyYoastApiClient\Model\MyYoastUser.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\MyYoastUser**](../Model/MyYoastUser.md)
+[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
 
 ### Authorization
 
@@ -1015,90 +919,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **subscriptionPrototypeDestroyProduct**
-> subscriptionPrototypeDestroyProduct($id)
-
-Deletes product of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$id = "id_example"; // string | Subscription id
-
-try {
-    $api_instance->subscriptionPrototypeDestroyProduct($id);
-} catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->subscriptionPrototypeDestroyProduct: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Subscription id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **subscriptionPrototypeDestroySubscriber**
-> subscriptionPrototypeDestroySubscriber($id)
-
-Deletes subscriber of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$id = "id_example"; // string | Subscription id
-
-try {
-    $api_instance->subscriptionPrototypeDestroySubscriber($id);
-} catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->subscriptionPrototypeDestroySubscriber: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Subscription id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **subscriptionPrototypeExistsOrders**
 > bool subscriptionPrototypeExistsOrders($id, $fk)
 
@@ -1235,7 +1055,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeFindByIdSites**
-> \Yoast\MyYoastApiClient\Model\SiteSubscriptions subscriptionPrototypeFindByIdSites($id, $fk)
+> \Yoast\MyYoastApiClient\Model\Site subscriptionPrototypeFindByIdSites($id, $fk)
 
 Find a related item by id for sites.
 
@@ -1266,7 +1086,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/SiteSubscriptions.md)
+[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
 
 ### Authorization
 
@@ -1327,7 +1147,7 @@ No authorization required
 # **subscriptionPrototypeGetProduct**
 > \Yoast\MyYoastApiClient\Model\Product subscriptionPrototypeGetProduct($id, $refresh)
 
-Fetches hasOne relation product.
+Fetches belongsTo relation product.
 
 ### Example
 ```php
@@ -1370,7 +1190,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeGetSites**
-> \Yoast\MyYoastApiClient\Model\SiteSubscriptions[] subscriptionPrototypeGetSites($id, $filter)
+> \Yoast\MyYoastApiClient\Model\Site[] subscriptionPrototypeGetSites($id, $filter)
 
 Queries sites of Subscription.
 
@@ -1401,7 +1221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\SiteSubscriptions[]**](../Model/SiteSubscriptions.md)
+[**\Yoast\MyYoastApiClient\Model\Site[]**](../Model/Site.md)
 
 ### Authorization
 
@@ -1415,9 +1235,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeGetSubscriber**
-> \Yoast\MyYoastApiClient\Model\MyYoastUser subscriptionPrototypeGetSubscriber($id, $refresh)
+> \Yoast\MyYoastApiClient\Model\Customer subscriptionPrototypeGetSubscriber($id, $refresh)
 
-Fetches hasOne relation subscriber.
+Fetches belongsTo relation subscriber.
 
 ### Example
 ```php
@@ -1446,7 +1266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\MyYoastUser**](../Model/MyYoastUser.md)
+[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 
@@ -1734,7 +1554,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscriptionPrototypeUpdateByIdSites**
-> \Yoast\MyYoastApiClient\Model\SiteSubscriptions subscriptionPrototypeUpdateByIdSites($id, $fk, $data)
+> \Yoast\MyYoastApiClient\Model\Site subscriptionPrototypeUpdateByIdSites($id, $fk, $data)
 
 Update a related item by id for sites.
 
@@ -1746,7 +1566,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
 $id = "id_example"; // string | Subscription id
 $fk = "fk_example"; // string | Foreign key for sites
-$data = new \Yoast\MyYoastApiClient\Model\SiteSubscriptions(); // \Yoast\MyYoastApiClient\Model\SiteSubscriptions | 
+$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | 
 
 try {
     $result = $api_instance->subscriptionPrototypeUpdateByIdSites($id, $fk, $data);
@@ -1763,101 +1583,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription id |
  **fk** | **string**| Foreign key for sites |
- **data** | [**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/\Yoast\MyYoastApiClient\Model\SiteSubscriptions.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/\Yoast\MyYoastApiClient\Model\Site.md)|  | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/SiteSubscriptions.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **subscriptionPrototypeUpdateProduct**
-> \Yoast\MyYoastApiClient\Model\Product subscriptionPrototypeUpdateProduct($id, $data)
-
-Update product of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$id = "id_example"; // string | Subscription id
-$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
-
-try {
-    $result = $api_instance->subscriptionPrototypeUpdateProduct($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->subscriptionPrototypeUpdateProduct: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Subscription id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/\Yoast\MyYoastApiClient\Model\Product.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **subscriptionPrototypeUpdateSubscriber**
-> \Yoast\MyYoastApiClient\Model\MyYoastUser subscriptionPrototypeUpdateSubscriber($id, $data)
-
-Update subscriber of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SubscriptionApi();
-$id = "id_example"; // string | Subscription id
-$data = new \Yoast\MyYoastApiClient\Model\MyYoastUser(); // \Yoast\MyYoastApiClient\Model\MyYoastUser | 
-
-try {
-    $result = $api_instance->subscriptionPrototypeUpdateSubscriber($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->subscriptionPrototypeUpdateSubscriber: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Subscription id |
- **data** | [**\Yoast\MyYoastApiClient\Model\MyYoastUser**](../Model/\Yoast\MyYoastApiClient\Model\MyYoastUser.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\MyYoastUser**](../Model/MyYoastUser.md)
+[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
 
 ### Authorization
 

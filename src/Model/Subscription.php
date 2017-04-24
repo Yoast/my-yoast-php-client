@@ -65,7 +65,8 @@ class Subscription implements ArrayAccess
         'price' => 'double',
         'name' => 'string',
         'next_payment' => '\DateTime',
-        'my_yoast_user_id' => 'double'
+        'limit' => 'double',
+        'subscriber_id' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -89,7 +90,8 @@ class Subscription implements ArrayAccess
         'price' => 'price',
         'name' => 'name',
         'next_payment' => 'nextPayment',
-        'my_yoast_user_id' => 'myYoastUserId'
+        'limit' => 'limit',
+        'subscriber_id' => 'subscriberId'
     ];
 
 
@@ -109,7 +111,8 @@ class Subscription implements ArrayAccess
         'price' => 'setPrice',
         'name' => 'setName',
         'next_payment' => 'setNextPayment',
-        'my_yoast_user_id' => 'setMyYoastUserId'
+        'limit' => 'setLimit',
+        'subscriber_id' => 'setSubscriberId'
     ];
 
 
@@ -129,7 +132,8 @@ class Subscription implements ArrayAccess
         'price' => 'getPrice',
         'name' => 'getName',
         'next_payment' => 'getNextPayment',
-        'my_yoast_user_id' => 'getMyYoastUserId'
+        'limit' => 'getLimit',
+        'subscriber_id' => 'getSubscriberId'
     ];
 
     public static function attributeMap()
@@ -174,7 +178,8 @@ class Subscription implements ArrayAccess
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['next_payment'] = isset($data['next_payment']) ? $data['next_payment'] : null;
-        $this->container['my_yoast_user_id'] = isset($data['my_yoast_user_id']) ? $data['my_yoast_user_id'] : null;
+        $this->container['limit'] = isset($data['limit']) ? $data['limit'] : 0.0;
+        $this->container['subscriber_id'] = isset($data['subscriber_id']) ? $data['subscriber_id'] : null;
     }
 
     /**
@@ -201,6 +206,9 @@ class Subscription implements ArrayAccess
         if ($this->container['reoccurring'] === null) {
             $invalid_properties[] = "'reoccurring' can't be null";
         }
+        if ($this->container['limit'] === null) {
+            $invalid_properties[] = "'limit' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -226,6 +234,9 @@ class Subscription implements ArrayAccess
             return false;
         }
         if ($this->container['reoccurring'] === null) {
+            return false;
+        }
+        if ($this->container['limit'] === null) {
             return false;
         }
         return true;
@@ -464,22 +475,43 @@ class Subscription implements ArrayAccess
     }
 
     /**
-     * Gets my_yoast_user_id
+     * Gets limit
      * @return double
      */
-    public function getMyYoastUserId()
+    public function getLimit()
     {
-        return $this->container['my_yoast_user_id'];
+        return $this->container['limit'];
     }
 
     /**
-     * Sets my_yoast_user_id
-     * @param double $my_yoast_user_id
+     * Sets limit
+     * @param double $limit
      * @return $this
      */
-    public function setMyYoastUserId($my_yoast_user_id)
+    public function setLimit($limit)
     {
-        $this->container['my_yoast_user_id'] = $my_yoast_user_id;
+        $this->container['limit'] = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriber_id
+     * @return double
+     */
+    public function getSubscriberId()
+    {
+        return $this->container['subscriber_id'];
+    }
+
+    /**
+     * Sets subscriber_id
+     * @param double $subscriber_id
+     * @return $this
+     */
+    public function setSubscriberId($subscriber_id)
+    {
+        $this->container['subscriber_id'] = $subscriber_id;
 
         return $this;
     }

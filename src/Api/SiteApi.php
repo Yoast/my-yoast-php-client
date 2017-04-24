@@ -1630,7 +1630,7 @@ class SiteApi
      * @param string $id Site id (required)
      * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
     public function sitePrototypeGetUser($id, $refresh = null)
     {
@@ -1646,7 +1646,7 @@ class SiteApi
      * @param string $id Site id (required)
      * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
     public function sitePrototypeGetUserWithHttpInfo($id, $refresh = null)
     {
@@ -1696,15 +1696,15 @@ class SiteApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
+                '\Yoast\MyYoastApiClient\Model\Customer',
                 '/Sites/{id}/user'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -822,7 +822,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sitePrototypeGetUser**
-> \Yoast\MyYoastApiClient\Model\MyYoastUser sitePrototypeGetUser($id, $refresh)
+> \Yoast\MyYoastApiClient\Model\Customer sitePrototypeGetUser($id, $refresh)
 
 Fetches belongsTo relation user.
 
@@ -853,7 +853,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\MyYoastUser**](../Model/MyYoastUser.md)
+[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 

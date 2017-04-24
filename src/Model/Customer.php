@@ -1,6 +1,6 @@
 <?php
 /**
- * MyYoastUser
+ * Customer
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * MyYoastUser Class Doc Comment
+ * Customer Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MyYoastUser implements ArrayAccess
+class Customer implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class MyYoastUser implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'MyYoastUser';
+    protected static $swaggerModelName = 'Customer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,7 @@ class MyYoastUser implements ArrayAccess
         'username' => 'string',
         'email' => 'string',
         'email_verified' => 'bool',
-        'id' => 'double',
-        'subscription_id' => 'string'
+        'id' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -76,8 +75,7 @@ class MyYoastUser implements ArrayAccess
         'username' => 'username',
         'email' => 'email',
         'email_verified' => 'emailVerified',
-        'id' => 'id',
-        'subscription_id' => 'subscriptionId'
+        'id' => 'id'
     ];
 
 
@@ -90,8 +88,7 @@ class MyYoastUser implements ArrayAccess
         'username' => 'setUsername',
         'email' => 'setEmail',
         'email_verified' => 'setEmailVerified',
-        'id' => 'setId',
-        'subscription_id' => 'setSubscriptionId'
+        'id' => 'setId'
     ];
 
 
@@ -104,8 +101,7 @@ class MyYoastUser implements ArrayAccess
         'username' => 'getUsername',
         'email' => 'getEmail',
         'email_verified' => 'getEmailVerified',
-        'id' => 'getId',
-        'subscription_id' => 'getSubscriptionId'
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -144,7 +140,6 @@ class MyYoastUser implements ArrayAccess
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['email_verified'] = isset($data['email_verified']) ? $data['email_verified'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
     }
 
     /**
@@ -279,27 +274,6 @@ class MyYoastUser implements ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets subscription_id
-     * @return string
-     */
-    public function getSubscriptionId()
-    {
-        return $this->container['subscription_id'];
-    }
-
-    /**
-     * Sets subscription_id
-     * @param string $subscription_id
-     * @return $this
-     */
-    public function setSubscriptionId($subscription_id)
-    {
-        $this->container['subscription_id'] = $subscription_id;
 
         return $this;
     }

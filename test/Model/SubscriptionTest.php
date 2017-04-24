@@ -171,9 +171,17 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "my_yoast_user_id"
+     * Test attribute "limit"
      */
-    public function testPropertyMyYoastUserId()
+    public function testPropertyLimit()
+    {
+
+    }
+
+    /**
+     * Test attribute "subscriber_id"
+     */
+    public function testPropertySubscriberId()
     {
 
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * MyYoastUserTest
+ * CustomerTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * MyYoastUserTest Class Doc Comment
+ * CustomerTest Class Doc Comment
  *
  * @category    Class */
-// * @description MyYoastUser
+// * @description Customer
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class MyYoastUserTest extends \PHPUnit_Framework_TestCase
+class CustomerTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -75,9 +75,9 @@ class MyYoastUserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "MyYoastUser"
+     * Test "Customer"
      */
-    public function testMyYoastUser()
+    public function testCustomer()
     {
 
     }
@@ -118,14 +118,6 @@ class MyYoastUserTest extends \PHPUnit_Framework_TestCase
      * Test attribute "id"
      */
     public function testPropertyId()
-    {
-
-    }
-
-    /**
-     * Test attribute "subscription_id"
-     */
-    public function testPropertySubscriptionId()
     {
 
     }

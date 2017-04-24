@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **payment_reference** | **string** |  | [optional] 
 **vat_total** | **double** |  | [default to 0.0]
 **gl_number** | **string** |  | [optional] 
-**shop_status** | **string** |  | 
+**status** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

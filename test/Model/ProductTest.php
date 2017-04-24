@@ -187,9 +187,25 @@ class ProductTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "subscription_id"
+     * Test attribute "last_updated"
      */
-    public function testPropertySubscriptionId()
+    public function testPropertyLastUpdated()
+    {
+
+    }
+
+    /**
+     * Test attribute "current_version"
+     */
+    public function testPropertyCurrentVersion()
+    {
+
+    }
+
+    /**
+     * Test attribute "changelog"
+     */
+    public function testPropertyChangelog()
     {
 
     }

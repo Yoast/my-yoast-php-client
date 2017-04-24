@@ -242,34 +242,12 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for subscriptionPrototypeCreateProduct
-     *
-     * Creates a new instance in product of this model..
-     *
-     */
-    public function testSubscriptionPrototypeCreateProduct()
-    {
-
-    }
-
-    /**
      * Test case for subscriptionPrototypeCreateSites
      *
      * Creates a new instance in sites of this model..
      *
      */
     public function testSubscriptionPrototypeCreateSites()
-    {
-
-    }
-
-    /**
-     * Test case for subscriptionPrototypeCreateSubscriber
-     *
-     * Creates a new instance in subscriber of this model..
-     *
-     */
-    public function testSubscriptionPrototypeCreateSubscriber()
     {
 
     }
@@ -314,28 +292,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSubscriptionPrototypeDestroyByIdSites()
-    {
-
-    }
-
-    /**
-     * Test case for subscriptionPrototypeDestroyProduct
-     *
-     * Deletes product of this model..
-     *
-     */
-    public function testSubscriptionPrototypeDestroyProduct()
-    {
-
-    }
-
-    /**
-     * Test case for subscriptionPrototypeDestroySubscriber
-     *
-     * Deletes subscriber of this model..
-     *
-     */
-    public function testSubscriptionPrototypeDestroySubscriber()
     {
 
     }
@@ -398,7 +354,7 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for subscriptionPrototypeGetProduct
      *
-     * Fetches hasOne relation product..
+     * Fetches belongsTo relation product..
      *
      */
     public function testSubscriptionPrototypeGetProduct()
@@ -420,7 +376,7 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for subscriptionPrototypeGetSubscriber
      *
-     * Fetches hasOne relation subscriber..
+     * Fetches belongsTo relation subscriber..
      *
      */
     public function testSubscriptionPrototypeGetSubscriber()
@@ -501,28 +457,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSubscriptionPrototypeUpdateByIdSites()
-    {
-
-    }
-
-    /**
-     * Test case for subscriptionPrototypeUpdateProduct
-     *
-     * Update product of this model..
-     *
-     */
-    public function testSubscriptionPrototypeUpdateProduct()
-    {
-
-    }
-
-    /**
-     * Test case for subscriptionPrototypeUpdateSubscriber
-     *
-     * Update subscriber of this model..
-     *
-     */
-    public function testSubscriptionPrototypeUpdateSubscriber()
     {
 
     }

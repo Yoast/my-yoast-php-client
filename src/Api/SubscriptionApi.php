@@ -1340,106 +1340,14 @@ class SubscriptionApi
     }
 
     /**
-     * Operation subscriptionPrototypeCreateProduct
-     *
-     * Creates a new instance in product of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Product $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Product
-     */
-    public function subscriptionPrototypeCreateProduct($id, $data = null)
-    {
-        list($response) = $this->subscriptionPrototypeCreateProductWithHttpInfo($id, $data);
-        return $response;
-    }
-
-    /**
-     * Operation subscriptionPrototypeCreateProductWithHttpInfo
-     *
-     * Creates a new instance in product of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Product $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function subscriptionPrototypeCreateProductWithHttpInfo($id, $data = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeCreateProduct');
-        }
-        // parse inputs
-        $resourcePath = "/Subscriptions/{id}/product";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($data)) {
-            $_tempBody = $data;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Product',
-                '/Subscriptions/{id}/product'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation subscriptionPrototypeCreateSites
      *
      * Creates a new instance in sites of this model.
      *
      * @param string $id Subscription id (required)
-     * @param \Yoast\MyYoastApiClient\Model\SiteSubscriptions $data  (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Site $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\SiteSubscriptions
+     * @return \Yoast\MyYoastApiClient\Model\Site
      */
     public function subscriptionPrototypeCreateSites($id, $data = null)
     {
@@ -1453,9 +1361,9 @@ class SubscriptionApi
      * Creates a new instance in sites of this model.
      *
      * @param string $id Subscription id (required)
-     * @param \Yoast\MyYoastApiClient\Model\SiteSubscriptions $data  (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Site $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\SiteSubscriptions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
     public function subscriptionPrototypeCreateSitesWithHttpInfo($id, $data = null)
     {
@@ -1506,107 +1414,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\SiteSubscriptions',
+                '\Yoast\MyYoastApiClient\Model\Site',
                 '/Subscriptions/{id}/sites'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\SiteSubscriptions', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Site', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\SiteSubscriptions', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation subscriptionPrototypeCreateSubscriber
-     *
-     * Creates a new instance in subscriber of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
-     */
-    public function subscriptionPrototypeCreateSubscriber($id, $data = null)
-    {
-        list($response) = $this->subscriptionPrototypeCreateSubscriberWithHttpInfo($id, $data);
-        return $response;
-    }
-
-    /**
-     * Operation subscriptionPrototypeCreateSubscriberWithHttpInfo
-     *
-     * Creates a new instance in subscriber of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function subscriptionPrototypeCreateSubscriberWithHttpInfo($id, $data = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeCreateSubscriber');
-        }
-        // parse inputs
-        $resourcePath = "/Subscriptions/{id}/subscriber";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($data)) {
-            $_tempBody = $data;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/Subscriptions/{id}/subscriber'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Site', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1968,168 +1784,6 @@ class SubscriptionApi
     }
 
     /**
-     * Operation subscriptionPrototypeDestroyProduct
-     *
-     * Deletes product of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return void
-     */
-    public function subscriptionPrototypeDestroyProduct($id)
-    {
-        list($response) = $this->subscriptionPrototypeDestroyProductWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation subscriptionPrototypeDestroyProductWithHttpInfo
-     *
-     * Deletes product of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function subscriptionPrototypeDestroyProductWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeDestroyProduct');
-        }
-        // parse inputs
-        $resourcePath = "/Subscriptions/{id}/product";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/Subscriptions/{id}/product'
-            );
-
-            return [null, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation subscriptionPrototypeDestroySubscriber
-     *
-     * Deletes subscriber of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return void
-     */
-    public function subscriptionPrototypeDestroySubscriber($id)
-    {
-        list($response) = $this->subscriptionPrototypeDestroySubscriberWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation subscriptionPrototypeDestroySubscriberWithHttpInfo
-     *
-     * Deletes subscriber of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function subscriptionPrototypeDestroySubscriberWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeDestroySubscriber');
-        }
-        // parse inputs
-        $resourcePath = "/Subscriptions/{id}/subscriber";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/Subscriptions/{id}/subscriber'
-            );
-
-            return [null, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
      * Operation subscriptionPrototypeExistsOrders
      *
      * Check the existence of orders relation to an item by id.
@@ -2434,7 +2088,7 @@ class SubscriptionApi
      * @param string $id Subscription id (required)
      * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\SiteSubscriptions
+     * @return \Yoast\MyYoastApiClient\Model\Site
      */
     public function subscriptionPrototypeFindByIdSites($id, $fk)
     {
@@ -2450,7 +2104,7 @@ class SubscriptionApi
      * @param string $id Subscription id (required)
      * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\SiteSubscriptions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
     public function subscriptionPrototypeFindByIdSitesWithHttpInfo($id, $fk)
     {
@@ -2508,15 +2162,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\SiteSubscriptions',
+                '\Yoast\MyYoastApiClient\Model\Site',
                 '/Subscriptions/{id}/sites/{fk}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\SiteSubscriptions', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Site', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\SiteSubscriptions', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Site', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2619,7 +2273,7 @@ class SubscriptionApi
     /**
      * Operation subscriptionPrototypeGetProduct
      *
-     * Fetches hasOne relation product.
+     * Fetches belongsTo relation product.
      *
      * @param string $id Subscription id (required)
      * @param bool $refresh  (optional)
@@ -2635,7 +2289,7 @@ class SubscriptionApi
     /**
      * Operation subscriptionPrototypeGetProductWithHttpInfo
      *
-     * Fetches hasOne relation product.
+     * Fetches belongsTo relation product.
      *
      * @param string $id Subscription id (required)
      * @param bool $refresh  (optional)
@@ -2715,7 +2369,7 @@ class SubscriptionApi
      * @param string $id Subscription id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\SiteSubscriptions[]
+     * @return \Yoast\MyYoastApiClient\Model\Site[]
      */
     public function subscriptionPrototypeGetSites($id, $filter = null)
     {
@@ -2731,7 +2385,7 @@ class SubscriptionApi
      * @param string $id Subscription id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\SiteSubscriptions[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Site[], HTTP status code, HTTP response headers (array of strings)
      */
     public function subscriptionPrototypeGetSitesWithHttpInfo($id, $filter = null)
     {
@@ -2781,15 +2435,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\SiteSubscriptions[]',
+                '\Yoast\MyYoastApiClient\Model\Site[]',
                 '/Subscriptions/{id}/sites'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\SiteSubscriptions[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Site[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\SiteSubscriptions[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Site[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2801,12 +2455,12 @@ class SubscriptionApi
     /**
      * Operation subscriptionPrototypeGetSubscriber
      *
-     * Fetches hasOne relation subscriber.
+     * Fetches belongsTo relation subscriber.
      *
      * @param string $id Subscription id (required)
      * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
     public function subscriptionPrototypeGetSubscriber($id, $refresh = null)
     {
@@ -2817,12 +2471,12 @@ class SubscriptionApi
     /**
      * Operation subscriptionPrototypeGetSubscriberWithHttpInfo
      *
-     * Fetches hasOne relation subscriber.
+     * Fetches belongsTo relation subscriber.
      *
      * @param string $id Subscription id (required)
      * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
     public function subscriptionPrototypeGetSubscriberWithHttpInfo($id, $refresh = null)
     {
@@ -2872,15 +2526,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
+                '\Yoast\MyYoastApiClient\Model\Customer',
                 '/Subscriptions/{id}/subscriber'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -3496,9 +3150,9 @@ class SubscriptionApi
      *
      * @param string $id Subscription id (required)
      * @param string $fk Foreign key for sites (required)
-     * @param \Yoast\MyYoastApiClient\Model\SiteSubscriptions $data  (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Site $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\SiteSubscriptions
+     * @return \Yoast\MyYoastApiClient\Model\Site
      */
     public function subscriptionPrototypeUpdateByIdSites($id, $fk, $data = null)
     {
@@ -3513,9 +3167,9 @@ class SubscriptionApi
      *
      * @param string $id Subscription id (required)
      * @param string $fk Foreign key for sites (required)
-     * @param \Yoast\MyYoastApiClient\Model\SiteSubscriptions $data  (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Site $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\SiteSubscriptions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
     public function subscriptionPrototypeUpdateByIdSitesWithHttpInfo($id, $fk, $data = null)
     {
@@ -3578,199 +3232,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\SiteSubscriptions',
+                '\Yoast\MyYoastApiClient\Model\Site',
                 '/Subscriptions/{id}/sites/{fk}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\SiteSubscriptions', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Site', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\SiteSubscriptions', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation subscriptionPrototypeUpdateProduct
-     *
-     * Update product of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Product $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Product
-     */
-    public function subscriptionPrototypeUpdateProduct($id, $data = null)
-    {
-        list($response) = $this->subscriptionPrototypeUpdateProductWithHttpInfo($id, $data);
-        return $response;
-    }
-
-    /**
-     * Operation subscriptionPrototypeUpdateProductWithHttpInfo
-     *
-     * Update product of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Product $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function subscriptionPrototypeUpdateProductWithHttpInfo($id, $data = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeUpdateProduct');
-        }
-        // parse inputs
-        $resourcePath = "/Subscriptions/{id}/product";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($data)) {
-            $_tempBody = $data;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Product',
-                '/Subscriptions/{id}/product'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation subscriptionPrototypeUpdateSubscriber
-     *
-     * Update subscriber of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
-     */
-    public function subscriptionPrototypeUpdateSubscriber($id, $data = null)
-    {
-        list($response) = $this->subscriptionPrototypeUpdateSubscriberWithHttpInfo($id, $data);
-        return $response;
-    }
-
-    /**
-     * Operation subscriptionPrototypeUpdateSubscriberWithHttpInfo
-     *
-     * Update subscriber of this model.
-     *
-     * @param string $id Subscription id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function subscriptionPrototypeUpdateSubscriberWithHttpInfo($id, $data = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling subscriptionPrototypeUpdateSubscriber');
-        }
-        // parse inputs
-        $resourcePath = "/Subscriptions/{id}/subscriber";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($data)) {
-            $_tempBody = $data;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/Subscriptions/{id}/subscriber'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Site', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

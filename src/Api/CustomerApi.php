@@ -1,6 +1,6 @@
 <?php
 /**
- * MyYoastUserApi
+ * CustomerApi
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Yoast\MyYoastApiClient\Configuration;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * MyYoastUserApi Class Doc Comment
+ * CustomerApi Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MyYoastUserApi
+class CustomerApi
 {
     /**
      * API Client
@@ -79,7 +79,7 @@ class MyYoastUserApi
      *
      * @param \Yoast\MyYoastApiClient\ApiClient $apiClient set the API client
      *
-     * @return MyYoastUserApi
+     * @return CustomerApi
      */
     public function setApiClient(\Yoast\MyYoastApiClient\ApiClient $apiClient)
     {
@@ -88,7 +88,7 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserChangePassword
+     * Operation customerChangePassword
      *
      * Change a user's password.
      *
@@ -97,14 +97,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserChangePassword($old_password, $new_password)
+    public function customerChangePassword($old_password, $new_password)
     {
-        list($response) = $this->myYoastUserChangePasswordWithHttpInfo($old_password, $new_password);
+        list($response) = $this->customerChangePasswordWithHttpInfo($old_password, $new_password);
         return $response;
     }
 
     /**
-     * Operation myYoastUserChangePasswordWithHttpInfo
+     * Operation customerChangePasswordWithHttpInfo
      *
      * Change a user's password.
      *
@@ -113,18 +113,18 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserChangePasswordWithHttpInfo($old_password, $new_password)
+    public function customerChangePasswordWithHttpInfo($old_password, $new_password)
     {
         // verify the required parameter 'old_password' is set
         if ($old_password === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $old_password when calling myYoastUserChangePassword');
+            throw new \InvalidArgumentException('Missing the required parameter $old_password when calling customerChangePassword');
         }
         // verify the required parameter 'new_password' is set
         if ($new_password === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $new_password when calling myYoastUserChangePassword');
+            throw new \InvalidArgumentException('Missing the required parameter $new_password when calling customerChangePassword');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/change-password";
+        $resourcePath = "/Customers/change-password";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -162,7 +162,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/change-password'
+                '/Customers/change-password'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -175,7 +175,7 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserConfirm
+     * Operation customerConfirm
      *
      * Confirm a user registration with email verification token.
      *
@@ -185,14 +185,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserConfirm($uid, $token, $redirect = null)
+    public function customerConfirm($uid, $token, $redirect = null)
     {
-        list($response) = $this->myYoastUserConfirmWithHttpInfo($uid, $token, $redirect);
+        list($response) = $this->customerConfirmWithHttpInfo($uid, $token, $redirect);
         return $response;
     }
 
     /**
-     * Operation myYoastUserConfirmWithHttpInfo
+     * Operation customerConfirmWithHttpInfo
      *
      * Confirm a user registration with email verification token.
      *
@@ -202,18 +202,18 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserConfirmWithHttpInfo($uid, $token, $redirect = null)
+    public function customerConfirmWithHttpInfo($uid, $token, $redirect = null)
     {
         // verify the required parameter 'uid' is set
         if ($uid === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $uid when calling myYoastUserConfirm');
+            throw new \InvalidArgumentException('Missing the required parameter $uid when calling customerConfirm');
         }
         // verify the required parameter 'token' is set
         if ($token === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $token when calling myYoastUserConfirm');
+            throw new \InvalidArgumentException('Missing the required parameter $token when calling customerConfirm');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/confirm";
+        $resourcePath = "/Customers/confirm";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -255,7 +255,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/confirm'
+                '/Customers/confirm'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -268,7 +268,7 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserCount
+     * Operation customerCount
      *
      * Count instances of the model matched by where from the data source.
      *
@@ -276,14 +276,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function myYoastUserCount($where = null)
+    public function customerCount($where = null)
     {
-        list($response) = $this->myYoastUserCountWithHttpInfo($where);
+        list($response) = $this->customerCountWithHttpInfo($where);
         return $response;
     }
 
     /**
-     * Operation myYoastUserCountWithHttpInfo
+     * Operation customerCountWithHttpInfo
      *
      * Count instances of the model matched by where from the data source.
      *
@@ -291,10 +291,10 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserCountWithHttpInfo($where = null)
+    public function customerCountWithHttpInfo($where = null)
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers/count";
+        $resourcePath = "/Customers/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -328,7 +328,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/MyYoastUsers/count'
+                '/Customers/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -345,33 +345,33 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserCreate
+     * Operation customerCreate
      *
      * Create a new instance of the model and persist it into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function myYoastUserCreate($data = null)
+    public function customerCreate($data = null)
     {
-        list($response) = $this->myYoastUserCreateWithHttpInfo($data);
+        list($response) = $this->customerCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserCreateWithHttpInfo
+     * Operation customerCreateWithHttpInfo
      *
      * Create a new instance of the model and persist it into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserCreateWithHttpInfo($data = null)
+    public function customerCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers";
+        $resourcePath = "/Customers";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -405,15 +405,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers'
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/Customers'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -423,7 +423,7 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserCreateChangeStreamGetMyYoastUsersChangeStream
+     * Operation customerCreateChangeStreamGetCustomersChangeStream
      *
      * Create a change stream.
      *
@@ -431,14 +431,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function myYoastUserCreateChangeStreamGetMyYoastUsersChangeStream($options = null)
+    public function customerCreateChangeStreamGetCustomersChangeStream($options = null)
     {
-        list($response) = $this->myYoastUserCreateChangeStreamGetMyYoastUsersChangeStreamWithHttpInfo($options);
+        list($response) = $this->customerCreateChangeStreamGetCustomersChangeStreamWithHttpInfo($options);
         return $response;
     }
 
     /**
-     * Operation myYoastUserCreateChangeStreamGetMyYoastUsersChangeStreamWithHttpInfo
+     * Operation customerCreateChangeStreamGetCustomersChangeStreamWithHttpInfo
      *
      * Create a change stream.
      *
@@ -446,10 +446,10 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserCreateChangeStreamGetMyYoastUsersChangeStreamWithHttpInfo($options = null)
+    public function customerCreateChangeStreamGetCustomersChangeStreamWithHttpInfo($options = null)
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers/change-stream";
+        $resourcePath = "/Customers/change-stream";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -483,7 +483,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\SplFileObject',
-                '/MyYoastUsers/change-stream'
+                '/Customers/change-stream'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader), $statusCode, $httpHeader];
@@ -500,7 +500,7 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserCreateChangeStreamPostMyYoastUsersChangeStream
+     * Operation customerCreateChangeStreamPostCustomersChangeStream
      *
      * Create a change stream.
      *
@@ -508,14 +508,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function myYoastUserCreateChangeStreamPostMyYoastUsersChangeStream($options = null)
+    public function customerCreateChangeStreamPostCustomersChangeStream($options = null)
     {
-        list($response) = $this->myYoastUserCreateChangeStreamPostMyYoastUsersChangeStreamWithHttpInfo($options);
+        list($response) = $this->customerCreateChangeStreamPostCustomersChangeStreamWithHttpInfo($options);
         return $response;
     }
 
     /**
-     * Operation myYoastUserCreateChangeStreamPostMyYoastUsersChangeStreamWithHttpInfo
+     * Operation customerCreateChangeStreamPostCustomersChangeStreamWithHttpInfo
      *
      * Create a change stream.
      *
@@ -523,10 +523,10 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserCreateChangeStreamPostMyYoastUsersChangeStreamWithHttpInfo($options = null)
+    public function customerCreateChangeStreamPostCustomersChangeStreamWithHttpInfo($options = null)
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers/change-stream";
+        $resourcePath = "/Customers/change-stream";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -560,7 +560,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\SplFileObject',
-                '/MyYoastUsers/change-stream'
+                '/Customers/change-stream'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader), $statusCode, $httpHeader];
@@ -577,7 +577,7 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserDeleteById
+     * Operation customerDeleteById
      *
      * Delete a model instance by {{id}} from the data source.
      *
@@ -585,14 +585,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return object
      */
-    public function myYoastUserDeleteById($id)
+    public function customerDeleteById($id)
     {
-        list($response) = $this->myYoastUserDeleteByIdWithHttpInfo($id);
+        list($response) = $this->customerDeleteByIdWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation myYoastUserDeleteByIdWithHttpInfo
+     * Operation customerDeleteByIdWithHttpInfo
      *
      * Delete a model instance by {{id}} from the data source.
      *
@@ -600,14 +600,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserDeleteByIdWithHttpInfo($id)
+    public function customerDeleteByIdWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserDeleteById');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerDeleteById');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}";
+        $resourcePath = "/Customers/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -645,7 +645,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 'object',
-                '/MyYoastUsers/{id}'
+                '/Customers/{id}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
@@ -662,7 +662,7 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserExistsGetMyYoastUsersidExists
+     * Operation customerExistsGetCustomersidExists
      *
      * Check whether a model instance exists in the data source.
      *
@@ -670,14 +670,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
-    public function myYoastUserExistsGetMyYoastUsersidExists($id)
+    public function customerExistsGetCustomersidExists($id)
     {
-        list($response) = $this->myYoastUserExistsGetMyYoastUsersidExistsWithHttpInfo($id);
+        list($response) = $this->customerExistsGetCustomersidExistsWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation myYoastUserExistsGetMyYoastUsersidExistsWithHttpInfo
+     * Operation customerExistsGetCustomersidExistsWithHttpInfo
      *
      * Check whether a model instance exists in the data source.
      *
@@ -685,14 +685,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserExistsGetMyYoastUsersidExistsWithHttpInfo($id)
+    public function customerExistsGetCustomersidExistsWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserExistsGetMyYoastUsersidExists');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerExistsGetCustomersidExists');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/exists";
+        $resourcePath = "/Customers/{id}/exists";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -730,7 +730,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
-                '/MyYoastUsers/{id}/exists'
+                '/Customers/{id}/exists'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
@@ -747,7 +747,7 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserExistsHeadMyYoastUsersid
+     * Operation customerExistsHeadCustomersid
      *
      * Check whether a model instance exists in the data source.
      *
@@ -755,14 +755,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
-    public function myYoastUserExistsHeadMyYoastUsersid($id)
+    public function customerExistsHeadCustomersid($id)
     {
-        list($response) = $this->myYoastUserExistsHeadMyYoastUsersidWithHttpInfo($id);
+        list($response) = $this->customerExistsHeadCustomersidWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation myYoastUserExistsHeadMyYoastUsersidWithHttpInfo
+     * Operation customerExistsHeadCustomersidWithHttpInfo
      *
      * Check whether a model instance exists in the data source.
      *
@@ -770,14 +770,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserExistsHeadMyYoastUsersidWithHttpInfo($id)
+    public function customerExistsHeadCustomersidWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserExistsHeadMyYoastUsersid');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerExistsHeadCustomersid');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}";
+        $resourcePath = "/Customers/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -815,7 +815,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
-                '/MyYoastUsers/{id}'
+                '/Customers/{id}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
@@ -832,33 +832,33 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserFind
+     * Operation customerFind
      *
      * Find all instances of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser[]
+     * @return \Yoast\MyYoastApiClient\Model\Customer[]
      */
-    public function myYoastUserFind($filter = null)
+    public function customerFind($filter = null)
     {
-        list($response) = $this->myYoastUserFindWithHttpInfo($filter);
+        list($response) = $this->customerFindWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation myYoastUserFindWithHttpInfo
+     * Operation customerFindWithHttpInfo
      *
      * Find all instances of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserFindWithHttpInfo($filter = null)
+    public function customerFindWithHttpInfo($filter = null)
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers";
+        $resourcePath = "/Customers";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -891,15 +891,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser[]',
-                '/MyYoastUsers'
+                '\Yoast\MyYoastApiClient\Model\Customer[]',
+                '/Customers'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -909,39 +909,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserFindById
+     * Operation customerFindById
      *
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
      * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function myYoastUserFindById($id, $filter = null)
+    public function customerFindById($id, $filter = null)
     {
-        list($response) = $this->myYoastUserFindByIdWithHttpInfo($id, $filter);
+        list($response) = $this->customerFindByIdWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation myYoastUserFindByIdWithHttpInfo
+     * Operation customerFindByIdWithHttpInfo
      *
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
      * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserFindByIdWithHttpInfo($id, $filter = null)
+    public function customerFindByIdWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserFindById');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerFindById');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}";
+        $resourcePath = "/Customers/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -982,15 +982,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers/{id}'
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/Customers/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1000,33 +1000,33 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserFindOne
+     * Operation customerFindOne
      *
      * Find first instance of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function myYoastUserFindOne($filter = null)
+    public function customerFindOne($filter = null)
     {
-        list($response) = $this->myYoastUserFindOneWithHttpInfo($filter);
+        list($response) = $this->customerFindOneWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation myYoastUserFindOneWithHttpInfo
+     * Operation customerFindOneWithHttpInfo
      *
      * Find first instance of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserFindOneWithHttpInfo($filter = null)
+    public function customerFindOneWithHttpInfo($filter = null)
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers/findOne";
+        $resourcePath = "/Customers/findOne";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1059,15 +1059,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers/findOne'
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/Customers/findOne'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1077,37 +1077,37 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserFromWooCommerce
+     * Operation customerFromWooCommerce
      *
      * 
      *
      * @param string $customer_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function myYoastUserFromWooCommerce($customer_data)
+    public function customerFromWooCommerce($customer_data)
     {
-        list($response) = $this->myYoastUserFromWooCommerceWithHttpInfo($customer_data);
+        list($response) = $this->customerFromWooCommerceWithHttpInfo($customer_data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserFromWooCommerceWithHttpInfo
+     * Operation customerFromWooCommerceWithHttpInfo
      *
      * 
      *
      * @param string $customer_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserFromWooCommerceWithHttpInfo($customer_data)
+    public function customerFromWooCommerceWithHttpInfo($customer_data)
     {
         // verify the required parameter 'customer_data' is set
         if ($customer_data === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $customer_data when calling myYoastUserFromWooCommerce');
+            throw new \InvalidArgumentException('Missing the required parameter $customer_data when calling customerFromWooCommerce');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/fromWooCommerce";
+        $resourcePath = "/Customers/fromWooCommerce";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1140,15 +1140,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers/fromWooCommerce'
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/Customers/fromWooCommerce'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1158,7 +1158,7 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserLogin
+     * Operation customerLogin
      *
      * Login a user with username/email and password.
      *
@@ -1167,14 +1167,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return object
      */
-    public function myYoastUserLogin($credentials, $include = null)
+    public function customerLogin($credentials, $include = null)
     {
-        list($response) = $this->myYoastUserLoginWithHttpInfo($credentials, $include);
+        list($response) = $this->customerLoginWithHttpInfo($credentials, $include);
         return $response;
     }
 
     /**
-     * Operation myYoastUserLoginWithHttpInfo
+     * Operation customerLoginWithHttpInfo
      *
      * Login a user with username/email and password.
      *
@@ -1183,14 +1183,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserLoginWithHttpInfo($credentials, $include = null)
+    public function customerLoginWithHttpInfo($credentials, $include = null)
     {
         // verify the required parameter 'credentials' is set
         if ($credentials === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $credentials when calling myYoastUserLogin');
+            throw new \InvalidArgumentException('Missing the required parameter $credentials when calling customerLogin');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/login";
+        $resourcePath = "/Customers/login";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1229,7 +1229,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 'object',
-                '/MyYoastUsers/login'
+                '/Customers/login'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
@@ -1246,31 +1246,31 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserLogout
+     * Operation customerLogout
      *
      * Logout a user with access token.
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserLogout()
+    public function customerLogout()
     {
-        list($response) = $this->myYoastUserLogoutWithHttpInfo();
+        list($response) = $this->customerLogoutWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation myYoastUserLogoutWithHttpInfo
+     * Operation customerLogoutWithHttpInfo
      *
      * Logout a user with access token.
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserLogoutWithHttpInfo()
+    public function customerLogoutWithHttpInfo()
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers/logout";
+        $resourcePath = "/Customers/logout";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1300,7 +1300,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/logout'
+                '/Customers/logout'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -1313,33 +1313,33 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPatchOrCreate
+     * Operation customerPatchOrCreate
      *
      * Patch an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function myYoastUserPatchOrCreate($data = null)
+    public function customerPatchOrCreate($data = null)
     {
-        list($response) = $this->myYoastUserPatchOrCreateWithHttpInfo($data);
+        list($response) = $this->customerPatchOrCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPatchOrCreateWithHttpInfo
+     * Operation customerPatchOrCreateWithHttpInfo
      *
      * Patch an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPatchOrCreateWithHttpInfo($data = null)
+    public function customerPatchOrCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers";
+        $resourcePath = "/Customers";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1373,15 +1373,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers'
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/Customers'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1391,7 +1391,7 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserProfile
+     * Operation customerProfile
      *
      * 
      *
@@ -1399,14 +1399,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse2003
      */
-    public function myYoastUserProfile($id)
+    public function customerProfile($id)
     {
-        list($response) = $this->myYoastUserProfileWithHttpInfo($id);
+        list($response) = $this->customerProfileWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation myYoastUserProfileWithHttpInfo
+     * Operation customerProfileWithHttpInfo
      *
      * 
      *
@@ -1414,14 +1414,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserProfileWithHttpInfo($id)
+    public function customerProfileWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserProfile');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerProfile');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/profile";
+        $resourcePath = "/Customers/{id}/profile";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1459,7 +1459,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse2003',
-                '/MyYoastUsers/{id}/profile'
+                '/Customers/{id}/profile'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2003', $httpHeader), $statusCode, $httpHeader];
@@ -1476,39 +1476,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCountAccessTokens
+     * Operation customerPrototypeCountAccessTokens
      *
-     * Counts accessTokens of MyYoastUser.
+     * Counts accessTokens of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function myYoastUserPrototypeCountAccessTokens($id, $where = null)
+    public function customerPrototypeCountAccessTokens($id, $where = null)
     {
-        list($response) = $this->myYoastUserPrototypeCountAccessTokensWithHttpInfo($id, $where);
+        list($response) = $this->customerPrototypeCountAccessTokensWithHttpInfo($id, $where);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCountAccessTokensWithHttpInfo
+     * Operation customerPrototypeCountAccessTokensWithHttpInfo
      *
-     * Counts accessTokens of MyYoastUser.
+     * Counts accessTokens of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCountAccessTokensWithHttpInfo($id, $where = null)
+    public function customerPrototypeCountAccessTokensWithHttpInfo($id, $where = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCountAccessTokens');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCountAccessTokens');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/accessTokens/count";
+        $resourcePath = "/Customers/{id}/accessTokens/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1550,7 +1550,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/MyYoastUsers/{id}/accessTokens/count'
+                '/Customers/{id}/accessTokens/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -1567,39 +1567,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCountCredentials
+     * Operation customerPrototypeCountCredentials
      *
-     * Counts credentials of MyYoastUser.
+     * Counts credentials of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function myYoastUserPrototypeCountCredentials($id, $where = null)
+    public function customerPrototypeCountCredentials($id, $where = null)
     {
-        list($response) = $this->myYoastUserPrototypeCountCredentialsWithHttpInfo($id, $where);
+        list($response) = $this->customerPrototypeCountCredentialsWithHttpInfo($id, $where);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCountCredentialsWithHttpInfo
+     * Operation customerPrototypeCountCredentialsWithHttpInfo
      *
-     * Counts credentials of MyYoastUser.
+     * Counts credentials of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCountCredentialsWithHttpInfo($id, $where = null)
+    public function customerPrototypeCountCredentialsWithHttpInfo($id, $where = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCountCredentials');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCountCredentials');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/credentials/count";
+        $resourcePath = "/Customers/{id}/credentials/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1641,7 +1641,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/MyYoastUsers/{id}/credentials/count'
+                '/Customers/{id}/credentials/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -1658,39 +1658,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCountIdentities
+     * Operation customerPrototypeCountIdentities
      *
-     * Counts identities of MyYoastUser.
+     * Counts identities of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function myYoastUserPrototypeCountIdentities($id, $where = null)
+    public function customerPrototypeCountIdentities($id, $where = null)
     {
-        list($response) = $this->myYoastUserPrototypeCountIdentitiesWithHttpInfo($id, $where);
+        list($response) = $this->customerPrototypeCountIdentitiesWithHttpInfo($id, $where);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCountIdentitiesWithHttpInfo
+     * Operation customerPrototypeCountIdentitiesWithHttpInfo
      *
-     * Counts identities of MyYoastUser.
+     * Counts identities of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCountIdentitiesWithHttpInfo($id, $where = null)
+    public function customerPrototypeCountIdentitiesWithHttpInfo($id, $where = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCountIdentities');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCountIdentities');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/identities/count";
+        $resourcePath = "/Customers/{id}/identities/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1732,7 +1732,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/MyYoastUsers/{id}/identities/count'
+                '/Customers/{id}/identities/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -1749,39 +1749,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCountOrders
+     * Operation customerPrototypeCountOrders
      *
-     * Counts orders of MyYoastUser.
+     * Counts orders of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function myYoastUserPrototypeCountOrders($id, $where = null)
+    public function customerPrototypeCountOrders($id, $where = null)
     {
-        list($response) = $this->myYoastUserPrototypeCountOrdersWithHttpInfo($id, $where);
+        list($response) = $this->customerPrototypeCountOrdersWithHttpInfo($id, $where);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCountOrdersWithHttpInfo
+     * Operation customerPrototypeCountOrdersWithHttpInfo
      *
-     * Counts orders of MyYoastUser.
+     * Counts orders of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCountOrdersWithHttpInfo($id, $where = null)
+    public function customerPrototypeCountOrdersWithHttpInfo($id, $where = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCountOrders');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCountOrders');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/orders/count";
+        $resourcePath = "/Customers/{id}/orders/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1823,7 +1823,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/MyYoastUsers/{id}/orders/count'
+                '/Customers/{id}/orders/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -1840,39 +1840,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCountSites
+     * Operation customerPrototypeCountSites
      *
-     * Counts sites of MyYoastUser.
+     * Counts sites of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function myYoastUserPrototypeCountSites($id, $where = null)
+    public function customerPrototypeCountSites($id, $where = null)
     {
-        list($response) = $this->myYoastUserPrototypeCountSitesWithHttpInfo($id, $where);
+        list($response) = $this->customerPrototypeCountSitesWithHttpInfo($id, $where);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCountSitesWithHttpInfo
+     * Operation customerPrototypeCountSitesWithHttpInfo
      *
-     * Counts sites of MyYoastUser.
+     * Counts sites of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCountSitesWithHttpInfo($id, $where = null)
+    public function customerPrototypeCountSitesWithHttpInfo($id, $where = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCountSites');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCountSites');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/sites/count";
+        $resourcePath = "/Customers/{id}/sites/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1914,7 +1914,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/MyYoastUsers/{id}/sites/count'
+                '/Customers/{id}/sites/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -1931,39 +1931,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCountSubscriptions
+     * Operation customerPrototypeCountSubscriptions
      *
-     * Counts subscriptions of MyYoastUser.
+     * Counts subscriptions of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function myYoastUserPrototypeCountSubscriptions($id, $where = null)
+    public function customerPrototypeCountSubscriptions($id, $where = null)
     {
-        list($response) = $this->myYoastUserPrototypeCountSubscriptionsWithHttpInfo($id, $where);
+        list($response) = $this->customerPrototypeCountSubscriptionsWithHttpInfo($id, $where);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCountSubscriptionsWithHttpInfo
+     * Operation customerPrototypeCountSubscriptionsWithHttpInfo
      *
-     * Counts subscriptions of MyYoastUser.
+     * Counts subscriptions of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCountSubscriptionsWithHttpInfo($id, $where = null)
+    public function customerPrototypeCountSubscriptionsWithHttpInfo($id, $where = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCountSubscriptions');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCountSubscriptions');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/subscriptions/count";
+        $resourcePath = "/Customers/{id}/subscriptions/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2005,7 +2005,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/MyYoastUsers/{id}/subscriptions/count'
+                '/Customers/{id}/subscriptions/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -2022,39 +2022,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateAccessTokens
+     * Operation customerPrototypeCreateAccessTokens
      *
      * Creates a new instance in accessTokens of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\AccessToken $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\AccessToken
      */
-    public function myYoastUserPrototypeCreateAccessTokens($id, $data = null)
+    public function customerPrototypeCreateAccessTokens($id, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeCreateAccessTokensWithHttpInfo($id, $data);
+        list($response) = $this->customerPrototypeCreateAccessTokensWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateAccessTokensWithHttpInfo
+     * Operation customerPrototypeCreateAccessTokensWithHttpInfo
      *
      * Creates a new instance in accessTokens of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\AccessToken $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\AccessToken, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCreateAccessTokensWithHttpInfo($id, $data = null)
+    public function customerPrototypeCreateAccessTokensWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCreateAccessTokens');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCreateAccessTokens');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/accessTokens";
+        $resourcePath = "/Customers/{id}/accessTokens";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2097,7 +2097,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\AccessToken',
-                '/MyYoastUsers/{id}/accessTokens'
+                '/Customers/{id}/accessTokens'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\AccessToken', $httpHeader), $statusCode, $httpHeader];
@@ -2114,39 +2114,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateCredentials
+     * Operation customerPrototypeCreateCredentials
      *
      * Creates a new instance in credentials of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\UserCredential $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserCredential
      */
-    public function myYoastUserPrototypeCreateCredentials($id, $data = null)
+    public function customerPrototypeCreateCredentials($id, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeCreateCredentialsWithHttpInfo($id, $data);
+        list($response) = $this->customerPrototypeCreateCredentialsWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateCredentialsWithHttpInfo
+     * Operation customerPrototypeCreateCredentialsWithHttpInfo
      *
      * Creates a new instance in credentials of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\UserCredential $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserCredential, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCreateCredentialsWithHttpInfo($id, $data = null)
+    public function customerPrototypeCreateCredentialsWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCreateCredentials');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCreateCredentials');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/credentials";
+        $resourcePath = "/Customers/{id}/credentials";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2189,7 +2189,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\UserCredential',
-                '/MyYoastUsers/{id}/credentials'
+                '/Customers/{id}/credentials'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\UserCredential', $httpHeader), $statusCode, $httpHeader];
@@ -2206,39 +2206,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateIdentities
+     * Operation customerPrototypeCreateIdentities
      *
      * Creates a new instance in identities of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\UserIdentity $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserIdentity
      */
-    public function myYoastUserPrototypeCreateIdentities($id, $data = null)
+    public function customerPrototypeCreateIdentities($id, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeCreateIdentitiesWithHttpInfo($id, $data);
+        list($response) = $this->customerPrototypeCreateIdentitiesWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateIdentitiesWithHttpInfo
+     * Operation customerPrototypeCreateIdentitiesWithHttpInfo
      *
      * Creates a new instance in identities of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\UserIdentity $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserIdentity, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCreateIdentitiesWithHttpInfo($id, $data = null)
+    public function customerPrototypeCreateIdentitiesWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCreateIdentities');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCreateIdentities');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/identities";
+        $resourcePath = "/Customers/{id}/identities";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2281,7 +2281,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\UserIdentity',
-                '/MyYoastUsers/{id}/identities'
+                '/Customers/{id}/identities'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\UserIdentity', $httpHeader), $statusCode, $httpHeader];
@@ -2298,39 +2298,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateOrders
+     * Operation customerPrototypeCreateOrders
      *
      * Creates a new instance in orders of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\Order $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function myYoastUserPrototypeCreateOrders($id, $data = null)
+    public function customerPrototypeCreateOrders($id, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeCreateOrdersWithHttpInfo($id, $data);
+        list($response) = $this->customerPrototypeCreateOrdersWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateOrdersWithHttpInfo
+     * Operation customerPrototypeCreateOrdersWithHttpInfo
      *
      * Creates a new instance in orders of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\Order $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCreateOrdersWithHttpInfo($id, $data = null)
+    public function customerPrototypeCreateOrdersWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCreateOrders');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCreateOrders');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/orders";
+        $resourcePath = "/Customers/{id}/orders";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2373,7 +2373,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Order',
-                '/MyYoastUsers/{id}/orders'
+                '/Customers/{id}/orders'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Order', $httpHeader), $statusCode, $httpHeader];
@@ -2390,39 +2390,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateSites
+     * Operation customerPrototypeCreateSites
      *
      * Creates a new instance in sites of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\Site $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Site
      */
-    public function myYoastUserPrototypeCreateSites($id, $data = null)
+    public function customerPrototypeCreateSites($id, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeCreateSitesWithHttpInfo($id, $data);
+        list($response) = $this->customerPrototypeCreateSitesWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateSitesWithHttpInfo
+     * Operation customerPrototypeCreateSitesWithHttpInfo
      *
      * Creates a new instance in sites of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\Site $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCreateSitesWithHttpInfo($id, $data = null)
+    public function customerPrototypeCreateSitesWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCreateSites');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCreateSites');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/sites";
+        $resourcePath = "/Customers/{id}/sites";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2465,7 +2465,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Site',
-                '/MyYoastUsers/{id}/sites'
+                '/Customers/{id}/sites'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Site', $httpHeader), $statusCode, $httpHeader];
@@ -2482,39 +2482,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateSubscriptions
+     * Operation customerPrototypeCreateSubscriptions
      *
      * Creates a new instance in subscriptions of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function myYoastUserPrototypeCreateSubscriptions($id, $data = null)
+    public function customerPrototypeCreateSubscriptions($id, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeCreateSubscriptionsWithHttpInfo($id, $data);
+        list($response) = $this->customerPrototypeCreateSubscriptionsWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeCreateSubscriptionsWithHttpInfo
+     * Operation customerPrototypeCreateSubscriptionsWithHttpInfo
      *
      * Creates a new instance in subscriptions of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeCreateSubscriptionsWithHttpInfo($id, $data = null)
+    public function customerPrototypeCreateSubscriptionsWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeCreateSubscriptions');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCreateSubscriptions');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/subscriptions";
+        $resourcePath = "/Customers/{id}/subscriptions";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2557,7 +2557,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Subscription',
-                '/MyYoastUsers/{id}/subscriptions'
+                '/Customers/{id}/subscriptions'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Subscription', $httpHeader), $statusCode, $httpHeader];
@@ -2574,37 +2574,37 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteAccessTokens
+     * Operation customerPrototypeDeleteAccessTokens
      *
      * Deletes all accessTokens of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDeleteAccessTokens($id)
+    public function customerPrototypeDeleteAccessTokens($id)
     {
-        list($response) = $this->myYoastUserPrototypeDeleteAccessTokensWithHttpInfo($id);
+        list($response) = $this->customerPrototypeDeleteAccessTokensWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteAccessTokensWithHttpInfo
+     * Operation customerPrototypeDeleteAccessTokensWithHttpInfo
      *
      * Deletes all accessTokens of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDeleteAccessTokensWithHttpInfo($id)
+    public function customerPrototypeDeleteAccessTokensWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDeleteAccessTokens');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDeleteAccessTokens');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/accessTokens";
+        $resourcePath = "/Customers/{id}/accessTokens";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2642,7 +2642,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/accessTokens'
+                '/Customers/{id}/accessTokens'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -2655,37 +2655,37 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteCredentials
+     * Operation customerPrototypeDeleteCredentials
      *
      * Deletes all credentials of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDeleteCredentials($id)
+    public function customerPrototypeDeleteCredentials($id)
     {
-        list($response) = $this->myYoastUserPrototypeDeleteCredentialsWithHttpInfo($id);
+        list($response) = $this->customerPrototypeDeleteCredentialsWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteCredentialsWithHttpInfo
+     * Operation customerPrototypeDeleteCredentialsWithHttpInfo
      *
      * Deletes all credentials of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDeleteCredentialsWithHttpInfo($id)
+    public function customerPrototypeDeleteCredentialsWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDeleteCredentials');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDeleteCredentials');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/credentials";
+        $resourcePath = "/Customers/{id}/credentials";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2723,7 +2723,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/credentials'
+                '/Customers/{id}/credentials'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -2736,37 +2736,37 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteIdentities
+     * Operation customerPrototypeDeleteIdentities
      *
      * Deletes all identities of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDeleteIdentities($id)
+    public function customerPrototypeDeleteIdentities($id)
     {
-        list($response) = $this->myYoastUserPrototypeDeleteIdentitiesWithHttpInfo($id);
+        list($response) = $this->customerPrototypeDeleteIdentitiesWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteIdentitiesWithHttpInfo
+     * Operation customerPrototypeDeleteIdentitiesWithHttpInfo
      *
      * Deletes all identities of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDeleteIdentitiesWithHttpInfo($id)
+    public function customerPrototypeDeleteIdentitiesWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDeleteIdentities');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDeleteIdentities');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/identities";
+        $resourcePath = "/Customers/{id}/identities";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2804,7 +2804,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/identities'
+                '/Customers/{id}/identities'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -2817,37 +2817,37 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteOrders
+     * Operation customerPrototypeDeleteOrders
      *
      * Deletes all orders of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDeleteOrders($id)
+    public function customerPrototypeDeleteOrders($id)
     {
-        list($response) = $this->myYoastUserPrototypeDeleteOrdersWithHttpInfo($id);
+        list($response) = $this->customerPrototypeDeleteOrdersWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteOrdersWithHttpInfo
+     * Operation customerPrototypeDeleteOrdersWithHttpInfo
      *
      * Deletes all orders of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDeleteOrdersWithHttpInfo($id)
+    public function customerPrototypeDeleteOrdersWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDeleteOrders');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDeleteOrders');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/orders";
+        $resourcePath = "/Customers/{id}/orders";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2885,7 +2885,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/orders'
+                '/Customers/{id}/orders'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -2898,37 +2898,37 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteSites
+     * Operation customerPrototypeDeleteSites
      *
      * Deletes all sites of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDeleteSites($id)
+    public function customerPrototypeDeleteSites($id)
     {
-        list($response) = $this->myYoastUserPrototypeDeleteSitesWithHttpInfo($id);
+        list($response) = $this->customerPrototypeDeleteSitesWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteSitesWithHttpInfo
+     * Operation customerPrototypeDeleteSitesWithHttpInfo
      *
      * Deletes all sites of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDeleteSitesWithHttpInfo($id)
+    public function customerPrototypeDeleteSitesWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDeleteSites');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDeleteSites');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/sites";
+        $resourcePath = "/Customers/{id}/sites";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2966,7 +2966,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/sites'
+                '/Customers/{id}/sites'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -2979,37 +2979,37 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteSubscriptions
+     * Operation customerPrototypeDeleteSubscriptions
      *
      * Deletes all subscriptions of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDeleteSubscriptions($id)
+    public function customerPrototypeDeleteSubscriptions($id)
     {
-        list($response) = $this->myYoastUserPrototypeDeleteSubscriptionsWithHttpInfo($id);
+        list($response) = $this->customerPrototypeDeleteSubscriptionsWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDeleteSubscriptionsWithHttpInfo
+     * Operation customerPrototypeDeleteSubscriptionsWithHttpInfo
      *
      * Deletes all subscriptions of this model.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDeleteSubscriptionsWithHttpInfo($id)
+    public function customerPrototypeDeleteSubscriptionsWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDeleteSubscriptions');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDeleteSubscriptions');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/subscriptions";
+        $resourcePath = "/Customers/{id}/subscriptions";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3047,7 +3047,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/subscriptions'
+                '/Customers/{id}/subscriptions'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -3060,43 +3060,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdAccessTokens
+     * Operation customerPrototypeDestroyByIdAccessTokens
      *
      * Delete a related item by id for accessTokens.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for accessTokens (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdAccessTokens($id, $fk)
+    public function customerPrototypeDestroyByIdAccessTokens($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdAccessTokensWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeDestroyByIdAccessTokensWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdAccessTokensWithHttpInfo
+     * Operation customerPrototypeDestroyByIdAccessTokensWithHttpInfo
      *
      * Delete a related item by id for accessTokens.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for accessTokens (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdAccessTokensWithHttpInfo($id, $fk)
+    public function customerPrototypeDestroyByIdAccessTokensWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdAccessTokens');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDestroyByIdAccessTokens');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdAccessTokens');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeDestroyByIdAccessTokens');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/accessTokens/{fk}";
+        $resourcePath = "/Customers/{id}/accessTokens/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3142,7 +3142,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/accessTokens/{fk}'
+                '/Customers/{id}/accessTokens/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -3155,43 +3155,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdCredentials
+     * Operation customerPrototypeDestroyByIdCredentials
      *
      * Delete a related item by id for credentials.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for credentials (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdCredentials($id, $fk)
+    public function customerPrototypeDestroyByIdCredentials($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdCredentialsWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeDestroyByIdCredentialsWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdCredentialsWithHttpInfo
+     * Operation customerPrototypeDestroyByIdCredentialsWithHttpInfo
      *
      * Delete a related item by id for credentials.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for credentials (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdCredentialsWithHttpInfo($id, $fk)
+    public function customerPrototypeDestroyByIdCredentialsWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdCredentials');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDestroyByIdCredentials');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdCredentials');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeDestroyByIdCredentials');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/credentials/{fk}";
+        $resourcePath = "/Customers/{id}/credentials/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3237,7 +3237,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/credentials/{fk}'
+                '/Customers/{id}/credentials/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -3250,43 +3250,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdIdentities
+     * Operation customerPrototypeDestroyByIdIdentities
      *
      * Delete a related item by id for identities.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for identities (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdIdentities($id, $fk)
+    public function customerPrototypeDestroyByIdIdentities($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdIdentitiesWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeDestroyByIdIdentitiesWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdIdentitiesWithHttpInfo
+     * Operation customerPrototypeDestroyByIdIdentitiesWithHttpInfo
      *
      * Delete a related item by id for identities.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for identities (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdIdentitiesWithHttpInfo($id, $fk)
+    public function customerPrototypeDestroyByIdIdentitiesWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdIdentities');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDestroyByIdIdentities');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdIdentities');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeDestroyByIdIdentities');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/identities/{fk}";
+        $resourcePath = "/Customers/{id}/identities/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3332,7 +3332,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/identities/{fk}'
+                '/Customers/{id}/identities/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -3345,43 +3345,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdOrders
+     * Operation customerPrototypeDestroyByIdOrders
      *
      * Delete a related item by id for orders.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdOrders($id, $fk)
+    public function customerPrototypeDestroyByIdOrders($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdOrdersWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeDestroyByIdOrdersWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdOrdersWithHttpInfo
+     * Operation customerPrototypeDestroyByIdOrdersWithHttpInfo
      *
      * Delete a related item by id for orders.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdOrdersWithHttpInfo($id, $fk)
+    public function customerPrototypeDestroyByIdOrdersWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdOrders');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDestroyByIdOrders');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdOrders');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeDestroyByIdOrders');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/orders/{fk}";
+        $resourcePath = "/Customers/{id}/orders/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3427,7 +3427,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/orders/{fk}'
+                '/Customers/{id}/orders/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -3440,43 +3440,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdSites
+     * Operation customerPrototypeDestroyByIdSites
      *
      * Delete a related item by id for sites.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdSites($id, $fk)
+    public function customerPrototypeDestroyByIdSites($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdSitesWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeDestroyByIdSitesWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdSitesWithHttpInfo
+     * Operation customerPrototypeDestroyByIdSitesWithHttpInfo
      *
      * Delete a related item by id for sites.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdSitesWithHttpInfo($id, $fk)
+    public function customerPrototypeDestroyByIdSitesWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdSites');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDestroyByIdSites');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdSites');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeDestroyByIdSites');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/sites/{fk}";
+        $resourcePath = "/Customers/{id}/sites/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3522,7 +3522,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/sites/{fk}'
+                '/Customers/{id}/sites/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -3535,43 +3535,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdSubscriptions
+     * Operation customerPrototypeDestroyByIdSubscriptions
      *
      * Delete a related item by id for subscriptions.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserPrototypeDestroyByIdSubscriptions($id, $fk)
+    public function customerPrototypeDestroyByIdSubscriptions($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeDestroyByIdSubscriptionsWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeDestroyByIdSubscriptionsWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeDestroyByIdSubscriptionsWithHttpInfo
+     * Operation customerPrototypeDestroyByIdSubscriptionsWithHttpInfo
      *
      * Delete a related item by id for subscriptions.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeDestroyByIdSubscriptionsWithHttpInfo($id, $fk)
+    public function customerPrototypeDestroyByIdSubscriptionsWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeDestroyByIdSubscriptions');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDestroyByIdSubscriptions');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeDestroyByIdSubscriptions');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeDestroyByIdSubscriptions');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/subscriptions/{fk}";
+        $resourcePath = "/Customers/{id}/subscriptions/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3617,7 +3617,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/{id}/subscriptions/{fk}'
+                '/Customers/{id}/subscriptions/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -3630,43 +3630,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdAccessTokens
+     * Operation customerPrototypeFindByIdAccessTokens
      *
      * Find a related item by id for accessTokens.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for accessTokens (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\AccessToken
      */
-    public function myYoastUserPrototypeFindByIdAccessTokens($id, $fk)
+    public function customerPrototypeFindByIdAccessTokens($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdAccessTokensWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeFindByIdAccessTokensWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdAccessTokensWithHttpInfo
+     * Operation customerPrototypeFindByIdAccessTokensWithHttpInfo
      *
      * Find a related item by id for accessTokens.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for accessTokens (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\AccessToken, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdAccessTokensWithHttpInfo($id, $fk)
+    public function customerPrototypeFindByIdAccessTokensWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdAccessTokens');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeFindByIdAccessTokens');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdAccessTokens');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeFindByIdAccessTokens');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/accessTokens/{fk}";
+        $resourcePath = "/Customers/{id}/accessTokens/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3712,7 +3712,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\AccessToken',
-                '/MyYoastUsers/{id}/accessTokens/{fk}'
+                '/Customers/{id}/accessTokens/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\AccessToken', $httpHeader), $statusCode, $httpHeader];
@@ -3729,43 +3729,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdCredentials
+     * Operation customerPrototypeFindByIdCredentials
      *
      * Find a related item by id for credentials.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for credentials (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserCredential
      */
-    public function myYoastUserPrototypeFindByIdCredentials($id, $fk)
+    public function customerPrototypeFindByIdCredentials($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdCredentialsWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeFindByIdCredentialsWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdCredentialsWithHttpInfo
+     * Operation customerPrototypeFindByIdCredentialsWithHttpInfo
      *
      * Find a related item by id for credentials.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for credentials (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserCredential, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdCredentialsWithHttpInfo($id, $fk)
+    public function customerPrototypeFindByIdCredentialsWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdCredentials');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeFindByIdCredentials');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdCredentials');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeFindByIdCredentials');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/credentials/{fk}";
+        $resourcePath = "/Customers/{id}/credentials/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3811,7 +3811,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\UserCredential',
-                '/MyYoastUsers/{id}/credentials/{fk}'
+                '/Customers/{id}/credentials/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\UserCredential', $httpHeader), $statusCode, $httpHeader];
@@ -3828,43 +3828,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdIdentities
+     * Operation customerPrototypeFindByIdIdentities
      *
      * Find a related item by id for identities.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for identities (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserIdentity
      */
-    public function myYoastUserPrototypeFindByIdIdentities($id, $fk)
+    public function customerPrototypeFindByIdIdentities($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdIdentitiesWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeFindByIdIdentitiesWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdIdentitiesWithHttpInfo
+     * Operation customerPrototypeFindByIdIdentitiesWithHttpInfo
      *
      * Find a related item by id for identities.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for identities (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserIdentity, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdIdentitiesWithHttpInfo($id, $fk)
+    public function customerPrototypeFindByIdIdentitiesWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdIdentities');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeFindByIdIdentities');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdIdentities');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeFindByIdIdentities');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/identities/{fk}";
+        $resourcePath = "/Customers/{id}/identities/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3910,7 +3910,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\UserIdentity',
-                '/MyYoastUsers/{id}/identities/{fk}'
+                '/Customers/{id}/identities/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\UserIdentity', $httpHeader), $statusCode, $httpHeader];
@@ -3927,43 +3927,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdOrders
+     * Operation customerPrototypeFindByIdOrders
      *
      * Find a related item by id for orders.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function myYoastUserPrototypeFindByIdOrders($id, $fk)
+    public function customerPrototypeFindByIdOrders($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdOrdersWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeFindByIdOrdersWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdOrdersWithHttpInfo
+     * Operation customerPrototypeFindByIdOrdersWithHttpInfo
      *
      * Find a related item by id for orders.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for orders (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdOrdersWithHttpInfo($id, $fk)
+    public function customerPrototypeFindByIdOrdersWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdOrders');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeFindByIdOrders');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdOrders');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeFindByIdOrders');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/orders/{fk}";
+        $resourcePath = "/Customers/{id}/orders/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -4009,7 +4009,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Order',
-                '/MyYoastUsers/{id}/orders/{fk}'
+                '/Customers/{id}/orders/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Order', $httpHeader), $statusCode, $httpHeader];
@@ -4026,43 +4026,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdSites
+     * Operation customerPrototypeFindByIdSites
      *
      * Find a related item by id for sites.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Site
      */
-    public function myYoastUserPrototypeFindByIdSites($id, $fk)
+    public function customerPrototypeFindByIdSites($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdSitesWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeFindByIdSitesWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdSitesWithHttpInfo
+     * Operation customerPrototypeFindByIdSitesWithHttpInfo
      *
      * Find a related item by id for sites.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for sites (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdSitesWithHttpInfo($id, $fk)
+    public function customerPrototypeFindByIdSitesWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdSites');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeFindByIdSites');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdSites');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeFindByIdSites');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/sites/{fk}";
+        $resourcePath = "/Customers/{id}/sites/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -4108,7 +4108,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Site',
-                '/MyYoastUsers/{id}/sites/{fk}'
+                '/Customers/{id}/sites/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Site', $httpHeader), $statusCode, $httpHeader];
@@ -4125,43 +4125,43 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdSubscriptions
+     * Operation customerPrototypeFindByIdSubscriptions
      *
      * Find a related item by id for subscriptions.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function myYoastUserPrototypeFindByIdSubscriptions($id, $fk)
+    public function customerPrototypeFindByIdSubscriptions($id, $fk)
     {
-        list($response) = $this->myYoastUserPrototypeFindByIdSubscriptionsWithHttpInfo($id, $fk);
+        list($response) = $this->customerPrototypeFindByIdSubscriptionsWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeFindByIdSubscriptionsWithHttpInfo
+     * Operation customerPrototypeFindByIdSubscriptionsWithHttpInfo
      *
      * Find a related item by id for subscriptions.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for subscriptions (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeFindByIdSubscriptionsWithHttpInfo($id, $fk)
+    public function customerPrototypeFindByIdSubscriptionsWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeFindByIdSubscriptions');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeFindByIdSubscriptions');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeFindByIdSubscriptions');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeFindByIdSubscriptions');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/subscriptions/{fk}";
+        $resourcePath = "/Customers/{id}/subscriptions/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -4207,7 +4207,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Subscription',
-                '/MyYoastUsers/{id}/subscriptions/{fk}'
+                '/Customers/{id}/subscriptions/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Subscription', $httpHeader), $statusCode, $httpHeader];
@@ -4224,39 +4224,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeGetAccessTokens
+     * Operation customerPrototypeGetAccessTokens
      *
-     * Queries accessTokens of MyYoastUser.
+     * Queries accessTokens of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\AccessToken[]
      */
-    public function myYoastUserPrototypeGetAccessTokens($id, $filter = null)
+    public function customerPrototypeGetAccessTokens($id, $filter = null)
     {
-        list($response) = $this->myYoastUserPrototypeGetAccessTokensWithHttpInfo($id, $filter);
+        list($response) = $this->customerPrototypeGetAccessTokensWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeGetAccessTokensWithHttpInfo
+     * Operation customerPrototypeGetAccessTokensWithHttpInfo
      *
-     * Queries accessTokens of MyYoastUser.
+     * Queries accessTokens of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\AccessToken[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeGetAccessTokensWithHttpInfo($id, $filter = null)
+    public function customerPrototypeGetAccessTokensWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeGetAccessTokens');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeGetAccessTokens');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/accessTokens";
+        $resourcePath = "/Customers/{id}/accessTokens";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -4298,7 +4298,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\AccessToken[]',
-                '/MyYoastUsers/{id}/accessTokens'
+                '/Customers/{id}/accessTokens'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\AccessToken[]', $httpHeader), $statusCode, $httpHeader];
@@ -4315,39 +4315,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeGetCredentials
+     * Operation customerPrototypeGetCredentials
      *
-     * Queries credentials of MyYoastUser.
+     * Queries credentials of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserCredential[]
      */
-    public function myYoastUserPrototypeGetCredentials($id, $filter = null)
+    public function customerPrototypeGetCredentials($id, $filter = null)
     {
-        list($response) = $this->myYoastUserPrototypeGetCredentialsWithHttpInfo($id, $filter);
+        list($response) = $this->customerPrototypeGetCredentialsWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeGetCredentialsWithHttpInfo
+     * Operation customerPrototypeGetCredentialsWithHttpInfo
      *
-     * Queries credentials of MyYoastUser.
+     * Queries credentials of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserCredential[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeGetCredentialsWithHttpInfo($id, $filter = null)
+    public function customerPrototypeGetCredentialsWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeGetCredentials');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeGetCredentials');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/credentials";
+        $resourcePath = "/Customers/{id}/credentials";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -4389,7 +4389,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\UserCredential[]',
-                '/MyYoastUsers/{id}/credentials'
+                '/Customers/{id}/credentials'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\UserCredential[]', $httpHeader), $statusCode, $httpHeader];
@@ -4406,39 +4406,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeGetIdentities
+     * Operation customerPrototypeGetIdentities
      *
-     * Queries identities of MyYoastUser.
+     * Queries identities of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserIdentity[]
      */
-    public function myYoastUserPrototypeGetIdentities($id, $filter = null)
+    public function customerPrototypeGetIdentities($id, $filter = null)
     {
-        list($response) = $this->myYoastUserPrototypeGetIdentitiesWithHttpInfo($id, $filter);
+        list($response) = $this->customerPrototypeGetIdentitiesWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeGetIdentitiesWithHttpInfo
+     * Operation customerPrototypeGetIdentitiesWithHttpInfo
      *
-     * Queries identities of MyYoastUser.
+     * Queries identities of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserIdentity[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeGetIdentitiesWithHttpInfo($id, $filter = null)
+    public function customerPrototypeGetIdentitiesWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeGetIdentities');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeGetIdentities');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/identities";
+        $resourcePath = "/Customers/{id}/identities";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -4480,7 +4480,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\UserIdentity[]',
-                '/MyYoastUsers/{id}/identities'
+                '/Customers/{id}/identities'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\UserIdentity[]', $httpHeader), $statusCode, $httpHeader];
@@ -4497,39 +4497,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeGetOrders
+     * Operation customerPrototypeGetOrders
      *
-     * Queries orders of MyYoastUser.
+     * Queries orders of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Order[]
      */
-    public function myYoastUserPrototypeGetOrders($id, $filter = null)
+    public function customerPrototypeGetOrders($id, $filter = null)
     {
-        list($response) = $this->myYoastUserPrototypeGetOrdersWithHttpInfo($id, $filter);
+        list($response) = $this->customerPrototypeGetOrdersWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeGetOrdersWithHttpInfo
+     * Operation customerPrototypeGetOrdersWithHttpInfo
      *
-     * Queries orders of MyYoastUser.
+     * Queries orders of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeGetOrdersWithHttpInfo($id, $filter = null)
+    public function customerPrototypeGetOrdersWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeGetOrders');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeGetOrders');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/orders";
+        $resourcePath = "/Customers/{id}/orders";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -4571,7 +4571,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Order[]',
-                '/MyYoastUsers/{id}/orders'
+                '/Customers/{id}/orders'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Order[]', $httpHeader), $statusCode, $httpHeader];
@@ -4588,39 +4588,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeGetSites
+     * Operation customerPrototypeGetSites
      *
-     * Queries sites of MyYoastUser.
+     * Queries sites of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Site[]
      */
-    public function myYoastUserPrototypeGetSites($id, $filter = null)
+    public function customerPrototypeGetSites($id, $filter = null)
     {
-        list($response) = $this->myYoastUserPrototypeGetSitesWithHttpInfo($id, $filter);
+        list($response) = $this->customerPrototypeGetSitesWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeGetSitesWithHttpInfo
+     * Operation customerPrototypeGetSitesWithHttpInfo
      *
-     * Queries sites of MyYoastUser.
+     * Queries sites of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Site[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeGetSitesWithHttpInfo($id, $filter = null)
+    public function customerPrototypeGetSitesWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeGetSites');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeGetSites');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/sites";
+        $resourcePath = "/Customers/{id}/sites";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -4662,7 +4662,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Site[]',
-                '/MyYoastUsers/{id}/sites'
+                '/Customers/{id}/sites'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Site[]', $httpHeader), $statusCode, $httpHeader];
@@ -4679,39 +4679,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeGetSubscriptions
+     * Operation customerPrototypeGetSubscriptions
      *
-     * Queries subscriptions of MyYoastUser.
+     * Queries subscriptions of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription[]
      */
-    public function myYoastUserPrototypeGetSubscriptions($id, $filter = null)
+    public function customerPrototypeGetSubscriptions($id, $filter = null)
     {
-        list($response) = $this->myYoastUserPrototypeGetSubscriptionsWithHttpInfo($id, $filter);
+        list($response) = $this->customerPrototypeGetSubscriptionsWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeGetSubscriptionsWithHttpInfo
+     * Operation customerPrototypeGetSubscriptionsWithHttpInfo
      *
-     * Queries subscriptions of MyYoastUser.
+     * Queries subscriptions of Customer.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeGetSubscriptionsWithHttpInfo($id, $filter = null)
+    public function customerPrototypeGetSubscriptionsWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeGetSubscriptions');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeGetSubscriptions');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/subscriptions";
+        $resourcePath = "/Customers/{id}/subscriptions";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -4753,7 +4753,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Subscription[]',
-                '/MyYoastUsers/{id}/subscriptions'
+                '/Customers/{id}/subscriptions'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Subscription[]', $httpHeader), $statusCode, $httpHeader];
@@ -4770,39 +4770,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypePatchAttributes
+     * Operation customerPrototypePatchAttributes
      *
      * Patch attributes for a model instance and persist it into the data source.
      *
-     * @param string $id MyYoastUser id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data An object of model property name/value pairs (optional)
+     * @param string $id Customer id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function myYoastUserPrototypePatchAttributes($id, $data = null)
+    public function customerPrototypePatchAttributes($id, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypePatchAttributesWithHttpInfo($id, $data);
+        list($response) = $this->customerPrototypePatchAttributesWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypePatchAttributesWithHttpInfo
+     * Operation customerPrototypePatchAttributesWithHttpInfo
      *
      * Patch attributes for a model instance and persist it into the data source.
      *
-     * @param string $id MyYoastUser id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data An object of model property name/value pairs (optional)
+     * @param string $id Customer id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypePatchAttributesWithHttpInfo($id, $data = null)
+    public function customerPrototypePatchAttributesWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypePatchAttributes');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypePatchAttributes');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}";
+        $resourcePath = "/Customers/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -4844,15 +4844,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers/{id}'
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/Customers/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -4862,45 +4862,45 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdAccessTokens
+     * Operation customerPrototypeUpdateByIdAccessTokens
      *
      * Update a related item by id for accessTokens.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for accessTokens (required)
      * @param \Yoast\MyYoastApiClient\Model\AccessToken $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\AccessToken
      */
-    public function myYoastUserPrototypeUpdateByIdAccessTokens($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdAccessTokens($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdAccessTokensWithHttpInfo($id, $fk, $data);
+        list($response) = $this->customerPrototypeUpdateByIdAccessTokensWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdAccessTokensWithHttpInfo
+     * Operation customerPrototypeUpdateByIdAccessTokensWithHttpInfo
      *
      * Update a related item by id for accessTokens.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for accessTokens (required)
      * @param \Yoast\MyYoastApiClient\Model\AccessToken $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\AccessToken, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdAccessTokensWithHttpInfo($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdAccessTokensWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdAccessTokens');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeUpdateByIdAccessTokens');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdAccessTokens');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeUpdateByIdAccessTokens');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/accessTokens/{fk}";
+        $resourcePath = "/Customers/{id}/accessTokens/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -4951,7 +4951,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\AccessToken',
-                '/MyYoastUsers/{id}/accessTokens/{fk}'
+                '/Customers/{id}/accessTokens/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\AccessToken', $httpHeader), $statusCode, $httpHeader];
@@ -4968,45 +4968,45 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdCredentials
+     * Operation customerPrototypeUpdateByIdCredentials
      *
      * Update a related item by id for credentials.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for credentials (required)
      * @param \Yoast\MyYoastApiClient\Model\UserCredential $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserCredential
      */
-    public function myYoastUserPrototypeUpdateByIdCredentials($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdCredentials($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdCredentialsWithHttpInfo($id, $fk, $data);
+        list($response) = $this->customerPrototypeUpdateByIdCredentialsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdCredentialsWithHttpInfo
+     * Operation customerPrototypeUpdateByIdCredentialsWithHttpInfo
      *
      * Update a related item by id for credentials.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for credentials (required)
      * @param \Yoast\MyYoastApiClient\Model\UserCredential $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserCredential, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdCredentialsWithHttpInfo($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdCredentialsWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdCredentials');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeUpdateByIdCredentials');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdCredentials');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeUpdateByIdCredentials');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/credentials/{fk}";
+        $resourcePath = "/Customers/{id}/credentials/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -5057,7 +5057,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\UserCredential',
-                '/MyYoastUsers/{id}/credentials/{fk}'
+                '/Customers/{id}/credentials/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\UserCredential', $httpHeader), $statusCode, $httpHeader];
@@ -5074,45 +5074,45 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdIdentities
+     * Operation customerPrototypeUpdateByIdIdentities
      *
      * Update a related item by id for identities.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for identities (required)
      * @param \Yoast\MyYoastApiClient\Model\UserIdentity $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\UserIdentity
      */
-    public function myYoastUserPrototypeUpdateByIdIdentities($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdIdentities($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdIdentitiesWithHttpInfo($id, $fk, $data);
+        list($response) = $this->customerPrototypeUpdateByIdIdentitiesWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdIdentitiesWithHttpInfo
+     * Operation customerPrototypeUpdateByIdIdentitiesWithHttpInfo
      *
      * Update a related item by id for identities.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for identities (required)
      * @param \Yoast\MyYoastApiClient\Model\UserIdentity $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\UserIdentity, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdIdentitiesWithHttpInfo($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdIdentitiesWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdIdentities');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeUpdateByIdIdentities');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdIdentities');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeUpdateByIdIdentities');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/identities/{fk}";
+        $resourcePath = "/Customers/{id}/identities/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -5163,7 +5163,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\UserIdentity',
-                '/MyYoastUsers/{id}/identities/{fk}'
+                '/Customers/{id}/identities/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\UserIdentity', $httpHeader), $statusCode, $httpHeader];
@@ -5180,45 +5180,45 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdOrders
+     * Operation customerPrototypeUpdateByIdOrders
      *
      * Update a related item by id for orders.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for orders (required)
      * @param \Yoast\MyYoastApiClient\Model\Order $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function myYoastUserPrototypeUpdateByIdOrders($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdOrders($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdOrdersWithHttpInfo($id, $fk, $data);
+        list($response) = $this->customerPrototypeUpdateByIdOrdersWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdOrdersWithHttpInfo
+     * Operation customerPrototypeUpdateByIdOrdersWithHttpInfo
      *
      * Update a related item by id for orders.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for orders (required)
      * @param \Yoast\MyYoastApiClient\Model\Order $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdOrdersWithHttpInfo($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdOrdersWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdOrders');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeUpdateByIdOrders');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdOrders');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeUpdateByIdOrders');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/orders/{fk}";
+        $resourcePath = "/Customers/{id}/orders/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -5269,7 +5269,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Order',
-                '/MyYoastUsers/{id}/orders/{fk}'
+                '/Customers/{id}/orders/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Order', $httpHeader), $statusCode, $httpHeader];
@@ -5286,45 +5286,45 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdSites
+     * Operation customerPrototypeUpdateByIdSites
      *
      * Update a related item by id for sites.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for sites (required)
      * @param \Yoast\MyYoastApiClient\Model\Site $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Site
      */
-    public function myYoastUserPrototypeUpdateByIdSites($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdSites($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdSitesWithHttpInfo($id, $fk, $data);
+        list($response) = $this->customerPrototypeUpdateByIdSitesWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdSitesWithHttpInfo
+     * Operation customerPrototypeUpdateByIdSitesWithHttpInfo
      *
      * Update a related item by id for sites.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for sites (required)
      * @param \Yoast\MyYoastApiClient\Model\Site $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdSitesWithHttpInfo($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdSitesWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdSites');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeUpdateByIdSites');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdSites');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeUpdateByIdSites');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/sites/{fk}";
+        $resourcePath = "/Customers/{id}/sites/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -5375,7 +5375,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Site',
-                '/MyYoastUsers/{id}/sites/{fk}'
+                '/Customers/{id}/sites/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Site', $httpHeader), $statusCode, $httpHeader];
@@ -5392,45 +5392,45 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdSubscriptions
+     * Operation customerPrototypeUpdateByIdSubscriptions
      *
      * Update a related item by id for subscriptions.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for subscriptions (required)
      * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function myYoastUserPrototypeUpdateByIdSubscriptions($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdSubscriptions($id, $fk, $data = null)
     {
-        list($response) = $this->myYoastUserPrototypeUpdateByIdSubscriptionsWithHttpInfo($id, $fk, $data);
+        list($response) = $this->customerPrototypeUpdateByIdSubscriptionsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserPrototypeUpdateByIdSubscriptionsWithHttpInfo
+     * Operation customerPrototypeUpdateByIdSubscriptionsWithHttpInfo
      *
      * Update a related item by id for subscriptions.
      *
-     * @param string $id MyYoastUser id (required)
+     * @param string $id Customer id (required)
      * @param string $fk Foreign key for subscriptions (required)
      * @param \Yoast\MyYoastApiClient\Model\Subscription $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserPrototypeUpdateByIdSubscriptionsWithHttpInfo($id, $fk, $data = null)
+    public function customerPrototypeUpdateByIdSubscriptionsWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserPrototypeUpdateByIdSubscriptions');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeUpdateByIdSubscriptions');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling myYoastUserPrototypeUpdateByIdSubscriptions');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeUpdateByIdSubscriptions');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/subscriptions/{fk}";
+        $resourcePath = "/Customers/{id}/subscriptions/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -5481,7 +5481,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Subscription',
-                '/MyYoastUsers/{id}/subscriptions/{fk}'
+                '/Customers/{id}/subscriptions/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Subscription', $httpHeader), $statusCode, $httpHeader];
@@ -5498,39 +5498,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserReplaceByIdPostMyYoastUsersidReplace
+     * Operation customerReplaceByIdPostCustomersidReplace
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function myYoastUserReplaceByIdPostMyYoastUsersidReplace($id, $data = null)
+    public function customerReplaceByIdPostCustomersidReplace($id, $data = null)
     {
-        list($response) = $this->myYoastUserReplaceByIdPostMyYoastUsersidReplaceWithHttpInfo($id, $data);
+        list($response) = $this->customerReplaceByIdPostCustomersidReplaceWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserReplaceByIdPostMyYoastUsersidReplaceWithHttpInfo
+     * Operation customerReplaceByIdPostCustomersidReplaceWithHttpInfo
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserReplaceByIdPostMyYoastUsersidReplaceWithHttpInfo($id, $data = null)
+    public function customerReplaceByIdPostCustomersidReplaceWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserReplaceByIdPostMyYoastUsersidReplace');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerReplaceByIdPostCustomersidReplace');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}/replace";
+        $resourcePath = "/Customers/{id}/replace";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -5572,15 +5572,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers/{id}/replace'
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/Customers/{id}/replace'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -5590,39 +5590,39 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserReplaceByIdPutMyYoastUsersid
+     * Operation customerReplaceByIdPutCustomersid
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function myYoastUserReplaceByIdPutMyYoastUsersid($id, $data = null)
+    public function customerReplaceByIdPutCustomersid($id, $data = null)
     {
-        list($response) = $this->myYoastUserReplaceByIdPutMyYoastUsersidWithHttpInfo($id, $data);
+        list($response) = $this->customerReplaceByIdPutCustomersidWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserReplaceByIdPutMyYoastUsersidWithHttpInfo
+     * Operation customerReplaceByIdPutCustomersidWithHttpInfo
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserReplaceByIdPutMyYoastUsersidWithHttpInfo($id, $data = null)
+    public function customerReplaceByIdPutCustomersidWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling myYoastUserReplaceByIdPutMyYoastUsersid');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerReplaceByIdPutCustomersid');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/{id}";
+        $resourcePath = "/Customers/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -5664,15 +5664,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers/{id}'
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/Customers/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -5682,33 +5682,33 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserReplaceOrCreatePostMyYoastUsersReplaceOrCreate
+     * Operation customerReplaceOrCreatePostCustomersReplaceOrCreate
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function myYoastUserReplaceOrCreatePostMyYoastUsersReplaceOrCreate($data = null)
+    public function customerReplaceOrCreatePostCustomersReplaceOrCreate($data = null)
     {
-        list($response) = $this->myYoastUserReplaceOrCreatePostMyYoastUsersReplaceOrCreateWithHttpInfo($data);
+        list($response) = $this->customerReplaceOrCreatePostCustomersReplaceOrCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserReplaceOrCreatePostMyYoastUsersReplaceOrCreateWithHttpInfo
+     * Operation customerReplaceOrCreatePostCustomersReplaceOrCreateWithHttpInfo
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserReplaceOrCreatePostMyYoastUsersReplaceOrCreateWithHttpInfo($data = null)
+    public function customerReplaceOrCreatePostCustomersReplaceOrCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers/replaceOrCreate";
+        $resourcePath = "/Customers/replaceOrCreate";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -5742,15 +5742,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers/replaceOrCreate'
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/Customers/replaceOrCreate'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -5760,33 +5760,33 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserReplaceOrCreatePutMyYoastUsers
+     * Operation customerReplaceOrCreatePutCustomers
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function myYoastUserReplaceOrCreatePutMyYoastUsers($data = null)
+    public function customerReplaceOrCreatePutCustomers($data = null)
     {
-        list($response) = $this->myYoastUserReplaceOrCreatePutMyYoastUsersWithHttpInfo($data);
+        list($response) = $this->customerReplaceOrCreatePutCustomersWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserReplaceOrCreatePutMyYoastUsersWithHttpInfo
+     * Operation customerReplaceOrCreatePutCustomersWithHttpInfo
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserReplaceOrCreatePutMyYoastUsersWithHttpInfo($data = null)
+    public function customerReplaceOrCreatePutCustomersWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers";
+        $resourcePath = "/Customers";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -5820,15 +5820,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers'
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/Customers'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -5838,7 +5838,7 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserResetPassword
+     * Operation customerResetPassword
      *
      * Reset password for a user with email.
      *
@@ -5846,14 +5846,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function myYoastUserResetPassword($options)
+    public function customerResetPassword($options)
     {
-        list($response) = $this->myYoastUserResetPasswordWithHttpInfo($options);
+        list($response) = $this->customerResetPasswordWithHttpInfo($options);
         return $response;
     }
 
     /**
-     * Operation myYoastUserResetPasswordWithHttpInfo
+     * Operation customerResetPasswordWithHttpInfo
      *
      * Reset password for a user with email.
      *
@@ -5861,14 +5861,14 @@ class MyYoastUserApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserResetPasswordWithHttpInfo($options)
+    public function customerResetPasswordWithHttpInfo($options)
     {
         // verify the required parameter 'options' is set
         if ($options === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $options when calling myYoastUserResetPassword');
+            throw new \InvalidArgumentException('Missing the required parameter $options when calling customerResetPassword');
         }
         // parse inputs
-        $resourcePath = "/MyYoastUsers/reset";
+        $resourcePath = "/Customers/reset";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -5903,7 +5903,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/MyYoastUsers/reset'
+                '/Customers/reset'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -5916,35 +5916,35 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserUpdateAll
+     * Operation customerUpdateAll
      *
      * Update instances of the model matched by {{where}} from the data source.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
      */
-    public function myYoastUserUpdateAll($where = null, $data = null)
+    public function customerUpdateAll($where = null, $data = null)
     {
-        list($response) = $this->myYoastUserUpdateAllWithHttpInfo($where, $data);
+        list($response) = $this->customerUpdateAllWithHttpInfo($where, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserUpdateAllWithHttpInfo
+     * Operation customerUpdateAllWithHttpInfo
      *
      * Update instances of the model matched by {{where}} from the data source.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserUpdateAllWithHttpInfo($where = null, $data = null)
+    public function customerUpdateAllWithHttpInfo($where = null, $data = null)
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers/update";
+        $resourcePath = "/Customers/update";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -5983,7 +5983,7 @@ class MyYoastUserApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
-                '/MyYoastUsers/update'
+                '/Customers/update'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
@@ -6000,35 +6000,35 @@ class MyYoastUserApi
     }
 
     /**
-     * Operation myYoastUserUpsertWithWhere
+     * Operation customerUpsertWithWhere
      *
      * Update an existing model instance or insert a new one into the data source based on the where criteria.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MyYoastUser
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function myYoastUserUpsertWithWhere($where = null, $data = null)
+    public function customerUpsertWithWhere($where = null, $data = null)
     {
-        list($response) = $this->myYoastUserUpsertWithWhereWithHttpInfo($where, $data);
+        list($response) = $this->customerUpsertWithWhereWithHttpInfo($where, $data);
         return $response;
     }
 
     /**
-     * Operation myYoastUserUpsertWithWhereWithHttpInfo
+     * Operation customerUpsertWithWhereWithHttpInfo
      *
      * Update an existing model instance or insert a new one into the data source based on the where criteria.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\MyYoastUser $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\Customer $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MyYoastUser, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function myYoastUserUpsertWithWhereWithHttpInfo($where = null, $data = null)
+    public function customerUpsertWithWhereWithHttpInfo($where = null, $data = null)
     {
         // parse inputs
-        $resourcePath = "/MyYoastUsers/upsertWithWhere";
+        $resourcePath = "/Customers/upsertWithWhere";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -6066,15 +6066,15 @@ class MyYoastUserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MyYoastUser',
-                '/MyYoastUsers/upsertWithWhere'
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/Customers/upsertWithWhere'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MyYoastUser', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MyYoastUser', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

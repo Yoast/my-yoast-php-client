@@ -67,7 +67,9 @@ class Product implements ArrayAccess
         'shop_regular_price' => 'double',
         'shop_tax_status' => 'string',
         'shop_tax_class' => 'string',
-        'subscription_id' => 'string'
+        'last_updated' => '\DateTime',
+        'current_version' => 'double',
+        'changelog' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -93,7 +95,9 @@ class Product implements ArrayAccess
         'shop_regular_price' => 'shopRegularPrice',
         'shop_tax_status' => 'shopTaxStatus',
         'shop_tax_class' => 'shopTaxClass',
-        'subscription_id' => 'subscriptionId'
+        'last_updated' => 'lastUpdated',
+        'current_version' => 'currentVersion',
+        'changelog' => 'changelog'
     ];
 
 
@@ -115,7 +119,9 @@ class Product implements ArrayAccess
         'shop_regular_price' => 'setShopRegularPrice',
         'shop_tax_status' => 'setShopTaxStatus',
         'shop_tax_class' => 'setShopTaxClass',
-        'subscription_id' => 'setSubscriptionId'
+        'last_updated' => 'setLastUpdated',
+        'current_version' => 'setCurrentVersion',
+        'changelog' => 'setChangelog'
     ];
 
 
@@ -137,7 +143,9 @@ class Product implements ArrayAccess
         'shop_regular_price' => 'getShopRegularPrice',
         'shop_tax_status' => 'getShopTaxStatus',
         'shop_tax_class' => 'getShopTaxClass',
-        'subscription_id' => 'getSubscriptionId'
+        'last_updated' => 'getLastUpdated',
+        'current_version' => 'getCurrentVersion',
+        'changelog' => 'getChangelog'
     ];
 
     public static function attributeMap()
@@ -184,7 +192,9 @@ class Product implements ArrayAccess
         $this->container['shop_regular_price'] = isset($data['shop_regular_price']) ? $data['shop_regular_price'] : null;
         $this->container['shop_tax_status'] = isset($data['shop_tax_status']) ? $data['shop_tax_status'] : null;
         $this->container['shop_tax_class'] = isset($data['shop_tax_class']) ? $data['shop_tax_class'] : null;
-        $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
+        $this->container['last_updated'] = isset($data['last_updated']) ? $data['last_updated'] : null;
+        $this->container['current_version'] = isset($data['current_version']) ? $data['current_version'] : null;
+        $this->container['changelog'] = isset($data['changelog']) ? $data['changelog'] : null;
     }
 
     /**
@@ -205,6 +215,12 @@ class Product implements ArrayAccess
         if ($this->container['store_url'] === null) {
             $invalid_properties[] = "'store_url' can't be null";
         }
+        if ($this->container['last_updated'] === null) {
+            $invalid_properties[] = "'last_updated' can't be null";
+        }
+        if ($this->container['current_version'] === null) {
+            $invalid_properties[] = "'current_version' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -224,6 +240,12 @@ class Product implements ArrayAccess
             return false;
         }
         if ($this->container['store_url'] === null) {
+            return false;
+        }
+        if ($this->container['last_updated'] === null) {
+            return false;
+        }
+        if ($this->container['current_version'] === null) {
             return false;
         }
         return true;
@@ -504,22 +526,64 @@ class Product implements ArrayAccess
     }
 
     /**
-     * Gets subscription_id
-     * @return string
+     * Gets last_updated
+     * @return \DateTime
      */
-    public function getSubscriptionId()
+    public function getLastUpdated()
     {
-        return $this->container['subscription_id'];
+        return $this->container['last_updated'];
     }
 
     /**
-     * Sets subscription_id
-     * @param string $subscription_id
+     * Sets last_updated
+     * @param \DateTime $last_updated
      * @return $this
      */
-    public function setSubscriptionId($subscription_id)
+    public function setLastUpdated($last_updated)
     {
-        $this->container['subscription_id'] = $subscription_id;
+        $this->container['last_updated'] = $last_updated;
+
+        return $this;
+    }
+
+    /**
+     * Gets current_version
+     * @return double
+     */
+    public function getCurrentVersion()
+    {
+        return $this->container['current_version'];
+    }
+
+    /**
+     * Sets current_version
+     * @param double $current_version
+     * @return $this
+     */
+    public function setCurrentVersion($current_version)
+    {
+        $this->container['current_version'] = $current_version;
+
+        return $this;
+    }
+
+    /**
+     * Gets changelog
+     * @return string
+     */
+    public function getChangelog()
+    {
+        return $this->container['changelog'];
+    }
+
+    /**
+     * Sets changelog
+     * @param string $changelog
+     * @return $this
+     */
+    public function setChangelog($changelog)
+    {
+        $this->container['changelog'] = $changelog;
 
         return $this;
     }
