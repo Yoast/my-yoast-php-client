@@ -106,6 +106,20 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "source_id"
+     */
+    public function testPropertySourceId()
+    {
+    }
+
+    /**
+     * Test attribute "source_shop_id"
+     */
+    public function testPropertySourceShopId()
+    {
+    }
+
+    /**
      * Test attribute "status"
      */
     public function testPropertyStatus()

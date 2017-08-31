@@ -58,6 +58,8 @@ class Subscription implements ArrayAccess
         'product_id' => 'string',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
+        'source_id' => 'double',
+        'source_shop_id' => 'double',
         'status' => 'string',
         'currency' => 'string',
         'date' => '\DateTime',
@@ -78,6 +80,8 @@ class Subscription implements ArrayAccess
         'product_id' => null,
         'start_date' => 'date-time',
         'end_date' => 'date-time',
+        'source_id' => 'double',
+        'source_shop_id' => 'double',
         'status' => null,
         'currency' => null,
         'date' => 'date-time',
@@ -108,6 +112,8 @@ class Subscription implements ArrayAccess
         'product_id' => 'productId',
         'start_date' => 'startDate',
         'end_date' => 'endDate',
+        'source_id' => 'sourceId',
+        'source_shop_id' => 'sourceShopId',
         'status' => 'status',
         'currency' => 'currency',
         'date' => 'date',
@@ -129,6 +135,8 @@ class Subscription implements ArrayAccess
         'product_id' => 'setProductId',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
+        'source_id' => 'setSourceId',
+        'source_shop_id' => 'setSourceShopId',
         'status' => 'setStatus',
         'currency' => 'setCurrency',
         'date' => 'setDate',
@@ -150,6 +158,8 @@ class Subscription implements ArrayAccess
         'product_id' => 'getProductId',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
+        'source_id' => 'getSourceId',
+        'source_shop_id' => 'getSourceShopId',
         'status' => 'getStatus',
         'currency' => 'getCurrency',
         'date' => 'getDate',
@@ -196,6 +206,8 @@ class Subscription implements ArrayAccess
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
+        $this->container['source_shop_id'] = isset($data['source_shop_id']) ? $data['source_shop_id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
@@ -225,6 +237,9 @@ class Subscription implements ArrayAccess
         if ($this->container['start_date'] === null) {
             $invalid_properties[] = "'start_date' can't be null";
         }
+        if ($this->container['source_shop_id'] === null) {
+            $invalid_properties[] = "'source_shop_id' can't be null";
+        }
         if ($this->container['limit'] === null) {
             $invalid_properties[] = "'limit' can't be null";
         }
@@ -250,6 +265,9 @@ class Subscription implements ArrayAccess
             return false;
         }
         if ($this->container['start_date'] === null) {
+            return false;
+        }
+        if ($this->container['source_shop_id'] === null) {
             return false;
         }
         if ($this->container['limit'] === null) {
@@ -342,6 +360,48 @@ class Subscription implements ArrayAccess
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_id
+     * @return double
+     */
+    public function getSourceId()
+    {
+        return $this->container['source_id'];
+    }
+
+    /**
+     * Sets source_id
+     * @param double $source_id
+     * @return $this
+     */
+    public function setSourceId($source_id)
+    {
+        $this->container['source_id'] = $source_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_shop_id
+     * @return double
+     */
+    public function getSourceShopId()
+    {
+        return $this->container['source_shop_id'];
+    }
+
+    /**
+     * Sets source_shop_id
+     * @param double $source_shop_id
+     * @return $this
+     */
+    public function setSourceShopId($source_shop_id)
+    {
+        $this->container['source_shop_id'] = $source_shop_id;
 
         return $this;
     }
