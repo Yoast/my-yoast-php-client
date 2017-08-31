@@ -129,10 +129,7 @@ class SiteApi
         if ($where !== null) {
             $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -201,9 +198,6 @@ class SiteApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
         // body params
         $_tempBody = null;
@@ -284,10 +278,7 @@ class SiteApi
         if ($options !== null) {
             $queryParams['options'] = $this->apiClient->getSerializer()->toQueryValue($options);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -357,14 +348,11 @@ class SiteApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // form params
         if ($options !== null) {
             $formParams['options'] = $this->apiClient->getSerializer()->toFormValue($options);
         }
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -446,10 +434,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -531,10 +516,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -616,10 +598,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -693,10 +672,7 @@ class SiteApi
         if ($filter !== null) {
             $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -784,10 +760,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -861,10 +834,7 @@ class SiteApi
         if ($filter !== null) {
             $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -933,9 +903,6 @@ class SiteApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
         // body params
         $_tempBody = null;
@@ -1030,10 +997,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1117,9 +1081,6 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -1207,10 +1168,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1302,10 +1260,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1397,10 +1352,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1496,10 +1448,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1587,10 +1536,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1678,10 +1624,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1779,9 +1722,6 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -1871,9 +1811,6 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -1975,10 +1912,7 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -2072,9 +2006,6 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -2164,9 +2095,6 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -2256,9 +2184,6 @@ class SiteApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -2334,9 +2259,6 @@ class SiteApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -2411,9 +2333,6 @@ class SiteApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
         // body params
         $_tempBody = null;
@@ -2496,9 +2415,6 @@ class SiteApi
         if ($where !== null) {
             $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -2580,9 +2496,6 @@ class SiteApi
         if ($where !== null) {
             $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

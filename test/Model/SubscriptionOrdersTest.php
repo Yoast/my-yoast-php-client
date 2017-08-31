@@ -47,7 +47,6 @@ class SubscriptionOrdersTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class SubscriptionOrdersTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class SubscriptionOrdersTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class SubscriptionOrdersTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,23 +75,6 @@ class SubscriptionOrdersTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionOrders()
     {
-
-    }
-
-    /**
-     * Test attribute "subscription_id"
-     */
-    public function testPropertySubscriptionId()
-    {
-
-    }
-
-    /**
-     * Test attribute "order_id"
-     */
-    public function testPropertyOrderId()
-    {
-
     }
 
     /**
@@ -103,7 +82,19 @@ class SubscriptionOrdersTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
+    /**
+     * Test attribute "subscription_id"
+     */
+    public function testPropertySubscriptionId()
+    {
+    }
+
+    /**
+     * Test attribute "order_id"
+     */
+    public function testPropertyOrderId()
+    {
+    }
 }

@@ -91,7 +91,8 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerLogin**](docs/Api/CustomerApi.md#customerlogin) | **POST** /Customers/login | Login a user with username/email and password.
 *CustomerApi* | [**customerLogout**](docs/Api/CustomerApi.md#customerlogout) | **POST** /Customers/logout | Logout a user with access token.
 *CustomerApi* | [**customerPatchOrCreate**](docs/Api/CustomerApi.md#customerpatchorcreate) | **PATCH** /Customers | Patch an existing model instance or insert a new one into the data source.
-*CustomerApi* | [**customerProfile**](docs/Api/CustomerApi.md#customerprofile) | **GET** /Customers/{id}/profile | 
+*CustomerApi* | [**customerPatchProfile**](docs/Api/CustomerApi.md#customerpatchprofile) | **PATCH** /Customers/{id}/profile | Updates the profile with the supplied information.
+*CustomerApi* | [**customerProfile**](docs/Api/CustomerApi.md#customerprofile) | **GET** /Customers/{id}/profile | Finds the profile for the customer with the given id.
 *CustomerApi* | [**customerPrototypeCountAccessTokens**](docs/Api/CustomerApi.md#customerprototypecountaccesstokens) | **GET** /Customers/{id}/accessTokens/count | Counts accessTokens of Customer.
 *CustomerApi* | [**customerPrototypeCountCredentials**](docs/Api/CustomerApi.md#customerprototypecountcredentials) | **GET** /Customers/{id}/credentials/count | Counts credentials of Customer.
 *CustomerApi* | [**customerPrototypeCountIdentities**](docs/Api/CustomerApi.md#customerprototypecountidentities) | **GET** /Customers/{id}/identities/count | Counts identities of Customer.
@@ -153,7 +154,7 @@ Class | Method | HTTP request | Description
 *DiscountLineItemApi* | [**discountLineItemFindById**](docs/Api/DiscountLineItemApi.md#discountlineitemfindbyid) | **GET** /DiscountLineItems/{id} | Find a model instance by {{id}} from the data source.
 *DiscountLineItemApi* | [**discountLineItemFindOne**](docs/Api/DiscountLineItemApi.md#discountlineitemfindone) | **GET** /DiscountLineItems/findOne | Find first instance of the model matched by filter from the data source.
 *DiscountLineItemApi* | [**discountLineItemPatchOrCreate**](docs/Api/DiscountLineItemApi.md#discountlineitempatchorcreate) | **PATCH** /DiscountLineItems | Patch an existing model instance or insert a new one into the data source.
-*DiscountLineItemApi* | [**discountLineItemPrototypeGetLineItem**](docs/Api/DiscountLineItemApi.md#discountlineitemprototypegetlineitem) | **GET** /DiscountLineItems/{id}/lineItem | Fetches belongsTo relation lineItem.
+*DiscountLineItemApi* | [**discountLineItemPrototypeGetOrder**](docs/Api/DiscountLineItemApi.md#discountlineitemprototypegetorder) | **GET** /DiscountLineItems/{id}/order | Fetches belongsTo relation order.
 *DiscountLineItemApi* | [**discountLineItemPrototypePatchAttributes**](docs/Api/DiscountLineItemApi.md#discountlineitemprototypepatchattributes) | **PATCH** /DiscountLineItems/{id} | Patch attributes for a model instance and persist it into the data source.
 *DiscountLineItemApi* | [**discountLineItemReplaceByIdPostDiscountLineItemsidReplace**](docs/Api/DiscountLineItemApi.md#discountlineitemreplacebyidpostdiscountlineitemsidreplace) | **POST** /DiscountLineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *DiscountLineItemApi* | [**discountLineItemReplaceByIdPutDiscountLineItemsid**](docs/Api/DiscountLineItemApi.md#discountlineitemreplacebyidputdiscountlineitemsid) | **PUT** /DiscountLineItems/{id} | Replace attributes for a model instance and persist it into the data source.
@@ -172,16 +173,9 @@ Class | Method | HTTP request | Description
 *LineItemApi* | [**lineItemFindById**](docs/Api/LineItemApi.md#lineitemfindbyid) | **GET** /LineItems/{id} | Find a model instance by {{id}} from the data source.
 *LineItemApi* | [**lineItemFindOne**](docs/Api/LineItemApi.md#lineitemfindone) | **GET** /LineItems/findOne | Find first instance of the model matched by filter from the data source.
 *LineItemApi* | [**lineItemPatchOrCreate**](docs/Api/LineItemApi.md#lineitempatchorcreate) | **PATCH** /LineItems | Patch an existing model instance or insert a new one into the data source.
-*LineItemApi* | [**lineItemPrototypeCountDiscounts**](docs/Api/LineItemApi.md#lineitemprototypecountdiscounts) | **GET** /LineItems/{id}/discounts/count | Counts discounts of LineItem.
-*LineItemApi* | [**lineItemPrototypeCreateDiscounts**](docs/Api/LineItemApi.md#lineitemprototypecreatediscounts) | **POST** /LineItems/{id}/discounts | Creates a new instance in discounts of this model.
-*LineItemApi* | [**lineItemPrototypeDeleteDiscounts**](docs/Api/LineItemApi.md#lineitemprototypedeletediscounts) | **DELETE** /LineItems/{id}/discounts | Deletes all discounts of this model.
-*LineItemApi* | [**lineItemPrototypeDestroyByIdDiscounts**](docs/Api/LineItemApi.md#lineitemprototypedestroybyiddiscounts) | **DELETE** /LineItems/{id}/discounts/{fk} | Delete a related item by id for discounts.
-*LineItemApi* | [**lineItemPrototypeFindByIdDiscounts**](docs/Api/LineItemApi.md#lineitemprototypefindbyiddiscounts) | **GET** /LineItems/{id}/discounts/{fk} | Find a related item by id for discounts.
-*LineItemApi* | [**lineItemPrototypeGetDiscounts**](docs/Api/LineItemApi.md#lineitemprototypegetdiscounts) | **GET** /LineItems/{id}/discounts | Queries discounts of LineItem.
 *LineItemApi* | [**lineItemPrototypeGetOrder**](docs/Api/LineItemApi.md#lineitemprototypegetorder) | **GET** /LineItems/{id}/order | Fetches belongsTo relation order.
 *LineItemApi* | [**lineItemPrototypeGetProduct**](docs/Api/LineItemApi.md#lineitemprototypegetproduct) | **GET** /LineItems/{id}/product | Fetches belongsTo relation product.
 *LineItemApi* | [**lineItemPrototypePatchAttributes**](docs/Api/LineItemApi.md#lineitemprototypepatchattributes) | **PATCH** /LineItems/{id} | Patch attributes for a model instance and persist it into the data source.
-*LineItemApi* | [**lineItemPrototypeUpdateByIdDiscounts**](docs/Api/LineItemApi.md#lineitemprototypeupdatebyiddiscounts) | **PUT** /LineItems/{id}/discounts/{fk} | Update a related item by id for discounts.
 *LineItemApi* | [**lineItemReplaceByIdPostLineItemsidReplace**](docs/Api/LineItemApi.md#lineitemreplacebyidpostlineitemsidreplace) | **POST** /LineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *LineItemApi* | [**lineItemReplaceByIdPutLineItemsid**](docs/Api/LineItemApi.md#lineitemreplacebyidputlineitemsid) | **PUT** /LineItems/{id} | Replace attributes for a model instance and persist it into the data source.
 *LineItemApi* | [**lineItemReplaceOrCreatePostLineItemsReplaceOrCreate**](docs/Api/LineItemApi.md#lineitemreplaceorcreatepostlineitemsreplaceorcreate) | **POST** /LineItems/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -201,22 +195,46 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderFromWooCommerce**](docs/Api/OrderApi.md#orderfromwoocommerce) | **PUT** /Orders/fromWooCommerce | 
 *OrderApi* | [**orderInvoice**](docs/Api/OrderApi.md#orderinvoice) | **GET** /Orders/{id}/invoice | 
 *OrderApi* | [**orderPatchOrCreate**](docs/Api/OrderApi.md#orderpatchorcreate) | **PATCH** /Orders | Patch an existing model instance or insert a new one into the data source.
+*OrderApi* | [**orderPrototypeCountDiscounts**](docs/Api/OrderApi.md#orderprototypecountdiscounts) | **GET** /Orders/{id}/discounts/count | Counts discounts of Order.
 *OrderApi* | [**orderPrototypeCountItems**](docs/Api/OrderApi.md#orderprototypecountitems) | **GET** /Orders/{id}/items/count | Counts items of Order.
-*OrderApi* | [**orderPrototypeCountSubscription**](docs/Api/OrderApi.md#orderprototypecountsubscription) | **GET** /Orders/{id}/subscription/count | Counts subscription of Order.
+*OrderApi* | [**orderPrototypeCountSubscriptions**](docs/Api/OrderApi.md#orderprototypecountsubscriptions) | **GET** /Orders/{id}/subscriptions/count | Counts subscriptions of Order.
+*OrderApi* | [**orderPrototypeCountTransactions**](docs/Api/OrderApi.md#orderprototypecounttransactions) | **GET** /Orders/{id}/transactions/count | Counts transactions of Order.
+*OrderApi* | [**orderPrototypeCountVats**](docs/Api/OrderApi.md#orderprototypecountvats) | **GET** /Orders/{id}/vats/count | Counts vats of Order.
+*OrderApi* | [**orderPrototypeCreateDiscounts**](docs/Api/OrderApi.md#orderprototypecreatediscounts) | **POST** /Orders/{id}/discounts | Creates a new instance in discounts of this model.
 *OrderApi* | [**orderPrototypeCreateItems**](docs/Api/OrderApi.md#orderprototypecreateitems) | **POST** /Orders/{id}/items | Creates a new instance in items of this model.
-*OrderApi* | [**orderPrototypeCreateSubscription**](docs/Api/OrderApi.md#orderprototypecreatesubscription) | **POST** /Orders/{id}/subscription | Creates a new instance in subscription of this model.
+*OrderApi* | [**orderPrototypeCreateSubscriptions**](docs/Api/OrderApi.md#orderprototypecreatesubscriptions) | **POST** /Orders/{id}/subscriptions | Creates a new instance in subscriptions of this model.
+*OrderApi* | [**orderPrototypeCreateTransactions**](docs/Api/OrderApi.md#orderprototypecreatetransactions) | **POST** /Orders/{id}/transactions | Creates a new instance in transactions of this model.
+*OrderApi* | [**orderPrototypeCreateVats**](docs/Api/OrderApi.md#orderprototypecreatevats) | **POST** /Orders/{id}/vats | Creates a new instance in vats of this model.
+*OrderApi* | [**orderPrototypeDeleteDiscounts**](docs/Api/OrderApi.md#orderprototypedeletediscounts) | **DELETE** /Orders/{id}/discounts | Deletes all discounts of this model.
 *OrderApi* | [**orderPrototypeDeleteItems**](docs/Api/OrderApi.md#orderprototypedeleteitems) | **DELETE** /Orders/{id}/items | Deletes all items of this model.
-*OrderApi* | [**orderPrototypeDeleteSubscription**](docs/Api/OrderApi.md#orderprototypedeletesubscription) | **DELETE** /Orders/{id}/subscription | Deletes all subscription of this model.
+*OrderApi* | [**orderPrototypeDeleteSubscriptions**](docs/Api/OrderApi.md#orderprototypedeletesubscriptions) | **DELETE** /Orders/{id}/subscriptions | Deletes all subscriptions of this model.
+*OrderApi* | [**orderPrototypeDeleteTransactions**](docs/Api/OrderApi.md#orderprototypedeletetransactions) | **DELETE** /Orders/{id}/transactions | Deletes all transactions of this model.
+*OrderApi* | [**orderPrototypeDeleteVats**](docs/Api/OrderApi.md#orderprototypedeletevats) | **DELETE** /Orders/{id}/vats | Deletes all vats of this model.
+*OrderApi* | [**orderPrototypeDestroyByIdDiscounts**](docs/Api/OrderApi.md#orderprototypedestroybyiddiscounts) | **DELETE** /Orders/{id}/discounts/{fk} | Delete a related item by id for discounts.
 *OrderApi* | [**orderPrototypeDestroyByIdItems**](docs/Api/OrderApi.md#orderprototypedestroybyiditems) | **DELETE** /Orders/{id}/items/{fk} | Delete a related item by id for items.
-*OrderApi* | [**orderPrototypeDestroyByIdSubscription**](docs/Api/OrderApi.md#orderprototypedestroybyidsubscription) | **DELETE** /Orders/{id}/subscription/{fk} | Delete a related item by id for subscription.
+*OrderApi* | [**orderPrototypeDestroyByIdSubscriptions**](docs/Api/OrderApi.md#orderprototypedestroybyidsubscriptions) | **DELETE** /Orders/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
+*OrderApi* | [**orderPrototypeDestroyByIdTransactions**](docs/Api/OrderApi.md#orderprototypedestroybyidtransactions) | **DELETE** /Orders/{id}/transactions/{fk} | Delete a related item by id for transactions.
+*OrderApi* | [**orderPrototypeDestroyByIdVats**](docs/Api/OrderApi.md#orderprototypedestroybyidvats) | **DELETE** /Orders/{id}/vats/{fk} | Delete a related item by id for vats.
+*OrderApi* | [**orderPrototypeExistsSubscriptions**](docs/Api/OrderApi.md#orderprototypeexistssubscriptions) | **HEAD** /Orders/{id}/subscriptions/rel/{fk} | Check the existence of subscriptions relation to an item by id.
+*OrderApi* | [**orderPrototypeFindByIdDiscounts**](docs/Api/OrderApi.md#orderprototypefindbyiddiscounts) | **GET** /Orders/{id}/discounts/{fk} | Find a related item by id for discounts.
 *OrderApi* | [**orderPrototypeFindByIdItems**](docs/Api/OrderApi.md#orderprototypefindbyiditems) | **GET** /Orders/{id}/items/{fk} | Find a related item by id for items.
-*OrderApi* | [**orderPrototypeFindByIdSubscription**](docs/Api/OrderApi.md#orderprototypefindbyidsubscription) | **GET** /Orders/{id}/subscription/{fk} | Find a related item by id for subscription.
+*OrderApi* | [**orderPrototypeFindByIdSubscriptions**](docs/Api/OrderApi.md#orderprototypefindbyidsubscriptions) | **GET** /Orders/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
+*OrderApi* | [**orderPrototypeFindByIdTransactions**](docs/Api/OrderApi.md#orderprototypefindbyidtransactions) | **GET** /Orders/{id}/transactions/{fk} | Find a related item by id for transactions.
+*OrderApi* | [**orderPrototypeFindByIdVats**](docs/Api/OrderApi.md#orderprototypefindbyidvats) | **GET** /Orders/{id}/vats/{fk} | Find a related item by id for vats.
 *OrderApi* | [**orderPrototypeGetCustomer**](docs/Api/OrderApi.md#orderprototypegetcustomer) | **GET** /Orders/{id}/customer | Fetches belongsTo relation customer.
+*OrderApi* | [**orderPrototypeGetDiscounts**](docs/Api/OrderApi.md#orderprototypegetdiscounts) | **GET** /Orders/{id}/discounts | Queries discounts of Order.
 *OrderApi* | [**orderPrototypeGetItems**](docs/Api/OrderApi.md#orderprototypegetitems) | **GET** /Orders/{id}/items | Queries items of Order.
-*OrderApi* | [**orderPrototypeGetSubscription**](docs/Api/OrderApi.md#orderprototypegetsubscription) | **GET** /Orders/{id}/subscription | Queries subscription of Order.
+*OrderApi* | [**orderPrototypeGetSubscriptions**](docs/Api/OrderApi.md#orderprototypegetsubscriptions) | **GET** /Orders/{id}/subscriptions | Queries subscriptions of Order.
+*OrderApi* | [**orderPrototypeGetTransactions**](docs/Api/OrderApi.md#orderprototypegettransactions) | **GET** /Orders/{id}/transactions | Queries transactions of Order.
+*OrderApi* | [**orderPrototypeGetVats**](docs/Api/OrderApi.md#orderprototypegetvats) | **GET** /Orders/{id}/vats | Queries vats of Order.
+*OrderApi* | [**orderPrototypeLinkSubscriptions**](docs/Api/OrderApi.md#orderprototypelinksubscriptions) | **PUT** /Orders/{id}/subscriptions/rel/{fk} | Add a related item by id for subscriptions.
 *OrderApi* | [**orderPrototypePatchAttributes**](docs/Api/OrderApi.md#orderprototypepatchattributes) | **PATCH** /Orders/{id} | Patch attributes for a model instance and persist it into the data source.
+*OrderApi* | [**orderPrototypeUnlinkSubscriptions**](docs/Api/OrderApi.md#orderprototypeunlinksubscriptions) | **DELETE** /Orders/{id}/subscriptions/rel/{fk} | Remove the subscriptions relation to an item by id.
+*OrderApi* | [**orderPrototypeUpdateByIdDiscounts**](docs/Api/OrderApi.md#orderprototypeupdatebyiddiscounts) | **PUT** /Orders/{id}/discounts/{fk} | Update a related item by id for discounts.
 *OrderApi* | [**orderPrototypeUpdateByIdItems**](docs/Api/OrderApi.md#orderprototypeupdatebyiditems) | **PUT** /Orders/{id}/items/{fk} | Update a related item by id for items.
-*OrderApi* | [**orderPrototypeUpdateByIdSubscription**](docs/Api/OrderApi.md#orderprototypeupdatebyidsubscription) | **PUT** /Orders/{id}/subscription/{fk} | Update a related item by id for subscription.
+*OrderApi* | [**orderPrototypeUpdateByIdSubscriptions**](docs/Api/OrderApi.md#orderprototypeupdatebyidsubscriptions) | **PUT** /Orders/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
+*OrderApi* | [**orderPrototypeUpdateByIdTransactions**](docs/Api/OrderApi.md#orderprototypeupdatebyidtransactions) | **PUT** /Orders/{id}/transactions/{fk} | Update a related item by id for transactions.
+*OrderApi* | [**orderPrototypeUpdateByIdVats**](docs/Api/OrderApi.md#orderprototypeupdatebyidvats) | **PUT** /Orders/{id}/vats/{fk} | Update a related item by id for vats.
 *OrderApi* | [**orderReplaceByIdPostOrdersidReplace**](docs/Api/OrderApi.md#orderreplacebyidpostordersidreplace) | **POST** /Orders/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *OrderApi* | [**orderReplaceByIdPutOrdersid**](docs/Api/OrderApi.md#orderreplacebyidputordersid) | **PUT** /Orders/{id} | Replace attributes for a model instance and persist it into the data source.
 *OrderApi* | [**orderReplaceOrCreatePostOrdersReplaceOrCreate**](docs/Api/OrderApi.md#orderreplaceorcreatepostordersreplaceorcreate) | **POST** /Orders/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -326,6 +344,70 @@ Class | Method | HTTP request | Description
 *SubscriptionApi* | [**subscriptionReplaceOrCreatePutSubscriptions**](docs/Api/SubscriptionApi.md#subscriptionreplaceorcreateputsubscriptions) | **PUT** /Subscriptions | Replace an existing model instance or insert a new one into the data source.
 *SubscriptionApi* | [**subscriptionUpdateAll**](docs/Api/SubscriptionApi.md#subscriptionupdateall) | **POST** /Subscriptions/update | Update instances of the model matched by {{where}} from the data source.
 *SubscriptionApi* | [**subscriptionUpsertWithWhere**](docs/Api/SubscriptionApi.md#subscriptionupsertwithwhere) | **POST** /Subscriptions/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*TransactionApi* | [**transactionCount**](docs/Api/TransactionApi.md#transactioncount) | **GET** /Transactions/count | Count instances of the model matched by where from the data source.
+*TransactionApi* | [**transactionCreate**](docs/Api/TransactionApi.md#transactioncreate) | **POST** /Transactions | Create a new instance of the model and persist it into the data source.
+*TransactionApi* | [**transactionCreateChangeStreamGetTransactionsChangeStream**](docs/Api/TransactionApi.md#transactioncreatechangestreamgettransactionschangestream) | **GET** /Transactions/change-stream | Create a change stream.
+*TransactionApi* | [**transactionCreateChangeStreamPostTransactionsChangeStream**](docs/Api/TransactionApi.md#transactioncreatechangestreamposttransactionschangestream) | **POST** /Transactions/change-stream | Create a change stream.
+*TransactionApi* | [**transactionDeleteById**](docs/Api/TransactionApi.md#transactiondeletebyid) | **DELETE** /Transactions/{id} | Delete a model instance by {{id}} from the data source.
+*TransactionApi* | [**transactionExistsGetTransactionsidExists**](docs/Api/TransactionApi.md#transactionexistsgettransactionsidexists) | **GET** /Transactions/{id}/exists | Check whether a model instance exists in the data source.
+*TransactionApi* | [**transactionExistsHeadTransactionsid**](docs/Api/TransactionApi.md#transactionexistsheadtransactionsid) | **HEAD** /Transactions/{id} | Check whether a model instance exists in the data source.
+*TransactionApi* | [**transactionFind**](docs/Api/TransactionApi.md#transactionfind) | **GET** /Transactions | Find all instances of the model matched by filter from the data source.
+*TransactionApi* | [**transactionFindById**](docs/Api/TransactionApi.md#transactionfindbyid) | **GET** /Transactions/{id} | Find a model instance by {{id}} from the data source.
+*TransactionApi* | [**transactionFindOne**](docs/Api/TransactionApi.md#transactionfindone) | **GET** /Transactions/findOne | Find first instance of the model matched by filter from the data source.
+*TransactionApi* | [**transactionPatchOrCreate**](docs/Api/TransactionApi.md#transactionpatchorcreate) | **PATCH** /Transactions | Patch an existing model instance or insert a new one into the data source.
+*TransactionApi* | [**transactionPrototypeCountRefunds**](docs/Api/TransactionApi.md#transactionprototypecountrefunds) | **GET** /Transactions/{id}/refunds/count | Counts refunds of Transaction.
+*TransactionApi* | [**transactionPrototypeCreateRefunds**](docs/Api/TransactionApi.md#transactionprototypecreaterefunds) | **POST** /Transactions/{id}/refunds | Creates a new instance in refunds of this model.
+*TransactionApi* | [**transactionPrototypeDeleteRefunds**](docs/Api/TransactionApi.md#transactionprototypedeleterefunds) | **DELETE** /Transactions/{id}/refunds | Deletes all refunds of this model.
+*TransactionApi* | [**transactionPrototypeDestroyByIdRefunds**](docs/Api/TransactionApi.md#transactionprototypedestroybyidrefunds) | **DELETE** /Transactions/{id}/refunds/{fk} | Delete a related item by id for refunds.
+*TransactionApi* | [**transactionPrototypeFindByIdRefunds**](docs/Api/TransactionApi.md#transactionprototypefindbyidrefunds) | **GET** /Transactions/{id}/refunds/{fk} | Find a related item by id for refunds.
+*TransactionApi* | [**transactionPrototypeGetOrder**](docs/Api/TransactionApi.md#transactionprototypegetorder) | **GET** /Transactions/{id}/order | Fetches belongsTo relation order.
+*TransactionApi* | [**transactionPrototypeGetRefunds**](docs/Api/TransactionApi.md#transactionprototypegetrefunds) | **GET** /Transactions/{id}/refunds | Queries refunds of Transaction.
+*TransactionApi* | [**transactionPrototypePatchAttributes**](docs/Api/TransactionApi.md#transactionprototypepatchattributes) | **PATCH** /Transactions/{id} | Patch attributes for a model instance and persist it into the data source.
+*TransactionApi* | [**transactionPrototypeUpdateByIdRefunds**](docs/Api/TransactionApi.md#transactionprototypeupdatebyidrefunds) | **PUT** /Transactions/{id}/refunds/{fk} | Update a related item by id for refunds.
+*TransactionApi* | [**transactionReplaceByIdPostTransactionsidReplace**](docs/Api/TransactionApi.md#transactionreplacebyidposttransactionsidreplace) | **POST** /Transactions/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*TransactionApi* | [**transactionReplaceByIdPutTransactionsid**](docs/Api/TransactionApi.md#transactionreplacebyidputtransactionsid) | **PUT** /Transactions/{id} | Replace attributes for a model instance and persist it into the data source.
+*TransactionApi* | [**transactionReplaceOrCreatePostTransactionsReplaceOrCreate**](docs/Api/TransactionApi.md#transactionreplaceorcreateposttransactionsreplaceorcreate) | **POST** /Transactions/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*TransactionApi* | [**transactionReplaceOrCreatePutTransactions**](docs/Api/TransactionApi.md#transactionreplaceorcreateputtransactions) | **PUT** /Transactions | Replace an existing model instance or insert a new one into the data source.
+*TransactionApi* | [**transactionUpdateAll**](docs/Api/TransactionApi.md#transactionupdateall) | **POST** /Transactions/update | Update instances of the model matched by {{where}} from the data source.
+*TransactionApi* | [**transactionUpsertWithWhere**](docs/Api/TransactionApi.md#transactionupsertwithwhere) | **POST** /Transactions/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*TransactionRefundApi* | [**transactionRefundCount**](docs/Api/TransactionRefundApi.md#transactionrefundcount) | **GET** /TransactionRefunds/count | Count instances of the model matched by where from the data source.
+*TransactionRefundApi* | [**transactionRefundCreate**](docs/Api/TransactionRefundApi.md#transactionrefundcreate) | **POST** /TransactionRefunds | Create a new instance of the model and persist it into the data source.
+*TransactionRefundApi* | [**transactionRefundCreateChangeStreamGetTransactionRefundsChangeStream**](docs/Api/TransactionRefundApi.md#transactionrefundcreatechangestreamgettransactionrefundschangestream) | **GET** /TransactionRefunds/change-stream | Create a change stream.
+*TransactionRefundApi* | [**transactionRefundCreateChangeStreamPostTransactionRefundsChangeStream**](docs/Api/TransactionRefundApi.md#transactionrefundcreatechangestreamposttransactionrefundschangestream) | **POST** /TransactionRefunds/change-stream | Create a change stream.
+*TransactionRefundApi* | [**transactionRefundDeleteById**](docs/Api/TransactionRefundApi.md#transactionrefunddeletebyid) | **DELETE** /TransactionRefunds/{id} | Delete a model instance by {{id}} from the data source.
+*TransactionRefundApi* | [**transactionRefundExistsGetTransactionRefundsidExists**](docs/Api/TransactionRefundApi.md#transactionrefundexistsgettransactionrefundsidexists) | **GET** /TransactionRefunds/{id}/exists | Check whether a model instance exists in the data source.
+*TransactionRefundApi* | [**transactionRefundExistsHeadTransactionRefundsid**](docs/Api/TransactionRefundApi.md#transactionrefundexistsheadtransactionrefundsid) | **HEAD** /TransactionRefunds/{id} | Check whether a model instance exists in the data source.
+*TransactionRefundApi* | [**transactionRefundFind**](docs/Api/TransactionRefundApi.md#transactionrefundfind) | **GET** /TransactionRefunds | Find all instances of the model matched by filter from the data source.
+*TransactionRefundApi* | [**transactionRefundFindById**](docs/Api/TransactionRefundApi.md#transactionrefundfindbyid) | **GET** /TransactionRefunds/{id} | Find a model instance by {{id}} from the data source.
+*TransactionRefundApi* | [**transactionRefundFindOne**](docs/Api/TransactionRefundApi.md#transactionrefundfindone) | **GET** /TransactionRefunds/findOne | Find first instance of the model matched by filter from the data source.
+*TransactionRefundApi* | [**transactionRefundPatchOrCreate**](docs/Api/TransactionRefundApi.md#transactionrefundpatchorcreate) | **PATCH** /TransactionRefunds | Patch an existing model instance or insert a new one into the data source.
+*TransactionRefundApi* | [**transactionRefundPrototypeGetTransaction**](docs/Api/TransactionRefundApi.md#transactionrefundprototypegettransaction) | **GET** /TransactionRefunds/{id}/transaction | Fetches belongsTo relation transaction.
+*TransactionRefundApi* | [**transactionRefundPrototypePatchAttributes**](docs/Api/TransactionRefundApi.md#transactionrefundprototypepatchattributes) | **PATCH** /TransactionRefunds/{id} | Patch attributes for a model instance and persist it into the data source.
+*TransactionRefundApi* | [**transactionRefundReplaceByIdPostTransactionRefundsidReplace**](docs/Api/TransactionRefundApi.md#transactionrefundreplacebyidposttransactionrefundsidreplace) | **POST** /TransactionRefunds/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*TransactionRefundApi* | [**transactionRefundReplaceByIdPutTransactionRefundsid**](docs/Api/TransactionRefundApi.md#transactionrefundreplacebyidputtransactionrefundsid) | **PUT** /TransactionRefunds/{id} | Replace attributes for a model instance and persist it into the data source.
+*TransactionRefundApi* | [**transactionRefundReplaceOrCreatePostTransactionRefundsReplaceOrCreate**](docs/Api/TransactionRefundApi.md#transactionrefundreplaceorcreateposttransactionrefundsreplaceorcreate) | **POST** /TransactionRefunds/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*TransactionRefundApi* | [**transactionRefundReplaceOrCreatePutTransactionRefunds**](docs/Api/TransactionRefundApi.md#transactionrefundreplaceorcreateputtransactionrefunds) | **PUT** /TransactionRefunds | Replace an existing model instance or insert a new one into the data source.
+*TransactionRefundApi* | [**transactionRefundUpdateAll**](docs/Api/TransactionRefundApi.md#transactionrefundupdateall) | **POST** /TransactionRefunds/update | Update instances of the model matched by {{where}} from the data source.
+*TransactionRefundApi* | [**transactionRefundUpsertWithWhere**](docs/Api/TransactionRefundApi.md#transactionrefundupsertwithwhere) | **POST** /TransactionRefunds/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*VATLineItemApi* | [**vATLineItemCount**](docs/Api/VATLineItemApi.md#vatlineitemcount) | **GET** /VATLineItems/count | Count instances of the model matched by where from the data source.
+*VATLineItemApi* | [**vATLineItemCreate**](docs/Api/VATLineItemApi.md#vatlineitemcreate) | **POST** /VATLineItems | Create a new instance of the model and persist it into the data source.
+*VATLineItemApi* | [**vATLineItemCreateChangeStreamGetVATLineItemsChangeStream**](docs/Api/VATLineItemApi.md#vatlineitemcreatechangestreamgetvatlineitemschangestream) | **GET** /VATLineItems/change-stream | Create a change stream.
+*VATLineItemApi* | [**vATLineItemCreateChangeStreamPostVATLineItemsChangeStream**](docs/Api/VATLineItemApi.md#vatlineitemcreatechangestreampostvatlineitemschangestream) | **POST** /VATLineItems/change-stream | Create a change stream.
+*VATLineItemApi* | [**vATLineItemDeleteById**](docs/Api/VATLineItemApi.md#vatlineitemdeletebyid) | **DELETE** /VATLineItems/{id} | Delete a model instance by {{id}} from the data source.
+*VATLineItemApi* | [**vATLineItemExistsGetVATLineItemsidExists**](docs/Api/VATLineItemApi.md#vatlineitemexistsgetvatlineitemsidexists) | **GET** /VATLineItems/{id}/exists | Check whether a model instance exists in the data source.
+*VATLineItemApi* | [**vATLineItemExistsHeadVATLineItemsid**](docs/Api/VATLineItemApi.md#vatlineitemexistsheadvatlineitemsid) | **HEAD** /VATLineItems/{id} | Check whether a model instance exists in the data source.
+*VATLineItemApi* | [**vATLineItemFind**](docs/Api/VATLineItemApi.md#vatlineitemfind) | **GET** /VATLineItems | Find all instances of the model matched by filter from the data source.
+*VATLineItemApi* | [**vATLineItemFindById**](docs/Api/VATLineItemApi.md#vatlineitemfindbyid) | **GET** /VATLineItems/{id} | Find a model instance by {{id}} from the data source.
+*VATLineItemApi* | [**vATLineItemFindOne**](docs/Api/VATLineItemApi.md#vatlineitemfindone) | **GET** /VATLineItems/findOne | Find first instance of the model matched by filter from the data source.
+*VATLineItemApi* | [**vATLineItemPatchOrCreate**](docs/Api/VATLineItemApi.md#vatlineitempatchorcreate) | **PATCH** /VATLineItems | Patch an existing model instance or insert a new one into the data source.
+*VATLineItemApi* | [**vATLineItemPrototypeGetOrder**](docs/Api/VATLineItemApi.md#vatlineitemprototypegetorder) | **GET** /VATLineItems/{id}/order | Fetches belongsTo relation order.
+*VATLineItemApi* | [**vATLineItemPrototypePatchAttributes**](docs/Api/VATLineItemApi.md#vatlineitemprototypepatchattributes) | **PATCH** /VATLineItems/{id} | Patch attributes for a model instance and persist it into the data source.
+*VATLineItemApi* | [**vATLineItemReplaceByIdPostVATLineItemsidReplace**](docs/Api/VATLineItemApi.md#vatlineitemreplacebyidpostvatlineitemsidreplace) | **POST** /VATLineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*VATLineItemApi* | [**vATLineItemReplaceByIdPutVATLineItemsid**](docs/Api/VATLineItemApi.md#vatlineitemreplacebyidputvatlineitemsid) | **PUT** /VATLineItems/{id} | Replace attributes for a model instance and persist it into the data source.
+*VATLineItemApi* | [**vATLineItemReplaceOrCreatePostVATLineItemsReplaceOrCreate**](docs/Api/VATLineItemApi.md#vatlineitemreplaceorcreatepostvatlineitemsreplaceorcreate) | **POST** /VATLineItems/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*VATLineItemApi* | [**vATLineItemReplaceOrCreatePutVATLineItems**](docs/Api/VATLineItemApi.md#vatlineitemreplaceorcreateputvatlineitems) | **PUT** /VATLineItems | Replace an existing model instance or insert a new one into the data source.
+*VATLineItemApi* | [**vATLineItemUpdateAll**](docs/Api/VATLineItemApi.md#vatlineitemupdateall) | **POST** /VATLineItems/update | Update instances of the model matched by {{where}} from the data source.
+*VATLineItemApi* | [**vATLineItemUpsertWithWhere**](docs/Api/VATLineItemApi.md#vatlineitemupsertwithwhere) | **POST** /VATLineItems/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
 
 ## Documentation For Models
@@ -345,8 +427,11 @@ Class | Method | HTTP request | Description
  - [SiteSubscriptions](docs/Model/SiteSubscriptions.md)
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionOrders](docs/Model/SubscriptionOrders.md)
+ - [Transaction](docs/Model/Transaction.md)
+ - [TransactionRefund](docs/Model/TransactionRefund.md)
  - [UserCredential](docs/Model/UserCredential.md)
  - [UserIdentity](docs/Model/UserIdentity.md)
+ - [VATLineItem](docs/Model/VATLineItem.md)
 
 
 ## Documentation For Authorization

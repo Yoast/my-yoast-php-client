@@ -129,10 +129,7 @@ class DiscountLineItemApi
         if ($where !== null) {
             $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -201,9 +198,6 @@ class DiscountLineItemApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
         // body params
         $_tempBody = null;
@@ -284,10 +278,7 @@ class DiscountLineItemApi
         if ($options !== null) {
             $queryParams['options'] = $this->apiClient->getSerializer()->toQueryValue($options);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -357,14 +348,11 @@ class DiscountLineItemApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // form params
         if ($options !== null) {
             $formParams['options'] = $this->apiClient->getSerializer()->toFormValue($options);
         }
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -446,10 +434,7 @@ class DiscountLineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -531,10 +516,7 @@ class DiscountLineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -616,10 +598,7 @@ class DiscountLineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -693,10 +672,7 @@ class DiscountLineItemApi
         if ($filter !== null) {
             $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -784,10 +760,7 @@ class DiscountLineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -861,10 +834,7 @@ class DiscountLineItemApi
         if ($filter !== null) {
             $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -934,9 +904,6 @@ class DiscountLineItemApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -975,39 +942,39 @@ class DiscountLineItemApi
     }
 
     /**
-     * Operation discountLineItemPrototypeGetLineItem
+     * Operation discountLineItemPrototypeGetOrder
      *
-     * Fetches belongsTo relation lineItem.
+     * Fetches belongsTo relation order.
      *
      * @param string $id DiscountLineItem id (required)
      * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\LineItem
+     * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function discountLineItemPrototypeGetLineItem($id, $refresh = null)
+    public function discountLineItemPrototypeGetOrder($id, $refresh = null)
     {
-        list($response) = $this->discountLineItemPrototypeGetLineItemWithHttpInfo($id, $refresh);
+        list($response) = $this->discountLineItemPrototypeGetOrderWithHttpInfo($id, $refresh);
         return $response;
     }
 
     /**
-     * Operation discountLineItemPrototypeGetLineItemWithHttpInfo
+     * Operation discountLineItemPrototypeGetOrderWithHttpInfo
      *
-     * Fetches belongsTo relation lineItem.
+     * Fetches belongsTo relation order.
      *
      * @param string $id DiscountLineItem id (required)
      * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\LineItem, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function discountLineItemPrototypeGetLineItemWithHttpInfo($id, $refresh = null)
+    public function discountLineItemPrototypeGetOrderWithHttpInfo($id, $refresh = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling discountLineItemPrototypeGetLineItem');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling discountLineItemPrototypeGetOrder');
         }
         // parse inputs
-        $resourcePath = "/DiscountLineItems/{id}/lineItem";
+        $resourcePath = "/DiscountLineItems/{id}/order";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1030,10 +997,7 @@ class DiscountLineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1048,15 +1012,15 @@ class DiscountLineItemApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\LineItem',
-                '/DiscountLineItems/{id}/lineItem'
+                '\Yoast\MyYoastApiClient\Model\Order',
+                '/DiscountLineItems/{id}/order'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\LineItem', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Order', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\LineItem', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Order', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1117,9 +1081,6 @@ class DiscountLineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -1209,9 +1170,6 @@ class DiscountLineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -1301,9 +1259,6 @@ class DiscountLineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -1379,9 +1334,6 @@ class DiscountLineItemApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -1456,9 +1408,6 @@ class DiscountLineItemApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
         // body params
         $_tempBody = null;
@@ -1541,9 +1490,6 @@ class DiscountLineItemApi
         if ($where !== null) {
             $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -1625,9 +1571,6 @@ class DiscountLineItemApi
         if ($where !== null) {
             $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

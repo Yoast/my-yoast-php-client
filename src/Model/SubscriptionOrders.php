@@ -54,9 +54,19 @@ class SubscriptionOrders implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'id' => 'string',
         'subscription_id' => 'string',
-        'order_id' => 'string',
-        'id' => 'double'
+        'order_id' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'subscription_id' => null,
+        'order_id' => null
     ];
 
     public static function swaggerTypes()
@@ -64,14 +74,19 @@ class SubscriptionOrders implements ArrayAccess
         return self::$swaggerTypes;
     }
 
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
+    }
+
     /**
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'subscription_id' => 'subscriptionId',
-        'order_id' => 'orderId',
-        'id' => 'id'
+        'order_id' => 'orderId'
     ];
 
 
@@ -80,9 +95,9 @@ class SubscriptionOrders implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'subscription_id' => 'setSubscriptionId',
-        'order_id' => 'setOrderId',
-        'id' => 'setId'
+        'order_id' => 'setOrderId'
     ];
 
 
@@ -91,9 +106,9 @@ class SubscriptionOrders implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'subscription_id' => 'getSubscriptionId',
-        'order_id' => 'getOrderId',
-        'id' => 'getId'
+        'order_id' => 'getOrderId'
     ];
 
     public static function attributeMap()
@@ -127,9 +142,9 @@ class SubscriptionOrders implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
         $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -141,6 +156,9 @@ class SubscriptionOrders implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
+        }
         if ($this->container['subscription_id'] === null) {
             $invalid_properties[] = "'subscription_id' can't be null";
         }
@@ -159,6 +177,9 @@ class SubscriptionOrders implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['id'] === null) {
+            return false;
+        }
         if ($this->container['subscription_id'] === null) {
             return false;
         }
@@ -168,6 +189,27 @@ class SubscriptionOrders implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets subscription_id
@@ -207,27 +249,6 @@ class SubscriptionOrders implements ArrayAccess
     public function setOrderId($order_id)
     {
         $this->container['order_id'] = $order_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     * @return double
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param double $id
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
 
         return $this;
     }

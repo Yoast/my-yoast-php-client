@@ -108,7 +108,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/\Yoast\MyYoastApiClient\Model\Product.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -542,7 +542,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/\Yoast\MyYoastApiClient\Model\Product.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -677,7 +677,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Product id |
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)|  | [optional]
 
 ### Return type
 
@@ -722,7 +722,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Product id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
 
 ### Return type
 
@@ -1119,7 +1119,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Product id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/\Yoast\MyYoastApiClient\Model\Product.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
@@ -1166,7 +1166,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Product id |
  **fk** | **string**| Foreign key for lineItems |
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)|  | [optional]
 
 ### Return type
 
@@ -1213,7 +1213,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Product id |
  **fk** | **string**| Foreign key for subscriptions |
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
 
 ### Return type
 
@@ -1258,7 +1258,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/\Yoast\MyYoastApiClient\Model\Product.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1303,7 +1303,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/\Yoast\MyYoastApiClient\Model\Product.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1346,7 +1346,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/\Yoast\MyYoastApiClient\Model\Product.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1389,7 +1389,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/\Yoast\MyYoastApiClient\Model\Product.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1434,7 +1434,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/\Yoast\MyYoastApiClient\Model\Product.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
@@ -1479,7 +1479,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/\Yoast\MyYoastApiClient\Model\Product.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 

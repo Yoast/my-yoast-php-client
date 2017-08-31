@@ -20,7 +20,8 @@ Method | HTTP request | Description
 [**customerLogin**](CustomerApi.md#customerLogin) | **POST** /Customers/login | Login a user with username/email and password.
 [**customerLogout**](CustomerApi.md#customerLogout) | **POST** /Customers/logout | Logout a user with access token.
 [**customerPatchOrCreate**](CustomerApi.md#customerPatchOrCreate) | **PATCH** /Customers | Patch an existing model instance or insert a new one into the data source.
-[**customerProfile**](CustomerApi.md#customerProfile) | **GET** /Customers/{id}/profile | 
+[**customerPatchProfile**](CustomerApi.md#customerPatchProfile) | **PATCH** /Customers/{id}/profile | Updates the profile with the supplied information.
+[**customerProfile**](CustomerApi.md#customerProfile) | **GET** /Customers/{id}/profile | Finds the profile for the customer with the given id.
 [**customerPrototypeCountAccessTokens**](CustomerApi.md#customerPrototypeCountAccessTokens) | **GET** /Customers/{id}/accessTokens/count | Counts accessTokens of Customer.
 [**customerPrototypeCountCredentials**](CustomerApi.md#customerPrototypeCountCredentials) | **GET** /Customers/{id}/credentials/count | Counts credentials of Customer.
 [**customerPrototypeCountIdentities**](CustomerApi.md#customerPrototypeCountIdentities) | **GET** /Customers/{id}/identities/count | Counts identities of Customer.
@@ -232,7 +233,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/\Yoast\MyYoastApiClient\Model\Customer.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -747,7 +748,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/\Yoast\MyYoastApiClient\Model\Customer.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -764,10 +765,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerProfile**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2003 customerProfile($id)
+# **customerPatchProfile**
+> object customerPatchProfile($id, $profile)
 
-
+Updates the profile with the supplied information.
 
 ### Example
 ```php
@@ -775,7 +776,52 @@ No authorization required
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = 56; // int | 
+$id = "id_example"; // string | 
+$profile = NULL; // object | 
+
+try {
+    $result = $api_instance->customerPatchProfile($id, $profile);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerPatchProfile: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **profile** | **object**|  | [optional]
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerProfile**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2003 customerProfile($id)
+
+Finds the profile for the customer with the given id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | 
 
 try {
     $result = $api_instance->customerProfile($id);
@@ -790,7 +836,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**|  |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -1105,7 +1151,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\AccessToken**](../Model/\Yoast\MyYoastApiClient\Model\AccessToken.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\AccessToken**](../Model/AccessToken.md)|  | [optional]
 
 ### Return type
 
@@ -1150,7 +1196,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\UserCredential**](../Model/\Yoast\MyYoastApiClient\Model\UserCredential.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\UserCredential**](../Model/UserCredential.md)|  | [optional]
 
 ### Return type
 
@@ -1195,7 +1241,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\UserIdentity**](../Model/\Yoast\MyYoastApiClient\Model\UserIdentity.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\UserIdentity**](../Model/UserIdentity.md)|  | [optional]
 
 ### Return type
 
@@ -1240,7 +1286,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)|  | [optional]
 
 ### Return type
 
@@ -1285,7 +1331,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/\Yoast\MyYoastApiClient\Model\Site.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)|  | [optional]
 
 ### Return type
 
@@ -1330,7 +1376,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
 
 ### Return type
 
@@ -2431,7 +2477,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/\Yoast\MyYoastApiClient\Model\Customer.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
@@ -2478,7 +2524,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
  **fk** | **string**| Foreign key for accessTokens |
- **data** | [**\Yoast\MyYoastApiClient\Model\AccessToken**](../Model/\Yoast\MyYoastApiClient\Model\AccessToken.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\AccessToken**](../Model/AccessToken.md)|  | [optional]
 
 ### Return type
 
@@ -2525,7 +2571,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
  **fk** | **string**| Foreign key for credentials |
- **data** | [**\Yoast\MyYoastApiClient\Model\UserCredential**](../Model/\Yoast\MyYoastApiClient\Model\UserCredential.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\UserCredential**](../Model/UserCredential.md)|  | [optional]
 
 ### Return type
 
@@ -2572,7 +2618,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
  **fk** | **string**| Foreign key for identities |
- **data** | [**\Yoast\MyYoastApiClient\Model\UserIdentity**](../Model/\Yoast\MyYoastApiClient\Model\UserIdentity.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\UserIdentity**](../Model/UserIdentity.md)|  | [optional]
 
 ### Return type
 
@@ -2619,7 +2665,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
  **fk** | **string**| Foreign key for orders |
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)|  | [optional]
 
 ### Return type
 
@@ -2666,7 +2712,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
  **fk** | **string**| Foreign key for sites |
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/\Yoast\MyYoastApiClient\Model\Site.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)|  | [optional]
 
 ### Return type
 
@@ -2713,7 +2759,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
  **fk** | **string**| Foreign key for subscriptions |
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
 
 ### Return type
 
@@ -2758,7 +2804,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/\Yoast\MyYoastApiClient\Model\Customer.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -2803,7 +2849,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/\Yoast\MyYoastApiClient\Model\Customer.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -2846,7 +2892,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/\Yoast\MyYoastApiClient\Model\Customer.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -2889,7 +2935,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/\Yoast\MyYoastApiClient\Model\Customer.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -2976,7 +3022,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/\Yoast\MyYoastApiClient\Model\Customer.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
@@ -3021,7 +3067,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/\Yoast\MyYoastApiClient\Model\Customer.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 

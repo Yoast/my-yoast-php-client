@@ -17,22 +17,46 @@ Method | HTTP request | Description
 [**orderFromWooCommerce**](OrderApi.md#orderFromWooCommerce) | **PUT** /Orders/fromWooCommerce | 
 [**orderInvoice**](OrderApi.md#orderInvoice) | **GET** /Orders/{id}/invoice | 
 [**orderPatchOrCreate**](OrderApi.md#orderPatchOrCreate) | **PATCH** /Orders | Patch an existing model instance or insert a new one into the data source.
+[**orderPrototypeCountDiscounts**](OrderApi.md#orderPrototypeCountDiscounts) | **GET** /Orders/{id}/discounts/count | Counts discounts of Order.
 [**orderPrototypeCountItems**](OrderApi.md#orderPrototypeCountItems) | **GET** /Orders/{id}/items/count | Counts items of Order.
-[**orderPrototypeCountSubscription**](OrderApi.md#orderPrototypeCountSubscription) | **GET** /Orders/{id}/subscription/count | Counts subscription of Order.
+[**orderPrototypeCountSubscriptions**](OrderApi.md#orderPrototypeCountSubscriptions) | **GET** /Orders/{id}/subscriptions/count | Counts subscriptions of Order.
+[**orderPrototypeCountTransactions**](OrderApi.md#orderPrototypeCountTransactions) | **GET** /Orders/{id}/transactions/count | Counts transactions of Order.
+[**orderPrototypeCountVats**](OrderApi.md#orderPrototypeCountVats) | **GET** /Orders/{id}/vats/count | Counts vats of Order.
+[**orderPrototypeCreateDiscounts**](OrderApi.md#orderPrototypeCreateDiscounts) | **POST** /Orders/{id}/discounts | Creates a new instance in discounts of this model.
 [**orderPrototypeCreateItems**](OrderApi.md#orderPrototypeCreateItems) | **POST** /Orders/{id}/items | Creates a new instance in items of this model.
-[**orderPrototypeCreateSubscription**](OrderApi.md#orderPrototypeCreateSubscription) | **POST** /Orders/{id}/subscription | Creates a new instance in subscription of this model.
+[**orderPrototypeCreateSubscriptions**](OrderApi.md#orderPrototypeCreateSubscriptions) | **POST** /Orders/{id}/subscriptions | Creates a new instance in subscriptions of this model.
+[**orderPrototypeCreateTransactions**](OrderApi.md#orderPrototypeCreateTransactions) | **POST** /Orders/{id}/transactions | Creates a new instance in transactions of this model.
+[**orderPrototypeCreateVats**](OrderApi.md#orderPrototypeCreateVats) | **POST** /Orders/{id}/vats | Creates a new instance in vats of this model.
+[**orderPrototypeDeleteDiscounts**](OrderApi.md#orderPrototypeDeleteDiscounts) | **DELETE** /Orders/{id}/discounts | Deletes all discounts of this model.
 [**orderPrototypeDeleteItems**](OrderApi.md#orderPrototypeDeleteItems) | **DELETE** /Orders/{id}/items | Deletes all items of this model.
-[**orderPrototypeDeleteSubscription**](OrderApi.md#orderPrototypeDeleteSubscription) | **DELETE** /Orders/{id}/subscription | Deletes all subscription of this model.
+[**orderPrototypeDeleteSubscriptions**](OrderApi.md#orderPrototypeDeleteSubscriptions) | **DELETE** /Orders/{id}/subscriptions | Deletes all subscriptions of this model.
+[**orderPrototypeDeleteTransactions**](OrderApi.md#orderPrototypeDeleteTransactions) | **DELETE** /Orders/{id}/transactions | Deletes all transactions of this model.
+[**orderPrototypeDeleteVats**](OrderApi.md#orderPrototypeDeleteVats) | **DELETE** /Orders/{id}/vats | Deletes all vats of this model.
+[**orderPrototypeDestroyByIdDiscounts**](OrderApi.md#orderPrototypeDestroyByIdDiscounts) | **DELETE** /Orders/{id}/discounts/{fk} | Delete a related item by id for discounts.
 [**orderPrototypeDestroyByIdItems**](OrderApi.md#orderPrototypeDestroyByIdItems) | **DELETE** /Orders/{id}/items/{fk} | Delete a related item by id for items.
-[**orderPrototypeDestroyByIdSubscription**](OrderApi.md#orderPrototypeDestroyByIdSubscription) | **DELETE** /Orders/{id}/subscription/{fk} | Delete a related item by id for subscription.
+[**orderPrototypeDestroyByIdSubscriptions**](OrderApi.md#orderPrototypeDestroyByIdSubscriptions) | **DELETE** /Orders/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
+[**orderPrototypeDestroyByIdTransactions**](OrderApi.md#orderPrototypeDestroyByIdTransactions) | **DELETE** /Orders/{id}/transactions/{fk} | Delete a related item by id for transactions.
+[**orderPrototypeDestroyByIdVats**](OrderApi.md#orderPrototypeDestroyByIdVats) | **DELETE** /Orders/{id}/vats/{fk} | Delete a related item by id for vats.
+[**orderPrototypeExistsSubscriptions**](OrderApi.md#orderPrototypeExistsSubscriptions) | **HEAD** /Orders/{id}/subscriptions/rel/{fk} | Check the existence of subscriptions relation to an item by id.
+[**orderPrototypeFindByIdDiscounts**](OrderApi.md#orderPrototypeFindByIdDiscounts) | **GET** /Orders/{id}/discounts/{fk} | Find a related item by id for discounts.
 [**orderPrototypeFindByIdItems**](OrderApi.md#orderPrototypeFindByIdItems) | **GET** /Orders/{id}/items/{fk} | Find a related item by id for items.
-[**orderPrototypeFindByIdSubscription**](OrderApi.md#orderPrototypeFindByIdSubscription) | **GET** /Orders/{id}/subscription/{fk} | Find a related item by id for subscription.
+[**orderPrototypeFindByIdSubscriptions**](OrderApi.md#orderPrototypeFindByIdSubscriptions) | **GET** /Orders/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
+[**orderPrototypeFindByIdTransactions**](OrderApi.md#orderPrototypeFindByIdTransactions) | **GET** /Orders/{id}/transactions/{fk} | Find a related item by id for transactions.
+[**orderPrototypeFindByIdVats**](OrderApi.md#orderPrototypeFindByIdVats) | **GET** /Orders/{id}/vats/{fk} | Find a related item by id for vats.
 [**orderPrototypeGetCustomer**](OrderApi.md#orderPrototypeGetCustomer) | **GET** /Orders/{id}/customer | Fetches belongsTo relation customer.
+[**orderPrototypeGetDiscounts**](OrderApi.md#orderPrototypeGetDiscounts) | **GET** /Orders/{id}/discounts | Queries discounts of Order.
 [**orderPrototypeGetItems**](OrderApi.md#orderPrototypeGetItems) | **GET** /Orders/{id}/items | Queries items of Order.
-[**orderPrototypeGetSubscription**](OrderApi.md#orderPrototypeGetSubscription) | **GET** /Orders/{id}/subscription | Queries subscription of Order.
+[**orderPrototypeGetSubscriptions**](OrderApi.md#orderPrototypeGetSubscriptions) | **GET** /Orders/{id}/subscriptions | Queries subscriptions of Order.
+[**orderPrototypeGetTransactions**](OrderApi.md#orderPrototypeGetTransactions) | **GET** /Orders/{id}/transactions | Queries transactions of Order.
+[**orderPrototypeGetVats**](OrderApi.md#orderPrototypeGetVats) | **GET** /Orders/{id}/vats | Queries vats of Order.
+[**orderPrototypeLinkSubscriptions**](OrderApi.md#orderPrototypeLinkSubscriptions) | **PUT** /Orders/{id}/subscriptions/rel/{fk} | Add a related item by id for subscriptions.
 [**orderPrototypePatchAttributes**](OrderApi.md#orderPrototypePatchAttributes) | **PATCH** /Orders/{id} | Patch attributes for a model instance and persist it into the data source.
+[**orderPrototypeUnlinkSubscriptions**](OrderApi.md#orderPrototypeUnlinkSubscriptions) | **DELETE** /Orders/{id}/subscriptions/rel/{fk} | Remove the subscriptions relation to an item by id.
+[**orderPrototypeUpdateByIdDiscounts**](OrderApi.md#orderPrototypeUpdateByIdDiscounts) | **PUT** /Orders/{id}/discounts/{fk} | Update a related item by id for discounts.
 [**orderPrototypeUpdateByIdItems**](OrderApi.md#orderPrototypeUpdateByIdItems) | **PUT** /Orders/{id}/items/{fk} | Update a related item by id for items.
-[**orderPrototypeUpdateByIdSubscription**](OrderApi.md#orderPrototypeUpdateByIdSubscription) | **PUT** /Orders/{id}/subscription/{fk} | Update a related item by id for subscription.
+[**orderPrototypeUpdateByIdSubscriptions**](OrderApi.md#orderPrototypeUpdateByIdSubscriptions) | **PUT** /Orders/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
+[**orderPrototypeUpdateByIdTransactions**](OrderApi.md#orderPrototypeUpdateByIdTransactions) | **PUT** /Orders/{id}/transactions/{fk} | Update a related item by id for transactions.
+[**orderPrototypeUpdateByIdVats**](OrderApi.md#orderPrototypeUpdateByIdVats) | **PUT** /Orders/{id}/vats/{fk} | Update a related item by id for vats.
 [**orderReplaceByIdPostOrdersidReplace**](OrderApi.md#orderReplaceByIdPostOrdersidReplace) | **POST** /Orders/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 [**orderReplaceByIdPutOrdersid**](OrderApi.md#orderReplaceByIdPutOrdersid) | **PUT** /Orders/{id} | Replace attributes for a model instance and persist it into the data source.
 [**orderReplaceOrCreatePostOrdersReplaceOrCreate**](OrderApi.md#orderReplaceOrCreatePostOrdersReplaceOrCreate) | **POST** /Orders/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -110,7 +134,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -587,11 +611,56 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)| Model instance data | [optional]
 
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeCountDiscounts**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 orderPrototypeCountDiscounts($id, $where)
+
+Counts discounts of Order.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->orderPrototypeCountDiscounts($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeCountDiscounts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -649,10 +718,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderPrototypeCountSubscription**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 orderPrototypeCountSubscription($id, $where)
+# **orderPrototypeCountSubscriptions**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 orderPrototypeCountSubscriptions($id, $where)
 
-Counts subscription of Order.
+Counts subscriptions of Order.
 
 ### Example
 ```php
@@ -664,10 +733,10 @@ $id = "id_example"; // string | Order id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->orderPrototypeCountSubscription($id, $where);
+    $result = $api_instance->orderPrototypeCountSubscriptions($id, $where);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderPrototypeCountSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeCountSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -682,6 +751,141 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeCountTransactions**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 orderPrototypeCountTransactions($id, $where)
+
+Counts transactions of Order.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->orderPrototypeCountTransactions($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeCountTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeCountVats**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 orderPrototypeCountVats($id, $where)
+
+Counts vats of Order.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->orderPrototypeCountVats($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeCountVats: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeCreateDiscounts**
+> \Yoast\MyYoastApiClient\Model\DiscountLineItem orderPrototypeCreateDiscounts($id, $data)
+
+Creates a new instance in discounts of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | 
+
+try {
+    $result = $api_instance->orderPrototypeCreateDiscounts($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeCreateDiscounts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)
 
 ### Authorization
 
@@ -722,7 +926,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Order id |
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)|  | [optional]
 
 ### Return type
 
@@ -739,10 +943,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderPrototypeCreateSubscription**
-> \Yoast\MyYoastApiClient\Model\SubscriptionOrders orderPrototypeCreateSubscription($id, $data)
+# **orderPrototypeCreateSubscriptions**
+> \Yoast\MyYoastApiClient\Model\Subscription orderPrototypeCreateSubscriptions($id, $data)
 
-Creates a new instance in subscription of this model.
+Creates a new instance in subscriptions of this model.
 
 ### Example
 ```php
@@ -751,13 +955,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
-$data = new \Yoast\MyYoastApiClient\Model\SubscriptionOrders(); // \Yoast\MyYoastApiClient\Model\SubscriptionOrders | 
+$data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
 
 try {
-    $result = $api_instance->orderPrototypeCreateSubscription($id, $data);
+    $result = $api_instance->orderPrototypeCreateSubscriptions($id, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderPrototypeCreateSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeCreateSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -767,11 +971,143 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Order id |
- **data** | [**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/\Yoast\MyYoastApiClient\Model\SubscriptionOrders.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/SubscriptionOrders.md)
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeCreateTransactions**
+> \Yoast\MyYoastApiClient\Model\Transaction orderPrototypeCreateTransactions($id, $data)
+
+Creates a new instance in transactions of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | 
+
+try {
+    $result = $api_instance->orderPrototypeCreateTransactions($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeCreateTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeCreateVats**
+> \Yoast\MyYoastApiClient\Model\VATLineItem orderPrototypeCreateVats($id, $data)
+
+Creates a new instance in vats of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | 
+
+try {
+    $result = $api_instance->orderPrototypeCreateVats($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeCreateVats: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\VATLineItem**](../Model/VATLineItem.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\VATLineItem**](../Model/VATLineItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeDeleteDiscounts**
+> orderPrototypeDeleteDiscounts($id)
+
+Deletes all discounts of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+
+try {
+    $api_instance->orderPrototypeDeleteDiscounts($id);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeDeleteDiscounts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -826,10 +1162,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderPrototypeDeleteSubscription**
-> orderPrototypeDeleteSubscription($id)
+# **orderPrototypeDeleteSubscriptions**
+> orderPrototypeDeleteSubscriptions($id)
 
-Deletes all subscription of this model.
+Deletes all subscriptions of this model.
 
 ### Example
 ```php
@@ -840,9 +1176,9 @@ $api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 
 try {
-    $api_instance->orderPrototypeDeleteSubscription($id);
+    $api_instance->orderPrototypeDeleteSubscriptions($id);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderPrototypeDeleteSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeDeleteSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -852,6 +1188,134 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Order id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeDeleteTransactions**
+> orderPrototypeDeleteTransactions($id)
+
+Deletes all transactions of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+
+try {
+    $api_instance->orderPrototypeDeleteTransactions($id);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeDeleteTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeDeleteVats**
+> orderPrototypeDeleteVats($id)
+
+Deletes all vats of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+
+try {
+    $api_instance->orderPrototypeDeleteVats($id);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeDeleteVats: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeDestroyByIdDiscounts**
+> orderPrototypeDestroyByIdDiscounts($id, $fk)
+
+Delete a related item by id for discounts.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for discounts
+
+try {
+    $api_instance->orderPrototypeDestroyByIdDiscounts($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdDiscounts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for discounts |
 
 ### Return type
 
@@ -912,10 +1376,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderPrototypeDestroyByIdSubscription**
-> orderPrototypeDestroyByIdSubscription($id, $fk)
+# **orderPrototypeDestroyByIdSubscriptions**
+> orderPrototypeDestroyByIdSubscriptions($id, $fk)
 
-Delete a related item by id for subscription.
+Delete a related item by id for subscriptions.
 
 ### Example
 ```php
@@ -924,12 +1388,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
-$fk = "fk_example"; // string | Foreign key for subscription
+$fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $api_instance->orderPrototypeDestroyByIdSubscription($id, $fk);
+    $api_instance->orderPrototypeDestroyByIdSubscriptions($id, $fk);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -939,11 +1403,189 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Order id |
- **fk** | **string**| Foreign key for subscription |
+ **fk** | **string**| Foreign key for subscriptions |
 
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeDestroyByIdTransactions**
+> orderPrototypeDestroyByIdTransactions($id, $fk)
+
+Delete a related item by id for transactions.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for transactions
+
+try {
+    $api_instance->orderPrototypeDestroyByIdTransactions($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for transactions |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeDestroyByIdVats**
+> orderPrototypeDestroyByIdVats($id, $fk)
+
+Delete a related item by id for vats.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for vats
+
+try {
+    $api_instance->orderPrototypeDestroyByIdVats($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdVats: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for vats |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeExistsSubscriptions**
+> bool orderPrototypeExistsSubscriptions($id, $fk)
+
+Check the existence of subscriptions relation to an item by id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for subscriptions
+
+try {
+    $result = $api_instance->orderPrototypeExistsSubscriptions($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeExistsSubscriptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for subscriptions |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeFindByIdDiscounts**
+> \Yoast\MyYoastApiClient\Model\DiscountLineItem orderPrototypeFindByIdDiscounts($id, $fk)
+
+Find a related item by id for discounts.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for discounts
+
+try {
+    $result = $api_instance->orderPrototypeFindByIdDiscounts($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeFindByIdDiscounts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for discounts |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)
 
 ### Authorization
 
@@ -1001,10 +1643,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderPrototypeFindByIdSubscription**
-> \Yoast\MyYoastApiClient\Model\SubscriptionOrders orderPrototypeFindByIdSubscription($id, $fk)
+# **orderPrototypeFindByIdSubscriptions**
+> \Yoast\MyYoastApiClient\Model\Subscription orderPrototypeFindByIdSubscriptions($id, $fk)
 
-Find a related item by id for subscription.
+Find a related item by id for subscriptions.
 
 ### Example
 ```php
@@ -1013,13 +1655,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
-$fk = "fk_example"; // string | Foreign key for subscription
+$fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $result = $api_instance->orderPrototypeFindByIdSubscription($id, $fk);
+    $result = $api_instance->orderPrototypeFindByIdSubscriptions($id, $fk);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderPrototypeFindByIdSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeFindByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1029,11 +1671,101 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Order id |
- **fk** | **string**| Foreign key for subscription |
+ **fk** | **string**| Foreign key for subscriptions |
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/SubscriptionOrders.md)
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeFindByIdTransactions**
+> \Yoast\MyYoastApiClient\Model\Transaction orderPrototypeFindByIdTransactions($id, $fk)
+
+Find a related item by id for transactions.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for transactions
+
+try {
+    $result = $api_instance->orderPrototypeFindByIdTransactions($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeFindByIdTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for transactions |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeFindByIdVats**
+> \Yoast\MyYoastApiClient\Model\VATLineItem orderPrototypeFindByIdVats($id, $fk)
+
+Find a related item by id for vats.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for vats
+
+try {
+    $result = $api_instance->orderPrototypeFindByIdVats($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeFindByIdVats: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for vats |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\VATLineItem**](../Model/VATLineItem.md)
 
 ### Authorization
 
@@ -1091,6 +1823,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **orderPrototypeGetDiscounts**
+> \Yoast\MyYoastApiClient\Model\DiscountLineItem[] orderPrototypeGetDiscounts($id, $filter)
+
+Queries discounts of Order.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->orderPrototypeGetDiscounts($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeGetDiscounts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\DiscountLineItem[]**](../Model/DiscountLineItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **orderPrototypeGetItems**
 > \Yoast\MyYoastApiClient\Model\LineItem[] orderPrototypeGetItems($id, $filter)
 
@@ -1136,10 +1913,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderPrototypeGetSubscription**
-> \Yoast\MyYoastApiClient\Model\SubscriptionOrders[] orderPrototypeGetSubscription($id, $filter)
+# **orderPrototypeGetSubscriptions**
+> \Yoast\MyYoastApiClient\Model\Subscription[] orderPrototypeGetSubscriptions($id, $filter)
 
-Queries subscription of Order.
+Queries subscriptions of Order.
 
 ### Example
 ```php
@@ -1151,10 +1928,10 @@ $id = "id_example"; // string | Order id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $api_instance->orderPrototypeGetSubscription($id, $filter);
+    $result = $api_instance->orderPrototypeGetSubscriptions($id, $filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderPrototypeGetSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeGetSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1168,7 +1945,144 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\SubscriptionOrders[]**](../Model/SubscriptionOrders.md)
+[**\Yoast\MyYoastApiClient\Model\Subscription[]**](../Model/Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeGetTransactions**
+> \Yoast\MyYoastApiClient\Model\Transaction[] orderPrototypeGetTransactions($id, $filter)
+
+Queries transactions of Order.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->orderPrototypeGetTransactions($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeGetTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Transaction[]**](../Model/Transaction.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeGetVats**
+> \Yoast\MyYoastApiClient\Model\VATLineItem[] orderPrototypeGetVats($id, $filter)
+
+Queries vats of Order.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->orderPrototypeGetVats($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeGetVats: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\VATLineItem[]**](../Model/VATLineItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeLinkSubscriptions**
+> \Yoast\MyYoastApiClient\Model\SubscriptionOrders orderPrototypeLinkSubscriptions($id, $fk, $data)
+
+Add a related item by id for subscriptions.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for subscriptions
+$data = new \Yoast\MyYoastApiClient\Model\SubscriptionOrders(); // \Yoast\MyYoastApiClient\Model\SubscriptionOrders | 
+
+try {
+    $result = $api_instance->orderPrototypeLinkSubscriptions($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeLinkSubscriptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for subscriptions |
+ **data** | [**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/SubscriptionOrders.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/SubscriptionOrders.md)
 
 ### Authorization
 
@@ -1209,11 +2123,102 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Order id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeUnlinkSubscriptions**
+> orderPrototypeUnlinkSubscriptions($id, $fk)
+
+Remove the subscriptions relation to an item by id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for subscriptions
+
+try {
+    $api_instance->orderPrototypeUnlinkSubscriptions($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeUnlinkSubscriptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for subscriptions |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeUpdateByIdDiscounts**
+> \Yoast\MyYoastApiClient\Model\DiscountLineItem orderPrototypeUpdateByIdDiscounts($id, $fk, $data)
+
+Update a related item by id for discounts.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for discounts
+$data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | 
+
+try {
+    $result = $api_instance->orderPrototypeUpdateByIdDiscounts($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdDiscounts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for discounts |
+ **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)
 
 ### Authorization
 
@@ -1256,7 +2261,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Order id |
  **fk** | **string**| Foreign key for items |
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)|  | [optional]
 
 ### Return type
 
@@ -1273,10 +2278,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderPrototypeUpdateByIdSubscription**
-> \Yoast\MyYoastApiClient\Model\SubscriptionOrders orderPrototypeUpdateByIdSubscription($id, $fk, $data)
+# **orderPrototypeUpdateByIdSubscriptions**
+> \Yoast\MyYoastApiClient\Model\Subscription orderPrototypeUpdateByIdSubscriptions($id, $fk, $data)
 
-Update a related item by id for subscription.
+Update a related item by id for subscriptions.
 
 ### Example
 ```php
@@ -1285,14 +2290,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
-$fk = "fk_example"; // string | Foreign key for subscription
-$data = new \Yoast\MyYoastApiClient\Model\SubscriptionOrders(); // \Yoast\MyYoastApiClient\Model\SubscriptionOrders | 
+$fk = "fk_example"; // string | Foreign key for subscriptions
+$data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
 
 try {
-    $result = $api_instance->orderPrototypeUpdateByIdSubscription($id, $fk, $data);
+    $result = $api_instance->orderPrototypeUpdateByIdSubscriptions($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1302,12 +2307,106 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Order id |
- **fk** | **string**| Foreign key for subscription |
- **data** | [**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/\Yoast\MyYoastApiClient\Model\SubscriptionOrders.md)|  | [optional]
+ **fk** | **string**| Foreign key for subscriptions |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/SubscriptionOrders.md)
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeUpdateByIdTransactions**
+> \Yoast\MyYoastApiClient\Model\Transaction orderPrototypeUpdateByIdTransactions($id, $fk, $data)
+
+Update a related item by id for transactions.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for transactions
+$data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | 
+
+try {
+    $result = $api_instance->orderPrototypeUpdateByIdTransactions($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdTransactions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for transactions |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Transaction**](../Model/Transaction.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeUpdateByIdVats**
+> \Yoast\MyYoastApiClient\Model\VATLineItem orderPrototypeUpdateByIdVats($id, $fk, $data)
+
+Update a related item by id for vats.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for vats
+$data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | 
+
+try {
+    $result = $api_instance->orderPrototypeUpdateByIdVats($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdVats: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for vats |
+ **data** | [**\Yoast\MyYoastApiClient\Model\VATLineItem**](../Model/VATLineItem.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\VATLineItem**](../Model/VATLineItem.md)
 
 ### Authorization
 
@@ -1348,7 +2447,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1393,7 +2492,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1436,7 +2535,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1479,7 +2578,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1524,7 +2623,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
@@ -1569,7 +2668,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 

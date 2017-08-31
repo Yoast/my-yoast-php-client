@@ -47,7 +47,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrder()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,7 +89,13 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTotalAmount()
     {
+    }
 
+    /**
+     * Test attribute "subtotal_amount"
+     */
+    public function testPropertySubtotalAmount()
+    {
     }
 
     /**
@@ -103,7 +103,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDate()
     {
-
     }
 
     /**
@@ -111,7 +110,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVatNumber()
     {
-
     }
 
     /**
@@ -119,7 +117,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCustomerId()
     {
-
     }
 
     /**
@@ -127,7 +124,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCountryOfOrigin()
     {
-
     }
 
     /**
@@ -135,7 +131,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPaymentProvider()
     {
-
     }
 
     /**
@@ -143,7 +138,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPaymentGateway()
     {
-
     }
 
     /**
@@ -151,7 +145,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPaymentReference()
     {
-
     }
 
     /**
@@ -159,7 +152,13 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVatTotal()
     {
+    }
 
+    /**
+     * Test attribute "discount_total"
+     */
+    public function testPropertyDiscountTotal()
+    {
     }
 
     /**
@@ -167,7 +166,6 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGlNumber()
     {
-
     }
 
     /**
@@ -175,7 +173,117 @@ class OrderTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyStatus()
     {
-
     }
 
+    /**
+     * Test attribute "source_id"
+     */
+    public function testPropertySourceId()
+    {
+    }
+
+    /**
+     * Test attribute "source_shop_id"
+     */
+    public function testPropertySourceShopId()
+    {
+    }
+
+    /**
+     * Test attribute "invoice_number"
+     */
+    public function testPropertyInvoiceNumber()
+    {
+    }
+
+    /**
+     * Test attribute "currency"
+     */
+    public function testPropertyCurrency()
+    {
+    }
+
+    /**
+     * Test attribute "customer_email"
+     */
+    public function testPropertyCustomerEmail()
+    {
+    }
+
+    /**
+     * Test attribute "customer_first_name"
+     */
+    public function testPropertyCustomerFirstName()
+    {
+    }
+
+    /**
+     * Test attribute "customer_last_name"
+     */
+    public function testPropertyCustomerLastName()
+    {
+    }
+
+    /**
+     * Test attribute "customer_company"
+     */
+    public function testPropertyCustomerCompany()
+    {
+    }
+
+    /**
+     * Test attribute "customer_phone"
+     */
+    public function testPropertyCustomerPhone()
+    {
+    }
+
+    /**
+     * Test attribute "address_line1"
+     */
+    public function testPropertyAddressLine1()
+    {
+    }
+
+    /**
+     * Test attribute "address_line2"
+     */
+    public function testPropertyAddressLine2()
+    {
+    }
+
+    /**
+     * Test attribute "address_city"
+     */
+    public function testPropertyAddressCity()
+    {
+    }
+
+    /**
+     * Test attribute "address_state"
+     */
+    public function testPropertyAddressState()
+    {
+    }
+
+    /**
+     * Test attribute "address_zipcode"
+     */
+    public function testPropertyAddressZipcode()
+    {
+    }
+
+    /**
+     * Test attribute "address_country"
+     */
+    public function testPropertyAddressCountry()
+    {
+    }
+
+    /**
+     * Test attribute "exclude_from_revenue"
+     */
+    public function testPropertyExcludeFromRevenue()
+    {
+    }
 }

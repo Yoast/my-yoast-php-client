@@ -47,7 +47,6 @@ class DiscountLineItemTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class DiscountLineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class DiscountLineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class DiscountLineItemTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class DiscountLineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItem()
     {
-
     }
 
     /**
@@ -87,31 +82,33 @@ class DiscountLineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
-     * Test attribute "line_item_id"
+     * Test attribute "order_id"
      */
-    public function testPropertyLineItemId()
+    public function testPropertyOrderId()
     {
-
     }
 
     /**
-     * Test attribute "discount_amount"
+     * Test attribute "coupon_code"
      */
-    public function testPropertyDiscountAmount()
+    public function testPropertyCouponCode()
     {
-
     }
 
     /**
-     * Test attribute "discount_rate"
+     * Test attribute "amount"
      */
-    public function testPropertyDiscountRate()
+    public function testPropertyAmount()
     {
-
     }
 
+    /**
+     * Test attribute "amount_vat"
+     */
+    public function testPropertyAmountVat()
+    {
+    }
 }

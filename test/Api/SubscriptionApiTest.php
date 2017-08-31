@@ -49,7 +49,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionCount()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionCreate()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionCreateChangeStreamGetSubscriptionsChangeStream()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionCreateChangeStreamPostSubscriptionsChangeStream()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionDeleteById()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionExistsGetSubscriptionsidExists()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionExistsHeadSubscriptionsid()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionFind()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionFindById()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionFindOne()
     {
-
     }
 
     /**
@@ -194,7 +180,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionFromWooCommerce()
     {
-
     }
 
     /**
@@ -205,7 +190,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPatchOrCreate()
     {
-
     }
 
     /**
@@ -216,7 +200,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeCountOrders()
     {
-
     }
 
     /**
@@ -227,7 +210,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeCountSites()
     {
-
     }
 
     /**
@@ -238,7 +220,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeCreateOrders()
     {
-
     }
 
     /**
@@ -249,7 +230,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeCreateSites()
     {
-
     }
 
     /**
@@ -260,7 +240,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeDeleteOrders()
     {
-
     }
 
     /**
@@ -271,7 +250,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeDeleteSites()
     {
-
     }
 
     /**
@@ -282,7 +260,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeDestroyByIdOrders()
     {
-
     }
 
     /**
@@ -293,7 +270,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeDestroyByIdSites()
     {
-
     }
 
     /**
@@ -304,7 +280,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeExistsOrders()
     {
-
     }
 
     /**
@@ -315,7 +290,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeExistsSites()
     {
-
     }
 
     /**
@@ -326,7 +300,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeFindByIdOrders()
     {
-
     }
 
     /**
@@ -337,7 +310,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeFindByIdSites()
     {
-
     }
 
     /**
@@ -348,7 +320,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeGetOrders()
     {
-
     }
 
     /**
@@ -359,7 +330,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeGetProduct()
     {
-
     }
 
     /**
@@ -370,7 +340,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeGetSites()
     {
-
     }
 
     /**
@@ -381,7 +350,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeGetSubscriber()
     {
-
     }
 
     /**
@@ -392,7 +360,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeLinkOrders()
     {
-
     }
 
     /**
@@ -403,7 +370,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeLinkSites()
     {
-
     }
 
     /**
@@ -414,7 +380,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypePatchAttributes()
     {
-
     }
 
     /**
@@ -425,7 +390,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeUnlinkOrders()
     {
-
     }
 
     /**
@@ -436,7 +400,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeUnlinkSites()
     {
-
     }
 
     /**
@@ -447,7 +410,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeUpdateByIdOrders()
     {
-
     }
 
     /**
@@ -458,7 +420,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPrototypeUpdateByIdSites()
     {
-
     }
 
     /**
@@ -469,7 +430,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionReplaceByIdPostSubscriptionsidReplace()
     {
-
     }
 
     /**
@@ -480,7 +440,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionReplaceByIdPutSubscriptionsid()
     {
-
     }
 
     /**
@@ -491,7 +450,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionReplaceOrCreatePostSubscriptionsReplaceOrCreate()
     {
-
     }
 
     /**
@@ -502,7 +460,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionReplaceOrCreatePutSubscriptions()
     {
-
     }
 
     /**
@@ -513,7 +470,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionUpdateAll()
     {
-
     }
 
     /**
@@ -524,7 +480,5 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionUpsertWithWhere()
     {
-
     }
-
 }

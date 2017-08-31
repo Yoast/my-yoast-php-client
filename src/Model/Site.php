@@ -59,12 +59,38 @@ class Site implements ArrayAccess
         'header' => 'string',
         'icon' => 'string',
         'creation_date' => '\DateTime',
-        'user_id' => 'double'
+        'user_id' => 'string',
+        'hostname' => 'string',
+        'protocol' => 'string',
+        'port' => 'string',
+        'path' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'url' => null,
+        'header' => null,
+        'icon' => null,
+        'creation_date' => 'date-time',
+        'user_id' => null,
+        'hostname' => null,
+        'protocol' => null,
+        'port' => null,
+        'path' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -77,7 +103,11 @@ class Site implements ArrayAccess
         'header' => 'header',
         'icon' => 'icon',
         'creation_date' => 'creationDate',
-        'user_id' => 'userId'
+        'user_id' => 'userId',
+        'hostname' => 'hostname',
+        'protocol' => 'protocol',
+        'port' => 'port',
+        'path' => 'path'
     ];
 
 
@@ -91,7 +121,11 @@ class Site implements ArrayAccess
         'header' => 'setHeader',
         'icon' => 'setIcon',
         'creation_date' => 'setCreationDate',
-        'user_id' => 'setUserId'
+        'user_id' => 'setUserId',
+        'hostname' => 'setHostname',
+        'protocol' => 'setProtocol',
+        'port' => 'setPort',
+        'path' => 'setPath'
     ];
 
 
@@ -105,7 +139,11 @@ class Site implements ArrayAccess
         'header' => 'getHeader',
         'icon' => 'getIcon',
         'creation_date' => 'getCreationDate',
-        'user_id' => 'getUserId'
+        'user_id' => 'getUserId',
+        'hostname' => 'getHostname',
+        'protocol' => 'getProtocol',
+        'port' => 'getPort',
+        'path' => 'getPath'
     ];
 
     public static function attributeMap()
@@ -145,6 +183,10 @@ class Site implements ArrayAccess
         $this->container['icon'] = isset($data['icon']) ? $data['icon'] : null;
         $this->container['creation_date'] = isset($data['creation_date']) ? $data['creation_date'] : null;
         $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
+        $this->container['hostname'] = isset($data['hostname']) ? $data['hostname'] : null;
+        $this->container['protocol'] = isset($data['protocol']) ? $data['protocol'] : null;
+        $this->container['port'] = isset($data['port']) ? $data['port'] : null;
+        $this->container['path'] = isset($data['path']) ? $data['path'] : null;
     }
 
     /**
@@ -165,6 +207,9 @@ class Site implements ArrayAccess
         if ($this->container['creation_date'] === null) {
             $invalid_properties[] = "'creation_date' can't be null";
         }
+        if ($this->container['user_id'] === null) {
+            $invalid_properties[] = "'user_id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -184,6 +229,9 @@ class Site implements ArrayAccess
             return false;
         }
         if ($this->container['creation_date'] === null) {
+            return false;
+        }
+        if ($this->container['user_id'] === null) {
             return false;
         }
         return true;
@@ -297,7 +345,7 @@ class Site implements ArrayAccess
 
     /**
      * Gets user_id
-     * @return double
+     * @return string
      */
     public function getUserId()
     {
@@ -306,12 +354,96 @@ class Site implements ArrayAccess
 
     /**
      * Sets user_id
-     * @param double $user_id
+     * @param string $user_id
      * @return $this
      */
     public function setUserId($user_id)
     {
         $this->container['user_id'] = $user_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets hostname
+     * @return string
+     */
+    public function getHostname()
+    {
+        return $this->container['hostname'];
+    }
+
+    /**
+     * Sets hostname
+     * @param string $hostname
+     * @return $this
+     */
+    public function setHostname($hostname)
+    {
+        $this->container['hostname'] = $hostname;
+
+        return $this;
+    }
+
+    /**
+     * Gets protocol
+     * @return string
+     */
+    public function getProtocol()
+    {
+        return $this->container['protocol'];
+    }
+
+    /**
+     * Sets protocol
+     * @param string $protocol
+     * @return $this
+     */
+    public function setProtocol($protocol)
+    {
+        $this->container['protocol'] = $protocol;
+
+        return $this;
+    }
+
+    /**
+     * Gets port
+     * @return string
+     */
+    public function getPort()
+    {
+        return $this->container['port'];
+    }
+
+    /**
+     * Sets port
+     * @param string $port
+     * @return $this
+     */
+    public function setPort($port)
+    {
+        $this->container['port'] = $port;
+
+        return $this;
+    }
+
+    /**
+     * Gets path
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->container['path'];
+    }
+
+    /**
+     * Sets path
+     * @param string $path
+     * @return $this
+     */
+    public function setPath($path)
+    {
+        $this->container['path'] = $path;
 
         return $this;
     }

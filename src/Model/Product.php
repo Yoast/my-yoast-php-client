@@ -56,9 +56,9 @@ class Product implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'name' => 'string',
-        'description' => 'string',
         'store_url' => 'string',
-        'download_url' => 'string',
+        'downloads' => 'object[]',
+        'gl_number' => 'string',
         'is_download_only' => 'bool',
         'icon' => 'string',
         'shop_product_type' => 'string',
@@ -67,14 +67,44 @@ class Product implements ArrayAccess
         'shop_regular_price' => 'double',
         'shop_tax_status' => 'string',
         'shop_tax_class' => 'string',
-        'last_updated' => '\DateTime',
-        'current_version' => 'double',
-        'changelog' => 'string'
+        'current_version' => 'string',
+        'changelog' => 'string',
+        'type' => 'string',
+        'currency' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'name' => null,
+        'store_url' => null,
+        'downloads' => null,
+        'gl_number' => null,
+        'is_download_only' => null,
+        'icon' => null,
+        'shop_product_type' => null,
+        'shop_status' => null,
+        'price' => 'double',
+        'shop_regular_price' => 'double',
+        'shop_tax_status' => null,
+        'shop_tax_class' => null,
+        'current_version' => null,
+        'changelog' => null,
+        'type' => null,
+        'currency' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -84,9 +114,9 @@ class Product implements ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
-        'description' => 'description',
         'store_url' => 'storeUrl',
-        'download_url' => 'downloadUrl',
+        'downloads' => 'downloads',
+        'gl_number' => 'glNumber',
         'is_download_only' => 'isDownloadOnly',
         'icon' => 'icon',
         'shop_product_type' => 'shopProductType',
@@ -95,9 +125,10 @@ class Product implements ArrayAccess
         'shop_regular_price' => 'shopRegularPrice',
         'shop_tax_status' => 'shopTaxStatus',
         'shop_tax_class' => 'shopTaxClass',
-        'last_updated' => 'lastUpdated',
         'current_version' => 'currentVersion',
-        'changelog' => 'changelog'
+        'changelog' => 'changelog',
+        'type' => 'type',
+        'currency' => 'currency'
     ];
 
 
@@ -108,9 +139,9 @@ class Product implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
-        'description' => 'setDescription',
         'store_url' => 'setStoreUrl',
-        'download_url' => 'setDownloadUrl',
+        'downloads' => 'setDownloads',
+        'gl_number' => 'setGlNumber',
         'is_download_only' => 'setIsDownloadOnly',
         'icon' => 'setIcon',
         'shop_product_type' => 'setShopProductType',
@@ -119,9 +150,10 @@ class Product implements ArrayAccess
         'shop_regular_price' => 'setShopRegularPrice',
         'shop_tax_status' => 'setShopTaxStatus',
         'shop_tax_class' => 'setShopTaxClass',
-        'last_updated' => 'setLastUpdated',
         'current_version' => 'setCurrentVersion',
-        'changelog' => 'setChangelog'
+        'changelog' => 'setChangelog',
+        'type' => 'setType',
+        'currency' => 'setCurrency'
     ];
 
 
@@ -132,9 +164,9 @@ class Product implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
-        'description' => 'getDescription',
         'store_url' => 'getStoreUrl',
-        'download_url' => 'getDownloadUrl',
+        'downloads' => 'getDownloads',
+        'gl_number' => 'getGlNumber',
         'is_download_only' => 'getIsDownloadOnly',
         'icon' => 'getIcon',
         'shop_product_type' => 'getShopProductType',
@@ -143,9 +175,10 @@ class Product implements ArrayAccess
         'shop_regular_price' => 'getShopRegularPrice',
         'shop_tax_status' => 'getShopTaxStatus',
         'shop_tax_class' => 'getShopTaxClass',
-        'last_updated' => 'getLastUpdated',
         'current_version' => 'getCurrentVersion',
-        'changelog' => 'getChangelog'
+        'changelog' => 'getChangelog',
+        'type' => 'getType',
+        'currency' => 'getCurrency'
     ];
 
     public static function attributeMap()
@@ -181,9 +214,9 @@ class Product implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['store_url'] = isset($data['store_url']) ? $data['store_url'] : null;
-        $this->container['download_url'] = isset($data['download_url']) ? $data['download_url'] : null;
+        $this->container['downloads'] = isset($data['downloads']) ? $data['downloads'] : null;
+        $this->container['gl_number'] = isset($data['gl_number']) ? $data['gl_number'] : null;
         $this->container['is_download_only'] = isset($data['is_download_only']) ? $data['is_download_only'] : false;
         $this->container['icon'] = isset($data['icon']) ? $data['icon'] : null;
         $this->container['shop_product_type'] = isset($data['shop_product_type']) ? $data['shop_product_type'] : null;
@@ -192,9 +225,10 @@ class Product implements ArrayAccess
         $this->container['shop_regular_price'] = isset($data['shop_regular_price']) ? $data['shop_regular_price'] : null;
         $this->container['shop_tax_status'] = isset($data['shop_tax_status']) ? $data['shop_tax_status'] : null;
         $this->container['shop_tax_class'] = isset($data['shop_tax_class']) ? $data['shop_tax_class'] : null;
-        $this->container['last_updated'] = isset($data['last_updated']) ? $data['last_updated'] : null;
         $this->container['current_version'] = isset($data['current_version']) ? $data['current_version'] : null;
         $this->container['changelog'] = isset($data['changelog']) ? $data['changelog'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
     }
 
     /**
@@ -215,12 +249,6 @@ class Product implements ArrayAccess
         if ($this->container['store_url'] === null) {
             $invalid_properties[] = "'store_url' can't be null";
         }
-        if ($this->container['last_updated'] === null) {
-            $invalid_properties[] = "'last_updated' can't be null";
-        }
-        if ($this->container['current_version'] === null) {
-            $invalid_properties[] = "'current_version' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -240,12 +268,6 @@ class Product implements ArrayAccess
             return false;
         }
         if ($this->container['store_url'] === null) {
-            return false;
-        }
-        if ($this->container['last_updated'] === null) {
-            return false;
-        }
-        if ($this->container['current_version'] === null) {
             return false;
         }
         return true;
@@ -295,27 +317,6 @@ class Product implements ArrayAccess
     }
 
     /**
-     * Gets description
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     * @param string $description
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
      * Gets store_url
      * @return string
      */
@@ -337,22 +338,43 @@ class Product implements ArrayAccess
     }
 
     /**
-     * Gets download_url
-     * @return string
+     * Gets downloads
+     * @return object[]
      */
-    public function getDownloadUrl()
+    public function getDownloads()
     {
-        return $this->container['download_url'];
+        return $this->container['downloads'];
     }
 
     /**
-     * Sets download_url
-     * @param string $download_url
+     * Sets downloads
+     * @param object[] $downloads
      * @return $this
      */
-    public function setDownloadUrl($download_url)
+    public function setDownloads($downloads)
     {
-        $this->container['download_url'] = $download_url;
+        $this->container['downloads'] = $downloads;
+
+        return $this;
+    }
+
+    /**
+     * Gets gl_number
+     * @return string
+     */
+    public function getGlNumber()
+    {
+        return $this->container['gl_number'];
+    }
+
+    /**
+     * Sets gl_number
+     * @param string $gl_number
+     * @return $this
+     */
+    public function setGlNumber($gl_number)
+    {
+        $this->container['gl_number'] = $gl_number;
 
         return $this;
     }
@@ -526,29 +548,8 @@ class Product implements ArrayAccess
     }
 
     /**
-     * Gets last_updated
-     * @return \DateTime
-     */
-    public function getLastUpdated()
-    {
-        return $this->container['last_updated'];
-    }
-
-    /**
-     * Sets last_updated
-     * @param \DateTime $last_updated
-     * @return $this
-     */
-    public function setLastUpdated($last_updated)
-    {
-        $this->container['last_updated'] = $last_updated;
-
-        return $this;
-    }
-
-    /**
      * Gets current_version
-     * @return double
+     * @return string
      */
     public function getCurrentVersion()
     {
@@ -557,7 +558,7 @@ class Product implements ArrayAccess
 
     /**
      * Sets current_version
-     * @param double $current_version
+     * @param string $current_version
      * @return $this
      */
     public function setCurrentVersion($current_version)
@@ -584,6 +585,48 @@ class Product implements ArrayAccess
     public function setChangelog($changelog)
     {
         $this->container['changelog'] = $changelog;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     * @param string $type
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     * @param string $currency
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->container['currency'] = $currency;
 
         return $this;
     }

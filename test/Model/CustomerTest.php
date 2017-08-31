@@ -47,7 +47,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,39 +75,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomer()
     {
-
-    }
-
-    /**
-     * Test attribute "realm"
-     */
-    public function testPropertyRealm()
-    {
-
-    }
-
-    /**
-     * Test attribute "username"
-     */
-    public function testPropertyUsername()
-    {
-
-    }
-
-    /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
-    {
-
-    }
-
-    /**
-     * Test attribute "email_verified"
-     */
-    public function testPropertyEmailVerified()
-    {
-
     }
 
     /**
@@ -119,7 +82,40 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
+    /**
+     * Test attribute "enabled"
+     */
+    public function testPropertyEnabled()
+    {
+    }
+
+    /**
+     * Test attribute "realm"
+     */
+    public function testPropertyRealm()
+    {
+    }
+
+    /**
+     * Test attribute "username"
+     */
+    public function testPropertyUsername()
+    {
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
+     * Test attribute "email_verified"
+     */
+    public function testPropertyEmailVerified()
+    {
+    }
 }

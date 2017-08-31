@@ -47,7 +47,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscription()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyProductId()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyStartDate()
     {
-
     }
 
     /**
@@ -111,15 +103,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEndDate()
     {
-
-    }
-
-    /**
-     * Test attribute "reoccurring"
-     */
-    public function testPropertyReoccurring()
-    {
-
     }
 
     /**
@@ -127,7 +110,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyStatus()
     {
-
     }
 
     /**
@@ -135,7 +117,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCurrency()
     {
-
     }
 
     /**
@@ -143,7 +124,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDate()
     {
-
     }
 
     /**
@@ -151,7 +131,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPrice()
     {
-
     }
 
     /**
@@ -159,7 +138,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -167,7 +145,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNextPayment()
     {
-
     }
 
     /**
@@ -175,7 +152,13 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLimit()
     {
+    }
 
+    /**
+     * Test attribute "used"
+     */
+    public function testPropertyUsed()
+    {
     }
 
     /**
@@ -183,7 +166,5 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySubscriberId()
     {
-
     }
-
 }

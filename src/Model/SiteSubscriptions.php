@@ -54,9 +54,19 @@ class SiteSubscriptions implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'id' => 'string',
         'site_id' => 'string',
-        'subscription_id' => 'string',
-        'id' => 'double'
+        'subscription_id' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'site_id' => null,
+        'subscription_id' => null
     ];
 
     public static function swaggerTypes()
@@ -64,14 +74,19 @@ class SiteSubscriptions implements ArrayAccess
         return self::$swaggerTypes;
     }
 
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
+    }
+
     /**
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'site_id' => 'siteId',
-        'subscription_id' => 'subscriptionId',
-        'id' => 'id'
+        'subscription_id' => 'subscriptionId'
     ];
 
 
@@ -80,9 +95,9 @@ class SiteSubscriptions implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'site_id' => 'setSiteId',
-        'subscription_id' => 'setSubscriptionId',
-        'id' => 'setId'
+        'subscription_id' => 'setSubscriptionId'
     ];
 
 
@@ -91,9 +106,9 @@ class SiteSubscriptions implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'site_id' => 'getSiteId',
-        'subscription_id' => 'getSubscriptionId',
-        'id' => 'getId'
+        'subscription_id' => 'getSubscriptionId'
     ];
 
     public static function attributeMap()
@@ -127,9 +142,9 @@ class SiteSubscriptions implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['site_id'] = isset($data['site_id']) ? $data['site_id'] : null;
         $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -141,6 +156,9 @@ class SiteSubscriptions implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
+        }
         if ($this->container['site_id'] === null) {
             $invalid_properties[] = "'site_id' can't be null";
         }
@@ -159,6 +177,9 @@ class SiteSubscriptions implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['id'] === null) {
+            return false;
+        }
         if ($this->container['site_id'] === null) {
             return false;
         }
@@ -168,6 +189,27 @@ class SiteSubscriptions implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets site_id
@@ -207,27 +249,6 @@ class SiteSubscriptions implements ArrayAccess
     public function setSubscriptionId($subscription_id)
     {
         $this->container['subscription_id'] = $subscription_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     * @return double
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param double $id
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
 
         return $this;
     }

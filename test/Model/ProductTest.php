@@ -47,7 +47,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testProduct()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,15 +89,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-
     }
 
     /**
@@ -111,15 +96,20 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyStoreUrl()
     {
-
     }
 
     /**
-     * Test attribute "download_url"
+     * Test attribute "downloads"
      */
-    public function testPropertyDownloadUrl()
+    public function testPropertyDownloads()
     {
+    }
 
+    /**
+     * Test attribute "gl_number"
+     */
+    public function testPropertyGlNumber()
+    {
     }
 
     /**
@@ -127,7 +117,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyIsDownloadOnly()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyIcon()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyShopProductType()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyShopStatus()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPrice()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyShopRegularPrice()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyShopTaxStatus()
     {
-
     }
 
     /**
@@ -183,15 +166,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyShopTaxClass()
     {
-
-    }
-
-    /**
-     * Test attribute "last_updated"
-     */
-    public function testPropertyLastUpdated()
-    {
-
     }
 
     /**
@@ -199,7 +173,6 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCurrentVersion()
     {
-
     }
 
     /**
@@ -207,7 +180,19 @@ class ProductTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyChangelog()
     {
-
     }
 
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+    }
+
+    /**
+     * Test attribute "currency"
+     */
+    public function testPropertyCurrency()
+    {
+    }
 }

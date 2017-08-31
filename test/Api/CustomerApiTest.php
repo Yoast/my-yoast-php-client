@@ -49,7 +49,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerChangePassword()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerConfirm()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerCount()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerCreate()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerCreateChangeStreamGetCustomersChangeStream()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerCreateChangeStreamPostCustomersChangeStream()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerDeleteById()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerExistsGetCustomersidExists()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerExistsHeadCustomersid()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerFind()
     {
-
     }
 
     /**
@@ -194,7 +180,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerFindById()
     {
-
     }
 
     /**
@@ -205,7 +190,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerFindOne()
     {
-
     }
 
     /**
@@ -216,7 +200,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerFromWooCommerce()
     {
-
     }
 
     /**
@@ -227,7 +210,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerLogin()
     {
-
     }
 
     /**
@@ -238,7 +220,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerLogout()
     {
-
     }
 
     /**
@@ -249,18 +230,26 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPatchOrCreate()
     {
+    }
 
+    /**
+     * Test case for customerPatchProfile
+     *
+     * Updates the profile with the supplied information..
+     *
+     */
+    public function testCustomerPatchProfile()
+    {
     }
 
     /**
      * Test case for customerProfile
      *
-     * .
+     * Finds the profile for the customer with the given id..
      *
      */
     public function testCustomerProfile()
     {
-
     }
 
     /**
@@ -271,7 +260,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCountAccessTokens()
     {
-
     }
 
     /**
@@ -282,7 +270,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCountCredentials()
     {
-
     }
 
     /**
@@ -293,7 +280,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCountIdentities()
     {
-
     }
 
     /**
@@ -304,7 +290,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCountOrders()
     {
-
     }
 
     /**
@@ -315,7 +300,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCountSites()
     {
-
     }
 
     /**
@@ -326,7 +310,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCountSubscriptions()
     {
-
     }
 
     /**
@@ -337,7 +320,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCreateAccessTokens()
     {
-
     }
 
     /**
@@ -348,7 +330,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCreateCredentials()
     {
-
     }
 
     /**
@@ -359,7 +340,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCreateIdentities()
     {
-
     }
 
     /**
@@ -370,7 +350,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCreateOrders()
     {
-
     }
 
     /**
@@ -381,7 +360,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCreateSites()
     {
-
     }
 
     /**
@@ -392,7 +370,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeCreateSubscriptions()
     {
-
     }
 
     /**
@@ -403,7 +380,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDeleteAccessTokens()
     {
-
     }
 
     /**
@@ -414,7 +390,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDeleteCredentials()
     {
-
     }
 
     /**
@@ -425,7 +400,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDeleteIdentities()
     {
-
     }
 
     /**
@@ -436,7 +410,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDeleteOrders()
     {
-
     }
 
     /**
@@ -447,7 +420,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDeleteSites()
     {
-
     }
 
     /**
@@ -458,7 +430,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDeleteSubscriptions()
     {
-
     }
 
     /**
@@ -469,7 +440,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDestroyByIdAccessTokens()
     {
-
     }
 
     /**
@@ -480,7 +450,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDestroyByIdCredentials()
     {
-
     }
 
     /**
@@ -491,7 +460,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDestroyByIdIdentities()
     {
-
     }
 
     /**
@@ -502,7 +470,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDestroyByIdOrders()
     {
-
     }
 
     /**
@@ -513,7 +480,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDestroyByIdSites()
     {
-
     }
 
     /**
@@ -524,7 +490,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeDestroyByIdSubscriptions()
     {
-
     }
 
     /**
@@ -535,7 +500,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeFindByIdAccessTokens()
     {
-
     }
 
     /**
@@ -546,7 +510,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeFindByIdCredentials()
     {
-
     }
 
     /**
@@ -557,7 +520,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeFindByIdIdentities()
     {
-
     }
 
     /**
@@ -568,7 +530,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeFindByIdOrders()
     {
-
     }
 
     /**
@@ -579,7 +540,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeFindByIdSites()
     {
-
     }
 
     /**
@@ -590,7 +550,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeFindByIdSubscriptions()
     {
-
     }
 
     /**
@@ -601,7 +560,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeGetAccessTokens()
     {
-
     }
 
     /**
@@ -612,7 +570,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeGetCredentials()
     {
-
     }
 
     /**
@@ -623,7 +580,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeGetIdentities()
     {
-
     }
 
     /**
@@ -634,7 +590,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeGetOrders()
     {
-
     }
 
     /**
@@ -645,7 +600,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeGetSites()
     {
-
     }
 
     /**
@@ -656,7 +610,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeGetSubscriptions()
     {
-
     }
 
     /**
@@ -667,7 +620,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypePatchAttributes()
     {
-
     }
 
     /**
@@ -678,7 +630,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeUpdateByIdAccessTokens()
     {
-
     }
 
     /**
@@ -689,7 +640,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeUpdateByIdCredentials()
     {
-
     }
 
     /**
@@ -700,7 +650,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeUpdateByIdIdentities()
     {
-
     }
 
     /**
@@ -711,7 +660,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeUpdateByIdOrders()
     {
-
     }
 
     /**
@@ -722,7 +670,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeUpdateByIdSites()
     {
-
     }
 
     /**
@@ -733,7 +680,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerPrototypeUpdateByIdSubscriptions()
     {
-
     }
 
     /**
@@ -744,7 +690,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerReplaceByIdPostCustomersidReplace()
     {
-
     }
 
     /**
@@ -755,7 +700,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerReplaceByIdPutCustomersid()
     {
-
     }
 
     /**
@@ -766,7 +710,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerReplaceOrCreatePostCustomersReplaceOrCreate()
     {
-
     }
 
     /**
@@ -777,7 +720,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerReplaceOrCreatePutCustomers()
     {
-
     }
 
     /**
@@ -788,7 +730,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerResetPassword()
     {
-
     }
 
     /**
@@ -799,7 +740,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerUpdateAll()
     {
-
     }
 
     /**
@@ -810,7 +750,5 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomerUpsertWithWhere()
     {
-
     }
-
 }

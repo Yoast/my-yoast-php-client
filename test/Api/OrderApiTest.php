@@ -49,7 +49,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderCount()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderCreate()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderCreateChangeStreamGetOrdersChangeStream()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderCreateChangeStreamPostOrdersChangeStream()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderDeleteById()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderExistsGetOrdersidExists()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderExistsHeadOrdersid()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderFind()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderFindById()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderFindOne()
     {
-
     }
 
     /**
@@ -194,7 +180,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderFromWooCommerce()
     {
-
     }
 
     /**
@@ -205,7 +190,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderInvoice()
     {
-
     }
 
     /**
@@ -216,7 +200,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderPatchOrCreate()
     {
+    }
 
+    /**
+     * Test case for orderPrototypeCountDiscounts
+     *
+     * Counts discounts of Order..
+     *
+     */
+    public function testOrderPrototypeCountDiscounts()
+    {
     }
 
     /**
@@ -227,18 +220,46 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderPrototypeCountItems()
     {
-
     }
 
     /**
-     * Test case for orderPrototypeCountSubscription
+     * Test case for orderPrototypeCountSubscriptions
      *
-     * Counts subscription of Order..
+     * Counts subscriptions of Order..
      *
      */
-    public function testOrderPrototypeCountSubscription()
+    public function testOrderPrototypeCountSubscriptions()
     {
+    }
 
+    /**
+     * Test case for orderPrototypeCountTransactions
+     *
+     * Counts transactions of Order..
+     *
+     */
+    public function testOrderPrototypeCountTransactions()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeCountVats
+     *
+     * Counts vats of Order..
+     *
+     */
+    public function testOrderPrototypeCountVats()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeCreateDiscounts
+     *
+     * Creates a new instance in discounts of this model..
+     *
+     */
+    public function testOrderPrototypeCreateDiscounts()
+    {
     }
 
     /**
@@ -249,18 +270,46 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderPrototypeCreateItems()
     {
-
     }
 
     /**
-     * Test case for orderPrototypeCreateSubscription
+     * Test case for orderPrototypeCreateSubscriptions
      *
-     * Creates a new instance in subscription of this model..
+     * Creates a new instance in subscriptions of this model..
      *
      */
-    public function testOrderPrototypeCreateSubscription()
+    public function testOrderPrototypeCreateSubscriptions()
     {
+    }
 
+    /**
+     * Test case for orderPrototypeCreateTransactions
+     *
+     * Creates a new instance in transactions of this model..
+     *
+     */
+    public function testOrderPrototypeCreateTransactions()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeCreateVats
+     *
+     * Creates a new instance in vats of this model..
+     *
+     */
+    public function testOrderPrototypeCreateVats()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeDeleteDiscounts
+     *
+     * Deletes all discounts of this model..
+     *
+     */
+    public function testOrderPrototypeDeleteDiscounts()
+    {
     }
 
     /**
@@ -271,18 +320,46 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderPrototypeDeleteItems()
     {
-
     }
 
     /**
-     * Test case for orderPrototypeDeleteSubscription
+     * Test case for orderPrototypeDeleteSubscriptions
      *
-     * Deletes all subscription of this model..
+     * Deletes all subscriptions of this model..
      *
      */
-    public function testOrderPrototypeDeleteSubscription()
+    public function testOrderPrototypeDeleteSubscriptions()
     {
+    }
 
+    /**
+     * Test case for orderPrototypeDeleteTransactions
+     *
+     * Deletes all transactions of this model..
+     *
+     */
+    public function testOrderPrototypeDeleteTransactions()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeDeleteVats
+     *
+     * Deletes all vats of this model..
+     *
+     */
+    public function testOrderPrototypeDeleteVats()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeDestroyByIdDiscounts
+     *
+     * Delete a related item by id for discounts..
+     *
+     */
+    public function testOrderPrototypeDestroyByIdDiscounts()
+    {
     }
 
     /**
@@ -293,18 +370,56 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderPrototypeDestroyByIdItems()
     {
-
     }
 
     /**
-     * Test case for orderPrototypeDestroyByIdSubscription
+     * Test case for orderPrototypeDestroyByIdSubscriptions
      *
-     * Delete a related item by id for subscription..
+     * Delete a related item by id for subscriptions..
      *
      */
-    public function testOrderPrototypeDestroyByIdSubscription()
+    public function testOrderPrototypeDestroyByIdSubscriptions()
     {
+    }
 
+    /**
+     * Test case for orderPrototypeDestroyByIdTransactions
+     *
+     * Delete a related item by id for transactions..
+     *
+     */
+    public function testOrderPrototypeDestroyByIdTransactions()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeDestroyByIdVats
+     *
+     * Delete a related item by id for vats..
+     *
+     */
+    public function testOrderPrototypeDestroyByIdVats()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeExistsSubscriptions
+     *
+     * Check the existence of subscriptions relation to an item by id..
+     *
+     */
+    public function testOrderPrototypeExistsSubscriptions()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeFindByIdDiscounts
+     *
+     * Find a related item by id for discounts..
+     *
+     */
+    public function testOrderPrototypeFindByIdDiscounts()
+    {
     }
 
     /**
@@ -315,18 +430,36 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderPrototypeFindByIdItems()
     {
-
     }
 
     /**
-     * Test case for orderPrototypeFindByIdSubscription
+     * Test case for orderPrototypeFindByIdSubscriptions
      *
-     * Find a related item by id for subscription..
+     * Find a related item by id for subscriptions..
      *
      */
-    public function testOrderPrototypeFindByIdSubscription()
+    public function testOrderPrototypeFindByIdSubscriptions()
     {
+    }
 
+    /**
+     * Test case for orderPrototypeFindByIdTransactions
+     *
+     * Find a related item by id for transactions..
+     *
+     */
+    public function testOrderPrototypeFindByIdTransactions()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeFindByIdVats
+     *
+     * Find a related item by id for vats..
+     *
+     */
+    public function testOrderPrototypeFindByIdVats()
+    {
     }
 
     /**
@@ -337,7 +470,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderPrototypeGetCustomer()
     {
+    }
 
+    /**
+     * Test case for orderPrototypeGetDiscounts
+     *
+     * Queries discounts of Order..
+     *
+     */
+    public function testOrderPrototypeGetDiscounts()
+    {
     }
 
     /**
@@ -348,18 +490,46 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderPrototypeGetItems()
     {
-
     }
 
     /**
-     * Test case for orderPrototypeGetSubscription
+     * Test case for orderPrototypeGetSubscriptions
      *
-     * Queries subscription of Order..
+     * Queries subscriptions of Order..
      *
      */
-    public function testOrderPrototypeGetSubscription()
+    public function testOrderPrototypeGetSubscriptions()
     {
+    }
 
+    /**
+     * Test case for orderPrototypeGetTransactions
+     *
+     * Queries transactions of Order..
+     *
+     */
+    public function testOrderPrototypeGetTransactions()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeGetVats
+     *
+     * Queries vats of Order..
+     *
+     */
+    public function testOrderPrototypeGetVats()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeLinkSubscriptions
+     *
+     * Add a related item by id for subscriptions..
+     *
+     */
+    public function testOrderPrototypeLinkSubscriptions()
+    {
     }
 
     /**
@@ -370,7 +540,26 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderPrototypePatchAttributes()
     {
+    }
 
+    /**
+     * Test case for orderPrototypeUnlinkSubscriptions
+     *
+     * Remove the subscriptions relation to an item by id..
+     *
+     */
+    public function testOrderPrototypeUnlinkSubscriptions()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeUpdateByIdDiscounts
+     *
+     * Update a related item by id for discounts..
+     *
+     */
+    public function testOrderPrototypeUpdateByIdDiscounts()
+    {
     }
 
     /**
@@ -381,18 +570,36 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderPrototypeUpdateByIdItems()
     {
-
     }
 
     /**
-     * Test case for orderPrototypeUpdateByIdSubscription
+     * Test case for orderPrototypeUpdateByIdSubscriptions
      *
-     * Update a related item by id for subscription..
+     * Update a related item by id for subscriptions..
      *
      */
-    public function testOrderPrototypeUpdateByIdSubscription()
+    public function testOrderPrototypeUpdateByIdSubscriptions()
     {
+    }
 
+    /**
+     * Test case for orderPrototypeUpdateByIdTransactions
+     *
+     * Update a related item by id for transactions..
+     *
+     */
+    public function testOrderPrototypeUpdateByIdTransactions()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeUpdateByIdVats
+     *
+     * Update a related item by id for vats..
+     *
+     */
+    public function testOrderPrototypeUpdateByIdVats()
+    {
     }
 
     /**
@@ -403,7 +610,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderReplaceByIdPostOrdersidReplace()
     {
-
     }
 
     /**
@@ -414,7 +620,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderReplaceByIdPutOrdersid()
     {
-
     }
 
     /**
@@ -425,7 +630,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderReplaceOrCreatePostOrdersReplaceOrCreate()
     {
-
     }
 
     /**
@@ -436,7 +640,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderReplaceOrCreatePutOrders()
     {
-
     }
 
     /**
@@ -447,7 +650,6 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderUpdateAll()
     {
-
     }
 
     /**
@@ -458,7 +660,5 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderUpsertWithWhere()
     {
-
     }
-
 }

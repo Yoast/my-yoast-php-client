@@ -47,7 +47,7 @@ class AccessToken implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'AccessToken';
+    protected static $swaggerModelName = 'accessToken';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +57,28 @@ class AccessToken implements ArrayAccess
         'id' => 'string',
         'ttl' => 'double',
         'created' => '\DateTime',
-        'user_id' => 'double'
+        'user_id' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'ttl' => 'double',
+        'created' => 'date-time',
+        'user_id' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -233,7 +249,7 @@ class AccessToken implements ArrayAccess
 
     /**
      * Gets user_id
-     * @return double
+     * @return string
      */
     public function getUserId()
     {
@@ -242,7 +258,7 @@ class AccessToken implements ArrayAccess
 
     /**
      * Sets user_id
-     * @param double $user_id
+     * @param string $user_id
      * @return $this
      */
     public function setUserId($user_id)

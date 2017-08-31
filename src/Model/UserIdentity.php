@@ -54,6 +54,7 @@ class UserIdentity implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'user_id' => 'string',
         'provider' => 'string',
         'auth_scheme' => 'string',
         'external_id' => 'string',
@@ -61,8 +62,23 @@ class UserIdentity implements ArrayAccess
         'credentials' => 'object',
         'created' => '\DateTime',
         'modified' => '\DateTime',
-        'id' => 'double',
-        'user_id' => 'double'
+        'id' => 'double'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'user_id' => null,
+        'provider' => null,
+        'auth_scheme' => null,
+        'external_id' => null,
+        'profile' => null,
+        'credentials' => null,
+        'created' => 'date-time',
+        'modified' => 'date-time',
+        'id' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -70,11 +86,17 @@ class UserIdentity implements ArrayAccess
         return self::$swaggerTypes;
     }
 
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
+    }
+
     /**
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
     protected static $attributeMap = [
+        'user_id' => 'userId',
         'provider' => 'provider',
         'auth_scheme' => 'authScheme',
         'external_id' => 'externalId',
@@ -82,8 +104,7 @@ class UserIdentity implements ArrayAccess
         'credentials' => 'credentials',
         'created' => 'created',
         'modified' => 'modified',
-        'id' => 'id',
-        'user_id' => 'userId'
+        'id' => 'id'
     ];
 
 
@@ -92,6 +113,7 @@ class UserIdentity implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'user_id' => 'setUserId',
         'provider' => 'setProvider',
         'auth_scheme' => 'setAuthScheme',
         'external_id' => 'setExternalId',
@@ -99,8 +121,7 @@ class UserIdentity implements ArrayAccess
         'credentials' => 'setCredentials',
         'created' => 'setCreated',
         'modified' => 'setModified',
-        'id' => 'setId',
-        'user_id' => 'setUserId'
+        'id' => 'setId'
     ];
 
 
@@ -109,6 +130,7 @@ class UserIdentity implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'user_id' => 'getUserId',
         'provider' => 'getProvider',
         'auth_scheme' => 'getAuthScheme',
         'external_id' => 'getExternalId',
@@ -116,8 +138,7 @@ class UserIdentity implements ArrayAccess
         'credentials' => 'getCredentials',
         'created' => 'getCreated',
         'modified' => 'getModified',
-        'id' => 'getId',
-        'user_id' => 'getUserId'
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -151,6 +172,7 @@ class UserIdentity implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
         $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
         $this->container['auth_scheme'] = isset($data['auth_scheme']) ? $data['auth_scheme'] : null;
         $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
@@ -159,7 +181,6 @@ class UserIdentity implements ArrayAccess
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
         $this->container['modified'] = isset($data['modified']) ? $data['modified'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
     }
 
     /**
@@ -186,6 +207,27 @@ class UserIdentity implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets user_id
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->container['user_id'];
+    }
+
+    /**
+     * Sets user_id
+     * @param string $user_id
+     * @return $this
+     */
+    public function setUserId($user_id)
+    {
+        $this->container['user_id'] = $user_id;
+
+        return $this;
+    }
 
     /**
      * Gets provider
@@ -351,27 +393,6 @@ class UserIdentity implements ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets user_id
-     * @return double
-     */
-    public function getUserId()
-    {
-        return $this->container['user_id'];
-    }
-
-    /**
-     * Sets user_id
-     * @param double $user_id
-     * @return $this
-     */
-    public function setUserId($user_id)
-    {
-        $this->container['user_id'] = $user_id;
 
         return $this;
     }

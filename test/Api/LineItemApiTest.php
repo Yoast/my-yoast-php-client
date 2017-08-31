@@ -49,7 +49,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemCount()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemCreate()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemCreateChangeStreamGetLineItemsChangeStream()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemCreateChangeStreamPostLineItemsChangeStream()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemDeleteById()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemExistsGetLineItemsidExists()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemExistsHeadLineItemsid()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemFind()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemFindById()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemFindOne()
     {
-
     }
 
     /**
@@ -194,73 +180,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemPatchOrCreate()
     {
-
-    }
-
-    /**
-     * Test case for lineItemPrototypeCountDiscounts
-     *
-     * Counts discounts of LineItem..
-     *
-     */
-    public function testLineItemPrototypeCountDiscounts()
-    {
-
-    }
-
-    /**
-     * Test case for lineItemPrototypeCreateDiscounts
-     *
-     * Creates a new instance in discounts of this model..
-     *
-     */
-    public function testLineItemPrototypeCreateDiscounts()
-    {
-
-    }
-
-    /**
-     * Test case for lineItemPrototypeDeleteDiscounts
-     *
-     * Deletes all discounts of this model..
-     *
-     */
-    public function testLineItemPrototypeDeleteDiscounts()
-    {
-
-    }
-
-    /**
-     * Test case for lineItemPrototypeDestroyByIdDiscounts
-     *
-     * Delete a related item by id for discounts..
-     *
-     */
-    public function testLineItemPrototypeDestroyByIdDiscounts()
-    {
-
-    }
-
-    /**
-     * Test case for lineItemPrototypeFindByIdDiscounts
-     *
-     * Find a related item by id for discounts..
-     *
-     */
-    public function testLineItemPrototypeFindByIdDiscounts()
-    {
-
-    }
-
-    /**
-     * Test case for lineItemPrototypeGetDiscounts
-     *
-     * Queries discounts of LineItem..
-     *
-     */
-    public function testLineItemPrototypeGetDiscounts()
-    {
-
     }
 
     /**
@@ -271,7 +190,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemPrototypeGetOrder()
     {
-
     }
 
     /**
@@ -282,7 +200,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemPrototypeGetProduct()
     {
-
     }
 
     /**
@@ -293,18 +210,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemPrototypePatchAttributes()
     {
-
-    }
-
-    /**
-     * Test case for lineItemPrototypeUpdateByIdDiscounts
-     *
-     * Update a related item by id for discounts..
-     *
-     */
-    public function testLineItemPrototypeUpdateByIdDiscounts()
-    {
-
     }
 
     /**
@@ -315,7 +220,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemReplaceByIdPostLineItemsidReplace()
     {
-
     }
 
     /**
@@ -326,7 +230,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemReplaceByIdPutLineItemsid()
     {
-
     }
 
     /**
@@ -337,7 +240,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemReplaceOrCreatePostLineItemsReplaceOrCreate()
     {
-
     }
 
     /**
@@ -348,7 +250,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemReplaceOrCreatePutLineItems()
     {
-
     }
 
     /**
@@ -359,7 +260,6 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemUpdateAll()
     {
-
     }
 
     /**
@@ -370,7 +270,5 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItemUpsertWithWhere()
     {
-
     }
-
 }

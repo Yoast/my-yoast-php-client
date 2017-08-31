@@ -49,7 +49,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductCount()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductCreate()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductCreateChangeStreamGetProductsChangeStream()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductCreateChangeStreamPostProductsChangeStream()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductDeleteById()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductExistsGetProductsidExists()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductExistsHeadProductsid()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductFind()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductFindById()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductFindOne()
     {
-
     }
 
     /**
@@ -194,7 +180,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductFromWooCommerce()
     {
-
     }
 
     /**
@@ -205,7 +190,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPatchOrCreate()
     {
-
     }
 
     /**
@@ -216,7 +200,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeCountLineItems()
     {
-
     }
 
     /**
@@ -227,7 +210,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeCountSubscriptions()
     {
-
     }
 
     /**
@@ -238,7 +220,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeCreateLineItems()
     {
-
     }
 
     /**
@@ -249,7 +230,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeCreateSubscriptions()
     {
-
     }
 
     /**
@@ -260,7 +240,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeDeleteLineItems()
     {
-
     }
 
     /**
@@ -271,7 +250,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeDeleteSubscriptions()
     {
-
     }
 
     /**
@@ -282,7 +260,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeDestroyByIdLineItems()
     {
-
     }
 
     /**
@@ -293,7 +270,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeDestroyByIdSubscriptions()
     {
-
     }
 
     /**
@@ -304,7 +280,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeFindByIdLineItems()
     {
-
     }
 
     /**
@@ -315,7 +290,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeFindByIdSubscriptions()
     {
-
     }
 
     /**
@@ -326,7 +300,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeGetLineItems()
     {
-
     }
 
     /**
@@ -337,7 +310,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeGetSubscriptions()
     {
-
     }
 
     /**
@@ -348,7 +320,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypePatchAttributes()
     {
-
     }
 
     /**
@@ -359,7 +330,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeUpdateByIdLineItems()
     {
-
     }
 
     /**
@@ -370,7 +340,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductPrototypeUpdateByIdSubscriptions()
     {
-
     }
 
     /**
@@ -381,7 +350,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductReplaceByIdPostProductsidReplace()
     {
-
     }
 
     /**
@@ -392,7 +360,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductReplaceByIdPutProductsid()
     {
-
     }
 
     /**
@@ -403,7 +370,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductReplaceOrCreatePostProductsReplaceOrCreate()
     {
-
     }
 
     /**
@@ -414,7 +380,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductReplaceOrCreatePutProducts()
     {
-
     }
 
     /**
@@ -425,7 +390,6 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductUpdateAll()
     {
-
     }
 
     /**
@@ -436,7 +400,5 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testProductUpsertWithWhere()
     {
-
     }
-
 }

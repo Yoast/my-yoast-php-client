@@ -47,7 +47,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function testUserCredential()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyProvider()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAuthScheme()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExternalId()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyProfile()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCredentials()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyModified()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -151,7 +138,5 @@ class UserCredentialTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyUserId()
     {
-
     }
-
 }

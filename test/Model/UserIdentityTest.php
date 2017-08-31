@@ -47,7 +47,6 @@ class UserIdentityTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class UserIdentityTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class UserIdentityTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class UserIdentityTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,71 +75,6 @@ class UserIdentityTest extends \PHPUnit_Framework_TestCase
      */
     public function testUserIdentity()
     {
-
-    }
-
-    /**
-     * Test attribute "provider"
-     */
-    public function testPropertyProvider()
-    {
-
-    }
-
-    /**
-     * Test attribute "auth_scheme"
-     */
-    public function testPropertyAuthScheme()
-    {
-
-    }
-
-    /**
-     * Test attribute "external_id"
-     */
-    public function testPropertyExternalId()
-    {
-
-    }
-
-    /**
-     * Test attribute "profile"
-     */
-    public function testPropertyProfile()
-    {
-
-    }
-
-    /**
-     * Test attribute "credentials"
-     */
-    public function testPropertyCredentials()
-    {
-
-    }
-
-    /**
-     * Test attribute "created"
-     */
-    public function testPropertyCreated()
-    {
-
-    }
-
-    /**
-     * Test attribute "modified"
-     */
-    public function testPropertyModified()
-    {
-
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-
     }
 
     /**
@@ -151,7 +82,61 @@ class UserIdentityTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyUserId()
     {
-
     }
 
+    /**
+     * Test attribute "provider"
+     */
+    public function testPropertyProvider()
+    {
+    }
+
+    /**
+     * Test attribute "auth_scheme"
+     */
+    public function testPropertyAuthScheme()
+    {
+    }
+
+    /**
+     * Test attribute "external_id"
+     */
+    public function testPropertyExternalId()
+    {
+    }
+
+    /**
+     * Test attribute "profile"
+     */
+    public function testPropertyProfile()
+    {
+    }
+
+    /**
+     * Test attribute "credentials"
+     */
+    public function testPropertyCredentials()
+    {
+    }
+
+    /**
+     * Test attribute "created"
+     */
+    public function testPropertyCreated()
+    {
+    }
+
+    /**
+     * Test attribute "modified"
+     */
+    public function testPropertyModified()
+    {
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
 }

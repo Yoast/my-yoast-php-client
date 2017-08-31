@@ -116,7 +116,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -550,7 +550,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -685,7 +685,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)|  | [optional]
 
 ### Return type
 
@@ -730,7 +730,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/\Yoast\MyYoastApiClient\Model\Site.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)|  | [optional]
 
 ### Return type
 
@@ -1309,7 +1309,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription id |
  **fk** | **string**| Foreign key for orders |
- **data** | [**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/\Yoast\MyYoastApiClient\Model\SubscriptionOrders.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\SubscriptionOrders**](../Model/SubscriptionOrders.md)|  | [optional]
 
 ### Return type
 
@@ -1356,7 +1356,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription id |
  **fk** | **string**| Foreign key for sites |
- **data** | [**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/\Yoast\MyYoastApiClient\Model\SiteSubscriptions.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/SiteSubscriptions.md)|  | [optional]
 
 ### Return type
 
@@ -1401,7 +1401,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
@@ -1536,7 +1536,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription id |
  **fk** | **string**| Foreign key for orders |
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/\Yoast\MyYoastApiClient\Model\Order.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)|  | [optional]
 
 ### Return type
 
@@ -1583,7 +1583,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Subscription id |
  **fk** | **string**| Foreign key for sites |
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/\Yoast\MyYoastApiClient\Model\Site.md)|  | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)|  | [optional]
 
 ### Return type
 
@@ -1628,7 +1628,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1673,7 +1673,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1716,7 +1716,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1759,7 +1759,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1804,7 +1804,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
@@ -1849,7 +1849,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/\Yoast\MyYoastApiClient\Model\Subscription.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 

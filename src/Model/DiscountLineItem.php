@@ -54,15 +54,33 @@ class DiscountLineItem implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'double',
-        'line_item_id' => 'string',
-        'discount_amount' => 'double',
-        'discount_rate' => 'double'
+        'id' => 'string',
+        'order_id' => 'string',
+        'coupon_code' => 'string',
+        'amount' => 'double',
+        'amount_vat' => 'double'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'order_id' => null,
+        'coupon_code' => null,
+        'amount' => 'double',
+        'amount_vat' => 'double'
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -71,9 +89,10 @@ class DiscountLineItem implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'line_item_id' => 'lineItemId',
-        'discount_amount' => 'discountAmount',
-        'discount_rate' => 'discountRate'
+        'order_id' => 'orderId',
+        'coupon_code' => 'couponCode',
+        'amount' => 'amount',
+        'amount_vat' => 'amountVat'
     ];
 
 
@@ -83,9 +102,10 @@ class DiscountLineItem implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'line_item_id' => 'setLineItemId',
-        'discount_amount' => 'setDiscountAmount',
-        'discount_rate' => 'setDiscountRate'
+        'order_id' => 'setOrderId',
+        'coupon_code' => 'setCouponCode',
+        'amount' => 'setAmount',
+        'amount_vat' => 'setAmountVat'
     ];
 
 
@@ -95,9 +115,10 @@ class DiscountLineItem implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'line_item_id' => 'getLineItemId',
-        'discount_amount' => 'getDiscountAmount',
-        'discount_rate' => 'getDiscountRate'
+        'order_id' => 'getOrderId',
+        'coupon_code' => 'getCouponCode',
+        'amount' => 'getAmount',
+        'amount_vat' => 'getAmountVat'
     ];
 
     public static function attributeMap()
@@ -132,9 +153,10 @@ class DiscountLineItem implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['line_item_id'] = isset($data['line_item_id']) ? $data['line_item_id'] : null;
-        $this->container['discount_amount'] = isset($data['discount_amount']) ? $data['discount_amount'] : null;
-        $this->container['discount_rate'] = isset($data['discount_rate']) ? $data['discount_rate'] : null;
+        $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
+        $this->container['coupon_code'] = isset($data['coupon_code']) ? $data['coupon_code'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['amount_vat'] = isset($data['amount_vat']) ? $data['amount_vat'] : null;
     }
 
     /**
@@ -146,11 +168,20 @@ class DiscountLineItem implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['line_item_id'] === null) {
-            $invalid_properties[] = "'line_item_id' can't be null";
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
         }
-        if ($this->container['discount_amount'] === null) {
-            $invalid_properties[] = "'discount_amount' can't be null";
+        if ($this->container['order_id'] === null) {
+            $invalid_properties[] = "'order_id' can't be null";
+        }
+        if ($this->container['coupon_code'] === null) {
+            $invalid_properties[] = "'coupon_code' can't be null";
+        }
+        if ($this->container['amount'] === null) {
+            $invalid_properties[] = "'amount' can't be null";
+        }
+        if ($this->container['amount_vat'] === null) {
+            $invalid_properties[] = "'amount_vat' can't be null";
         }
         return $invalid_properties;
     }
@@ -164,10 +195,19 @@ class DiscountLineItem implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['line_item_id'] === null) {
+        if ($this->container['id'] === null) {
             return false;
         }
-        if ($this->container['discount_amount'] === null) {
+        if ($this->container['order_id'] === null) {
+            return false;
+        }
+        if ($this->container['coupon_code'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] === null) {
+            return false;
+        }
+        if ($this->container['amount_vat'] === null) {
             return false;
         }
         return true;
@@ -176,7 +216,7 @@ class DiscountLineItem implements ArrayAccess
 
     /**
      * Gets id
-     * @return double
+     * @return string
      */
     public function getId()
     {
@@ -185,7 +225,7 @@ class DiscountLineItem implements ArrayAccess
 
     /**
      * Sets id
-     * @param double $id
+     * @param string $id
      * @return $this
      */
     public function setId($id)
@@ -196,64 +236,85 @@ class DiscountLineItem implements ArrayAccess
     }
 
     /**
-     * Gets line_item_id
+     * Gets order_id
      * @return string
      */
-    public function getLineItemId()
+    public function getOrderId()
     {
-        return $this->container['line_item_id'];
+        return $this->container['order_id'];
     }
 
     /**
-     * Sets line_item_id
-     * @param string $line_item_id
+     * Sets order_id
+     * @param string $order_id
      * @return $this
      */
-    public function setLineItemId($line_item_id)
+    public function setOrderId($order_id)
     {
-        $this->container['line_item_id'] = $line_item_id;
+        $this->container['order_id'] = $order_id;
 
         return $this;
     }
 
     /**
-     * Gets discount_amount
-     * @return double
+     * Gets coupon_code
+     * @return string
      */
-    public function getDiscountAmount()
+    public function getCouponCode()
     {
-        return $this->container['discount_amount'];
+        return $this->container['coupon_code'];
     }
 
     /**
-     * Sets discount_amount
-     * @param double $discount_amount
+     * Sets coupon_code
+     * @param string $coupon_code
      * @return $this
      */
-    public function setDiscountAmount($discount_amount)
+    public function setCouponCode($coupon_code)
     {
-        $this->container['discount_amount'] = $discount_amount;
+        $this->container['coupon_code'] = $coupon_code;
 
         return $this;
     }
 
     /**
-     * Gets discount_rate
+     * Gets amount
      * @return double
      */
-    public function getDiscountRate()
+    public function getAmount()
     {
-        return $this->container['discount_rate'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets discount_rate
-     * @param double $discount_rate
+     * Sets amount
+     * @param double $amount
      * @return $this
      */
-    public function setDiscountRate($discount_rate)
+    public function setAmount($amount)
     {
-        $this->container['discount_rate'] = $discount_rate;
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_vat
+     * @return double
+     */
+    public function getAmountVat()
+    {
+        return $this->container['amount_vat'];
+    }
+
+    /**
+     * Sets amount_vat
+     * @param double $amount_vat
+     * @return $this
+     */
+    public function setAmountVat($amount_vat)
+    {
+        $this->container['amount_vat'] = $amount_vat;
 
         return $this;
     }

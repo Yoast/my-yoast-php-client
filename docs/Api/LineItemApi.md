@@ -15,16 +15,9 @@ Method | HTTP request | Description
 [**lineItemFindById**](LineItemApi.md#lineItemFindById) | **GET** /LineItems/{id} | Find a model instance by {{id}} from the data source.
 [**lineItemFindOne**](LineItemApi.md#lineItemFindOne) | **GET** /LineItems/findOne | Find first instance of the model matched by filter from the data source.
 [**lineItemPatchOrCreate**](LineItemApi.md#lineItemPatchOrCreate) | **PATCH** /LineItems | Patch an existing model instance or insert a new one into the data source.
-[**lineItemPrototypeCountDiscounts**](LineItemApi.md#lineItemPrototypeCountDiscounts) | **GET** /LineItems/{id}/discounts/count | Counts discounts of LineItem.
-[**lineItemPrototypeCreateDiscounts**](LineItemApi.md#lineItemPrototypeCreateDiscounts) | **POST** /LineItems/{id}/discounts | Creates a new instance in discounts of this model.
-[**lineItemPrototypeDeleteDiscounts**](LineItemApi.md#lineItemPrototypeDeleteDiscounts) | **DELETE** /LineItems/{id}/discounts | Deletes all discounts of this model.
-[**lineItemPrototypeDestroyByIdDiscounts**](LineItemApi.md#lineItemPrototypeDestroyByIdDiscounts) | **DELETE** /LineItems/{id}/discounts/{fk} | Delete a related item by id for discounts.
-[**lineItemPrototypeFindByIdDiscounts**](LineItemApi.md#lineItemPrototypeFindByIdDiscounts) | **GET** /LineItems/{id}/discounts/{fk} | Find a related item by id for discounts.
-[**lineItemPrototypeGetDiscounts**](LineItemApi.md#lineItemPrototypeGetDiscounts) | **GET** /LineItems/{id}/discounts | Queries discounts of LineItem.
 [**lineItemPrototypeGetOrder**](LineItemApi.md#lineItemPrototypeGetOrder) | **GET** /LineItems/{id}/order | Fetches belongsTo relation order.
 [**lineItemPrototypeGetProduct**](LineItemApi.md#lineItemPrototypeGetProduct) | **GET** /LineItems/{id}/product | Fetches belongsTo relation product.
 [**lineItemPrototypePatchAttributes**](LineItemApi.md#lineItemPrototypePatchAttributes) | **PATCH** /LineItems/{id} | Patch attributes for a model instance and persist it into the data source.
-[**lineItemPrototypeUpdateByIdDiscounts**](LineItemApi.md#lineItemPrototypeUpdateByIdDiscounts) | **PUT** /LineItems/{id}/discounts/{fk} | Update a related item by id for discounts.
 [**lineItemReplaceByIdPostLineItemsidReplace**](LineItemApi.md#lineItemReplaceByIdPostLineItemsidReplace) | **POST** /LineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 [**lineItemReplaceByIdPutLineItemsid**](LineItemApi.md#lineItemReplaceByIdPutLineItemsid) | **PUT** /LineItems/{id} | Replace attributes for a model instance and persist it into the data source.
 [**lineItemReplaceOrCreatePostLineItemsReplaceOrCreate**](LineItemApi.md#lineItemReplaceOrCreatePostLineItemsReplaceOrCreate) | **POST** /LineItems/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -102,7 +95,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -491,277 +484,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)| Model instance data | [optional]
 
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **lineItemPrototypeCountDiscounts**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 lineItemPrototypeCountDiscounts($id, $where)
-
-Counts discounts of LineItem.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$id = "id_example"; // string | LineItem id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->lineItemPrototypeCountDiscounts($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LineItemApi->lineItemPrototypeCountDiscounts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| LineItem id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **lineItemPrototypeCreateDiscounts**
-> \Yoast\MyYoastApiClient\Model\DiscountLineItem lineItemPrototypeCreateDiscounts($id, $data)
-
-Creates a new instance in discounts of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$id = "id_example"; // string | LineItem id
-$data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | 
-
-try {
-    $result = $api_instance->lineItemPrototypeCreateDiscounts($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LineItemApi->lineItemPrototypeCreateDiscounts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| LineItem id |
- **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **lineItemPrototypeDeleteDiscounts**
-> lineItemPrototypeDeleteDiscounts($id)
-
-Deletes all discounts of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$id = "id_example"; // string | LineItem id
-
-try {
-    $api_instance->lineItemPrototypeDeleteDiscounts($id);
-} catch (Exception $e) {
-    echo 'Exception when calling LineItemApi->lineItemPrototypeDeleteDiscounts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| LineItem id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **lineItemPrototypeDestroyByIdDiscounts**
-> lineItemPrototypeDestroyByIdDiscounts($id, $fk)
-
-Delete a related item by id for discounts.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$id = "id_example"; // string | LineItem id
-$fk = "fk_example"; // string | Foreign key for discounts
-
-try {
-    $api_instance->lineItemPrototypeDestroyByIdDiscounts($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling LineItemApi->lineItemPrototypeDestroyByIdDiscounts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| LineItem id |
- **fk** | **string**| Foreign key for discounts |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **lineItemPrototypeFindByIdDiscounts**
-> \Yoast\MyYoastApiClient\Model\DiscountLineItem lineItemPrototypeFindByIdDiscounts($id, $fk)
-
-Find a related item by id for discounts.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$id = "id_example"; // string | LineItem id
-$fk = "fk_example"; // string | Foreign key for discounts
-
-try {
-    $result = $api_instance->lineItemPrototypeFindByIdDiscounts($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LineItemApi->lineItemPrototypeFindByIdDiscounts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| LineItem id |
- **fk** | **string**| Foreign key for discounts |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **lineItemPrototypeGetDiscounts**
-> \Yoast\MyYoastApiClient\Model\DiscountLineItem[] lineItemPrototypeGetDiscounts($id, $filter)
-
-Queries discounts of LineItem.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$id = "id_example"; // string | LineItem id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->lineItemPrototypeGetDiscounts($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LineItemApi->lineItemPrototypeGetDiscounts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| LineItem id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\DiscountLineItem[]**](../Model/DiscountLineItem.md)
 
 ### Authorization
 
@@ -892,58 +619,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| LineItem id |
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **lineItemPrototypeUpdateByIdDiscounts**
-> \Yoast\MyYoastApiClient\Model\DiscountLineItem lineItemPrototypeUpdateByIdDiscounts($id, $fk, $data)
-
-Update a related item by id for discounts.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
-$id = "id_example"; // string | LineItem id
-$fk = "fk_example"; // string | Foreign key for discounts
-$data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | 
-
-try {
-    $result = $api_instance->lineItemPrototypeUpdateByIdDiscounts($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling LineItemApi->lineItemPrototypeUpdateByIdDiscounts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| LineItem id |
- **fk** | **string**| Foreign key for discounts |
- **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)
 
 ### Authorization
 
@@ -984,7 +664,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1029,7 +709,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1072,7 +752,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1115,7 +795,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -1160,7 +840,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
@@ -1205,7 +885,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/\Yoast\MyYoastApiClient\Model\LineItem.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 

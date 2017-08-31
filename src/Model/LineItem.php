@@ -56,16 +56,41 @@ class LineItem implements ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
         'order_id' => 'string',
-        'price' => 'double',
+        'subtotal_amount' => 'double',
+        'total_amount' => 'double',
         'vat_amount' => 'double',
         'vat_scale_id' => 'string',
         'product_id' => 'string',
-        'product_name' => 'string'
+        'product_name' => 'string',
+        'quantity' => 'double',
+        'parent_id' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'order_id' => null,
+        'subtotal_amount' => 'double',
+        'total_amount' => 'double',
+        'vat_amount' => 'double',
+        'vat_scale_id' => null,
+        'product_id' => null,
+        'product_name' => null,
+        'quantity' => 'double',
+        'parent_id' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -75,11 +100,14 @@ class LineItem implements ArrayAccess
     protected static $attributeMap = [
         'id' => 'id',
         'order_id' => 'orderId',
-        'price' => 'price',
+        'subtotal_amount' => 'subtotalAmount',
+        'total_amount' => 'totalAmount',
         'vat_amount' => 'vatAmount',
         'vat_scale_id' => 'vatScaleId',
         'product_id' => 'productId',
-        'product_name' => 'productName'
+        'product_name' => 'productName',
+        'quantity' => 'quantity',
+        'parent_id' => 'parentId'
     ];
 
 
@@ -90,11 +118,14 @@ class LineItem implements ArrayAccess
     protected static $setters = [
         'id' => 'setId',
         'order_id' => 'setOrderId',
-        'price' => 'setPrice',
+        'subtotal_amount' => 'setSubtotalAmount',
+        'total_amount' => 'setTotalAmount',
         'vat_amount' => 'setVatAmount',
         'vat_scale_id' => 'setVatScaleId',
         'product_id' => 'setProductId',
-        'product_name' => 'setProductName'
+        'product_name' => 'setProductName',
+        'quantity' => 'setQuantity',
+        'parent_id' => 'setParentId'
     ];
 
 
@@ -105,11 +136,14 @@ class LineItem implements ArrayAccess
     protected static $getters = [
         'id' => 'getId',
         'order_id' => 'getOrderId',
-        'price' => 'getPrice',
+        'subtotal_amount' => 'getSubtotalAmount',
+        'total_amount' => 'getTotalAmount',
         'vat_amount' => 'getVatAmount',
         'vat_scale_id' => 'getVatScaleId',
         'product_id' => 'getProductId',
-        'product_name' => 'getProductName'
+        'product_name' => 'getProductName',
+        'quantity' => 'getQuantity',
+        'parent_id' => 'getParentId'
     ];
 
     public static function attributeMap()
@@ -145,11 +179,14 @@ class LineItem implements ArrayAccess
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
-        $this->container['price'] = isset($data['price']) ? $data['price'] : null;
+        $this->container['subtotal_amount'] = isset($data['subtotal_amount']) ? $data['subtotal_amount'] : null;
+        $this->container['total_amount'] = isset($data['total_amount']) ? $data['total_amount'] : null;
         $this->container['vat_amount'] = isset($data['vat_amount']) ? $data['vat_amount'] : 0.0;
         $this->container['vat_scale_id'] = isset($data['vat_scale_id']) ? $data['vat_scale_id'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['product_name'] = isset($data['product_name']) ? $data['product_name'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : 1.0;
+        $this->container['parent_id'] = isset($data['parent_id']) ? $data['parent_id'] : null;
     }
 
     /**
@@ -167,8 +204,11 @@ class LineItem implements ArrayAccess
         if ($this->container['order_id'] === null) {
             $invalid_properties[] = "'order_id' can't be null";
         }
-        if ($this->container['price'] === null) {
-            $invalid_properties[] = "'price' can't be null";
+        if ($this->container['subtotal_amount'] === null) {
+            $invalid_properties[] = "'subtotal_amount' can't be null";
+        }
+        if ($this->container['total_amount'] === null) {
+            $invalid_properties[] = "'total_amount' can't be null";
         }
         if ($this->container['vat_amount'] === null) {
             $invalid_properties[] = "'vat_amount' can't be null";
@@ -178,6 +218,9 @@ class LineItem implements ArrayAccess
         }
         if ($this->container['product_name'] === null) {
             $invalid_properties[] = "'product_name' can't be null";
+        }
+        if ($this->container['quantity'] === null) {
+            $invalid_properties[] = "'quantity' can't be null";
         }
         return $invalid_properties;
     }
@@ -197,7 +240,10 @@ class LineItem implements ArrayAccess
         if ($this->container['order_id'] === null) {
             return false;
         }
-        if ($this->container['price'] === null) {
+        if ($this->container['subtotal_amount'] === null) {
+            return false;
+        }
+        if ($this->container['total_amount'] === null) {
             return false;
         }
         if ($this->container['vat_amount'] === null) {
@@ -207,6 +253,9 @@ class LineItem implements ArrayAccess
             return false;
         }
         if ($this->container['product_name'] === null) {
+            return false;
+        }
+        if ($this->container['quantity'] === null) {
             return false;
         }
         return true;
@@ -256,22 +305,43 @@ class LineItem implements ArrayAccess
     }
 
     /**
-     * Gets price
+     * Gets subtotal_amount
      * @return double
      */
-    public function getPrice()
+    public function getSubtotalAmount()
     {
-        return $this->container['price'];
+        return $this->container['subtotal_amount'];
     }
 
     /**
-     * Sets price
-     * @param double $price
+     * Sets subtotal_amount
+     * @param double $subtotal_amount
      * @return $this
      */
-    public function setPrice($price)
+    public function setSubtotalAmount($subtotal_amount)
     {
-        $this->container['price'] = $price;
+        $this->container['subtotal_amount'] = $subtotal_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_amount
+     * @return double
+     */
+    public function getTotalAmount()
+    {
+        return $this->container['total_amount'];
+    }
+
+    /**
+     * Sets total_amount
+     * @param double $total_amount
+     * @return $this
+     */
+    public function setTotalAmount($total_amount)
+    {
+        $this->container['total_amount'] = $total_amount;
 
         return $this;
     }
@@ -356,6 +426,48 @@ class LineItem implements ArrayAccess
     public function setProductName($product_name)
     {
         $this->container['product_name'] = $product_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     * @return double
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     * @param double $quantity
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+        $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent_id
+     * @return string
+     */
+    public function getParentId()
+    {
+        return $this->container['parent_id'];
+    }
+
+    /**
+     * Sets parent_id
+     * @param string $parent_id
+     * @return $this
+     */
+    public function setParentId($parent_id)
+    {
+        $this->container['parent_id'] = $parent_id;
 
         return $this;
     }

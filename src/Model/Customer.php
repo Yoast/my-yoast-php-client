@@ -54,11 +54,25 @@ class Customer implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'id' => 'string',
+        'enabled' => 'bool',
         'realm' => 'string',
         'username' => 'string',
         'email' => 'string',
-        'email_verified' => 'bool',
-        'id' => 'double'
+        'email_verified' => 'bool'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'enabled' => null,
+        'realm' => null,
+        'username' => null,
+        'email' => null,
+        'email_verified' => null
     ];
 
     public static function swaggerTypes()
@@ -66,16 +80,22 @@ class Customer implements ArrayAccess
         return self::$swaggerTypes;
     }
 
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
+    }
+
     /**
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
+        'enabled' => 'enabled',
         'realm' => 'realm',
         'username' => 'username',
         'email' => 'email',
-        'email_verified' => 'emailVerified',
-        'id' => 'id'
+        'email_verified' => 'emailVerified'
     ];
 
 
@@ -84,11 +104,12 @@ class Customer implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
+        'enabled' => 'setEnabled',
         'realm' => 'setRealm',
         'username' => 'setUsername',
         'email' => 'setEmail',
-        'email_verified' => 'setEmailVerified',
-        'id' => 'setId'
+        'email_verified' => 'setEmailVerified'
     ];
 
 
@@ -97,11 +118,12 @@ class Customer implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
+        'enabled' => 'getEnabled',
         'realm' => 'getRealm',
         'username' => 'getUsername',
         'email' => 'getEmail',
-        'email_verified' => 'getEmailVerified',
-        'id' => 'getId'
+        'email_verified' => 'getEmailVerified'
     ];
 
     public static function attributeMap()
@@ -135,11 +157,12 @@ class Customer implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['enabled'] = isset($data['enabled']) ? $data['enabled'] : true;
         $this->container['realm'] = isset($data['realm']) ? $data['realm'] : null;
         $this->container['username'] = isset($data['username']) ? $data['username'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['email_verified'] = isset($data['email_verified']) ? $data['email_verified'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -151,6 +174,9 @@ class Customer implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
+        }
         if ($this->container['email'] === null) {
             $invalid_properties[] = "'email' can't be null";
         }
@@ -166,12 +192,57 @@ class Customer implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['id'] === null) {
+            return false;
+        }
         if ($this->container['email'] === null) {
             return false;
         }
         return true;
     }
 
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets enabled
+     * @return bool
+     */
+    public function getEnabled()
+    {
+        return $this->container['enabled'];
+    }
+
+    /**
+     * Sets enabled
+     * @param bool $enabled
+     * @return $this
+     */
+    public function setEnabled($enabled)
+    {
+        $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
 
     /**
      * Gets realm
@@ -253,27 +324,6 @@ class Customer implements ArrayAccess
     public function setEmailVerified($email_verified)
     {
         $this->container['email_verified'] = $email_verified;
-
-        return $this;
-    }
-
-    /**
-     * Gets id
-     * @return double
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param double $id
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
 
         return $this;
     }

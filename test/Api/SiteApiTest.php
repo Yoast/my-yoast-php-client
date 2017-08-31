@@ -49,7 +49,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteCount()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteCreate()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteCreateChangeStreamGetSitesChangeStream()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteCreateChangeStreamPostSitesChangeStream()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteDeleteById()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteExistsGetSitesidExists()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteExistsHeadSitesid()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteFind()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteFindById()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteFindOne()
     {
-
     }
 
     /**
@@ -194,7 +180,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePatchOrCreate()
     {
-
     }
 
     /**
@@ -205,7 +190,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypeCountSubscriptions()
     {
-
     }
 
     /**
@@ -216,7 +200,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypeCreateSubscriptions()
     {
-
     }
 
     /**
@@ -227,7 +210,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypeDeleteSubscriptions()
     {
-
     }
 
     /**
@@ -238,7 +220,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypeDestroyByIdSubscriptions()
     {
-
     }
 
     /**
@@ -249,7 +230,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypeExistsSubscriptions()
     {
-
     }
 
     /**
@@ -260,7 +240,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypeFindByIdSubscriptions()
     {
-
     }
 
     /**
@@ -271,7 +250,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypeGetSubscriptions()
     {
-
     }
 
     /**
@@ -282,7 +260,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypeGetUser()
     {
-
     }
 
     /**
@@ -293,7 +270,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypeLinkSubscriptions()
     {
-
     }
 
     /**
@@ -304,7 +280,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypePatchAttributes()
     {
-
     }
 
     /**
@@ -315,7 +290,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypeUnlinkSubscriptions()
     {
-
     }
 
     /**
@@ -326,7 +300,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSitePrototypeUpdateByIdSubscriptions()
     {
-
     }
 
     /**
@@ -337,7 +310,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteReplaceByIdPostSitesidReplace()
     {
-
     }
 
     /**
@@ -348,7 +320,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteReplaceByIdPutSitesid()
     {
-
     }
 
     /**
@@ -359,7 +330,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteReplaceOrCreatePostSitesReplaceOrCreate()
     {
-
     }
 
     /**
@@ -370,7 +340,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteReplaceOrCreatePutSites()
     {
-
     }
 
     /**
@@ -381,7 +350,6 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteUpdateAll()
     {
-
     }
 
     /**
@@ -392,7 +360,5 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSiteUpsertWithWhere()
     {
-
     }
-
 }

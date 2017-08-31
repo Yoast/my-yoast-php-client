@@ -47,7 +47,6 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testLineItem()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,15 +89,20 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrderId()
     {
-
     }
 
     /**
-     * Test attribute "price"
+     * Test attribute "subtotal_amount"
      */
-    public function testPropertyPrice()
+    public function testPropertySubtotalAmount()
     {
+    }
 
+    /**
+     * Test attribute "total_amount"
+     */
+    public function testPropertyTotalAmount()
+    {
     }
 
     /**
@@ -111,7 +110,6 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVatAmount()
     {
-
     }
 
     /**
@@ -119,7 +117,6 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVatScaleId()
     {
-
     }
 
     /**
@@ -127,7 +124,6 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyProductId()
     {
-
     }
 
     /**
@@ -135,7 +131,19 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyProductName()
     {
-
     }
 
+    /**
+     * Test attribute "quantity"
+     */
+    public function testPropertyQuantity()
+    {
+    }
+
+    /**
+     * Test attribute "parent_id"
+     */
+    public function testPropertyParentId()
+    {
+    }
 }

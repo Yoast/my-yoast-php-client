@@ -58,7 +58,6 @@ class Subscription implements ArrayAccess
         'product_id' => 'string',
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
-        'reoccurring' => 'bool',
         'status' => 'string',
         'currency' => 'string',
         'date' => '\DateTime',
@@ -66,12 +65,38 @@ class Subscription implements ArrayAccess
         'name' => 'string',
         'next_payment' => '\DateTime',
         'limit' => 'double',
-        'subscriber_id' => 'double'
+        'used' => 'double',
+        'subscriber_id' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'product_id' => null,
+        'start_date' => 'date-time',
+        'end_date' => 'date-time',
+        'status' => null,
+        'currency' => null,
+        'date' => 'date-time',
+        'price' => 'double',
+        'name' => null,
+        'next_payment' => 'date-time',
+        'limit' => 'double',
+        'used' => 'double',
+        'subscriber_id' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -83,7 +108,6 @@ class Subscription implements ArrayAccess
         'product_id' => 'productId',
         'start_date' => 'startDate',
         'end_date' => 'endDate',
-        'reoccurring' => 'reoccurring',
         'status' => 'status',
         'currency' => 'currency',
         'date' => 'date',
@@ -91,6 +115,7 @@ class Subscription implements ArrayAccess
         'name' => 'name',
         'next_payment' => 'nextPayment',
         'limit' => 'limit',
+        'used' => 'used',
         'subscriber_id' => 'subscriberId'
     ];
 
@@ -104,7 +129,6 @@ class Subscription implements ArrayAccess
         'product_id' => 'setProductId',
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
-        'reoccurring' => 'setReoccurring',
         'status' => 'setStatus',
         'currency' => 'setCurrency',
         'date' => 'setDate',
@@ -112,6 +136,7 @@ class Subscription implements ArrayAccess
         'name' => 'setName',
         'next_payment' => 'setNextPayment',
         'limit' => 'setLimit',
+        'used' => 'setUsed',
         'subscriber_id' => 'setSubscriberId'
     ];
 
@@ -125,7 +150,6 @@ class Subscription implements ArrayAccess
         'product_id' => 'getProductId',
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
-        'reoccurring' => 'getReoccurring',
         'status' => 'getStatus',
         'currency' => 'getCurrency',
         'date' => 'getDate',
@@ -133,6 +157,7 @@ class Subscription implements ArrayAccess
         'name' => 'getName',
         'next_payment' => 'getNextPayment',
         'limit' => 'getLimit',
+        'used' => 'getUsed',
         'subscriber_id' => 'getSubscriberId'
     ];
 
@@ -171,7 +196,6 @@ class Subscription implements ArrayAccess
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['reoccurring'] = isset($data['reoccurring']) ? $data['reoccurring'] : true;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
@@ -179,6 +203,7 @@ class Subscription implements ArrayAccess
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['next_payment'] = isset($data['next_payment']) ? $data['next_payment'] : null;
         $this->container['limit'] = isset($data['limit']) ? $data['limit'] : 0.0;
+        $this->container['used'] = isset($data['used']) ? $data['used'] : 0.0;
         $this->container['subscriber_id'] = isset($data['subscriber_id']) ? $data['subscriber_id'] : null;
     }
 
@@ -200,14 +225,11 @@ class Subscription implements ArrayAccess
         if ($this->container['start_date'] === null) {
             $invalid_properties[] = "'start_date' can't be null";
         }
-        if ($this->container['end_date'] === null) {
-            $invalid_properties[] = "'end_date' can't be null";
-        }
-        if ($this->container['reoccurring'] === null) {
-            $invalid_properties[] = "'reoccurring' can't be null";
-        }
         if ($this->container['limit'] === null) {
             $invalid_properties[] = "'limit' can't be null";
+        }
+        if ($this->container['subscriber_id'] === null) {
+            $invalid_properties[] = "'subscriber_id' can't be null";
         }
         return $invalid_properties;
     }
@@ -230,13 +252,10 @@ class Subscription implements ArrayAccess
         if ($this->container['start_date'] === null) {
             return false;
         }
-        if ($this->container['end_date'] === null) {
-            return false;
-        }
-        if ($this->container['reoccurring'] === null) {
-            return false;
-        }
         if ($this->container['limit'] === null) {
+            return false;
+        }
+        if ($this->container['subscriber_id'] === null) {
             return false;
         }
         return true;
@@ -323,27 +342,6 @@ class Subscription implements ArrayAccess
     public function setEndDate($end_date)
     {
         $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets reoccurring
-     * @return bool
-     */
-    public function getReoccurring()
-    {
-        return $this->container['reoccurring'];
-    }
-
-    /**
-     * Sets reoccurring
-     * @param bool $reoccurring
-     * @return $this
-     */
-    public function setReoccurring($reoccurring)
-    {
-        $this->container['reoccurring'] = $reoccurring;
 
         return $this;
     }
@@ -496,8 +494,29 @@ class Subscription implements ArrayAccess
     }
 
     /**
-     * Gets subscriber_id
+     * Gets used
      * @return double
+     */
+    public function getUsed()
+    {
+        return $this->container['used'];
+    }
+
+    /**
+     * Sets used
+     * @param double $used
+     * @return $this
+     */
+    public function setUsed($used)
+    {
+        $this->container['used'] = $used;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriber_id
+     * @return string
      */
     public function getSubscriberId()
     {
@@ -506,7 +525,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Sets subscriber_id
-     * @param double $subscriber_id
+     * @param string $subscriber_id
      * @return $this
      */
     public function setSubscriberId($subscriber_id)

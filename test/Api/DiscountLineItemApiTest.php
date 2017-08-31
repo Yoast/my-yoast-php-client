@@ -49,7 +49,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemCount()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemCreate()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemCreateChangeStreamGetDiscountLineItemsChangeStream()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemCreateChangeStreamPostDiscountLineItemsChangeStream()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemDeleteById()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemExistsGetDiscountLineItemsidExists()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemExistsHeadDiscountLineItemsid()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemFind()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemFindById()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemFindOne()
     {
-
     }
 
     /**
@@ -194,18 +180,16 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemPatchOrCreate()
     {
-
     }
 
     /**
-     * Test case for discountLineItemPrototypeGetLineItem
+     * Test case for discountLineItemPrototypeGetOrder
      *
-     * Fetches belongsTo relation lineItem..
+     * Fetches belongsTo relation order..
      *
      */
-    public function testDiscountLineItemPrototypeGetLineItem()
+    public function testDiscountLineItemPrototypeGetOrder()
     {
-
     }
 
     /**
@@ -216,7 +200,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemPrototypePatchAttributes()
     {
-
     }
 
     /**
@@ -227,7 +210,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemReplaceByIdPostDiscountLineItemsidReplace()
     {
-
     }
 
     /**
@@ -238,7 +220,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemReplaceByIdPutDiscountLineItemsid()
     {
-
     }
 
     /**
@@ -249,7 +230,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemReplaceOrCreatePostDiscountLineItemsReplaceOrCreate()
     {
-
     }
 
     /**
@@ -260,7 +240,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemReplaceOrCreatePutDiscountLineItems()
     {
-
     }
 
     /**
@@ -271,7 +250,6 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemUpdateAll()
     {
-
     }
 
     /**
@@ -282,7 +260,5 @@ class DiscountLineItemApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDiscountLineItemUpsertWithWhere()
     {
-
     }
-
 }

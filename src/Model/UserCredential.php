@@ -62,12 +62,33 @@ class UserCredential implements ArrayAccess
         'created' => '\DateTime',
         'modified' => '\DateTime',
         'id' => 'double',
-        'user_id' => 'double'
+        'user_id' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'provider' => null,
+        'auth_scheme' => null,
+        'external_id' => null,
+        'profile' => null,
+        'credentials' => null,
+        'created' => 'date-time',
+        'modified' => 'date-time',
+        'id' => 'double',
+        'user_id' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -357,7 +378,7 @@ class UserCredential implements ArrayAccess
 
     /**
      * Gets user_id
-     * @return double
+     * @return string
      */
     public function getUserId()
     {
@@ -366,7 +387,7 @@ class UserCredential implements ArrayAccess
 
     /**
      * Sets user_id
-     * @param double $user_id
+     * @param string $user_id
      * @return $this
      */
     public function setUserId($user_id)

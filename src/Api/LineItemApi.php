@@ -129,10 +129,7 @@ class LineItemApi
         if ($where !== null) {
             $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -201,9 +198,6 @@ class LineItemApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
         // body params
         $_tempBody = null;
@@ -284,10 +278,7 @@ class LineItemApi
         if ($options !== null) {
             $queryParams['options'] = $this->apiClient->getSerializer()->toQueryValue($options);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -357,14 +348,11 @@ class LineItemApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // form params
         if ($options !== null) {
             $formParams['options'] = $this->apiClient->getSerializer()->toFormValue($options);
         }
-        
+
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -446,10 +434,7 @@ class LineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -531,10 +516,7 @@ class LineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -616,10 +598,7 @@ class LineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -693,10 +672,7 @@ class LineItemApi
         if ($filter !== null) {
             $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -784,10 +760,7 @@ class LineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -861,10 +834,7 @@ class LineItemApi
         if ($filter !== null) {
             $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -934,9 +904,6 @@ class LineItemApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -966,555 +933,6 @@ class LineItemApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\LineItem', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation lineItemPrototypeCountDiscounts
-     *
-     * Counts discounts of LineItem.
-     *
-     * @param string $id LineItem id (required)
-     * @param string $where Criteria to match model instances (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
-     */
-    public function lineItemPrototypeCountDiscounts($id, $where = null)
-    {
-        list($response) = $this->lineItemPrototypeCountDiscountsWithHttpInfo($id, $where);
-        return $response;
-    }
-
-    /**
-     * Operation lineItemPrototypeCountDiscountsWithHttpInfo
-     *
-     * Counts discounts of LineItem.
-     *
-     * @param string $id LineItem id (required)
-     * @param string $where Criteria to match model instances (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function lineItemPrototypeCountDiscountsWithHttpInfo($id, $where = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeCountDiscounts');
-        }
-        // parse inputs
-        $resourcePath = "/LineItems/{id}/discounts/count";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // query params
-        if ($where !== null) {
-            $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
-        }
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/LineItems/{id}/discounts/count'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation lineItemPrototypeCreateDiscounts
-     *
-     * Creates a new instance in discounts of this model.
-     *
-     * @param string $id LineItem id (required)
-     * @param \Yoast\MyYoastApiClient\Model\DiscountLineItem $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\DiscountLineItem
-     */
-    public function lineItemPrototypeCreateDiscounts($id, $data = null)
-    {
-        list($response) = $this->lineItemPrototypeCreateDiscountsWithHttpInfo($id, $data);
-        return $response;
-    }
-
-    /**
-     * Operation lineItemPrototypeCreateDiscountsWithHttpInfo
-     *
-     * Creates a new instance in discounts of this model.
-     *
-     * @param string $id LineItem id (required)
-     * @param \Yoast\MyYoastApiClient\Model\DiscountLineItem $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\DiscountLineItem, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function lineItemPrototypeCreateDiscountsWithHttpInfo($id, $data = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeCreateDiscounts');
-        }
-        // parse inputs
-        $resourcePath = "/LineItems/{id}/discounts";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($data)) {
-            $_tempBody = $data;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\DiscountLineItem',
-                '/LineItems/{id}/discounts'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\DiscountLineItem', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\DiscountLineItem', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation lineItemPrototypeDeleteDiscounts
-     *
-     * Deletes all discounts of this model.
-     *
-     * @param string $id LineItem id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return void
-     */
-    public function lineItemPrototypeDeleteDiscounts($id)
-    {
-        list($response) = $this->lineItemPrototypeDeleteDiscountsWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation lineItemPrototypeDeleteDiscountsWithHttpInfo
-     *
-     * Deletes all discounts of this model.
-     *
-     * @param string $id LineItem id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function lineItemPrototypeDeleteDiscountsWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeDeleteDiscounts');
-        }
-        // parse inputs
-        $resourcePath = "/LineItems/{id}/discounts";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/LineItems/{id}/discounts'
-            );
-
-            return [null, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation lineItemPrototypeDestroyByIdDiscounts
-     *
-     * Delete a related item by id for discounts.
-     *
-     * @param string $id LineItem id (required)
-     * @param string $fk Foreign key for discounts (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return void
-     */
-    public function lineItemPrototypeDestroyByIdDiscounts($id, $fk)
-    {
-        list($response) = $this->lineItemPrototypeDestroyByIdDiscountsWithHttpInfo($id, $fk);
-        return $response;
-    }
-
-    /**
-     * Operation lineItemPrototypeDestroyByIdDiscountsWithHttpInfo
-     *
-     * Delete a related item by id for discounts.
-     *
-     * @param string $id LineItem id (required)
-     * @param string $fk Foreign key for discounts (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function lineItemPrototypeDestroyByIdDiscountsWithHttpInfo($id, $fk)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeDestroyByIdDiscounts');
-        }
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling lineItemPrototypeDestroyByIdDiscounts');
-        }
-        // parse inputs
-        $resourcePath = "/LineItems/{id}/discounts/{fk}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/LineItems/{id}/discounts/{fk}'
-            );
-
-            return [null, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation lineItemPrototypeFindByIdDiscounts
-     *
-     * Find a related item by id for discounts.
-     *
-     * @param string $id LineItem id (required)
-     * @param string $fk Foreign key for discounts (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\DiscountLineItem
-     */
-    public function lineItemPrototypeFindByIdDiscounts($id, $fk)
-    {
-        list($response) = $this->lineItemPrototypeFindByIdDiscountsWithHttpInfo($id, $fk);
-        return $response;
-    }
-
-    /**
-     * Operation lineItemPrototypeFindByIdDiscountsWithHttpInfo
-     *
-     * Find a related item by id for discounts.
-     *
-     * @param string $id LineItem id (required)
-     * @param string $fk Foreign key for discounts (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\DiscountLineItem, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function lineItemPrototypeFindByIdDiscountsWithHttpInfo($id, $fk)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeFindByIdDiscounts');
-        }
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling lineItemPrototypeFindByIdDiscounts');
-        }
-        // parse inputs
-        $resourcePath = "/LineItems/{id}/discounts/{fk}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\DiscountLineItem',
-                '/LineItems/{id}/discounts/{fk}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\DiscountLineItem', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\DiscountLineItem', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation lineItemPrototypeGetDiscounts
-     *
-     * Queries discounts of LineItem.
-     *
-     * @param string $id LineItem id (required)
-     * @param string $filter  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\DiscountLineItem[]
-     */
-    public function lineItemPrototypeGetDiscounts($id, $filter = null)
-    {
-        list($response) = $this->lineItemPrototypeGetDiscountsWithHttpInfo($id, $filter);
-        return $response;
-    }
-
-    /**
-     * Operation lineItemPrototypeGetDiscountsWithHttpInfo
-     *
-     * Queries discounts of LineItem.
-     *
-     * @param string $id LineItem id (required)
-     * @param string $filter  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\DiscountLineItem[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function lineItemPrototypeGetDiscountsWithHttpInfo($id, $filter = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeGetDiscounts');
-        }
-        // parse inputs
-        $resourcePath = "/LineItems/{id}/discounts";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // query params
-        if ($filter !== null) {
-            $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
-        }
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\DiscountLineItem[]',
-                '/LineItems/{id}/discounts'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\DiscountLineItem[]', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\DiscountLineItem[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1579,10 +997,7 @@ class LineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1670,10 +1085,7 @@ class LineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -1757,9 +1169,6 @@ class LineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -1789,112 +1198,6 @@ class LineItemApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\LineItem', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation lineItemPrototypeUpdateByIdDiscounts
-     *
-     * Update a related item by id for discounts.
-     *
-     * @param string $id LineItem id (required)
-     * @param string $fk Foreign key for discounts (required)
-     * @param \Yoast\MyYoastApiClient\Model\DiscountLineItem $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\DiscountLineItem
-     */
-    public function lineItemPrototypeUpdateByIdDiscounts($id, $fk, $data = null)
-    {
-        list($response) = $this->lineItemPrototypeUpdateByIdDiscountsWithHttpInfo($id, $fk, $data);
-        return $response;
-    }
-
-    /**
-     * Operation lineItemPrototypeUpdateByIdDiscountsWithHttpInfo
-     *
-     * Update a related item by id for discounts.
-     *
-     * @param string $id LineItem id (required)
-     * @param string $fk Foreign key for discounts (required)
-     * @param \Yoast\MyYoastApiClient\Model\DiscountLineItem $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\DiscountLineItem, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function lineItemPrototypeUpdateByIdDiscountsWithHttpInfo($id, $fk, $data = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling lineItemPrototypeUpdateByIdDiscounts');
-        }
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling lineItemPrototypeUpdateByIdDiscounts');
-        }
-        // parse inputs
-        $resourcePath = "/LineItems/{id}/discounts/{fk}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($data)) {
-            $_tempBody = $data;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\DiscountLineItem',
-                '/LineItems/{id}/discounts/{fk}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\DiscountLineItem', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\DiscountLineItem', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1955,9 +1258,6 @@ class LineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -2047,9 +1347,6 @@ class LineItemApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -2125,9 +1422,6 @@ class LineItemApi
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -2202,9 +1496,6 @@ class LineItemApi
             $headerParams['Accept'] = $_header_accept;
         }
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
         // body params
         $_tempBody = null;
@@ -2287,9 +1578,6 @@ class LineItemApi
         if ($where !== null) {
             $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {
@@ -2371,9 +1659,6 @@ class LineItemApi
         if ($where !== null) {
             $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
         // body params
         $_tempBody = null;
         if (isset($data)) {

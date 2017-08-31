@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**discountLineItemFindById**](DiscountLineItemApi.md#discountLineItemFindById) | **GET** /DiscountLineItems/{id} | Find a model instance by {{id}} from the data source.
 [**discountLineItemFindOne**](DiscountLineItemApi.md#discountLineItemFindOne) | **GET** /DiscountLineItems/findOne | Find first instance of the model matched by filter from the data source.
 [**discountLineItemPatchOrCreate**](DiscountLineItemApi.md#discountLineItemPatchOrCreate) | **PATCH** /DiscountLineItems | Patch an existing model instance or insert a new one into the data source.
-[**discountLineItemPrototypeGetLineItem**](DiscountLineItemApi.md#discountLineItemPrototypeGetLineItem) | **GET** /DiscountLineItems/{id}/lineItem | Fetches belongsTo relation lineItem.
+[**discountLineItemPrototypeGetOrder**](DiscountLineItemApi.md#discountLineItemPrototypeGetOrder) | **GET** /DiscountLineItems/{id}/order | Fetches belongsTo relation order.
 [**discountLineItemPrototypePatchAttributes**](DiscountLineItemApi.md#discountLineItemPrototypePatchAttributes) | **PATCH** /DiscountLineItems/{id} | Patch attributes for a model instance and persist it into the data source.
 [**discountLineItemReplaceByIdPostDiscountLineItemsidReplace**](DiscountLineItemApi.md#discountLineItemReplaceByIdPostDiscountLineItemsidReplace) | **POST** /DiscountLineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 [**discountLineItemReplaceByIdPutDiscountLineItemsid**](DiscountLineItemApi.md#discountLineItemReplaceByIdPutDiscountLineItemsid) | **PUT** /DiscountLineItems/{id} | Replace attributes for a model instance and persist it into the data source.
@@ -94,7 +94,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -483,7 +483,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -500,10 +500,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **discountLineItemPrototypeGetLineItem**
-> \Yoast\MyYoastApiClient\Model\LineItem discountLineItemPrototypeGetLineItem($id, $refresh)
+# **discountLineItemPrototypeGetOrder**
+> \Yoast\MyYoastApiClient\Model\Order discountLineItemPrototypeGetOrder($id, $refresh)
 
-Fetches belongsTo relation lineItem.
+Fetches belongsTo relation order.
 
 ### Example
 ```php
@@ -515,10 +515,10 @@ $id = "id_example"; // string | DiscountLineItem id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->discountLineItemPrototypeGetLineItem($id, $refresh);
+    $result = $api_instance->discountLineItemPrototypeGetOrder($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DiscountLineItemApi->discountLineItemPrototypeGetLineItem: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DiscountLineItemApi->discountLineItemPrototypeGetOrder: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -573,7 +573,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| DiscountLineItem id |
- **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
@@ -618,7 +618,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -663,7 +663,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -706,7 +706,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -749,7 +749,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)| Model instance data | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -794,7 +794,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
@@ -839,7 +839,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/\Yoast\MyYoastApiClient\Model\DiscountLineItem.md)| An object of model property name/value pairs | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\DiscountLineItem**](../Model/DiscountLineItem.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
