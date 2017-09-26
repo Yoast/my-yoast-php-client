@@ -955,7 +955,7 @@ class OrderApi
      *
      * @param string $id  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2005
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2004
      */
     public function orderInvoice($id)
     {
@@ -968,7 +968,7 @@ class OrderApi
      *
      * @param string $id  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
     public function orderInvoiceWithHttpInfo($id)
     {
@@ -1011,15 +1011,15 @@ class OrderApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2005',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2004',
                 '/Orders/{id}/invoice'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2004', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2004', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -343,6 +343,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for siteTransfer
+     *
+     * .
+     *
+     */
+    public function testSiteTransfer()
+    {
+    }
+
+    /**
      * Test case for siteUpdateAll
      *
      * Update instances of the model matched by {{where}} from the data source..

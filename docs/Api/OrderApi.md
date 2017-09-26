@@ -550,7 +550,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **orderInvoice**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2005 orderInvoice($id)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2004 orderInvoice($id)
 
 
 
@@ -579,7 +579,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 

@@ -70,7 +70,6 @@ Method | HTTP request | Description
 [**customerReplaceOrCreatePostCustomersReplaceOrCreate**](CustomerApi.md#customerReplaceOrCreatePostCustomersReplaceOrCreate) | **POST** /Customers/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 [**customerReplaceOrCreatePutCustomers**](CustomerApi.md#customerReplaceOrCreatePutCustomers) | **PUT** /Customers | Replace an existing model instance or insert a new one into the data source.
 [**customerResetPassword**](CustomerApi.md#customerResetPassword) | **POST** /Customers/reset | Reset password for a user with email.
-[**customerTransfer**](CustomerApi.md#customerTransfer) | **POST** /Customers/transfer | 
 [**customerUpdateAll**](CustomerApi.md#customerUpdateAll) | **POST** /Customers/update | Update instances of the model matched by {{where}} from the data source.
 [**customerUpsertWithWhere**](CustomerApi.md#customerUpsertWithWhere) | **POST** /Customers/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
@@ -2983,51 +2982,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerTransfer**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2004 customerTransfer($from_source_id, $to_source_id)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$from_source_id = 1.2; // double | 
-$to_source_id = 1.2; // double | 
-
-try {
-    $result = $api_instance->customerTransfer($from_source_id, $to_source_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerTransfer: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from_source_id** | **double**|  |
- **to_source_id** | **double**|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 

@@ -2372,6 +2372,90 @@ class SiteApi
     }
 
     /**
+     * Operation siteTransfer
+     *
+     * @param double $from_source_id  (required)
+     * @param double $to_source_id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     */
+    public function siteTransfer($from_source_id, $to_source_id)
+    {
+        list($response) = $this->siteTransferWithHttpInfo($from_source_id, $to_source_id);
+        return $response;
+    }
+
+    /**
+     * Operation siteTransferWithHttpInfo
+     *
+     * @param double $from_source_id  (required)
+     * @param double $to_source_id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function siteTransferWithHttpInfo($from_source_id, $to_source_id)
+    {
+        // verify the required parameter 'from_source_id' is set
+        if ($from_source_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $from_source_id when calling siteTransfer');
+        }
+        // verify the required parameter 'to_source_id' is set
+        if ($to_source_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $to_source_id when calling siteTransfer');
+        }
+        // parse inputs
+        $resourcePath = "/Sites/transfer";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // form params
+        if ($from_source_id !== null) {
+            $formParams['fromSourceId'] = $this->apiClient->getSerializer()->toFormValue($from_source_id);
+        }
+        // form params
+        if ($to_source_id !== null) {
+            $formParams['toSourceId'] = $this->apiClient->getSerializer()->toFormValue($to_source_id);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '/Sites/transfer'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation siteUpdateAll
      *
      * Update instances of the model matched by {{where}} from the data source.

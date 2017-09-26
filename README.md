@@ -141,7 +141,6 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerReplaceOrCreatePostCustomersReplaceOrCreate**](docs/Api/CustomerApi.md#customerreplaceorcreatepostcustomersreplaceorcreate) | **POST** /Customers/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 *CustomerApi* | [**customerReplaceOrCreatePutCustomers**](docs/Api/CustomerApi.md#customerreplaceorcreateputcustomers) | **PUT** /Customers | Replace an existing model instance or insert a new one into the data source.
 *CustomerApi* | [**customerResetPassword**](docs/Api/CustomerApi.md#customerresetpassword) | **POST** /Customers/reset | Reset password for a user with email.
-*CustomerApi* | [**customerTransfer**](docs/Api/CustomerApi.md#customertransfer) | **POST** /Customers/transfer | 
 *CustomerApi* | [**customerUpdateAll**](docs/Api/CustomerApi.md#customerupdateall) | **POST** /Customers/update | Update instances of the model matched by {{where}} from the data source.
 *CustomerApi* | [**customerUpsertWithWhere**](docs/Api/CustomerApi.md#customerupsertwithwhere) | **POST** /Customers/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 *DiscountLineItemApi* | [**discountLineItemCount**](docs/Api/DiscountLineItemApi.md#discountlineitemcount) | **GET** /DiscountLineItems/count | Count instances of the model matched by where from the data source.
@@ -365,6 +364,7 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**siteReplaceByIdPutSitesid**](docs/Api/SiteApi.md#sitereplacebyidputsitesid) | **PUT** /Sites/{id} | Replace attributes for a model instance and persist it into the data source.
 *SiteApi* | [**siteReplaceOrCreatePostSitesReplaceOrCreate**](docs/Api/SiteApi.md#sitereplaceorcreatepostsitesreplaceorcreate) | **POST** /Sites/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 *SiteApi* | [**siteReplaceOrCreatePutSites**](docs/Api/SiteApi.md#sitereplaceorcreateputsites) | **PUT** /Sites | Replace an existing model instance or insert a new one into the data source.
+*SiteApi* | [**siteTransfer**](docs/Api/SiteApi.md#sitetransfer) | **POST** /Sites/transfer | 
 *SiteApi* | [**siteUpdateAll**](docs/Api/SiteApi.md#siteupdateall) | **POST** /Sites/update | Update instances of the model matched by {{where}} from the data source.
 *SiteApi* | [**siteUpsertWithWhere**](docs/Api/SiteApi.md#siteupsertwithwhere) | **POST** /Sites/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 *SubscriptionApi* | [**subscriptionCount**](docs/Api/SubscriptionApi.md#subscriptioncount) | **GET** /Subscriptions/count | Count instances of the model matched by where from the data source.
@@ -484,7 +484,6 @@ Class | Method | HTTP request | Description
  - [InlineResponse2002](docs/Model/InlineResponse2002.md)
  - [InlineResponse2003](docs/Model/InlineResponse2003.md)
  - [InlineResponse2004](docs/Model/InlineResponse2004.md)
- - [InlineResponse2005](docs/Model/InlineResponse2005.md)
  - [LineItem](docs/Model/LineItem.md)
  - [Migration](docs/Model/Migration.md)
  - [MigrationMap](docs/Model/MigrationMap.md)

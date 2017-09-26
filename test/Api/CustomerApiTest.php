@@ -733,16 +733,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for customerTransfer
-     *
-     * .
-     *
-     */
-    public function testCustomerTransfer()
-    {
-    }
-
-    /**
      * Test case for customerUpdateAll
      *
      * Update instances of the model matched by {{where}} from the data source..
