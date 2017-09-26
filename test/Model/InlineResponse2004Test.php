@@ -78,16 +78,23 @@ class InlineResponse2004Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "body"
+     * Test attribute "orders"
      */
-    public function testPropertyBody()
+    public function testPropertyOrders()
     {
     }
 
     /**
-     * Test attribute "content_type"
+     * Test attribute "subscriptions"
      */
-    public function testPropertyContentType()
+    public function testPropertySubscriptions()
+    {
+    }
+
+    /**
+     * Test attribute "sites"
+     */
+    public function testPropertySites()
     {
     }
 }

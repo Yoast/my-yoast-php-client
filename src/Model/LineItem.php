@@ -59,7 +59,6 @@ class LineItem implements ArrayAccess
         'subtotal_amount' => 'double',
         'total_amount' => 'double',
         'vat_amount' => 'double',
-        'vat_scale_id' => 'string',
         'product_id' => 'string',
         'product_name' => 'string',
         'quantity' => 'double',
@@ -76,7 +75,6 @@ class LineItem implements ArrayAccess
         'subtotal_amount' => 'double',
         'total_amount' => 'double',
         'vat_amount' => 'double',
-        'vat_scale_id' => null,
         'product_id' => null,
         'product_name' => null,
         'quantity' => 'double',
@@ -103,7 +101,6 @@ class LineItem implements ArrayAccess
         'subtotal_amount' => 'subtotalAmount',
         'total_amount' => 'totalAmount',
         'vat_amount' => 'vatAmount',
-        'vat_scale_id' => 'vatScaleId',
         'product_id' => 'productId',
         'product_name' => 'productName',
         'quantity' => 'quantity',
@@ -121,7 +118,6 @@ class LineItem implements ArrayAccess
         'subtotal_amount' => 'setSubtotalAmount',
         'total_amount' => 'setTotalAmount',
         'vat_amount' => 'setVatAmount',
-        'vat_scale_id' => 'setVatScaleId',
         'product_id' => 'setProductId',
         'product_name' => 'setProductName',
         'quantity' => 'setQuantity',
@@ -139,7 +135,6 @@ class LineItem implements ArrayAccess
         'subtotal_amount' => 'getSubtotalAmount',
         'total_amount' => 'getTotalAmount',
         'vat_amount' => 'getVatAmount',
-        'vat_scale_id' => 'getVatScaleId',
         'product_id' => 'getProductId',
         'product_name' => 'getProductName',
         'quantity' => 'getQuantity',
@@ -182,7 +177,6 @@ class LineItem implements ArrayAccess
         $this->container['subtotal_amount'] = isset($data['subtotal_amount']) ? $data['subtotal_amount'] : null;
         $this->container['total_amount'] = isset($data['total_amount']) ? $data['total_amount'] : null;
         $this->container['vat_amount'] = isset($data['vat_amount']) ? $data['vat_amount'] : 0.0;
-        $this->container['vat_scale_id'] = isset($data['vat_scale_id']) ? $data['vat_scale_id'] : null;
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['product_name'] = isset($data['product_name']) ? $data['product_name'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : 1.0;
@@ -363,27 +357,6 @@ class LineItem implements ArrayAccess
     public function setVatAmount($vat_amount)
     {
         $this->container['vat_amount'] = $vat_amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat_scale_id
-     * @return string
-     */
-    public function getVatScaleId()
-    {
-        return $this->container['vat_scale_id'];
-    }
-
-    /**
-     * Sets vat_scale_id
-     * @param string $vat_scale_id
-     * @return $this
-     */
-    public function setVatScaleId($vat_scale_id)
-    {
-        $this->container['vat_scale_id'] = $vat_scale_id;
 
         return $this;
     }

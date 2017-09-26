@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **address_zipcode** | **string** |  | [optional] 
 **address_country** | **string** |  | [optional] 
 **exclude_from_revenue** | **bool** |  | [optional] [default to false]
+**renewal** | **bool** |  | [optional] [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -286,4 +286,11 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     public function testPropertyExcludeFromRevenue()
     {
     }
+
+    /**
+     * Test attribute "renewal"
+     */
+    public function testPropertyRenewal()
+    {
+    }
 }

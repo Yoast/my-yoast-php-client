@@ -1,6 +1,6 @@
 <?php
 /**
- * LineItemTest
+ * RefundTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * LineItemTest Class Doc Comment
+ * RefundTest Class Doc Comment
  *
  * @category    Class */
-// * @description LineItem
+// * @description Refund
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LineItemTest extends \PHPUnit_Framework_TestCase
+class RefundTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "LineItem"
+     * Test "Refund"
      */
-    public function testLineItem()
+    public function testRefund()
     {
     }
 
@@ -92,51 +92,37 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "subtotal_amount"
+     * Test attribute "amount"
      */
-    public function testPropertySubtotalAmount()
+    public function testPropertyAmount()
     {
     }
 
     /**
-     * Test attribute "total_amount"
+     * Test attribute "date"
      */
-    public function testPropertyTotalAmount()
+    public function testPropertyDate()
     {
     }
 
     /**
-     * Test attribute "vat_amount"
+     * Test attribute "reason"
      */
-    public function testPropertyVatAmount()
+    public function testPropertyReason()
     {
     }
 
     /**
-     * Test attribute "product_id"
+     * Test attribute "source_id"
      */
-    public function testPropertyProductId()
+    public function testPropertySourceId()
     {
     }
 
     /**
-     * Test attribute "product_name"
+     * Test attribute "source_shop_id"
      */
-    public function testPropertyProductName()
-    {
-    }
-
-    /**
-     * Test attribute "quantity"
-     */
-    public function testPropertyQuantity()
-    {
-    }
-
-    /**
-     * Test attribute "parent_id"
-     */
-    public function testPropertyParentId()
+    public function testPropertySourceShopId()
     {
     }
 }

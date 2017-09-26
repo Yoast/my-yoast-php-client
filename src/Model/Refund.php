@@ -1,6 +1,6 @@
 <?php
 /**
- * Site
+ * Refund
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * Site Class Doc Comment
+ * Refund Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class Site implements ArrayAccess
+class Refund implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class Site implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'Site';
+    protected static $swaggerModelName = 'Refund';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,15 +55,12 @@ class Site implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'url' => 'string',
-        'header' => 'string',
-        'icon' => 'string',
-        'creation_date' => '\DateTime',
-        'user_id' => 'string',
-        'hostname' => 'string',
-        'protocol' => 'string',
-        'port' => 'double',
-        'path' => 'string'
+        'order_id' => 'string',
+        'amount' => 'double',
+        'date' => '\DateTime',
+        'reason' => 'string',
+        'source_id' => 'double',
+        'source_shop_id' => 'double'
     ];
 
     /**
@@ -72,15 +69,12 @@ class Site implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-        'url' => null,
-        'header' => null,
-        'icon' => null,
-        'creation_date' => 'date-time',
-        'user_id' => null,
-        'hostname' => null,
-        'protocol' => null,
-        'port' => 'double',
-        'path' => null
+        'order_id' => null,
+        'amount' => 'double',
+        'date' => 'date-time',
+        'reason' => null,
+        'source_id' => 'double',
+        'source_shop_id' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -99,15 +93,12 @@ class Site implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'url' => 'url',
-        'header' => 'header',
-        'icon' => 'icon',
-        'creation_date' => 'creationDate',
-        'user_id' => 'userId',
-        'hostname' => 'hostname',
-        'protocol' => 'protocol',
-        'port' => 'port',
-        'path' => 'path'
+        'order_id' => 'orderId',
+        'amount' => 'amount',
+        'date' => 'date',
+        'reason' => 'reason',
+        'source_id' => 'sourceId',
+        'source_shop_id' => 'sourceShopId'
     ];
 
 
@@ -117,15 +108,12 @@ class Site implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'url' => 'setUrl',
-        'header' => 'setHeader',
-        'icon' => 'setIcon',
-        'creation_date' => 'setCreationDate',
-        'user_id' => 'setUserId',
-        'hostname' => 'setHostname',
-        'protocol' => 'setProtocol',
-        'port' => 'setPort',
-        'path' => 'setPath'
+        'order_id' => 'setOrderId',
+        'amount' => 'setAmount',
+        'date' => 'setDate',
+        'reason' => 'setReason',
+        'source_id' => 'setSourceId',
+        'source_shop_id' => 'setSourceShopId'
     ];
 
 
@@ -135,15 +123,12 @@ class Site implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'url' => 'getUrl',
-        'header' => 'getHeader',
-        'icon' => 'getIcon',
-        'creation_date' => 'getCreationDate',
-        'user_id' => 'getUserId',
-        'hostname' => 'getHostname',
-        'protocol' => 'getProtocol',
-        'port' => 'getPort',
-        'path' => 'getPath'
+        'order_id' => 'getOrderId',
+        'amount' => 'getAmount',
+        'date' => 'getDate',
+        'reason' => 'getReason',
+        'source_id' => 'getSourceId',
+        'source_shop_id' => 'getSourceShopId'
     ];
 
     public static function attributeMap()
@@ -178,15 +163,12 @@ class Site implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['header'] = isset($data['header']) ? $data['header'] : null;
-        $this->container['icon'] = isset($data['icon']) ? $data['icon'] : null;
-        $this->container['creation_date'] = isset($data['creation_date']) ? $data['creation_date'] : null;
-        $this->container['user_id'] = isset($data['user_id']) ? $data['user_id'] : null;
-        $this->container['hostname'] = isset($data['hostname']) ? $data['hostname'] : null;
-        $this->container['protocol'] = isset($data['protocol']) ? $data['protocol'] : null;
-        $this->container['port'] = isset($data['port']) ? $data['port'] : null;
-        $this->container['path'] = isset($data['path']) ? $data['path'] : null;
+        $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['reason'] = isset($data['reason']) ? $data['reason'] : '';
+        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
+        $this->container['source_shop_id'] = isset($data['source_shop_id']) ? $data['source_shop_id'] : null;
     }
 
     /**
@@ -201,14 +183,14 @@ class Site implements ArrayAccess
         if ($this->container['id'] === null) {
             $invalid_properties[] = "'id' can't be null";
         }
-        if ($this->container['url'] === null) {
-            $invalid_properties[] = "'url' can't be null";
+        if ($this->container['order_id'] === null) {
+            $invalid_properties[] = "'order_id' can't be null";
         }
-        if ($this->container['creation_date'] === null) {
-            $invalid_properties[] = "'creation_date' can't be null";
+        if ($this->container['amount'] === null) {
+            $invalid_properties[] = "'amount' can't be null";
         }
-        if ($this->container['user_id'] === null) {
-            $invalid_properties[] = "'user_id' can't be null";
+        if ($this->container['date'] === null) {
+            $invalid_properties[] = "'date' can't be null";
         }
         return $invalid_properties;
     }
@@ -225,13 +207,13 @@ class Site implements ArrayAccess
         if ($this->container['id'] === null) {
             return false;
         }
-        if ($this->container['url'] === null) {
+        if ($this->container['order_id'] === null) {
             return false;
         }
-        if ($this->container['creation_date'] === null) {
+        if ($this->container['amount'] === null) {
             return false;
         }
-        if ($this->container['user_id'] === null) {
+        if ($this->container['date'] === null) {
             return false;
         }
         return true;
@@ -260,190 +242,127 @@ class Site implements ArrayAccess
     }
 
     /**
-     * Gets url
+     * Gets order_id
      * @return string
      */
-    public function getUrl()
+    public function getOrderId()
     {
-        return $this->container['url'];
+        return $this->container['order_id'];
     }
 
     /**
-     * Sets url
-     * @param string $url
+     * Sets order_id
+     * @param string $order_id
      * @return $this
      */
-    public function setUrl($url)
+    public function setOrderId($order_id)
     {
-        $this->container['url'] = $url;
+        $this->container['order_id'] = $order_id;
 
         return $this;
     }
 
     /**
-     * Gets header
-     * @return string
-     */
-    public function getHeader()
-    {
-        return $this->container['header'];
-    }
-
-    /**
-     * Sets header
-     * @param string $header
-     * @return $this
-     */
-    public function setHeader($header)
-    {
-        $this->container['header'] = $header;
-
-        return $this;
-    }
-
-    /**
-     * Gets icon
-     * @return string
-     */
-    public function getIcon()
-    {
-        return $this->container['icon'];
-    }
-
-    /**
-     * Sets icon
-     * @param string $icon
-     * @return $this
-     */
-    public function setIcon($icon)
-    {
-        $this->container['icon'] = $icon;
-
-        return $this;
-    }
-
-    /**
-     * Gets creation_date
-     * @return \DateTime
-     */
-    public function getCreationDate()
-    {
-        return $this->container['creation_date'];
-    }
-
-    /**
-     * Sets creation_date
-     * @param \DateTime $creation_date
-     * @return $this
-     */
-    public function setCreationDate($creation_date)
-    {
-        $this->container['creation_date'] = $creation_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets user_id
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->container['user_id'];
-    }
-
-    /**
-     * Sets user_id
-     * @param string $user_id
-     * @return $this
-     */
-    public function setUserId($user_id)
-    {
-        $this->container['user_id'] = $user_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets hostname
-     * @return string
-     */
-    public function getHostname()
-    {
-        return $this->container['hostname'];
-    }
-
-    /**
-     * Sets hostname
-     * @param string $hostname
-     * @return $this
-     */
-    public function setHostname($hostname)
-    {
-        $this->container['hostname'] = $hostname;
-
-        return $this;
-    }
-
-    /**
-     * Gets protocol
-     * @return string
-     */
-    public function getProtocol()
-    {
-        return $this->container['protocol'];
-    }
-
-    /**
-     * Sets protocol
-     * @param string $protocol
-     * @return $this
-     */
-    public function setProtocol($protocol)
-    {
-        $this->container['protocol'] = $protocol;
-
-        return $this;
-    }
-
-    /**
-     * Gets port
+     * Gets amount
      * @return double
      */
-    public function getPort()
+    public function getAmount()
     {
-        return $this->container['port'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets port
-     * @param double $port
+     * Sets amount
+     * @param double $amount
      * @return $this
      */
-    public function setPort($port)
+    public function setAmount($amount)
     {
-        $this->container['port'] = $port;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets path
-     * @return string
+     * Gets date
+     * @return \DateTime
      */
-    public function getPath()
+    public function getDate()
     {
-        return $this->container['path'];
+        return $this->container['date'];
     }
 
     /**
-     * Sets path
-     * @param string $path
+     * Sets date
+     * @param \DateTime $date
      * @return $this
      */
-    public function setPath($path)
+    public function setDate($date)
     {
-        $this->container['path'] = $path;
+        $this->container['date'] = $date;
+
+        return $this;
+    }
+
+    /**
+     * Gets reason
+     * @return string
+     */
+    public function getReason()
+    {
+        return $this->container['reason'];
+    }
+
+    /**
+     * Sets reason
+     * @param string $reason
+     * @return $this
+     */
+    public function setReason($reason)
+    {
+        $this->container['reason'] = $reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_id
+     * @return double
+     */
+    public function getSourceId()
+    {
+        return $this->container['source_id'];
+    }
+
+    /**
+     * Sets source_id
+     * @param double $source_id
+     * @return $this
+     */
+    public function setSourceId($source_id)
+    {
+        $this->container['source_id'] = $source_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_shop_id
+     * @return double
+     */
+    public function getSourceShopId()
+    {
+        return $this->container['source_shop_id'];
+    }
+
+    /**
+     * Sets source_shop_id
+     * @param double $source_shop_id
+     * @return $this
+     */
+    public function setSourceShopId($source_shop_id)
+    {
+        $this->container['source_shop_id'] = $source_shop_id;
 
         return $this;
     }

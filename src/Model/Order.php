@@ -83,7 +83,8 @@ class Order implements ArrayAccess
         'address_state' => 'string',
         'address_zipcode' => 'string',
         'address_country' => 'string',
-        'exclude_from_revenue' => 'bool'
+        'exclude_from_revenue' => 'bool',
+        'renewal' => 'bool'
     ];
 
     /**
@@ -120,7 +121,8 @@ class Order implements ArrayAccess
         'address_state' => null,
         'address_zipcode' => null,
         'address_country' => null,
-        'exclude_from_revenue' => null
+        'exclude_from_revenue' => null,
+        'renewal' => null
     ];
 
     public static function swaggerTypes()
@@ -167,7 +169,8 @@ class Order implements ArrayAccess
         'address_state' => 'addressState',
         'address_zipcode' => 'addressZipcode',
         'address_country' => 'addressCountry',
-        'exclude_from_revenue' => 'excludeFromRevenue'
+        'exclude_from_revenue' => 'excludeFromRevenue',
+        'renewal' => 'renewal'
     ];
 
 
@@ -205,7 +208,8 @@ class Order implements ArrayAccess
         'address_state' => 'setAddressState',
         'address_zipcode' => 'setAddressZipcode',
         'address_country' => 'setAddressCountry',
-        'exclude_from_revenue' => 'setExcludeFromRevenue'
+        'exclude_from_revenue' => 'setExcludeFromRevenue',
+        'renewal' => 'setRenewal'
     ];
 
 
@@ -243,7 +247,8 @@ class Order implements ArrayAccess
         'address_state' => 'getAddressState',
         'address_zipcode' => 'getAddressZipcode',
         'address_country' => 'getAddressCountry',
-        'exclude_from_revenue' => 'getExcludeFromRevenue'
+        'exclude_from_revenue' => 'getExcludeFromRevenue',
+        'renewal' => 'getRenewal'
     ];
 
     public static function attributeMap()
@@ -307,6 +312,7 @@ class Order implements ArrayAccess
         $this->container['address_zipcode'] = isset($data['address_zipcode']) ? $data['address_zipcode'] : null;
         $this->container['address_country'] = isset($data['address_country']) ? $data['address_country'] : null;
         $this->container['exclude_from_revenue'] = isset($data['exclude_from_revenue']) ? $data['exclude_from_revenue'] : false;
+        $this->container['renewal'] = isset($data['renewal']) ? $data['renewal'] : false;
     }
 
     /**
@@ -1026,6 +1032,27 @@ class Order implements ArrayAccess
     public function setExcludeFromRevenue($exclude_from_revenue)
     {
         $this->container['exclude_from_revenue'] = $exclude_from_revenue;
+
+        return $this;
+    }
+
+    /**
+     * Gets renewal
+     * @return bool
+     */
+    public function getRenewal()
+    {
+        return $this->container['renewal'];
+    }
+
+    /**
+     * Sets renewal
+     * @param bool $renewal
+     * @return $this
+     */
+    public function setRenewal($renewal)
+    {
+        $this->container['renewal'] = $renewal;
 
         return $this;
     }

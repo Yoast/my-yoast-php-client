@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2004
+ * MigrationMap
  *
  * PHP version 5
  *
@@ -32,14 +32,15 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * InlineResponse2004 Class Doc Comment
+ * MigrationMap Class Doc Comment
  *
  * @category    Class
+ * @description Migration Mappings.
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2004 implements ArrayAccess
+class MigrationMap implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,16 +48,18 @@ class InlineResponse2004 implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_4';
+    protected static $swaggerModelName = 'MigrationMap';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'orders' => 'double',
-        'subscriptions' => 'double',
-        'sites' => 'double'
+        'type' => 'string',
+        'from' => 'string',
+        'to' => 'string',
+        'data' => 'object',
+        'id' => 'double'
     ];
 
     /**
@@ -64,9 +67,11 @@ class InlineResponse2004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'orders' => 'double',
-        'subscriptions' => 'double',
-        'sites' => 'double'
+        'type' => null,
+        'from' => null,
+        'to' => null,
+        'data' => null,
+        'id' => 'double'
     ];
 
     public static function swaggerTypes()
@@ -84,9 +89,11 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'orders' => 'orders',
-        'subscriptions' => 'subscriptions',
-        'sites' => 'sites'
+        'type' => 'type',
+        'from' => 'from',
+        'to' => 'to',
+        'data' => 'data',
+        'id' => 'id'
     ];
 
 
@@ -95,9 +102,11 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'orders' => 'setOrders',
-        'subscriptions' => 'setSubscriptions',
-        'sites' => 'setSites'
+        'type' => 'setType',
+        'from' => 'setFrom',
+        'to' => 'setTo',
+        'data' => 'setData',
+        'id' => 'setId'
     ];
 
 
@@ -106,9 +115,11 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'orders' => 'getOrders',
-        'subscriptions' => 'getSubscriptions',
-        'sites' => 'getSites'
+        'type' => 'getType',
+        'from' => 'getFrom',
+        'to' => 'getTo',
+        'data' => 'getData',
+        'id' => 'getId'
     ];
 
     public static function attributeMap()
@@ -142,9 +153,11 @@ class InlineResponse2004 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['orders'] = isset($data['orders']) ? $data['orders'] : null;
-        $this->container['subscriptions'] = isset($data['subscriptions']) ? $data['subscriptions'] : null;
-        $this->container['sites'] = isset($data['sites']) ? $data['sites'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['from'] = isset($data['from']) ? $data['from'] : null;
+        $this->container['to'] = isset($data['to']) ? $data['to'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
     }
 
     /**
@@ -156,6 +169,15 @@ class InlineResponse2004 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['type'] === null) {
+            $invalid_properties[] = "'type' can't be null";
+        }
+        if ($this->container['from'] === null) {
+            $invalid_properties[] = "'from' can't be null";
+        }
+        if ($this->container['to'] === null) {
+            $invalid_properties[] = "'to' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -168,69 +190,120 @@ class InlineResponse2004 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['type'] === null) {
+            return false;
+        }
+        if ($this->container['from'] === null) {
+            return false;
+        }
+        if ($this->container['to'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets orders
-     * @return double
+     * Gets type
+     * @return string
      */
-    public function getOrders()
+    public function getType()
     {
-        return $this->container['orders'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets orders
-     * @param double $orders
+     * Sets type
+     * @param string $type
      * @return $this
      */
-    public function setOrders($orders)
+    public function setType($type)
     {
-        $this->container['orders'] = $orders;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets subscriptions
-     * @return double
+     * Gets from
+     * @return string
      */
-    public function getSubscriptions()
+    public function getFrom()
     {
-        return $this->container['subscriptions'];
+        return $this->container['from'];
     }
 
     /**
-     * Sets subscriptions
-     * @param double $subscriptions
+     * Sets from
+     * @param string $from
      * @return $this
      */
-    public function setSubscriptions($subscriptions)
+    public function setFrom($from)
     {
-        $this->container['subscriptions'] = $subscriptions;
+        $this->container['from'] = $from;
 
         return $this;
     }
 
     /**
-     * Gets sites
-     * @return double
+     * Gets to
+     * @return string
      */
-    public function getSites()
+    public function getTo()
     {
-        return $this->container['sites'];
+        return $this->container['to'];
     }
 
     /**
-     * Sets sites
-     * @param double $sites
+     * Sets to
+     * @param string $to
      * @return $this
      */
-    public function setSites($sites)
+    public function setTo($to)
     {
-        $this->container['sites'] = $sites;
+        $this->container['to'] = $to;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     * @return object
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     * @param object $data
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return double
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param double $id
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
 
         return $this;
     }

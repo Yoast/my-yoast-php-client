@@ -1,6 +1,6 @@
 <?php
 /**
- * LineItemTest
+ * InlineResponse2005Test
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * LineItemTest Class Doc Comment
+ * InlineResponse2005Test Class Doc Comment
  *
  * @category    Class */
-// * @description LineItem
+// * @description InlineResponse2005
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LineItemTest extends \PHPUnit_Framework_TestCase
+class InlineResponse2005Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,72 +71,23 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "LineItem"
+     * Test "InlineResponse2005"
      */
-    public function testLineItem()
+    public function testInlineResponse2005()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "body"
      */
-    public function testPropertyId()
+    public function testPropertyBody()
     {
     }
 
     /**
-     * Test attribute "order_id"
+     * Test attribute "content_type"
      */
-    public function testPropertyOrderId()
-    {
-    }
-
-    /**
-     * Test attribute "subtotal_amount"
-     */
-    public function testPropertySubtotalAmount()
-    {
-    }
-
-    /**
-     * Test attribute "total_amount"
-     */
-    public function testPropertyTotalAmount()
-    {
-    }
-
-    /**
-     * Test attribute "vat_amount"
-     */
-    public function testPropertyVatAmount()
-    {
-    }
-
-    /**
-     * Test attribute "product_id"
-     */
-    public function testPropertyProductId()
-    {
-    }
-
-    /**
-     * Test attribute "product_name"
-     */
-    public function testPropertyProductName()
-    {
-    }
-
-    /**
-     * Test attribute "quantity"
-     */
-    public function testPropertyQuantity()
-    {
-    }
-
-    /**
-     * Test attribute "parent_id"
-     */
-    public function testPropertyParentId()
+    public function testPropertyContentType()
     {
     }
 }

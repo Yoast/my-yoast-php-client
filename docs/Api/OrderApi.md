@@ -19,33 +19,39 @@ Method | HTTP request | Description
 [**orderPatchOrCreate**](OrderApi.md#orderPatchOrCreate) | **PATCH** /Orders | Patch an existing model instance or insert a new one into the data source.
 [**orderPrototypeCountDiscounts**](OrderApi.md#orderPrototypeCountDiscounts) | **GET** /Orders/{id}/discounts/count | Counts discounts of Order.
 [**orderPrototypeCountItems**](OrderApi.md#orderPrototypeCountItems) | **GET** /Orders/{id}/items/count | Counts items of Order.
+[**orderPrototypeCountRefunds**](OrderApi.md#orderPrototypeCountRefunds) | **GET** /Orders/{id}/refunds/count | Counts refunds of Order.
 [**orderPrototypeCountSubscriptions**](OrderApi.md#orderPrototypeCountSubscriptions) | **GET** /Orders/{id}/subscriptions/count | Counts subscriptions of Order.
 [**orderPrototypeCountTransactions**](OrderApi.md#orderPrototypeCountTransactions) | **GET** /Orders/{id}/transactions/count | Counts transactions of Order.
 [**orderPrototypeCountVats**](OrderApi.md#orderPrototypeCountVats) | **GET** /Orders/{id}/vats/count | Counts vats of Order.
 [**orderPrototypeCreateDiscounts**](OrderApi.md#orderPrototypeCreateDiscounts) | **POST** /Orders/{id}/discounts | Creates a new instance in discounts of this model.
 [**orderPrototypeCreateItems**](OrderApi.md#orderPrototypeCreateItems) | **POST** /Orders/{id}/items | Creates a new instance in items of this model.
+[**orderPrototypeCreateRefunds**](OrderApi.md#orderPrototypeCreateRefunds) | **POST** /Orders/{id}/refunds | Creates a new instance in refunds of this model.
 [**orderPrototypeCreateSubscriptions**](OrderApi.md#orderPrototypeCreateSubscriptions) | **POST** /Orders/{id}/subscriptions | Creates a new instance in subscriptions of this model.
 [**orderPrototypeCreateTransactions**](OrderApi.md#orderPrototypeCreateTransactions) | **POST** /Orders/{id}/transactions | Creates a new instance in transactions of this model.
 [**orderPrototypeCreateVats**](OrderApi.md#orderPrototypeCreateVats) | **POST** /Orders/{id}/vats | Creates a new instance in vats of this model.
 [**orderPrototypeDeleteDiscounts**](OrderApi.md#orderPrototypeDeleteDiscounts) | **DELETE** /Orders/{id}/discounts | Deletes all discounts of this model.
 [**orderPrototypeDeleteItems**](OrderApi.md#orderPrototypeDeleteItems) | **DELETE** /Orders/{id}/items | Deletes all items of this model.
+[**orderPrototypeDeleteRefunds**](OrderApi.md#orderPrototypeDeleteRefunds) | **DELETE** /Orders/{id}/refunds | Deletes all refunds of this model.
 [**orderPrototypeDeleteSubscriptions**](OrderApi.md#orderPrototypeDeleteSubscriptions) | **DELETE** /Orders/{id}/subscriptions | Deletes all subscriptions of this model.
 [**orderPrototypeDeleteTransactions**](OrderApi.md#orderPrototypeDeleteTransactions) | **DELETE** /Orders/{id}/transactions | Deletes all transactions of this model.
 [**orderPrototypeDeleteVats**](OrderApi.md#orderPrototypeDeleteVats) | **DELETE** /Orders/{id}/vats | Deletes all vats of this model.
 [**orderPrototypeDestroyByIdDiscounts**](OrderApi.md#orderPrototypeDestroyByIdDiscounts) | **DELETE** /Orders/{id}/discounts/{fk} | Delete a related item by id for discounts.
 [**orderPrototypeDestroyByIdItems**](OrderApi.md#orderPrototypeDestroyByIdItems) | **DELETE** /Orders/{id}/items/{fk} | Delete a related item by id for items.
+[**orderPrototypeDestroyByIdRefunds**](OrderApi.md#orderPrototypeDestroyByIdRefunds) | **DELETE** /Orders/{id}/refunds/{fk} | Delete a related item by id for refunds.
 [**orderPrototypeDestroyByIdSubscriptions**](OrderApi.md#orderPrototypeDestroyByIdSubscriptions) | **DELETE** /Orders/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
 [**orderPrototypeDestroyByIdTransactions**](OrderApi.md#orderPrototypeDestroyByIdTransactions) | **DELETE** /Orders/{id}/transactions/{fk} | Delete a related item by id for transactions.
 [**orderPrototypeDestroyByIdVats**](OrderApi.md#orderPrototypeDestroyByIdVats) | **DELETE** /Orders/{id}/vats/{fk} | Delete a related item by id for vats.
 [**orderPrototypeExistsSubscriptions**](OrderApi.md#orderPrototypeExistsSubscriptions) | **HEAD** /Orders/{id}/subscriptions/rel/{fk} | Check the existence of subscriptions relation to an item by id.
 [**orderPrototypeFindByIdDiscounts**](OrderApi.md#orderPrototypeFindByIdDiscounts) | **GET** /Orders/{id}/discounts/{fk} | Find a related item by id for discounts.
 [**orderPrototypeFindByIdItems**](OrderApi.md#orderPrototypeFindByIdItems) | **GET** /Orders/{id}/items/{fk} | Find a related item by id for items.
+[**orderPrototypeFindByIdRefunds**](OrderApi.md#orderPrototypeFindByIdRefunds) | **GET** /Orders/{id}/refunds/{fk} | Find a related item by id for refunds.
 [**orderPrototypeFindByIdSubscriptions**](OrderApi.md#orderPrototypeFindByIdSubscriptions) | **GET** /Orders/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
 [**orderPrototypeFindByIdTransactions**](OrderApi.md#orderPrototypeFindByIdTransactions) | **GET** /Orders/{id}/transactions/{fk} | Find a related item by id for transactions.
 [**orderPrototypeFindByIdVats**](OrderApi.md#orderPrototypeFindByIdVats) | **GET** /Orders/{id}/vats/{fk} | Find a related item by id for vats.
 [**orderPrototypeGetCustomer**](OrderApi.md#orderPrototypeGetCustomer) | **GET** /Orders/{id}/customer | Fetches belongsTo relation customer.
 [**orderPrototypeGetDiscounts**](OrderApi.md#orderPrototypeGetDiscounts) | **GET** /Orders/{id}/discounts | Queries discounts of Order.
 [**orderPrototypeGetItems**](OrderApi.md#orderPrototypeGetItems) | **GET** /Orders/{id}/items | Queries items of Order.
+[**orderPrototypeGetRefunds**](OrderApi.md#orderPrototypeGetRefunds) | **GET** /Orders/{id}/refunds | Queries refunds of Order.
 [**orderPrototypeGetSubscriptions**](OrderApi.md#orderPrototypeGetSubscriptions) | **GET** /Orders/{id}/subscriptions | Queries subscriptions of Order.
 [**orderPrototypeGetTransactions**](OrderApi.md#orderPrototypeGetTransactions) | **GET** /Orders/{id}/transactions | Queries transactions of Order.
 [**orderPrototypeGetVats**](OrderApi.md#orderPrototypeGetVats) | **GET** /Orders/{id}/vats | Queries vats of Order.
@@ -54,6 +60,7 @@ Method | HTTP request | Description
 [**orderPrototypeUnlinkSubscriptions**](OrderApi.md#orderPrototypeUnlinkSubscriptions) | **DELETE** /Orders/{id}/subscriptions/rel/{fk} | Remove the subscriptions relation to an item by id.
 [**orderPrototypeUpdateByIdDiscounts**](OrderApi.md#orderPrototypeUpdateByIdDiscounts) | **PUT** /Orders/{id}/discounts/{fk} | Update a related item by id for discounts.
 [**orderPrototypeUpdateByIdItems**](OrderApi.md#orderPrototypeUpdateByIdItems) | **PUT** /Orders/{id}/items/{fk} | Update a related item by id for items.
+[**orderPrototypeUpdateByIdRefunds**](OrderApi.md#orderPrototypeUpdateByIdRefunds) | **PUT** /Orders/{id}/refunds/{fk} | Update a related item by id for refunds.
 [**orderPrototypeUpdateByIdSubscriptions**](OrderApi.md#orderPrototypeUpdateByIdSubscriptions) | **PUT** /Orders/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
 [**orderPrototypeUpdateByIdTransactions**](OrderApi.md#orderPrototypeUpdateByIdTransactions) | **PUT** /Orders/{id}/transactions/{fk} | Update a related item by id for transactions.
 [**orderPrototypeUpdateByIdVats**](OrderApi.md#orderPrototypeUpdateByIdVats) | **PUT** /Orders/{id}/vats/{fk} | Update a related item by id for vats.
@@ -543,7 +550,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **orderInvoice**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2004 orderInvoice($id)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2005 orderInvoice($id)
 
 
 
@@ -572,7 +579,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 
@@ -692,6 +699,51 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCountItems: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeCountRefunds**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 orderPrototypeCountRefunds($id, $where)
+
+Counts refunds of Order.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->orderPrototypeCountRefunds($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeCountRefunds: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -943,6 +995,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **orderPrototypeCreateRefunds**
+> \Yoast\MyYoastApiClient\Model\Refund orderPrototypeCreateRefunds($id, $data)
+
+Creates a new instance in refunds of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | 
+
+try {
+    $result = $api_instance->orderPrototypeCreateRefunds($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeCreateRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **orderPrototypeCreateSubscriptions**
 > \Yoast\MyYoastApiClient\Model\Subscription orderPrototypeCreateSubscriptions($id, $data)
 
@@ -1137,6 +1234,48 @@ try {
     $api_instance->orderPrototypeDeleteItems($id);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDeleteItems: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeDeleteRefunds**
+> orderPrototypeDeleteRefunds($id)
+
+Deletes all refunds of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+
+try {
+    $api_instance->orderPrototypeDeleteRefunds($id);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeDeleteRefunds: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1360,6 +1499,50 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Order id |
  **fk** | **string**| Foreign key for items |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeDestroyByIdRefunds**
+> orderPrototypeDestroyByIdRefunds($id, $fk)
+
+Delete a related item by id for refunds.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for refunds
+
+try {
+    $api_instance->orderPrototypeDestroyByIdRefunds($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for refunds |
 
 ### Return type
 
@@ -1643,6 +1826,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **orderPrototypeFindByIdRefunds**
+> \Yoast\MyYoastApiClient\Model\Refund orderPrototypeFindByIdRefunds($id, $fk)
+
+Find a related item by id for refunds.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for refunds
+
+try {
+    $result = $api_instance->orderPrototypeFindByIdRefunds($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeFindByIdRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for refunds |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **orderPrototypeFindByIdSubscriptions**
 > \Yoast\MyYoastApiClient\Model\Subscription orderPrototypeFindByIdSubscriptions($id, $fk)
 
@@ -1901,6 +2129,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\LineItem[]**](../Model/LineItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeGetRefunds**
+> \Yoast\MyYoastApiClient\Model\Refund[] orderPrototypeGetRefunds($id, $filter)
+
+Queries refunds of Order.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->orderPrototypeGetRefunds($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeGetRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Refund[]**](../Model/Refund.md)
 
 ### Authorization
 
@@ -2266,6 +2539,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **orderPrototypeUpdateByIdRefunds**
+> \Yoast\MyYoastApiClient\Model\Refund orderPrototypeUpdateByIdRefunds($id, $fk, $data)
+
+Update a related item by id for refunds.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
+$id = "id_example"; // string | Order id
+$fk = "fk_example"; // string | Foreign key for refunds
+$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | 
+
+try {
+    $result = $api_instance->orderPrototypeUpdateByIdRefunds($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Order id |
+ **fk** | **string**| Foreign key for refunds |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
 
 ### Authorization
 

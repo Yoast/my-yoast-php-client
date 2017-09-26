@@ -223,6 +223,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for orderPrototypeCountRefunds
+     *
+     * Counts refunds of Order..
+     *
+     */
+    public function testOrderPrototypeCountRefunds()
+    {
+    }
+
+    /**
      * Test case for orderPrototypeCountSubscriptions
      *
      * Counts subscriptions of Order..
@@ -269,6 +279,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testOrderPrototypeCreateItems()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeCreateRefunds
+     *
+     * Creates a new instance in refunds of this model..
+     *
+     */
+    public function testOrderPrototypeCreateRefunds()
     {
     }
 
@@ -323,6 +343,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for orderPrototypeDeleteRefunds
+     *
+     * Deletes all refunds of this model..
+     *
+     */
+    public function testOrderPrototypeDeleteRefunds()
+    {
+    }
+
+    /**
      * Test case for orderPrototypeDeleteSubscriptions
      *
      * Deletes all subscriptions of this model..
@@ -369,6 +399,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testOrderPrototypeDestroyByIdItems()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeDestroyByIdRefunds
+     *
+     * Delete a related item by id for refunds..
+     *
+     */
+    public function testOrderPrototypeDestroyByIdRefunds()
     {
     }
 
@@ -433,6 +473,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for orderPrototypeFindByIdRefunds
+     *
+     * Find a related item by id for refunds..
+     *
+     */
+    public function testOrderPrototypeFindByIdRefunds()
+    {
+    }
+
+    /**
      * Test case for orderPrototypeFindByIdSubscriptions
      *
      * Find a related item by id for subscriptions..
@@ -489,6 +539,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testOrderPrototypeGetItems()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeGetRefunds
+     *
+     * Queries refunds of Order..
+     *
+     */
+    public function testOrderPrototypeGetRefunds()
     {
     }
 
@@ -569,6 +629,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testOrderPrototypeUpdateByIdItems()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeUpdateByIdRefunds
+     *
+     * Update a related item by id for refunds..
+     *
+     */
+    public function testOrderPrototypeUpdateByIdRefunds()
     {
     }
 

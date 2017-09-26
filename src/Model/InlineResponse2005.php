@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2004
+ * InlineResponse2005
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * InlineResponse2004 Class Doc Comment
+ * InlineResponse2005 Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2004 implements ArrayAccess
+class InlineResponse2005 implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,16 +47,15 @@ class InlineResponse2004 implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_4';
+    protected static $swaggerModelName = 'inline_response_200_5';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'orders' => 'double',
-        'subscriptions' => 'double',
-        'sites' => 'double'
+        'body' => 'object',
+        'content_type' => 'string'
     ];
 
     /**
@@ -64,9 +63,8 @@ class InlineResponse2004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'orders' => 'double',
-        'subscriptions' => 'double',
-        'sites' => 'double'
+        'body' => null,
+        'content_type' => null
     ];
 
     public static function swaggerTypes()
@@ -84,9 +82,8 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'orders' => 'orders',
-        'subscriptions' => 'subscriptions',
-        'sites' => 'sites'
+        'body' => 'body',
+        'content_type' => 'Content-Type'
     ];
 
 
@@ -95,9 +92,8 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'orders' => 'setOrders',
-        'subscriptions' => 'setSubscriptions',
-        'sites' => 'setSites'
+        'body' => 'setBody',
+        'content_type' => 'setContentType'
     ];
 
 
@@ -106,9 +102,8 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'orders' => 'getOrders',
-        'subscriptions' => 'getSubscriptions',
-        'sites' => 'getSites'
+        'body' => 'getBody',
+        'content_type' => 'getContentType'
     ];
 
     public static function attributeMap()
@@ -142,9 +137,8 @@ class InlineResponse2004 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['orders'] = isset($data['orders']) ? $data['orders'] : null;
-        $this->container['subscriptions'] = isset($data['subscriptions']) ? $data['subscriptions'] : null;
-        $this->container['sites'] = isset($data['sites']) ? $data['sites'] : null;
+        $this->container['body'] = isset($data['body']) ? $data['body'] : null;
+        $this->container['content_type'] = isset($data['content_type']) ? $data['content_type'] : null;
     }
 
     /**
@@ -173,64 +167,43 @@ class InlineResponse2004 implements ArrayAccess
 
 
     /**
-     * Gets orders
-     * @return double
+     * Gets body
+     * @return object
      */
-    public function getOrders()
+    public function getBody()
     {
-        return $this->container['orders'];
+        return $this->container['body'];
     }
 
     /**
-     * Sets orders
-     * @param double $orders
+     * Sets body
+     * @param object $body
      * @return $this
      */
-    public function setOrders($orders)
+    public function setBody($body)
     {
-        $this->container['orders'] = $orders;
+        $this->container['body'] = $body;
 
         return $this;
     }
 
     /**
-     * Gets subscriptions
-     * @return double
+     * Gets content_type
+     * @return string
      */
-    public function getSubscriptions()
+    public function getContentType()
     {
-        return $this->container['subscriptions'];
+        return $this->container['content_type'];
     }
 
     /**
-     * Sets subscriptions
-     * @param double $subscriptions
+     * Sets content_type
+     * @param string $content_type
      * @return $this
      */
-    public function setSubscriptions($subscriptions)
+    public function setContentType($content_type)
     {
-        $this->container['subscriptions'] = $subscriptions;
-
-        return $this;
-    }
-
-    /**
-     * Gets sites
-     * @return double
-     */
-    public function getSites()
-    {
-        return $this->container['sites'];
-    }
-
-    /**
-     * Sets sites
-     * @param double $sites
-     * @return $this
-     */
-    public function setSites($sites)
-    {
-        $this->container['sites'] = $sites;
+        $this->container['content_type'] = $content_type;
 
         return $this;
     }

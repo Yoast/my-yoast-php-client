@@ -1,6 +1,6 @@
 <?php
 /**
- * LineItemTest
+ * MigrationTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * LineItemTest Class Doc Comment
+ * MigrationTest Class Doc Comment
  *
  * @category    Class */
-// * @description LineItem
+// * @description View and run pending migrations.
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LineItemTest extends \PHPUnit_Framework_TestCase
+class MigrationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,23 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "LineItem"
+     * Test "Migration"
      */
-    public function testLineItem()
+    public function testMigration()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "run_dt_tm"
+     */
+    public function testPropertyRunDtTm()
     {
     }
 
@@ -81,62 +95,6 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
      * Test attribute "id"
      */
     public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "order_id"
-     */
-    public function testPropertyOrderId()
-    {
-    }
-
-    /**
-     * Test attribute "subtotal_amount"
-     */
-    public function testPropertySubtotalAmount()
-    {
-    }
-
-    /**
-     * Test attribute "total_amount"
-     */
-    public function testPropertyTotalAmount()
-    {
-    }
-
-    /**
-     * Test attribute "vat_amount"
-     */
-    public function testPropertyVatAmount()
-    {
-    }
-
-    /**
-     * Test attribute "product_id"
-     */
-    public function testPropertyProductId()
-    {
-    }
-
-    /**
-     * Test attribute "product_name"
-     */
-    public function testPropertyProductName()
-    {
-    }
-
-    /**
-     * Test attribute "quantity"
-     */
-    public function testPropertyQuantity()
-    {
-    }
-
-    /**
-     * Test attribute "parent_id"
-     */
-    public function testPropertyParentId()
     {
     }
 }
