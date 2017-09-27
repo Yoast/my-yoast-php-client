@@ -2377,7 +2377,7 @@ class SiteApi
      * @param double $from_source_id  (required)
      * @param double $to_source_id  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     * @return \Yoast\MyYoastApiClient\Model\Site[]
      */
     public function siteTransfer($from_source_id, $to_source_id)
     {
@@ -2391,7 +2391,7 @@ class SiteApi
      * @param double $from_source_id  (required)
      * @param double $to_source_id  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Site[], HTTP status code, HTTP response headers (array of strings)
      */
     public function siteTransferWithHttpInfo($from_source_id, $to_source_id)
     {
@@ -2438,15 +2438,15 @@ class SiteApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '\Yoast\MyYoastApiClient\Model\Site[]',
                 '/Sites/transfer'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Site[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Site[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
