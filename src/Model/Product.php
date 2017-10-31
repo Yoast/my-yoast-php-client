@@ -70,7 +70,8 @@ class Product implements ArrayAccess
         'current_version' => 'string',
         'changelog' => 'string',
         'type' => 'string',
-        'currency' => 'string'
+        'currency' => 'string',
+        'course_id' => 'string'
     ];
 
     /**
@@ -94,7 +95,8 @@ class Product implements ArrayAccess
         'current_version' => null,
         'changelog' => null,
         'type' => null,
-        'currency' => null
+        'currency' => null,
+        'course_id' => null
     ];
 
     public static function swaggerTypes()
@@ -128,7 +130,8 @@ class Product implements ArrayAccess
         'current_version' => 'currentVersion',
         'changelog' => 'changelog',
         'type' => 'type',
-        'currency' => 'currency'
+        'currency' => 'currency',
+        'course_id' => 'courseId'
     ];
 
 
@@ -153,7 +156,8 @@ class Product implements ArrayAccess
         'current_version' => 'setCurrentVersion',
         'changelog' => 'setChangelog',
         'type' => 'setType',
-        'currency' => 'setCurrency'
+        'currency' => 'setCurrency',
+        'course_id' => 'setCourseId'
     ];
 
 
@@ -178,7 +182,8 @@ class Product implements ArrayAccess
         'current_version' => 'getCurrentVersion',
         'changelog' => 'getChangelog',
         'type' => 'getType',
-        'currency' => 'getCurrency'
+        'currency' => 'getCurrency',
+        'course_id' => 'getCourseId'
     ];
 
     public static function attributeMap()
@@ -229,6 +234,7 @@ class Product implements ArrayAccess
         $this->container['changelog'] = isset($data['changelog']) ? $data['changelog'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['course_id'] = isset($data['course_id']) ? $data['course_id'] : null;
     }
 
     /**
@@ -627,6 +633,27 @@ class Product implements ArrayAccess
     public function setCurrency($currency)
     {
         $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets course_id
+     * @return string
+     */
+    public function getCourseId()
+    {
+        return $this->container['course_id'];
+    }
+
+    /**
+     * Sets course_id
+     * @param string $course_id
+     * @return $this
+     */
+    public function setCourseId($course_id)
+    {
+        $this->container['course_id'] = $course_id;
 
         return $this;
     }

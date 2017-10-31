@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **changelog** | **string** |  | [optional] 
 **type** | **string** |  | [optional] 
 **currency** | **string** |  | [optional] 
+**course_id** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

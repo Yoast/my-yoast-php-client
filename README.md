@@ -56,14 +56,14 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$old_password = "old_password_example"; // string | 
-$new_password = "new_password_example"; // string | 
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $api_instance->customerChangePassword($old_password, $new_password);
+    $result = $api_instance->courseCount($where);
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerChangePassword: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->courseCount: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -75,6 +75,52 @@ All URIs are relative to *https://localhost/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*CourseApi* | [**courseCount**](docs/Api/CourseApi.md#coursecount) | **GET** /Courses/count | Count instances of the model matched by where from the data source.
+*CourseApi* | [**courseCreate**](docs/Api/CourseApi.md#coursecreate) | **POST** /Courses | Create a new instance of the model and persist it into the data source.
+*CourseApi* | [**courseCreateChangeStreamGetCoursesChangeStream**](docs/Api/CourseApi.md#coursecreatechangestreamgetcourseschangestream) | **GET** /Courses/change-stream | Create a change stream.
+*CourseApi* | [**courseCreateChangeStreamPostCoursesChangeStream**](docs/Api/CourseApi.md#coursecreatechangestreampostcourseschangestream) | **POST** /Courses/change-stream | Create a change stream.
+*CourseApi* | [**courseDeleteById**](docs/Api/CourseApi.md#coursedeletebyid) | **DELETE** /Courses/{id} | Delete a model instance by {{id}} from the data source.
+*CourseApi* | [**courseExistsGetCoursesidExists**](docs/Api/CourseApi.md#courseexistsgetcoursesidexists) | **GET** /Courses/{id}/exists | Check whether a model instance exists in the data source.
+*CourseApi* | [**courseExistsHeadCoursesid**](docs/Api/CourseApi.md#courseexistsheadcoursesid) | **HEAD** /Courses/{id} | Check whether a model instance exists in the data source.
+*CourseApi* | [**courseFind**](docs/Api/CourseApi.md#coursefind) | **GET** /Courses | Find all instances of the model matched by filter from the data source.
+*CourseApi* | [**courseFindById**](docs/Api/CourseApi.md#coursefindbyid) | **GET** /Courses/{id} | Find a model instance by {{id}} from the data source.
+*CourseApi* | [**courseFindOne**](docs/Api/CourseApi.md#coursefindone) | **GET** /Courses/findOne | Find first instance of the model matched by filter from the data source.
+*CourseApi* | [**courseFromAcademy**](docs/Api/CourseApi.md#coursefromacademy) | **PUT** /Courses/fromAcademy | 
+*CourseApi* | [**coursePatchOrCreate**](docs/Api/CourseApi.md#coursepatchorcreate) | **PATCH** /Courses | Patch an existing model instance or insert a new one into the data source.
+*CourseApi* | [**coursePrototypeCreateProduct**](docs/Api/CourseApi.md#courseprototypecreateproduct) | **POST** /Courses/{id}/product | Creates a new instance in product of this model.
+*CourseApi* | [**coursePrototypeDestroyProduct**](docs/Api/CourseApi.md#courseprototypedestroyproduct) | **DELETE** /Courses/{id}/product | Deletes product of this model.
+*CourseApi* | [**coursePrototypeGetProduct**](docs/Api/CourseApi.md#courseprototypegetproduct) | **GET** /Courses/{id}/product | Fetches hasOne relation product.
+*CourseApi* | [**coursePrototypePatchAttributes**](docs/Api/CourseApi.md#courseprototypepatchattributes) | **PATCH** /Courses/{id} | Patch attributes for a model instance and persist it into the data source.
+*CourseApi* | [**coursePrototypeUpdateProduct**](docs/Api/CourseApi.md#courseprototypeupdateproduct) | **PUT** /Courses/{id}/product | Update product of this model.
+*CourseApi* | [**courseReplaceByIdPostCoursesidReplace**](docs/Api/CourseApi.md#coursereplacebyidpostcoursesidreplace) | **POST** /Courses/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*CourseApi* | [**courseReplaceByIdPutCoursesid**](docs/Api/CourseApi.md#coursereplacebyidputcoursesid) | **PUT** /Courses/{id} | Replace attributes for a model instance and persist it into the data source.
+*CourseApi* | [**courseReplaceOrCreatePostCoursesReplaceOrCreate**](docs/Api/CourseApi.md#coursereplaceorcreatepostcoursesreplaceorcreate) | **POST** /Courses/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*CourseApi* | [**courseReplaceOrCreatePutCourses**](docs/Api/CourseApi.md#coursereplaceorcreateputcourses) | **PUT** /Courses | Replace an existing model instance or insert a new one into the data source.
+*CourseApi* | [**courseUpdateAll**](docs/Api/CourseApi.md#courseupdateall) | **POST** /Courses/update | Update instances of the model matched by {{where}} from the data source.
+*CourseApi* | [**courseUpsertWithWhere**](docs/Api/CourseApi.md#courseupsertwithwhere) | **POST** /Courses/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*CourseEnrollmentApi* | [**courseEnrollmentCount**](docs/Api/CourseEnrollmentApi.md#courseenrollmentcount) | **GET** /CourseEnrollments/count | Count instances of the model matched by where from the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentCreate**](docs/Api/CourseEnrollmentApi.md#courseenrollmentcreate) | **POST** /CourseEnrollments | Create a new instance of the model and persist it into the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentCreateChangeStreamGetCourseEnrollmentsChangeStream**](docs/Api/CourseEnrollmentApi.md#courseenrollmentcreatechangestreamgetcourseenrollmentschangestream) | **GET** /CourseEnrollments/change-stream | Create a change stream.
+*CourseEnrollmentApi* | [**courseEnrollmentCreateChangeStreamPostCourseEnrollmentsChangeStream**](docs/Api/CourseEnrollmentApi.md#courseenrollmentcreatechangestreampostcourseenrollmentschangestream) | **POST** /CourseEnrollments/change-stream | Create a change stream.
+*CourseEnrollmentApi* | [**courseEnrollmentDeleteById**](docs/Api/CourseEnrollmentApi.md#courseenrollmentdeletebyid) | **DELETE** /CourseEnrollments/{id} | Delete a model instance by {{id}} from the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentExistsGetCourseEnrollmentsidExists**](docs/Api/CourseEnrollmentApi.md#courseenrollmentexistsgetcourseenrollmentsidexists) | **GET** /CourseEnrollments/{id}/exists | Check whether a model instance exists in the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentExistsHeadCourseEnrollmentsid**](docs/Api/CourseEnrollmentApi.md#courseenrollmentexistsheadcourseenrollmentsid) | **HEAD** /CourseEnrollments/{id} | Check whether a model instance exists in the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentFind**](docs/Api/CourseEnrollmentApi.md#courseenrollmentfind) | **GET** /CourseEnrollments | Find all instances of the model matched by filter from the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentFindById**](docs/Api/CourseEnrollmentApi.md#courseenrollmentfindbyid) | **GET** /CourseEnrollments/{id} | Find a model instance by {{id}} from the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentFindOne**](docs/Api/CourseEnrollmentApi.md#courseenrollmentfindone) | **GET** /CourseEnrollments/findOne | Find first instance of the model matched by filter from the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentFromAcademy**](docs/Api/CourseEnrollmentApi.md#courseenrollmentfromacademy) | **PUT** /CourseEnrollments/fromAcademy | 
+*CourseEnrollmentApi* | [**courseEnrollmentPatchOrCreate**](docs/Api/CourseEnrollmentApi.md#courseenrollmentpatchorcreate) | **PATCH** /CourseEnrollments | Patch an existing model instance or insert a new one into the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentPrototypeGetBuyer**](docs/Api/CourseEnrollmentApi.md#courseenrollmentprototypegetbuyer) | **GET** /CourseEnrollments/{id}/buyer | Fetches belongsTo relation buyer.
+*CourseEnrollmentApi* | [**courseEnrollmentPrototypeGetCourse**](docs/Api/CourseEnrollmentApi.md#courseenrollmentprototypegetcourse) | **GET** /CourseEnrollments/{id}/course | Fetches belongsTo relation course.
+*CourseEnrollmentApi* | [**courseEnrollmentPrototypeGetOrder**](docs/Api/CourseEnrollmentApi.md#courseenrollmentprototypegetorder) | **GET** /CourseEnrollments/{id}/order | Fetches belongsTo relation order.
+*CourseEnrollmentApi* | [**courseEnrollmentPrototypeGetStudent**](docs/Api/CourseEnrollmentApi.md#courseenrollmentprototypegetstudent) | **GET** /CourseEnrollments/{id}/student | Fetches belongsTo relation student.
+*CourseEnrollmentApi* | [**courseEnrollmentPrototypePatchAttributes**](docs/Api/CourseEnrollmentApi.md#courseenrollmentprototypepatchattributes) | **PATCH** /CourseEnrollments/{id} | Patch attributes for a model instance and persist it into the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentReplaceByIdPostCourseEnrollmentsidReplace**](docs/Api/CourseEnrollmentApi.md#courseenrollmentreplacebyidpostcourseenrollmentsidreplace) | **POST** /CourseEnrollments/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentReplaceByIdPutCourseEnrollmentsid**](docs/Api/CourseEnrollmentApi.md#courseenrollmentreplacebyidputcourseenrollmentsid) | **PUT** /CourseEnrollments/{id} | Replace attributes for a model instance and persist it into the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentReplaceOrCreatePostCourseEnrollmentsReplaceOrCreate**](docs/Api/CourseEnrollmentApi.md#courseenrollmentreplaceorcreatepostcourseenrollmentsreplaceorcreate) | **POST** /CourseEnrollments/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentReplaceOrCreatePutCourseEnrollments**](docs/Api/CourseEnrollmentApi.md#courseenrollmentreplaceorcreateputcourseenrollments) | **PUT** /CourseEnrollments | Replace an existing model instance or insert a new one into the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentUpdateAll**](docs/Api/CourseEnrollmentApi.md#courseenrollmentupdateall) | **POST** /CourseEnrollments/update | Update instances of the model matched by {{where}} from the data source.
+*CourseEnrollmentApi* | [**courseEnrollmentUpsertWithWhere**](docs/Api/CourseEnrollmentApi.md#courseenrollmentupsertwithwhere) | **POST** /CourseEnrollments/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 *CustomerApi* | [**customerChangePassword**](docs/Api/CustomerApi.md#customerchangepassword) | **POST** /Customers/change-password | Change a user&#39;s password.
 *CustomerApi* | [**customerConfirm**](docs/Api/CustomerApi.md#customerconfirm) | **GET** /Customers/confirm | Confirm a user registration with email verification token.
 *CustomerApi* | [**customerCount**](docs/Api/CustomerApi.md#customercount) | **GET** /Customers/count | Count instances of the model matched by where from the data source.
@@ -318,6 +364,7 @@ Class | Method | HTTP request | Description
 *ProductApi* | [**productPrototypeDestroyByIdSubscriptions**](docs/Api/ProductApi.md#productprototypedestroybyidsubscriptions) | **DELETE** /Products/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
 *ProductApi* | [**productPrototypeFindByIdLineItems**](docs/Api/ProductApi.md#productprototypefindbyidlineitems) | **GET** /Products/{id}/lineItems/{fk} | Find a related item by id for lineItems.
 *ProductApi* | [**productPrototypeFindByIdSubscriptions**](docs/Api/ProductApi.md#productprototypefindbyidsubscriptions) | **GET** /Products/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
+*ProductApi* | [**productPrototypeGetCourses**](docs/Api/ProductApi.md#productprototypegetcourses) | **GET** /Products/{id}/courses | Fetches belongsTo relation courses.
 *ProductApi* | [**productPrototypeGetLineItems**](docs/Api/ProductApi.md#productprototypegetlineitems) | **GET** /Products/{id}/lineItems | Queries lineItems of Product.
 *ProductApi* | [**productPrototypeGetSubscriptions**](docs/Api/ProductApi.md#productprototypegetsubscriptions) | **GET** /Products/{id}/subscriptions | Queries subscriptions of Product.
 *ProductApi* | [**productPrototypePatchAttributes**](docs/Api/ProductApi.md#productprototypepatchattributes) | **PATCH** /Products/{id} | Patch attributes for a model instance and persist it into the data source.
@@ -525,6 +572,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AccessToken](docs/Model/AccessToken.md)
+ - [Course](docs/Model/Course.md)
+ - [CourseEnrollment](docs/Model/CourseEnrollment.md)
  - [Customer](docs/Model/Customer.md)
  - [DiscountLineItem](docs/Model/DiscountLineItem.md)
  - [InlineResponse200](docs/Model/InlineResponse200.md)

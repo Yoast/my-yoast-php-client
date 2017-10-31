@@ -293,6 +293,16 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productPrototypeGetCourses
+     *
+     * Fetches belongsTo relation courses..
+     *
+     */
+    public function testProductPrototypeGetCourses()
+    {
+    }
+
+    /**
      * Test case for productPrototypeGetLineItems
      *
      * Queries lineItems of Product..

@@ -195,4 +195,11 @@ class ProductTest extends \PHPUnit_Framework_TestCase
     public function testPropertyCurrency()
     {
     }
+
+    /**
+     * Test attribute "course_id"
+     */
+    public function testPropertyCourseId()
+    {
+    }
 }
