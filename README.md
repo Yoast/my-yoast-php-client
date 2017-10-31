@@ -81,6 +81,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerCreate**](docs/Api/CustomerApi.md#customercreate) | **POST** /Customers | Create a new instance of the model and persist it into the data source.
 *CustomerApi* | [**customerCreateChangeStreamGetCustomersChangeStream**](docs/Api/CustomerApi.md#customercreatechangestreamgetcustomerschangestream) | **GET** /Customers/change-stream | Create a change stream.
 *CustomerApi* | [**customerCreateChangeStreamPostCustomersChangeStream**](docs/Api/CustomerApi.md#customercreatechangestreampostcustomerschangestream) | **POST** /Customers/change-stream | Create a change stream.
+*CustomerApi* | [**customerCurrent**](docs/Api/CustomerApi.md#customercurrent) | **GET** /Customers/current | 
 *CustomerApi* | [**customerDeleteById**](docs/Api/CustomerApi.md#customerdeletebyid) | **DELETE** /Customers/{id} | Delete a model instance by {{id}} from the data source.
 *CustomerApi* | [**customerExistsGetCustomersidExists**](docs/Api/CustomerApi.md#customerexistsgetcustomersidexists) | **GET** /Customers/{id}/exists | Check whether a model instance exists in the data source.
 *CustomerApi* | [**customerExistsHeadCustomersid**](docs/Api/CustomerApi.md#customerexistsheadcustomersid) | **HEAD** /Customers/{id} | Check whether a model instance exists in the data source.
@@ -173,9 +174,19 @@ Class | Method | HTTP request | Description
 *LineItemApi* | [**lineItemFindById**](docs/Api/LineItemApi.md#lineitemfindbyid) | **GET** /LineItems/{id} | Find a model instance by {{id}} from the data source.
 *LineItemApi* | [**lineItemFindOne**](docs/Api/LineItemApi.md#lineitemfindone) | **GET** /LineItems/findOne | Find first instance of the model matched by filter from the data source.
 *LineItemApi* | [**lineItemPatchOrCreate**](docs/Api/LineItemApi.md#lineitempatchorcreate) | **PATCH** /LineItems | Patch an existing model instance or insert a new one into the data source.
+*LineItemApi* | [**lineItemPrototypeCountRefunds**](docs/Api/LineItemApi.md#lineitemprototypecountrefunds) | **GET** /LineItems/{id}/refunds/count | Counts refunds of LineItem.
+*LineItemApi* | [**lineItemPrototypeCreateRefunds**](docs/Api/LineItemApi.md#lineitemprototypecreaterefunds) | **POST** /LineItems/{id}/refunds | Creates a new instance in refunds of this model.
+*LineItemApi* | [**lineItemPrototypeDeleteRefunds**](docs/Api/LineItemApi.md#lineitemprototypedeleterefunds) | **DELETE** /LineItems/{id}/refunds | Deletes all refunds of this model.
+*LineItemApi* | [**lineItemPrototypeDestroyByIdRefunds**](docs/Api/LineItemApi.md#lineitemprototypedestroybyidrefunds) | **DELETE** /LineItems/{id}/refunds/{fk} | Delete a related item by id for refunds.
+*LineItemApi* | [**lineItemPrototypeExistsRefunds**](docs/Api/LineItemApi.md#lineitemprototypeexistsrefunds) | **HEAD** /LineItems/{id}/refunds/rel/{fk} | Check the existence of refunds relation to an item by id.
+*LineItemApi* | [**lineItemPrototypeFindByIdRefunds**](docs/Api/LineItemApi.md#lineitemprototypefindbyidrefunds) | **GET** /LineItems/{id}/refunds/{fk} | Find a related item by id for refunds.
 *LineItemApi* | [**lineItemPrototypeGetOrder**](docs/Api/LineItemApi.md#lineitemprototypegetorder) | **GET** /LineItems/{id}/order | Fetches belongsTo relation order.
 *LineItemApi* | [**lineItemPrototypeGetProduct**](docs/Api/LineItemApi.md#lineitemprototypegetproduct) | **GET** /LineItems/{id}/product | Fetches belongsTo relation product.
+*LineItemApi* | [**lineItemPrototypeGetRefunds**](docs/Api/LineItemApi.md#lineitemprototypegetrefunds) | **GET** /LineItems/{id}/refunds | Queries refunds of LineItem.
+*LineItemApi* | [**lineItemPrototypeLinkRefunds**](docs/Api/LineItemApi.md#lineitemprototypelinkrefunds) | **PUT** /LineItems/{id}/refunds/rel/{fk} | Add a related item by id for refunds.
 *LineItemApi* | [**lineItemPrototypePatchAttributes**](docs/Api/LineItemApi.md#lineitemprototypepatchattributes) | **PATCH** /LineItems/{id} | Patch attributes for a model instance and persist it into the data source.
+*LineItemApi* | [**lineItemPrototypeUnlinkRefunds**](docs/Api/LineItemApi.md#lineitemprototypeunlinkrefunds) | **DELETE** /LineItems/{id}/refunds/rel/{fk} | Remove the refunds relation to an item by id.
+*LineItemApi* | [**lineItemPrototypeUpdateByIdRefunds**](docs/Api/LineItemApi.md#lineitemprototypeupdatebyidrefunds) | **PUT** /LineItems/{id}/refunds/{fk} | Update a related item by id for refunds.
 *LineItemApi* | [**lineItemReplaceByIdPostLineItemsidReplace**](docs/Api/LineItemApi.md#lineitemreplacebyidpostlineitemsidreplace) | **POST** /LineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *LineItemApi* | [**lineItemReplaceByIdPutLineItemsid**](docs/Api/LineItemApi.md#lineitemreplacebyidputlineitemsid) | **PUT** /LineItems/{id} | Replace attributes for a model instance and persist it into the data source.
 *LineItemApi* | [**lineItemReplaceOrCreatePostLineItemsReplaceOrCreate**](docs/Api/LineItemApi.md#lineitemreplaceorcreatepostlineitemsreplaceorcreate) | **POST** /LineItems/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -329,14 +340,51 @@ Class | Method | HTTP request | Description
 *RefundApi* | [**refundFindById**](docs/Api/RefundApi.md#refundfindbyid) | **GET** /Refunds/{id} | Find a model instance by {{id}} from the data source.
 *RefundApi* | [**refundFindOne**](docs/Api/RefundApi.md#refundfindone) | **GET** /Refunds/findOne | Find first instance of the model matched by filter from the data source.
 *RefundApi* | [**refundPatchOrCreate**](docs/Api/RefundApi.md#refundpatchorcreate) | **PATCH** /Refunds | Patch an existing model instance or insert a new one into the data source.
+*RefundApi* | [**refundPrototypeCountLineItems**](docs/Api/RefundApi.md#refundprototypecountlineitems) | **GET** /Refunds/{id}/lineItems/count | Counts lineItems of Refund.
+*RefundApi* | [**refundPrototypeCountRefundLineItems**](docs/Api/RefundApi.md#refundprototypecountrefundlineitems) | **GET** /Refunds/{id}/refundLineItems/count | Counts refundLineItems of Refund.
+*RefundApi* | [**refundPrototypeCreateLineItems**](docs/Api/RefundApi.md#refundprototypecreatelineitems) | **POST** /Refunds/{id}/lineItems | Creates a new instance in lineItems of this model.
+*RefundApi* | [**refundPrototypeCreateRefundLineItems**](docs/Api/RefundApi.md#refundprototypecreaterefundlineitems) | **POST** /Refunds/{id}/refundLineItems | Creates a new instance in refundLineItems of this model.
+*RefundApi* | [**refundPrototypeDeleteLineItems**](docs/Api/RefundApi.md#refundprototypedeletelineitems) | **DELETE** /Refunds/{id}/lineItems | Deletes all lineItems of this model.
+*RefundApi* | [**refundPrototypeDeleteRefundLineItems**](docs/Api/RefundApi.md#refundprototypedeleterefundlineitems) | **DELETE** /Refunds/{id}/refundLineItems | Deletes all refundLineItems of this model.
+*RefundApi* | [**refundPrototypeDestroyByIdLineItems**](docs/Api/RefundApi.md#refundprototypedestroybyidlineitems) | **DELETE** /Refunds/{id}/lineItems/{fk} | Delete a related item by id for lineItems.
+*RefundApi* | [**refundPrototypeDestroyByIdRefundLineItems**](docs/Api/RefundApi.md#refundprototypedestroybyidrefundlineitems) | **DELETE** /Refunds/{id}/refundLineItems/{fk} | Delete a related item by id for refundLineItems.
+*RefundApi* | [**refundPrototypeExistsLineItems**](docs/Api/RefundApi.md#refundprototypeexistslineitems) | **HEAD** /Refunds/{id}/lineItems/rel/{fk} | Check the existence of lineItems relation to an item by id.
+*RefundApi* | [**refundPrototypeFindByIdLineItems**](docs/Api/RefundApi.md#refundprototypefindbyidlineitems) | **GET** /Refunds/{id}/lineItems/{fk} | Find a related item by id for lineItems.
+*RefundApi* | [**refundPrototypeFindByIdRefundLineItems**](docs/Api/RefundApi.md#refundprototypefindbyidrefundlineitems) | **GET** /Refunds/{id}/refundLineItems/{fk} | Find a related item by id for refundLineItems.
+*RefundApi* | [**refundPrototypeGetLineItems**](docs/Api/RefundApi.md#refundprototypegetlineitems) | **GET** /Refunds/{id}/lineItems | Queries lineItems of Refund.
 *RefundApi* | [**refundPrototypeGetOrder**](docs/Api/RefundApi.md#refundprototypegetorder) | **GET** /Refunds/{id}/order | Fetches belongsTo relation order.
+*RefundApi* | [**refundPrototypeGetRefundLineItems**](docs/Api/RefundApi.md#refundprototypegetrefundlineitems) | **GET** /Refunds/{id}/refundLineItems | Queries refundLineItems of Refund.
+*RefundApi* | [**refundPrototypeLinkLineItems**](docs/Api/RefundApi.md#refundprototypelinklineitems) | **PUT** /Refunds/{id}/lineItems/rel/{fk} | Add a related item by id for lineItems.
 *RefundApi* | [**refundPrototypePatchAttributes**](docs/Api/RefundApi.md#refundprototypepatchattributes) | **PATCH** /Refunds/{id} | Patch attributes for a model instance and persist it into the data source.
+*RefundApi* | [**refundPrototypeUnlinkLineItems**](docs/Api/RefundApi.md#refundprototypeunlinklineitems) | **DELETE** /Refunds/{id}/lineItems/rel/{fk} | Remove the lineItems relation to an item by id.
+*RefundApi* | [**refundPrototypeUpdateByIdLineItems**](docs/Api/RefundApi.md#refundprototypeupdatebyidlineitems) | **PUT** /Refunds/{id}/lineItems/{fk} | Update a related item by id for lineItems.
+*RefundApi* | [**refundPrototypeUpdateByIdRefundLineItems**](docs/Api/RefundApi.md#refundprototypeupdatebyidrefundlineitems) | **PUT** /Refunds/{id}/refundLineItems/{fk} | Update a related item by id for refundLineItems.
 *RefundApi* | [**refundReplaceByIdPostRefundsidReplace**](docs/Api/RefundApi.md#refundreplacebyidpostrefundsidreplace) | **POST** /Refunds/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *RefundApi* | [**refundReplaceByIdPutRefundsid**](docs/Api/RefundApi.md#refundreplacebyidputrefundsid) | **PUT** /Refunds/{id} | Replace attributes for a model instance and persist it into the data source.
 *RefundApi* | [**refundReplaceOrCreatePostRefundsReplaceOrCreate**](docs/Api/RefundApi.md#refundreplaceorcreatepostrefundsreplaceorcreate) | **POST** /Refunds/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 *RefundApi* | [**refundReplaceOrCreatePutRefunds**](docs/Api/RefundApi.md#refundreplaceorcreateputrefunds) | **PUT** /Refunds | Replace an existing model instance or insert a new one into the data source.
 *RefundApi* | [**refundUpdateAll**](docs/Api/RefundApi.md#refundupdateall) | **POST** /Refunds/update | Update instances of the model matched by {{where}} from the data source.
 *RefundApi* | [**refundUpsertWithWhere**](docs/Api/RefundApi.md#refundupsertwithwhere) | **POST** /Refunds/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*RefundLineItemApi* | [**refundLineItemCount**](docs/Api/RefundLineItemApi.md#refundlineitemcount) | **GET** /RefundLineItems/count | Count instances of the model matched by where from the data source.
+*RefundLineItemApi* | [**refundLineItemCreate**](docs/Api/RefundLineItemApi.md#refundlineitemcreate) | **POST** /RefundLineItems | Create a new instance of the model and persist it into the data source.
+*RefundLineItemApi* | [**refundLineItemCreateChangeStreamGetRefundLineItemsChangeStream**](docs/Api/RefundLineItemApi.md#refundlineitemcreatechangestreamgetrefundlineitemschangestream) | **GET** /RefundLineItems/change-stream | Create a change stream.
+*RefundLineItemApi* | [**refundLineItemCreateChangeStreamPostRefundLineItemsChangeStream**](docs/Api/RefundLineItemApi.md#refundlineitemcreatechangestreampostrefundlineitemschangestream) | **POST** /RefundLineItems/change-stream | Create a change stream.
+*RefundLineItemApi* | [**refundLineItemDeleteById**](docs/Api/RefundLineItemApi.md#refundlineitemdeletebyid) | **DELETE** /RefundLineItems/{id} | Delete a model instance by {{id}} from the data source.
+*RefundLineItemApi* | [**refundLineItemExistsGetRefundLineItemsidExists**](docs/Api/RefundLineItemApi.md#refundlineitemexistsgetrefundlineitemsidexists) | **GET** /RefundLineItems/{id}/exists | Check whether a model instance exists in the data source.
+*RefundLineItemApi* | [**refundLineItemExistsHeadRefundLineItemsid**](docs/Api/RefundLineItemApi.md#refundlineitemexistsheadrefundlineitemsid) | **HEAD** /RefundLineItems/{id} | Check whether a model instance exists in the data source.
+*RefundLineItemApi* | [**refundLineItemFind**](docs/Api/RefundLineItemApi.md#refundlineitemfind) | **GET** /RefundLineItems | Find all instances of the model matched by filter from the data source.
+*RefundLineItemApi* | [**refundLineItemFindById**](docs/Api/RefundLineItemApi.md#refundlineitemfindbyid) | **GET** /RefundLineItems/{id} | Find a model instance by {{id}} from the data source.
+*RefundLineItemApi* | [**refundLineItemFindOne**](docs/Api/RefundLineItemApi.md#refundlineitemfindone) | **GET** /RefundLineItems/findOne | Find first instance of the model matched by filter from the data source.
+*RefundLineItemApi* | [**refundLineItemPatchOrCreate**](docs/Api/RefundLineItemApi.md#refundlineitempatchorcreate) | **PATCH** /RefundLineItems | Patch an existing model instance or insert a new one into the data source.
+*RefundLineItemApi* | [**refundLineItemPrototypeGetLineItem**](docs/Api/RefundLineItemApi.md#refundlineitemprototypegetlineitem) | **GET** /RefundLineItems/{id}/lineItem | Fetches belongsTo relation lineItem.
+*RefundLineItemApi* | [**refundLineItemPrototypeGetRefund**](docs/Api/RefundLineItemApi.md#refundlineitemprototypegetrefund) | **GET** /RefundLineItems/{id}/refund | Fetches belongsTo relation refund.
+*RefundLineItemApi* | [**refundLineItemPrototypePatchAttributes**](docs/Api/RefundLineItemApi.md#refundlineitemprototypepatchattributes) | **PATCH** /RefundLineItems/{id} | Patch attributes for a model instance and persist it into the data source.
+*RefundLineItemApi* | [**refundLineItemReplaceByIdPostRefundLineItemsidReplace**](docs/Api/RefundLineItemApi.md#refundlineitemreplacebyidpostrefundlineitemsidreplace) | **POST** /RefundLineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*RefundLineItemApi* | [**refundLineItemReplaceByIdPutRefundLineItemsid**](docs/Api/RefundLineItemApi.md#refundlineitemreplacebyidputrefundlineitemsid) | **PUT** /RefundLineItems/{id} | Replace attributes for a model instance and persist it into the data source.
+*RefundLineItemApi* | [**refundLineItemReplaceOrCreatePostRefundLineItemsReplaceOrCreate**](docs/Api/RefundLineItemApi.md#refundlineitemreplaceorcreatepostrefundlineitemsreplaceorcreate) | **POST** /RefundLineItems/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*RefundLineItemApi* | [**refundLineItemReplaceOrCreatePutRefundLineItems**](docs/Api/RefundLineItemApi.md#refundlineitemreplaceorcreateputrefundlineitems) | **PUT** /RefundLineItems | Replace an existing model instance or insert a new one into the data source.
+*RefundLineItemApi* | [**refundLineItemUpdateAll**](docs/Api/RefundLineItemApi.md#refundlineitemupdateall) | **POST** /RefundLineItems/update | Update instances of the model matched by {{where}} from the data source.
+*RefundLineItemApi* | [**refundLineItemUpsertWithWhere**](docs/Api/RefundLineItemApi.md#refundlineitemupsertwithwhere) | **POST** /RefundLineItems/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 *SiteApi* | [**siteCount**](docs/Api/SiteApi.md#sitecount) | **GET** /Sites/count | Count instances of the model matched by where from the data source.
 *SiteApi* | [**siteCreate**](docs/Api/SiteApi.md#sitecreate) | **POST** /Sites | Create a new instance of the model and persist it into the data source.
 *SiteApi* | [**siteCreateChangeStreamGetSitesChangeStream**](docs/Api/SiteApi.md#sitecreatechangestreamgetsiteschangestream) | **GET** /Sites/change-stream | Create a change stream.
@@ -490,6 +538,7 @@ Class | Method | HTTP request | Description
  - [Order](docs/Model/Order.md)
  - [Product](docs/Model/Product.md)
  - [Refund](docs/Model/Refund.md)
+ - [RefundLineItem](docs/Model/RefundLineItem.md)
  - [Site](docs/Model/Site.md)
  - [SiteSubscriptions](docs/Model/SiteSubscriptions.md)
  - [Subscription](docs/Model/Subscription.md)

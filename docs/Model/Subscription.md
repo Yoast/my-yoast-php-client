@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **price** | **double** |  | [optional] 
 **name** | **string** |  | [optional] 
+**requires_manual_renewal** | **bool** |  | [optional] [default to true]
 **next_payment** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **limit** | **double** |  | [default to 0.0]
 **used** | **double** |  | [optional] [default to 0.0]

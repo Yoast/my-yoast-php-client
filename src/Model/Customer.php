@@ -55,7 +55,19 @@ class Customer implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
+        'source_id' => 'double',
         'enabled' => 'bool',
+        'user_email' => 'string',
+        'user_first_name' => 'string',
+        'user_last_name' => 'string',
+        'user_company' => 'string',
+        'user_address1' => 'string',
+        'user_address2' => 'string',
+        'user_city' => 'string',
+        'user_state' => 'string',
+        'user_post_code' => 'string',
+        'user_country' => 'string',
+        'user_phone' => 'string',
         'realm' => 'string',
         'username' => 'string',
         'email' => 'string',
@@ -68,7 +80,19 @@ class Customer implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
+        'source_id' => 'double',
         'enabled' => null,
+        'user_email' => null,
+        'user_first_name' => null,
+        'user_last_name' => null,
+        'user_company' => null,
+        'user_address1' => null,
+        'user_address2' => null,
+        'user_city' => null,
+        'user_state' => null,
+        'user_post_code' => null,
+        'user_country' => null,
+        'user_phone' => null,
         'realm' => null,
         'username' => null,
         'email' => null,
@@ -91,7 +115,19 @@ class Customer implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
+        'source_id' => 'sourceId',
         'enabled' => 'enabled',
+        'user_email' => 'userEmail',
+        'user_first_name' => 'userFirstName',
+        'user_last_name' => 'userLastName',
+        'user_company' => 'userCompany',
+        'user_address1' => 'userAddress1',
+        'user_address2' => 'userAddress2',
+        'user_city' => 'userCity',
+        'user_state' => 'userState',
+        'user_post_code' => 'userPostCode',
+        'user_country' => 'userCountry',
+        'user_phone' => 'userPhone',
         'realm' => 'realm',
         'username' => 'username',
         'email' => 'email',
@@ -105,7 +141,19 @@ class Customer implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
+        'source_id' => 'setSourceId',
         'enabled' => 'setEnabled',
+        'user_email' => 'setUserEmail',
+        'user_first_name' => 'setUserFirstName',
+        'user_last_name' => 'setUserLastName',
+        'user_company' => 'setUserCompany',
+        'user_address1' => 'setUserAddress1',
+        'user_address2' => 'setUserAddress2',
+        'user_city' => 'setUserCity',
+        'user_state' => 'setUserState',
+        'user_post_code' => 'setUserPostCode',
+        'user_country' => 'setUserCountry',
+        'user_phone' => 'setUserPhone',
         'realm' => 'setRealm',
         'username' => 'setUsername',
         'email' => 'setEmail',
@@ -119,7 +167,19 @@ class Customer implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
+        'source_id' => 'getSourceId',
         'enabled' => 'getEnabled',
+        'user_email' => 'getUserEmail',
+        'user_first_name' => 'getUserFirstName',
+        'user_last_name' => 'getUserLastName',
+        'user_company' => 'getUserCompany',
+        'user_address1' => 'getUserAddress1',
+        'user_address2' => 'getUserAddress2',
+        'user_city' => 'getUserCity',
+        'user_state' => 'getUserState',
+        'user_post_code' => 'getUserPostCode',
+        'user_country' => 'getUserCountry',
+        'user_phone' => 'getUserPhone',
         'realm' => 'getRealm',
         'username' => 'getUsername',
         'email' => 'getEmail',
@@ -158,7 +218,19 @@ class Customer implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
         $this->container['enabled'] = isset($data['enabled']) ? $data['enabled'] : true;
+        $this->container['user_email'] = isset($data['user_email']) ? $data['user_email'] : null;
+        $this->container['user_first_name'] = isset($data['user_first_name']) ? $data['user_first_name'] : null;
+        $this->container['user_last_name'] = isset($data['user_last_name']) ? $data['user_last_name'] : null;
+        $this->container['user_company'] = isset($data['user_company']) ? $data['user_company'] : null;
+        $this->container['user_address1'] = isset($data['user_address1']) ? $data['user_address1'] : null;
+        $this->container['user_address2'] = isset($data['user_address2']) ? $data['user_address2'] : null;
+        $this->container['user_city'] = isset($data['user_city']) ? $data['user_city'] : null;
+        $this->container['user_state'] = isset($data['user_state']) ? $data['user_state'] : null;
+        $this->container['user_post_code'] = isset($data['user_post_code']) ? $data['user_post_code'] : null;
+        $this->container['user_country'] = isset($data['user_country']) ? $data['user_country'] : null;
+        $this->container['user_phone'] = isset($data['user_phone']) ? $data['user_phone'] : null;
         $this->container['realm'] = isset($data['realm']) ? $data['realm'] : null;
         $this->container['username'] = isset($data['username']) ? $data['username'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
@@ -224,6 +296,27 @@ class Customer implements ArrayAccess
     }
 
     /**
+     * Gets source_id
+     * @return double
+     */
+    public function getSourceId()
+    {
+        return $this->container['source_id'];
+    }
+
+    /**
+     * Sets source_id
+     * @param double $source_id
+     * @return $this
+     */
+    public function setSourceId($source_id)
+    {
+        $this->container['source_id'] = $source_id;
+
+        return $this;
+    }
+
+    /**
      * Gets enabled
      * @return bool
      */
@@ -240,6 +333,237 @@ class Customer implements ArrayAccess
     public function setEnabled($enabled)
     {
         $this->container['enabled'] = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_email
+     * @return string
+     */
+    public function getUserEmail()
+    {
+        return $this->container['user_email'];
+    }
+
+    /**
+     * Sets user_email
+     * @param string $user_email
+     * @return $this
+     */
+    public function setUserEmail($user_email)
+    {
+        $this->container['user_email'] = $user_email;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_first_name
+     * @return string
+     */
+    public function getUserFirstName()
+    {
+        return $this->container['user_first_name'];
+    }
+
+    /**
+     * Sets user_first_name
+     * @param string $user_first_name
+     * @return $this
+     */
+    public function setUserFirstName($user_first_name)
+    {
+        $this->container['user_first_name'] = $user_first_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_last_name
+     * @return string
+     */
+    public function getUserLastName()
+    {
+        return $this->container['user_last_name'];
+    }
+
+    /**
+     * Sets user_last_name
+     * @param string $user_last_name
+     * @return $this
+     */
+    public function setUserLastName($user_last_name)
+    {
+        $this->container['user_last_name'] = $user_last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_company
+     * @return string
+     */
+    public function getUserCompany()
+    {
+        return $this->container['user_company'];
+    }
+
+    /**
+     * Sets user_company
+     * @param string $user_company
+     * @return $this
+     */
+    public function setUserCompany($user_company)
+    {
+        $this->container['user_company'] = $user_company;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_address1
+     * @return string
+     */
+    public function getUserAddress1()
+    {
+        return $this->container['user_address1'];
+    }
+
+    /**
+     * Sets user_address1
+     * @param string $user_address1
+     * @return $this
+     */
+    public function setUserAddress1($user_address1)
+    {
+        $this->container['user_address1'] = $user_address1;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_address2
+     * @return string
+     */
+    public function getUserAddress2()
+    {
+        return $this->container['user_address2'];
+    }
+
+    /**
+     * Sets user_address2
+     * @param string $user_address2
+     * @return $this
+     */
+    public function setUserAddress2($user_address2)
+    {
+        $this->container['user_address2'] = $user_address2;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_city
+     * @return string
+     */
+    public function getUserCity()
+    {
+        return $this->container['user_city'];
+    }
+
+    /**
+     * Sets user_city
+     * @param string $user_city
+     * @return $this
+     */
+    public function setUserCity($user_city)
+    {
+        $this->container['user_city'] = $user_city;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_state
+     * @return string
+     */
+    public function getUserState()
+    {
+        return $this->container['user_state'];
+    }
+
+    /**
+     * Sets user_state
+     * @param string $user_state
+     * @return $this
+     */
+    public function setUserState($user_state)
+    {
+        $this->container['user_state'] = $user_state;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_post_code
+     * @return string
+     */
+    public function getUserPostCode()
+    {
+        return $this->container['user_post_code'];
+    }
+
+    /**
+     * Sets user_post_code
+     * @param string $user_post_code
+     * @return $this
+     */
+    public function setUserPostCode($user_post_code)
+    {
+        $this->container['user_post_code'] = $user_post_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_country
+     * @return string
+     */
+    public function getUserCountry()
+    {
+        return $this->container['user_country'];
+    }
+
+    /**
+     * Sets user_country
+     * @param string $user_country
+     * @return $this
+     */
+    public function setUserCountry($user_country)
+    {
+        $this->container['user_country'] = $user_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_phone
+     * @return string
+     */
+    public function getUserPhone()
+    {
+        return $this->container['user_phone'];
+    }
+
+    /**
+     * Sets user_phone
+     * @param string $user_phone
+     * @return $this
+     */
+    public function setUserPhone($user_phone)
+    {
+        $this->container['user_phone'] = $user_phone;
 
         return $this;
     }

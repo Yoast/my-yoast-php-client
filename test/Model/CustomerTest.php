@@ -85,9 +85,93 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "source_id"
+     */
+    public function testPropertySourceId()
+    {
+    }
+
+    /**
      * Test attribute "enabled"
      */
     public function testPropertyEnabled()
+    {
+    }
+
+    /**
+     * Test attribute "user_email"
+     */
+    public function testPropertyUserEmail()
+    {
+    }
+
+    /**
+     * Test attribute "user_first_name"
+     */
+    public function testPropertyUserFirstName()
+    {
+    }
+
+    /**
+     * Test attribute "user_last_name"
+     */
+    public function testPropertyUserLastName()
+    {
+    }
+
+    /**
+     * Test attribute "user_company"
+     */
+    public function testPropertyUserCompany()
+    {
+    }
+
+    /**
+     * Test attribute "user_address1"
+     */
+    public function testPropertyUserAddress1()
+    {
+    }
+
+    /**
+     * Test attribute "user_address2"
+     */
+    public function testPropertyUserAddress2()
+    {
+    }
+
+    /**
+     * Test attribute "user_city"
+     */
+    public function testPropertyUserCity()
+    {
+    }
+
+    /**
+     * Test attribute "user_state"
+     */
+    public function testPropertyUserState()
+    {
+    }
+
+    /**
+     * Test attribute "user_post_code"
+     */
+    public function testPropertyUserPostCode()
+    {
+    }
+
+    /**
+     * Test attribute "user_country"
+     */
+    public function testPropertyUserCountry()
+    {
+    }
+
+    /**
+     * Test attribute "user_phone"
+     */
+    public function testPropertyUserPhone()
     {
     }
 

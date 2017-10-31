@@ -183,6 +183,126 @@ class RefundApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for refundPrototypeCountLineItems
+     *
+     * Counts lineItems of Refund..
+     *
+     */
+    public function testRefundPrototypeCountLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeCountRefundLineItems
+     *
+     * Counts refundLineItems of Refund..
+     *
+     */
+    public function testRefundPrototypeCountRefundLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeCreateLineItems
+     *
+     * Creates a new instance in lineItems of this model..
+     *
+     */
+    public function testRefundPrototypeCreateLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeCreateRefundLineItems
+     *
+     * Creates a new instance in refundLineItems of this model..
+     *
+     */
+    public function testRefundPrototypeCreateRefundLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeDeleteLineItems
+     *
+     * Deletes all lineItems of this model..
+     *
+     */
+    public function testRefundPrototypeDeleteLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeDeleteRefundLineItems
+     *
+     * Deletes all refundLineItems of this model..
+     *
+     */
+    public function testRefundPrototypeDeleteRefundLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeDestroyByIdLineItems
+     *
+     * Delete a related item by id for lineItems..
+     *
+     */
+    public function testRefundPrototypeDestroyByIdLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeDestroyByIdRefundLineItems
+     *
+     * Delete a related item by id for refundLineItems..
+     *
+     */
+    public function testRefundPrototypeDestroyByIdRefundLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeExistsLineItems
+     *
+     * Check the existence of lineItems relation to an item by id..
+     *
+     */
+    public function testRefundPrototypeExistsLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeFindByIdLineItems
+     *
+     * Find a related item by id for lineItems..
+     *
+     */
+    public function testRefundPrototypeFindByIdLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeFindByIdRefundLineItems
+     *
+     * Find a related item by id for refundLineItems..
+     *
+     */
+    public function testRefundPrototypeFindByIdRefundLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeGetLineItems
+     *
+     * Queries lineItems of Refund..
+     *
+     */
+    public function testRefundPrototypeGetLineItems()
+    {
+    }
+
+    /**
      * Test case for refundPrototypeGetOrder
      *
      * Fetches belongsTo relation order..
@@ -193,12 +313,62 @@ class RefundApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for refundPrototypeGetRefundLineItems
+     *
+     * Queries refundLineItems of Refund..
+     *
+     */
+    public function testRefundPrototypeGetRefundLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeLinkLineItems
+     *
+     * Add a related item by id for lineItems..
+     *
+     */
+    public function testRefundPrototypeLinkLineItems()
+    {
+    }
+
+    /**
      * Test case for refundPrototypePatchAttributes
      *
      * Patch attributes for a model instance and persist it into the data source..
      *
      */
     public function testRefundPrototypePatchAttributes()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeUnlinkLineItems
+     *
+     * Remove the lineItems relation to an item by id..
+     *
+     */
+    public function testRefundPrototypeUnlinkLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeUpdateByIdLineItems
+     *
+     * Update a related item by id for lineItems..
+     *
+     */
+    public function testRefundPrototypeUpdateByIdLineItems()
+    {
+    }
+
+    /**
+     * Test case for refundPrototypeUpdateByIdRefundLineItems
+     *
+     * Update a related item by id for refundLineItems..
+     *
+     */
+    public function testRefundPrototypeUpdateByIdRefundLineItems()
     {
     }
 

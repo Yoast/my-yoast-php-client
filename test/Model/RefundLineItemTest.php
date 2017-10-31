@@ -1,6 +1,6 @@
 <?php
 /**
- * SubscriptionTest
+ * RefundLineItemTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * SubscriptionTest Class Doc Comment
+ * RefundLineItemTest Class Doc Comment
  *
  * @category    Class */
-// * @description Subscription
+// * @description RefundLineItem
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SubscriptionTest extends \PHPUnit_Framework_TestCase
+class RefundLineItemTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "Subscription"
+     * Test "RefundLineItem"
      */
-    public function testSubscription()
+    public function testRefundLineItem()
     {
     }
 
@@ -85,23 +85,37 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "product_id"
+     * Test attribute "quantity"
      */
-    public function testPropertyProductId()
+    public function testPropertyQuantity()
     {
     }
 
     /**
-     * Test attribute "start_date"
+     * Test attribute "subtotal_amount"
      */
-    public function testPropertyStartDate()
+    public function testPropertySubtotalAmount()
     {
     }
 
     /**
-     * Test attribute "end_date"
+     * Test attribute "total_amount"
      */
-    public function testPropertyEndDate()
+    public function testPropertyTotalAmount()
+    {
+    }
+
+    /**
+     * Test attribute "subtotal_vat_amount"
+     */
+    public function testPropertySubtotalVatAmount()
+    {
+    }
+
+    /**
+     * Test attribute "total_vat_amount"
+     */
+    public function testPropertyTotalVatAmount()
     {
     }
 
@@ -120,72 +134,16 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "status"
+     * Test attribute "refund_id"
      */
-    public function testPropertyStatus()
+    public function testPropertyRefundId()
     {
     }
 
     /**
-     * Test attribute "currency"
+     * Test attribute "line_item_id"
      */
-    public function testPropertyCurrency()
-    {
-    }
-
-    /**
-     * Test attribute "date"
-     */
-    public function testPropertyDate()
-    {
-    }
-
-    /**
-     * Test attribute "price"
-     */
-    public function testPropertyPrice()
-    {
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-    }
-
-    /**
-     * Test attribute "requires_manual_renewal"
-     */
-    public function testPropertyRequiresManualRenewal()
-    {
-    }
-
-    /**
-     * Test attribute "next_payment"
-     */
-    public function testPropertyNextPayment()
-    {
-    }
-
-    /**
-     * Test attribute "limit"
-     */
-    public function testPropertyLimit()
-    {
-    }
-
-    /**
-     * Test attribute "used"
-     */
-    public function testPropertyUsed()
-    {
-    }
-
-    /**
-     * Test attribute "subscriber_id"
-     */
-    public function testPropertySubscriberId()
+    public function testPropertyLineItemId()
     {
     }
 }

@@ -65,6 +65,7 @@ class Subscription implements ArrayAccess
         'date' => '\DateTime',
         'price' => 'double',
         'name' => 'string',
+        'requires_manual_renewal' => 'bool',
         'next_payment' => '\DateTime',
         'limit' => 'double',
         'used' => 'double',
@@ -87,6 +88,7 @@ class Subscription implements ArrayAccess
         'date' => 'date-time',
         'price' => 'double',
         'name' => null,
+        'requires_manual_renewal' => null,
         'next_payment' => 'date-time',
         'limit' => 'double',
         'used' => 'double',
@@ -119,6 +121,7 @@ class Subscription implements ArrayAccess
         'date' => 'date',
         'price' => 'price',
         'name' => 'name',
+        'requires_manual_renewal' => 'requiresManualRenewal',
         'next_payment' => 'nextPayment',
         'limit' => 'limit',
         'used' => 'used',
@@ -142,6 +145,7 @@ class Subscription implements ArrayAccess
         'date' => 'setDate',
         'price' => 'setPrice',
         'name' => 'setName',
+        'requires_manual_renewal' => 'setRequiresManualRenewal',
         'next_payment' => 'setNextPayment',
         'limit' => 'setLimit',
         'used' => 'setUsed',
@@ -165,6 +169,7 @@ class Subscription implements ArrayAccess
         'date' => 'getDate',
         'price' => 'getPrice',
         'name' => 'getName',
+        'requires_manual_renewal' => 'getRequiresManualRenewal',
         'next_payment' => 'getNextPayment',
         'limit' => 'getLimit',
         'used' => 'getUsed',
@@ -213,6 +218,7 @@ class Subscription implements ArrayAccess
         $this->container['date'] = isset($data['date']) ? $data['date'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['requires_manual_renewal'] = isset($data['requires_manual_renewal']) ? $data['requires_manual_renewal'] : true;
         $this->container['next_payment'] = isset($data['next_payment']) ? $data['next_payment'] : null;
         $this->container['limit'] = isset($data['limit']) ? $data['limit'] : 0.0;
         $this->container['used'] = isset($data['used']) ? $data['used'] : 0.0;
@@ -507,6 +513,27 @@ class Subscription implements ArrayAccess
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets requires_manual_renewal
+     * @return bool
+     */
+    public function getRequiresManualRenewal()
+    {
+        return $this->container['requires_manual_renewal'];
+    }
+
+    /**
+     * Sets requires_manual_renewal
+     * @param bool $requires_manual_renewal
+     * @return $this
+     */
+    public function setRequiresManualRenewal($requires_manual_renewal)
+    {
+        $this->container['requires_manual_renewal'] = $requires_manual_renewal;
 
         return $this;
     }

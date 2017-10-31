@@ -133,6 +133,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for customerCurrent
+     *
+     * .
+     *
+     */
+    public function testCustomerCurrent()
+    {
+    }
+
+    /**
      * Test case for customerDeleteById
      *
      * Delete a model instance by {{id}} from the data source..

@@ -15,9 +15,19 @@ Method | HTTP request | Description
 [**lineItemFindById**](LineItemApi.md#lineItemFindById) | **GET** /LineItems/{id} | Find a model instance by {{id}} from the data source.
 [**lineItemFindOne**](LineItemApi.md#lineItemFindOne) | **GET** /LineItems/findOne | Find first instance of the model matched by filter from the data source.
 [**lineItemPatchOrCreate**](LineItemApi.md#lineItemPatchOrCreate) | **PATCH** /LineItems | Patch an existing model instance or insert a new one into the data source.
+[**lineItemPrototypeCountRefunds**](LineItemApi.md#lineItemPrototypeCountRefunds) | **GET** /LineItems/{id}/refunds/count | Counts refunds of LineItem.
+[**lineItemPrototypeCreateRefunds**](LineItemApi.md#lineItemPrototypeCreateRefunds) | **POST** /LineItems/{id}/refunds | Creates a new instance in refunds of this model.
+[**lineItemPrototypeDeleteRefunds**](LineItemApi.md#lineItemPrototypeDeleteRefunds) | **DELETE** /LineItems/{id}/refunds | Deletes all refunds of this model.
+[**lineItemPrototypeDestroyByIdRefunds**](LineItemApi.md#lineItemPrototypeDestroyByIdRefunds) | **DELETE** /LineItems/{id}/refunds/{fk} | Delete a related item by id for refunds.
+[**lineItemPrototypeExistsRefunds**](LineItemApi.md#lineItemPrototypeExistsRefunds) | **HEAD** /LineItems/{id}/refunds/rel/{fk} | Check the existence of refunds relation to an item by id.
+[**lineItemPrototypeFindByIdRefunds**](LineItemApi.md#lineItemPrototypeFindByIdRefunds) | **GET** /LineItems/{id}/refunds/{fk} | Find a related item by id for refunds.
 [**lineItemPrototypeGetOrder**](LineItemApi.md#lineItemPrototypeGetOrder) | **GET** /LineItems/{id}/order | Fetches belongsTo relation order.
 [**lineItemPrototypeGetProduct**](LineItemApi.md#lineItemPrototypeGetProduct) | **GET** /LineItems/{id}/product | Fetches belongsTo relation product.
+[**lineItemPrototypeGetRefunds**](LineItemApi.md#lineItemPrototypeGetRefunds) | **GET** /LineItems/{id}/refunds | Queries refunds of LineItem.
+[**lineItemPrototypeLinkRefunds**](LineItemApi.md#lineItemPrototypeLinkRefunds) | **PUT** /LineItems/{id}/refunds/rel/{fk} | Add a related item by id for refunds.
 [**lineItemPrototypePatchAttributes**](LineItemApi.md#lineItemPrototypePatchAttributes) | **PATCH** /LineItems/{id} | Patch attributes for a model instance and persist it into the data source.
+[**lineItemPrototypeUnlinkRefunds**](LineItemApi.md#lineItemPrototypeUnlinkRefunds) | **DELETE** /LineItems/{id}/refunds/rel/{fk} | Remove the refunds relation to an item by id.
+[**lineItemPrototypeUpdateByIdRefunds**](LineItemApi.md#lineItemPrototypeUpdateByIdRefunds) | **PUT** /LineItems/{id}/refunds/{fk} | Update a related item by id for refunds.
 [**lineItemReplaceByIdPostLineItemsidReplace**](LineItemApi.md#lineItemReplaceByIdPostLineItemsidReplace) | **POST** /LineItems/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 [**lineItemReplaceByIdPutLineItemsid**](LineItemApi.md#lineItemReplaceByIdPutLineItemsid) | **PUT** /LineItems/{id} | Replace attributes for a model instance and persist it into the data source.
 [**lineItemReplaceOrCreatePostLineItemsReplaceOrCreate**](LineItemApi.md#lineItemReplaceOrCreatePostLineItemsReplaceOrCreate) | **POST** /LineItems/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -501,6 +511,272 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **lineItemPrototypeCountRefunds**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 lineItemPrototypeCountRefunds($id, $where)
+
+Counts refunds of LineItem.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$id = "id_example"; // string | LineItem id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->lineItemPrototypeCountRefunds($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LineItemApi->lineItemPrototypeCountRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| LineItem id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **lineItemPrototypeCreateRefunds**
+> \Yoast\MyYoastApiClient\Model\Refund lineItemPrototypeCreateRefunds($id, $data)
+
+Creates a new instance in refunds of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$id = "id_example"; // string | LineItem id
+$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | 
+
+try {
+    $result = $api_instance->lineItemPrototypeCreateRefunds($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LineItemApi->lineItemPrototypeCreateRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| LineItem id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **lineItemPrototypeDeleteRefunds**
+> lineItemPrototypeDeleteRefunds($id)
+
+Deletes all refunds of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$id = "id_example"; // string | LineItem id
+
+try {
+    $api_instance->lineItemPrototypeDeleteRefunds($id);
+} catch (Exception $e) {
+    echo 'Exception when calling LineItemApi->lineItemPrototypeDeleteRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| LineItem id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **lineItemPrototypeDestroyByIdRefunds**
+> lineItemPrototypeDestroyByIdRefunds($id, $fk)
+
+Delete a related item by id for refunds.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$id = "id_example"; // string | LineItem id
+$fk = "fk_example"; // string | Foreign key for refunds
+
+try {
+    $api_instance->lineItemPrototypeDestroyByIdRefunds($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling LineItemApi->lineItemPrototypeDestroyByIdRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| LineItem id |
+ **fk** | **string**| Foreign key for refunds |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **lineItemPrototypeExistsRefunds**
+> bool lineItemPrototypeExistsRefunds($id, $fk)
+
+Check the existence of refunds relation to an item by id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$id = "id_example"; // string | LineItem id
+$fk = "fk_example"; // string | Foreign key for refunds
+
+try {
+    $result = $api_instance->lineItemPrototypeExistsRefunds($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LineItemApi->lineItemPrototypeExistsRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| LineItem id |
+ **fk** | **string**| Foreign key for refunds |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **lineItemPrototypeFindByIdRefunds**
+> \Yoast\MyYoastApiClient\Model\Refund lineItemPrototypeFindByIdRefunds($id, $fk)
+
+Find a related item by id for refunds.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$id = "id_example"; // string | LineItem id
+$fk = "fk_example"; // string | Foreign key for refunds
+
+try {
+    $result = $api_instance->lineItemPrototypeFindByIdRefunds($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LineItemApi->lineItemPrototypeFindByIdRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| LineItem id |
+ **fk** | **string**| Foreign key for refunds |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **lineItemPrototypeGetOrder**
 > \Yoast\MyYoastApiClient\Model\Order lineItemPrototypeGetOrder($id, $refresh)
 
@@ -591,6 +867,98 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **lineItemPrototypeGetRefunds**
+> \Yoast\MyYoastApiClient\Model\Refund[] lineItemPrototypeGetRefunds($id, $filter)
+
+Queries refunds of LineItem.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$id = "id_example"; // string | LineItem id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->lineItemPrototypeGetRefunds($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LineItemApi->lineItemPrototypeGetRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| LineItem id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Refund[]**](../Model/Refund.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **lineItemPrototypeLinkRefunds**
+> \Yoast\MyYoastApiClient\Model\RefundLineItem lineItemPrototypeLinkRefunds($id, $fk, $data)
+
+Add a related item by id for refunds.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$id = "id_example"; // string | LineItem id
+$fk = "fk_example"; // string | Foreign key for refunds
+$data = new \Yoast\MyYoastApiClient\Model\RefundLineItem(); // \Yoast\MyYoastApiClient\Model\RefundLineItem | 
+
+try {
+    $result = $api_instance->lineItemPrototypeLinkRefunds($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LineItemApi->lineItemPrototypeLinkRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| LineItem id |
+ **fk** | **string**| Foreign key for refunds |
+ **data** | [**\Yoast\MyYoastApiClient\Model\RefundLineItem**](../Model/RefundLineItem.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\RefundLineItem**](../Model/RefundLineItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **lineItemPrototypePatchAttributes**
 > \Yoast\MyYoastApiClient\Model\LineItem lineItemPrototypePatchAttributes($id, $data)
 
@@ -624,6 +992,97 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **lineItemPrototypeUnlinkRefunds**
+> lineItemPrototypeUnlinkRefunds($id, $fk)
+
+Remove the refunds relation to an item by id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$id = "id_example"; // string | LineItem id
+$fk = "fk_example"; // string | Foreign key for refunds
+
+try {
+    $api_instance->lineItemPrototypeUnlinkRefunds($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling LineItemApi->lineItemPrototypeUnlinkRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| LineItem id |
+ **fk** | **string**| Foreign key for refunds |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **lineItemPrototypeUpdateByIdRefunds**
+> \Yoast\MyYoastApiClient\Model\Refund lineItemPrototypeUpdateByIdRefunds($id, $fk, $data)
+
+Update a related item by id for refunds.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$id = "id_example"; // string | LineItem id
+$fk = "fk_example"; // string | Foreign key for refunds
+$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | 
+
+try {
+    $result = $api_instance->lineItemPrototypeUpdateByIdRefunds($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling LineItemApi->lineItemPrototypeUpdateByIdRefunds: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| LineItem id |
+ **fk** | **string**| Foreign key for refunds |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
 
 ### Authorization
 

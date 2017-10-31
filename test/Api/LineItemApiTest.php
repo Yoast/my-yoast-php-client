@@ -183,6 +183,66 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for lineItemPrototypeCountRefunds
+     *
+     * Counts refunds of LineItem..
+     *
+     */
+    public function testLineItemPrototypeCountRefunds()
+    {
+    }
+
+    /**
+     * Test case for lineItemPrototypeCreateRefunds
+     *
+     * Creates a new instance in refunds of this model..
+     *
+     */
+    public function testLineItemPrototypeCreateRefunds()
+    {
+    }
+
+    /**
+     * Test case for lineItemPrototypeDeleteRefunds
+     *
+     * Deletes all refunds of this model..
+     *
+     */
+    public function testLineItemPrototypeDeleteRefunds()
+    {
+    }
+
+    /**
+     * Test case for lineItemPrototypeDestroyByIdRefunds
+     *
+     * Delete a related item by id for refunds..
+     *
+     */
+    public function testLineItemPrototypeDestroyByIdRefunds()
+    {
+    }
+
+    /**
+     * Test case for lineItemPrototypeExistsRefunds
+     *
+     * Check the existence of refunds relation to an item by id..
+     *
+     */
+    public function testLineItemPrototypeExistsRefunds()
+    {
+    }
+
+    /**
+     * Test case for lineItemPrototypeFindByIdRefunds
+     *
+     * Find a related item by id for refunds..
+     *
+     */
+    public function testLineItemPrototypeFindByIdRefunds()
+    {
+    }
+
+    /**
      * Test case for lineItemPrototypeGetOrder
      *
      * Fetches belongsTo relation order..
@@ -203,12 +263,52 @@ class LineItemApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for lineItemPrototypeGetRefunds
+     *
+     * Queries refunds of LineItem..
+     *
+     */
+    public function testLineItemPrototypeGetRefunds()
+    {
+    }
+
+    /**
+     * Test case for lineItemPrototypeLinkRefunds
+     *
+     * Add a related item by id for refunds..
+     *
+     */
+    public function testLineItemPrototypeLinkRefunds()
+    {
+    }
+
+    /**
      * Test case for lineItemPrototypePatchAttributes
      *
      * Patch attributes for a model instance and persist it into the data source..
      *
      */
     public function testLineItemPrototypePatchAttributes()
+    {
+    }
+
+    /**
+     * Test case for lineItemPrototypeUnlinkRefunds
+     *
+     * Remove the refunds relation to an item by id..
+     *
+     */
+    public function testLineItemPrototypeUnlinkRefunds()
+    {
+    }
+
+    /**
+     * Test case for lineItemPrototypeUpdateByIdRefunds
+     *
+     * Update a related item by id for refunds..
+     *
+     */
+    public function testLineItemPrototypeUpdateByIdRefunds()
     {
     }
 
