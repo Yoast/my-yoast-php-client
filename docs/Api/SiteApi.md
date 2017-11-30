@@ -31,6 +31,7 @@ Method | HTTP request | Description
 [**siteReplaceByIdPutSitesid**](SiteApi.md#siteReplaceByIdPutSitesid) | **PUT** /Sites/{id} | Replace attributes for a model instance and persist it into the data source.
 [**siteReplaceOrCreatePostSitesReplaceOrCreate**](SiteApi.md#siteReplaceOrCreatePostSitesReplaceOrCreate) | **POST** /Sites/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 [**siteReplaceOrCreatePutSites**](SiteApi.md#siteReplaceOrCreatePutSites) | **PUT** /Sites | Replace an existing model instance or insert a new one into the data source.
+[**siteSwitchSubscription**](SiteApi.md#siteSwitchSubscription) | **POST** /Sites/switchSubscription | 
 [**siteTransfer**](SiteApi.md#siteTransfer) | **POST** /Sites/transfer | 
 [**siteUpdateAll**](SiteApi.md#siteUpdateAll) | **POST** /Sites/update | Update instances of the model matched by {{where}} from the data source.
 [**siteUpsertWithWhere**](SiteApi.md#siteUpsertWithWhere) | **POST** /Sites/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
@@ -1214,6 +1215,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **siteSwitchSubscription**
+> double siteSwitchSubscription($from_source_id, $to_source_id)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$from_source_id = 1.2; // double | 
+$to_source_id = 1.2; // double | 
+
+try {
+    $result = $api_instance->siteSwitchSubscription($from_source_id, $to_source_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->siteSwitchSubscription: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from_source_id** | **double**|  |
+ **to_source_id** | **double**|  |
+
+### Return type
+
+**double**
 
 ### Authorization
 

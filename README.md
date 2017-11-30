@@ -109,6 +109,7 @@ Class | Method | HTTP request | Description
 *CourseEnrollmentApi* | [**courseEnrollmentFindById**](docs/Api/CourseEnrollmentApi.md#courseenrollmentfindbyid) | **GET** /CourseEnrollments/{id} | Find a model instance by {{id}} from the data source.
 *CourseEnrollmentApi* | [**courseEnrollmentFindOne**](docs/Api/CourseEnrollmentApi.md#courseenrollmentfindone) | **GET** /CourseEnrollments/findOne | Find first instance of the model matched by filter from the data source.
 *CourseEnrollmentApi* | [**courseEnrollmentFromAcademy**](docs/Api/CourseEnrollmentApi.md#courseenrollmentfromacademy) | **PUT** /CourseEnrollments/fromAcademy | 
+*CourseEnrollmentApi* | [**courseEnrollmentInvite**](docs/Api/CourseEnrollmentApi.md#courseenrollmentinvite) | **POST** /CourseEnrollments/{id}/invite | Invites another Customer by email to use this Course Enrollment.
 *CourseEnrollmentApi* | [**courseEnrollmentPatchOrCreate**](docs/Api/CourseEnrollmentApi.md#courseenrollmentpatchorcreate) | **PATCH** /CourseEnrollments | Patch an existing model instance or insert a new one into the data source.
 *CourseEnrollmentApi* | [**courseEnrollmentPrototypeGetBuyer**](docs/Api/CourseEnrollmentApi.md#courseenrollmentprototypegetbuyer) | **GET** /CourseEnrollments/{id}/buyer | Fetches belongsTo relation buyer.
 *CourseEnrollmentApi* | [**courseEnrollmentPrototypeGetCourse**](docs/Api/CourseEnrollmentApi.md#courseenrollmentprototypegetcourse) | **GET** /CourseEnrollments/{id}/course | Fetches belongsTo relation course.
@@ -474,6 +475,7 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**siteReplaceByIdPutSitesid**](docs/Api/SiteApi.md#sitereplacebyidputsitesid) | **PUT** /Sites/{id} | Replace attributes for a model instance and persist it into the data source.
 *SiteApi* | [**siteReplaceOrCreatePostSitesReplaceOrCreate**](docs/Api/SiteApi.md#sitereplaceorcreatepostsitesreplaceorcreate) | **POST** /Sites/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 *SiteApi* | [**siteReplaceOrCreatePutSites**](docs/Api/SiteApi.md#sitereplaceorcreateputsites) | **PUT** /Sites | Replace an existing model instance or insert a new one into the data source.
+*SiteApi* | [**siteSwitchSubscription**](docs/Api/SiteApi.md#siteswitchsubscription) | **POST** /Sites/switchSubscription | 
 *SiteApi* | [**siteTransfer**](docs/Api/SiteApi.md#sitetransfer) | **POST** /Sites/transfer | 
 *SiteApi* | [**siteUpdateAll**](docs/Api/SiteApi.md#siteupdateall) | **POST** /Sites/update | Update instances of the model matched by {{where}} from the data source.
 *SiteApi* | [**siteUpsertWithWhere**](docs/Api/SiteApi.md#siteupsertwithwhere) | **POST** /Sites/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.

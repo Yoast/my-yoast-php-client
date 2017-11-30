@@ -343,6 +343,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for siteSwitchSubscription
+     *
+     * .
+     *
+     */
+    public function testSiteSwitchSubscription()
+    {
+    }
+
+    /**
      * Test case for siteTransfer
      *
      * .

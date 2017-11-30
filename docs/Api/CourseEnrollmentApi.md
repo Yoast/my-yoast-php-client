@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**courseEnrollmentFindById**](CourseEnrollmentApi.md#courseEnrollmentFindById) | **GET** /CourseEnrollments/{id} | Find a model instance by {{id}} from the data source.
 [**courseEnrollmentFindOne**](CourseEnrollmentApi.md#courseEnrollmentFindOne) | **GET** /CourseEnrollments/findOne | Find first instance of the model matched by filter from the data source.
 [**courseEnrollmentFromAcademy**](CourseEnrollmentApi.md#courseEnrollmentFromAcademy) | **PUT** /CourseEnrollments/fromAcademy | 
+[**courseEnrollmentInvite**](CourseEnrollmentApi.md#courseEnrollmentInvite) | **POST** /CourseEnrollments/{id}/invite | Invites another Customer by email to use this Course Enrollment.
 [**courseEnrollmentPatchOrCreate**](CourseEnrollmentApi.md#courseEnrollmentPatchOrCreate) | **PATCH** /CourseEnrollments | Patch an existing model instance or insert a new one into the data source.
 [**courseEnrollmentPrototypeGetBuyer**](CourseEnrollmentApi.md#courseEnrollmentPrototypeGetBuyer) | **GET** /CourseEnrollments/{id}/buyer | Fetches belongsTo relation buyer.
 [**courseEnrollmentPrototypeGetCourse**](CourseEnrollmentApi.md#courseEnrollmentPrototypeGetCourse) | **GET** /CourseEnrollments/{id}/course | Fetches belongsTo relation course.
@@ -489,6 +490,51 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **progress_data** | **string**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseEnrollmentInvite**
+> \Yoast\MyYoastApiClient\Model\CourseEnrollment courseEnrollmentInvite($id, $email)
+
+Invites another Customer by email to use this Course Enrollment.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$id = "id_example"; // string | 
+$email = "email_example"; // string | 
+
+try {
+    $result = $api_instance->courseEnrollmentInvite($id, $email);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentInvite: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **email** | **string**|  | [optional]
 
 ### Return type
 
