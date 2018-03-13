@@ -35,11 +35,15 @@ Count instances of the model matched by where from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->vATLineItemCount($where);
+    $result = $apiInstance->vATLineItemCount($where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemCount: ', $e->getMessage(), PHP_EOL;
@@ -78,11 +82,15 @@ Create a new instance of the model and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | Model instance data
 
 try {
-    $result = $api_instance->vATLineItemCreate($data);
+    $result = $apiInstance->vATLineItemCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemCreate: ', $e->getMessage(), PHP_EOL;
@@ -121,11 +129,15 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->vATLineItemCreateChangeStreamGetVATLineItemsChangeStream($options);
+    $result = $apiInstance->vATLineItemCreateChangeStreamGetVATLineItemsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemCreateChangeStreamGetVATLineItemsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -164,11 +176,15 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->vATLineItemCreateChangeStreamPostVATLineItemsChangeStream($options);
+    $result = $apiInstance->vATLineItemCreateChangeStreamPostVATLineItemsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemCreateChangeStreamPostVATLineItemsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -207,11 +223,15 @@ Delete a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->vATLineItemDeleteById($id);
+    $result = $apiInstance->vATLineItemDeleteById($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemDeleteById: ', $e->getMessage(), PHP_EOL;
@@ -250,11 +270,15 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->vATLineItemExistsGetVATLineItemsidExists($id);
+    $result = $apiInstance->vATLineItemExistsGetVATLineItemsidExists($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemExistsGetVATLineItemsidExists: ', $e->getMessage(), PHP_EOL;
@@ -293,11 +317,15 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->vATLineItemExistsHeadVATLineItemsid($id);
+    $result = $apiInstance->vATLineItemExistsHeadVATLineItemsid($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemExistsHeadVATLineItemsid: ', $e->getMessage(), PHP_EOL;
@@ -336,11 +364,15 @@ Find all instances of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->vATLineItemFind($filter);
+    $result = $apiInstance->vATLineItemFind($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemFind: ', $e->getMessage(), PHP_EOL;
@@ -379,12 +411,16 @@ Find a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->vATLineItemFindById($id, $filter);
+    $result = $apiInstance->vATLineItemFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemFindById: ', $e->getMessage(), PHP_EOL;
@@ -424,11 +460,15 @@ Find first instance of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->vATLineItemFindOne($filter);
+    $result = $apiInstance->vATLineItemFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemFindOne: ', $e->getMessage(), PHP_EOL;
@@ -467,11 +507,15 @@ Patch an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | Model instance data
 
 try {
-    $result = $api_instance->vATLineItemPatchOrCreate($data);
+    $result = $apiInstance->vATLineItemPatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemPatchOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -510,12 +554,16 @@ Fetches belongsTo relation order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | VATLineItem id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->vATLineItemPrototypeGetOrder($id, $refresh);
+    $result = $apiInstance->vATLineItemPrototypeGetOrder($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemPrototypeGetOrder: ', $e->getMessage(), PHP_EOL;
@@ -555,12 +603,16 @@ Patch attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | VATLineItem id
 $data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->vATLineItemPrototypePatchAttributes($id, $data);
+    $result = $apiInstance->vATLineItemPrototypePatchAttributes($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
@@ -600,12 +652,16 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | Model instance data
 
 try {
-    $result = $api_instance->vATLineItemReplaceByIdPostVATLineItemsidReplace($id, $data);
+    $result = $apiInstance->vATLineItemReplaceByIdPostVATLineItemsidReplace($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemReplaceByIdPostVATLineItemsidReplace: ', $e->getMessage(), PHP_EOL;
@@ -645,12 +701,16 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | Model instance data
 
 try {
-    $result = $api_instance->vATLineItemReplaceByIdPutVATLineItemsid($id, $data);
+    $result = $apiInstance->vATLineItemReplaceByIdPutVATLineItemsid($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemReplaceByIdPutVATLineItemsid: ', $e->getMessage(), PHP_EOL;
@@ -690,11 +750,15 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | Model instance data
 
 try {
-    $result = $api_instance->vATLineItemReplaceOrCreatePostVATLineItemsReplaceOrCreate($data);
+    $result = $apiInstance->vATLineItemReplaceOrCreatePostVATLineItemsReplaceOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemReplaceOrCreatePostVATLineItemsReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -733,11 +797,15 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | Model instance data
 
 try {
-    $result = $api_instance->vATLineItemReplaceOrCreatePutVATLineItems($data);
+    $result = $apiInstance->vATLineItemReplaceOrCreatePutVATLineItems($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemReplaceOrCreatePutVATLineItems: ', $e->getMessage(), PHP_EOL;
@@ -776,12 +844,16 @@ Update instances of the model matched by {{where}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->vATLineItemUpdateAll($where, $data);
+    $result = $apiInstance->vATLineItemUpdateAll($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemUpdateAll: ', $e->getMessage(), PHP_EOL;
@@ -821,12 +893,16 @@ Update an existing model instance or insert a new one into the data source based
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\VATLineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\VATLineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->vATLineItemUpsertWithWhere($where, $data);
+    $result = $apiInstance->vATLineItemUpsertWithWhere($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling VATLineItemApi->vATLineItemUpsertWithWhere: ', $e->getMessage(), PHP_EOL;

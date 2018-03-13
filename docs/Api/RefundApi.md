@@ -15,23 +15,30 @@ Method | HTTP request | Description
 [**refundFindById**](RefundApi.md#refundFindById) | **GET** /Refunds/{id} | Find a model instance by {{id}} from the data source.
 [**refundFindOne**](RefundApi.md#refundFindOne) | **GET** /Refunds/findOne | Find first instance of the model matched by filter from the data source.
 [**refundPatchOrCreate**](RefundApi.md#refundPatchOrCreate) | **PATCH** /Refunds | Patch an existing model instance or insert a new one into the data source.
+[**refundPrototypeCountInvoices**](RefundApi.md#refundPrototypeCountInvoices) | **GET** /Refunds/{id}/invoices/count | Counts invoices of Refund.
 [**refundPrototypeCountLineItems**](RefundApi.md#refundPrototypeCountLineItems) | **GET** /Refunds/{id}/lineItems/count | Counts lineItems of Refund.
 [**refundPrototypeCountRefundLineItems**](RefundApi.md#refundPrototypeCountRefundLineItems) | **GET** /Refunds/{id}/refundLineItems/count | Counts refundLineItems of Refund.
+[**refundPrototypeCreateInvoices**](RefundApi.md#refundPrototypeCreateInvoices) | **POST** /Refunds/{id}/invoices | Creates a new instance in invoices of this model.
 [**refundPrototypeCreateLineItems**](RefundApi.md#refundPrototypeCreateLineItems) | **POST** /Refunds/{id}/lineItems | Creates a new instance in lineItems of this model.
 [**refundPrototypeCreateRefundLineItems**](RefundApi.md#refundPrototypeCreateRefundLineItems) | **POST** /Refunds/{id}/refundLineItems | Creates a new instance in refundLineItems of this model.
+[**refundPrototypeDeleteInvoices**](RefundApi.md#refundPrototypeDeleteInvoices) | **DELETE** /Refunds/{id}/invoices | Deletes all invoices of this model.
 [**refundPrototypeDeleteLineItems**](RefundApi.md#refundPrototypeDeleteLineItems) | **DELETE** /Refunds/{id}/lineItems | Deletes all lineItems of this model.
 [**refundPrototypeDeleteRefundLineItems**](RefundApi.md#refundPrototypeDeleteRefundLineItems) | **DELETE** /Refunds/{id}/refundLineItems | Deletes all refundLineItems of this model.
+[**refundPrototypeDestroyByIdInvoices**](RefundApi.md#refundPrototypeDestroyByIdInvoices) | **DELETE** /Refunds/{id}/invoices/{fk} | Delete a related item by id for invoices.
 [**refundPrototypeDestroyByIdLineItems**](RefundApi.md#refundPrototypeDestroyByIdLineItems) | **DELETE** /Refunds/{id}/lineItems/{fk} | Delete a related item by id for lineItems.
 [**refundPrototypeDestroyByIdRefundLineItems**](RefundApi.md#refundPrototypeDestroyByIdRefundLineItems) | **DELETE** /Refunds/{id}/refundLineItems/{fk} | Delete a related item by id for refundLineItems.
 [**refundPrototypeExistsLineItems**](RefundApi.md#refundPrototypeExistsLineItems) | **HEAD** /Refunds/{id}/lineItems/rel/{fk} | Check the existence of lineItems relation to an item by id.
+[**refundPrototypeFindByIdInvoices**](RefundApi.md#refundPrototypeFindByIdInvoices) | **GET** /Refunds/{id}/invoices/{fk} | Find a related item by id for invoices.
 [**refundPrototypeFindByIdLineItems**](RefundApi.md#refundPrototypeFindByIdLineItems) | **GET** /Refunds/{id}/lineItems/{fk} | Find a related item by id for lineItems.
 [**refundPrototypeFindByIdRefundLineItems**](RefundApi.md#refundPrototypeFindByIdRefundLineItems) | **GET** /Refunds/{id}/refundLineItems/{fk} | Find a related item by id for refundLineItems.
+[**refundPrototypeGetInvoices**](RefundApi.md#refundPrototypeGetInvoices) | **GET** /Refunds/{id}/invoices | Queries invoices of Refund.
 [**refundPrototypeGetLineItems**](RefundApi.md#refundPrototypeGetLineItems) | **GET** /Refunds/{id}/lineItems | Queries lineItems of Refund.
 [**refundPrototypeGetOrder**](RefundApi.md#refundPrototypeGetOrder) | **GET** /Refunds/{id}/order | Fetches belongsTo relation order.
 [**refundPrototypeGetRefundLineItems**](RefundApi.md#refundPrototypeGetRefundLineItems) | **GET** /Refunds/{id}/refundLineItems | Queries refundLineItems of Refund.
 [**refundPrototypeLinkLineItems**](RefundApi.md#refundPrototypeLinkLineItems) | **PUT** /Refunds/{id}/lineItems/rel/{fk} | Add a related item by id for lineItems.
 [**refundPrototypePatchAttributes**](RefundApi.md#refundPrototypePatchAttributes) | **PATCH** /Refunds/{id} | Patch attributes for a model instance and persist it into the data source.
 [**refundPrototypeUnlinkLineItems**](RefundApi.md#refundPrototypeUnlinkLineItems) | **DELETE** /Refunds/{id}/lineItems/rel/{fk} | Remove the lineItems relation to an item by id.
+[**refundPrototypeUpdateByIdInvoices**](RefundApi.md#refundPrototypeUpdateByIdInvoices) | **PUT** /Refunds/{id}/invoices/{fk} | Update a related item by id for invoices.
 [**refundPrototypeUpdateByIdLineItems**](RefundApi.md#refundPrototypeUpdateByIdLineItems) | **PUT** /Refunds/{id}/lineItems/{fk} | Update a related item by id for lineItems.
 [**refundPrototypeUpdateByIdRefundLineItems**](RefundApi.md#refundPrototypeUpdateByIdRefundLineItems) | **PUT** /Refunds/{id}/refundLineItems/{fk} | Update a related item by id for refundLineItems.
 [**refundReplaceByIdPostRefundsidReplace**](RefundApi.md#refundReplaceByIdPostRefundsidReplace) | **POST** /Refunds/{id}/replace | Replace attributes for a model instance and persist it into the data source.
@@ -52,11 +59,15 @@ Count instances of the model matched by where from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->refundCount($where);
+    $result = $apiInstance->refundCount($where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundCount: ', $e->getMessage(), PHP_EOL;
@@ -95,11 +106,15 @@ Create a new instance of the model and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
 
 try {
-    $result = $api_instance->refundCreate($data);
+    $result = $apiInstance->refundCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundCreate: ', $e->getMessage(), PHP_EOL;
@@ -138,11 +153,15 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->refundCreateChangeStreamGetRefundsChangeStream($options);
+    $result = $apiInstance->refundCreateChangeStreamGetRefundsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundCreateChangeStreamGetRefundsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -181,11 +200,15 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->refundCreateChangeStreamPostRefundsChangeStream($options);
+    $result = $apiInstance->refundCreateChangeStreamPostRefundsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundCreateChangeStreamPostRefundsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -224,11 +247,15 @@ Delete a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->refundDeleteById($id);
+    $result = $apiInstance->refundDeleteById($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundDeleteById: ', $e->getMessage(), PHP_EOL;
@@ -267,11 +294,15 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->refundExistsGetRefundsidExists($id);
+    $result = $apiInstance->refundExistsGetRefundsidExists($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundExistsGetRefundsidExists: ', $e->getMessage(), PHP_EOL;
@@ -310,11 +341,15 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->refundExistsHeadRefundsid($id);
+    $result = $apiInstance->refundExistsHeadRefundsid($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundExistsHeadRefundsid: ', $e->getMessage(), PHP_EOL;
@@ -353,11 +388,15 @@ Find all instances of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->refundFind($filter);
+    $result = $apiInstance->refundFind($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundFind: ', $e->getMessage(), PHP_EOL;
@@ -396,12 +435,16 @@ Find a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->refundFindById($id, $filter);
+    $result = $apiInstance->refundFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundFindById: ', $e->getMessage(), PHP_EOL;
@@ -441,11 +484,15 @@ Find first instance of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->refundFindOne($filter);
+    $result = $apiInstance->refundFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundFindOne: ', $e->getMessage(), PHP_EOL;
@@ -484,11 +531,15 @@ Patch an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
 
 try {
-    $result = $api_instance->refundPatchOrCreate($data);
+    $result = $apiInstance->refundPatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPatchOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -517,6 +568,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **refundPrototypeCountInvoices**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 refundPrototypeCountInvoices($id, $where)
+
+Counts invoices of Refund.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | Refund id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $apiInstance->refundPrototypeCountInvoices($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RefundApi->refundPrototypeCountInvoices: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Refund id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **refundPrototypeCountLineItems**
 > \Yoast\MyYoastApiClient\Model\InlineResponse200 refundPrototypeCountLineItems($id, $where)
 
@@ -527,12 +627,16 @@ Counts lineItems of Refund.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->refundPrototypeCountLineItems($id, $where);
+    $result = $apiInstance->refundPrototypeCountLineItems($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeCountLineItems: ', $e->getMessage(), PHP_EOL;
@@ -572,12 +676,16 @@ Counts refundLineItems of Refund.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->refundPrototypeCountRefundLineItems($id, $where);
+    $result = $apiInstance->refundPrototypeCountRefundLineItems($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeCountRefundLineItems: ', $e->getMessage(), PHP_EOL;
@@ -607,6 +715,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **refundPrototypeCreateInvoices**
+> \Yoast\MyYoastApiClient\Model\Invoice refundPrototypeCreateInvoices($id, $data)
+
+Creates a new instance in invoices of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | Refund id
+$data = new \Yoast\MyYoastApiClient\Model\Invoice(); // \Yoast\MyYoastApiClient\Model\Invoice | 
+
+try {
+    $result = $apiInstance->refundPrototypeCreateInvoices($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RefundApi->refundPrototypeCreateInvoices: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Refund id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Invoice**](../Model/Invoice.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Invoice**](../Model/Invoice.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **refundPrototypeCreateLineItems**
 > \Yoast\MyYoastApiClient\Model\LineItem refundPrototypeCreateLineItems($id, $data)
 
@@ -617,12 +774,16 @@ Creates a new instance in lineItems of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | 
 
 try {
-    $result = $api_instance->refundPrototypeCreateLineItems($id, $data);
+    $result = $apiInstance->refundPrototypeCreateLineItems($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeCreateLineItems: ', $e->getMessage(), PHP_EOL;
@@ -662,12 +823,16 @@ Creates a new instance in refundLineItems of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $data = new \Yoast\MyYoastApiClient\Model\RefundLineItem(); // \Yoast\MyYoastApiClient\Model\RefundLineItem | 
 
 try {
-    $result = $api_instance->refundPrototypeCreateRefundLineItems($id, $data);
+    $result = $apiInstance->refundPrototypeCreateRefundLineItems($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeCreateRefundLineItems: ', $e->getMessage(), PHP_EOL;
@@ -697,6 +862,52 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **refundPrototypeDeleteInvoices**
+> refundPrototypeDeleteInvoices($id)
+
+Deletes all invoices of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | Refund id
+
+try {
+    $apiInstance->refundPrototypeDeleteInvoices($id);
+} catch (Exception $e) {
+    echo 'Exception when calling RefundApi->refundPrototypeDeleteInvoices: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Refund id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **refundPrototypeDeleteLineItems**
 > refundPrototypeDeleteLineItems($id)
 
@@ -707,11 +918,15 @@ Deletes all lineItems of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 
 try {
-    $api_instance->refundPrototypeDeleteLineItems($id);
+    $apiInstance->refundPrototypeDeleteLineItems($id);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeDeleteLineItems: ', $e->getMessage(), PHP_EOL;
 }
@@ -749,11 +964,15 @@ Deletes all refundLineItems of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 
 try {
-    $api_instance->refundPrototypeDeleteRefundLineItems($id);
+    $apiInstance->refundPrototypeDeleteRefundLineItems($id);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeDeleteRefundLineItems: ', $e->getMessage(), PHP_EOL;
 }
@@ -781,6 +1000,54 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **refundPrototypeDestroyByIdInvoices**
+> refundPrototypeDestroyByIdInvoices($id, $fk)
+
+Delete a related item by id for invoices.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | Refund id
+$fk = "fk_example"; // string | Foreign key for invoices
+
+try {
+    $apiInstance->refundPrototypeDestroyByIdInvoices($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling RefundApi->refundPrototypeDestroyByIdInvoices: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Refund id |
+ **fk** | **string**| Foreign key for invoices |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **refundPrototypeDestroyByIdLineItems**
 > refundPrototypeDestroyByIdLineItems($id, $fk)
 
@@ -791,12 +1058,16 @@ Delete a related item by id for lineItems.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $fk = "fk_example"; // string | Foreign key for lineItems
 
 try {
-    $api_instance->refundPrototypeDestroyByIdLineItems($id, $fk);
+    $apiInstance->refundPrototypeDestroyByIdLineItems($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeDestroyByIdLineItems: ', $e->getMessage(), PHP_EOL;
 }
@@ -835,12 +1106,16 @@ Delete a related item by id for refundLineItems.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $fk = "fk_example"; // string | Foreign key for refundLineItems
 
 try {
-    $api_instance->refundPrototypeDestroyByIdRefundLineItems($id, $fk);
+    $apiInstance->refundPrototypeDestroyByIdRefundLineItems($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeDestroyByIdRefundLineItems: ', $e->getMessage(), PHP_EOL;
 }
@@ -879,12 +1154,16 @@ Check the existence of lineItems relation to an item by id.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $fk = "fk_example"; // string | Foreign key for lineItems
 
 try {
-    $result = $api_instance->refundPrototypeExistsLineItems($id, $fk);
+    $result = $apiInstance->refundPrototypeExistsLineItems($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeExistsLineItems: ', $e->getMessage(), PHP_EOL;
@@ -914,6 +1193,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **refundPrototypeFindByIdInvoices**
+> \Yoast\MyYoastApiClient\Model\Invoice refundPrototypeFindByIdInvoices($id, $fk)
+
+Find a related item by id for invoices.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | Refund id
+$fk = "fk_example"; // string | Foreign key for invoices
+
+try {
+    $result = $apiInstance->refundPrototypeFindByIdInvoices($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RefundApi->refundPrototypeFindByIdInvoices: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Refund id |
+ **fk** | **string**| Foreign key for invoices |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Invoice**](../Model/Invoice.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **refundPrototypeFindByIdLineItems**
 > \Yoast\MyYoastApiClient\Model\LineItem refundPrototypeFindByIdLineItems($id, $fk)
 
@@ -924,12 +1252,16 @@ Find a related item by id for lineItems.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $fk = "fk_example"; // string | Foreign key for lineItems
 
 try {
-    $result = $api_instance->refundPrototypeFindByIdLineItems($id, $fk);
+    $result = $apiInstance->refundPrototypeFindByIdLineItems($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeFindByIdLineItems: ', $e->getMessage(), PHP_EOL;
@@ -969,12 +1301,16 @@ Find a related item by id for refundLineItems.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $fk = "fk_example"; // string | Foreign key for refundLineItems
 
 try {
-    $result = $api_instance->refundPrototypeFindByIdRefundLineItems($id, $fk);
+    $result = $apiInstance->refundPrototypeFindByIdRefundLineItems($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeFindByIdRefundLineItems: ', $e->getMessage(), PHP_EOL;
@@ -1004,6 +1340,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **refundPrototypeGetInvoices**
+> \Yoast\MyYoastApiClient\Model\Invoice[] refundPrototypeGetInvoices($id, $filter)
+
+Queries invoices of Refund.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | Refund id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $apiInstance->refundPrototypeGetInvoices($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RefundApi->refundPrototypeGetInvoices: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Refund id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Invoice[]**](../Model/Invoice.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **refundPrototypeGetLineItems**
 > \Yoast\MyYoastApiClient\Model\LineItem[] refundPrototypeGetLineItems($id, $filter)
 
@@ -1014,12 +1399,16 @@ Queries lineItems of Refund.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $api_instance->refundPrototypeGetLineItems($id, $filter);
+    $result = $apiInstance->refundPrototypeGetLineItems($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeGetLineItems: ', $e->getMessage(), PHP_EOL;
@@ -1059,12 +1448,16 @@ Fetches belongsTo relation order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->refundPrototypeGetOrder($id, $refresh);
+    $result = $apiInstance->refundPrototypeGetOrder($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeGetOrder: ', $e->getMessage(), PHP_EOL;
@@ -1104,12 +1497,16 @@ Queries refundLineItems of Refund.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $api_instance->refundPrototypeGetRefundLineItems($id, $filter);
+    $result = $apiInstance->refundPrototypeGetRefundLineItems($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeGetRefundLineItems: ', $e->getMessage(), PHP_EOL;
@@ -1149,13 +1546,17 @@ Add a related item by id for lineItems.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $fk = "fk_example"; // string | Foreign key for lineItems
 $data = new \Yoast\MyYoastApiClient\Model\RefundLineItem(); // \Yoast\MyYoastApiClient\Model\RefundLineItem | 
 
 try {
-    $result = $api_instance->refundPrototypeLinkLineItems($id, $fk, $data);
+    $result = $apiInstance->refundPrototypeLinkLineItems($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeLinkLineItems: ', $e->getMessage(), PHP_EOL;
@@ -1196,12 +1597,16 @@ Patch attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->refundPrototypePatchAttributes($id, $data);
+    $result = $apiInstance->refundPrototypePatchAttributes($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
@@ -1241,12 +1646,16 @@ Remove the lineItems relation to an item by id.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $fk = "fk_example"; // string | Foreign key for lineItems
 
 try {
-    $api_instance->refundPrototypeUnlinkLineItems($id, $fk);
+    $apiInstance->refundPrototypeUnlinkLineItems($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeUnlinkLineItems: ', $e->getMessage(), PHP_EOL;
 }
@@ -1275,6 +1684,57 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **refundPrototypeUpdateByIdInvoices**
+> \Yoast\MyYoastApiClient\Model\Invoice refundPrototypeUpdateByIdInvoices($id, $fk, $data)
+
+Update a related item by id for invoices.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | Refund id
+$fk = "fk_example"; // string | Foreign key for invoices
+$data = new \Yoast\MyYoastApiClient\Model\Invoice(); // \Yoast\MyYoastApiClient\Model\Invoice | 
+
+try {
+    $result = $apiInstance->refundPrototypeUpdateByIdInvoices($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RefundApi->refundPrototypeUpdateByIdInvoices: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Refund id |
+ **fk** | **string**| Foreign key for invoices |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Invoice**](../Model/Invoice.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Invoice**](../Model/Invoice.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **refundPrototypeUpdateByIdLineItems**
 > \Yoast\MyYoastApiClient\Model\LineItem refundPrototypeUpdateByIdLineItems($id, $fk, $data)
 
@@ -1285,13 +1745,17 @@ Update a related item by id for lineItems.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $fk = "fk_example"; // string | Foreign key for lineItems
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | 
 
 try {
-    $result = $api_instance->refundPrototypeUpdateByIdLineItems($id, $fk, $data);
+    $result = $apiInstance->refundPrototypeUpdateByIdLineItems($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeUpdateByIdLineItems: ', $e->getMessage(), PHP_EOL;
@@ -1332,13 +1796,17 @@ Update a related item by id for refundLineItems.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Refund id
 $fk = "fk_example"; // string | Foreign key for refundLineItems
 $data = new \Yoast\MyYoastApiClient\Model\RefundLineItem(); // \Yoast\MyYoastApiClient\Model\RefundLineItem | 
 
 try {
-    $result = $api_instance->refundPrototypeUpdateByIdRefundLineItems($id, $fk, $data);
+    $result = $apiInstance->refundPrototypeUpdateByIdRefundLineItems($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundPrototypeUpdateByIdRefundLineItems: ', $e->getMessage(), PHP_EOL;
@@ -1379,12 +1847,16 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
 
 try {
-    $result = $api_instance->refundReplaceByIdPostRefundsidReplace($id, $data);
+    $result = $apiInstance->refundReplaceByIdPostRefundsidReplace($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundReplaceByIdPostRefundsidReplace: ', $e->getMessage(), PHP_EOL;
@@ -1424,12 +1896,16 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
 
 try {
-    $result = $api_instance->refundReplaceByIdPutRefundsid($id, $data);
+    $result = $apiInstance->refundReplaceByIdPutRefundsid($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundReplaceByIdPutRefundsid: ', $e->getMessage(), PHP_EOL;
@@ -1469,11 +1945,15 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
 
 try {
-    $result = $api_instance->refundReplaceOrCreatePostRefundsReplaceOrCreate($data);
+    $result = $apiInstance->refundReplaceOrCreatePostRefundsReplaceOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundReplaceOrCreatePostRefundsReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -1512,11 +1992,15 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
 
 try {
-    $result = $api_instance->refundReplaceOrCreatePutRefunds($data);
+    $result = $apiInstance->refundReplaceOrCreatePutRefunds($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundReplaceOrCreatePutRefunds: ', $e->getMessage(), PHP_EOL;
@@ -1555,12 +2039,16 @@ Update instances of the model matched by {{where}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->refundUpdateAll($where, $data);
+    $result = $apiInstance->refundUpdateAll($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundUpdateAll: ', $e->getMessage(), PHP_EOL;
@@ -1600,12 +2088,16 @@ Update an existing model instance or insert a new one into the data source based
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->refundUpsertWithWhere($where, $data);
+    $result = $apiInstance->refundUpsertWithWhere($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->refundUpsertWithWhere: ', $e->getMessage(), PHP_EOL;

@@ -46,11 +46,15 @@ Count instances of the model matched by where from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->lineItemCount($where);
+    $result = $apiInstance->lineItemCount($where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemCount: ', $e->getMessage(), PHP_EOL;
@@ -89,11 +93,15 @@ Create a new instance of the model and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | Model instance data
 
 try {
-    $result = $api_instance->lineItemCreate($data);
+    $result = $apiInstance->lineItemCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemCreate: ', $e->getMessage(), PHP_EOL;
@@ -132,11 +140,15 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->lineItemCreateChangeStreamGetLineItemsChangeStream($options);
+    $result = $apiInstance->lineItemCreateChangeStreamGetLineItemsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemCreateChangeStreamGetLineItemsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -175,11 +187,15 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->lineItemCreateChangeStreamPostLineItemsChangeStream($options);
+    $result = $apiInstance->lineItemCreateChangeStreamPostLineItemsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemCreateChangeStreamPostLineItemsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -218,11 +234,15 @@ Delete a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->lineItemDeleteById($id);
+    $result = $apiInstance->lineItemDeleteById($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemDeleteById: ', $e->getMessage(), PHP_EOL;
@@ -261,11 +281,15 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->lineItemExistsGetLineItemsidExists($id);
+    $result = $apiInstance->lineItemExistsGetLineItemsidExists($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemExistsGetLineItemsidExists: ', $e->getMessage(), PHP_EOL;
@@ -304,11 +328,15 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->lineItemExistsHeadLineItemsid($id);
+    $result = $apiInstance->lineItemExistsHeadLineItemsid($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemExistsHeadLineItemsid: ', $e->getMessage(), PHP_EOL;
@@ -347,11 +375,15 @@ Find all instances of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->lineItemFind($filter);
+    $result = $apiInstance->lineItemFind($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemFind: ', $e->getMessage(), PHP_EOL;
@@ -390,12 +422,16 @@ Find a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->lineItemFindById($id, $filter);
+    $result = $apiInstance->lineItemFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemFindById: ', $e->getMessage(), PHP_EOL;
@@ -435,11 +471,15 @@ Find first instance of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->lineItemFindOne($filter);
+    $result = $apiInstance->lineItemFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemFindOne: ', $e->getMessage(), PHP_EOL;
@@ -478,11 +518,15 @@ Patch an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | Model instance data
 
 try {
-    $result = $api_instance->lineItemPatchOrCreate($data);
+    $result = $apiInstance->lineItemPatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPatchOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -521,12 +565,16 @@ Counts refunds of LineItem.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->lineItemPrototypeCountRefunds($id, $where);
+    $result = $apiInstance->lineItemPrototypeCountRefunds($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeCountRefunds: ', $e->getMessage(), PHP_EOL;
@@ -566,12 +614,16 @@ Creates a new instance in refunds of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | 
 
 try {
-    $result = $api_instance->lineItemPrototypeCreateRefunds($id, $data);
+    $result = $apiInstance->lineItemPrototypeCreateRefunds($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeCreateRefunds: ', $e->getMessage(), PHP_EOL;
@@ -611,11 +663,15 @@ Deletes all refunds of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 
 try {
-    $api_instance->lineItemPrototypeDeleteRefunds($id);
+    $apiInstance->lineItemPrototypeDeleteRefunds($id);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeDeleteRefunds: ', $e->getMessage(), PHP_EOL;
 }
@@ -653,12 +709,16 @@ Delete a related item by id for refunds.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $fk = "fk_example"; // string | Foreign key for refunds
 
 try {
-    $api_instance->lineItemPrototypeDestroyByIdRefunds($id, $fk);
+    $apiInstance->lineItemPrototypeDestroyByIdRefunds($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeDestroyByIdRefunds: ', $e->getMessage(), PHP_EOL;
 }
@@ -697,12 +757,16 @@ Check the existence of refunds relation to an item by id.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $fk = "fk_example"; // string | Foreign key for refunds
 
 try {
-    $result = $api_instance->lineItemPrototypeExistsRefunds($id, $fk);
+    $result = $apiInstance->lineItemPrototypeExistsRefunds($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeExistsRefunds: ', $e->getMessage(), PHP_EOL;
@@ -742,12 +806,16 @@ Find a related item by id for refunds.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $fk = "fk_example"; // string | Foreign key for refunds
 
 try {
-    $result = $api_instance->lineItemPrototypeFindByIdRefunds($id, $fk);
+    $result = $apiInstance->lineItemPrototypeFindByIdRefunds($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeFindByIdRefunds: ', $e->getMessage(), PHP_EOL;
@@ -787,12 +855,16 @@ Fetches belongsTo relation order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->lineItemPrototypeGetOrder($id, $refresh);
+    $result = $apiInstance->lineItemPrototypeGetOrder($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeGetOrder: ', $e->getMessage(), PHP_EOL;
@@ -832,12 +904,16 @@ Fetches belongsTo relation product.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->lineItemPrototypeGetProduct($id, $refresh);
+    $result = $apiInstance->lineItemPrototypeGetProduct($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeGetProduct: ', $e->getMessage(), PHP_EOL;
@@ -877,12 +953,16 @@ Queries refunds of LineItem.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $api_instance->lineItemPrototypeGetRefunds($id, $filter);
+    $result = $apiInstance->lineItemPrototypeGetRefunds($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeGetRefunds: ', $e->getMessage(), PHP_EOL;
@@ -922,13 +1002,17 @@ Add a related item by id for refunds.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $fk = "fk_example"; // string | Foreign key for refunds
 $data = new \Yoast\MyYoastApiClient\Model\RefundLineItem(); // \Yoast\MyYoastApiClient\Model\RefundLineItem | 
 
 try {
-    $result = $api_instance->lineItemPrototypeLinkRefunds($id, $fk, $data);
+    $result = $apiInstance->lineItemPrototypeLinkRefunds($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeLinkRefunds: ', $e->getMessage(), PHP_EOL;
@@ -969,12 +1053,16 @@ Patch attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->lineItemPrototypePatchAttributes($id, $data);
+    $result = $apiInstance->lineItemPrototypePatchAttributes($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
@@ -1014,12 +1102,16 @@ Remove the refunds relation to an item by id.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $fk = "fk_example"; // string | Foreign key for refunds
 
 try {
-    $api_instance->lineItemPrototypeUnlinkRefunds($id, $fk);
+    $apiInstance->lineItemPrototypeUnlinkRefunds($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeUnlinkRefunds: ', $e->getMessage(), PHP_EOL;
 }
@@ -1058,13 +1150,17 @@ Update a related item by id for refunds.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | LineItem id
 $fk = "fk_example"; // string | Foreign key for refunds
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | 
 
 try {
-    $result = $api_instance->lineItemPrototypeUpdateByIdRefunds($id, $fk, $data);
+    $result = $apiInstance->lineItemPrototypeUpdateByIdRefunds($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemPrototypeUpdateByIdRefunds: ', $e->getMessage(), PHP_EOL;
@@ -1105,12 +1201,16 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | Model instance data
 
 try {
-    $result = $api_instance->lineItemReplaceByIdPostLineItemsidReplace($id, $data);
+    $result = $apiInstance->lineItemReplaceByIdPostLineItemsidReplace($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemReplaceByIdPostLineItemsidReplace: ', $e->getMessage(), PHP_EOL;
@@ -1150,12 +1250,16 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | Model instance data
 
 try {
-    $result = $api_instance->lineItemReplaceByIdPutLineItemsid($id, $data);
+    $result = $apiInstance->lineItemReplaceByIdPutLineItemsid($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemReplaceByIdPutLineItemsid: ', $e->getMessage(), PHP_EOL;
@@ -1195,11 +1299,15 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | Model instance data
 
 try {
-    $result = $api_instance->lineItemReplaceOrCreatePostLineItemsReplaceOrCreate($data);
+    $result = $apiInstance->lineItemReplaceOrCreatePostLineItemsReplaceOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemReplaceOrCreatePostLineItemsReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -1238,11 +1346,15 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | Model instance data
 
 try {
-    $result = $api_instance->lineItemReplaceOrCreatePutLineItems($data);
+    $result = $apiInstance->lineItemReplaceOrCreatePutLineItems($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemReplaceOrCreatePutLineItems: ', $e->getMessage(), PHP_EOL;
@@ -1281,12 +1393,16 @@ Update instances of the model matched by {{where}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->lineItemUpdateAll($where, $data);
+    $result = $apiInstance->lineItemUpdateAll($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemUpdateAll: ', $e->getMessage(), PHP_EOL;
@@ -1326,12 +1442,16 @@ Update an existing model instance or insert a new one into the data source based
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\LineItemApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\LineItemApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->lineItemUpsertWithWhere($where, $data);
+    $result = $apiInstance->lineItemUpsertWithWhere($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling LineItemApi->lineItemUpsertWithWhere: ', $e->getMessage(), PHP_EOL;

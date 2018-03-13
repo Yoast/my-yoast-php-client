@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **protocol** | **string** |  | [optional] 
 **port** | **double** |  | [optional] 
 **path** | **string** |  | [optional] 
+**type** | **string** |  | [default to 'wordpress']
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

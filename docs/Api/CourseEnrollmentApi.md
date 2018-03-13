@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**courseEnrollmentReplaceByIdPutCourseEnrollmentsid**](CourseEnrollmentApi.md#courseEnrollmentReplaceByIdPutCourseEnrollmentsid) | **PUT** /CourseEnrollments/{id} | Replace attributes for a model instance and persist it into the data source.
 [**courseEnrollmentReplaceOrCreatePostCourseEnrollmentsReplaceOrCreate**](CourseEnrollmentApi.md#courseEnrollmentReplaceOrCreatePostCourseEnrollmentsReplaceOrCreate) | **POST** /CourseEnrollments/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 [**courseEnrollmentReplaceOrCreatePutCourseEnrollments**](CourseEnrollmentApi.md#courseEnrollmentReplaceOrCreatePutCourseEnrollments) | **PUT** /CourseEnrollments | Replace an existing model instance or insert a new one into the data source.
+[**courseEnrollmentStudentGotCourseFrom**](CourseEnrollmentApi.md#courseEnrollmentStudentGotCourseFrom) | **GET** /CourseEnrollments/{id}/studentGotCourseFrom | Get the customer who bought a course for a user.
 [**courseEnrollmentTransfer**](CourseEnrollmentApi.md#courseEnrollmentTransfer) | **POST** /CourseEnrollments/transfer | 
 [**courseEnrollmentUpdateAll**](CourseEnrollmentApi.md#courseEnrollmentUpdateAll) | **POST** /CourseEnrollments/update | Update instances of the model matched by {{where}} from the data source.
 [**courseEnrollmentUpsertWithWhere**](CourseEnrollmentApi.md#courseEnrollmentUpsertWithWhere) | **POST** /CourseEnrollments/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
@@ -41,11 +42,15 @@ Count instances of the model matched by where from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->courseEnrollmentCount($where);
+    $result = $apiInstance->courseEnrollmentCount($where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentCount: ', $e->getMessage(), PHP_EOL;
@@ -84,11 +89,15 @@ Create a new instance of the model and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | Model instance data
 
 try {
-    $result = $api_instance->courseEnrollmentCreate($data);
+    $result = $apiInstance->courseEnrollmentCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentCreate: ', $e->getMessage(), PHP_EOL;
@@ -127,11 +136,15 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->courseEnrollmentCreateChangeStreamGetCourseEnrollmentsChangeStream($options);
+    $result = $apiInstance->courseEnrollmentCreateChangeStreamGetCourseEnrollmentsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentCreateChangeStreamGetCourseEnrollmentsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -170,11 +183,15 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->courseEnrollmentCreateChangeStreamPostCourseEnrollmentsChangeStream($options);
+    $result = $apiInstance->courseEnrollmentCreateChangeStreamPostCourseEnrollmentsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentCreateChangeStreamPostCourseEnrollmentsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -213,11 +230,15 @@ Delete a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->courseEnrollmentDeleteById($id);
+    $result = $apiInstance->courseEnrollmentDeleteById($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentDeleteById: ', $e->getMessage(), PHP_EOL;
@@ -256,11 +277,15 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->courseEnrollmentExistsGetCourseEnrollmentsidExists($id);
+    $result = $apiInstance->courseEnrollmentExistsGetCourseEnrollmentsidExists($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentExistsGetCourseEnrollmentsidExists: ', $e->getMessage(), PHP_EOL;
@@ -299,11 +324,15 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->courseEnrollmentExistsHeadCourseEnrollmentsid($id);
+    $result = $apiInstance->courseEnrollmentExistsHeadCourseEnrollmentsid($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentExistsHeadCourseEnrollmentsid: ', $e->getMessage(), PHP_EOL;
@@ -342,11 +371,15 @@ Find all instances of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->courseEnrollmentFind($filter);
+    $result = $apiInstance->courseEnrollmentFind($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentFind: ', $e->getMessage(), PHP_EOL;
@@ -385,12 +418,16 @@ Find a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->courseEnrollmentFindById($id, $filter);
+    $result = $apiInstance->courseEnrollmentFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentFindById: ', $e->getMessage(), PHP_EOL;
@@ -430,11 +467,15 @@ Find first instance of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->courseEnrollmentFindOne($filter);
+    $result = $apiInstance->courseEnrollmentFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentFindOne: ', $e->getMessage(), PHP_EOL;
@@ -473,11 +514,15 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $progress_data = "progress_data_example"; // string | 
 
 try {
-    $result = $api_instance->courseEnrollmentFromAcademy($progress_data);
+    $result = $apiInstance->courseEnrollmentFromAcademy($progress_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentFromAcademy: ', $e->getMessage(), PHP_EOL;
@@ -516,12 +561,16 @@ Invites another Customer by email to use this Course Enrollment.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | 
 $email = "email_example"; // string | 
 
 try {
-    $result = $api_instance->courseEnrollmentInvite($id, $email);
+    $result = $apiInstance->courseEnrollmentInvite($id, $email);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentInvite: ', $e->getMessage(), PHP_EOL;
@@ -561,11 +610,15 @@ Patch an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | Model instance data
 
 try {
-    $result = $api_instance->courseEnrollmentPatchOrCreate($data);
+    $result = $apiInstance->courseEnrollmentPatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentPatchOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -604,12 +657,16 @@ Fetches belongsTo relation buyer.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | CourseEnrollment id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->courseEnrollmentPrototypeGetBuyer($id, $refresh);
+    $result = $apiInstance->courseEnrollmentPrototypeGetBuyer($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentPrototypeGetBuyer: ', $e->getMessage(), PHP_EOL;
@@ -649,12 +706,16 @@ Fetches belongsTo relation course.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | CourseEnrollment id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->courseEnrollmentPrototypeGetCourse($id, $refresh);
+    $result = $apiInstance->courseEnrollmentPrototypeGetCourse($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentPrototypeGetCourse: ', $e->getMessage(), PHP_EOL;
@@ -694,12 +755,16 @@ Fetches belongsTo relation order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | CourseEnrollment id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->courseEnrollmentPrototypeGetOrder($id, $refresh);
+    $result = $apiInstance->courseEnrollmentPrototypeGetOrder($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentPrototypeGetOrder: ', $e->getMessage(), PHP_EOL;
@@ -739,12 +804,16 @@ Fetches belongsTo relation student.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | CourseEnrollment id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->courseEnrollmentPrototypeGetStudent($id, $refresh);
+    $result = $apiInstance->courseEnrollmentPrototypeGetStudent($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentPrototypeGetStudent: ', $e->getMessage(), PHP_EOL;
@@ -784,12 +853,16 @@ Patch attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | CourseEnrollment id
 $data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->courseEnrollmentPrototypePatchAttributes($id, $data);
+    $result = $apiInstance->courseEnrollmentPrototypePatchAttributes($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
@@ -829,12 +902,16 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | Model instance data
 
 try {
-    $result = $api_instance->courseEnrollmentReplaceByIdPostCourseEnrollmentsidReplace($id, $data);
+    $result = $apiInstance->courseEnrollmentReplaceByIdPostCourseEnrollmentsidReplace($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentReplaceByIdPostCourseEnrollmentsidReplace: ', $e->getMessage(), PHP_EOL;
@@ -874,12 +951,16 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | Model instance data
 
 try {
-    $result = $api_instance->courseEnrollmentReplaceByIdPutCourseEnrollmentsid($id, $data);
+    $result = $apiInstance->courseEnrollmentReplaceByIdPutCourseEnrollmentsid($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentReplaceByIdPutCourseEnrollmentsid: ', $e->getMessage(), PHP_EOL;
@@ -919,11 +1000,15 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | Model instance data
 
 try {
-    $result = $api_instance->courseEnrollmentReplaceOrCreatePostCourseEnrollmentsReplaceOrCreate($data);
+    $result = $apiInstance->courseEnrollmentReplaceOrCreatePostCourseEnrollmentsReplaceOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentReplaceOrCreatePostCourseEnrollmentsReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -962,11 +1047,15 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | Model instance data
 
 try {
-    $result = $api_instance->courseEnrollmentReplaceOrCreatePutCourseEnrollments($data);
+    $result = $apiInstance->courseEnrollmentReplaceOrCreatePutCourseEnrollments($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentReplaceOrCreatePutCourseEnrollments: ', $e->getMessage(), PHP_EOL;
@@ -995,6 +1084,53 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **courseEnrollmentStudentGotCourseFrom**
+> object courseEnrollmentStudentGotCourseFrom($id)
+
+Get the customer who bought a course for a user.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | 
+
+try {
+    $result = $apiInstance->courseEnrollmentStudentGotCourseFrom($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentStudentGotCourseFrom: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **courseEnrollmentTransfer**
 > \Yoast\MyYoastApiClient\Model\CourseEnrollment[] courseEnrollmentTransfer($from_source_id, $to_source_id)
 
@@ -1005,12 +1141,16 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $from_source_id = 1.2; // double | 
 $to_source_id = 1.2; // double | 
 
 try {
-    $result = $api_instance->courseEnrollmentTransfer($from_source_id, $to_source_id);
+    $result = $apiInstance->courseEnrollmentTransfer($from_source_id, $to_source_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentTransfer: ', $e->getMessage(), PHP_EOL;
@@ -1050,12 +1190,16 @@ Update instances of the model matched by {{where}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->courseEnrollmentUpdateAll($where, $data);
+    $result = $apiInstance->courseEnrollmentUpdateAll($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentUpdateAll: ', $e->getMessage(), PHP_EOL;
@@ -1095,12 +1239,16 @@ Update an existing model instance or insert a new one into the data source based
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->courseEnrollmentUpsertWithWhere($where, $data);
+    $result = $apiInstance->courseEnrollmentUpsertWithWhere($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentUpsertWithWhere: ', $e->getMessage(), PHP_EOL;

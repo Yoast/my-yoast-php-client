@@ -47,11 +47,15 @@ Count instances of the model matched by where from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->siteCount($where);
+    $result = $apiInstance->siteCount($where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteCount: ', $e->getMessage(), PHP_EOL;
@@ -90,11 +94,15 @@ Create a new instance of the model and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
 
 try {
-    $result = $api_instance->siteCreate($data);
+    $result = $apiInstance->siteCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteCreate: ', $e->getMessage(), PHP_EOL;
@@ -133,11 +141,15 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->siteCreateChangeStreamGetSitesChangeStream($options);
+    $result = $apiInstance->siteCreateChangeStreamGetSitesChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteCreateChangeStreamGetSitesChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -176,11 +188,15 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $options = "options_example"; // string | 
 
 try {
-    $result = $api_instance->siteCreateChangeStreamPostSitesChangeStream($options);
+    $result = $apiInstance->siteCreateChangeStreamPostSitesChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteCreateChangeStreamPostSitesChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -219,11 +235,15 @@ Delete a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->siteDeleteById($id);
+    $result = $apiInstance->siteDeleteById($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteDeleteById: ', $e->getMessage(), PHP_EOL;
@@ -262,11 +282,15 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->siteExistsGetSitesidExists($id);
+    $result = $apiInstance->siteExistsGetSitesidExists($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteExistsGetSitesidExists: ', $e->getMessage(), PHP_EOL;
@@ -305,11 +329,15 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $api_instance->siteExistsHeadSitesid($id);
+    $result = $apiInstance->siteExistsHeadSitesid($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteExistsHeadSitesid: ', $e->getMessage(), PHP_EOL;
@@ -348,11 +376,15 @@ Find all instances of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->siteFind($filter);
+    $result = $apiInstance->siteFind($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteFind: ', $e->getMessage(), PHP_EOL;
@@ -391,12 +423,16 @@ Find a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->siteFindById($id, $filter);
+    $result = $apiInstance->siteFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteFindById: ', $e->getMessage(), PHP_EOL;
@@ -436,11 +472,15 @@ Find first instance of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $api_instance->siteFindOne($filter);
+    $result = $apiInstance->siteFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteFindOne: ', $e->getMessage(), PHP_EOL;
@@ -479,11 +519,15 @@ Patch an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
 
 try {
-    $result = $api_instance->sitePatchOrCreate($data);
+    $result = $apiInstance->sitePatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePatchOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -522,12 +566,16 @@ Counts subscriptions of Site.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->sitePrototypeCountSubscriptions($id, $where);
+    $result = $apiInstance->sitePrototypeCountSubscriptions($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeCountSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -567,12 +615,16 @@ Creates a new instance in subscriptions of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 $data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
 
 try {
-    $result = $api_instance->sitePrototypeCreateSubscriptions($id, $data);
+    $result = $apiInstance->sitePrototypeCreateSubscriptions($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeCreateSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -612,11 +664,15 @@ Deletes all subscriptions of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 
 try {
-    $api_instance->sitePrototypeDeleteSubscriptions($id);
+    $apiInstance->sitePrototypeDeleteSubscriptions($id);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeDeleteSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
@@ -654,12 +710,16 @@ Delete a related item by id for subscriptions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $api_instance->sitePrototypeDestroyByIdSubscriptions($id, $fk);
+    $apiInstance->sitePrototypeDestroyByIdSubscriptions($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeDestroyByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
@@ -698,12 +758,16 @@ Check the existence of subscriptions relation to an item by id.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $result = $api_instance->sitePrototypeExistsSubscriptions($id, $fk);
+    $result = $apiInstance->sitePrototypeExistsSubscriptions($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeExistsSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -743,12 +807,16 @@ Find a related item by id for subscriptions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $result = $api_instance->sitePrototypeFindByIdSubscriptions($id, $fk);
+    $result = $apiInstance->sitePrototypeFindByIdSubscriptions($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeFindByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -788,12 +856,16 @@ Queries subscriptions of Site.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $api_instance->sitePrototypeGetSubscriptions($id, $filter);
+    $result = $apiInstance->sitePrototypeGetSubscriptions($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeGetSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -833,12 +905,16 @@ Fetches belongsTo relation user.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 $refresh = true; // bool | 
 
 try {
-    $result = $api_instance->sitePrototypeGetUser($id, $refresh);
+    $result = $apiInstance->sitePrototypeGetUser($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeGetUser: ', $e->getMessage(), PHP_EOL;
@@ -878,13 +954,17 @@ Add a related item by id for subscriptions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 $data = new \Yoast\MyYoastApiClient\Model\SiteSubscriptions(); // \Yoast\MyYoastApiClient\Model\SiteSubscriptions | 
 
 try {
-    $result = $api_instance->sitePrototypeLinkSubscriptions($id, $fk, $data);
+    $result = $apiInstance->sitePrototypeLinkSubscriptions($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeLinkSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -925,12 +1005,16 @@ Patch attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 $data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->sitePrototypePatchAttributes($id, $data);
+    $result = $apiInstance->sitePrototypePatchAttributes($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
@@ -970,12 +1054,16 @@ Remove the subscriptions relation to an item by id.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $api_instance->sitePrototypeUnlinkSubscriptions($id, $fk);
+    $apiInstance->sitePrototypeUnlinkSubscriptions($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeUnlinkSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
@@ -1014,13 +1102,17 @@ Update a related item by id for subscriptions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Site id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 $data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
 
 try {
-    $result = $api_instance->sitePrototypeUpdateByIdSubscriptions($id, $fk, $data);
+    $result = $apiInstance->sitePrototypeUpdateByIdSubscriptions($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->sitePrototypeUpdateByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -1061,12 +1153,16 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
 
 try {
-    $result = $api_instance->siteReplaceByIdPostSitesidReplace($id, $data);
+    $result = $apiInstance->siteReplaceByIdPostSitesidReplace($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteReplaceByIdPostSitesidReplace: ', $e->getMessage(), PHP_EOL;
@@ -1106,12 +1202,16 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
 
 try {
-    $result = $api_instance->siteReplaceByIdPutSitesid($id, $data);
+    $result = $apiInstance->siteReplaceByIdPutSitesid($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteReplaceByIdPutSitesid: ', $e->getMessage(), PHP_EOL;
@@ -1151,11 +1251,15 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
 
 try {
-    $result = $api_instance->siteReplaceOrCreatePostSitesReplaceOrCreate($data);
+    $result = $apiInstance->siteReplaceOrCreatePostSitesReplaceOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteReplaceOrCreatePostSitesReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -1194,11 +1298,15 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
 
 try {
-    $result = $api_instance->siteReplaceOrCreatePutSites($data);
+    $result = $apiInstance->siteReplaceOrCreatePutSites($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteReplaceOrCreatePutSites: ', $e->getMessage(), PHP_EOL;
@@ -1237,12 +1345,16 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $from_source_id = 1.2; // double | 
 $to_source_id = 1.2; // double | 
 
 try {
-    $result = $api_instance->siteSwitchSubscription($from_source_id, $to_source_id);
+    $result = $apiInstance->siteSwitchSubscription($from_source_id, $to_source_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteSwitchSubscription: ', $e->getMessage(), PHP_EOL;
@@ -1282,12 +1394,16 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $from_source_id = 1.2; // double | 
 $to_source_id = 1.2; // double | 
 
 try {
-    $result = $api_instance->siteTransfer($from_source_id, $to_source_id);
+    $result = $apiInstance->siteTransfer($from_source_id, $to_source_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteTransfer: ', $e->getMessage(), PHP_EOL;
@@ -1327,12 +1443,16 @@ Update instances of the model matched by {{where}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->siteUpdateAll($where, $data);
+    $result = $apiInstance->siteUpdateAll($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteUpdateAll: ', $e->getMessage(), PHP_EOL;
@@ -1372,12 +1492,16 @@ Update an existing model instance or insert a new one into the data source based
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | An object of model property name/value pairs
 
 try {
-    $result = $api_instance->siteUpsertWithWhere($where, $data);
+    $result = $apiInstance->siteUpsertWithWhere($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
