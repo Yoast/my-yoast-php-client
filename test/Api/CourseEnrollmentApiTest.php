@@ -292,16 +292,6 @@ class CourseEnrollmentApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for courseEnrollmentStudentGotCourseFrom
-     *
-     * Get the customer who bought a course for a user..
-     *
-     */
-    public function testCourseEnrollmentStudentGotCourseFrom()
-    {
-    }
-
-    /**
      * Test case for courseEnrollmentTransfer
      *
      * .

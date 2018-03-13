@@ -26,7 +26,6 @@ Method | HTTP request | Description
 [**courseEnrollmentReplaceByIdPutCourseEnrollmentsid**](CourseEnrollmentApi.md#courseEnrollmentReplaceByIdPutCourseEnrollmentsid) | **PUT** /CourseEnrollments/{id} | Replace attributes for a model instance and persist it into the data source.
 [**courseEnrollmentReplaceOrCreatePostCourseEnrollmentsReplaceOrCreate**](CourseEnrollmentApi.md#courseEnrollmentReplaceOrCreatePostCourseEnrollmentsReplaceOrCreate) | **POST** /CourseEnrollments/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 [**courseEnrollmentReplaceOrCreatePutCourseEnrollments**](CourseEnrollmentApi.md#courseEnrollmentReplaceOrCreatePutCourseEnrollments) | **PUT** /CourseEnrollments | Replace an existing model instance or insert a new one into the data source.
-[**courseEnrollmentStudentGotCourseFrom**](CourseEnrollmentApi.md#courseEnrollmentStudentGotCourseFrom) | **GET** /CourseEnrollments/{id}/studentGotCourseFrom | Get the customer who bought a course for a user.
 [**courseEnrollmentTransfer**](CourseEnrollmentApi.md#courseEnrollmentTransfer) | **POST** /CourseEnrollments/transfer | 
 [**courseEnrollmentUpdateAll**](CourseEnrollmentApi.md#courseEnrollmentUpdateAll) | **POST** /CourseEnrollments/update | Update instances of the model matched by {{where}} from the data source.
 [**courseEnrollmentUpsertWithWhere**](CourseEnrollmentApi.md#courseEnrollmentUpsertWithWhere) | **POST** /CourseEnrollments/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
@@ -1072,53 +1071,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **courseEnrollmentStudentGotCourseFrom**
-> object courseEnrollmentStudentGotCourseFrom($id)
-
-Get the customer who bought a course for a user.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$id = "id_example"; // string | 
-
-try {
-    $result = $apiInstance->courseEnrollmentStudentGotCourseFrom($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentStudentGotCourseFrom: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
-
-### Return type
-
-**object**
 
 ### Authorization
 
