@@ -1007,7 +1007,7 @@ class CustomerApi
             );
         }
 
-        $resourcePath = '/Customers:id/courseBuyer/{courseId}';
+        $resourcePath = '/Customers/{id}/courseBuyer/{courseId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**customerChangePassword**](CustomerApi.md#customerChangePassword) | **POST** /Customers/change-password | Change a user&#39;s password.
 [**customerConfirm**](CustomerApi.md#customerConfirm) | **GET** /Customers/confirm | Confirm a user registration with email verification token.
 [**customerCount**](CustomerApi.md#customerCount) | **GET** /Customers/count | Count instances of the model matched by where from the data source.
-[**customerCourseBuyer**](CustomerApi.md#customerCourseBuyer) | **GET** /Customers:id/courseBuyer/{courseId} | Get the customer who bought a course for a user.
+[**customerCourseBuyer**](CustomerApi.md#customerCourseBuyer) | **GET** /Customers/{id}/courseBuyer/{courseId} | Get the customer who bought a course for a user.
 [**customerCreate**](CustomerApi.md#customerCreate) | **POST** /Customers | Create a new instance of the model and persist it into the data source.
 [**customerCreateChangeStreamGetCustomersChangeStream**](CustomerApi.md#customerCreateChangeStreamGetCustomersChangeStream) | **GET** /Customers/change-stream | Create a change stream.
 [**customerCreateChangeStreamPostCustomersChangeStream**](CustomerApi.md#customerCreateChangeStreamPostCustomersChangeStream) | **POST** /Customers/change-stream | Create a change stream.
