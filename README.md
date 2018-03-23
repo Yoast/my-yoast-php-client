@@ -152,7 +152,6 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerChangePassword**](docs/Api/CustomerApi.md#customerchangepassword) | **POST** /Customers/change-password | Change a user&#39;s password.
 *CustomerApi* | [**customerConfirm**](docs/Api/CustomerApi.md#customerconfirm) | **GET** /Customers/confirm | Confirm a user registration with email verification token.
 *CustomerApi* | [**customerCount**](docs/Api/CustomerApi.md#customercount) | **GET** /Customers/count | Count instances of the model matched by where from the data source.
-*CustomerApi* | [**customerCourseBuyer**](docs/Api/CustomerApi.md#customercoursebuyer) | **GET** /Customers/{id}/courseBuyer/{courseId} | Get the customer who bought a course for a user.
 *CustomerApi* | [**customerCreate**](docs/Api/CustomerApi.md#customercreate) | **POST** /Customers | Create a new instance of the model and persist it into the data source.
 *CustomerApi* | [**customerCreateChangeStreamGetCustomersChangeStream**](docs/Api/CustomerApi.md#customercreatechangestreamgetcustomerschangestream) | **GET** /Customers/change-stream | Create a change stream.
 *CustomerApi* | [**customerCreateChangeStreamPostCustomersChangeStream**](docs/Api/CustomerApi.md#customercreatechangestreampostcustomerschangestream) | **POST** /Customers/change-stream | Create a change stream.

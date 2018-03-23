@@ -102,16 +102,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for customerCourseBuyer
-     *
-     * Get the customer who bought a course for a user..
-     *
-     */
-    public function testCustomerCourseBuyer()
-    {
-    }
-
-    /**
      * Test case for customerCreate
      *
      * Create a new instance of the model and persist it into the data source..
