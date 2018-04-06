@@ -1,6 +1,6 @@
 <?php
 /**
- * CourseApiTest
+ * CustomerNoteApiTest
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Yoast\MyYoastApiClient\ApiException;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * CourseApiTest Class Doc Comment
+ * CustomerNoteApiTest Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CourseApiTest extends \PHPUnit_Framework_TestCase
+class CustomerNoteApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -73,232 +73,202 @@ class CourseApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for courseCount
+     * Test case for customerNoteCount
      *
      * Count instances of the model matched by where from the data source..
      *
      */
-    public function testCourseCount()
+    public function testCustomerNoteCount()
     {
     }
 
     /**
-     * Test case for courseCreate
+     * Test case for customerNoteCreate
      *
      * Create a new instance of the model and persist it into the data source..
      *
      */
-    public function testCourseCreate()
+    public function testCustomerNoteCreate()
     {
     }
 
     /**
-     * Test case for courseCreateChangeStreamGetCoursesChangeStream
+     * Test case for customerNoteCreateChangeStreamGetCustomerNotesChangeStream
      *
      * Create a change stream..
      *
      */
-    public function testCourseCreateChangeStreamGetCoursesChangeStream()
+    public function testCustomerNoteCreateChangeStreamGetCustomerNotesChangeStream()
     {
     }
 
     /**
-     * Test case for courseCreateChangeStreamPostCoursesChangeStream
+     * Test case for customerNoteCreateChangeStreamPostCustomerNotesChangeStream
      *
      * Create a change stream..
      *
      */
-    public function testCourseCreateChangeStreamPostCoursesChangeStream()
+    public function testCustomerNoteCreateChangeStreamPostCustomerNotesChangeStream()
     {
     }
 
     /**
-     * Test case for courseDeleteById
+     * Test case for customerNoteDeleteById
      *
      * Delete a model instance by {{id}} from the data source..
      *
      */
-    public function testCourseDeleteById()
+    public function testCustomerNoteDeleteById()
     {
     }
 
     /**
-     * Test case for courseExistsGetCoursesidExists
+     * Test case for customerNoteExistsGetCustomerNotesidExists
      *
      * Check whether a model instance exists in the data source..
      *
      */
-    public function testCourseExistsGetCoursesidExists()
+    public function testCustomerNoteExistsGetCustomerNotesidExists()
     {
     }
 
     /**
-     * Test case for courseExistsHeadCoursesid
+     * Test case for customerNoteExistsHeadCustomerNotesid
      *
      * Check whether a model instance exists in the data source..
      *
      */
-    public function testCourseExistsHeadCoursesid()
+    public function testCustomerNoteExistsHeadCustomerNotesid()
     {
     }
 
     /**
-     * Test case for courseFind
+     * Test case for customerNoteFind
      *
      * Find all instances of the model matched by filter from the data source..
      *
      */
-    public function testCourseFind()
+    public function testCustomerNoteFind()
     {
     }
 
     /**
-     * Test case for courseFindById
+     * Test case for customerNoteFindById
      *
      * Find a model instance by {{id}} from the data source..
      *
      */
-    public function testCourseFindById()
+    public function testCustomerNoteFindById()
     {
     }
 
     /**
-     * Test case for courseFindOne
+     * Test case for customerNoteFindOne
      *
      * Find first instance of the model matched by filter from the data source..
      *
      */
-    public function testCourseFindOne()
+    public function testCustomerNoteFindOne()
     {
     }
 
     /**
-     * Test case for courseFromAcademy
-     *
-     * .
-     *
-     */
-    public function testCourseFromAcademy()
-    {
-    }
-
-    /**
-     * Test case for coursePatchOrCreate
+     * Test case for customerNotePatchOrCreate
      *
      * Patch an existing model instance or insert a new one into the data source..
      *
      */
-    public function testCoursePatchOrCreate()
+    public function testCustomerNotePatchOrCreate()
     {
     }
 
     /**
-     * Test case for coursePrototypeCreateProduct
+     * Test case for customerNotePrototypeGetAuthor
      *
-     * Creates a new instance in product of this model..
+     * Fetches belongsTo relation author..
      *
      */
-    public function testCoursePrototypeCreateProduct()
+    public function testCustomerNotePrototypeGetAuthor()
     {
     }
 
     /**
-     * Test case for coursePrototypeDestroyProduct
+     * Test case for customerNotePrototypeGetCustomer
      *
-     * Deletes product of this model..
+     * Fetches belongsTo relation customer..
      *
      */
-    public function testCoursePrototypeDestroyProduct()
+    public function testCustomerNotePrototypeGetCustomer()
     {
     }
 
     /**
-     * Test case for coursePrototypeGetProduct
-     *
-     * Fetches hasOne relation product..
-     *
-     */
-    public function testCoursePrototypeGetProduct()
-    {
-    }
-
-    /**
-     * Test case for coursePrototypePatchAttributes
+     * Test case for customerNotePrototypePatchAttributes
      *
      * Patch attributes for a model instance and persist it into the data source..
      *
      */
-    public function testCoursePrototypePatchAttributes()
+    public function testCustomerNotePrototypePatchAttributes()
     {
     }
 
     /**
-     * Test case for coursePrototypeUpdateProduct
-     *
-     * Update product of this model..
-     *
-     */
-    public function testCoursePrototypeUpdateProduct()
-    {
-    }
-
-    /**
-     * Test case for courseReplaceByIdPostCoursesidReplace
+     * Test case for customerNoteReplaceByIdPostCustomerNotesidReplace
      *
      * Replace attributes for a model instance and persist it into the data source..
      *
      */
-    public function testCourseReplaceByIdPostCoursesidReplace()
+    public function testCustomerNoteReplaceByIdPostCustomerNotesidReplace()
     {
     }
 
     /**
-     * Test case for courseReplaceByIdPutCoursesid
+     * Test case for customerNoteReplaceByIdPutCustomerNotesid
      *
      * Replace attributes for a model instance and persist it into the data source..
      *
      */
-    public function testCourseReplaceByIdPutCoursesid()
+    public function testCustomerNoteReplaceByIdPutCustomerNotesid()
     {
     }
 
     /**
-     * Test case for courseReplaceOrCreatePostCoursesReplaceOrCreate
+     * Test case for customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreate
      *
      * Replace an existing model instance or insert a new one into the data source..
      *
      */
-    public function testCourseReplaceOrCreatePostCoursesReplaceOrCreate()
+    public function testCustomerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreate()
     {
     }
 
     /**
-     * Test case for courseReplaceOrCreatePutCourses
+     * Test case for customerNoteReplaceOrCreatePutCustomerNotes
      *
      * Replace an existing model instance or insert a new one into the data source..
      *
      */
-    public function testCourseReplaceOrCreatePutCourses()
+    public function testCustomerNoteReplaceOrCreatePutCustomerNotes()
     {
     }
 
     /**
-     * Test case for courseUpdateAll
+     * Test case for customerNoteUpdateAll
      *
      * Update instances of the model matched by {{where}} from the data source..
      *
      */
-    public function testCourseUpdateAll()
+    public function testCustomerNoteUpdateAll()
     {
     }
 
     /**
-     * Test case for courseUpsertWithWhere
+     * Test case for customerNoteUpsertWithWhere
      *
      * Update an existing model instance or insert a new one into the data source based on the where criteria..
      *
      */
-    public function testCourseUpsertWithWhere()
+    public function testCustomerNoteUpsertWithWhere()
     {
     }
 }

@@ -38,15 +38,11 @@ Count instances of the model matched by where from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->composerTokenCount($where);
+    $result = $api_instance->composerTokenCount($where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenCount: ', $e->getMessage(), PHP_EOL;
@@ -85,15 +81,11 @@ Create a new instance of the model and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
 
 try {
-    $result = $apiInstance->composerTokenCreate($data);
+    $result = $api_instance->composerTokenCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenCreate: ', $e->getMessage(), PHP_EOL;
@@ -132,15 +124,11 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->composerTokenCreateChangeStreamGetComposerTokensChangeStream($options);
+    $result = $api_instance->composerTokenCreateChangeStreamGetComposerTokensChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenCreateChangeStreamGetComposerTokensChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -179,15 +167,11 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->composerTokenCreateChangeStreamPostComposerTokensChangeStream($options);
+    $result = $api_instance->composerTokenCreateChangeStreamPostComposerTokensChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenCreateChangeStreamPostComposerTokensChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -226,15 +210,11 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $id = "id_example"; // string | 
 
 try {
-    $result = $apiInstance->composerTokenDelete($id);
+    $result = $api_instance->composerTokenDelete($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenDelete: ', $e->getMessage(), PHP_EOL;
@@ -273,15 +253,11 @@ Delete a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->composerTokenDeleteById($id);
+    $result = $api_instance->composerTokenDeleteById($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenDeleteById: ', $e->getMessage(), PHP_EOL;
@@ -320,15 +296,11 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->composerTokenExistsGetComposerTokensidExists($id);
+    $result = $api_instance->composerTokenExistsGetComposerTokensidExists($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenExistsGetComposerTokensidExists: ', $e->getMessage(), PHP_EOL;
@@ -367,15 +339,11 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->composerTokenExistsHeadComposerTokensid($id);
+    $result = $api_instance->composerTokenExistsHeadComposerTokensid($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenExistsHeadComposerTokensid: ', $e->getMessage(), PHP_EOL;
@@ -414,15 +382,11 @@ Find all instances of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->composerTokenFind($filter);
+    $result = $api_instance->composerTokenFind($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenFind: ', $e->getMessage(), PHP_EOL;
@@ -461,16 +425,12 @@ Find a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $id = "id_example"; // string | Model id
 $filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->composerTokenFindById($id, $filter);
+    $result = $api_instance->composerTokenFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenFindById: ', $e->getMessage(), PHP_EOL;
@@ -510,15 +470,11 @@ Find first instance of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->composerTokenFindOne($filter);
+    $result = $api_instance->composerTokenFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenFindOne: ', $e->getMessage(), PHP_EOL;
@@ -557,15 +513,11 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | 
 
 try {
-    $result = $apiInstance->composerTokenGenerate($data);
+    $result = $api_instance->composerTokenGenerate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenGenerate: ', $e->getMessage(), PHP_EOL;
@@ -604,15 +556,11 @@ Patch an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
 
 try {
-    $result = $apiInstance->composerTokenPatchOrCreate($data);
+    $result = $api_instance->composerTokenPatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenPatchOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -651,16 +599,12 @@ Fetches belongsTo relation customer.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $id = "id_example"; // string | ComposerToken id
 $refresh = true; // bool | 
 
 try {
-    $result = $apiInstance->composerTokenPrototypeGetCustomer($id, $refresh);
+    $result = $api_instance->composerTokenPrototypeGetCustomer($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenPrototypeGetCustomer: ', $e->getMessage(), PHP_EOL;
@@ -700,16 +644,12 @@ Patch attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $id = "id_example"; // string | ComposerToken id
 $data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->composerTokenPrototypePatchAttributes($id, $data);
+    $result = $api_instance->composerTokenPrototypePatchAttributes($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
@@ -749,16 +689,12 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $id = "id_example"; // string | 
 $data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | 
 
 try {
-    $result = $apiInstance->composerTokenRename($id, $data);
+    $result = $api_instance->composerTokenRename($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenRename: ', $e->getMessage(), PHP_EOL;
@@ -798,16 +734,12 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
 
 try {
-    $result = $apiInstance->composerTokenReplaceByIdPostComposerTokensidReplace($id, $data);
+    $result = $api_instance->composerTokenReplaceByIdPostComposerTokensidReplace($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenReplaceByIdPostComposerTokensidReplace: ', $e->getMessage(), PHP_EOL;
@@ -847,16 +779,12 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
 
 try {
-    $result = $apiInstance->composerTokenReplaceByIdPutComposerTokensid($id, $data);
+    $result = $api_instance->composerTokenReplaceByIdPutComposerTokensid($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenReplaceByIdPutComposerTokensid: ', $e->getMessage(), PHP_EOL;
@@ -896,15 +824,11 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
 
 try {
-    $result = $apiInstance->composerTokenReplaceOrCreatePostComposerTokensReplaceOrCreate($data);
+    $result = $api_instance->composerTokenReplaceOrCreatePostComposerTokensReplaceOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenReplaceOrCreatePostComposerTokensReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -943,15 +867,11 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
 
 try {
-    $result = $apiInstance->composerTokenReplaceOrCreatePutComposerTokens($data);
+    $result = $api_instance->composerTokenReplaceOrCreatePutComposerTokens($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenReplaceOrCreatePutComposerTokens: ', $e->getMessage(), PHP_EOL;
@@ -990,16 +910,12 @@ Update instances of the model matched by {{where}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->composerTokenUpdateAll($where, $data);
+    $result = $api_instance->composerTokenUpdateAll($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenUpdateAll: ', $e->getMessage(), PHP_EOL;
@@ -1039,16 +955,12 @@ Update an existing model instance or insert a new one into the data source based
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->composerTokenUpsertWithWhere($where, $data);
+    $result = $api_instance->composerTokenUpsertWithWhere($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->composerTokenUpsertWithWhere: ', $e->getMessage(), PHP_EOL;

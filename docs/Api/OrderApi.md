@@ -90,15 +90,11 @@ Count instances of the model matched by where from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->orderCount($where);
+    $result = $api_instance->orderCount($where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderCount: ', $e->getMessage(), PHP_EOL;
@@ -137,15 +133,11 @@ Create a new instance of the model and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $apiInstance->orderCreate($data);
+    $result = $api_instance->orderCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderCreate: ', $e->getMessage(), PHP_EOL;
@@ -184,15 +176,11 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->orderCreateChangeStreamGetOrdersChangeStream($options);
+    $result = $api_instance->orderCreateChangeStreamGetOrdersChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderCreateChangeStreamGetOrdersChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -231,15 +219,11 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->orderCreateChangeStreamPostOrdersChangeStream($options);
+    $result = $api_instance->orderCreateChangeStreamPostOrdersChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderCreateChangeStreamPostOrdersChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -278,15 +262,11 @@ Delete a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->orderDeleteById($id);
+    $result = $api_instance->orderDeleteById($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderDeleteById: ', $e->getMessage(), PHP_EOL;
@@ -325,15 +305,11 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->orderExistsGetOrdersidExists($id);
+    $result = $api_instance->orderExistsGetOrdersidExists($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderExistsGetOrdersidExists: ', $e->getMessage(), PHP_EOL;
@@ -372,15 +348,11 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->orderExistsHeadOrdersid($id);
+    $result = $api_instance->orderExistsHeadOrdersid($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderExistsHeadOrdersid: ', $e->getMessage(), PHP_EOL;
@@ -419,15 +391,11 @@ Find all instances of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->orderFind($filter);
+    $result = $api_instance->orderFind($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderFind: ', $e->getMessage(), PHP_EOL;
@@ -466,16 +434,12 @@ Find a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
 $filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->orderFindById($id, $filter);
+    $result = $api_instance->orderFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderFindById: ', $e->getMessage(), PHP_EOL;
@@ -515,15 +479,11 @@ Find first instance of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->orderFindOne($filter);
+    $result = $api_instance->orderFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderFindOne: ', $e->getMessage(), PHP_EOL;
@@ -562,16 +522,12 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $order_data = "order_data_example"; // string | 
 $extra_data = "extra_data_example"; // string | 
 
 try {
-    $result = $apiInstance->orderFromWooCommerce($order_data, $extra_data);
+    $result = $api_instance->orderFromWooCommerce($order_data, $extra_data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderFromWooCommerce: ', $e->getMessage(), PHP_EOL;
@@ -611,15 +567,11 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | 
 
 try {
-    $result = $apiInstance->orderInvoice($id);
+    $result = $api_instance->orderInvoice($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderInvoice: ', $e->getMessage(), PHP_EOL;
@@ -658,15 +610,11 @@ Patch an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $apiInstance->orderPatchOrCreate($data);
+    $result = $api_instance->orderPatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPatchOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -705,16 +653,12 @@ Counts discounts of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->orderPrototypeCountDiscounts($id, $where);
+    $result = $api_instance->orderPrototypeCountDiscounts($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCountDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -754,16 +698,12 @@ Counts invoices of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->orderPrototypeCountInvoices($id, $where);
+    $result = $api_instance->orderPrototypeCountInvoices($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCountInvoices: ', $e->getMessage(), PHP_EOL;
@@ -803,16 +743,12 @@ Counts items of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->orderPrototypeCountItems($id, $where);
+    $result = $api_instance->orderPrototypeCountItems($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCountItems: ', $e->getMessage(), PHP_EOL;
@@ -852,16 +788,12 @@ Counts refunds of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->orderPrototypeCountRefunds($id, $where);
+    $result = $api_instance->orderPrototypeCountRefunds($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCountRefunds: ', $e->getMessage(), PHP_EOL;
@@ -901,16 +833,12 @@ Counts subscriptions of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->orderPrototypeCountSubscriptions($id, $where);
+    $result = $api_instance->orderPrototypeCountSubscriptions($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCountSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -950,16 +878,12 @@ Counts transactions of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->orderPrototypeCountTransactions($id, $where);
+    $result = $api_instance->orderPrototypeCountTransactions($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCountTransactions: ', $e->getMessage(), PHP_EOL;
@@ -999,16 +923,12 @@ Counts vats of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->orderPrototypeCountVats($id, $where);
+    $result = $api_instance->orderPrototypeCountVats($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCountVats: ', $e->getMessage(), PHP_EOL;
@@ -1048,16 +968,12 @@ Creates a new instance in discounts of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | 
 
 try {
-    $result = $apiInstance->orderPrototypeCreateDiscounts($id, $data);
+    $result = $api_instance->orderPrototypeCreateDiscounts($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCreateDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -1097,16 +1013,12 @@ Creates a new instance in invoices of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $data = new \Yoast\MyYoastApiClient\Model\Invoice(); // \Yoast\MyYoastApiClient\Model\Invoice | 
 
 try {
-    $result = $apiInstance->orderPrototypeCreateInvoices($id, $data);
+    $result = $api_instance->orderPrototypeCreateInvoices($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCreateInvoices: ', $e->getMessage(), PHP_EOL;
@@ -1146,16 +1058,12 @@ Creates a new instance in items of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | 
 
 try {
-    $result = $apiInstance->orderPrototypeCreateItems($id, $data);
+    $result = $api_instance->orderPrototypeCreateItems($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCreateItems: ', $e->getMessage(), PHP_EOL;
@@ -1195,16 +1103,12 @@ Creates a new instance in refunds of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | 
 
 try {
-    $result = $apiInstance->orderPrototypeCreateRefunds($id, $data);
+    $result = $api_instance->orderPrototypeCreateRefunds($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCreateRefunds: ', $e->getMessage(), PHP_EOL;
@@ -1244,16 +1148,12 @@ Creates a new instance in subscriptions of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
 
 try {
-    $result = $apiInstance->orderPrototypeCreateSubscriptions($id, $data);
+    $result = $api_instance->orderPrototypeCreateSubscriptions($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCreateSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -1293,16 +1193,12 @@ Creates a new instance in transactions of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | 
 
 try {
-    $result = $apiInstance->orderPrototypeCreateTransactions($id, $data);
+    $result = $api_instance->orderPrototypeCreateTransactions($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCreateTransactions: ', $e->getMessage(), PHP_EOL;
@@ -1342,16 +1238,12 @@ Creates a new instance in vats of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | 
 
 try {
-    $result = $apiInstance->orderPrototypeCreateVats($id, $data);
+    $result = $api_instance->orderPrototypeCreateVats($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeCreateVats: ', $e->getMessage(), PHP_EOL;
@@ -1391,15 +1283,11 @@ Deletes all discounts of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 
 try {
-    $apiInstance->orderPrototypeDeleteDiscounts($id);
+    $api_instance->orderPrototypeDeleteDiscounts($id);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDeleteDiscounts: ', $e->getMessage(), PHP_EOL;
 }
@@ -1437,15 +1325,11 @@ Deletes all invoices of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 
 try {
-    $apiInstance->orderPrototypeDeleteInvoices($id);
+    $api_instance->orderPrototypeDeleteInvoices($id);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDeleteInvoices: ', $e->getMessage(), PHP_EOL;
 }
@@ -1483,15 +1367,11 @@ Deletes all items of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 
 try {
-    $apiInstance->orderPrototypeDeleteItems($id);
+    $api_instance->orderPrototypeDeleteItems($id);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDeleteItems: ', $e->getMessage(), PHP_EOL;
 }
@@ -1529,15 +1409,11 @@ Deletes all refunds of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 
 try {
-    $apiInstance->orderPrototypeDeleteRefunds($id);
+    $api_instance->orderPrototypeDeleteRefunds($id);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDeleteRefunds: ', $e->getMessage(), PHP_EOL;
 }
@@ -1575,15 +1451,11 @@ Deletes all subscriptions of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 
 try {
-    $apiInstance->orderPrototypeDeleteSubscriptions($id);
+    $api_instance->orderPrototypeDeleteSubscriptions($id);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDeleteSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
@@ -1621,15 +1493,11 @@ Deletes all transactions of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 
 try {
-    $apiInstance->orderPrototypeDeleteTransactions($id);
+    $api_instance->orderPrototypeDeleteTransactions($id);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDeleteTransactions: ', $e->getMessage(), PHP_EOL;
 }
@@ -1667,15 +1535,11 @@ Deletes all vats of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 
 try {
-    $apiInstance->orderPrototypeDeleteVats($id);
+    $api_instance->orderPrototypeDeleteVats($id);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDeleteVats: ', $e->getMessage(), PHP_EOL;
 }
@@ -1713,16 +1577,12 @@ Delete a related item by id for discounts.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for discounts
 
 try {
-    $apiInstance->orderPrototypeDestroyByIdDiscounts($id, $fk);
+    $api_instance->orderPrototypeDestroyByIdDiscounts($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdDiscounts: ', $e->getMessage(), PHP_EOL;
 }
@@ -1761,16 +1621,12 @@ Delete a related item by id for invoices.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for invoices
 
 try {
-    $apiInstance->orderPrototypeDestroyByIdInvoices($id, $fk);
+    $api_instance->orderPrototypeDestroyByIdInvoices($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdInvoices: ', $e->getMessage(), PHP_EOL;
 }
@@ -1809,16 +1665,12 @@ Delete a related item by id for items.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for items
 
 try {
-    $apiInstance->orderPrototypeDestroyByIdItems($id, $fk);
+    $api_instance->orderPrototypeDestroyByIdItems($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdItems: ', $e->getMessage(), PHP_EOL;
 }
@@ -1857,16 +1709,12 @@ Delete a related item by id for refunds.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for refunds
 
 try {
-    $apiInstance->orderPrototypeDestroyByIdRefunds($id, $fk);
+    $api_instance->orderPrototypeDestroyByIdRefunds($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdRefunds: ', $e->getMessage(), PHP_EOL;
 }
@@ -1905,16 +1753,12 @@ Delete a related item by id for subscriptions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $apiInstance->orderPrototypeDestroyByIdSubscriptions($id, $fk);
+    $api_instance->orderPrototypeDestroyByIdSubscriptions($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
@@ -1953,16 +1797,12 @@ Delete a related item by id for transactions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for transactions
 
 try {
-    $apiInstance->orderPrototypeDestroyByIdTransactions($id, $fk);
+    $api_instance->orderPrototypeDestroyByIdTransactions($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdTransactions: ', $e->getMessage(), PHP_EOL;
 }
@@ -2001,16 +1841,12 @@ Delete a related item by id for vats.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for vats
 
 try {
-    $apiInstance->orderPrototypeDestroyByIdVats($id, $fk);
+    $api_instance->orderPrototypeDestroyByIdVats($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeDestroyByIdVats: ', $e->getMessage(), PHP_EOL;
 }
@@ -2049,16 +1885,12 @@ Check the existence of subscriptions relation to an item by id.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $result = $apiInstance->orderPrototypeExistsSubscriptions($id, $fk);
+    $result = $api_instance->orderPrototypeExistsSubscriptions($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeExistsSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -2098,16 +1930,12 @@ Find a related item by id for discounts.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for discounts
 
 try {
-    $result = $apiInstance->orderPrototypeFindByIdDiscounts($id, $fk);
+    $result = $api_instance->orderPrototypeFindByIdDiscounts($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeFindByIdDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -2147,16 +1975,12 @@ Find a related item by id for invoices.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for invoices
 
 try {
-    $result = $apiInstance->orderPrototypeFindByIdInvoices($id, $fk);
+    $result = $api_instance->orderPrototypeFindByIdInvoices($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeFindByIdInvoices: ', $e->getMessage(), PHP_EOL;
@@ -2196,16 +2020,12 @@ Find a related item by id for items.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for items
 
 try {
-    $result = $apiInstance->orderPrototypeFindByIdItems($id, $fk);
+    $result = $api_instance->orderPrototypeFindByIdItems($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeFindByIdItems: ', $e->getMessage(), PHP_EOL;
@@ -2245,16 +2065,12 @@ Find a related item by id for refunds.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for refunds
 
 try {
-    $result = $apiInstance->orderPrototypeFindByIdRefunds($id, $fk);
+    $result = $api_instance->orderPrototypeFindByIdRefunds($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeFindByIdRefunds: ', $e->getMessage(), PHP_EOL;
@@ -2294,16 +2110,12 @@ Find a related item by id for subscriptions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $result = $apiInstance->orderPrototypeFindByIdSubscriptions($id, $fk);
+    $result = $api_instance->orderPrototypeFindByIdSubscriptions($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeFindByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -2343,16 +2155,12 @@ Find a related item by id for transactions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for transactions
 
 try {
-    $result = $apiInstance->orderPrototypeFindByIdTransactions($id, $fk);
+    $result = $api_instance->orderPrototypeFindByIdTransactions($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeFindByIdTransactions: ', $e->getMessage(), PHP_EOL;
@@ -2392,16 +2200,12 @@ Find a related item by id for vats.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for vats
 
 try {
-    $result = $apiInstance->orderPrototypeFindByIdVats($id, $fk);
+    $result = $api_instance->orderPrototypeFindByIdVats($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeFindByIdVats: ', $e->getMessage(), PHP_EOL;
@@ -2441,16 +2245,12 @@ Fetches belongsTo relation customer.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $refresh = true; // bool | 
 
 try {
-    $result = $apiInstance->orderPrototypeGetCustomer($id, $refresh);
+    $result = $api_instance->orderPrototypeGetCustomer($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeGetCustomer: ', $e->getMessage(), PHP_EOL;
@@ -2490,16 +2290,12 @@ Queries discounts of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $apiInstance->orderPrototypeGetDiscounts($id, $filter);
+    $result = $api_instance->orderPrototypeGetDiscounts($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeGetDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -2539,16 +2335,12 @@ Queries invoices of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $apiInstance->orderPrototypeGetInvoices($id, $filter);
+    $result = $api_instance->orderPrototypeGetInvoices($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeGetInvoices: ', $e->getMessage(), PHP_EOL;
@@ -2588,16 +2380,12 @@ Queries items of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $apiInstance->orderPrototypeGetItems($id, $filter);
+    $result = $api_instance->orderPrototypeGetItems($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeGetItems: ', $e->getMessage(), PHP_EOL;
@@ -2637,16 +2425,12 @@ Queries refunds of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $apiInstance->orderPrototypeGetRefunds($id, $filter);
+    $result = $api_instance->orderPrototypeGetRefunds($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeGetRefunds: ', $e->getMessage(), PHP_EOL;
@@ -2686,16 +2470,12 @@ Queries subscriptions of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $apiInstance->orderPrototypeGetSubscriptions($id, $filter);
+    $result = $api_instance->orderPrototypeGetSubscriptions($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeGetSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -2735,16 +2515,12 @@ Queries transactions of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $apiInstance->orderPrototypeGetTransactions($id, $filter);
+    $result = $api_instance->orderPrototypeGetTransactions($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeGetTransactions: ', $e->getMessage(), PHP_EOL;
@@ -2784,16 +2560,12 @@ Queries vats of Order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $apiInstance->orderPrototypeGetVats($id, $filter);
+    $result = $api_instance->orderPrototypeGetVats($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeGetVats: ', $e->getMessage(), PHP_EOL;
@@ -2833,17 +2605,13 @@ Add a related item by id for subscriptions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 $data = new \Yoast\MyYoastApiClient\Model\SubscriptionOrders(); // \Yoast\MyYoastApiClient\Model\SubscriptionOrders | 
 
 try {
-    $result = $apiInstance->orderPrototypeLinkSubscriptions($id, $fk, $data);
+    $result = $api_instance->orderPrototypeLinkSubscriptions($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeLinkSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -2884,16 +2652,12 @@ Patch attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->orderPrototypePatchAttributes($id, $data);
+    $result = $api_instance->orderPrototypePatchAttributes($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
@@ -2933,16 +2697,12 @@ Remove the subscriptions relation to an item by id.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 
 try {
-    $apiInstance->orderPrototypeUnlinkSubscriptions($id, $fk);
+    $api_instance->orderPrototypeUnlinkSubscriptions($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeUnlinkSubscriptions: ', $e->getMessage(), PHP_EOL;
 }
@@ -2981,17 +2741,13 @@ Update a related item by id for discounts.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for discounts
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | 
 
 try {
-    $result = $apiInstance->orderPrototypeUpdateByIdDiscounts($id, $fk, $data);
+    $result = $api_instance->orderPrototypeUpdateByIdDiscounts($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -3032,17 +2788,13 @@ Update a related item by id for invoices.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for invoices
 $data = new \Yoast\MyYoastApiClient\Model\Invoice(); // \Yoast\MyYoastApiClient\Model\Invoice | 
 
 try {
-    $result = $apiInstance->orderPrototypeUpdateByIdInvoices($id, $fk, $data);
+    $result = $api_instance->orderPrototypeUpdateByIdInvoices($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdInvoices: ', $e->getMessage(), PHP_EOL;
@@ -3083,17 +2835,13 @@ Update a related item by id for items.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for items
 $data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | 
 
 try {
-    $result = $apiInstance->orderPrototypeUpdateByIdItems($id, $fk, $data);
+    $result = $api_instance->orderPrototypeUpdateByIdItems($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdItems: ', $e->getMessage(), PHP_EOL;
@@ -3134,17 +2882,13 @@ Update a related item by id for refunds.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for refunds
 $data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | 
 
 try {
-    $result = $apiInstance->orderPrototypeUpdateByIdRefunds($id, $fk, $data);
+    $result = $api_instance->orderPrototypeUpdateByIdRefunds($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdRefunds: ', $e->getMessage(), PHP_EOL;
@@ -3185,17 +2929,13 @@ Update a related item by id for subscriptions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for subscriptions
 $data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
 
 try {
-    $result = $apiInstance->orderPrototypeUpdateByIdSubscriptions($id, $fk, $data);
+    $result = $api_instance->orderPrototypeUpdateByIdSubscriptions($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -3236,17 +2976,13 @@ Update a related item by id for transactions.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for transactions
 $data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | 
 
 try {
-    $result = $apiInstance->orderPrototypeUpdateByIdTransactions($id, $fk, $data);
+    $result = $api_instance->orderPrototypeUpdateByIdTransactions($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdTransactions: ', $e->getMessage(), PHP_EOL;
@@ -3287,17 +3023,13 @@ Update a related item by id for vats.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Order id
 $fk = "fk_example"; // string | Foreign key for vats
 $data = new \Yoast\MyYoastApiClient\Model\VATLineItem(); // \Yoast\MyYoastApiClient\Model\VATLineItem | 
 
 try {
-    $result = $apiInstance->orderPrototypeUpdateByIdVats($id, $fk, $data);
+    $result = $api_instance->orderPrototypeUpdateByIdVats($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderPrototypeUpdateByIdVats: ', $e->getMessage(), PHP_EOL;
@@ -3338,16 +3070,12 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | 
 $refund_id = "refund_id_example"; // string | 
 
 try {
-    $result = $apiInstance->orderRefundInvoice($id, $refund_id);
+    $result = $api_instance->orderRefundInvoice($id, $refund_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderRefundInvoice: ', $e->getMessage(), PHP_EOL;
@@ -3387,16 +3115,12 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $apiInstance->orderReplaceByIdPostOrdersidReplace($id, $data);
+    $result = $api_instance->orderReplaceByIdPostOrdersidReplace($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderReplaceByIdPostOrdersidReplace: ', $e->getMessage(), PHP_EOL;
@@ -3436,16 +3160,12 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $apiInstance->orderReplaceByIdPutOrdersid($id, $data);
+    $result = $api_instance->orderReplaceByIdPutOrdersid($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderReplaceByIdPutOrdersid: ', $e->getMessage(), PHP_EOL;
@@ -3485,15 +3205,11 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $apiInstance->orderReplaceOrCreatePostOrdersReplaceOrCreate($data);
+    $result = $api_instance->orderReplaceOrCreatePostOrdersReplaceOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderReplaceOrCreatePostOrdersReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -3532,15 +3248,11 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | Model instance data
 
 try {
-    $result = $apiInstance->orderReplaceOrCreatePutOrders($data);
+    $result = $api_instance->orderReplaceOrCreatePutOrders($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderReplaceOrCreatePutOrders: ', $e->getMessage(), PHP_EOL;
@@ -3579,16 +3291,12 @@ Update instances of the model matched by {{where}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->orderUpdateAll($where, $data);
+    $result = $api_instance->orderUpdateAll($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderUpdateAll: ', $e->getMessage(), PHP_EOL;
@@ -3628,16 +3336,12 @@ Update an existing model instance or insert a new one into the data source based
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\OrderApi();
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->orderUpsertWithWhere($where, $data);
+    $result = $api_instance->orderUpsertWithWhere($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->orderUpsertWithWhere: ', $e->getMessage(), PHP_EOL;

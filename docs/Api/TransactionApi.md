@@ -42,15 +42,11 @@ Count instances of the model matched by where from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->transactionCount($where);
+    $result = $api_instance->transactionCount($where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionCount: ', $e->getMessage(), PHP_EOL;
@@ -89,15 +85,11 @@ Create a new instance of the model and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
 
 try {
-    $result = $apiInstance->transactionCreate($data);
+    $result = $api_instance->transactionCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionCreate: ', $e->getMessage(), PHP_EOL;
@@ -136,15 +128,11 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->transactionCreateChangeStreamGetTransactionsChangeStream($options);
+    $result = $api_instance->transactionCreateChangeStreamGetTransactionsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionCreateChangeStreamGetTransactionsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -183,15 +171,11 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->transactionCreateChangeStreamPostTransactionsChangeStream($options);
+    $result = $api_instance->transactionCreateChangeStreamPostTransactionsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionCreateChangeStreamPostTransactionsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -230,15 +214,11 @@ Delete a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->transactionDeleteById($id);
+    $result = $api_instance->transactionDeleteById($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionDeleteById: ', $e->getMessage(), PHP_EOL;
@@ -277,15 +257,11 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->transactionExistsGetTransactionsidExists($id);
+    $result = $api_instance->transactionExistsGetTransactionsidExists($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionExistsGetTransactionsidExists: ', $e->getMessage(), PHP_EOL;
@@ -324,15 +300,11 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->transactionExistsHeadTransactionsid($id);
+    $result = $api_instance->transactionExistsHeadTransactionsid($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionExistsHeadTransactionsid: ', $e->getMessage(), PHP_EOL;
@@ -371,15 +343,11 @@ Find all instances of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->transactionFind($filter);
+    $result = $api_instance->transactionFind($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionFind: ', $e->getMessage(), PHP_EOL;
@@ -418,16 +386,12 @@ Find a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Model id
 $filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->transactionFindById($id, $filter);
+    $result = $api_instance->transactionFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionFindById: ', $e->getMessage(), PHP_EOL;
@@ -467,15 +431,11 @@ Find first instance of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->transactionFindOne($filter);
+    $result = $api_instance->transactionFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionFindOne: ', $e->getMessage(), PHP_EOL;
@@ -514,15 +474,11 @@ Patch an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
 
 try {
-    $result = $apiInstance->transactionPatchOrCreate($data);
+    $result = $api_instance->transactionPatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionPatchOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -561,16 +517,12 @@ Counts refunds of Transaction.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Transaction id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->transactionPrototypeCountRefunds($id, $where);
+    $result = $api_instance->transactionPrototypeCountRefunds($id, $where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionPrototypeCountRefunds: ', $e->getMessage(), PHP_EOL;
@@ -610,16 +562,12 @@ Creates a new instance in refunds of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Transaction id
 $data = new \Yoast\MyYoastApiClient\Model\TransactionRefund(); // \Yoast\MyYoastApiClient\Model\TransactionRefund | 
 
 try {
-    $result = $apiInstance->transactionPrototypeCreateRefunds($id, $data);
+    $result = $api_instance->transactionPrototypeCreateRefunds($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionPrototypeCreateRefunds: ', $e->getMessage(), PHP_EOL;
@@ -659,15 +607,11 @@ Deletes all refunds of this model.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Transaction id
 
 try {
-    $apiInstance->transactionPrototypeDeleteRefunds($id);
+    $api_instance->transactionPrototypeDeleteRefunds($id);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionPrototypeDeleteRefunds: ', $e->getMessage(), PHP_EOL;
 }
@@ -705,16 +649,12 @@ Delete a related item by id for refunds.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Transaction id
 $fk = "fk_example"; // string | Foreign key for refunds
 
 try {
-    $apiInstance->transactionPrototypeDestroyByIdRefunds($id, $fk);
+    $api_instance->transactionPrototypeDestroyByIdRefunds($id, $fk);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionPrototypeDestroyByIdRefunds: ', $e->getMessage(), PHP_EOL;
 }
@@ -753,16 +693,12 @@ Find a related item by id for refunds.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Transaction id
 $fk = "fk_example"; // string | Foreign key for refunds
 
 try {
-    $result = $apiInstance->transactionPrototypeFindByIdRefunds($id, $fk);
+    $result = $api_instance->transactionPrototypeFindByIdRefunds($id, $fk);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionPrototypeFindByIdRefunds: ', $e->getMessage(), PHP_EOL;
@@ -802,16 +738,12 @@ Fetches belongsTo relation order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Transaction id
 $refresh = true; // bool | 
 
 try {
-    $result = $apiInstance->transactionPrototypeGetOrder($id, $refresh);
+    $result = $api_instance->transactionPrototypeGetOrder($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionPrototypeGetOrder: ', $e->getMessage(), PHP_EOL;
@@ -851,16 +783,12 @@ Queries refunds of Transaction.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Transaction id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $apiInstance->transactionPrototypeGetRefunds($id, $filter);
+    $result = $api_instance->transactionPrototypeGetRefunds($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionPrototypeGetRefunds: ', $e->getMessage(), PHP_EOL;
@@ -900,16 +828,12 @@ Patch attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Transaction id
 $data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->transactionPrototypePatchAttributes($id, $data);
+    $result = $api_instance->transactionPrototypePatchAttributes($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
@@ -949,17 +873,13 @@ Update a related item by id for refunds.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Transaction id
 $fk = "fk_example"; // string | Foreign key for refunds
 $data = new \Yoast\MyYoastApiClient\Model\TransactionRefund(); // \Yoast\MyYoastApiClient\Model\TransactionRefund | 
 
 try {
-    $result = $apiInstance->transactionPrototypeUpdateByIdRefunds($id, $fk, $data);
+    $result = $api_instance->transactionPrototypeUpdateByIdRefunds($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionPrototypeUpdateByIdRefunds: ', $e->getMessage(), PHP_EOL;
@@ -1000,16 +920,12 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
 
 try {
-    $result = $apiInstance->transactionReplaceByIdPostTransactionsidReplace($id, $data);
+    $result = $api_instance->transactionReplaceByIdPostTransactionsidReplace($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionReplaceByIdPostTransactionsidReplace: ', $e->getMessage(), PHP_EOL;
@@ -1049,16 +965,12 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
 
 try {
-    $result = $apiInstance->transactionReplaceByIdPutTransactionsid($id, $data);
+    $result = $api_instance->transactionReplaceByIdPutTransactionsid($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionReplaceByIdPutTransactionsid: ', $e->getMessage(), PHP_EOL;
@@ -1098,15 +1010,11 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
 
 try {
-    $result = $apiInstance->transactionReplaceOrCreatePostTransactionsReplaceOrCreate($data);
+    $result = $api_instance->transactionReplaceOrCreatePostTransactionsReplaceOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionReplaceOrCreatePostTransactionsReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -1145,15 +1053,11 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | Model instance data
 
 try {
-    $result = $apiInstance->transactionReplaceOrCreatePutTransactions($data);
+    $result = $api_instance->transactionReplaceOrCreatePutTransactions($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionReplaceOrCreatePutTransactions: ', $e->getMessage(), PHP_EOL;
@@ -1192,16 +1096,12 @@ Update instances of the model matched by {{where}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->transactionUpdateAll($where, $data);
+    $result = $api_instance->transactionUpdateAll($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionUpdateAll: ', $e->getMessage(), PHP_EOL;
@@ -1241,16 +1141,12 @@ Update an existing model instance or insert a new one into the data source based
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\TransactionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\TransactionApi();
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\Transaction(); // \Yoast\MyYoastApiClient\Model\Transaction | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->transactionUpsertWithWhere($where, $data);
+    $result = $api_instance->transactionUpsertWithWhere($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TransactionApi->transactionUpsertWithWhere: ', $e->getMessage(), PHP_EOL;

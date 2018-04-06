@@ -35,15 +35,11 @@ Count instances of the model matched by where from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->migrationCount($where);
+    $result = $api_instance->migrationCount($where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationCount: ', $e->getMessage(), PHP_EOL;
@@ -82,15 +78,11 @@ Create a new instance of the model and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $data = new \Yoast\MyYoastApiClient\Model\Migration(); // \Yoast\MyYoastApiClient\Model\Migration | Model instance data
 
 try {
-    $result = $apiInstance->migrationCreate($data);
+    $result = $api_instance->migrationCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationCreate: ', $e->getMessage(), PHP_EOL;
@@ -129,15 +121,11 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->migrationCreateChangeStreamGetMigrationsChangeStream($options);
+    $result = $api_instance->migrationCreateChangeStreamGetMigrationsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationCreateChangeStreamGetMigrationsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -176,15 +164,11 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->migrationCreateChangeStreamPostMigrationsChangeStream($options);
+    $result = $api_instance->migrationCreateChangeStreamPostMigrationsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationCreateChangeStreamPostMigrationsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -223,15 +207,11 @@ Delete a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->migrationDeleteById($id);
+    $result = $api_instance->migrationDeleteById($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationDeleteById: ', $e->getMessage(), PHP_EOL;
@@ -270,15 +250,11 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->migrationExistsGetMigrationsidExists($id);
+    $result = $api_instance->migrationExistsGetMigrationsidExists($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationExistsGetMigrationsidExists: ', $e->getMessage(), PHP_EOL;
@@ -317,15 +293,11 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->migrationExistsHeadMigrationsid($id);
+    $result = $api_instance->migrationExistsHeadMigrationsid($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationExistsHeadMigrationsid: ', $e->getMessage(), PHP_EOL;
@@ -364,15 +336,11 @@ Find all instances of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->migrationFind($filter);
+    $result = $api_instance->migrationFind($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationFind: ', $e->getMessage(), PHP_EOL;
@@ -411,16 +379,12 @@ Find a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $id = "id_example"; // string | Model id
 $filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->migrationFindById($id, $filter);
+    $result = $api_instance->migrationFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationFindById: ', $e->getMessage(), PHP_EOL;
@@ -460,15 +424,11 @@ Find first instance of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->migrationFindOne($filter);
+    $result = $api_instance->migrationFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationFindOne: ', $e->getMessage(), PHP_EOL;
@@ -507,16 +467,12 @@ Run specific migration by name
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $name = "name_example"; // string | Name of the migration script to run.
 $record = true; // bool | 
 
 try {
-    $apiInstance->migrationMigrateByName($name, $record);
+    $api_instance->migrationMigrateByName($name, $record);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationMigrateByName: ', $e->getMessage(), PHP_EOL;
 }
@@ -555,15 +511,11 @@ Patch an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $data = new \Yoast\MyYoastApiClient\Model\Migration(); // \Yoast\MyYoastApiClient\Model\Migration | Model instance data
 
 try {
-    $result = $apiInstance->migrationPatchOrCreate($data);
+    $result = $api_instance->migrationPatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationPatchOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -602,16 +554,12 @@ Patch attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $id = "id_example"; // string | Migration id
 $data = new \Yoast\MyYoastApiClient\Model\Migration(); // \Yoast\MyYoastApiClient\Model\Migration | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->migrationPrototypePatchAttributes($id, $data);
+    $result = $api_instance->migrationPrototypePatchAttributes($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
@@ -651,16 +599,12 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\Migration(); // \Yoast\MyYoastApiClient\Model\Migration | Model instance data
 
 try {
-    $result = $apiInstance->migrationReplaceByIdPostMigrationsidReplace($id, $data);
+    $result = $api_instance->migrationReplaceByIdPostMigrationsidReplace($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationReplaceByIdPostMigrationsidReplace: ', $e->getMessage(), PHP_EOL;
@@ -700,16 +644,12 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\Migration(); // \Yoast\MyYoastApiClient\Model\Migration | Model instance data
 
 try {
-    $result = $apiInstance->migrationReplaceByIdPutMigrationsid($id, $data);
+    $result = $api_instance->migrationReplaceByIdPutMigrationsid($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationReplaceByIdPutMigrationsid: ', $e->getMessage(), PHP_EOL;
@@ -749,15 +689,11 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $data = new \Yoast\MyYoastApiClient\Model\Migration(); // \Yoast\MyYoastApiClient\Model\Migration | Model instance data
 
 try {
-    $result = $apiInstance->migrationReplaceOrCreatePostMigrationsReplaceOrCreate($data);
+    $result = $api_instance->migrationReplaceOrCreatePostMigrationsReplaceOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationReplaceOrCreatePostMigrationsReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -796,15 +732,11 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $data = new \Yoast\MyYoastApiClient\Model\Migration(); // \Yoast\MyYoastApiClient\Model\Migration | Model instance data
 
 try {
-    $result = $apiInstance->migrationReplaceOrCreatePutMigrations($data);
+    $result = $api_instance->migrationReplaceOrCreatePutMigrations($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationReplaceOrCreatePutMigrations: ', $e->getMessage(), PHP_EOL;
@@ -843,16 +775,12 @@ Update instances of the model matched by {{where}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\Migration(); // \Yoast\MyYoastApiClient\Model\Migration | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->migrationUpdateAll($where, $data);
+    $result = $api_instance->migrationUpdateAll($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationUpdateAll: ', $e->getMessage(), PHP_EOL;
@@ -892,16 +820,12 @@ Update an existing model instance or insert a new one into the data source based
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\MigrationApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\MigrationApi();
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\Migration(); // \Yoast\MyYoastApiClient\Model\Migration | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->migrationUpsertWithWhere($where, $data);
+    $result = $api_instance->migrationUpsertWithWhere($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling MigrationApi->migrationUpsertWithWhere: ', $e->getMessage(), PHP_EOL;

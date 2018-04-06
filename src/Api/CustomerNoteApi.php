@@ -1,6 +1,6 @@
 <?php
 /**
- * MigrationMapApi
+ * CustomerNoteApi
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Yoast\MyYoastApiClient\Configuration;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * MigrationMapApi Class Doc Comment
+ * CustomerNoteApi Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MigrationMapApi
+class CustomerNoteApi
 {
     /**
      * API Client
@@ -79,7 +79,7 @@ class MigrationMapApi
      *
      * @param \Yoast\MyYoastApiClient\ApiClient $apiClient set the API client
      *
-     * @return MigrationMapApi
+     * @return CustomerNoteApi
      */
     public function setApiClient(\Yoast\MyYoastApiClient\ApiClient $apiClient)
     {
@@ -88,7 +88,7 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapCount
+     * Operation customerNoteCount
      *
      * Count instances of the model matched by where from the data source.
      *
@@ -96,14 +96,14 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function migrationMapCount($where = null)
+    public function customerNoteCount($where = null)
     {
-        list($response) = $this->migrationMapCountWithHttpInfo($where);
+        list($response) = $this->customerNoteCountWithHttpInfo($where);
         return $response;
     }
 
     /**
-     * Operation migrationMapCountWithHttpInfo
+     * Operation customerNoteCountWithHttpInfo
      *
      * Count instances of the model matched by where from the data source.
      *
@@ -111,10 +111,10 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapCountWithHttpInfo($where = null)
+    public function customerNoteCountWithHttpInfo($where = null)
     {
         // parse inputs
-        $resourcePath = "/MigrationMaps/count";
+        $resourcePath = "/CustomerNotes/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -145,7 +145,7 @@ class MigrationMapApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/MigrationMaps/count'
+                '/CustomerNotes/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -162,33 +162,33 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapCreate
+     * Operation customerNoteCreate
      *
      * Create a new instance of the model and persist it into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MigrationMap
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote
      */
-    public function migrationMapCreate($data = null)
+    public function customerNoteCreate($data = null)
     {
-        list($response) = $this->migrationMapCreateWithHttpInfo($data);
+        list($response) = $this->customerNoteCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation migrationMapCreateWithHttpInfo
+     * Operation customerNoteCreateWithHttpInfo
      *
      * Create a new instance of the model and persist it into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MigrationMap, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapCreateWithHttpInfo($data = null)
+    public function customerNoteCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/MigrationMaps";
+        $resourcePath = "/CustomerNotes";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -219,15 +219,15 @@ class MigrationMapApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MigrationMap',
-                '/MigrationMaps'
+                '\Yoast\MyYoastApiClient\Model\CustomerNote',
+                '/CustomerNotes'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MigrationMap', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CustomerNote', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MigrationMap', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CustomerNote', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -237,7 +237,7 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapCreateChangeStreamGetMigrationMapsChangeStream
+     * Operation customerNoteCreateChangeStreamGetCustomerNotesChangeStream
      *
      * Create a change stream.
      *
@@ -245,14 +245,14 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function migrationMapCreateChangeStreamGetMigrationMapsChangeStream($options = null)
+    public function customerNoteCreateChangeStreamGetCustomerNotesChangeStream($options = null)
     {
-        list($response) = $this->migrationMapCreateChangeStreamGetMigrationMapsChangeStreamWithHttpInfo($options);
+        list($response) = $this->customerNoteCreateChangeStreamGetCustomerNotesChangeStreamWithHttpInfo($options);
         return $response;
     }
 
     /**
-     * Operation migrationMapCreateChangeStreamGetMigrationMapsChangeStreamWithHttpInfo
+     * Operation customerNoteCreateChangeStreamGetCustomerNotesChangeStreamWithHttpInfo
      *
      * Create a change stream.
      *
@@ -260,10 +260,10 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapCreateChangeStreamGetMigrationMapsChangeStreamWithHttpInfo($options = null)
+    public function customerNoteCreateChangeStreamGetCustomerNotesChangeStreamWithHttpInfo($options = null)
     {
         // parse inputs
-        $resourcePath = "/MigrationMaps/change-stream";
+        $resourcePath = "/CustomerNotes/change-stream";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -294,7 +294,7 @@ class MigrationMapApi
                 $httpBody,
                 $headerParams,
                 '\SplFileObject',
-                '/MigrationMaps/change-stream'
+                '/CustomerNotes/change-stream'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader), $statusCode, $httpHeader];
@@ -311,7 +311,7 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapCreateChangeStreamPostMigrationMapsChangeStream
+     * Operation customerNoteCreateChangeStreamPostCustomerNotesChangeStream
      *
      * Create a change stream.
      *
@@ -319,14 +319,14 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function migrationMapCreateChangeStreamPostMigrationMapsChangeStream($options = null)
+    public function customerNoteCreateChangeStreamPostCustomerNotesChangeStream($options = null)
     {
-        list($response) = $this->migrationMapCreateChangeStreamPostMigrationMapsChangeStreamWithHttpInfo($options);
+        list($response) = $this->customerNoteCreateChangeStreamPostCustomerNotesChangeStreamWithHttpInfo($options);
         return $response;
     }
 
     /**
-     * Operation migrationMapCreateChangeStreamPostMigrationMapsChangeStreamWithHttpInfo
+     * Operation customerNoteCreateChangeStreamPostCustomerNotesChangeStreamWithHttpInfo
      *
      * Create a change stream.
      *
@@ -334,10 +334,10 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapCreateChangeStreamPostMigrationMapsChangeStreamWithHttpInfo($options = null)
+    public function customerNoteCreateChangeStreamPostCustomerNotesChangeStreamWithHttpInfo($options = null)
     {
         // parse inputs
-        $resourcePath = "/MigrationMaps/change-stream";
+        $resourcePath = "/CustomerNotes/change-stream";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -368,7 +368,7 @@ class MigrationMapApi
                 $httpBody,
                 $headerParams,
                 '\SplFileObject',
-                '/MigrationMaps/change-stream'
+                '/CustomerNotes/change-stream'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader), $statusCode, $httpHeader];
@@ -385,7 +385,7 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapDeleteById
+     * Operation customerNoteDeleteById
      *
      * Delete a model instance by {{id}} from the data source.
      *
@@ -393,14 +393,14 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return object
      */
-    public function migrationMapDeleteById($id)
+    public function customerNoteDeleteById($id)
     {
-        list($response) = $this->migrationMapDeleteByIdWithHttpInfo($id);
+        list($response) = $this->customerNoteDeleteByIdWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation migrationMapDeleteByIdWithHttpInfo
+     * Operation customerNoteDeleteByIdWithHttpInfo
      *
      * Delete a model instance by {{id}} from the data source.
      *
@@ -408,14 +408,14 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapDeleteByIdWithHttpInfo($id)
+    public function customerNoteDeleteByIdWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling migrationMapDeleteById');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNoteDeleteById');
         }
         // parse inputs
-        $resourcePath = "/MigrationMaps/{id}";
+        $resourcePath = "/CustomerNotes/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -450,7 +450,7 @@ class MigrationMapApi
                 $httpBody,
                 $headerParams,
                 'object',
-                '/MigrationMaps/{id}'
+                '/CustomerNotes/{id}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
@@ -467,7 +467,7 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapExistsGetMigrationMapsidExists
+     * Operation customerNoteExistsGetCustomerNotesidExists
      *
      * Check whether a model instance exists in the data source.
      *
@@ -475,14 +475,14 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
-    public function migrationMapExistsGetMigrationMapsidExists($id)
+    public function customerNoteExistsGetCustomerNotesidExists($id)
     {
-        list($response) = $this->migrationMapExistsGetMigrationMapsidExistsWithHttpInfo($id);
+        list($response) = $this->customerNoteExistsGetCustomerNotesidExistsWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation migrationMapExistsGetMigrationMapsidExistsWithHttpInfo
+     * Operation customerNoteExistsGetCustomerNotesidExistsWithHttpInfo
      *
      * Check whether a model instance exists in the data source.
      *
@@ -490,14 +490,14 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapExistsGetMigrationMapsidExistsWithHttpInfo($id)
+    public function customerNoteExistsGetCustomerNotesidExistsWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling migrationMapExistsGetMigrationMapsidExists');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNoteExistsGetCustomerNotesidExists');
         }
         // parse inputs
-        $resourcePath = "/MigrationMaps/{id}/exists";
+        $resourcePath = "/CustomerNotes/{id}/exists";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -532,7 +532,7 @@ class MigrationMapApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
-                '/MigrationMaps/{id}/exists'
+                '/CustomerNotes/{id}/exists'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
@@ -549,7 +549,7 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapExistsHeadMigrationMapsid
+     * Operation customerNoteExistsHeadCustomerNotesid
      *
      * Check whether a model instance exists in the data source.
      *
@@ -557,14 +557,14 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
-    public function migrationMapExistsHeadMigrationMapsid($id)
+    public function customerNoteExistsHeadCustomerNotesid($id)
     {
-        list($response) = $this->migrationMapExistsHeadMigrationMapsidWithHttpInfo($id);
+        list($response) = $this->customerNoteExistsHeadCustomerNotesidWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation migrationMapExistsHeadMigrationMapsidWithHttpInfo
+     * Operation customerNoteExistsHeadCustomerNotesidWithHttpInfo
      *
      * Check whether a model instance exists in the data source.
      *
@@ -572,14 +572,14 @@ class MigrationMapApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapExistsHeadMigrationMapsidWithHttpInfo($id)
+    public function customerNoteExistsHeadCustomerNotesidWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling migrationMapExistsHeadMigrationMapsid');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNoteExistsHeadCustomerNotesid');
         }
         // parse inputs
-        $resourcePath = "/MigrationMaps/{id}";
+        $resourcePath = "/CustomerNotes/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -614,7 +614,7 @@ class MigrationMapApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
-                '/MigrationMaps/{id}'
+                '/CustomerNotes/{id}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
@@ -631,33 +631,33 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapFind
+     * Operation customerNoteFind
      *
      * Find all instances of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MigrationMap[]
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote[]
      */
-    public function migrationMapFind($filter = null)
+    public function customerNoteFind($filter = null)
     {
-        list($response) = $this->migrationMapFindWithHttpInfo($filter);
+        list($response) = $this->customerNoteFindWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation migrationMapFindWithHttpInfo
+     * Operation customerNoteFindWithHttpInfo
      *
      * Find all instances of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MigrationMap[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapFindWithHttpInfo($filter = null)
+    public function customerNoteFindWithHttpInfo($filter = null)
     {
         // parse inputs
-        $resourcePath = "/MigrationMaps";
+        $resourcePath = "/CustomerNotes";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -687,15 +687,15 @@ class MigrationMapApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MigrationMap[]',
-                '/MigrationMaps'
+                '\Yoast\MyYoastApiClient\Model\CustomerNote[]',
+                '/CustomerNotes'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MigrationMap[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CustomerNote[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MigrationMap[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CustomerNote[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -705,39 +705,39 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapFindById
+     * Operation customerNoteFindById
      *
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
      * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MigrationMap
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote
      */
-    public function migrationMapFindById($id, $filter = null)
+    public function customerNoteFindById($id, $filter = null)
     {
-        list($response) = $this->migrationMapFindByIdWithHttpInfo($id, $filter);
+        list($response) = $this->customerNoteFindByIdWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation migrationMapFindByIdWithHttpInfo
+     * Operation customerNoteFindByIdWithHttpInfo
      *
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
      * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MigrationMap, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapFindByIdWithHttpInfo($id, $filter = null)
+    public function customerNoteFindByIdWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling migrationMapFindById');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNoteFindById');
         }
         // parse inputs
-        $resourcePath = "/MigrationMaps/{id}";
+        $resourcePath = "/CustomerNotes/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -775,15 +775,15 @@ class MigrationMapApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MigrationMap',
-                '/MigrationMaps/{id}'
+                '\Yoast\MyYoastApiClient\Model\CustomerNote',
+                '/CustomerNotes/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MigrationMap', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CustomerNote', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MigrationMap', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CustomerNote', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -793,33 +793,33 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapFindOne
+     * Operation customerNoteFindOne
      *
      * Find first instance of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MigrationMap
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote
      */
-    public function migrationMapFindOne($filter = null)
+    public function customerNoteFindOne($filter = null)
     {
-        list($response) = $this->migrationMapFindOneWithHttpInfo($filter);
+        list($response) = $this->customerNoteFindOneWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation migrationMapFindOneWithHttpInfo
+     * Operation customerNoteFindOneWithHttpInfo
      *
      * Find first instance of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MigrationMap, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapFindOneWithHttpInfo($filter = null)
+    public function customerNoteFindOneWithHttpInfo($filter = null)
     {
         // parse inputs
-        $resourcePath = "/MigrationMaps/findOne";
+        $resourcePath = "/CustomerNotes/findOne";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -849,15 +849,15 @@ class MigrationMapApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MigrationMap',
-                '/MigrationMaps/findOne'
+                '\Yoast\MyYoastApiClient\Model\CustomerNote',
+                '/CustomerNotes/findOne'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MigrationMap', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CustomerNote', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MigrationMap', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CustomerNote', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -867,33 +867,33 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapPatchOrCreate
+     * Operation customerNotePatchOrCreate
      *
      * Patch an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MigrationMap
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote
      */
-    public function migrationMapPatchOrCreate($data = null)
+    public function customerNotePatchOrCreate($data = null)
     {
-        list($response) = $this->migrationMapPatchOrCreateWithHttpInfo($data);
+        list($response) = $this->customerNotePatchOrCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation migrationMapPatchOrCreateWithHttpInfo
+     * Operation customerNotePatchOrCreateWithHttpInfo
      *
      * Patch an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MigrationMap, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapPatchOrCreateWithHttpInfo($data = null)
+    public function customerNotePatchOrCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/MigrationMaps";
+        $resourcePath = "/CustomerNotes";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -924,15 +924,15 @@ class MigrationMapApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MigrationMap',
-                '/MigrationMaps'
+                '\Yoast\MyYoastApiClient\Model\CustomerNote',
+                '/CustomerNotes'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MigrationMap', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CustomerNote', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MigrationMap', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CustomerNote', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -942,39 +942,215 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapPrototypePatchAttributes
+     * Operation customerNotePrototypeGetAuthor
      *
-     * Patch attributes for a model instance and persist it into the data source.
+     * Fetches belongsTo relation author.
      *
-     * @param string $id MigrationMap id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data An object of model property name/value pairs (optional)
+     * @param string $id CustomerNote id (required)
+     * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MigrationMap
+     * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function migrationMapPrototypePatchAttributes($id, $data = null)
+    public function customerNotePrototypeGetAuthor($id, $refresh = null)
     {
-        list($response) = $this->migrationMapPrototypePatchAttributesWithHttpInfo($id, $data);
+        list($response) = $this->customerNotePrototypeGetAuthorWithHttpInfo($id, $refresh);
         return $response;
     }
 
     /**
-     * Operation migrationMapPrototypePatchAttributesWithHttpInfo
+     * Operation customerNotePrototypeGetAuthorWithHttpInfo
      *
-     * Patch attributes for a model instance and persist it into the data source.
+     * Fetches belongsTo relation author.
      *
-     * @param string $id MigrationMap id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data An object of model property name/value pairs (optional)
+     * @param string $id CustomerNote id (required)
+     * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MigrationMap, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapPrototypePatchAttributesWithHttpInfo($id, $data = null)
+    public function customerNotePrototypeGetAuthorWithHttpInfo($id, $refresh = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling migrationMapPrototypePatchAttributes');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNotePrototypeGetAuthor');
         }
         // parse inputs
-        $resourcePath = "/MigrationMaps/{id}";
+        $resourcePath = "/CustomerNotes/{id}/author";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($refresh !== null) {
+            $queryParams['refresh'] = $this->apiClient->getSerializer()->toQueryValue($refresh);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/CustomerNotes/{id}/author'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerNotePrototypeGetCustomer
+     *
+     * Fetches belongsTo relation customer.
+     *
+     * @param string $id CustomerNote id (required)
+     * @param bool $refresh  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Customer
+     */
+    public function customerNotePrototypeGetCustomer($id, $refresh = null)
+    {
+        list($response) = $this->customerNotePrototypeGetCustomerWithHttpInfo($id, $refresh);
+        return $response;
+    }
+
+    /**
+     * Operation customerNotePrototypeGetCustomerWithHttpInfo
+     *
+     * Fetches belongsTo relation customer.
+     *
+     * @param string $id CustomerNote id (required)
+     * @param bool $refresh  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerNotePrototypeGetCustomerWithHttpInfo($id, $refresh = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNotePrototypeGetCustomer');
+        }
+        // parse inputs
+        $resourcePath = "/CustomerNotes/{id}/customer";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($refresh !== null) {
+            $queryParams['refresh'] = $this->apiClient->getSerializer()->toQueryValue($refresh);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Customer',
+                '/CustomerNotes/{id}/customer'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Customer', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerNotePrototypePatchAttributes
+     *
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param string $id CustomerNote id (required)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data An object of model property name/value pairs (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote
+     */
+    public function customerNotePrototypePatchAttributes($id, $data = null)
+    {
+        list($response) = $this->customerNotePrototypePatchAttributesWithHttpInfo($id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation customerNotePrototypePatchAttributesWithHttpInfo
+     *
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param string $id CustomerNote id (required)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data An object of model property name/value pairs (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerNotePrototypePatchAttributesWithHttpInfo($id, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNotePrototypePatchAttributes');
+        }
+        // parse inputs
+        $resourcePath = "/CustomerNotes/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1013,15 +1189,15 @@ class MigrationMapApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MigrationMap',
-                '/MigrationMaps/{id}'
+                '\Yoast\MyYoastApiClient\Model\CustomerNote',
+                '/CustomerNotes/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MigrationMap', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CustomerNote', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MigrationMap', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CustomerNote', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1031,39 +1207,39 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapReplaceByIdPostMigrationMapsidReplace
+     * Operation customerNoteReplaceByIdPostCustomerNotesidReplace
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MigrationMap
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote
      */
-    public function migrationMapReplaceByIdPostMigrationMapsidReplace($id, $data = null)
+    public function customerNoteReplaceByIdPostCustomerNotesidReplace($id, $data = null)
     {
-        list($response) = $this->migrationMapReplaceByIdPostMigrationMapsidReplaceWithHttpInfo($id, $data);
+        list($response) = $this->customerNoteReplaceByIdPostCustomerNotesidReplaceWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation migrationMapReplaceByIdPostMigrationMapsidReplaceWithHttpInfo
+     * Operation customerNoteReplaceByIdPostCustomerNotesidReplaceWithHttpInfo
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MigrationMap, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapReplaceByIdPostMigrationMapsidReplaceWithHttpInfo($id, $data = null)
+    public function customerNoteReplaceByIdPostCustomerNotesidReplaceWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling migrationMapReplaceByIdPostMigrationMapsidReplace');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNoteReplaceByIdPostCustomerNotesidReplace');
         }
         // parse inputs
-        $resourcePath = "/MigrationMaps/{id}/replace";
+        $resourcePath = "/CustomerNotes/{id}/replace";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1102,15 +1278,15 @@ class MigrationMapApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MigrationMap',
-                '/MigrationMaps/{id}/replace'
+                '\Yoast\MyYoastApiClient\Model\CustomerNote',
+                '/CustomerNotes/{id}/replace'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MigrationMap', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CustomerNote', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MigrationMap', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CustomerNote', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1120,39 +1296,39 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapReplaceByIdPutMigrationMapsid
+     * Operation customerNoteReplaceByIdPutCustomerNotesid
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MigrationMap
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote
      */
-    public function migrationMapReplaceByIdPutMigrationMapsid($id, $data = null)
+    public function customerNoteReplaceByIdPutCustomerNotesid($id, $data = null)
     {
-        list($response) = $this->migrationMapReplaceByIdPutMigrationMapsidWithHttpInfo($id, $data);
+        list($response) = $this->customerNoteReplaceByIdPutCustomerNotesidWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation migrationMapReplaceByIdPutMigrationMapsidWithHttpInfo
+     * Operation customerNoteReplaceByIdPutCustomerNotesidWithHttpInfo
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MigrationMap, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapReplaceByIdPutMigrationMapsidWithHttpInfo($id, $data = null)
+    public function customerNoteReplaceByIdPutCustomerNotesidWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling migrationMapReplaceByIdPutMigrationMapsid');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNoteReplaceByIdPutCustomerNotesid');
         }
         // parse inputs
-        $resourcePath = "/MigrationMaps/{id}";
+        $resourcePath = "/CustomerNotes/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1191,15 +1367,15 @@ class MigrationMapApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MigrationMap',
-                '/MigrationMaps/{id}'
+                '\Yoast\MyYoastApiClient\Model\CustomerNote',
+                '/CustomerNotes/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MigrationMap', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CustomerNote', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MigrationMap', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CustomerNote', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1209,33 +1385,33 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapReplaceOrCreatePostMigrationMapsReplaceOrCreate
+     * Operation customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreate
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MigrationMap
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote
      */
-    public function migrationMapReplaceOrCreatePostMigrationMapsReplaceOrCreate($data = null)
+    public function customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreate($data = null)
     {
-        list($response) = $this->migrationMapReplaceOrCreatePostMigrationMapsReplaceOrCreateWithHttpInfo($data);
+        list($response) = $this->customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation migrationMapReplaceOrCreatePostMigrationMapsReplaceOrCreateWithHttpInfo
+     * Operation customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreateWithHttpInfo
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MigrationMap, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapReplaceOrCreatePostMigrationMapsReplaceOrCreateWithHttpInfo($data = null)
+    public function customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/MigrationMaps/replaceOrCreate";
+        $resourcePath = "/CustomerNotes/replaceOrCreate";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1266,15 +1442,15 @@ class MigrationMapApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MigrationMap',
-                '/MigrationMaps/replaceOrCreate'
+                '\Yoast\MyYoastApiClient\Model\CustomerNote',
+                '/CustomerNotes/replaceOrCreate'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MigrationMap', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CustomerNote', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MigrationMap', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CustomerNote', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1284,33 +1460,33 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapReplaceOrCreatePutMigrationMaps
+     * Operation customerNoteReplaceOrCreatePutCustomerNotes
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MigrationMap
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote
      */
-    public function migrationMapReplaceOrCreatePutMigrationMaps($data = null)
+    public function customerNoteReplaceOrCreatePutCustomerNotes($data = null)
     {
-        list($response) = $this->migrationMapReplaceOrCreatePutMigrationMapsWithHttpInfo($data);
+        list($response) = $this->customerNoteReplaceOrCreatePutCustomerNotesWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation migrationMapReplaceOrCreatePutMigrationMapsWithHttpInfo
+     * Operation customerNoteReplaceOrCreatePutCustomerNotesWithHttpInfo
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MigrationMap, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapReplaceOrCreatePutMigrationMapsWithHttpInfo($data = null)
+    public function customerNoteReplaceOrCreatePutCustomerNotesWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/MigrationMaps";
+        $resourcePath = "/CustomerNotes";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1341,15 +1517,15 @@ class MigrationMapApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MigrationMap',
-                '/MigrationMaps'
+                '\Yoast\MyYoastApiClient\Model\CustomerNote',
+                '/CustomerNotes'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MigrationMap', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CustomerNote', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MigrationMap', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CustomerNote', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1359,35 +1535,35 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapUpdateAll
+     * Operation customerNoteUpdateAll
      *
      * Update instances of the model matched by {{where}} from the data source.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
      */
-    public function migrationMapUpdateAll($where = null, $data = null)
+    public function customerNoteUpdateAll($where = null, $data = null)
     {
-        list($response) = $this->migrationMapUpdateAllWithHttpInfo($where, $data);
+        list($response) = $this->customerNoteUpdateAllWithHttpInfo($where, $data);
         return $response;
     }
 
     /**
-     * Operation migrationMapUpdateAllWithHttpInfo
+     * Operation customerNoteUpdateAllWithHttpInfo
      *
      * Update instances of the model matched by {{where}} from the data source.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapUpdateAllWithHttpInfo($where = null, $data = null)
+    public function customerNoteUpdateAllWithHttpInfo($where = null, $data = null)
     {
         // parse inputs
-        $resourcePath = "/MigrationMaps/update";
+        $resourcePath = "/CustomerNotes/update";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1423,7 +1599,7 @@ class MigrationMapApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
-                '/MigrationMaps/update'
+                '/CustomerNotes/update'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
@@ -1440,35 +1616,35 @@ class MigrationMapApi
     }
 
     /**
-     * Operation migrationMapUpsertWithWhere
+     * Operation customerNoteUpsertWithWhere
      *
      * Update an existing model instance or insert a new one into the data source based on the where criteria.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\MigrationMap
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote
      */
-    public function migrationMapUpsertWithWhere($where = null, $data = null)
+    public function customerNoteUpsertWithWhere($where = null, $data = null)
     {
-        list($response) = $this->migrationMapUpsertWithWhereWithHttpInfo($where, $data);
+        list($response) = $this->customerNoteUpsertWithWhereWithHttpInfo($where, $data);
         return $response;
     }
 
     /**
-     * Operation migrationMapUpsertWithWhereWithHttpInfo
+     * Operation customerNoteUpsertWithWhereWithHttpInfo
      *
      * Update an existing model instance or insert a new one into the data source based on the where criteria.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\MigrationMap $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\CustomerNote $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\MigrationMap, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
      */
-    public function migrationMapUpsertWithWhereWithHttpInfo($where = null, $data = null)
+    public function customerNoteUpsertWithWhereWithHttpInfo($where = null, $data = null)
     {
         // parse inputs
-        $resourcePath = "/MigrationMaps/upsertWithWhere";
+        $resourcePath = "/CustomerNotes/upsertWithWhere";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1503,15 +1679,15 @@ class MigrationMapApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\MigrationMap',
-                '/MigrationMaps/upsertWithWhere'
+                '\Yoast\MyYoastApiClient\Model\CustomerNote',
+                '/CustomerNotes/upsertWithWhere'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\MigrationMap', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CustomerNote', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\MigrationMap', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CustomerNote', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

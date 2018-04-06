@@ -1,6 +1,6 @@
 <?php
 /**
- * SiteSubscriptions
+ * CustomerNote
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * SiteSubscriptions Class Doc Comment
+ * CustomerNote Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class SiteSubscriptions implements ArrayAccess
+class CustomerNote implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class SiteSubscriptions implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'SiteSubscriptions';
+    protected static $swaggerModelName = 'CustomerNote';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,8 +55,12 @@ class SiteSubscriptions implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'site_id' => 'string',
-        'subscription_id' => 'string'
+        'content' => 'string',
+        'next_contact_date' => '\DateTime',
+        'customer_id' => 'string',
+        'author_id' => 'string',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime'
     ];
 
     /**
@@ -65,8 +69,12 @@ class SiteSubscriptions implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-        'site_id' => null,
-        'subscription_id' => null
+        'content' => null,
+        'next_contact_date' => 'date-time',
+        'customer_id' => null,
+        'author_id' => null,
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time'
     ];
 
     public static function swaggerTypes()
@@ -85,8 +93,12 @@ class SiteSubscriptions implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'site_id' => 'siteId',
-        'subscription_id' => 'subscriptionId'
+        'content' => 'content',
+        'next_contact_date' => 'nextContactDate',
+        'customer_id' => 'customerId',
+        'author_id' => 'authorId',
+        'created_at' => 'createdAt',
+        'updated_at' => 'updatedAt'
     ];
 
 
@@ -96,8 +108,12 @@ class SiteSubscriptions implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'site_id' => 'setSiteId',
-        'subscription_id' => 'setSubscriptionId'
+        'content' => 'setContent',
+        'next_contact_date' => 'setNextContactDate',
+        'customer_id' => 'setCustomerId',
+        'author_id' => 'setAuthorId',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt'
     ];
 
 
@@ -107,8 +123,12 @@ class SiteSubscriptions implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'site_id' => 'getSiteId',
-        'subscription_id' => 'getSubscriptionId'
+        'content' => 'getContent',
+        'next_contact_date' => 'getNextContactDate',
+        'customer_id' => 'getCustomerId',
+        'author_id' => 'getAuthorId',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt'
     ];
 
     public static function attributeMap()
@@ -143,8 +163,12 @@ class SiteSubscriptions implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['site_id'] = isset($data['site_id']) ? $data['site_id'] : null;
-        $this->container['subscription_id'] = isset($data['subscription_id']) ? $data['subscription_id'] : null;
+        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
+        $this->container['next_contact_date'] = isset($data['next_contact_date']) ? $data['next_contact_date'] : null;
+        $this->container['customer_id'] = isset($data['customer_id']) ? $data['customer_id'] : null;
+        $this->container['author_id'] = isset($data['author_id']) ? $data['author_id'] : null;
+        $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['updated_at'] = isset($data['updated_at']) ? $data['updated_at'] : null;
     }
 
     /**
@@ -159,11 +183,8 @@ class SiteSubscriptions implements ArrayAccess
         if ($this->container['id'] === null) {
             $invalid_properties[] = "'id' can't be null";
         }
-        if ($this->container['site_id'] === null) {
-            $invalid_properties[] = "'site_id' can't be null";
-        }
-        if ($this->container['subscription_id'] === null) {
-            $invalid_properties[] = "'subscription_id' can't be null";
+        if ($this->container['content'] === null) {
+            $invalid_properties[] = "'content' can't be null";
         }
         return $invalid_properties;
     }
@@ -180,10 +201,7 @@ class SiteSubscriptions implements ArrayAccess
         if ($this->container['id'] === null) {
             return false;
         }
-        if ($this->container['site_id'] === null) {
-            return false;
-        }
-        if ($this->container['subscription_id'] === null) {
+        if ($this->container['content'] === null) {
             return false;
         }
         return true;
@@ -212,43 +230,127 @@ class SiteSubscriptions implements ArrayAccess
     }
 
     /**
-     * Gets site_id
+     * Gets content
      * @return string
      */
-    public function getSiteId()
+    public function getContent()
     {
-        return $this->container['site_id'];
+        return $this->container['content'];
     }
 
     /**
-     * Sets site_id
-     * @param string $site_id
+     * Sets content
+     * @param string $content
      * @return $this
      */
-    public function setSiteId($site_id)
+    public function setContent($content)
     {
-        $this->container['site_id'] = $site_id;
+        $this->container['content'] = $content;
 
         return $this;
     }
 
     /**
-     * Gets subscription_id
-     * @return string
+     * Gets next_contact_date
+     * @return \DateTime
      */
-    public function getSubscriptionId()
+    public function getNextContactDate()
     {
-        return $this->container['subscription_id'];
+        return $this->container['next_contact_date'];
     }
 
     /**
-     * Sets subscription_id
-     * @param string $subscription_id
+     * Sets next_contact_date
+     * @param \DateTime $next_contact_date
      * @return $this
      */
-    public function setSubscriptionId($subscription_id)
+    public function setNextContactDate($next_contact_date)
     {
-        $this->container['subscription_id'] = $subscription_id;
+        $this->container['next_contact_date'] = $next_contact_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_id
+     * @return string
+     */
+    public function getCustomerId()
+    {
+        return $this->container['customer_id'];
+    }
+
+    /**
+     * Sets customer_id
+     * @param string $customer_id
+     * @return $this
+     */
+    public function setCustomerId($customer_id)
+    {
+        $this->container['customer_id'] = $customer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets author_id
+     * @return string
+     */
+    public function getAuthorId()
+    {
+        return $this->container['author_id'];
+    }
+
+    /**
+     * Sets author_id
+     * @param string $author_id
+     * @return $this
+     */
+    public function setAuthorId($author_id)
+    {
+        $this->container['author_id'] = $author_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     * @param \DateTime $created_at
+     * @return $this
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     * @param \DateTime $updated_at
+     * @return $this
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

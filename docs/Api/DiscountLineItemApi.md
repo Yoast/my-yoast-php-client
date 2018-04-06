@@ -35,15 +35,11 @@ Count instances of the model matched by where from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->discountLineItemCount($where);
+    $result = $api_instance->discountLineItemCount($where);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemCount: ', $e->getMessage(), PHP_EOL;
@@ -82,15 +78,11 @@ Create a new instance of the model and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | Model instance data
 
 try {
-    $result = $apiInstance->discountLineItemCreate($data);
+    $result = $api_instance->discountLineItemCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemCreate: ', $e->getMessage(), PHP_EOL;
@@ -129,15 +121,11 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->discountLineItemCreateChangeStreamGetDiscountLineItemsChangeStream($options);
+    $result = $api_instance->discountLineItemCreateChangeStreamGetDiscountLineItemsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemCreateChangeStreamGetDiscountLineItemsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -176,15 +164,11 @@ Create a change stream.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->discountLineItemCreateChangeStreamPostDiscountLineItemsChangeStream($options);
+    $result = $api_instance->discountLineItemCreateChangeStreamPostDiscountLineItemsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemCreateChangeStreamPostDiscountLineItemsChangeStream: ', $e->getMessage(), PHP_EOL;
@@ -223,15 +207,11 @@ Delete a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->discountLineItemDeleteById($id);
+    $result = $api_instance->discountLineItemDeleteById($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemDeleteById: ', $e->getMessage(), PHP_EOL;
@@ -270,15 +250,11 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->discountLineItemExistsGetDiscountLineItemsidExists($id);
+    $result = $api_instance->discountLineItemExistsGetDiscountLineItemsidExists($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemExistsGetDiscountLineItemsidExists: ', $e->getMessage(), PHP_EOL;
@@ -317,15 +293,11 @@ Check whether a model instance exists in the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $id = "id_example"; // string | Model id
 
 try {
-    $result = $apiInstance->discountLineItemExistsHeadDiscountLineItemsid($id);
+    $result = $api_instance->discountLineItemExistsHeadDiscountLineItemsid($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemExistsHeadDiscountLineItemsid: ', $e->getMessage(), PHP_EOL;
@@ -364,15 +336,11 @@ Find all instances of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->discountLineItemFind($filter);
+    $result = $api_instance->discountLineItemFind($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemFind: ', $e->getMessage(), PHP_EOL;
@@ -411,16 +379,12 @@ Find a model instance by {{id}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $id = "id_example"; // string | Model id
 $filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->discountLineItemFindById($id, $filter);
+    $result = $api_instance->discountLineItemFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemFindById: ', $e->getMessage(), PHP_EOL;
@@ -460,15 +424,11 @@ Find first instance of the model matched by filter from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->discountLineItemFindOne($filter);
+    $result = $api_instance->discountLineItemFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemFindOne: ', $e->getMessage(), PHP_EOL;
@@ -507,15 +467,11 @@ Patch an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | Model instance data
 
 try {
-    $result = $apiInstance->discountLineItemPatchOrCreate($data);
+    $result = $api_instance->discountLineItemPatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemPatchOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -554,16 +510,12 @@ Fetches belongsTo relation order.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $id = "id_example"; // string | DiscountLineItem id
 $refresh = true; // bool | 
 
 try {
-    $result = $apiInstance->discountLineItemPrototypeGetOrder($id, $refresh);
+    $result = $api_instance->discountLineItemPrototypeGetOrder($id, $refresh);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemPrototypeGetOrder: ', $e->getMessage(), PHP_EOL;
@@ -603,16 +555,12 @@ Patch attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $id = "id_example"; // string | DiscountLineItem id
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->discountLineItemPrototypePatchAttributes($id, $data);
+    $result = $api_instance->discountLineItemPrototypePatchAttributes($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
@@ -652,16 +600,12 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | Model instance data
 
 try {
-    $result = $apiInstance->discountLineItemReplaceByIdPostDiscountLineItemsidReplace($id, $data);
+    $result = $api_instance->discountLineItemReplaceByIdPostDiscountLineItemsidReplace($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemReplaceByIdPostDiscountLineItemsidReplace: ', $e->getMessage(), PHP_EOL;
@@ -701,16 +645,12 @@ Replace attributes for a model instance and persist it into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $id = "id_example"; // string | Model id
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | Model instance data
 
 try {
-    $result = $apiInstance->discountLineItemReplaceByIdPutDiscountLineItemsid($id, $data);
+    $result = $api_instance->discountLineItemReplaceByIdPutDiscountLineItemsid($id, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemReplaceByIdPutDiscountLineItemsid: ', $e->getMessage(), PHP_EOL;
@@ -750,15 +690,11 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | Model instance data
 
 try {
-    $result = $apiInstance->discountLineItemReplaceOrCreatePostDiscountLineItemsReplaceOrCreate($data);
+    $result = $api_instance->discountLineItemReplaceOrCreatePostDiscountLineItemsReplaceOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemReplaceOrCreatePostDiscountLineItemsReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
@@ -797,15 +733,11 @@ Replace an existing model instance or insert a new one into the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | Model instance data
 
 try {
-    $result = $apiInstance->discountLineItemReplaceOrCreatePutDiscountLineItems($data);
+    $result = $api_instance->discountLineItemReplaceOrCreatePutDiscountLineItems($data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemReplaceOrCreatePutDiscountLineItems: ', $e->getMessage(), PHP_EOL;
@@ -844,16 +776,12 @@ Update instances of the model matched by {{where}} from the data source.
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->discountLineItemUpdateAll($where, $data);
+    $result = $api_instance->discountLineItemUpdateAll($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemUpdateAll: ', $e->getMessage(), PHP_EOL;
@@ -893,16 +821,12 @@ Update an existing model instance or insert a new one into the data source based
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
+$api_instance = new Yoast\MyYoastApiClient\Api\DiscountLineItemApi();
 $where = "where_example"; // string | Criteria to match model instances
 $data = new \Yoast\MyYoastApiClient\Model\DiscountLineItem(); // \Yoast\MyYoastApiClient\Model\DiscountLineItem | An object of model property name/value pairs
 
 try {
-    $result = $apiInstance->discountLineItemUpsertWithWhere($where, $data);
+    $result = $api_instance->discountLineItemUpsertWithWhere($where, $data);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DiscountLineItemApi->discountLineItemUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
