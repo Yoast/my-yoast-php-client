@@ -16,22 +16,27 @@ Method | HTTP request | Description
 [**siteFindOne**](SiteApi.md#siteFindOne) | **GET** /Sites/findOne | Find first instance of the model matched by filter from the data source.
 [**sitePatchOrCreate**](SiteApi.md#sitePatchOrCreate) | **PATCH** /Sites | Patch an existing model instance or insert a new one into the data source.
 [**sitePrototypeCountSubscriptions**](SiteApi.md#sitePrototypeCountSubscriptions) | **GET** /Sites/{id}/subscriptions/count | Counts subscriptions of Site.
+[**sitePrototypeCreateConfigurationServiceRequest**](SiteApi.md#sitePrototypeCreateConfigurationServiceRequest) | **POST** /Sites/{id}/configurationServiceRequest | Creates a new instance in configurationServiceRequest of this model.
 [**sitePrototypeCreateSubscriptions**](SiteApi.md#sitePrototypeCreateSubscriptions) | **POST** /Sites/{id}/subscriptions | Creates a new instance in subscriptions of this model.
 [**sitePrototypeDeleteSubscriptions**](SiteApi.md#sitePrototypeDeleteSubscriptions) | **DELETE** /Sites/{id}/subscriptions | Deletes all subscriptions of this model.
 [**sitePrototypeDestroyByIdSubscriptions**](SiteApi.md#sitePrototypeDestroyByIdSubscriptions) | **DELETE** /Sites/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
+[**sitePrototypeDestroyConfigurationServiceRequest**](SiteApi.md#sitePrototypeDestroyConfigurationServiceRequest) | **DELETE** /Sites/{id}/configurationServiceRequest | Deletes configurationServiceRequest of this model.
 [**sitePrototypeExistsSubscriptions**](SiteApi.md#sitePrototypeExistsSubscriptions) | **HEAD** /Sites/{id}/subscriptions/rel/{fk} | Check the existence of subscriptions relation to an item by id.
 [**sitePrototypeFindByIdSubscriptions**](SiteApi.md#sitePrototypeFindByIdSubscriptions) | **GET** /Sites/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
+[**sitePrototypeGetConfigurationServiceRequest**](SiteApi.md#sitePrototypeGetConfigurationServiceRequest) | **GET** /Sites/{id}/configurationServiceRequest | Fetches hasOne relation configurationServiceRequest.
 [**sitePrototypeGetSubscriptions**](SiteApi.md#sitePrototypeGetSubscriptions) | **GET** /Sites/{id}/subscriptions | Queries subscriptions of Site.
 [**sitePrototypeGetUser**](SiteApi.md#sitePrototypeGetUser) | **GET** /Sites/{id}/user | Fetches belongsTo relation user.
 [**sitePrototypeLinkSubscriptions**](SiteApi.md#sitePrototypeLinkSubscriptions) | **PUT** /Sites/{id}/subscriptions/rel/{fk} | Add a related item by id for subscriptions.
 [**sitePrototypePatchAttributes**](SiteApi.md#sitePrototypePatchAttributes) | **PATCH** /Sites/{id} | Patch attributes for a model instance and persist it into the data source.
 [**sitePrototypeUnlinkSubscriptions**](SiteApi.md#sitePrototypeUnlinkSubscriptions) | **DELETE** /Sites/{id}/subscriptions/rel/{fk} | Remove the subscriptions relation to an item by id.
 [**sitePrototypeUpdateByIdSubscriptions**](SiteApi.md#sitePrototypeUpdateByIdSubscriptions) | **PUT** /Sites/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
+[**sitePrototypeUpdateConfigurationServiceRequest**](SiteApi.md#sitePrototypeUpdateConfigurationServiceRequest) | **PUT** /Sites/{id}/configurationServiceRequest | Update configurationServiceRequest of this model.
 [**siteReplaceByIdPostSitesidReplace**](SiteApi.md#siteReplaceByIdPostSitesidReplace) | **POST** /Sites/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 [**siteReplaceByIdPutSitesid**](SiteApi.md#siteReplaceByIdPutSitesid) | **PUT** /Sites/{id} | Replace attributes for a model instance and persist it into the data source.
 [**siteReplaceOrCreatePostSitesReplaceOrCreate**](SiteApi.md#siteReplaceOrCreatePostSitesReplaceOrCreate) | **POST** /Sites/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 [**siteReplaceOrCreatePutSites**](SiteApi.md#siteReplaceOrCreatePutSites) | **PUT** /Sites | Replace an existing model instance or insert a new one into the data source.
 [**siteSwitchSubscription**](SiteApi.md#siteSwitchSubscription) | **POST** /Sites/switchSubscription | 
+[**siteSwitchSubscriptionNumberOfTimes**](SiteApi.md#siteSwitchSubscriptionNumberOfTimes) | **POST** /Sites/switchSubscriptionNumberOfTimes | 
 [**siteTransfer**](SiteApi.md#siteTransfer) | **POST** /Sites/transfer | 
 [**siteUpdateAll**](SiteApi.md#siteUpdateAll) | **POST** /Sites/update | Update instances of the model matched by {{where}} from the data source.
 [**siteUpsertWithWhere**](SiteApi.md#siteUpsertWithWhere) | **POST** /Sites/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
@@ -557,6 +562,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **sitePrototypeCreateConfigurationServiceRequest**
+> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest sitePrototypeCreateConfigurationServiceRequest($id, $data)
+
+Creates a new instance in configurationServiceRequest of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$id = "id_example"; // string | Site id
+$data = new \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest(); // \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest | 
+
+try {
+    $result = $api_instance->sitePrototypeCreateConfigurationServiceRequest($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->sitePrototypeCreateConfigurationServiceRequest: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Site id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **sitePrototypeCreateSubscriptions**
 > \Yoast\MyYoastApiClient\Model\Subscription sitePrototypeCreateSubscriptions($id, $data)
 
@@ -688,6 +738,48 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **sitePrototypeDestroyConfigurationServiceRequest**
+> sitePrototypeDestroyConfigurationServiceRequest($id)
+
+Deletes configurationServiceRequest of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$id = "id_example"; // string | Site id
+
+try {
+    $api_instance->sitePrototypeDestroyConfigurationServiceRequest($id);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->sitePrototypeDestroyConfigurationServiceRequest: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Site id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **sitePrototypeExistsSubscriptions**
 > bool sitePrototypeExistsSubscriptions($id, $fk)
 
@@ -766,6 +858,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sitePrototypeGetConfigurationServiceRequest**
+> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest sitePrototypeGetConfigurationServiceRequest($id, $refresh)
+
+Fetches hasOne relation configurationServiceRequest.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$id = "id_example"; // string | Site id
+$refresh = true; // bool | 
+
+try {
+    $result = $api_instance->sitePrototypeGetConfigurationServiceRequest($id, $refresh);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->sitePrototypeGetConfigurationServiceRequest: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Site id |
+ **refresh** | **bool**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
 
 ### Authorization
 
@@ -1051,6 +1188,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **sitePrototypeUpdateConfigurationServiceRequest**
+> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest sitePrototypeUpdateConfigurationServiceRequest($id, $data)
+
+Update configurationServiceRequest of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$id = "id_example"; // string | Site id
+$data = new \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest(); // \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest | 
+
+try {
+    $result = $api_instance->sitePrototypeUpdateConfigurationServiceRequest($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->sitePrototypeUpdateConfigurationServiceRequest: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Site id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **siteReplaceByIdPostSitesidReplace**
 > \Yoast\MyYoastApiClient\Model\Site siteReplaceByIdPostSitesidReplace($id, $data)
 
@@ -1256,6 +1438,55 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **from_source_id** | **double**|  |
  **to_source_id** | **double**|  |
+
+### Return type
+
+**double**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **siteSwitchSubscriptionNumberOfTimes**
+> double siteSwitchSubscriptionNumberOfTimes($from_source_id, $to_source_id, $product_id, $quantity)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$from_source_id = 1.2; // double | 
+$to_source_id = 1.2; // double | 
+$product_id = 1.2; // double | 
+$quantity = 1.2; // double | 
+
+try {
+    $result = $api_instance->siteSwitchSubscriptionNumberOfTimes($from_source_id, $to_source_id, $product_id, $quantity);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->siteSwitchSubscriptionNumberOfTimes: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from_source_id** | **double**|  |
+ **to_source_id** | **double**|  |
+ **product_id** | **double**|  |
+ **quantity** | **double**|  |
 
 ### Return type
 

@@ -85,6 +85,7 @@ class Order implements ArrayAccess
         'address_country' => 'string',
         'exclude_from_revenue' => 'bool',
         'renewal' => 'bool',
+        'automatic' => 'bool',
         'created_at' => '\DateTime'
     ];
 
@@ -124,6 +125,7 @@ class Order implements ArrayAccess
         'address_country' => null,
         'exclude_from_revenue' => null,
         'renewal' => null,
+        'automatic' => null,
         'created_at' => 'date-time'
     ];
 
@@ -173,6 +175,7 @@ class Order implements ArrayAccess
         'address_country' => 'addressCountry',
         'exclude_from_revenue' => 'excludeFromRevenue',
         'renewal' => 'renewal',
+        'automatic' => 'automatic',
         'created_at' => 'createdAt'
     ];
 
@@ -213,6 +216,7 @@ class Order implements ArrayAccess
         'address_country' => 'setAddressCountry',
         'exclude_from_revenue' => 'setExcludeFromRevenue',
         'renewal' => 'setRenewal',
+        'automatic' => 'setAutomatic',
         'created_at' => 'setCreatedAt'
     ];
 
@@ -253,6 +257,7 @@ class Order implements ArrayAccess
         'address_country' => 'getAddressCountry',
         'exclude_from_revenue' => 'getExcludeFromRevenue',
         'renewal' => 'getRenewal',
+        'automatic' => 'getAutomatic',
         'created_at' => 'getCreatedAt'
     ];
 
@@ -318,6 +323,7 @@ class Order implements ArrayAccess
         $this->container['address_country'] = isset($data['address_country']) ? $data['address_country'] : null;
         $this->container['exclude_from_revenue'] = isset($data['exclude_from_revenue']) ? $data['exclude_from_revenue'] : false;
         $this->container['renewal'] = isset($data['renewal']) ? $data['renewal'] : false;
+        $this->container['automatic'] = isset($data['automatic']) ? $data['automatic'] : false;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
     }
 
@@ -1059,6 +1065,27 @@ class Order implements ArrayAccess
     public function setRenewal($renewal)
     {
         $this->container['renewal'] = $renewal;
+
+        return $this;
+    }
+
+    /**
+     * Gets automatic
+     * @return bool
+     */
+    public function getAutomatic()
+    {
+        return $this->container['automatic'];
+    }
+
+    /**
+     * Sets automatic
+     * @param bool $automatic
+     * @return $this
+     */
+    public function setAutomatic($automatic)
+    {
+        $this->container['automatic'] = $automatic;
 
         return $this;
     }

@@ -193,6 +193,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sitePrototypeCreateConfigurationServiceRequest
+     *
+     * Creates a new instance in configurationServiceRequest of this model..
+     *
+     */
+    public function testSitePrototypeCreateConfigurationServiceRequest()
+    {
+    }
+
+    /**
      * Test case for sitePrototypeCreateSubscriptions
      *
      * Creates a new instance in subscriptions of this model..
@@ -223,6 +233,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sitePrototypeDestroyConfigurationServiceRequest
+     *
+     * Deletes configurationServiceRequest of this model..
+     *
+     */
+    public function testSitePrototypeDestroyConfigurationServiceRequest()
+    {
+    }
+
+    /**
      * Test case for sitePrototypeExistsSubscriptions
      *
      * Check the existence of subscriptions relation to an item by id..
@@ -239,6 +259,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSitePrototypeFindByIdSubscriptions()
+    {
+    }
+
+    /**
+     * Test case for sitePrototypeGetConfigurationServiceRequest
+     *
+     * Fetches hasOne relation configurationServiceRequest..
+     *
+     */
+    public function testSitePrototypeGetConfigurationServiceRequest()
     {
     }
 
@@ -303,6 +333,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for sitePrototypeUpdateConfigurationServiceRequest
+     *
+     * Update configurationServiceRequest of this model..
+     *
+     */
+    public function testSitePrototypeUpdateConfigurationServiceRequest()
+    {
+    }
+
+    /**
      * Test case for siteReplaceByIdPostSitesidReplace
      *
      * Replace attributes for a model instance and persist it into the data source..
@@ -349,6 +389,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSiteSwitchSubscription()
+    {
+    }
+
+    /**
+     * Test case for siteSwitchSubscriptionNumberOfTimes
+     *
+     * .
+     *
+     */
+    public function testSiteSwitchSubscriptionNumberOfTimes()
     {
     }
 

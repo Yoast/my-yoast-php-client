@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **gl_number** | **string** |  | [optional] 
 **is_download_only** | **bool** |  | [optional] [default to false]
 **icon** | **string** |  | [optional] 
+**source_id** | **double** |  | 
+**source_shop_id** | **double** |  | 
 **shop_product_type** | **string** |  | [optional] 
 **shop_status** | **string** |  | [optional] 
 **price** | **double** |  | [optional] 

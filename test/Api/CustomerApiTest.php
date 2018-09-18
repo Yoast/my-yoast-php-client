@@ -73,6 +73,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for customerCancelSubscription
+     *
+     * Cancels a subscription of a plugin..
+     *
+     */
+    public function testCustomerCancelSubscription()
+    {
+    }
+
+    /**
      * Test case for customerChangePassword
      *
      * Change a user's password..
@@ -149,6 +159,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testCustomerDeleteById()
+    {
+    }
+
+    /**
+     * Test case for customerDownloadProfile
+     *
+     * Downloads the data of the given customer as CSV files inside a ZIP file..
+     *
+     */
+    public function testCustomerDownloadProfile()
     {
     }
 
@@ -253,6 +273,36 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for customerNewsletterStatus
+     *
+     * Returns the newsletter status for a customer..
+     *
+     */
+    public function testCustomerNewsletterStatus()
+    {
+    }
+
+    /**
+     * Test case for customerNewsletterSubscribe
+     *
+     * Subscribes a customer to the newsletter..
+     *
+     */
+    public function testCustomerNewsletterSubscribe()
+    {
+    }
+
+    /**
+     * Test case for customerNewsletterUnsubscribe
+     *
+     * Unsubscribes a customer from the newsletter..
+     *
+     */
+    public function testCustomerNewsletterUnsubscribe()
+    {
+    }
+
+    /**
      * Test case for customerPatchOrCreate
      *
      * Patch an existing model instance or insert a new one into the data source..
@@ -299,6 +349,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testCustomerPrototypeCountComposerTokens()
+    {
+    }
+
+    /**
+     * Test case for customerPrototypeCountConfigurationServiceRequests
+     *
+     * Counts configurationServiceRequests of Customer..
+     *
+     */
+    public function testCustomerPrototypeCountConfigurationServiceRequests()
     {
     }
 
@@ -403,6 +463,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for customerPrototypeCreateConfigurationServiceRequests
+     *
+     * Creates a new instance in configurationServiceRequests of this model..
+     *
+     */
+    public function testCustomerPrototypeCreateConfigurationServiceRequests()
+    {
+    }
+
+    /**
      * Test case for customerPrototypeCreateCourseEnrollments
      *
      * Creates a new instance in courseEnrollments of this model..
@@ -503,6 +573,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for customerPrototypeDeleteConfigurationServiceRequests
+     *
+     * Deletes all configurationServiceRequests of this model..
+     *
+     */
+    public function testCustomerPrototypeDeleteConfigurationServiceRequests()
+    {
+    }
+
+    /**
      * Test case for customerPrototypeDeleteCourseEnrollments
      *
      * Deletes all courseEnrollments of this model..
@@ -599,6 +679,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testCustomerPrototypeDestroyByIdComposerTokens()
+    {
+    }
+
+    /**
+     * Test case for customerPrototypeDestroyByIdConfigurationServiceRequests
+     *
+     * Delete a related item by id for configurationServiceRequests..
+     *
+     */
+    public function testCustomerPrototypeDestroyByIdConfigurationServiceRequests()
     {
     }
 
@@ -713,6 +803,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for customerPrototypeFindByIdConfigurationServiceRequests
+     *
+     * Find a related item by id for configurationServiceRequests..
+     *
+     */
+    public function testCustomerPrototypeFindByIdConfigurationServiceRequests()
+    {
+    }
+
+    /**
      * Test case for customerPrototypeFindByIdCourseEnrollments
      *
      * Find a related item by id for courseEnrollments..
@@ -809,6 +909,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testCustomerPrototypeGetComposerTokens()
+    {
+    }
+
+    /**
+     * Test case for customerPrototypeGetConfigurationServiceRequests
+     *
+     * Queries configurationServiceRequests of Customer..
+     *
+     */
+    public function testCustomerPrototypeGetConfigurationServiceRequests()
     {
     }
 
@@ -939,6 +1049,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testCustomerPrototypeUpdateByIdComposerTokens()
+    {
+    }
+
+    /**
+     * Test case for customerPrototypeUpdateByIdConfigurationServiceRequests
+     *
+     * Update a related item by id for configurationServiceRequests..
+     *
+     */
+    public function testCustomerPrototypeUpdateByIdConfigurationServiceRequests()
     {
     }
 

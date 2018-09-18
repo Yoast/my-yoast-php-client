@@ -57,6 +57,9 @@ class CourseEnrollment implements ArrayAccess
         'id' => 'string',
         'status' => 'string',
         'progress' => 'double',
+        'trial_completed' => 'bool',
+        'is_trial' => 'bool',
+        'outside_trial_progress' => 'bool',
         'course_id' => 'string',
         'buyer_id' => 'string',
         'student_id' => 'string',
@@ -71,6 +74,9 @@ class CourseEnrollment implements ArrayAccess
         'id' => null,
         'status' => null,
         'progress' => 'double',
+        'trial_completed' => null,
+        'is_trial' => null,
+        'outside_trial_progress' => null,
         'course_id' => null,
         'buyer_id' => null,
         'student_id' => null,
@@ -95,6 +101,9 @@ class CourseEnrollment implements ArrayAccess
         'id' => 'id',
         'status' => 'status',
         'progress' => 'progress',
+        'trial_completed' => 'trialCompleted',
+        'is_trial' => 'isTrial',
+        'outside_trial_progress' => 'outsideTrialProgress',
         'course_id' => 'courseId',
         'buyer_id' => 'buyerId',
         'student_id' => 'studentId',
@@ -110,6 +119,9 @@ class CourseEnrollment implements ArrayAccess
         'id' => 'setId',
         'status' => 'setStatus',
         'progress' => 'setProgress',
+        'trial_completed' => 'setTrialCompleted',
+        'is_trial' => 'setIsTrial',
+        'outside_trial_progress' => 'setOutsideTrialProgress',
         'course_id' => 'setCourseId',
         'buyer_id' => 'setBuyerId',
         'student_id' => 'setStudentId',
@@ -125,6 +137,9 @@ class CourseEnrollment implements ArrayAccess
         'id' => 'getId',
         'status' => 'getStatus',
         'progress' => 'getProgress',
+        'trial_completed' => 'getTrialCompleted',
+        'is_trial' => 'getIsTrial',
+        'outside_trial_progress' => 'getOutsideTrialProgress',
         'course_id' => 'getCourseId',
         'buyer_id' => 'getBuyerId',
         'student_id' => 'getStudentId',
@@ -165,6 +180,9 @@ class CourseEnrollment implements ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['progress'] = isset($data['progress']) ? $data['progress'] : null;
+        $this->container['trial_completed'] = isset($data['trial_completed']) ? $data['trial_completed'] : false;
+        $this->container['is_trial'] = isset($data['is_trial']) ? $data['is_trial'] : false;
+        $this->container['outside_trial_progress'] = isset($data['outside_trial_progress']) ? $data['outside_trial_progress'] : false;
         $this->container['course_id'] = isset($data['course_id']) ? $data['course_id'] : null;
         $this->container['buyer_id'] = isset($data['buyer_id']) ? $data['buyer_id'] : null;
         $this->container['student_id'] = isset($data['student_id']) ? $data['student_id'] : null;
@@ -273,6 +291,69 @@ class CourseEnrollment implements ArrayAccess
     public function setProgress($progress)
     {
         $this->container['progress'] = $progress;
+
+        return $this;
+    }
+
+    /**
+     * Gets trial_completed
+     * @return bool
+     */
+    public function getTrialCompleted()
+    {
+        return $this->container['trial_completed'];
+    }
+
+    /**
+     * Sets trial_completed
+     * @param bool $trial_completed
+     * @return $this
+     */
+    public function setTrialCompleted($trial_completed)
+    {
+        $this->container['trial_completed'] = $trial_completed;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_trial
+     * @return bool
+     */
+    public function getIsTrial()
+    {
+        return $this->container['is_trial'];
+    }
+
+    /**
+     * Sets is_trial
+     * @param bool $is_trial
+     * @return $this
+     */
+    public function setIsTrial($is_trial)
+    {
+        $this->container['is_trial'] = $is_trial;
+
+        return $this;
+    }
+
+    /**
+     * Gets outside_trial_progress
+     * @return bool
+     */
+    public function getOutsideTrialProgress()
+    {
+        return $this->container['outside_trial_progress'];
+    }
+
+    /**
+     * Sets outside_trial_progress
+     * @param bool $outside_trial_progress
+     * @return $this
+     */
+    public function setOutsideTrialProgress($outside_trial_progress)
+    {
+        $this->container['outside_trial_progress'] = $outside_trial_progress;
 
         return $this;
     }

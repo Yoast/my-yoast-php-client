@@ -1,6 +1,6 @@
 <?php
 /**
- * CourseEnrollmentTest
+ * ConfigurationServiceRequestTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * CourseEnrollmentTest Class Doc Comment
+ * ConfigurationServiceRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description CourseEnrollment
+// * @description ConfigurationServiceRequest
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CourseEnrollmentTest extends \PHPUnit_Framework_TestCase
+class ConfigurationServiceRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class CourseEnrollmentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CourseEnrollment"
+     * Test "ConfigurationServiceRequest"
      */
-    public function testCourseEnrollment()
+    public function testConfigurationServiceRequest()
     {
     }
 
@@ -92,51 +92,93 @@ class CourseEnrollmentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "progress"
+     * Test attribute "backup_required"
      */
-    public function testPropertyProgress()
+    public function testPropertyBackupRequired()
     {
     }
 
     /**
-     * Test attribute "trial_completed"
+     * Test attribute "backup_created"
      */
-    public function testPropertyTrialCompleted()
+    public function testPropertyBackupCreated()
     {
     }
 
     /**
-     * Test attribute "is_trial"
+     * Test attribute "import_from"
      */
-    public function testPropertyIsTrial()
+    public function testPropertyImportFrom()
     {
     }
 
     /**
-     * Test attribute "outside_trial_progress"
+     * Test attribute "import_done"
      */
-    public function testPropertyOutsideTrialProgress()
+    public function testPropertyImportDone()
     {
     }
 
     /**
-     * Test attribute "course_id"
+     * Test attribute "search_console_required"
      */
-    public function testPropertyCourseId()
+    public function testPropertySearchConsoleRequired()
     {
     }
 
     /**
-     * Test attribute "buyer_id"
+     * Test attribute "search_console_connected"
      */
-    public function testPropertyBuyerId()
+    public function testPropertySearchConsoleConnected()
     {
     }
 
     /**
-     * Test attribute "student_id"
+     * Test attribute "submitted_at"
      */
-    public function testPropertyStudentId()
+    public function testPropertySubmittedAt()
+    {
+    }
+
+    /**
+     * Test attribute "completed_at"
+     */
+    public function testPropertyCompletedAt()
+    {
+    }
+
+    /**
+     * Test attribute "accepted_at"
+     */
+    public function testPropertyAcceptedAt()
+    {
+    }
+
+    /**
+     * Test attribute "report"
+     */
+    public function testPropertyReport()
+    {
+    }
+
+    /**
+     * Test attribute "site_id"
+     */
+    public function testPropertySiteId()
+    {
+    }
+
+    /**
+     * Test attribute "customer_id"
+     */
+    public function testPropertyCustomerId()
+    {
+    }
+
+    /**
+     * Test attribute "assignee_id"
+     */
+    public function testPropertyAssigneeId()
     {
     }
 
@@ -144,6 +186,20 @@ class CourseEnrollmentTest extends \PHPUnit_Framework_TestCase
      * Test attribute "order_id"
      */
     public function testPropertyOrderId()
+    {
+    }
+
+    /**
+     * Test attribute "created_at"
+     */
+    public function testPropertyCreatedAt()
+    {
+    }
+
+    /**
+     * Test attribute "updated_at"
+     */
+    public function testPropertyUpdatedAt()
     {
     }
 }

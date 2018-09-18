@@ -61,6 +61,11 @@ class Course implements ArrayAccess
         'certificate_url' => 'string',
         'icon_url' => 'string',
         'complimentary' => 'bool',
+        'open' => 'bool',
+        'has_trial' => 'bool',
+        'deprecated' => 'bool',
+        'sale' => 'bool',
+        'sale_label' => 'string',
         'source_id' => 'double'
     ];
 
@@ -76,6 +81,11 @@ class Course implements ArrayAccess
         'certificate_url' => null,
         'icon_url' => null,
         'complimentary' => null,
+        'open' => null,
+        'has_trial' => null,
+        'deprecated' => null,
+        'sale' => null,
+        'sale_label' => null,
         'source_id' => 'double'
     ];
 
@@ -101,6 +111,11 @@ class Course implements ArrayAccess
         'certificate_url' => 'certificateUrl',
         'icon_url' => 'iconUrl',
         'complimentary' => 'complimentary',
+        'open' => 'open',
+        'has_trial' => 'hasTrial',
+        'deprecated' => 'deprecated',
+        'sale' => 'sale',
+        'sale_label' => 'saleLabel',
         'source_id' => 'sourceId'
     ];
 
@@ -117,6 +132,11 @@ class Course implements ArrayAccess
         'certificate_url' => 'setCertificateUrl',
         'icon_url' => 'setIconUrl',
         'complimentary' => 'setComplimentary',
+        'open' => 'setOpen',
+        'has_trial' => 'setHasTrial',
+        'deprecated' => 'setDeprecated',
+        'sale' => 'setSale',
+        'sale_label' => 'setSaleLabel',
         'source_id' => 'setSourceId'
     ];
 
@@ -133,6 +153,11 @@ class Course implements ArrayAccess
         'certificate_url' => 'getCertificateUrl',
         'icon_url' => 'getIconUrl',
         'complimentary' => 'getComplimentary',
+        'open' => 'getOpen',
+        'has_trial' => 'getHasTrial',
+        'deprecated' => 'getDeprecated',
+        'sale' => 'getSale',
+        'sale_label' => 'getSaleLabel',
         'source_id' => 'getSourceId'
     ];
 
@@ -174,6 +199,11 @@ class Course implements ArrayAccess
         $this->container['certificate_url'] = isset($data['certificate_url']) ? $data['certificate_url'] : null;
         $this->container['icon_url'] = isset($data['icon_url']) ? $data['icon_url'] : null;
         $this->container['complimentary'] = isset($data['complimentary']) ? $data['complimentary'] : false;
+        $this->container['open'] = isset($data['open']) ? $data['open'] : false;
+        $this->container['has_trial'] = isset($data['has_trial']) ? $data['has_trial'] : false;
+        $this->container['deprecated'] = isset($data['deprecated']) ? $data['deprecated'] : false;
+        $this->container['sale'] = isset($data['sale']) ? $data['sale'] : false;
+        $this->container['sale_label'] = isset($data['sale_label']) ? $data['sale_label'] : null;
         $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
     }
 
@@ -369,6 +399,111 @@ class Course implements ArrayAccess
     public function setComplimentary($complimentary)
     {
         $this->container['complimentary'] = $complimentary;
+
+        return $this;
+    }
+
+    /**
+     * Gets open
+     * @return bool
+     */
+    public function getOpen()
+    {
+        return $this->container['open'];
+    }
+
+    /**
+     * Sets open
+     * @param bool $open
+     * @return $this
+     */
+    public function setOpen($open)
+    {
+        $this->container['open'] = $open;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_trial
+     * @return bool
+     */
+    public function getHasTrial()
+    {
+        return $this->container['has_trial'];
+    }
+
+    /**
+     * Sets has_trial
+     * @param bool $has_trial
+     * @return $this
+     */
+    public function setHasTrial($has_trial)
+    {
+        $this->container['has_trial'] = $has_trial;
+
+        return $this;
+    }
+
+    /**
+     * Gets deprecated
+     * @return bool
+     */
+    public function getDeprecated()
+    {
+        return $this->container['deprecated'];
+    }
+
+    /**
+     * Sets deprecated
+     * @param bool $deprecated
+     * @return $this
+     */
+    public function setDeprecated($deprecated)
+    {
+        $this->container['deprecated'] = $deprecated;
+
+        return $this;
+    }
+
+    /**
+     * Gets sale
+     * @return bool
+     */
+    public function getSale()
+    {
+        return $this->container['sale'];
+    }
+
+    /**
+     * Sets sale
+     * @param bool $sale
+     * @return $this
+     */
+    public function setSale($sale)
+    {
+        $this->container['sale'] = $sale;
+
+        return $this;
+    }
+
+    /**
+     * Gets sale_label
+     * @return string
+     */
+    public function getSaleLabel()
+    {
+        return $this->container['sale_label'];
+    }
+
+    /**
+     * Sets sale_label
+     * @param string $sale_label
+     * @return $this
+     */
+    public function setSaleLabel($sale_label)
+    {
+        $this->container['sale_label'] = $sale_label;
 
         return $this;
     }

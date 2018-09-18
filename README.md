@@ -97,6 +97,32 @@ Class | Method | HTTP request | Description
 *ComposerTokenApi* | [**composerTokenReplaceOrCreatePutComposerTokens**](docs/Api/ComposerTokenApi.md#composertokenreplaceorcreateputcomposertokens) | **PUT** /ComposerTokens | Replace an existing model instance or insert a new one into the data source.
 *ComposerTokenApi* | [**composerTokenUpdateAll**](docs/Api/ComposerTokenApi.md#composertokenupdateall) | **POST** /ComposerTokens/update | Update instances of the model matched by {{where}} from the data source.
 *ComposerTokenApi* | [**composerTokenUpsertWithWhere**](docs/Api/ComposerTokenApi.md#composertokenupsertwithwhere) | **POST** /ComposerTokens/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestAssign**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestassign) | **POST** /ConfigurationServiceRequests/{id}/assign | 
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestComplete**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestcomplete) | **POST** /ConfigurationServiceRequests/{id}/complete | 
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestConfigure**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestconfigure) | **POST** /ConfigurationServiceRequests/{id}/configure | 
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestCount**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestcount) | **GET** /ConfigurationServiceRequests/count | Count instances of the model matched by where from the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestCreate**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestcreate) | **POST** /ConfigurationServiceRequests | Create a new instance of the model and persist it into the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestCreateChangeStreamGetConfigurationServiceRequestsChangeStream**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestcreatechangestreamgetconfigurationservicerequestschangestream) | **GET** /ConfigurationServiceRequests/change-stream | Create a change stream.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestCreateChangeStreamPostConfigurationServiceRequestsChangeStream**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestcreatechangestreampostconfigurationservicerequestschangestream) | **POST** /ConfigurationServiceRequests/change-stream | Create a change stream.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestDeleteById**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestdeletebyid) | **DELETE** /ConfigurationServiceRequests/{id} | Delete a model instance by {{id}} from the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestExistsGetConfigurationServiceRequestsidExists**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestexistsgetconfigurationservicerequestsidexists) | **GET** /ConfigurationServiceRequests/{id}/exists | Check whether a model instance exists in the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestExistsHeadConfigurationServiceRequestsid**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestexistsheadconfigurationservicerequestsid) | **HEAD** /ConfigurationServiceRequests/{id} | Check whether a model instance exists in the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestFind**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestfind) | **GET** /ConfigurationServiceRequests | Find all instances of the model matched by filter from the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestFindById**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestfindbyid) | **GET** /ConfigurationServiceRequests/{id} | Find a model instance by {{id}} from the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestFindOne**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestfindone) | **GET** /ConfigurationServiceRequests/findOne | Find first instance of the model matched by filter from the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestPatchOrCreate**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestpatchorcreate) | **PATCH** /ConfigurationServiceRequests | Patch an existing model instance or insert a new one into the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestPrototypeGetAssignee**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestprototypegetassignee) | **GET** /ConfigurationServiceRequests/{id}/assignee | Fetches belongsTo relation assignee.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestPrototypeGetCustomer**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestprototypegetcustomer) | **GET** /ConfigurationServiceRequests/{id}/customer | Fetches belongsTo relation customer.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestPrototypeGetOrder**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestprototypegetorder) | **GET** /ConfigurationServiceRequests/{id}/order | Fetches belongsTo relation order.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestPrototypeGetSite**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestprototypegetsite) | **GET** /ConfigurationServiceRequests/{id}/site | Fetches belongsTo relation site.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestPrototypePatchAttributes**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestprototypepatchattributes) | **PATCH** /ConfigurationServiceRequests/{id} | Patch attributes for a model instance and persist it into the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestReplaceByIdPostConfigurationServiceRequestsidReplace**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestreplacebyidpostconfigurationservicerequestsidreplace) | **POST** /ConfigurationServiceRequests/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestReplaceByIdPutConfigurationServiceRequestsid**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestreplacebyidputconfigurationservicerequestsid) | **PUT** /ConfigurationServiceRequests/{id} | Replace attributes for a model instance and persist it into the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestReplaceOrCreatePostConfigurationServiceRequestsReplaceOrCreate**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestreplaceorcreatepostconfigurationservicerequestsreplaceorcreate) | **POST** /ConfigurationServiceRequests/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestReplaceOrCreatePutConfigurationServiceRequests**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestreplaceorcreateputconfigurationservicerequests) | **PUT** /ConfigurationServiceRequests | Replace an existing model instance or insert a new one into the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestReport**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestreport) | **GET** /ConfigurationServiceRequests/{id}/report | 
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestUpdateAll**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestupdateall) | **POST** /ConfigurationServiceRequests/update | Update instances of the model matched by {{where}} from the data source.
+*ConfigurationServiceRequestApi* | [**configurationServiceRequestUpsertWithWhere**](docs/Api/ConfigurationServiceRequestApi.md#configurationservicerequestupsertwithwhere) | **POST** /ConfigurationServiceRequests/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 *CourseApi* | [**courseCount**](docs/Api/CourseApi.md#coursecount) | **GET** /Courses/count | Count instances of the model matched by where from the data source.
 *CourseApi* | [**courseCreate**](docs/Api/CourseApi.md#coursecreate) | **POST** /Courses | Create a new instance of the model and persist it into the data source.
 *CourseApi* | [**courseCreateChangeStreamGetCoursesChangeStream**](docs/Api/CourseApi.md#coursecreatechangestreamgetcourseschangestream) | **GET** /Courses/change-stream | Create a change stream.
@@ -109,11 +135,14 @@ Class | Method | HTTP request | Description
 *CourseApi* | [**courseFindOne**](docs/Api/CourseApi.md#coursefindone) | **GET** /Courses/findOne | Find first instance of the model matched by filter from the data source.
 *CourseApi* | [**courseFromAcademy**](docs/Api/CourseApi.md#coursefromacademy) | **PUT** /Courses/fromAcademy | 
 *CourseApi* | [**coursePatchOrCreate**](docs/Api/CourseApi.md#coursepatchorcreate) | **PATCH** /Courses | Patch an existing model instance or insert a new one into the data source.
-*CourseApi* | [**coursePrototypeCreateProduct**](docs/Api/CourseApi.md#courseprototypecreateproduct) | **POST** /Courses/{id}/product | Creates a new instance in product of this model.
-*CourseApi* | [**coursePrototypeDestroyProduct**](docs/Api/CourseApi.md#courseprototypedestroyproduct) | **DELETE** /Courses/{id}/product | Deletes product of this model.
-*CourseApi* | [**coursePrototypeGetProduct**](docs/Api/CourseApi.md#courseprototypegetproduct) | **GET** /Courses/{id}/product | Fetches hasOne relation product.
+*CourseApi* | [**coursePrototypeCountProducts**](docs/Api/CourseApi.md#courseprototypecountproducts) | **GET** /Courses/{id}/products/count | Counts products of Course.
+*CourseApi* | [**coursePrototypeCreateProducts**](docs/Api/CourseApi.md#courseprototypecreateproducts) | **POST** /Courses/{id}/products | Creates a new instance in products of this model.
+*CourseApi* | [**coursePrototypeDeleteProducts**](docs/Api/CourseApi.md#courseprototypedeleteproducts) | **DELETE** /Courses/{id}/products | Deletes all products of this model.
+*CourseApi* | [**coursePrototypeDestroyByIdProducts**](docs/Api/CourseApi.md#courseprototypedestroybyidproducts) | **DELETE** /Courses/{id}/products/{fk} | Delete a related item by id for products.
+*CourseApi* | [**coursePrototypeFindByIdProducts**](docs/Api/CourseApi.md#courseprototypefindbyidproducts) | **GET** /Courses/{id}/products/{fk} | Find a related item by id for products.
+*CourseApi* | [**coursePrototypeGetProducts**](docs/Api/CourseApi.md#courseprototypegetproducts) | **GET** /Courses/{id}/products | Queries products of Course.
 *CourseApi* | [**coursePrototypePatchAttributes**](docs/Api/CourseApi.md#courseprototypepatchattributes) | **PATCH** /Courses/{id} | Patch attributes for a model instance and persist it into the data source.
-*CourseApi* | [**coursePrototypeUpdateProduct**](docs/Api/CourseApi.md#courseprototypeupdateproduct) | **PUT** /Courses/{id}/product | Update product of this model.
+*CourseApi* | [**coursePrototypeUpdateByIdProducts**](docs/Api/CourseApi.md#courseprototypeupdatebyidproducts) | **PUT** /Courses/{id}/products/{fk} | Update a related item by id for products.
 *CourseApi* | [**courseReplaceByIdPostCoursesidReplace**](docs/Api/CourseApi.md#coursereplacebyidpostcoursesidreplace) | **POST** /Courses/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *CourseApi* | [**courseReplaceByIdPutCoursesid**](docs/Api/CourseApi.md#coursereplacebyidputcoursesid) | **PUT** /Courses/{id} | Replace attributes for a model instance and persist it into the data source.
 *CourseApi* | [**courseReplaceOrCreatePostCoursesReplaceOrCreate**](docs/Api/CourseApi.md#coursereplaceorcreatepostcoursesreplaceorcreate) | **POST** /Courses/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -145,6 +174,7 @@ Class | Method | HTTP request | Description
 *CourseEnrollmentApi* | [**courseEnrollmentTransfer**](docs/Api/CourseEnrollmentApi.md#courseenrollmenttransfer) | **POST** /CourseEnrollments/transfer | 
 *CourseEnrollmentApi* | [**courseEnrollmentUpdateAll**](docs/Api/CourseEnrollmentApi.md#courseenrollmentupdateall) | **POST** /CourseEnrollments/update | Update instances of the model matched by {{where}} from the data source.
 *CourseEnrollmentApi* | [**courseEnrollmentUpsertWithWhere**](docs/Api/CourseEnrollmentApi.md#courseenrollmentupsertwithwhere) | **POST** /CourseEnrollments/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*CustomerApi* | [**customerCancelSubscription**](docs/Api/CustomerApi.md#customercancelsubscription) | **POST** /Customers/{id}/shop/{shop}/subscriptions/{subscription}/cancel | Cancels a subscription of a plugin.
 *CustomerApi* | [**customerChangePassword**](docs/Api/CustomerApi.md#customerchangepassword) | **POST** /Customers/change-password | Change a user&#39;s password.
 *CustomerApi* | [**customerConfirm**](docs/Api/CustomerApi.md#customerconfirm) | **GET** /Customers/confirm | Confirm a user registration with email verification token.
 *CustomerApi* | [**customerCount**](docs/Api/CustomerApi.md#customercount) | **GET** /Customers/count | Count instances of the model matched by where from the data source.
@@ -153,6 +183,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerCreateChangeStreamPostCustomersChangeStream**](docs/Api/CustomerApi.md#customercreatechangestreampostcustomerschangestream) | **POST** /Customers/change-stream | Create a change stream.
 *CustomerApi* | [**customerCurrent**](docs/Api/CustomerApi.md#customercurrent) | **GET** /Customers/current | 
 *CustomerApi* | [**customerDeleteById**](docs/Api/CustomerApi.md#customerdeletebyid) | **DELETE** /Customers/{id} | Delete a model instance by {{id}} from the data source.
+*CustomerApi* | [**customerDownloadProfile**](docs/Api/CustomerApi.md#customerdownloadprofile) | **GET** /Customers/{id}/download | Downloads the data of the given customer as CSV files inside a ZIP file.
 *CustomerApi* | [**customerEnable**](docs/Api/CustomerApi.md#customerenable) | **POST** /Customers/{id}/enable | Enables the customer with the given id.
 *CustomerApi* | [**customerExistsGetCustomersidExists**](docs/Api/CustomerApi.md#customerexistsgetcustomersidexists) | **GET** /Customers/{id}/exists | Check whether a model instance exists in the data source.
 *CustomerApi* | [**customerExistsHeadCustomersid**](docs/Api/CustomerApi.md#customerexistsheadcustomersid) | **HEAD** /Customers/{id} | Check whether a model instance exists in the data source.
@@ -163,11 +194,15 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerFromWooCommerce**](docs/Api/CustomerApi.md#customerfromwoocommerce) | **PUT** /Customers/fromWooCommerce | 
 *CustomerApi* | [**customerLogin**](docs/Api/CustomerApi.md#customerlogin) | **POST** /Customers/login | Login a user with username/email and password.
 *CustomerApi* | [**customerLogout**](docs/Api/CustomerApi.md#customerlogout) | **POST** /Customers/logout | Logout a user with access token.
+*CustomerApi* | [**customerNewsletterStatus**](docs/Api/CustomerApi.md#customernewsletterstatus) | **GET** /Customers/{id}/newsletter | Returns the newsletter status for a customer.
+*CustomerApi* | [**customerNewsletterSubscribe**](docs/Api/CustomerApi.md#customernewslettersubscribe) | **POST** /Customers/{id}/newsletter | Subscribes a customer to the newsletter.
+*CustomerApi* | [**customerNewsletterUnsubscribe**](docs/Api/CustomerApi.md#customernewsletterunsubscribe) | **DELETE** /Customers/{id}/newsletter | Unsubscribes a customer from the newsletter.
 *CustomerApi* | [**customerPatchOrCreate**](docs/Api/CustomerApi.md#customerpatchorcreate) | **PATCH** /Customers | Patch an existing model instance or insert a new one into the data source.
 *CustomerApi* | [**customerPatchProfile**](docs/Api/CustomerApi.md#customerpatchprofile) | **PATCH** /Customers/{id}/profile | Updates the profile with the supplied information.
 *CustomerApi* | [**customerProfile**](docs/Api/CustomerApi.md#customerprofile) | **GET** /Customers/{id}/profile | Finds the profile for the customer with the given id.
 *CustomerApi* | [**customerPrototypeCountAccessTokens**](docs/Api/CustomerApi.md#customerprototypecountaccesstokens) | **GET** /Customers/{id}/accessTokens/count | Counts accessTokens of Customer.
 *CustomerApi* | [**customerPrototypeCountComposerTokens**](docs/Api/CustomerApi.md#customerprototypecountcomposertokens) | **GET** /Customers/{id}/composerTokens/count | Counts composerTokens of Customer.
+*CustomerApi* | [**customerPrototypeCountConfigurationServiceRequests**](docs/Api/CustomerApi.md#customerprototypecountconfigurationservicerequests) | **GET** /Customers/{id}/configurationServiceRequests/count | Counts configurationServiceRequests of Customer.
 *CustomerApi* | [**customerPrototypeCountCourseEnrollments**](docs/Api/CustomerApi.md#customerprototypecountcourseenrollments) | **GET** /Customers/{id}/courseEnrollments/count | Counts courseEnrollments of Customer.
 *CustomerApi* | [**customerPrototypeCountCredentials**](docs/Api/CustomerApi.md#customerprototypecountcredentials) | **GET** /Customers/{id}/credentials/count | Counts credentials of Customer.
 *CustomerApi* | [**customerPrototypeCountIdentities**](docs/Api/CustomerApi.md#customerprototypecountidentities) | **GET** /Customers/{id}/identities/count | Counts identities of Customer.
@@ -178,6 +213,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerPrototypeCountSubscriptions**](docs/Api/CustomerApi.md#customerprototypecountsubscriptions) | **GET** /Customers/{id}/subscriptions/count | Counts subscriptions of Customer.
 *CustomerApi* | [**customerPrototypeCreateAccessTokens**](docs/Api/CustomerApi.md#customerprototypecreateaccesstokens) | **POST** /Customers/{id}/accessTokens | Creates a new instance in accessTokens of this model.
 *CustomerApi* | [**customerPrototypeCreateComposerTokens**](docs/Api/CustomerApi.md#customerprototypecreatecomposertokens) | **POST** /Customers/{id}/composerTokens | Creates a new instance in composerTokens of this model.
+*CustomerApi* | [**customerPrototypeCreateConfigurationServiceRequests**](docs/Api/CustomerApi.md#customerprototypecreateconfigurationservicerequests) | **POST** /Customers/{id}/configurationServiceRequests | Creates a new instance in configurationServiceRequests of this model.
 *CustomerApi* | [**customerPrototypeCreateCourseEnrollments**](docs/Api/CustomerApi.md#customerprototypecreatecourseenrollments) | **POST** /Customers/{id}/courseEnrollments | Creates a new instance in courseEnrollments of this model.
 *CustomerApi* | [**customerPrototypeCreateCredentials**](docs/Api/CustomerApi.md#customerprototypecreatecredentials) | **POST** /Customers/{id}/credentials | Creates a new instance in credentials of this model.
 *CustomerApi* | [**customerPrototypeCreateIdentities**](docs/Api/CustomerApi.md#customerprototypecreateidentities) | **POST** /Customers/{id}/identities | Creates a new instance in identities of this model.
@@ -188,6 +224,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerPrototypeCreateSubscriptions**](docs/Api/CustomerApi.md#customerprototypecreatesubscriptions) | **POST** /Customers/{id}/subscriptions | Creates a new instance in subscriptions of this model.
 *CustomerApi* | [**customerPrototypeDeleteAccessTokens**](docs/Api/CustomerApi.md#customerprototypedeleteaccesstokens) | **DELETE** /Customers/{id}/accessTokens | Deletes all accessTokens of this model.
 *CustomerApi* | [**customerPrototypeDeleteComposerTokens**](docs/Api/CustomerApi.md#customerprototypedeletecomposertokens) | **DELETE** /Customers/{id}/composerTokens | Deletes all composerTokens of this model.
+*CustomerApi* | [**customerPrototypeDeleteConfigurationServiceRequests**](docs/Api/CustomerApi.md#customerprototypedeleteconfigurationservicerequests) | **DELETE** /Customers/{id}/configurationServiceRequests | Deletes all configurationServiceRequests of this model.
 *CustomerApi* | [**customerPrototypeDeleteCourseEnrollments**](docs/Api/CustomerApi.md#customerprototypedeletecourseenrollments) | **DELETE** /Customers/{id}/courseEnrollments | Deletes all courseEnrollments of this model.
 *CustomerApi* | [**customerPrototypeDeleteCredentials**](docs/Api/CustomerApi.md#customerprototypedeletecredentials) | **DELETE** /Customers/{id}/credentials | Deletes all credentials of this model.
 *CustomerApi* | [**customerPrototypeDeleteIdentities**](docs/Api/CustomerApi.md#customerprototypedeleteidentities) | **DELETE** /Customers/{id}/identities | Deletes all identities of this model.
@@ -198,6 +235,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerPrototypeDeleteSubscriptions**](docs/Api/CustomerApi.md#customerprototypedeletesubscriptions) | **DELETE** /Customers/{id}/subscriptions | Deletes all subscriptions of this model.
 *CustomerApi* | [**customerPrototypeDestroyByIdAccessTokens**](docs/Api/CustomerApi.md#customerprototypedestroybyidaccesstokens) | **DELETE** /Customers/{id}/accessTokens/{fk} | Delete a related item by id for accessTokens.
 *CustomerApi* | [**customerPrototypeDestroyByIdComposerTokens**](docs/Api/CustomerApi.md#customerprototypedestroybyidcomposertokens) | **DELETE** /Customers/{id}/composerTokens/{fk} | Delete a related item by id for composerTokens.
+*CustomerApi* | [**customerPrototypeDestroyByIdConfigurationServiceRequests**](docs/Api/CustomerApi.md#customerprototypedestroybyidconfigurationservicerequests) | **DELETE** /Customers/{id}/configurationServiceRequests/{fk} | Delete a related item by id for configurationServiceRequests.
 *CustomerApi* | [**customerPrototypeDestroyByIdCourseEnrollments**](docs/Api/CustomerApi.md#customerprototypedestroybyidcourseenrollments) | **DELETE** /Customers/{id}/courseEnrollments/{fk} | Delete a related item by id for courseEnrollments.
 *CustomerApi* | [**customerPrototypeDestroyByIdCredentials**](docs/Api/CustomerApi.md#customerprototypedestroybyidcredentials) | **DELETE** /Customers/{id}/credentials/{fk} | Delete a related item by id for credentials.
 *CustomerApi* | [**customerPrototypeDestroyByIdIdentities**](docs/Api/CustomerApi.md#customerprototypedestroybyididentities) | **DELETE** /Customers/{id}/identities/{fk} | Delete a related item by id for identities.
@@ -209,6 +247,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerPrototypeExistsRoles**](docs/Api/CustomerApi.md#customerprototypeexistsroles) | **HEAD** /Customers/{id}/roles/rel/{fk} | Check the existence of roles relation to an item by id.
 *CustomerApi* | [**customerPrototypeFindByIdAccessTokens**](docs/Api/CustomerApi.md#customerprototypefindbyidaccesstokens) | **GET** /Customers/{id}/accessTokens/{fk} | Find a related item by id for accessTokens.
 *CustomerApi* | [**customerPrototypeFindByIdComposerTokens**](docs/Api/CustomerApi.md#customerprototypefindbyidcomposertokens) | **GET** /Customers/{id}/composerTokens/{fk} | Find a related item by id for composerTokens.
+*CustomerApi* | [**customerPrototypeFindByIdConfigurationServiceRequests**](docs/Api/CustomerApi.md#customerprototypefindbyidconfigurationservicerequests) | **GET** /Customers/{id}/configurationServiceRequests/{fk} | Find a related item by id for configurationServiceRequests.
 *CustomerApi* | [**customerPrototypeFindByIdCourseEnrollments**](docs/Api/CustomerApi.md#customerprototypefindbyidcourseenrollments) | **GET** /Customers/{id}/courseEnrollments/{fk} | Find a related item by id for courseEnrollments.
 *CustomerApi* | [**customerPrototypeFindByIdCredentials**](docs/Api/CustomerApi.md#customerprototypefindbyidcredentials) | **GET** /Customers/{id}/credentials/{fk} | Find a related item by id for credentials.
 *CustomerApi* | [**customerPrototypeFindByIdIdentities**](docs/Api/CustomerApi.md#customerprototypefindbyididentities) | **GET** /Customers/{id}/identities/{fk} | Find a related item by id for identities.
@@ -219,6 +258,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerPrototypeFindByIdSubscriptions**](docs/Api/CustomerApi.md#customerprototypefindbyidsubscriptions) | **GET** /Customers/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
 *CustomerApi* | [**customerPrototypeGetAccessTokens**](docs/Api/CustomerApi.md#customerprototypegetaccesstokens) | **GET** /Customers/{id}/accessTokens | Queries accessTokens of Customer.
 *CustomerApi* | [**customerPrototypeGetComposerTokens**](docs/Api/CustomerApi.md#customerprototypegetcomposertokens) | **GET** /Customers/{id}/composerTokens | Queries composerTokens of Customer.
+*CustomerApi* | [**customerPrototypeGetConfigurationServiceRequests**](docs/Api/CustomerApi.md#customerprototypegetconfigurationservicerequests) | **GET** /Customers/{id}/configurationServiceRequests | Queries configurationServiceRequests of Customer.
 *CustomerApi* | [**customerPrototypeGetCourseEnrollments**](docs/Api/CustomerApi.md#customerprototypegetcourseenrollments) | **GET** /Customers/{id}/courseEnrollments | Queries courseEnrollments of Customer.
 *CustomerApi* | [**customerPrototypeGetCredentials**](docs/Api/CustomerApi.md#customerprototypegetcredentials) | **GET** /Customers/{id}/credentials | Queries credentials of Customer.
 *CustomerApi* | [**customerPrototypeGetIdentities**](docs/Api/CustomerApi.md#customerprototypegetidentities) | **GET** /Customers/{id}/identities | Queries identities of Customer.
@@ -232,6 +272,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerPrototypeUnlinkRoles**](docs/Api/CustomerApi.md#customerprototypeunlinkroles) | **DELETE** /Customers/{id}/roles/rel/{fk} | Remove the roles relation to an item by id.
 *CustomerApi* | [**customerPrototypeUpdateByIdAccessTokens**](docs/Api/CustomerApi.md#customerprototypeupdatebyidaccesstokens) | **PUT** /Customers/{id}/accessTokens/{fk} | Update a related item by id for accessTokens.
 *CustomerApi* | [**customerPrototypeUpdateByIdComposerTokens**](docs/Api/CustomerApi.md#customerprototypeupdatebyidcomposertokens) | **PUT** /Customers/{id}/composerTokens/{fk} | Update a related item by id for composerTokens.
+*CustomerApi* | [**customerPrototypeUpdateByIdConfigurationServiceRequests**](docs/Api/CustomerApi.md#customerprototypeupdatebyidconfigurationservicerequests) | **PUT** /Customers/{id}/configurationServiceRequests/{fk} | Update a related item by id for configurationServiceRequests.
 *CustomerApi* | [**customerPrototypeUpdateByIdCourseEnrollments**](docs/Api/CustomerApi.md#customerprototypeupdatebyidcourseenrollments) | **PUT** /Customers/{id}/courseEnrollments/{fk} | Update a related item by id for courseEnrollments.
 *CustomerApi* | [**customerPrototypeUpdateByIdCredentials**](docs/Api/CustomerApi.md#customerprototypeupdatebyidcredentials) | **PUT** /Customers/{id}/credentials/{fk} | Update a related item by id for credentials.
 *CustomerApi* | [**customerPrototypeUpdateByIdIdentities**](docs/Api/CustomerApi.md#customerprototypeupdatebyididentities) | **PUT** /Customers/{id}/identities/{fk} | Update a related item by id for identities.
@@ -366,6 +407,7 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderFromWooCommerce**](docs/Api/OrderApi.md#orderfromwoocommerce) | **PUT** /Orders/fromWooCommerce | 
 *OrderApi* | [**orderInvoice**](docs/Api/OrderApi.md#orderinvoice) | **GET** /Orders/{id}/invoice | 
 *OrderApi* | [**orderPatchOrCreate**](docs/Api/OrderApi.md#orderpatchorcreate) | **PATCH** /Orders | Patch an existing model instance or insert a new one into the data source.
+*OrderApi* | [**orderPrototypeCountConfigurationServiceRequests**](docs/Api/OrderApi.md#orderprototypecountconfigurationservicerequests) | **GET** /Orders/{id}/configurationServiceRequests/count | Counts configurationServiceRequests of Order.
 *OrderApi* | [**orderPrototypeCountDiscounts**](docs/Api/OrderApi.md#orderprototypecountdiscounts) | **GET** /Orders/{id}/discounts/count | Counts discounts of Order.
 *OrderApi* | [**orderPrototypeCountInvoices**](docs/Api/OrderApi.md#orderprototypecountinvoices) | **GET** /Orders/{id}/invoices/count | Counts invoices of Order.
 *OrderApi* | [**orderPrototypeCountItems**](docs/Api/OrderApi.md#orderprototypecountitems) | **GET** /Orders/{id}/items/count | Counts items of Order.
@@ -373,6 +415,7 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderPrototypeCountSubscriptions**](docs/Api/OrderApi.md#orderprototypecountsubscriptions) | **GET** /Orders/{id}/subscriptions/count | Counts subscriptions of Order.
 *OrderApi* | [**orderPrototypeCountTransactions**](docs/Api/OrderApi.md#orderprototypecounttransactions) | **GET** /Orders/{id}/transactions/count | Counts transactions of Order.
 *OrderApi* | [**orderPrototypeCountVats**](docs/Api/OrderApi.md#orderprototypecountvats) | **GET** /Orders/{id}/vats/count | Counts vats of Order.
+*OrderApi* | [**orderPrototypeCreateConfigurationServiceRequests**](docs/Api/OrderApi.md#orderprototypecreateconfigurationservicerequests) | **POST** /Orders/{id}/configurationServiceRequests | Creates a new instance in configurationServiceRequests of this model.
 *OrderApi* | [**orderPrototypeCreateDiscounts**](docs/Api/OrderApi.md#orderprototypecreatediscounts) | **POST** /Orders/{id}/discounts | Creates a new instance in discounts of this model.
 *OrderApi* | [**orderPrototypeCreateInvoices**](docs/Api/OrderApi.md#orderprototypecreateinvoices) | **POST** /Orders/{id}/invoices | Creates a new instance in invoices of this model.
 *OrderApi* | [**orderPrototypeCreateItems**](docs/Api/OrderApi.md#orderprototypecreateitems) | **POST** /Orders/{id}/items | Creates a new instance in items of this model.
@@ -380,6 +423,7 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderPrototypeCreateSubscriptions**](docs/Api/OrderApi.md#orderprototypecreatesubscriptions) | **POST** /Orders/{id}/subscriptions | Creates a new instance in subscriptions of this model.
 *OrderApi* | [**orderPrototypeCreateTransactions**](docs/Api/OrderApi.md#orderprototypecreatetransactions) | **POST** /Orders/{id}/transactions | Creates a new instance in transactions of this model.
 *OrderApi* | [**orderPrototypeCreateVats**](docs/Api/OrderApi.md#orderprototypecreatevats) | **POST** /Orders/{id}/vats | Creates a new instance in vats of this model.
+*OrderApi* | [**orderPrototypeDeleteConfigurationServiceRequests**](docs/Api/OrderApi.md#orderprototypedeleteconfigurationservicerequests) | **DELETE** /Orders/{id}/configurationServiceRequests | Deletes all configurationServiceRequests of this model.
 *OrderApi* | [**orderPrototypeDeleteDiscounts**](docs/Api/OrderApi.md#orderprototypedeletediscounts) | **DELETE** /Orders/{id}/discounts | Deletes all discounts of this model.
 *OrderApi* | [**orderPrototypeDeleteInvoices**](docs/Api/OrderApi.md#orderprototypedeleteinvoices) | **DELETE** /Orders/{id}/invoices | Deletes all invoices of this model.
 *OrderApi* | [**orderPrototypeDeleteItems**](docs/Api/OrderApi.md#orderprototypedeleteitems) | **DELETE** /Orders/{id}/items | Deletes all items of this model.
@@ -387,6 +431,7 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderPrototypeDeleteSubscriptions**](docs/Api/OrderApi.md#orderprototypedeletesubscriptions) | **DELETE** /Orders/{id}/subscriptions | Deletes all subscriptions of this model.
 *OrderApi* | [**orderPrototypeDeleteTransactions**](docs/Api/OrderApi.md#orderprototypedeletetransactions) | **DELETE** /Orders/{id}/transactions | Deletes all transactions of this model.
 *OrderApi* | [**orderPrototypeDeleteVats**](docs/Api/OrderApi.md#orderprototypedeletevats) | **DELETE** /Orders/{id}/vats | Deletes all vats of this model.
+*OrderApi* | [**orderPrototypeDestroyByIdConfigurationServiceRequests**](docs/Api/OrderApi.md#orderprototypedestroybyidconfigurationservicerequests) | **DELETE** /Orders/{id}/configurationServiceRequests/{fk} | Delete a related item by id for configurationServiceRequests.
 *OrderApi* | [**orderPrototypeDestroyByIdDiscounts**](docs/Api/OrderApi.md#orderprototypedestroybyiddiscounts) | **DELETE** /Orders/{id}/discounts/{fk} | Delete a related item by id for discounts.
 *OrderApi* | [**orderPrototypeDestroyByIdInvoices**](docs/Api/OrderApi.md#orderprototypedestroybyidinvoices) | **DELETE** /Orders/{id}/invoices/{fk} | Delete a related item by id for invoices.
 *OrderApi* | [**orderPrototypeDestroyByIdItems**](docs/Api/OrderApi.md#orderprototypedestroybyiditems) | **DELETE** /Orders/{id}/items/{fk} | Delete a related item by id for items.
@@ -395,6 +440,7 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderPrototypeDestroyByIdTransactions**](docs/Api/OrderApi.md#orderprototypedestroybyidtransactions) | **DELETE** /Orders/{id}/transactions/{fk} | Delete a related item by id for transactions.
 *OrderApi* | [**orderPrototypeDestroyByIdVats**](docs/Api/OrderApi.md#orderprototypedestroybyidvats) | **DELETE** /Orders/{id}/vats/{fk} | Delete a related item by id for vats.
 *OrderApi* | [**orderPrototypeExistsSubscriptions**](docs/Api/OrderApi.md#orderprototypeexistssubscriptions) | **HEAD** /Orders/{id}/subscriptions/rel/{fk} | Check the existence of subscriptions relation to an item by id.
+*OrderApi* | [**orderPrototypeFindByIdConfigurationServiceRequests**](docs/Api/OrderApi.md#orderprototypefindbyidconfigurationservicerequests) | **GET** /Orders/{id}/configurationServiceRequests/{fk} | Find a related item by id for configurationServiceRequests.
 *OrderApi* | [**orderPrototypeFindByIdDiscounts**](docs/Api/OrderApi.md#orderprototypefindbyiddiscounts) | **GET** /Orders/{id}/discounts/{fk} | Find a related item by id for discounts.
 *OrderApi* | [**orderPrototypeFindByIdInvoices**](docs/Api/OrderApi.md#orderprototypefindbyidinvoices) | **GET** /Orders/{id}/invoices/{fk} | Find a related item by id for invoices.
 *OrderApi* | [**orderPrototypeFindByIdItems**](docs/Api/OrderApi.md#orderprototypefindbyiditems) | **GET** /Orders/{id}/items/{fk} | Find a related item by id for items.
@@ -402,6 +448,7 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderPrototypeFindByIdSubscriptions**](docs/Api/OrderApi.md#orderprototypefindbyidsubscriptions) | **GET** /Orders/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
 *OrderApi* | [**orderPrototypeFindByIdTransactions**](docs/Api/OrderApi.md#orderprototypefindbyidtransactions) | **GET** /Orders/{id}/transactions/{fk} | Find a related item by id for transactions.
 *OrderApi* | [**orderPrototypeFindByIdVats**](docs/Api/OrderApi.md#orderprototypefindbyidvats) | **GET** /Orders/{id}/vats/{fk} | Find a related item by id for vats.
+*OrderApi* | [**orderPrototypeGetConfigurationServiceRequests**](docs/Api/OrderApi.md#orderprototypegetconfigurationservicerequests) | **GET** /Orders/{id}/configurationServiceRequests | Queries configurationServiceRequests of Order.
 *OrderApi* | [**orderPrototypeGetCustomer**](docs/Api/OrderApi.md#orderprototypegetcustomer) | **GET** /Orders/{id}/customer | Fetches belongsTo relation customer.
 *OrderApi* | [**orderPrototypeGetDiscounts**](docs/Api/OrderApi.md#orderprototypegetdiscounts) | **GET** /Orders/{id}/discounts | Queries discounts of Order.
 *OrderApi* | [**orderPrototypeGetInvoices**](docs/Api/OrderApi.md#orderprototypegetinvoices) | **GET** /Orders/{id}/invoices | Queries invoices of Order.
@@ -413,6 +460,7 @@ Class | Method | HTTP request | Description
 *OrderApi* | [**orderPrototypeLinkSubscriptions**](docs/Api/OrderApi.md#orderprototypelinksubscriptions) | **PUT** /Orders/{id}/subscriptions/rel/{fk} | Add a related item by id for subscriptions.
 *OrderApi* | [**orderPrototypePatchAttributes**](docs/Api/OrderApi.md#orderprototypepatchattributes) | **PATCH** /Orders/{id} | Patch attributes for a model instance and persist it into the data source.
 *OrderApi* | [**orderPrototypeUnlinkSubscriptions**](docs/Api/OrderApi.md#orderprototypeunlinksubscriptions) | **DELETE** /Orders/{id}/subscriptions/rel/{fk} | Remove the subscriptions relation to an item by id.
+*OrderApi* | [**orderPrototypeUpdateByIdConfigurationServiceRequests**](docs/Api/OrderApi.md#orderprototypeupdatebyidconfigurationservicerequests) | **PUT** /Orders/{id}/configurationServiceRequests/{fk} | Update a related item by id for configurationServiceRequests.
 *OrderApi* | [**orderPrototypeUpdateByIdDiscounts**](docs/Api/OrderApi.md#orderprototypeupdatebyiddiscounts) | **PUT** /Orders/{id}/discounts/{fk} | Update a related item by id for discounts.
 *OrderApi* | [**orderPrototypeUpdateByIdInvoices**](docs/Api/OrderApi.md#orderprototypeupdatebyidinvoices) | **PUT** /Orders/{id}/invoices/{fk} | Update a related item by id for invoices.
 *OrderApi* | [**orderPrototypeUpdateByIdItems**](docs/Api/OrderApi.md#orderprototypeupdatebyiditems) | **PUT** /Orders/{id}/items/{fk} | Update a related item by id for items.
@@ -536,22 +584,27 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**siteFindOne**](docs/Api/SiteApi.md#sitefindone) | **GET** /Sites/findOne | Find first instance of the model matched by filter from the data source.
 *SiteApi* | [**sitePatchOrCreate**](docs/Api/SiteApi.md#sitepatchorcreate) | **PATCH** /Sites | Patch an existing model instance or insert a new one into the data source.
 *SiteApi* | [**sitePrototypeCountSubscriptions**](docs/Api/SiteApi.md#siteprototypecountsubscriptions) | **GET** /Sites/{id}/subscriptions/count | Counts subscriptions of Site.
+*SiteApi* | [**sitePrototypeCreateConfigurationServiceRequest**](docs/Api/SiteApi.md#siteprototypecreateconfigurationservicerequest) | **POST** /Sites/{id}/configurationServiceRequest | Creates a new instance in configurationServiceRequest of this model.
 *SiteApi* | [**sitePrototypeCreateSubscriptions**](docs/Api/SiteApi.md#siteprototypecreatesubscriptions) | **POST** /Sites/{id}/subscriptions | Creates a new instance in subscriptions of this model.
 *SiteApi* | [**sitePrototypeDeleteSubscriptions**](docs/Api/SiteApi.md#siteprototypedeletesubscriptions) | **DELETE** /Sites/{id}/subscriptions | Deletes all subscriptions of this model.
 *SiteApi* | [**sitePrototypeDestroyByIdSubscriptions**](docs/Api/SiteApi.md#siteprototypedestroybyidsubscriptions) | **DELETE** /Sites/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
+*SiteApi* | [**sitePrototypeDestroyConfigurationServiceRequest**](docs/Api/SiteApi.md#siteprototypedestroyconfigurationservicerequest) | **DELETE** /Sites/{id}/configurationServiceRequest | Deletes configurationServiceRequest of this model.
 *SiteApi* | [**sitePrototypeExistsSubscriptions**](docs/Api/SiteApi.md#siteprototypeexistssubscriptions) | **HEAD** /Sites/{id}/subscriptions/rel/{fk} | Check the existence of subscriptions relation to an item by id.
 *SiteApi* | [**sitePrototypeFindByIdSubscriptions**](docs/Api/SiteApi.md#siteprototypefindbyidsubscriptions) | **GET** /Sites/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
+*SiteApi* | [**sitePrototypeGetConfigurationServiceRequest**](docs/Api/SiteApi.md#siteprototypegetconfigurationservicerequest) | **GET** /Sites/{id}/configurationServiceRequest | Fetches hasOne relation configurationServiceRequest.
 *SiteApi* | [**sitePrototypeGetSubscriptions**](docs/Api/SiteApi.md#siteprototypegetsubscriptions) | **GET** /Sites/{id}/subscriptions | Queries subscriptions of Site.
 *SiteApi* | [**sitePrototypeGetUser**](docs/Api/SiteApi.md#siteprototypegetuser) | **GET** /Sites/{id}/user | Fetches belongsTo relation user.
 *SiteApi* | [**sitePrototypeLinkSubscriptions**](docs/Api/SiteApi.md#siteprototypelinksubscriptions) | **PUT** /Sites/{id}/subscriptions/rel/{fk} | Add a related item by id for subscriptions.
 *SiteApi* | [**sitePrototypePatchAttributes**](docs/Api/SiteApi.md#siteprototypepatchattributes) | **PATCH** /Sites/{id} | Patch attributes for a model instance and persist it into the data source.
 *SiteApi* | [**sitePrototypeUnlinkSubscriptions**](docs/Api/SiteApi.md#siteprototypeunlinksubscriptions) | **DELETE** /Sites/{id}/subscriptions/rel/{fk} | Remove the subscriptions relation to an item by id.
 *SiteApi* | [**sitePrototypeUpdateByIdSubscriptions**](docs/Api/SiteApi.md#siteprototypeupdatebyidsubscriptions) | **PUT** /Sites/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
+*SiteApi* | [**sitePrototypeUpdateConfigurationServiceRequest**](docs/Api/SiteApi.md#siteprototypeupdateconfigurationservicerequest) | **PUT** /Sites/{id}/configurationServiceRequest | Update configurationServiceRequest of this model.
 *SiteApi* | [**siteReplaceByIdPostSitesidReplace**](docs/Api/SiteApi.md#sitereplacebyidpostsitesidreplace) | **POST** /Sites/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *SiteApi* | [**siteReplaceByIdPutSitesid**](docs/Api/SiteApi.md#sitereplacebyidputsitesid) | **PUT** /Sites/{id} | Replace attributes for a model instance and persist it into the data source.
 *SiteApi* | [**siteReplaceOrCreatePostSitesReplaceOrCreate**](docs/Api/SiteApi.md#sitereplaceorcreatepostsitesreplaceorcreate) | **POST** /Sites/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 *SiteApi* | [**siteReplaceOrCreatePutSites**](docs/Api/SiteApi.md#sitereplaceorcreateputsites) | **PUT** /Sites | Replace an existing model instance or insert a new one into the data source.
 *SiteApi* | [**siteSwitchSubscription**](docs/Api/SiteApi.md#siteswitchsubscription) | **POST** /Sites/switchSubscription | 
+*SiteApi* | [**siteSwitchSubscriptionNumberOfTimes**](docs/Api/SiteApi.md#siteswitchsubscriptionnumberoftimes) | **POST** /Sites/switchSubscriptionNumberOfTimes | 
 *SiteApi* | [**siteTransfer**](docs/Api/SiteApi.md#sitetransfer) | **POST** /Sites/transfer | 
 *SiteApi* | [**siteUpdateAll**](docs/Api/SiteApi.md#siteupdateall) | **POST** /Sites/update | Update instances of the model matched by {{where}} from the data source.
 *SiteApi* | [**siteUpsertWithWhere**](docs/Api/SiteApi.md#siteupsertwithwhere) | **POST** /Sites/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
@@ -666,6 +719,7 @@ Class | Method | HTTP request | Description
 
  - [AccessToken](docs/Model/AccessToken.md)
  - [ComposerToken](docs/Model/ComposerToken.md)
+ - [ConfigurationServiceRequest](docs/Model/ConfigurationServiceRequest.md)
  - [Course](docs/Model/Course.md)
  - [CourseEnrollment](docs/Model/CourseEnrollment.md)
  - [Customer](docs/Model/Customer.md)
@@ -677,6 +731,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse2003](docs/Model/InlineResponse2003.md)
  - [InlineResponse2004](docs/Model/InlineResponse2004.md)
  - [InlineResponse2005](docs/Model/InlineResponse2005.md)
+ - [InlineResponse2006](docs/Model/InlineResponse2006.md)
  - [Invoice](docs/Model/Invoice.md)
  - [LineItem](docs/Model/LineItem.md)
  - [Migration](docs/Model/Migration.md)

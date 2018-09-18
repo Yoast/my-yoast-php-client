@@ -203,6 +203,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for orderPrototypeCountConfigurationServiceRequests
+     *
+     * Counts configurationServiceRequests of Order..
+     *
+     */
+    public function testOrderPrototypeCountConfigurationServiceRequests()
+    {
+    }
+
+    /**
      * Test case for orderPrototypeCountDiscounts
      *
      * Counts discounts of Order..
@@ -269,6 +279,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testOrderPrototypeCountVats()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeCreateConfigurationServiceRequests
+     *
+     * Creates a new instance in configurationServiceRequests of this model..
+     *
+     */
+    public function testOrderPrototypeCreateConfigurationServiceRequests()
     {
     }
 
@@ -343,6 +363,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for orderPrototypeDeleteConfigurationServiceRequests
+     *
+     * Deletes all configurationServiceRequests of this model..
+     *
+     */
+    public function testOrderPrototypeDeleteConfigurationServiceRequests()
+    {
+    }
+
+    /**
      * Test case for orderPrototypeDeleteDiscounts
      *
      * Deletes all discounts of this model..
@@ -409,6 +439,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testOrderPrototypeDeleteVats()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeDestroyByIdConfigurationServiceRequests
+     *
+     * Delete a related item by id for configurationServiceRequests..
+     *
+     */
+    public function testOrderPrototypeDestroyByIdConfigurationServiceRequests()
     {
     }
 
@@ -493,6 +533,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for orderPrototypeFindByIdConfigurationServiceRequests
+     *
+     * Find a related item by id for configurationServiceRequests..
+     *
+     */
+    public function testOrderPrototypeFindByIdConfigurationServiceRequests()
+    {
+    }
+
+    /**
      * Test case for orderPrototypeFindByIdDiscounts
      *
      * Find a related item by id for discounts..
@@ -559,6 +609,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testOrderPrototypeFindByIdVats()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeGetConfigurationServiceRequests
+     *
+     * Queries configurationServiceRequests of Order..
+     *
+     */
+    public function testOrderPrototypeGetConfigurationServiceRequests()
     {
     }
 
@@ -669,6 +729,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testOrderPrototypeUnlinkSubscriptions()
+    {
+    }
+
+    /**
+     * Test case for orderPrototypeUpdateByIdConfigurationServiceRequests
+     *
+     * Update a related item by id for configurationServiceRequests..
+     *
+     */
+    public function testOrderPrototypeUpdateByIdConfigurationServiceRequests()
     {
     }
 

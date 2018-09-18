@@ -16,11 +16,14 @@ Method | HTTP request | Description
 [**courseFindOne**](CourseApi.md#courseFindOne) | **GET** /Courses/findOne | Find first instance of the model matched by filter from the data source.
 [**courseFromAcademy**](CourseApi.md#courseFromAcademy) | **PUT** /Courses/fromAcademy | 
 [**coursePatchOrCreate**](CourseApi.md#coursePatchOrCreate) | **PATCH** /Courses | Patch an existing model instance or insert a new one into the data source.
-[**coursePrototypeCreateProduct**](CourseApi.md#coursePrototypeCreateProduct) | **POST** /Courses/{id}/product | Creates a new instance in product of this model.
-[**coursePrototypeDestroyProduct**](CourseApi.md#coursePrototypeDestroyProduct) | **DELETE** /Courses/{id}/product | Deletes product of this model.
-[**coursePrototypeGetProduct**](CourseApi.md#coursePrototypeGetProduct) | **GET** /Courses/{id}/product | Fetches hasOne relation product.
+[**coursePrototypeCountProducts**](CourseApi.md#coursePrototypeCountProducts) | **GET** /Courses/{id}/products/count | Counts products of Course.
+[**coursePrototypeCreateProducts**](CourseApi.md#coursePrototypeCreateProducts) | **POST** /Courses/{id}/products | Creates a new instance in products of this model.
+[**coursePrototypeDeleteProducts**](CourseApi.md#coursePrototypeDeleteProducts) | **DELETE** /Courses/{id}/products | Deletes all products of this model.
+[**coursePrototypeDestroyByIdProducts**](CourseApi.md#coursePrototypeDestroyByIdProducts) | **DELETE** /Courses/{id}/products/{fk} | Delete a related item by id for products.
+[**coursePrototypeFindByIdProducts**](CourseApi.md#coursePrototypeFindByIdProducts) | **GET** /Courses/{id}/products/{fk} | Find a related item by id for products.
+[**coursePrototypeGetProducts**](CourseApi.md#coursePrototypeGetProducts) | **GET** /Courses/{id}/products | Queries products of Course.
 [**coursePrototypePatchAttributes**](CourseApi.md#coursePrototypePatchAttributes) | **PATCH** /Courses/{id} | Patch attributes for a model instance and persist it into the data source.
-[**coursePrototypeUpdateProduct**](CourseApi.md#coursePrototypeUpdateProduct) | **PUT** /Courses/{id}/product | Update product of this model.
+[**coursePrototypeUpdateByIdProducts**](CourseApi.md#coursePrototypeUpdateByIdProducts) | **PUT** /Courses/{id}/products/{fk} | Update a related item by id for products.
 [**courseReplaceByIdPostCoursesidReplace**](CourseApi.md#courseReplaceByIdPostCoursesidReplace) | **POST** /Courses/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 [**courseReplaceByIdPutCoursesid**](CourseApi.md#courseReplaceByIdPutCoursesid) | **PUT** /Courses/{id} | Replace attributes for a model instance and persist it into the data source.
 [**courseReplaceOrCreatePostCoursesReplaceOrCreate**](CourseApi.md#courseReplaceOrCreatePostCoursesReplaceOrCreate) | **POST** /Courses/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
@@ -549,10 +552,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **coursePrototypeCreateProduct**
-> \Yoast\MyYoastApiClient\Model\Product coursePrototypeCreateProduct($id, $data)
+# **coursePrototypeCountProducts**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 coursePrototypeCountProducts($id, $where)
 
-Creates a new instance in product of this model.
+Counts products of Course.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->coursePrototypeCountProducts($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeCountProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeCreateProducts**
+> \Yoast\MyYoastApiClient\Model\Product coursePrototypeCreateProducts($id, $data)
+
+Creates a new instance in products of this model.
 
 ### Example
 ```php
@@ -564,10 +612,10 @@ $id = "id_example"; // string | Course id
 $data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
 
 try {
-    $result = $api_instance->coursePrototypeCreateProduct($id, $data);
+    $result = $api_instance->coursePrototypeCreateProducts($id, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->coursePrototypeCreateProduct: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeCreateProducts: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -594,10 +642,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **coursePrototypeDestroyProduct**
-> coursePrototypeDestroyProduct($id)
+# **coursePrototypeDeleteProducts**
+> coursePrototypeDeleteProducts($id)
 
-Deletes product of this model.
+Deletes all products of this model.
 
 ### Example
 ```php
@@ -608,9 +656,9 @@ $api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
 $id = "id_example"; // string | Course id
 
 try {
-    $api_instance->coursePrototypeDestroyProduct($id);
+    $api_instance->coursePrototypeDeleteProducts($id);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->coursePrototypeDestroyProduct: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeDeleteProducts: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -636,10 +684,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **coursePrototypeGetProduct**
-> \Yoast\MyYoastApiClient\Model\Product coursePrototypeGetProduct($id, $refresh)
+# **coursePrototypeDestroyByIdProducts**
+> coursePrototypeDestroyByIdProducts($id, $fk)
 
-Fetches hasOne relation product.
+Delete a related item by id for products.
 
 ### Example
 ```php
@@ -648,13 +696,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
 $id = "id_example"; // string | Course id
-$refresh = true; // bool | 
+$fk = "fk_example"; // string | Foreign key for products
 
 try {
-    $result = $api_instance->coursePrototypeGetProduct($id, $refresh);
-    print_r($result);
+    $api_instance->coursePrototypeDestroyByIdProducts($id, $fk);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->coursePrototypeGetProduct: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeDestroyByIdProducts: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -664,11 +711,101 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Course id |
- **refresh** | **bool**|  | [optional]
+ **fk** | **string**| Foreign key for products |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeFindByIdProducts**
+> \Yoast\MyYoastApiClient\Model\Product coursePrototypeFindByIdProducts($id, $fk)
+
+Find a related item by id for products.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$fk = "fk_example"; // string | Foreign key for products
+
+try {
+    $result = $api_instance->coursePrototypeFindByIdProducts($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeFindByIdProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **fk** | **string**| Foreign key for products |
 
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeGetProducts**
+> \Yoast\MyYoastApiClient\Model\Product[] coursePrototypeGetProducts($id, $filter)
+
+Queries products of Course.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->coursePrototypeGetProducts($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeGetProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product[]**](../Model/Product.md)
 
 ### Authorization
 
@@ -726,10 +863,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **coursePrototypeUpdateProduct**
-> \Yoast\MyYoastApiClient\Model\Product coursePrototypeUpdateProduct($id, $data)
+# **coursePrototypeUpdateByIdProducts**
+> \Yoast\MyYoastApiClient\Model\Product coursePrototypeUpdateByIdProducts($id, $fk, $data)
 
-Update product of this model.
+Update a related item by id for products.
 
 ### Example
 ```php
@@ -738,13 +875,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
 $id = "id_example"; // string | Course id
+$fk = "fk_example"; // string | Foreign key for products
 $data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
 
 try {
-    $result = $api_instance->coursePrototypeUpdateProduct($id, $data);
+    $result = $api_instance->coursePrototypeUpdateByIdProducts($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->coursePrototypeUpdateProduct: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeUpdateByIdProducts: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -754,6 +892,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Course id |
+ **fk** | **string**| Foreign key for products |
  **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)|  | [optional]
 
 ### Return type

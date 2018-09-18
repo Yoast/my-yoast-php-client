@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**customerCancelSubscription**](CustomerApi.md#customerCancelSubscription) | **POST** /Customers/{id}/shop/{shop}/subscriptions/{subscription}/cancel | Cancels a subscription of a plugin.
 [**customerChangePassword**](CustomerApi.md#customerChangePassword) | **POST** /Customers/change-password | Change a user&#39;s password.
 [**customerConfirm**](CustomerApi.md#customerConfirm) | **GET** /Customers/confirm | Confirm a user registration with email verification token.
 [**customerCount**](CustomerApi.md#customerCount) | **GET** /Customers/count | Count instances of the model matched by where from the data source.
@@ -12,6 +13,7 @@ Method | HTTP request | Description
 [**customerCreateChangeStreamPostCustomersChangeStream**](CustomerApi.md#customerCreateChangeStreamPostCustomersChangeStream) | **POST** /Customers/change-stream | Create a change stream.
 [**customerCurrent**](CustomerApi.md#customerCurrent) | **GET** /Customers/current | 
 [**customerDeleteById**](CustomerApi.md#customerDeleteById) | **DELETE** /Customers/{id} | Delete a model instance by {{id}} from the data source.
+[**customerDownloadProfile**](CustomerApi.md#customerDownloadProfile) | **GET** /Customers/{id}/download | Downloads the data of the given customer as CSV files inside a ZIP file.
 [**customerEnable**](CustomerApi.md#customerEnable) | **POST** /Customers/{id}/enable | Enables the customer with the given id.
 [**customerExistsGetCustomersidExists**](CustomerApi.md#customerExistsGetCustomersidExists) | **GET** /Customers/{id}/exists | Check whether a model instance exists in the data source.
 [**customerExistsHeadCustomersid**](CustomerApi.md#customerExistsHeadCustomersid) | **HEAD** /Customers/{id} | Check whether a model instance exists in the data source.
@@ -22,11 +24,15 @@ Method | HTTP request | Description
 [**customerFromWooCommerce**](CustomerApi.md#customerFromWooCommerce) | **PUT** /Customers/fromWooCommerce | 
 [**customerLogin**](CustomerApi.md#customerLogin) | **POST** /Customers/login | Login a user with username/email and password.
 [**customerLogout**](CustomerApi.md#customerLogout) | **POST** /Customers/logout | Logout a user with access token.
+[**customerNewsletterStatus**](CustomerApi.md#customerNewsletterStatus) | **GET** /Customers/{id}/newsletter | Returns the newsletter status for a customer.
+[**customerNewsletterSubscribe**](CustomerApi.md#customerNewsletterSubscribe) | **POST** /Customers/{id}/newsletter | Subscribes a customer to the newsletter.
+[**customerNewsletterUnsubscribe**](CustomerApi.md#customerNewsletterUnsubscribe) | **DELETE** /Customers/{id}/newsletter | Unsubscribes a customer from the newsletter.
 [**customerPatchOrCreate**](CustomerApi.md#customerPatchOrCreate) | **PATCH** /Customers | Patch an existing model instance or insert a new one into the data source.
 [**customerPatchProfile**](CustomerApi.md#customerPatchProfile) | **PATCH** /Customers/{id}/profile | Updates the profile with the supplied information.
 [**customerProfile**](CustomerApi.md#customerProfile) | **GET** /Customers/{id}/profile | Finds the profile for the customer with the given id.
 [**customerPrototypeCountAccessTokens**](CustomerApi.md#customerPrototypeCountAccessTokens) | **GET** /Customers/{id}/accessTokens/count | Counts accessTokens of Customer.
 [**customerPrototypeCountComposerTokens**](CustomerApi.md#customerPrototypeCountComposerTokens) | **GET** /Customers/{id}/composerTokens/count | Counts composerTokens of Customer.
+[**customerPrototypeCountConfigurationServiceRequests**](CustomerApi.md#customerPrototypeCountConfigurationServiceRequests) | **GET** /Customers/{id}/configurationServiceRequests/count | Counts configurationServiceRequests of Customer.
 [**customerPrototypeCountCourseEnrollments**](CustomerApi.md#customerPrototypeCountCourseEnrollments) | **GET** /Customers/{id}/courseEnrollments/count | Counts courseEnrollments of Customer.
 [**customerPrototypeCountCredentials**](CustomerApi.md#customerPrototypeCountCredentials) | **GET** /Customers/{id}/credentials/count | Counts credentials of Customer.
 [**customerPrototypeCountIdentities**](CustomerApi.md#customerPrototypeCountIdentities) | **GET** /Customers/{id}/identities/count | Counts identities of Customer.
@@ -37,6 +43,7 @@ Method | HTTP request | Description
 [**customerPrototypeCountSubscriptions**](CustomerApi.md#customerPrototypeCountSubscriptions) | **GET** /Customers/{id}/subscriptions/count | Counts subscriptions of Customer.
 [**customerPrototypeCreateAccessTokens**](CustomerApi.md#customerPrototypeCreateAccessTokens) | **POST** /Customers/{id}/accessTokens | Creates a new instance in accessTokens of this model.
 [**customerPrototypeCreateComposerTokens**](CustomerApi.md#customerPrototypeCreateComposerTokens) | **POST** /Customers/{id}/composerTokens | Creates a new instance in composerTokens of this model.
+[**customerPrototypeCreateConfigurationServiceRequests**](CustomerApi.md#customerPrototypeCreateConfigurationServiceRequests) | **POST** /Customers/{id}/configurationServiceRequests | Creates a new instance in configurationServiceRequests of this model.
 [**customerPrototypeCreateCourseEnrollments**](CustomerApi.md#customerPrototypeCreateCourseEnrollments) | **POST** /Customers/{id}/courseEnrollments | Creates a new instance in courseEnrollments of this model.
 [**customerPrototypeCreateCredentials**](CustomerApi.md#customerPrototypeCreateCredentials) | **POST** /Customers/{id}/credentials | Creates a new instance in credentials of this model.
 [**customerPrototypeCreateIdentities**](CustomerApi.md#customerPrototypeCreateIdentities) | **POST** /Customers/{id}/identities | Creates a new instance in identities of this model.
@@ -47,6 +54,7 @@ Method | HTTP request | Description
 [**customerPrototypeCreateSubscriptions**](CustomerApi.md#customerPrototypeCreateSubscriptions) | **POST** /Customers/{id}/subscriptions | Creates a new instance in subscriptions of this model.
 [**customerPrototypeDeleteAccessTokens**](CustomerApi.md#customerPrototypeDeleteAccessTokens) | **DELETE** /Customers/{id}/accessTokens | Deletes all accessTokens of this model.
 [**customerPrototypeDeleteComposerTokens**](CustomerApi.md#customerPrototypeDeleteComposerTokens) | **DELETE** /Customers/{id}/composerTokens | Deletes all composerTokens of this model.
+[**customerPrototypeDeleteConfigurationServiceRequests**](CustomerApi.md#customerPrototypeDeleteConfigurationServiceRequests) | **DELETE** /Customers/{id}/configurationServiceRequests | Deletes all configurationServiceRequests of this model.
 [**customerPrototypeDeleteCourseEnrollments**](CustomerApi.md#customerPrototypeDeleteCourseEnrollments) | **DELETE** /Customers/{id}/courseEnrollments | Deletes all courseEnrollments of this model.
 [**customerPrototypeDeleteCredentials**](CustomerApi.md#customerPrototypeDeleteCredentials) | **DELETE** /Customers/{id}/credentials | Deletes all credentials of this model.
 [**customerPrototypeDeleteIdentities**](CustomerApi.md#customerPrototypeDeleteIdentities) | **DELETE** /Customers/{id}/identities | Deletes all identities of this model.
@@ -57,6 +65,7 @@ Method | HTTP request | Description
 [**customerPrototypeDeleteSubscriptions**](CustomerApi.md#customerPrototypeDeleteSubscriptions) | **DELETE** /Customers/{id}/subscriptions | Deletes all subscriptions of this model.
 [**customerPrototypeDestroyByIdAccessTokens**](CustomerApi.md#customerPrototypeDestroyByIdAccessTokens) | **DELETE** /Customers/{id}/accessTokens/{fk} | Delete a related item by id for accessTokens.
 [**customerPrototypeDestroyByIdComposerTokens**](CustomerApi.md#customerPrototypeDestroyByIdComposerTokens) | **DELETE** /Customers/{id}/composerTokens/{fk} | Delete a related item by id for composerTokens.
+[**customerPrototypeDestroyByIdConfigurationServiceRequests**](CustomerApi.md#customerPrototypeDestroyByIdConfigurationServiceRequests) | **DELETE** /Customers/{id}/configurationServiceRequests/{fk} | Delete a related item by id for configurationServiceRequests.
 [**customerPrototypeDestroyByIdCourseEnrollments**](CustomerApi.md#customerPrototypeDestroyByIdCourseEnrollments) | **DELETE** /Customers/{id}/courseEnrollments/{fk} | Delete a related item by id for courseEnrollments.
 [**customerPrototypeDestroyByIdCredentials**](CustomerApi.md#customerPrototypeDestroyByIdCredentials) | **DELETE** /Customers/{id}/credentials/{fk} | Delete a related item by id for credentials.
 [**customerPrototypeDestroyByIdIdentities**](CustomerApi.md#customerPrototypeDestroyByIdIdentities) | **DELETE** /Customers/{id}/identities/{fk} | Delete a related item by id for identities.
@@ -68,6 +77,7 @@ Method | HTTP request | Description
 [**customerPrototypeExistsRoles**](CustomerApi.md#customerPrototypeExistsRoles) | **HEAD** /Customers/{id}/roles/rel/{fk} | Check the existence of roles relation to an item by id.
 [**customerPrototypeFindByIdAccessTokens**](CustomerApi.md#customerPrototypeFindByIdAccessTokens) | **GET** /Customers/{id}/accessTokens/{fk} | Find a related item by id for accessTokens.
 [**customerPrototypeFindByIdComposerTokens**](CustomerApi.md#customerPrototypeFindByIdComposerTokens) | **GET** /Customers/{id}/composerTokens/{fk} | Find a related item by id for composerTokens.
+[**customerPrototypeFindByIdConfigurationServiceRequests**](CustomerApi.md#customerPrototypeFindByIdConfigurationServiceRequests) | **GET** /Customers/{id}/configurationServiceRequests/{fk} | Find a related item by id for configurationServiceRequests.
 [**customerPrototypeFindByIdCourseEnrollments**](CustomerApi.md#customerPrototypeFindByIdCourseEnrollments) | **GET** /Customers/{id}/courseEnrollments/{fk} | Find a related item by id for courseEnrollments.
 [**customerPrototypeFindByIdCredentials**](CustomerApi.md#customerPrototypeFindByIdCredentials) | **GET** /Customers/{id}/credentials/{fk} | Find a related item by id for credentials.
 [**customerPrototypeFindByIdIdentities**](CustomerApi.md#customerPrototypeFindByIdIdentities) | **GET** /Customers/{id}/identities/{fk} | Find a related item by id for identities.
@@ -78,6 +88,7 @@ Method | HTTP request | Description
 [**customerPrototypeFindByIdSubscriptions**](CustomerApi.md#customerPrototypeFindByIdSubscriptions) | **GET** /Customers/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
 [**customerPrototypeGetAccessTokens**](CustomerApi.md#customerPrototypeGetAccessTokens) | **GET** /Customers/{id}/accessTokens | Queries accessTokens of Customer.
 [**customerPrototypeGetComposerTokens**](CustomerApi.md#customerPrototypeGetComposerTokens) | **GET** /Customers/{id}/composerTokens | Queries composerTokens of Customer.
+[**customerPrototypeGetConfigurationServiceRequests**](CustomerApi.md#customerPrototypeGetConfigurationServiceRequests) | **GET** /Customers/{id}/configurationServiceRequests | Queries configurationServiceRequests of Customer.
 [**customerPrototypeGetCourseEnrollments**](CustomerApi.md#customerPrototypeGetCourseEnrollments) | **GET** /Customers/{id}/courseEnrollments | Queries courseEnrollments of Customer.
 [**customerPrototypeGetCredentials**](CustomerApi.md#customerPrototypeGetCredentials) | **GET** /Customers/{id}/credentials | Queries credentials of Customer.
 [**customerPrototypeGetIdentities**](CustomerApi.md#customerPrototypeGetIdentities) | **GET** /Customers/{id}/identities | Queries identities of Customer.
@@ -91,6 +102,7 @@ Method | HTTP request | Description
 [**customerPrototypeUnlinkRoles**](CustomerApi.md#customerPrototypeUnlinkRoles) | **DELETE** /Customers/{id}/roles/rel/{fk} | Remove the roles relation to an item by id.
 [**customerPrototypeUpdateByIdAccessTokens**](CustomerApi.md#customerPrototypeUpdateByIdAccessTokens) | **PUT** /Customers/{id}/accessTokens/{fk} | Update a related item by id for accessTokens.
 [**customerPrototypeUpdateByIdComposerTokens**](CustomerApi.md#customerPrototypeUpdateByIdComposerTokens) | **PUT** /Customers/{id}/composerTokens/{fk} | Update a related item by id for composerTokens.
+[**customerPrototypeUpdateByIdConfigurationServiceRequests**](CustomerApi.md#customerPrototypeUpdateByIdConfigurationServiceRequests) | **PUT** /Customers/{id}/configurationServiceRequests/{fk} | Update a related item by id for configurationServiceRequests.
 [**customerPrototypeUpdateByIdCourseEnrollments**](CustomerApi.md#customerPrototypeUpdateByIdCourseEnrollments) | **PUT** /Customers/{id}/courseEnrollments/{fk} | Update a related item by id for courseEnrollments.
 [**customerPrototypeUpdateByIdCredentials**](CustomerApi.md#customerPrototypeUpdateByIdCredentials) | **PUT** /Customers/{id}/credentials/{fk} | Update a related item by id for credentials.
 [**customerPrototypeUpdateByIdIdentities**](CustomerApi.md#customerPrototypeUpdateByIdIdentities) | **PUT** /Customers/{id}/identities/{fk} | Update a related item by id for identities.
@@ -107,6 +119,53 @@ Method | HTTP request | Description
 [**customerUpdateAll**](CustomerApi.md#customerUpdateAll) | **POST** /Customers/update | Update instances of the model matched by {{where}} from the data source.
 [**customerUpsertWithWhere**](CustomerApi.md#customerUpsertWithWhere) | **POST** /Customers/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
+
+# **customerCancelSubscription**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerCancelSubscription($id, $shop, $subscription)
+
+Cancels a subscription of a plugin.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | 
+$shop = 1.2; // double | 
+$subscription = "subscription_example"; // string | 
+
+try {
+    $result = $api_instance->customerCancelSubscription($id, $shop, $subscription);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerCancelSubscription: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **shop** | **double**|  |
+ **subscription** | **string**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customerChangePassword**
 > customerChangePassword($old_password, $new_password)
@@ -440,6 +499,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 **object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerDownloadProfile**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerDownloadProfile($id)
+
+Downloads the data of the given customer as CSV files inside a ZIP file.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | 
+
+try {
+    $result = $api_instance->customerDownloadProfile($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerDownloadProfile: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 
@@ -881,6 +983,135 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **customerNewsletterStatus**
+> object customerNewsletterStatus($id)
+
+Returns the newsletter status for a customer.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | 
+
+try {
+    $result = $api_instance->customerNewsletterStatus($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerNewsletterStatus: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerNewsletterSubscribe**
+> object customerNewsletterSubscribe($id)
+
+Subscribes a customer to the newsletter.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | 
+
+try {
+    $result = $api_instance->customerNewsletterSubscribe($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerNewsletterSubscribe: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerNewsletterUnsubscribe**
+> object customerNewsletterUnsubscribe($id)
+
+Unsubscribes a customer from the newsletter.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | 
+
+try {
+    $result = $api_instance->customerNewsletterUnsubscribe($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerNewsletterUnsubscribe: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **customerPatchOrCreate**
 > \Yoast\MyYoastApiClient\Model\Customer customerPatchOrCreate($data)
 
@@ -1076,6 +1307,51 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerPrototypeCountComposerTokens: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Customer id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerPrototypeCountConfigurationServiceRequests**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountConfigurationServiceRequests($id, $where)
+
+Counts configurationServiceRequests of Customer.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | Customer id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->customerPrototypeCountConfigurationServiceRequests($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerPrototypeCountConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1552,6 +1828,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **customerPrototypeCreateConfigurationServiceRequests**
+> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest customerPrototypeCreateConfigurationServiceRequests($id, $data)
+
+Creates a new instance in configurationServiceRequests of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | Customer id
+$data = new \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest(); // \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest | 
+
+try {
+    $result = $api_instance->customerPrototypeCreateConfigurationServiceRequests($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerPrototypeCreateConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Customer id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **customerPrototypeCreateCourseEnrollments**
 > \Yoast\MyYoastApiClient\Model\CourseEnrollment customerPrototypeCreateCourseEnrollments($id, $data)
 
@@ -1996,6 +2317,48 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **customerPrototypeDeleteConfigurationServiceRequests**
+> customerPrototypeDeleteConfigurationServiceRequests($id)
+
+Deletes all configurationServiceRequests of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | Customer id
+
+try {
+    $api_instance->customerPrototypeDeleteConfigurationServiceRequests($id);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerPrototypeDeleteConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Customer id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **customerPrototypeDeleteCourseEnrollments**
 > customerPrototypeDeleteCourseEnrollments($id)
 
@@ -2404,6 +2767,50 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Customer id |
  **fk** | **string**| Foreign key for composerTokens |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerPrototypeDestroyByIdConfigurationServiceRequests**
+> customerPrototypeDestroyByIdConfigurationServiceRequests($id, $fk)
+
+Delete a related item by id for configurationServiceRequests.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | Customer id
+$fk = "fk_example"; // string | Foreign key for configurationServiceRequests
+
+try {
+    $api_instance->customerPrototypeDestroyByIdConfigurationServiceRequests($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Customer id |
+ **fk** | **string**| Foreign key for configurationServiceRequests |
 
 ### Return type
 
@@ -2907,6 +3314,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **customerPrototypeFindByIdConfigurationServiceRequests**
+> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest customerPrototypeFindByIdConfigurationServiceRequests($id, $fk)
+
+Find a related item by id for configurationServiceRequests.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | Customer id
+$fk = "fk_example"; // string | Foreign key for configurationServiceRequests
+
+try {
+    $result = $api_instance->customerPrototypeFindByIdConfigurationServiceRequests($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Customer id |
+ **fk** | **string**| Foreign key for configurationServiceRequests |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **customerPrototypeFindByIdCourseEnrollments**
 > \Yoast\MyYoastApiClient\Model\CourseEnrollment customerPrototypeFindByIdCourseEnrollments($id, $fk)
 
@@ -3345,6 +3797,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\ComposerToken[]**](../Model/ComposerToken.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerPrototypeGetConfigurationServiceRequests**
+> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest[] customerPrototypeGetConfigurationServiceRequests($id, $filter)
+
+Queries configurationServiceRequests of Customer.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | Customer id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->customerPrototypeGetConfigurationServiceRequests($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerPrototypeGetConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Customer id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest[]**](../Model/ConfigurationServiceRequest.md)
 
 ### Authorization
 
@@ -3935,6 +4432,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerPrototypeUpdateByIdConfigurationServiceRequests**
+> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest customerPrototypeUpdateByIdConfigurationServiceRequests($id, $fk, $data)
+
+Update a related item by id for configurationServiceRequests.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | Customer id
+$fk = "fk_example"; // string | Foreign key for configurationServiceRequests
+$data = new \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest(); // \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest | 
+
+try {
+    $result = $api_instance->customerPrototypeUpdateByIdConfigurationServiceRequests($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Customer id |
+ **fk** | **string**| Foreign key for configurationServiceRequests |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
 
 ### Authorization
 

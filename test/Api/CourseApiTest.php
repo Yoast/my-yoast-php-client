@@ -193,32 +193,62 @@ class CourseApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for coursePrototypeCreateProduct
+     * Test case for coursePrototypeCountProducts
      *
-     * Creates a new instance in product of this model..
+     * Counts products of Course..
      *
      */
-    public function testCoursePrototypeCreateProduct()
+    public function testCoursePrototypeCountProducts()
     {
     }
 
     /**
-     * Test case for coursePrototypeDestroyProduct
+     * Test case for coursePrototypeCreateProducts
      *
-     * Deletes product of this model..
+     * Creates a new instance in products of this model..
      *
      */
-    public function testCoursePrototypeDestroyProduct()
+    public function testCoursePrototypeCreateProducts()
     {
     }
 
     /**
-     * Test case for coursePrototypeGetProduct
+     * Test case for coursePrototypeDeleteProducts
      *
-     * Fetches hasOne relation product..
+     * Deletes all products of this model..
      *
      */
-    public function testCoursePrototypeGetProduct()
+    public function testCoursePrototypeDeleteProducts()
+    {
+    }
+
+    /**
+     * Test case for coursePrototypeDestroyByIdProducts
+     *
+     * Delete a related item by id for products..
+     *
+     */
+    public function testCoursePrototypeDestroyByIdProducts()
+    {
+    }
+
+    /**
+     * Test case for coursePrototypeFindByIdProducts
+     *
+     * Find a related item by id for products..
+     *
+     */
+    public function testCoursePrototypeFindByIdProducts()
+    {
+    }
+
+    /**
+     * Test case for coursePrototypeGetProducts
+     *
+     * Queries products of Course..
+     *
+     */
+    public function testCoursePrototypeGetProducts()
     {
     }
 
@@ -233,12 +263,12 @@ class CourseApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for coursePrototypeUpdateProduct
+     * Test case for coursePrototypeUpdateByIdProducts
      *
-     * Update product of this model..
+     * Update a related item by id for products..
      *
      */
-    public function testCoursePrototypeUpdateProduct()
+    public function testCoursePrototypeUpdateByIdProducts()
     {
     }
 

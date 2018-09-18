@@ -61,6 +61,8 @@ class Product implements ArrayAccess
         'gl_number' => 'string',
         'is_download_only' => 'bool',
         'icon' => 'string',
+        'source_id' => 'double',
+        'source_shop_id' => 'double',
         'shop_product_type' => 'string',
         'shop_status' => 'string',
         'price' => 'double',
@@ -86,6 +88,8 @@ class Product implements ArrayAccess
         'gl_number' => null,
         'is_download_only' => null,
         'icon' => null,
+        'source_id' => 'double',
+        'source_shop_id' => 'double',
         'shop_product_type' => null,
         'shop_status' => null,
         'price' => 'double',
@@ -121,6 +125,8 @@ class Product implements ArrayAccess
         'gl_number' => 'glNumber',
         'is_download_only' => 'isDownloadOnly',
         'icon' => 'icon',
+        'source_id' => 'sourceId',
+        'source_shop_id' => 'sourceShopId',
         'shop_product_type' => 'shopProductType',
         'shop_status' => 'shopStatus',
         'price' => 'price',
@@ -147,6 +153,8 @@ class Product implements ArrayAccess
         'gl_number' => 'setGlNumber',
         'is_download_only' => 'setIsDownloadOnly',
         'icon' => 'setIcon',
+        'source_id' => 'setSourceId',
+        'source_shop_id' => 'setSourceShopId',
         'shop_product_type' => 'setShopProductType',
         'shop_status' => 'setShopStatus',
         'price' => 'setPrice',
@@ -173,6 +181,8 @@ class Product implements ArrayAccess
         'gl_number' => 'getGlNumber',
         'is_download_only' => 'getIsDownloadOnly',
         'icon' => 'getIcon',
+        'source_id' => 'getSourceId',
+        'source_shop_id' => 'getSourceShopId',
         'shop_product_type' => 'getShopProductType',
         'shop_status' => 'getShopStatus',
         'price' => 'getPrice',
@@ -224,6 +234,8 @@ class Product implements ArrayAccess
         $this->container['gl_number'] = isset($data['gl_number']) ? $data['gl_number'] : null;
         $this->container['is_download_only'] = isset($data['is_download_only']) ? $data['is_download_only'] : false;
         $this->container['icon'] = isset($data['icon']) ? $data['icon'] : null;
+        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
+        $this->container['source_shop_id'] = isset($data['source_shop_id']) ? $data['source_shop_id'] : null;
         $this->container['shop_product_type'] = isset($data['shop_product_type']) ? $data['shop_product_type'] : null;
         $this->container['shop_status'] = isset($data['shop_status']) ? $data['shop_status'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
@@ -255,6 +267,12 @@ class Product implements ArrayAccess
         if ($this->container['store_url'] === null) {
             $invalid_properties[] = "'store_url' can't be null";
         }
+        if ($this->container['source_id'] === null) {
+            $invalid_properties[] = "'source_id' can't be null";
+        }
+        if ($this->container['source_shop_id'] === null) {
+            $invalid_properties[] = "'source_shop_id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -274,6 +292,12 @@ class Product implements ArrayAccess
             return false;
         }
         if ($this->container['store_url'] === null) {
+            return false;
+        }
+        if ($this->container['source_id'] === null) {
+            return false;
+        }
+        if ($this->container['source_shop_id'] === null) {
             return false;
         }
         return true;
@@ -423,6 +447,48 @@ class Product implements ArrayAccess
     public function setIcon($icon)
     {
         $this->container['icon'] = $icon;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_id
+     * @return double
+     */
+    public function getSourceId()
+    {
+        return $this->container['source_id'];
+    }
+
+    /**
+     * Sets source_id
+     * @param double $source_id
+     * @return $this
+     */
+    public function setSourceId($source_id)
+    {
+        $this->container['source_id'] = $source_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_shop_id
+     * @return double
+     */
+    public function getSourceShopId()
+    {
+        return $this->container['source_shop_id'];
+    }
+
+    /**
+     * Sets source_shop_id
+     * @param double $source_shop_id
+     * @return $this
+     */
+    public function setSourceShopId($source_shop_id)
+    {
+        $this->container['source_shop_id'] = $source_shop_id;
 
         return $this;
     }

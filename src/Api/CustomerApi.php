@@ -88,6 +88,116 @@ class CustomerApi
     }
 
     /**
+     * Operation customerCancelSubscription
+     *
+     * Cancels a subscription of a plugin.
+     *
+     * @param string $id  (required)
+     * @param double $shop  (required)
+     * @param string $subscription  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2005
+     */
+    public function customerCancelSubscription($id, $shop, $subscription)
+    {
+        list($response) = $this->customerCancelSubscriptionWithHttpInfo($id, $shop, $subscription);
+        return $response;
+    }
+
+    /**
+     * Operation customerCancelSubscriptionWithHttpInfo
+     *
+     * Cancels a subscription of a plugin.
+     *
+     * @param string $id  (required)
+     * @param double $shop  (required)
+     * @param string $subscription  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerCancelSubscriptionWithHttpInfo($id, $shop, $subscription)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerCancelSubscription');
+        }
+        // verify the required parameter 'shop' is set
+        if ($shop === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $shop when calling customerCancelSubscription');
+        }
+        // verify the required parameter 'subscription' is set
+        if ($subscription === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $subscription when calling customerCancelSubscription');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/shop/{shop}/subscriptions/{subscription}/cancel";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($shop !== null) {
+            $resourcePath = str_replace(
+                "{" . "shop" . "}",
+                $this->apiClient->getSerializer()->toPathValue($shop),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($subscription !== null) {
+            $resourcePath = str_replace(
+                "{" . "subscription" . "}",
+                $this->apiClient->getSerializer()->toPathValue($subscription),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2005',
+                '/Customers/{id}/shop/{shop}/subscriptions/{subscription}/cancel'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation customerChangePassword
      *
      * Change a user's password.
@@ -696,6 +806,88 @@ class CustomerApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerDownloadProfile
+     *
+     * Downloads the data of the given customer as CSV files inside a ZIP file.
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2005
+     */
+    public function customerDownloadProfile($id)
+    {
+        list($response) = $this->customerDownloadProfileWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation customerDownloadProfileWithHttpInfo
+     *
+     * Downloads the data of the given customer as CSV files inside a ZIP file.
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerDownloadProfileWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerDownloadProfile');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/download";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2005',
+                '/Customers/{id}/download'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1492,6 +1684,252 @@ class CustomerApi
     }
 
     /**
+     * Operation customerNewsletterStatus
+     *
+     * Returns the newsletter status for a customer.
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return object
+     */
+    public function customerNewsletterStatus($id)
+    {
+        list($response) = $this->customerNewsletterStatusWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation customerNewsletterStatusWithHttpInfo
+     *
+     * Returns the newsletter status for a customer.
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerNewsletterStatusWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNewsletterStatus');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/newsletter";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/Customers/{id}/newsletter'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerNewsletterSubscribe
+     *
+     * Subscribes a customer to the newsletter.
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return object
+     */
+    public function customerNewsletterSubscribe($id)
+    {
+        list($response) = $this->customerNewsletterSubscribeWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation customerNewsletterSubscribeWithHttpInfo
+     *
+     * Subscribes a customer to the newsletter.
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerNewsletterSubscribeWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNewsletterSubscribe');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/newsletter";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/Customers/{id}/newsletter'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerNewsletterUnsubscribe
+     *
+     * Unsubscribes a customer from the newsletter.
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return object
+     */
+    public function customerNewsletterUnsubscribe($id)
+    {
+        list($response) = $this->customerNewsletterUnsubscribeWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation customerNewsletterUnsubscribeWithHttpInfo
+     *
+     * Unsubscribes a customer from the newsletter.
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerNewsletterUnsubscribeWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerNewsletterUnsubscribe');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/newsletter";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/Customers/{id}/newsletter'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation customerPatchOrCreate
      *
      * Patch an existing model instance or insert a new one into the data source.
@@ -1898,6 +2336,94 @@ class CustomerApi
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
                 '/Customers/{id}/composerTokens/count'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerPrototypeCountConfigurationServiceRequests
+     *
+     * Counts configurationServiceRequests of Customer.
+     *
+     * @param string $id Customer id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     */
+    public function customerPrototypeCountConfigurationServiceRequests($id, $where = null)
+    {
+        list($response) = $this->customerPrototypeCountConfigurationServiceRequestsWithHttpInfo($id, $where);
+        return $response;
+    }
+
+    /**
+     * Operation customerPrototypeCountConfigurationServiceRequestsWithHttpInfo
+     *
+     * Counts configurationServiceRequests of Customer.
+     *
+     * @param string $id Customer id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerPrototypeCountConfigurationServiceRequestsWithHttpInfo($id, $where = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCountConfigurationServiceRequests');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/configurationServiceRequests/count";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($where !== null) {
+            $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '/Customers/{id}/configurationServiceRequests/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -2796,6 +3322,95 @@ class CustomerApi
     }
 
     /**
+     * Operation customerPrototypeCreateConfigurationServiceRequests
+     *
+     * Creates a new instance in configurationServiceRequests of this model.
+     *
+     * @param string $id Customer id (required)
+     * @param \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest
+     */
+    public function customerPrototypeCreateConfigurationServiceRequests($id, $data = null)
+    {
+        list($response) = $this->customerPrototypeCreateConfigurationServiceRequestsWithHttpInfo($id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation customerPrototypeCreateConfigurationServiceRequestsWithHttpInfo
+     *
+     * Creates a new instance in configurationServiceRequests of this model.
+     *
+     * @param string $id Customer id (required)
+     * @param \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerPrototypeCreateConfigurationServiceRequestsWithHttpInfo($id, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeCreateConfigurationServiceRequests');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/configurationServiceRequests";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest',
+                '/Customers/{id}/configurationServiceRequests'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation customerPrototypeCreateCourseEnrollments
      *
      * Creates a new instance in courseEnrollments of this model.
@@ -3664,6 +4279,84 @@ class CustomerApi
     }
 
     /**
+     * Operation customerPrototypeDeleteConfigurationServiceRequests
+     *
+     * Deletes all configurationServiceRequests of this model.
+     *
+     * @param string $id Customer id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function customerPrototypeDeleteConfigurationServiceRequests($id)
+    {
+        list($response) = $this->customerPrototypeDeleteConfigurationServiceRequestsWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation customerPrototypeDeleteConfigurationServiceRequestsWithHttpInfo
+     *
+     * Deletes all configurationServiceRequests of this model.
+     *
+     * @param string $id Customer id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerPrototypeDeleteConfigurationServiceRequestsWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDeleteConfigurationServiceRequests');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/configurationServiceRequests";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/Customers/{id}/configurationServiceRequests'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation customerPrototypeDeleteCourseEnrollments
      *
      * Deletes all courseEnrollments of this model.
@@ -4460,6 +5153,98 @@ class CustomerApi
                 $headerParams,
                 null,
                 '/Customers/{id}/composerTokens/{fk}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerPrototypeDestroyByIdConfigurationServiceRequests
+     *
+     * Delete a related item by id for configurationServiceRequests.
+     *
+     * @param string $id Customer id (required)
+     * @param string $fk Foreign key for configurationServiceRequests (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function customerPrototypeDestroyByIdConfigurationServiceRequests($id, $fk)
+    {
+        list($response) = $this->customerPrototypeDestroyByIdConfigurationServiceRequestsWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation customerPrototypeDestroyByIdConfigurationServiceRequestsWithHttpInfo
+     *
+     * Delete a related item by id for configurationServiceRequests.
+     *
+     * @param string $id Customer id (required)
+     * @param string $fk Foreign key for configurationServiceRequests (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerPrototypeDestroyByIdConfigurationServiceRequestsWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeDestroyByIdConfigurationServiceRequests');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeDestroyByIdConfigurationServiceRequests');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/configurationServiceRequests/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/Customers/{id}/configurationServiceRequests/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -5496,6 +6281,102 @@ class CustomerApi
     }
 
     /**
+     * Operation customerPrototypeFindByIdConfigurationServiceRequests
+     *
+     * Find a related item by id for configurationServiceRequests.
+     *
+     * @param string $id Customer id (required)
+     * @param string $fk Foreign key for configurationServiceRequests (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest
+     */
+    public function customerPrototypeFindByIdConfigurationServiceRequests($id, $fk)
+    {
+        list($response) = $this->customerPrototypeFindByIdConfigurationServiceRequestsWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation customerPrototypeFindByIdConfigurationServiceRequestsWithHttpInfo
+     *
+     * Find a related item by id for configurationServiceRequests.
+     *
+     * @param string $id Customer id (required)
+     * @param string $fk Foreign key for configurationServiceRequests (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerPrototypeFindByIdConfigurationServiceRequestsWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeFindByIdConfigurationServiceRequests');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeFindByIdConfigurationServiceRequests');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/configurationServiceRequests/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest',
+                '/Customers/{id}/configurationServiceRequests/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation customerPrototypeFindByIdCourseEnrollments
      *
      * Find a related item by id for courseEnrollments.
@@ -6431,6 +7312,94 @@ class CustomerApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ComposerToken[]', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerPrototypeGetConfigurationServiceRequests
+     *
+     * Queries configurationServiceRequests of Customer.
+     *
+     * @param string $id Customer id (required)
+     * @param string $filter  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest[]
+     */
+    public function customerPrototypeGetConfigurationServiceRequests($id, $filter = null)
+    {
+        list($response) = $this->customerPrototypeGetConfigurationServiceRequestsWithHttpInfo($id, $filter);
+        return $response;
+    }
+
+    /**
+     * Operation customerPrototypeGetConfigurationServiceRequestsWithHttpInfo
+     *
+     * Queries configurationServiceRequests of Customer.
+     *
+     * @param string $id Customer id (required)
+     * @param string $filter  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerPrototypeGetConfigurationServiceRequestsWithHttpInfo($id, $filter = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeGetConfigurationServiceRequests');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/configurationServiceRequests";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest[]',
+                '/Customers/{id}/configurationServiceRequests'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest[]', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -7625,6 +8594,109 @@ class CustomerApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ComposerToken', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerPrototypeUpdateByIdConfigurationServiceRequests
+     *
+     * Update a related item by id for configurationServiceRequests.
+     *
+     * @param string $id Customer id (required)
+     * @param string $fk Foreign key for configurationServiceRequests (required)
+     * @param \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest
+     */
+    public function customerPrototypeUpdateByIdConfigurationServiceRequests($id, $fk, $data = null)
+    {
+        list($response) = $this->customerPrototypeUpdateByIdConfigurationServiceRequestsWithHttpInfo($id, $fk, $data);
+        return $response;
+    }
+
+    /**
+     * Operation customerPrototypeUpdateByIdConfigurationServiceRequestsWithHttpInfo
+     *
+     * Update a related item by id for configurationServiceRequests.
+     *
+     * @param string $id Customer id (required)
+     * @param string $fk Foreign key for configurationServiceRequests (required)
+     * @param \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerPrototypeUpdateByIdConfigurationServiceRequestsWithHttpInfo($id, $fk, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerPrototypeUpdateByIdConfigurationServiceRequests');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling customerPrototypeUpdateByIdConfigurationServiceRequests');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/configurationServiceRequests/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest',
+                '/Customers/{id}/configurationServiceRequests/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

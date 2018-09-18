@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2005
+ * InlineResponse2006
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * InlineResponse2005 Class Doc Comment
+ * InlineResponse2006 Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2005 implements ArrayAccess
+class InlineResponse2006 implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,15 @@ class InlineResponse2005 implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_5';
+    protected static $swaggerModelName = 'inline_response_200_6';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'undefined' => 'object'
+        'body' => 'object',
+        'content_type' => 'string'
     ];
 
     /**
@@ -62,7 +63,8 @@ class InlineResponse2005 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'undefined' => null
+        'body' => null,
+        'content_type' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +82,8 @@ class InlineResponse2005 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'undefined' => 'undefined'
+        'body' => 'body',
+        'content_type' => 'Content-Type'
     ];
 
 
@@ -89,7 +92,8 @@ class InlineResponse2005 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'undefined' => 'setUndefined'
+        'body' => 'setBody',
+        'content_type' => 'setContentType'
     ];
 
 
@@ -98,7 +102,8 @@ class InlineResponse2005 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'undefined' => 'getUndefined'
+        'body' => 'getBody',
+        'content_type' => 'getContentType'
     ];
 
     public static function attributeMap()
@@ -132,7 +137,8 @@ class InlineResponse2005 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['undefined'] = isset($data['undefined']) ? $data['undefined'] : null;
+        $this->container['body'] = isset($data['body']) ? $data['body'] : null;
+        $this->container['content_type'] = isset($data['content_type']) ? $data['content_type'] : null;
     }
 
     /**
@@ -161,22 +167,43 @@ class InlineResponse2005 implements ArrayAccess
 
 
     /**
-     * Gets undefined
+     * Gets body
      * @return object
      */
-    public function getUndefined()
+    public function getBody()
     {
-        return $this->container['undefined'];
+        return $this->container['body'];
     }
 
     /**
-     * Sets undefined
-     * @param object $undefined
+     * Sets body
+     * @param object $body
      * @return $this
      */
-    public function setUndefined($undefined)
+    public function setBody($body)
     {
-        $this->container['undefined'] = $undefined;
+        $this->container['body'] = $body;
+
+        return $this;
+    }
+
+    /**
+     * Gets content_type
+     * @return string
+     */
+    public function getContentType()
+    {
+        return $this->container['content_type'];
+    }
+
+    /**
+     * Sets content_type
+     * @param string $content_type
+     * @return $this
+     */
+    public function setContentType($content_type)
+    {
+        $this->container['content_type'] = $content_type;
 
         return $this;
     }

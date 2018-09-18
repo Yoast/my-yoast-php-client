@@ -127,6 +127,41 @@ class CourseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "open"
+     */
+    public function testPropertyOpen()
+    {
+    }
+
+    /**
+     * Test attribute "has_trial"
+     */
+    public function testPropertyHasTrial()
+    {
+    }
+
+    /**
+     * Test attribute "deprecated"
+     */
+    public function testPropertyDeprecated()
+    {
+    }
+
+    /**
+     * Test attribute "sale"
+     */
+    public function testPropertySale()
+    {
+    }
+
+    /**
+     * Test attribute "sale_label"
+     */
+    public function testPropertySaleLabel()
+    {
+    }
+
+    /**
      * Test attribute "source_id"
      */
     public function testPropertySourceId()

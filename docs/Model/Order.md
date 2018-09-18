@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **address_country** | **string** |  | [optional] 
 **exclude_from_revenue** | **bool** |  | [optional] [default to false]
 **renewal** | **bool** |  | [optional] [default to false]
+**automatic** | **bool** |  | [optional] [default to false]
 **created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
