@@ -867,6 +867,100 @@ class ProductGroupApi
     }
 
     /**
+     * Operation productGroupFromWooCommerce
+     *
+     * @param string $product_group_term  (required)
+     * @param string $product_group_meta  (required)
+     * @param string $extra_data  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
+     */
+    public function productGroupFromWooCommerce($product_group_term, $product_group_meta, $extra_data)
+    {
+        list($response) = $this->productGroupFromWooCommerceWithHttpInfo($product_group_term, $product_group_meta, $extra_data);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupFromWooCommerceWithHttpInfo
+     *
+     * @param string $product_group_term  (required)
+     * @param string $product_group_meta  (required)
+     * @param string $extra_data  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupFromWooCommerceWithHttpInfo($product_group_term, $product_group_meta, $extra_data)
+    {
+        // verify the required parameter 'product_group_term' is set
+        if ($product_group_term === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $product_group_term when calling productGroupFromWooCommerce');
+        }
+        // verify the required parameter 'product_group_meta' is set
+        if ($product_group_meta === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $product_group_meta when calling productGroupFromWooCommerce');
+        }
+        // verify the required parameter 'extra_data' is set
+        if ($extra_data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $extra_data when calling productGroupFromWooCommerce');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/fromWooCommerce";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // form params
+        if ($product_group_term !== null) {
+            $formParams['productGroupTerm'] = $this->apiClient->getSerializer()->toFormValue($product_group_term);
+        }
+        // form params
+        if ($product_group_meta !== null) {
+            $formParams['productGroupMeta'] = $this->apiClient->getSerializer()->toFormValue($product_group_meta);
+        }
+        // form params
+        if ($extra_data !== null) {
+            $formParams['extraData'] = $this->apiClient->getSerializer()->toFormValue($extra_data);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups/fromWooCommerce'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation productGroupPatchOrCreate
      *
      * Patch an existing model instance or insert a new one into the data source.

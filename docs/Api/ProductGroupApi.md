@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**productGroupFind**](ProductGroupApi.md#productGroupFind) | **GET** /ProductGroups | Find all instances of the model matched by filter from the data source.
 [**productGroupFindById**](ProductGroupApi.md#productGroupFindById) | **GET** /ProductGroups/{id} | Find a model instance by {{id}} from the data source.
 [**productGroupFindOne**](ProductGroupApi.md#productGroupFindOne) | **GET** /ProductGroups/findOne | Find first instance of the model matched by filter from the data source.
+[**productGroupFromWooCommerce**](ProductGroupApi.md#productGroupFromWooCommerce) | **PUT** /ProductGroups/fromWooCommerce | 
 [**productGroupPatchOrCreate**](ProductGroupApi.md#productGroupPatchOrCreate) | **PATCH** /ProductGroups | Patch an existing model instance or insert a new one into the data source.
 [**productGroupPrototypeCountProducts**](ProductGroupApi.md#productGroupPrototypeCountProducts) | **GET** /ProductGroups/{id}/products/count | Counts products of ProductGroup.
 [**productGroupPrototypeCreateProducts**](ProductGroupApi.md#productGroupPrototypeCreateProducts) | **POST** /ProductGroups/{id}/products | Creates a new instance in products of this model.
@@ -452,6 +453,53 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productGroupFromWooCommerce**
+> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupFromWooCommerce($product_group_term, $product_group_meta, $extra_data)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
+$product_group_term = "product_group_term_example"; // string | 
+$product_group_meta = "product_group_meta_example"; // string | 
+$extra_data = "extra_data_example"; // string | 
+
+try {
+    $result = $api_instance->productGroupFromWooCommerce($product_group_term, $product_group_meta, $extra_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductGroupApi->productGroupFromWooCommerce: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_group_term** | **string**|  |
+ **product_group_meta** | **string**|  |
+ **extra_data** | **string**|  |
 
 ### Return type
 

@@ -574,6 +574,7 @@ Class | Method | HTTP request | Description
 *ProductGroupApi* | [**productGroupFind**](docs/Api/ProductGroupApi.md#productgroupfind) | **GET** /ProductGroups | Find all instances of the model matched by filter from the data source.
 *ProductGroupApi* | [**productGroupFindById**](docs/Api/ProductGroupApi.md#productgroupfindbyid) | **GET** /ProductGroups/{id} | Find a model instance by {{id}} from the data source.
 *ProductGroupApi* | [**productGroupFindOne**](docs/Api/ProductGroupApi.md#productgroupfindone) | **GET** /ProductGroups/findOne | Find first instance of the model matched by filter from the data source.
+*ProductGroupApi* | [**productGroupFromWooCommerce**](docs/Api/ProductGroupApi.md#productgroupfromwoocommerce) | **PUT** /ProductGroups/fromWooCommerce | 
 *ProductGroupApi* | [**productGroupPatchOrCreate**](docs/Api/ProductGroupApi.md#productgrouppatchorcreate) | **PATCH** /ProductGroups | Patch an existing model instance or insert a new one into the data source.
 *ProductGroupApi* | [**productGroupPrototypeCountProducts**](docs/Api/ProductGroupApi.md#productgroupprototypecountproducts) | **GET** /ProductGroups/{id}/products/count | Counts products of ProductGroup.
 *ProductGroupApi* | [**productGroupPrototypeCreateProducts**](docs/Api/ProductGroupApi.md#productgroupprototypecreateproducts) | **POST** /ProductGroups/{id}/products | Creates a new instance in products of this model.
