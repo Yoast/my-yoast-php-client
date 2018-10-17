@@ -176,6 +176,13 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "user_avatar_url"
+     */
+    public function testPropertyUserAvatarUrl()
+    {
+    }
+
+    /**
      * Test attribute "realm"
      */
     public function testPropertyRealm()

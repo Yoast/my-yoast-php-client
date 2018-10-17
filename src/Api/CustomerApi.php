@@ -88,6 +88,85 @@ class CustomerApi
     }
 
     /**
+     * Operation customerActivate
+     *
+     * Activates the account of a user.
+     *
+     * @param object $activate_data  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2005
+     */
+    public function customerActivate($activate_data)
+    {
+        list($response) = $this->customerActivateWithHttpInfo($activate_data);
+        return $response;
+    }
+
+    /**
+     * Operation customerActivateWithHttpInfo
+     *
+     * Activates the account of a user.
+     *
+     * @param object $activate_data  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerActivateWithHttpInfo($activate_data)
+    {
+        // verify the required parameter 'activate_data' is set
+        if ($activate_data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $activate_data when calling customerActivate');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/activate";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($activate_data)) {
+            $_tempBody = $activate_data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2005',
+                '/Customers/activate'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation customerCancelSubscription
      *
      * Cancels a subscription of a plugin.
@@ -1535,6 +1614,74 @@ class CustomerApi
     }
 
     /**
+     * Operation customerGetNonce
+     *
+     * Get a user's yoast.com nonce
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2006
+     */
+    public function customerGetNonce()
+    {
+        list($response) = $this->customerGetNonceWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation customerGetNonceWithHttpInfo
+     *
+     * Get a user's yoast.com nonce
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerGetNonceWithHttpInfo()
+    {
+        // parse inputs
+        $resourcePath = "/Customers/nonce";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2006',
+                '/Customers/nonce'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation customerLogin
      *
      * Login a user with username/email and password.
@@ -1620,6 +1767,85 @@ class CustomerApi
     }
 
     /**
+     * Operation customerLoginUser
+     *
+     * Login a user on yoast.com
+     *
+     * @param object $login_data  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2005
+     */
+    public function customerLoginUser($login_data)
+    {
+        list($response) = $this->customerLoginUserWithHttpInfo($login_data);
+        return $response;
+    }
+
+    /**
+     * Operation customerLoginUserWithHttpInfo
+     *
+     * Login a user on yoast.com
+     *
+     * @param object $login_data  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerLoginUserWithHttpInfo($login_data)
+    {
+        // verify the required parameter 'login_data' is set
+        if ($login_data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $login_data when calling customerLoginUser');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/login-user";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($login_data)) {
+            $_tempBody = $login_data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2005',
+                '/Customers/login-user'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation customerLogout
      *
      * Logout a user with access token.
@@ -1677,6 +1903,85 @@ class CustomerApi
             return [null, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerLogoutUser
+     *
+     * Log a user out on yoast.com
+     *
+     * @param object $nonce  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2005
+     */
+    public function customerLogoutUser($nonce)
+    {
+        list($response) = $this->customerLogoutUserWithHttpInfo($nonce);
+        return $response;
+    }
+
+    /**
+     * Operation customerLogoutUserWithHttpInfo
+     *
+     * Log a user out on yoast.com
+     *
+     * @param object $nonce  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerLogoutUserWithHttpInfo($nonce)
+    {
+        // verify the required parameter 'nonce' is set
+        if ($nonce === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $nonce when calling customerLogoutUser');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/logout-user";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($nonce)) {
+            $_tempBody = $nonce;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2005',
+                '/Customers/logout-user'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
             }
 
             throw $e;
@@ -9858,7 +10163,82 @@ class CustomerApi
     }
 
     /**
-     * Operation customerResetPassword
+     * Operation customerResetPasswordPatchCustomersResetPassword
+     *
+     * Reset the password of the user
+     *
+     * @param object $password_data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return object
+     */
+    public function customerResetPasswordPatchCustomersResetPassword($password_data = null)
+    {
+        list($response) = $this->customerResetPasswordPatchCustomersResetPasswordWithHttpInfo($password_data);
+        return $response;
+    }
+
+    /**
+     * Operation customerResetPasswordPatchCustomersResetPasswordWithHttpInfo
+     *
+     * Reset the password of the user
+     *
+     * @param object $password_data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerResetPasswordPatchCustomersResetPasswordWithHttpInfo($password_data = null)
+    {
+        // parse inputs
+        $resourcePath = "/Customers/resetPassword";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($password_data)) {
+            $_tempBody = $password_data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PATCH',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/Customers/resetPassword'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerResetPasswordPostCustomersReset
      *
      * Reset password for a user with email.
      *
@@ -9866,14 +10246,14 @@ class CustomerApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function customerResetPassword($options)
+    public function customerResetPasswordPostCustomersReset($options)
     {
-        list($response) = $this->customerResetPasswordWithHttpInfo($options);
+        list($response) = $this->customerResetPasswordPostCustomersResetWithHttpInfo($options);
         return $response;
     }
 
     /**
-     * Operation customerResetPasswordWithHttpInfo
+     * Operation customerResetPasswordPostCustomersResetWithHttpInfo
      *
      * Reset password for a user with email.
      *
@@ -9881,11 +10261,11 @@ class CustomerApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerResetPasswordWithHttpInfo($options)
+    public function customerResetPasswordPostCustomersResetWithHttpInfo($options)
     {
         // verify the required parameter 'options' is set
         if ($options === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $options when calling customerResetPassword');
+            throw new \InvalidArgumentException('Missing the required parameter $options when calling customerResetPasswordPostCustomersReset');
         }
         // parse inputs
         $resourcePath = "/Customers/reset";
@@ -9926,6 +10306,156 @@ class CustomerApi
             return [null, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerSendResetPasswordEmail
+     *
+     * Sends the reset password email
+     *
+     * @param object $email_data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return object
+     */
+    public function customerSendResetPasswordEmail($email_data = null)
+    {
+        list($response) = $this->customerSendResetPasswordEmailWithHttpInfo($email_data);
+        return $response;
+    }
+
+    /**
+     * Operation customerSendResetPasswordEmailWithHttpInfo
+     *
+     * Sends the reset password email
+     *
+     * @param object $email_data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerSendResetPasswordEmailWithHttpInfo($email_data = null)
+    {
+        // parse inputs
+        $resourcePath = "/Customers/sendResetPasswordEmail";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($email_data)) {
+            $_tempBody = $email_data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/Customers/sendResetPasswordEmail'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerSignup
+     *
+     * Signup: Creates an account for a new user.
+     *
+     * @param object $signup_data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return object
+     */
+    public function customerSignup($signup_data = null)
+    {
+        list($response) = $this->customerSignupWithHttpInfo($signup_data);
+        return $response;
+    }
+
+    /**
+     * Operation customerSignupWithHttpInfo
+     *
+     * Signup: Creates an account for a new user.
+     *
+     * @param object $signup_data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerSignupWithHttpInfo($signup_data = null)
+    {
+        // parse inputs
+        $resourcePath = "/Customers/signup";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // body params
+        $_tempBody = null;
+        if (isset($signup_data)) {
+            $_tempBody = $signup_data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/Customers/signup'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
             }
 
             throw $e;
@@ -10005,6 +10535,88 @@ class CustomerApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerUploadAvatar
+     *
+     * Uploads a new avatar.
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return object
+     */
+    public function customerUploadAvatar($id)
+    {
+        list($response) = $this->customerUploadAvatarWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation customerUploadAvatarWithHttpInfo
+     *
+     * Uploads a new avatar.
+     *
+     * @param string $id  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerUploadAvatarWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling customerUploadAvatar');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/{id}/avatar";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/Customers/{id}/avatar'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

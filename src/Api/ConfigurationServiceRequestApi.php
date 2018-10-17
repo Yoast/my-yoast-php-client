@@ -1963,7 +1963,7 @@ class ConfigurationServiceRequestApi
      *
      * @param string $id  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2006
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2007
      */
     public function configurationServiceRequestReport($id)
     {
@@ -1976,7 +1976,7 @@ class ConfigurationServiceRequestApi
      *
      * @param string $id  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
      */
     public function configurationServiceRequestReportWithHttpInfo($id)
     {
@@ -2019,15 +2019,15 @@ class ConfigurationServiceRequestApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2006',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2007',
                 '/ConfigurationServiceRequests/{id}/report'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2007', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

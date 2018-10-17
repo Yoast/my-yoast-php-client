@@ -69,7 +69,9 @@ class Subscription implements ArrayAccess
         'next_payment' => '\DateTime',
         'limit' => 'double',
         'used' => 'double',
-        'subscriber_id' => 'string'
+        'subscriber_id' => 'string',
+        'renewal_url' => 'string',
+        'subscription_number' => 'string'
     ];
 
     /**
@@ -92,7 +94,9 @@ class Subscription implements ArrayAccess
         'next_payment' => 'date-time',
         'limit' => 'double',
         'used' => 'double',
-        'subscriber_id' => null
+        'subscriber_id' => null,
+        'renewal_url' => null,
+        'subscription_number' => null
     ];
 
     public static function swaggerTypes()
@@ -125,7 +129,9 @@ class Subscription implements ArrayAccess
         'next_payment' => 'nextPayment',
         'limit' => 'limit',
         'used' => 'used',
-        'subscriber_id' => 'subscriberId'
+        'subscriber_id' => 'subscriberId',
+        'renewal_url' => 'renewalUrl',
+        'subscription_number' => 'subscriptionNumber'
     ];
 
 
@@ -149,7 +155,9 @@ class Subscription implements ArrayAccess
         'next_payment' => 'setNextPayment',
         'limit' => 'setLimit',
         'used' => 'setUsed',
-        'subscriber_id' => 'setSubscriberId'
+        'subscriber_id' => 'setSubscriberId',
+        'renewal_url' => 'setRenewalUrl',
+        'subscription_number' => 'setSubscriptionNumber'
     ];
 
 
@@ -173,7 +181,9 @@ class Subscription implements ArrayAccess
         'next_payment' => 'getNextPayment',
         'limit' => 'getLimit',
         'used' => 'getUsed',
-        'subscriber_id' => 'getSubscriberId'
+        'subscriber_id' => 'getSubscriberId',
+        'renewal_url' => 'getRenewalUrl',
+        'subscription_number' => 'getSubscriptionNumber'
     ];
 
     public static function attributeMap()
@@ -223,6 +233,8 @@ class Subscription implements ArrayAccess
         $this->container['limit'] = isset($data['limit']) ? $data['limit'] : 0.0;
         $this->container['used'] = isset($data['used']) ? $data['used'] : 0.0;
         $this->container['subscriber_id'] = isset($data['subscriber_id']) ? $data['subscriber_id'] : null;
+        $this->container['renewal_url'] = isset($data['renewal_url']) ? $data['renewal_url'] : null;
+        $this->container['subscription_number'] = isset($data['subscription_number']) ? $data['subscription_number'] : null;
     }
 
     /**
@@ -618,6 +630,48 @@ class Subscription implements ArrayAccess
     public function setSubscriberId($subscriber_id)
     {
         $this->container['subscriber_id'] = $subscriber_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets renewal_url
+     * @return string
+     */
+    public function getRenewalUrl()
+    {
+        return $this->container['renewal_url'];
+    }
+
+    /**
+     * Sets renewal_url
+     * @param string $renewal_url
+     * @return $this
+     */
+    public function setRenewalUrl($renewal_url)
+    {
+        $this->container['renewal_url'] = $renewal_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_number
+     * @return string
+     */
+    public function getSubscriptionNumber()
+    {
+        return $this->container['subscription_number'];
+    }
+
+    /**
+     * Sets subscription_number
+     * @param string $subscription_number
+     * @return $this
+     */
+    public function setSubscriptionNumber($subscription_number)
+    {
+        $this->container['subscription_number'] = $subscription_number;
 
         return $this;
     }

@@ -68,6 +68,7 @@ class Customer implements ArrayAccess
         'user_post_code' => 'string',
         'user_country' => 'string',
         'user_phone' => 'string',
+        'user_avatar_url' => 'string',
         'realm' => 'string',
         'username' => 'string',
         'email' => 'string',
@@ -93,6 +94,7 @@ class Customer implements ArrayAccess
         'user_post_code' => null,
         'user_country' => null,
         'user_phone' => null,
+        'user_avatar_url' => null,
         'realm' => null,
         'username' => null,
         'email' => null,
@@ -128,6 +130,7 @@ class Customer implements ArrayAccess
         'user_post_code' => 'userPostCode',
         'user_country' => 'userCountry',
         'user_phone' => 'userPhone',
+        'user_avatar_url' => 'userAvatarUrl',
         'realm' => 'realm',
         'username' => 'username',
         'email' => 'email',
@@ -154,6 +157,7 @@ class Customer implements ArrayAccess
         'user_post_code' => 'setUserPostCode',
         'user_country' => 'setUserCountry',
         'user_phone' => 'setUserPhone',
+        'user_avatar_url' => 'setUserAvatarUrl',
         'realm' => 'setRealm',
         'username' => 'setUsername',
         'email' => 'setEmail',
@@ -180,6 +184,7 @@ class Customer implements ArrayAccess
         'user_post_code' => 'getUserPostCode',
         'user_country' => 'getUserCountry',
         'user_phone' => 'getUserPhone',
+        'user_avatar_url' => 'getUserAvatarUrl',
         'realm' => 'getRealm',
         'username' => 'getUsername',
         'email' => 'getEmail',
@@ -231,6 +236,7 @@ class Customer implements ArrayAccess
         $this->container['user_post_code'] = isset($data['user_post_code']) ? $data['user_post_code'] : null;
         $this->container['user_country'] = isset($data['user_country']) ? $data['user_country'] : null;
         $this->container['user_phone'] = isset($data['user_phone']) ? $data['user_phone'] : null;
+        $this->container['user_avatar_url'] = isset($data['user_avatar_url']) ? $data['user_avatar_url'] : null;
         $this->container['realm'] = isset($data['realm']) ? $data['realm'] : null;
         $this->container['username'] = isset($data['username']) ? $data['username'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
@@ -564,6 +570,27 @@ class Customer implements ArrayAccess
     public function setUserPhone($user_phone)
     {
         $this->container['user_phone'] = $user_phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_avatar_url
+     * @return string
+     */
+    public function getUserAvatarUrl()
+    {
+        return $this->container['user_avatar_url'];
+    }
+
+    /**
+     * Sets user_avatar_url
+     * @param string $user_avatar_url
+     * @return $this
+     */
+    public function setUserAvatarUrl($user_avatar_url)
+    {
+        $this->container['user_avatar_url'] = $user_avatar_url;
 
         return $this;
     }

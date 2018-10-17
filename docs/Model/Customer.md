@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **user_post_code** | **string** |  | [optional] 
 **user_country** | **string** |  | [optional] 
 **user_phone** | **string** |  | [optional] 
+**user_avatar_url** | **string** |  | [optional] 
 **realm** | **string** |  | [optional] 
 **username** | **string** |  | [optional] 
 **email** | **string** |  | 

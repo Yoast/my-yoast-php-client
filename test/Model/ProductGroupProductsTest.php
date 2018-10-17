@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2006Test
+ * ProductGroupProductsTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * InlineResponse2006Test Class Doc Comment
+ * ProductGroupProductsTest Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse2006
+// * @description ProductGroupProducts
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2006Test extends \PHPUnit_Framework_TestCase
+class ProductGroupProductsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,30 @@ class InlineResponse2006Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "InlineResponse2006"
+     * Test "ProductGroupProducts"
      */
-    public function testInlineResponse2006()
+    public function testProductGroupProducts()
     {
     }
 
     /**
-     * Test attribute "nonce"
+     * Test attribute "id"
      */
-    public function testPropertyNonce()
+    public function testPropertyId()
+    {
+    }
+
+    /**
+     * Test attribute "product_group_id"
+     */
+    public function testPropertyProductGroupId()
+    {
+    }
+
+    /**
+     * Test attribute "product_id"
+     */
+    public function testPropertyProductId()
     {
     }
 }

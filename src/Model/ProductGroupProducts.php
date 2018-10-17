@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2006
+ * ProductGroupProducts
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * InlineResponse2006 Class Doc Comment
+ * ProductGroupProducts Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2006 implements ArrayAccess
+class ProductGroupProducts implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,16 @@ class InlineResponse2006 implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_6';
+    protected static $swaggerModelName = 'ProductGroupProducts';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'nonce' => 'string'
+        'id' => 'string',
+        'product_group_id' => 'string',
+        'product_id' => 'string'
     ];
 
     /**
@@ -62,7 +64,9 @@ class InlineResponse2006 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'nonce' => null
+        'id' => null,
+        'product_group_id' => null,
+        'product_id' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +84,9 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'nonce' => 'nonce'
+        'id' => 'id',
+        'product_group_id' => 'productGroupId',
+        'product_id' => 'productId'
     ];
 
 
@@ -89,7 +95,9 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'nonce' => 'setNonce'
+        'id' => 'setId',
+        'product_group_id' => 'setProductGroupId',
+        'product_id' => 'setProductId'
     ];
 
 
@@ -98,7 +106,9 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'nonce' => 'getNonce'
+        'id' => 'getId',
+        'product_group_id' => 'getProductGroupId',
+        'product_id' => 'getProductId'
     ];
 
     public static function attributeMap()
@@ -132,7 +142,9 @@ class InlineResponse2006 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['nonce'] = isset($data['nonce']) ? $data['nonce'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['product_group_id'] = isset($data['product_group_id']) ? $data['product_group_id'] : null;
+        $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
     }
 
     /**
@@ -144,6 +156,15 @@ class InlineResponse2006 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
+        }
+        if ($this->container['product_group_id'] === null) {
+            $invalid_properties[] = "'product_group_id' can't be null";
+        }
+        if ($this->container['product_id'] === null) {
+            $invalid_properties[] = "'product_id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -156,27 +177,78 @@ class InlineResponse2006 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['id'] === null) {
+            return false;
+        }
+        if ($this->container['product_group_id'] === null) {
+            return false;
+        }
+        if ($this->container['product_id'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets nonce
+     * Gets id
      * @return string
      */
-    public function getNonce()
+    public function getId()
     {
-        return $this->container['nonce'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets nonce
-     * @param string $nonce
+     * Sets id
+     * @param string $id
      * @return $this
      */
-    public function setNonce($nonce)
+    public function setId($id)
     {
-        $this->container['nonce'] = $nonce;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets product_group_id
+     * @return string
+     */
+    public function getProductGroupId()
+    {
+        return $this->container['product_group_id'];
+    }
+
+    /**
+     * Sets product_group_id
+     * @param string $product_group_id
+     * @return $this
+     */
+    public function setProductGroupId($product_group_id)
+    {
+        $this->container['product_group_id'] = $product_group_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets product_id
+     * @return string
+     */
+    public function getProductId()
+    {
+        return $this->container['product_id'];
+    }
+
+    /**
+     * Sets product_id
+     * @param string $product_id
+     * @return $this
+     */
+    public function setProductId($product_id)
+    {
+        $this->container['product_id'] = $product_id;
 
         return $this;
     }

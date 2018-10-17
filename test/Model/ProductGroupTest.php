@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2006Test
+ * ProductGroupTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * InlineResponse2006Test Class Doc Comment
+ * ProductGroupTest Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse2006
+// * @description ProductGroup
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2006Test extends \PHPUnit_Framework_TestCase
+class ProductGroupTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,79 @@ class InlineResponse2006Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "InlineResponse2006"
+     * Test "ProductGroup"
      */
-    public function testInlineResponse2006()
+    public function testProductGroup()
     {
     }
 
     /**
-     * Test attribute "nonce"
+     * Test attribute "id"
      */
-    public function testPropertyNonce()
+    public function testPropertyId()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "slug"
+     */
+    public function testPropertySlug()
+    {
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+    }
+
+    /**
+     * Test attribute "icon"
+     */
+    public function testPropertyIcon()
+    {
+    }
+
+    /**
+     * Test attribute "svg_icon"
+     */
+    public function testPropertySvgIcon()
+    {
+    }
+
+    /**
+     * Test attribute "changelog"
+     */
+    public function testPropertyChangelog()
+    {
+    }
+
+    /**
+     * Test attribute "version"
+     */
+    public function testPropertyVersion()
+    {
+    }
+
+    /**
+     * Test attribute "course_id"
+     */
+    public function testPropertyCourseId()
+    {
+    }
+
+    /**
+     * Test attribute "parent_id"
+     */
+    public function testPropertyParentId()
     {
     }
 }

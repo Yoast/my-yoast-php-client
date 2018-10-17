@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**customerActivate**](CustomerApi.md#customerActivate) | **POST** /Customers/activate | Activates the account of a user.
 [**customerCancelSubscription**](CustomerApi.md#customerCancelSubscription) | **POST** /Customers/{id}/shop/{shop}/subscriptions/{subscription}/cancel | Cancels a subscription of a plugin.
 [**customerChangePassword**](CustomerApi.md#customerChangePassword) | **POST** /Customers/change-password | Change a user&#39;s password.
 [**customerConfirm**](CustomerApi.md#customerConfirm) | **GET** /Customers/confirm | Confirm a user registration with email verification token.
@@ -22,8 +23,11 @@ Method | HTTP request | Description
 [**customerFindOne**](CustomerApi.md#customerFindOne) | **GET** /Customers/findOne | Find first instance of the model matched by filter from the data source.
 [**customerFindRefunds**](CustomerApi.md#customerFindRefunds) | **GET** /Customers/{id}/findRefunds | Finds all refunds for a customer.
 [**customerFromWooCommerce**](CustomerApi.md#customerFromWooCommerce) | **PUT** /Customers/fromWooCommerce | 
+[**customerGetNonce**](CustomerApi.md#customerGetNonce) | **GET** /Customers/nonce | Get a user&#39;s yoast.com nonce
 [**customerLogin**](CustomerApi.md#customerLogin) | **POST** /Customers/login | Login a user with username/email and password.
+[**customerLoginUser**](CustomerApi.md#customerLoginUser) | **POST** /Customers/login-user | Login a user on yoast.com
 [**customerLogout**](CustomerApi.md#customerLogout) | **POST** /Customers/logout | Logout a user with access token.
+[**customerLogoutUser**](CustomerApi.md#customerLogoutUser) | **POST** /Customers/logout-user | Log a user out on yoast.com
 [**customerNewsletterStatus**](CustomerApi.md#customerNewsletterStatus) | **GET** /Customers/{id}/newsletter | Returns the newsletter status for a customer.
 [**customerNewsletterSubscribe**](CustomerApi.md#customerNewsletterSubscribe) | **POST** /Customers/{id}/newsletter | Subscribes a customer to the newsletter.
 [**customerNewsletterUnsubscribe**](CustomerApi.md#customerNewsletterUnsubscribe) | **DELETE** /Customers/{id}/newsletter | Unsubscribes a customer from the newsletter.
@@ -115,10 +119,57 @@ Method | HTTP request | Description
 [**customerReplaceByIdPutCustomersid**](CustomerApi.md#customerReplaceByIdPutCustomersid) | **PUT** /Customers/{id} | Replace attributes for a model instance and persist it into the data source.
 [**customerReplaceOrCreatePostCustomersReplaceOrCreate**](CustomerApi.md#customerReplaceOrCreatePostCustomersReplaceOrCreate) | **POST** /Customers/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
 [**customerReplaceOrCreatePutCustomers**](CustomerApi.md#customerReplaceOrCreatePutCustomers) | **PUT** /Customers | Replace an existing model instance or insert a new one into the data source.
-[**customerResetPassword**](CustomerApi.md#customerResetPassword) | **POST** /Customers/reset | Reset password for a user with email.
+[**customerResetPasswordPatchCustomersResetPassword**](CustomerApi.md#customerResetPasswordPatchCustomersResetPassword) | **PATCH** /Customers/resetPassword | Reset the password of the user
+[**customerResetPasswordPostCustomersReset**](CustomerApi.md#customerResetPasswordPostCustomersReset) | **POST** /Customers/reset | Reset password for a user with email.
+[**customerSendResetPasswordEmail**](CustomerApi.md#customerSendResetPasswordEmail) | **POST** /Customers/sendResetPasswordEmail | Sends the reset password email
+[**customerSignup**](CustomerApi.md#customerSignup) | **POST** /Customers/signup | Signup: Creates an account for a new user.
 [**customerUpdateAll**](CustomerApi.md#customerUpdateAll) | **POST** /Customers/update | Update instances of the model matched by {{where}} from the data source.
+[**customerUploadAvatar**](CustomerApi.md#customerUploadAvatar) | **POST** /Customers/{id}/avatar | Uploads a new avatar.
 [**customerUpsertWithWhere**](CustomerApi.md#customerUpsertWithWhere) | **POST** /Customers/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
+
+# **customerActivate**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerActivate($activate_data)
+
+Activates the account of a user.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$activate_data = NULL; // object | 
+
+try {
+    $result = $api_instance->customerActivate($activate_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerActivate: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **activate_data** | **object**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customerCancelSubscription**
 > \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerCancelSubscription($id, $shop, $subscription)
@@ -900,6 +951,45 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **customerGetNonce**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2006 customerGetNonce()
+
+Get a user's yoast.com nonce
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+
+try {
+    $result = $api_instance->customerGetNonce();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerGetNonce: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **customerLogin**
 > object customerLogin($credentials, $include)
 
@@ -945,6 +1035,49 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **customerLoginUser**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerLoginUser($login_data)
+
+Login a user on yoast.com
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$login_data = NULL; // object | 
+
+try {
+    $result = $api_instance->customerLoginUser($login_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerLoginUser: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **login_data** | **object**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **customerLogout**
 > customerLogout()
 
@@ -971,6 +1104,49 @@ This endpoint does not need any parameter.
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerLogoutUser**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerLogoutUser($nonce)
+
+Log a user out on yoast.com
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$nonce = NULL; // object | 
+
+try {
+    $result = $api_instance->customerLogoutUser($nonce);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerLogoutUser: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nonce** | **object**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
 
 ### Authorization
 
@@ -5043,8 +5219,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerResetPassword**
-> customerResetPassword($options)
+# **customerResetPasswordPatchCustomersResetPassword**
+> object customerResetPasswordPatchCustomersResetPassword($password_data)
+
+Reset the password of the user
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$password_data = NULL; // object | 
+
+try {
+    $result = $api_instance->customerResetPasswordPatchCustomersResetPassword($password_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerResetPasswordPatchCustomersResetPassword: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **password_data** | **object**|  | [optional]
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerResetPasswordPostCustomersReset**
+> customerResetPasswordPostCustomersReset($options)
 
 Reset password for a user with email.
 
@@ -5057,9 +5276,9 @@ $api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
 $options = NULL; // object | 
 
 try {
-    $api_instance->customerResetPassword($options);
+    $api_instance->customerResetPasswordPostCustomersReset($options);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerResetPassword: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->customerResetPasswordPostCustomersReset: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -5073,6 +5292,92 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerSendResetPasswordEmail**
+> object customerSendResetPasswordEmail($email_data)
+
+Sends the reset password email
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$email_data = NULL; // object | 
+
+try {
+    $result = $api_instance->customerSendResetPasswordEmail($email_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerSendResetPasswordEmail: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email_data** | **object**|  | [optional]
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerSignup**
+> object customerSignup($signup_data)
+
+Signup: Creates an account for a new user.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$signup_data = NULL; // object | 
+
+try {
+    $result = $api_instance->customerSignup($signup_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerSignup: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **signup_data** | **object**|  | [optional]
+
+### Return type
+
+**object**
 
 ### Authorization
 
@@ -5118,6 +5423,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerUploadAvatar**
+> object customerUploadAvatar($id)
+
+Uploads a new avatar.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$id = "id_example"; // string | 
+
+try {
+    $result = $api_instance->customerUploadAvatar($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerUploadAvatar: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+
+### Return type
+
+**object**
 
 ### Authorization
 

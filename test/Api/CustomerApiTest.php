@@ -73,6 +73,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for customerActivate
+     *
+     * Activates the account of a user..
+     *
+     */
+    public function testCustomerActivate()
+    {
+    }
+
+    /**
      * Test case for customerCancelSubscription
      *
      * Cancels a subscription of a plugin..
@@ -253,6 +263,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for customerGetNonce
+     *
+     * Get a user's yoast.com nonce.
+     *
+     */
+    public function testCustomerGetNonce()
+    {
+    }
+
+    /**
      * Test case for customerLogin
      *
      * Login a user with username/email and password..
@@ -263,12 +283,32 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for customerLoginUser
+     *
+     * Login a user on yoast.com.
+     *
+     */
+    public function testCustomerLoginUser()
+    {
+    }
+
+    /**
      * Test case for customerLogout
      *
      * Logout a user with access token..
      *
      */
     public function testCustomerLogout()
+    {
+    }
+
+    /**
+     * Test case for customerLogoutUser
+     *
+     * Log a user out on yoast.com.
+     *
+     */
+    public function testCustomerLogoutUser()
     {
     }
 
@@ -1183,12 +1223,42 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for customerResetPassword
+     * Test case for customerResetPasswordPatchCustomersResetPassword
+     *
+     * Reset the password of the user.
+     *
+     */
+    public function testCustomerResetPasswordPatchCustomersResetPassword()
+    {
+    }
+
+    /**
+     * Test case for customerResetPasswordPostCustomersReset
      *
      * Reset password for a user with email..
      *
      */
-    public function testCustomerResetPassword()
+    public function testCustomerResetPasswordPostCustomersReset()
+    {
+    }
+
+    /**
+     * Test case for customerSendResetPasswordEmail
+     *
+     * Sends the reset password email.
+     *
+     */
+    public function testCustomerSendResetPasswordEmail()
+    {
+    }
+
+    /**
+     * Test case for customerSignup
+     *
+     * Signup: Creates an account for a new user..
+     *
+     */
+    public function testCustomerSignup()
     {
     }
 
@@ -1199,6 +1269,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testCustomerUpdateAll()
+    {
+    }
+
+    /**
+     * Test case for customerUploadAvatar
+     *
+     * Uploads a new avatar..
+     *
+     */
+    public function testCustomerUploadAvatar()
     {
     }
 

@@ -1,9 +1,14 @@
-# InlineResponse2006
+# Download
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**nonce** | **string** |  | [optional] 
+**id** | **string** |  | 
+**name** | **string** |  | 
+**version** | **string** |  | 
+**secret** | **string** |  | 
+**extension** | **string** |  | 
+**mimetype** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

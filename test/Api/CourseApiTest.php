@@ -193,12 +193,32 @@ class CourseApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for coursePrototypeCountProductGroup
+     *
+     * Counts productGroup of Course..
+     *
+     */
+    public function testCoursePrototypeCountProductGroup()
+    {
+    }
+
+    /**
      * Test case for coursePrototypeCountProducts
      *
      * Counts products of Course..
      *
      */
     public function testCoursePrototypeCountProducts()
+    {
+    }
+
+    /**
+     * Test case for coursePrototypeCreateProductGroup
+     *
+     * Creates a new instance in productGroup of this model..
+     *
+     */
+    public function testCoursePrototypeCreateProductGroup()
     {
     }
 
@@ -213,12 +233,32 @@ class CourseApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for coursePrototypeDeleteProductGroup
+     *
+     * Deletes all productGroup of this model..
+     *
+     */
+    public function testCoursePrototypeDeleteProductGroup()
+    {
+    }
+
+    /**
      * Test case for coursePrototypeDeleteProducts
      *
      * Deletes all products of this model..
      *
      */
     public function testCoursePrototypeDeleteProducts()
+    {
+    }
+
+    /**
+     * Test case for coursePrototypeDestroyByIdProductGroup
+     *
+     * Delete a related item by id for productGroup..
+     *
+     */
+    public function testCoursePrototypeDestroyByIdProductGroup()
     {
     }
 
@@ -233,12 +273,32 @@ class CourseApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for coursePrototypeFindByIdProductGroup
+     *
+     * Find a related item by id for productGroup..
+     *
+     */
+    public function testCoursePrototypeFindByIdProductGroup()
+    {
+    }
+
+    /**
      * Test case for coursePrototypeFindByIdProducts
      *
      * Find a related item by id for products..
      *
      */
     public function testCoursePrototypeFindByIdProducts()
+    {
+    }
+
+    /**
+     * Test case for coursePrototypeGetProductGroup
+     *
+     * Queries productGroup of Course..
+     *
+     */
+    public function testCoursePrototypeGetProductGroup()
     {
     }
 
@@ -259,6 +319,16 @@ class CourseApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testCoursePrototypePatchAttributes()
+    {
+    }
+
+    /**
+     * Test case for coursePrototypeUpdateByIdProductGroup
+     *
+     * Update a related item by id for productGroup..
+     *
+     */
+    public function testCoursePrototypeUpdateByIdProductGroup()
     {
     }
 

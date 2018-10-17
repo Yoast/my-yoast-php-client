@@ -203,6 +203,16 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productPrototypeCountProductGroup
+     *
+     * Counts productGroup of Product..
+     *
+     */
+    public function testProductPrototypeCountProductGroup()
+    {
+    }
+
+    /**
      * Test case for productPrototypeCountSubscriptions
      *
      * Counts subscriptions of Product..
@@ -219,6 +229,16 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testProductPrototypeCreateLineItems()
+    {
+    }
+
+    /**
+     * Test case for productPrototypeCreateProductGroup
+     *
+     * Creates a new instance in productGroup of this model..
+     *
+     */
+    public function testProductPrototypeCreateProductGroup()
     {
     }
 
@@ -243,6 +263,16 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productPrototypeDeleteProductGroup
+     *
+     * Deletes all productGroup of this model..
+     *
+     */
+    public function testProductPrototypeDeleteProductGroup()
+    {
+    }
+
+    /**
      * Test case for productPrototypeDeleteSubscriptions
      *
      * Deletes all subscriptions of this model..
@@ -263,6 +293,16 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productPrototypeDestroyByIdProductGroup
+     *
+     * Delete a related item by id for productGroup..
+     *
+     */
+    public function testProductPrototypeDestroyByIdProductGroup()
+    {
+    }
+
+    /**
      * Test case for productPrototypeDestroyByIdSubscriptions
      *
      * Delete a related item by id for subscriptions..
@@ -273,12 +313,32 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productPrototypeExistsProductGroup
+     *
+     * Check the existence of productGroup relation to an item by id..
+     *
+     */
+    public function testProductPrototypeExistsProductGroup()
+    {
+    }
+
+    /**
      * Test case for productPrototypeFindByIdLineItems
      *
      * Find a related item by id for lineItems..
      *
      */
     public function testProductPrototypeFindByIdLineItems()
+    {
+    }
+
+    /**
+     * Test case for productPrototypeFindByIdProductGroup
+     *
+     * Find a related item by id for productGroup..
+     *
+     */
+    public function testProductPrototypeFindByIdProductGroup()
     {
     }
 
@@ -313,12 +373,32 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productPrototypeGetProductGroup
+     *
+     * Queries productGroup of Product..
+     *
+     */
+    public function testProductPrototypeGetProductGroup()
+    {
+    }
+
+    /**
      * Test case for productPrototypeGetSubscriptions
      *
      * Queries subscriptions of Product..
      *
      */
     public function testProductPrototypeGetSubscriptions()
+    {
+    }
+
+    /**
+     * Test case for productPrototypeLinkProductGroup
+     *
+     * Add a related item by id for productGroup..
+     *
+     */
+    public function testProductPrototypeLinkProductGroup()
     {
     }
 
@@ -333,12 +413,32 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productPrototypeUnlinkProductGroup
+     *
+     * Remove the productGroup relation to an item by id..
+     *
+     */
+    public function testProductPrototypeUnlinkProductGroup()
+    {
+    }
+
+    /**
      * Test case for productPrototypeUpdateByIdLineItems
      *
      * Update a related item by id for lineItems..
      *
      */
     public function testProductPrototypeUpdateByIdLineItems()
+    {
+    }
+
+    /**
+     * Test case for productPrototypeUpdateByIdProductGroup
+     *
+     * Update a related item by id for productGroup..
+     *
+     */
+    public function testProductPrototypeUpdateByIdProductGroup()
     {
     }
 

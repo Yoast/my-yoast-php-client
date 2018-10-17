@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2006Test
+ * DownloadTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * InlineResponse2006Test Class Doc Comment
+ * DownloadTest Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse2006
+// * @description Download
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2006Test extends \PHPUnit_Framework_TestCase
+class DownloadTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,51 @@ class InlineResponse2006Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "InlineResponse2006"
+     * Test "Download"
      */
-    public function testInlineResponse2006()
+    public function testDownload()
     {
     }
 
     /**
-     * Test attribute "nonce"
+     * Test attribute "id"
      */
-    public function testPropertyNonce()
+    public function testPropertyId()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "version"
+     */
+    public function testPropertyVersion()
+    {
+    }
+
+    /**
+     * Test attribute "secret"
+     */
+    public function testPropertySecret()
+    {
+    }
+
+    /**
+     * Test attribute "extension"
+     */
+    public function testPropertyExtension()
+    {
+    }
+
+    /**
+     * Test attribute "mimetype"
+     */
+    public function testPropertyMimetype()
     {
     }
 }

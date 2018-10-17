@@ -1,6 +1,6 @@
 <?php
 /**
- * CourseApi
+ * ProductGroupApi
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Yoast\MyYoastApiClient\Configuration;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * CourseApi Class Doc Comment
+ * ProductGroupApi Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CourseApi
+class ProductGroupApi
 {
     /**
      * API Client
@@ -79,7 +79,7 @@ class CourseApi
      *
      * @param \Yoast\MyYoastApiClient\ApiClient $apiClient set the API client
      *
-     * @return CourseApi
+     * @return ProductGroupApi
      */
     public function setApiClient(\Yoast\MyYoastApiClient\ApiClient $apiClient)
     {
@@ -88,7 +88,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseCount
+     * Operation productGroupCount
      *
      * Count instances of the model matched by where from the data source.
      *
@@ -96,14 +96,14 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function courseCount($where = null)
+    public function productGroupCount($where = null)
     {
-        list($response) = $this->courseCountWithHttpInfo($where);
+        list($response) = $this->productGroupCountWithHttpInfo($where);
         return $response;
     }
 
     /**
-     * Operation courseCountWithHttpInfo
+     * Operation productGroupCountWithHttpInfo
      *
      * Count instances of the model matched by where from the data source.
      *
@@ -111,10 +111,10 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseCountWithHttpInfo($where = null)
+    public function productGroupCountWithHttpInfo($where = null)
     {
         // parse inputs
-        $resourcePath = "/Courses/count";
+        $resourcePath = "/ProductGroups/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -145,7 +145,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/Courses/count'
+                '/ProductGroups/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -162,33 +162,33 @@ class CourseApi
     }
 
     /**
-     * Operation courseCreate
+     * Operation productGroupCreate
      *
      * Create a new instance of the model and persist it into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function courseCreate($data = null)
+    public function productGroupCreate($data = null)
     {
-        list($response) = $this->courseCreateWithHttpInfo($data);
+        list($response) = $this->productGroupCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation courseCreateWithHttpInfo
+     * Operation productGroupCreateWithHttpInfo
      *
      * Create a new instance of the model and persist it into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseCreateWithHttpInfo($data = null)
+    public function productGroupCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/Courses";
+        $resourcePath = "/ProductGroups";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -219,15 +219,15 @@ class CourseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Course',
-                '/Courses'
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -237,7 +237,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseCreateChangeStreamGetCoursesChangeStream
+     * Operation productGroupCreateChangeStreamGetProductGroupsChangeStream
      *
      * Create a change stream.
      *
@@ -245,14 +245,14 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function courseCreateChangeStreamGetCoursesChangeStream($options = null)
+    public function productGroupCreateChangeStreamGetProductGroupsChangeStream($options = null)
     {
-        list($response) = $this->courseCreateChangeStreamGetCoursesChangeStreamWithHttpInfo($options);
+        list($response) = $this->productGroupCreateChangeStreamGetProductGroupsChangeStreamWithHttpInfo($options);
         return $response;
     }
 
     /**
-     * Operation courseCreateChangeStreamGetCoursesChangeStreamWithHttpInfo
+     * Operation productGroupCreateChangeStreamGetProductGroupsChangeStreamWithHttpInfo
      *
      * Create a change stream.
      *
@@ -260,10 +260,10 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseCreateChangeStreamGetCoursesChangeStreamWithHttpInfo($options = null)
+    public function productGroupCreateChangeStreamGetProductGroupsChangeStreamWithHttpInfo($options = null)
     {
         // parse inputs
-        $resourcePath = "/Courses/change-stream";
+        $resourcePath = "/ProductGroups/change-stream";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -294,7 +294,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\SplFileObject',
-                '/Courses/change-stream'
+                '/ProductGroups/change-stream'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader), $statusCode, $httpHeader];
@@ -311,7 +311,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseCreateChangeStreamPostCoursesChangeStream
+     * Operation productGroupCreateChangeStreamPostProductGroupsChangeStream
      *
      * Create a change stream.
      *
@@ -319,14 +319,14 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function courseCreateChangeStreamPostCoursesChangeStream($options = null)
+    public function productGroupCreateChangeStreamPostProductGroupsChangeStream($options = null)
     {
-        list($response) = $this->courseCreateChangeStreamPostCoursesChangeStreamWithHttpInfo($options);
+        list($response) = $this->productGroupCreateChangeStreamPostProductGroupsChangeStreamWithHttpInfo($options);
         return $response;
     }
 
     /**
-     * Operation courseCreateChangeStreamPostCoursesChangeStreamWithHttpInfo
+     * Operation productGroupCreateChangeStreamPostProductGroupsChangeStreamWithHttpInfo
      *
      * Create a change stream.
      *
@@ -334,10 +334,10 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseCreateChangeStreamPostCoursesChangeStreamWithHttpInfo($options = null)
+    public function productGroupCreateChangeStreamPostProductGroupsChangeStreamWithHttpInfo($options = null)
     {
         // parse inputs
-        $resourcePath = "/Courses/change-stream";
+        $resourcePath = "/ProductGroups/change-stream";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -368,7 +368,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\SplFileObject',
-                '/Courses/change-stream'
+                '/ProductGroups/change-stream'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader), $statusCode, $httpHeader];
@@ -385,7 +385,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseDeleteById
+     * Operation productGroupDeleteById
      *
      * Delete a model instance by {{id}} from the data source.
      *
@@ -393,14 +393,14 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return object
      */
-    public function courseDeleteById($id)
+    public function productGroupDeleteById($id)
     {
-        list($response) = $this->courseDeleteByIdWithHttpInfo($id);
+        list($response) = $this->productGroupDeleteByIdWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation courseDeleteByIdWithHttpInfo
+     * Operation productGroupDeleteByIdWithHttpInfo
      *
      * Delete a model instance by {{id}} from the data source.
      *
@@ -408,14 +408,14 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseDeleteByIdWithHttpInfo($id)
+    public function productGroupDeleteByIdWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling courseDeleteById');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupDeleteById');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}";
+        $resourcePath = "/ProductGroups/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -450,7 +450,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 'object',
-                '/Courses/{id}'
+                '/ProductGroups/{id}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
@@ -467,7 +467,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseExistsGetCoursesidExists
+     * Operation productGroupExistsGetProductGroupsidExists
      *
      * Check whether a model instance exists in the data source.
      *
@@ -475,14 +475,14 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
-    public function courseExistsGetCoursesidExists($id)
+    public function productGroupExistsGetProductGroupsidExists($id)
     {
-        list($response) = $this->courseExistsGetCoursesidExistsWithHttpInfo($id);
+        list($response) = $this->productGroupExistsGetProductGroupsidExistsWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation courseExistsGetCoursesidExistsWithHttpInfo
+     * Operation productGroupExistsGetProductGroupsidExistsWithHttpInfo
      *
      * Check whether a model instance exists in the data source.
      *
@@ -490,14 +490,14 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseExistsGetCoursesidExistsWithHttpInfo($id)
+    public function productGroupExistsGetProductGroupsidExistsWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling courseExistsGetCoursesidExists');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupExistsGetProductGroupsidExists');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/exists";
+        $resourcePath = "/ProductGroups/{id}/exists";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -532,7 +532,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
-                '/Courses/{id}/exists'
+                '/ProductGroups/{id}/exists'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
@@ -549,7 +549,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseExistsHeadCoursesid
+     * Operation productGroupExistsHeadProductGroupsid
      *
      * Check whether a model instance exists in the data source.
      *
@@ -557,14 +557,14 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse2001
      */
-    public function courseExistsHeadCoursesid($id)
+    public function productGroupExistsHeadProductGroupsid($id)
     {
-        list($response) = $this->courseExistsHeadCoursesidWithHttpInfo($id);
+        list($response) = $this->productGroupExistsHeadProductGroupsidWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation courseExistsHeadCoursesidWithHttpInfo
+     * Operation productGroupExistsHeadProductGroupsidWithHttpInfo
      *
      * Check whether a model instance exists in the data source.
      *
@@ -572,14 +572,14 @@ class CourseApi
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseExistsHeadCoursesidWithHttpInfo($id)
+    public function productGroupExistsHeadProductGroupsidWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling courseExistsHeadCoursesid');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupExistsHeadProductGroupsid');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}";
+        $resourcePath = "/ProductGroups/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -614,7 +614,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse2001',
-                '/Courses/{id}'
+                '/ProductGroups/{id}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2001', $httpHeader), $statusCode, $httpHeader];
@@ -631,33 +631,33 @@ class CourseApi
     }
 
     /**
-     * Operation courseFind
+     * Operation productGroupFind
      *
      * Find all instances of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course[]
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup[]
      */
-    public function courseFind($filter = null)
+    public function productGroupFind($filter = null)
     {
-        list($response) = $this->courseFindWithHttpInfo($filter);
+        list($response) = $this->productGroupFindWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation courseFindWithHttpInfo
+     * Operation productGroupFindWithHttpInfo
      *
      * Find all instances of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseFindWithHttpInfo($filter = null)
+    public function productGroupFindWithHttpInfo($filter = null)
     {
         // parse inputs
-        $resourcePath = "/Courses";
+        $resourcePath = "/ProductGroups";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -687,15 +687,15 @@ class CourseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Course[]',
-                '/Courses'
+                '\Yoast\MyYoastApiClient\Model\ProductGroup[]',
+                '/ProductGroups'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -705,39 +705,39 @@ class CourseApi
     }
 
     /**
-     * Operation courseFindById
+     * Operation productGroupFindById
      *
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
      * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function courseFindById($id, $filter = null)
+    public function productGroupFindById($id, $filter = null)
     {
-        list($response) = $this->courseFindByIdWithHttpInfo($id, $filter);
+        list($response) = $this->productGroupFindByIdWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation courseFindByIdWithHttpInfo
+     * Operation productGroupFindByIdWithHttpInfo
      *
      * Find a model instance by {{id}} from the data source.
      *
      * @param string $id Model id (required)
      * @param string $filter Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseFindByIdWithHttpInfo($id, $filter = null)
+    public function productGroupFindByIdWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling courseFindById');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupFindById');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}";
+        $resourcePath = "/ProductGroups/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -775,15 +775,15 @@ class CourseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Course',
-                '/Courses/{id}'
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -793,33 +793,33 @@ class CourseApi
     }
 
     /**
-     * Operation courseFindOne
+     * Operation productGroupFindOne
      *
      * Find first instance of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function courseFindOne($filter = null)
+    public function productGroupFindOne($filter = null)
     {
-        list($response) = $this->courseFindOneWithHttpInfo($filter);
+        list($response) = $this->productGroupFindOneWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation courseFindOneWithHttpInfo
+     * Operation productGroupFindOneWithHttpInfo
      *
      * Find first instance of the model matched by filter from the data source.
      *
      * @param string $filter Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseFindOneWithHttpInfo($filter = null)
+    public function productGroupFindOneWithHttpInfo($filter = null)
     {
         // parse inputs
-        $resourcePath = "/Courses/findOne";
+        $resourcePath = "/ProductGroups/findOne";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -849,15 +849,15 @@ class CourseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Course',
-                '/Courses/findOne'
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups/findOne'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -867,117 +867,33 @@ class CourseApi
     }
 
     /**
-     * Operation courseFromAcademy
+     * Operation productGroupPatchOrCreate
      *
-     * @param string $course_data  (required)
-     * @param string $extra_data  (required)
+     * Patch an existing model instance or insert a new one into the data source.
+     *
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function courseFromAcademy($course_data, $extra_data)
+    public function productGroupPatchOrCreate($data = null)
     {
-        list($response) = $this->courseFromAcademyWithHttpInfo($course_data, $extra_data);
+        list($response) = $this->productGroupPatchOrCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation courseFromAcademyWithHttpInfo
-     *
-     * @param string $course_data  (required)
-     * @param string $extra_data  (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function courseFromAcademyWithHttpInfo($course_data, $extra_data)
-    {
-        // verify the required parameter 'course_data' is set
-        if ($course_data === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $course_data when calling courseFromAcademy');
-        }
-        // verify the required parameter 'extra_data' is set
-        if ($extra_data === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $extra_data when calling courseFromAcademy');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/fromAcademy";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // form params
-        if ($course_data !== null) {
-            $formParams['courseData'] = $this->apiClient->getSerializer()->toFormValue($course_data);
-        }
-        // form params
-        if ($extra_data !== null) {
-            $formParams['extraData'] = $this->apiClient->getSerializer()->toFormValue($extra_data);
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Course',
-                '/Courses/fromAcademy'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePatchOrCreate
+     * Operation productGroupPatchOrCreateWithHttpInfo
      *
      * Patch an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePatchOrCreate($data = null)
-    {
-        list($response) = $this->coursePatchOrCreateWithHttpInfo($data);
-        return $response;
-    }
-
-    /**
-     * Operation coursePatchOrCreateWithHttpInfo
-     *
-     * Patch an existing model instance or insert a new one into the data source.
-     *
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePatchOrCreateWithHttpInfo($data = null)
+    public function productGroupPatchOrCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/Courses";
+        $resourcePath = "/ProductGroups";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1008,8 +924,635 @@ class CourseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeCountProducts
+     *
+     * Counts products of ProductGroup.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     */
+    public function productGroupPrototypeCountProducts($id, $where = null)
+    {
+        list($response) = $this->productGroupPrototypeCountProductsWithHttpInfo($id, $where);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeCountProductsWithHttpInfo
+     *
+     * Counts products of ProductGroup.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeCountProductsWithHttpInfo($id, $where = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeCountProducts');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/products/count";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($where !== null) {
+            $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '/ProductGroups/{id}/products/count'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeCreateProducts
+     *
+     * Creates a new instance in products of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Product
+     */
+    public function productGroupPrototypeCreateProducts($id, $data = null)
+    {
+        list($response) = $this->productGroupPrototypeCreateProductsWithHttpInfo($id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeCreateProductsWithHttpInfo
+     *
+     * Creates a new instance in products of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Product $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeCreateProductsWithHttpInfo($id, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeCreateProducts');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/products";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/ProductGroups/{id}/products'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeDeleteProducts
+     *
+     * Deletes all products of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function productGroupPrototypeDeleteProducts($id)
+    {
+        list($response) = $this->productGroupPrototypeDeleteProductsWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeDeleteProductsWithHttpInfo
+     *
+     * Deletes all products of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeDeleteProductsWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeDeleteProducts');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/products";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/ProductGroups/{id}/products'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeDestroyByIdProducts
+     *
+     * Delete a related item by id for products.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for products (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function productGroupPrototypeDestroyByIdProducts($id, $fk)
+    {
+        list($response) = $this->productGroupPrototypeDestroyByIdProductsWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeDestroyByIdProductsWithHttpInfo
+     *
+     * Delete a related item by id for products.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for products (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeDestroyByIdProductsWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeDestroyByIdProducts');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeDestroyByIdProducts');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/products/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/ProductGroups/{id}/products/{fk}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeExistsProducts
+     *
+     * Check the existence of products relation to an item by id.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for products (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return bool
+     */
+    public function productGroupPrototypeExistsProducts($id, $fk)
+    {
+        list($response) = $this->productGroupPrototypeExistsProductsWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeExistsProductsWithHttpInfo
+     *
+     * Check the existence of products relation to an item by id.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for products (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of bool, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeExistsProductsWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeExistsProducts');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeExistsProducts');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/products/rel/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'HEAD',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'bool',
+                '/ProductGroups/{id}/products/rel/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'bool', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'bool', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeFindByIdProducts
+     *
+     * Find a related item by id for products.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for products (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Product
+     */
+    public function productGroupPrototypeFindByIdProducts($id, $fk)
+    {
+        list($response) = $this->productGroupPrototypeFindByIdProductsWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeFindByIdProductsWithHttpInfo
+     *
+     * Find a related item by id for products.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for products (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeFindByIdProductsWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeFindByIdProducts');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeFindByIdProducts');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/products/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Product',
+                '/ProductGroups/{id}/products/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeGetCourse
+     *
+     * Fetches belongsTo relation course.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param bool $refresh  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Course
+     */
+    public function productGroupPrototypeGetCourse($id, $refresh = null)
+    {
+        list($response) = $this->productGroupPrototypeGetCourseWithHttpInfo($id, $refresh);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeGetCourseWithHttpInfo
+     *
+     * Fetches belongsTo relation course.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param bool $refresh  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeGetCourseWithHttpInfo($id, $refresh = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeGetCourse');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/course";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($refresh !== null) {
+            $queryParams['refresh'] = $this->apiClient->getSerializer()->toQueryValue($refresh);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Course',
-                '/Courses'
+                '/ProductGroups/{id}/course'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course', $httpHeader), $statusCode, $httpHeader];
@@ -1026,39 +1569,39 @@ class CourseApi
     }
 
     /**
-     * Operation coursePrototypeCountProductGroup
+     * Operation productGroupPrototypeGetParent
      *
-     * Counts productGroup of Course.
+     * Fetches belongsTo relation parent.
      *
-     * @param string $id Course id (required)
-     * @param string $where Criteria to match model instances (optional)
+     * @param string $id ProductGroup id (required)
+     * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function coursePrototypeCountProductGroup($id, $where = null)
+    public function productGroupPrototypeGetParent($id, $refresh = null)
     {
-        list($response) = $this->coursePrototypeCountProductGroupWithHttpInfo($id, $where);
+        list($response) = $this->productGroupPrototypeGetParentWithHttpInfo($id, $refresh);
         return $response;
     }
 
     /**
-     * Operation coursePrototypeCountProductGroupWithHttpInfo
+     * Operation productGroupPrototypeGetParentWithHttpInfo
      *
-     * Counts productGroup of Course.
+     * Fetches belongsTo relation parent.
      *
-     * @param string $id Course id (required)
-     * @param string $where Criteria to match model instances (optional)
+     * @param string $id ProductGroup id (required)
+     * @param bool $refresh  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePrototypeCountProductGroupWithHttpInfo($id, $where = null)
+    public function productGroupPrototypeGetParentWithHttpInfo($id, $refresh = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeCountProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeGetParent');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup/count";
+        $resourcePath = "/ProductGroups/{id}/parent";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1070,716 +1613,14 @@ class CourseApi
         $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
 
         // query params
-        if ($where !== null) {
-            $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
+        if ($refresh !== null) {
+            $queryParams['refresh'] = $this->apiClient->getSerializer()->toQueryValue($refresh);
         }
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
                 $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/Courses/{id}/productGroup/count'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePrototypeCountProducts
-     *
-     * Counts products of Course.
-     *
-     * @param string $id Course id (required)
-     * @param string $where Criteria to match model instances (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
-     */
-    public function coursePrototypeCountProducts($id, $where = null)
-    {
-        list($response) = $this->coursePrototypeCountProductsWithHttpInfo($id, $where);
-        return $response;
-    }
-
-    /**
-     * Operation coursePrototypeCountProductsWithHttpInfo
-     *
-     * Counts products of Course.
-     *
-     * @param string $id Course id (required)
-     * @param string $where Criteria to match model instances (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePrototypeCountProductsWithHttpInfo($id, $where = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeCountProducts');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/{id}/products/count";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // query params
-        if ($where !== null) {
-            $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
-        }
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/Courses/{id}/products/count'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePrototypeCreateProductGroup
-     *
-     * Creates a new instance in productGroup of this model.
-     *
-     * @param string $id Course id (required)
-     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
-     */
-    public function coursePrototypeCreateProductGroup($id, $data = null)
-    {
-        list($response) = $this->coursePrototypeCreateProductGroupWithHttpInfo($id, $data);
-        return $response;
-    }
-
-    /**
-     * Operation coursePrototypeCreateProductGroupWithHttpInfo
-     *
-     * Creates a new instance in productGroup of this model.
-     *
-     * @param string $id Course id (required)
-     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePrototypeCreateProductGroupWithHttpInfo($id, $data = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeCreateProductGroup');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($data)) {
-            $_tempBody = $data;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\ProductGroup',
-                '/Courses/{id}/productGroup'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePrototypeCreateProducts
-     *
-     * Creates a new instance in products of this model.
-     *
-     * @param string $id Course id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Product $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Product
-     */
-    public function coursePrototypeCreateProducts($id, $data = null)
-    {
-        list($response) = $this->coursePrototypeCreateProductsWithHttpInfo($id, $data);
-        return $response;
-    }
-
-    /**
-     * Operation coursePrototypeCreateProductsWithHttpInfo
-     *
-     * Creates a new instance in products of this model.
-     *
-     * @param string $id Course id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Product $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePrototypeCreateProductsWithHttpInfo($id, $data = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeCreateProducts');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/{id}/products";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($data)) {
-            $_tempBody = $data;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'POST',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Product',
-                '/Courses/{id}/products'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePrototypeDeleteProductGroup
-     *
-     * Deletes all productGroup of this model.
-     *
-     * @param string $id Course id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return void
-     */
-    public function coursePrototypeDeleteProductGroup($id)
-    {
-        list($response) = $this->coursePrototypeDeleteProductGroupWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation coursePrototypeDeleteProductGroupWithHttpInfo
-     *
-     * Deletes all productGroup of this model.
-     *
-     * @param string $id Course id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePrototypeDeleteProductGroupWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeDeleteProductGroup');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/Courses/{id}/productGroup'
-            );
-
-            return [null, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePrototypeDeleteProducts
-     *
-     * Deletes all products of this model.
-     *
-     * @param string $id Course id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return void
-     */
-    public function coursePrototypeDeleteProducts($id)
-    {
-        list($response) = $this->coursePrototypeDeleteProductsWithHttpInfo($id);
-        return $response;
-    }
-
-    /**
-     * Operation coursePrototypeDeleteProductsWithHttpInfo
-     *
-     * Deletes all products of this model.
-     *
-     * @param string $id Course id (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePrototypeDeleteProductsWithHttpInfo($id)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeDeleteProducts');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/{id}/products";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/Courses/{id}/products'
-            );
-
-            return [null, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePrototypeDestroyByIdProductGroup
-     *
-     * Delete a related item by id for productGroup.
-     *
-     * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return void
-     */
-    public function coursePrototypeDestroyByIdProductGroup($id, $fk)
-    {
-        list($response) = $this->coursePrototypeDestroyByIdProductGroupWithHttpInfo($id, $fk);
-        return $response;
-    }
-
-    /**
-     * Operation coursePrototypeDestroyByIdProductGroupWithHttpInfo
-     *
-     * Delete a related item by id for productGroup.
-     *
-     * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePrototypeDestroyByIdProductGroupWithHttpInfo($id, $fk)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeDestroyByIdProductGroup');
-        }
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeDestroyByIdProductGroup');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup/{fk}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/Courses/{id}/productGroup/{fk}'
-            );
-
-            return [null, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePrototypeDestroyByIdProducts
-     *
-     * Delete a related item by id for products.
-     *
-     * @param string $id Course id (required)
-     * @param string $fk Foreign key for products (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return void
-     */
-    public function coursePrototypeDestroyByIdProducts($id, $fk)
-    {
-        list($response) = $this->coursePrototypeDestroyByIdProductsWithHttpInfo($id, $fk);
-        return $response;
-    }
-
-    /**
-     * Operation coursePrototypeDestroyByIdProductsWithHttpInfo
-     *
-     * Delete a related item by id for products.
-     *
-     * @param string $id Course id (required)
-     * @param string $fk Foreign key for products (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePrototypeDestroyByIdProductsWithHttpInfo($id, $fk)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeDestroyByIdProducts');
-        }
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeDestroyByIdProducts');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/{id}/products/{fk}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                null,
-                '/Courses/{id}/products/{fk}'
-            );
-
-            return [null, $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePrototypeFindByIdProductGroup
-     *
-     * Find a related item by id for productGroup.
-     *
-     * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
-     */
-    public function coursePrototypeFindByIdProductGroup($id, $fk)
-    {
-        list($response) = $this->coursePrototypeFindByIdProductGroupWithHttpInfo($id, $fk);
-        return $response;
-    }
-
-    /**
-     * Operation coursePrototypeFindByIdProductGroupWithHttpInfo
-     *
-     * Find a related item by id for productGroup.
-     *
-     * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePrototypeFindByIdProductGroupWithHttpInfo($id, $fk)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeFindByIdProductGroup');
-        }
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeFindByIdProductGroup');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup/{fk}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
                 $resourcePath
             );
         }
@@ -1799,7 +1640,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\ProductGroup',
-                '/Courses/{id}/productGroup/{fk}'
+                '/ProductGroups/{id}/parent'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
@@ -1816,223 +1657,39 @@ class CourseApi
     }
 
     /**
-     * Operation coursePrototypeFindByIdProducts
+     * Operation productGroupPrototypeGetProducts
      *
-     * Find a related item by id for products.
+     * Queries products of ProductGroup.
      *
-     * @param string $id Course id (required)
-     * @param string $fk Foreign key for products (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Product
-     */
-    public function coursePrototypeFindByIdProducts($id, $fk)
-    {
-        list($response) = $this->coursePrototypeFindByIdProductsWithHttpInfo($id, $fk);
-        return $response;
-    }
-
-    /**
-     * Operation coursePrototypeFindByIdProductsWithHttpInfo
-     *
-     * Find a related item by id for products.
-     *
-     * @param string $id Course id (required)
-     * @param string $fk Foreign key for products (required)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePrototypeFindByIdProductsWithHttpInfo($id, $fk)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeFindByIdProducts');
-        }
-        // verify the required parameter 'fk' is set
-        if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeFindByIdProducts');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/{id}/products/{fk}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($fk !== null) {
-            $resourcePath = str_replace(
-                "{" . "fk" . "}",
-                $this->apiClient->getSerializer()->toPathValue($fk),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Product',
-                '/Courses/{id}/products/{fk}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePrototypeGetProductGroup
-     *
-     * Queries productGroup of Course.
-     *
-     * @param string $id Course id (required)
-     * @param string $filter  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\ProductGroup[]
-     */
-    public function coursePrototypeGetProductGroup($id, $filter = null)
-    {
-        list($response) = $this->coursePrototypeGetProductGroupWithHttpInfo($id, $filter);
-        return $response;
-    }
-
-    /**
-     * Operation coursePrototypeGetProductGroupWithHttpInfo
-     *
-     * Queries productGroup of Course.
-     *
-     * @param string $id Course id (required)
-     * @param string $filter  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePrototypeGetProductGroupWithHttpInfo($id, $filter = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeGetProductGroup');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // query params
-        if ($filter !== null) {
-            $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
-        }
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'GET',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\ProductGroup[]',
-                '/Courses/{id}/productGroup'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup[]', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup[]', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePrototypeGetProducts
-     *
-     * Queries products of Course.
-     *
-     * @param string $id Course id (required)
+     * @param string $id ProductGroup id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Product[]
      */
-    public function coursePrototypeGetProducts($id, $filter = null)
+    public function productGroupPrototypeGetProducts($id, $filter = null)
     {
-        list($response) = $this->coursePrototypeGetProductsWithHttpInfo($id, $filter);
+        list($response) = $this->productGroupPrototypeGetProductsWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation coursePrototypeGetProductsWithHttpInfo
+     * Operation productGroupPrototypeGetProductsWithHttpInfo
      *
-     * Queries products of Course.
+     * Queries products of ProductGroup.
      *
-     * @param string $id Course id (required)
+     * @param string $id ProductGroup id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Product[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePrototypeGetProductsWithHttpInfo($id, $filter = null)
+    public function productGroupPrototypeGetProductsWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeGetProducts');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeGetProducts');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/products";
+        $resourcePath = "/ProductGroups/{id}/products";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2071,7 +1728,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Product[]',
-                '/Courses/{id}/products'
+                '/ProductGroups/{id}/products'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product[]', $httpHeader), $statusCode, $httpHeader];
@@ -2088,134 +1745,45 @@ class CourseApi
     }
 
     /**
-     * Operation coursePrototypePatchAttributes
+     * Operation productGroupPrototypeLinkProducts
      *
-     * Patch attributes for a model instance and persist it into the data source.
+     * Add a related item by id for products.
      *
-     * @param string $id Course id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Course $data An object of model property name/value pairs (optional)
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for products (required)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroupProducts $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroupProducts
      */
-    public function coursePrototypePatchAttributes($id, $data = null)
+    public function productGroupPrototypeLinkProducts($id, $fk, $data = null)
     {
-        list($response) = $this->coursePrototypePatchAttributesWithHttpInfo($id, $data);
+        list($response) = $this->productGroupPrototypeLinkProductsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation coursePrototypePatchAttributesWithHttpInfo
+     * Operation productGroupPrototypeLinkProductsWithHttpInfo
      *
-     * Patch attributes for a model instance and persist it into the data source.
+     * Add a related item by id for products.
      *
-     * @param string $id Course id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Course $data An object of model property name/value pairs (optional)
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for products (required)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroupProducts $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroupProducts, HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePrototypePatchAttributesWithHttpInfo($id, $data = null)
+    public function productGroupPrototypeLinkProductsWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypePatchAttributes');
-        }
-        // parse inputs
-        $resourcePath = "/Courses/{id}";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                "{" . "id" . "}",
-                $this->apiClient->getSerializer()->toPathValue($id),
-                $resourcePath
-            );
-        }
-        // body params
-        $_tempBody = null;
-        if (isset($data)) {
-            $_tempBody = $data;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PATCH',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Course',
-                '/Courses/{id}'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation coursePrototypeUpdateByIdProductGroup
-     *
-     * Update a related item by id for productGroup.
-     *
-     * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
-     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
-     */
-    public function coursePrototypeUpdateByIdProductGroup($id, $fk, $data = null)
-    {
-        list($response) = $this->coursePrototypeUpdateByIdProductGroupWithHttpInfo($id, $fk, $data);
-        return $response;
-    }
-
-    /**
-     * Operation coursePrototypeUpdateByIdProductGroupWithHttpInfo
-     *
-     * Update a related item by id for productGroup.
-     *
-     * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
-     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function coursePrototypeUpdateByIdProductGroupWithHttpInfo($id, $fk, $data = null)
-    {
-        // verify the required parameter 'id' is set
-        if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeUpdateByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeLinkProducts');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeUpdateByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeLinkProducts');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup/{fk}";
+        $resourcePath = "/ProductGroups/{id}/products/rel/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2262,8 +1830,97 @@ class CourseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ProductGroupProducts',
+                '/ProductGroups/{id}/products/rel/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroupProducts', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroupProducts', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypePatchAttributes
+     *
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data An object of model property name/value pairs (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
+     */
+    public function productGroupPrototypePatchAttributes($id, $data = null)
+    {
+        list($response) = $this->productGroupPrototypePatchAttributesWithHttpInfo($id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypePatchAttributesWithHttpInfo
+     *
+     * Patch attributes for a model instance and persist it into the data source.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data An object of model property name/value pairs (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypePatchAttributesWithHttpInfo($id, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypePatchAttributes');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PATCH',
+                $queryParams,
+                $httpBody,
+                $headerParams,
                 '\Yoast\MyYoastApiClient\Model\ProductGroup',
-                '/Courses/{id}/productGroup/{fk}'
+                '/ProductGroups/{id}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
@@ -2280,45 +1937,137 @@ class CourseApi
     }
 
     /**
-     * Operation coursePrototypeUpdateByIdProducts
+     * Operation productGroupPrototypeUnlinkProducts
+     *
+     * Remove the products relation to an item by id.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for products (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function productGroupPrototypeUnlinkProducts($id, $fk)
+    {
+        list($response) = $this->productGroupPrototypeUnlinkProductsWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeUnlinkProductsWithHttpInfo
+     *
+     * Remove the products relation to an item by id.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for products (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeUnlinkProductsWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeUnlinkProducts');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeUnlinkProducts');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/products/rel/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/ProductGroups/{id}/products/rel/{fk}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeUpdateByIdProducts
      *
      * Update a related item by id for products.
      *
-     * @param string $id Course id (required)
+     * @param string $id ProductGroup id (required)
      * @param string $fk Foreign key for products (required)
      * @param \Yoast\MyYoastApiClient\Model\Product $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function coursePrototypeUpdateByIdProducts($id, $fk, $data = null)
+    public function productGroupPrototypeUpdateByIdProducts($id, $fk, $data = null)
     {
-        list($response) = $this->coursePrototypeUpdateByIdProductsWithHttpInfo($id, $fk, $data);
+        list($response) = $this->productGroupPrototypeUpdateByIdProductsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation coursePrototypeUpdateByIdProductsWithHttpInfo
+     * Operation productGroupPrototypeUpdateByIdProductsWithHttpInfo
      *
      * Update a related item by id for products.
      *
-     * @param string $id Course id (required)
+     * @param string $id ProductGroup id (required)
      * @param string $fk Foreign key for products (required)
      * @param \Yoast\MyYoastApiClient\Model\Product $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePrototypeUpdateByIdProductsWithHttpInfo($id, $fk, $data = null)
+    public function productGroupPrototypeUpdateByIdProductsWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeUpdateByIdProducts');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeUpdateByIdProducts');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeUpdateByIdProducts');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeUpdateByIdProducts');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/products/{fk}";
+        $resourcePath = "/ProductGroups/{id}/products/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2366,7 +2115,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\Product',
-                '/Courses/{id}/products/{fk}'
+                '/ProductGroups/{id}/products/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Product', $httpHeader), $statusCode, $httpHeader];
@@ -2383,39 +2132,39 @@ class CourseApi
     }
 
     /**
-     * Operation courseReplaceByIdPostCoursesidReplace
+     * Operation productGroupReplaceByIdPostProductGroupsidReplace
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function courseReplaceByIdPostCoursesidReplace($id, $data = null)
+    public function productGroupReplaceByIdPostProductGroupsidReplace($id, $data = null)
     {
-        list($response) = $this->courseReplaceByIdPostCoursesidReplaceWithHttpInfo($id, $data);
+        list($response) = $this->productGroupReplaceByIdPostProductGroupsidReplaceWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation courseReplaceByIdPostCoursesidReplaceWithHttpInfo
+     * Operation productGroupReplaceByIdPostProductGroupsidReplaceWithHttpInfo
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseReplaceByIdPostCoursesidReplaceWithHttpInfo($id, $data = null)
+    public function productGroupReplaceByIdPostProductGroupsidReplaceWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling courseReplaceByIdPostCoursesidReplace');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupReplaceByIdPostProductGroupsidReplace');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/replace";
+        $resourcePath = "/ProductGroups/{id}/replace";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2454,15 +2203,15 @@ class CourseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Course',
-                '/Courses/{id}/replace'
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups/{id}/replace'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2472,39 +2221,39 @@ class CourseApi
     }
 
     /**
-     * Operation courseReplaceByIdPutCoursesid
+     * Operation productGroupReplaceByIdPutProductGroupsid
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function courseReplaceByIdPutCoursesid($id, $data = null)
+    public function productGroupReplaceByIdPutProductGroupsid($id, $data = null)
     {
-        list($response) = $this->courseReplaceByIdPutCoursesidWithHttpInfo($id, $data);
+        list($response) = $this->productGroupReplaceByIdPutProductGroupsidWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation courseReplaceByIdPutCoursesidWithHttpInfo
+     * Operation productGroupReplaceByIdPutProductGroupsidWithHttpInfo
      *
      * Replace attributes for a model instance and persist it into the data source.
      *
      * @param string $id Model id (required)
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseReplaceByIdPutCoursesidWithHttpInfo($id, $data = null)
+    public function productGroupReplaceByIdPutProductGroupsidWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling courseReplaceByIdPutCoursesid');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupReplaceByIdPutProductGroupsid');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}";
+        $resourcePath = "/ProductGroups/{id}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2543,15 +2292,15 @@ class CourseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Course',
-                '/Courses/{id}'
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2561,33 +2310,33 @@ class CourseApi
     }
 
     /**
-     * Operation courseReplaceOrCreatePostCoursesReplaceOrCreate
+     * Operation productGroupReplaceOrCreatePostProductGroupsReplaceOrCreate
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function courseReplaceOrCreatePostCoursesReplaceOrCreate($data = null)
+    public function productGroupReplaceOrCreatePostProductGroupsReplaceOrCreate($data = null)
     {
-        list($response) = $this->courseReplaceOrCreatePostCoursesReplaceOrCreateWithHttpInfo($data);
+        list($response) = $this->productGroupReplaceOrCreatePostProductGroupsReplaceOrCreateWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation courseReplaceOrCreatePostCoursesReplaceOrCreateWithHttpInfo
+     * Operation productGroupReplaceOrCreatePostProductGroupsReplaceOrCreateWithHttpInfo
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseReplaceOrCreatePostCoursesReplaceOrCreateWithHttpInfo($data = null)
+    public function productGroupReplaceOrCreatePostProductGroupsReplaceOrCreateWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/Courses/replaceOrCreate";
+        $resourcePath = "/ProductGroups/replaceOrCreate";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2618,15 +2367,15 @@ class CourseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Course',
-                '/Courses/replaceOrCreate'
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups/replaceOrCreate'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2636,33 +2385,33 @@ class CourseApi
     }
 
     /**
-     * Operation courseReplaceOrCreatePutCourses
+     * Operation productGroupReplaceOrCreatePutProductGroups
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function courseReplaceOrCreatePutCourses($data = null)
+    public function productGroupReplaceOrCreatePutProductGroups($data = null)
     {
-        list($response) = $this->courseReplaceOrCreatePutCoursesWithHttpInfo($data);
+        list($response) = $this->productGroupReplaceOrCreatePutProductGroupsWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation courseReplaceOrCreatePutCoursesWithHttpInfo
+     * Operation productGroupReplaceOrCreatePutProductGroupsWithHttpInfo
      *
      * Replace an existing model instance or insert a new one into the data source.
      *
-     * @param \Yoast\MyYoastApiClient\Model\Course $data Model instance data (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data Model instance data (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseReplaceOrCreatePutCoursesWithHttpInfo($data = null)
+    public function productGroupReplaceOrCreatePutProductGroupsWithHttpInfo($data = null)
     {
         // parse inputs
-        $resourcePath = "/Courses";
+        $resourcePath = "/ProductGroups";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2693,15 +2442,15 @@ class CourseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Course',
-                '/Courses'
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2711,35 +2460,35 @@ class CourseApi
     }
 
     /**
-     * Operation courseUpdateAll
+     * Operation productGroupUpdateAll
      *
      * Update instances of the model matched by {{where}} from the data source.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\Course $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse2002
      */
-    public function courseUpdateAll($where = null, $data = null)
+    public function productGroupUpdateAll($where = null, $data = null)
     {
-        list($response) = $this->courseUpdateAllWithHttpInfo($where, $data);
+        list($response) = $this->productGroupUpdateAllWithHttpInfo($where, $data);
         return $response;
     }
 
     /**
-     * Operation courseUpdateAllWithHttpInfo
+     * Operation productGroupUpdateAllWithHttpInfo
      *
      * Update instances of the model matched by {{where}} from the data source.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\Course $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseUpdateAllWithHttpInfo($where = null, $data = null)
+    public function productGroupUpdateAllWithHttpInfo($where = null, $data = null)
     {
         // parse inputs
-        $resourcePath = "/Courses/update";
+        $resourcePath = "/ProductGroups/update";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2775,7 +2524,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse2002',
-                '/Courses/update'
+                '/ProductGroups/update'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2002', $httpHeader), $statusCode, $httpHeader];
@@ -2792,35 +2541,35 @@ class CourseApi
     }
 
     /**
-     * Operation courseUpsertWithWhere
+     * Operation productGroupUpsertWithWhere
      *
      * Update an existing model instance or insert a new one into the data source based on the where criteria.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\Course $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\Course
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function courseUpsertWithWhere($where = null, $data = null)
+    public function productGroupUpsertWithWhere($where = null, $data = null)
     {
-        list($response) = $this->courseUpsertWithWhereWithHttpInfo($where, $data);
+        list($response) = $this->productGroupUpsertWithWhereWithHttpInfo($where, $data);
         return $response;
     }
 
     /**
-     * Operation courseUpsertWithWhereWithHttpInfo
+     * Operation productGroupUpsertWithWhereWithHttpInfo
      *
      * Update an existing model instance or insert a new one into the data source based on the where criteria.
      *
      * @param string $where Criteria to match model instances (optional)
-     * @param \Yoast\MyYoastApiClient\Model\Course $data An object of model property name/value pairs (optional)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data An object of model property name/value pairs (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseUpsertWithWhereWithHttpInfo($where = null, $data = null)
+    public function productGroupUpsertWithWhereWithHttpInfo($where = null, $data = null)
     {
         // parse inputs
-        $resourcePath = "/Courses/upsertWithWhere";
+        $resourcePath = "/ProductGroups/upsertWithWhere";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2855,15 +2604,15 @@ class CourseApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\Course',
-                '/Courses/upsertWithWhere'
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups/upsertWithWhere'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Course', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

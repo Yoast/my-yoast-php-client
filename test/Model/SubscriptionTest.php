@@ -188,4 +188,18 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
     public function testPropertySubscriberId()
     {
     }
+
+    /**
+     * Test attribute "renewal_url"
+     */
+    public function testPropertyRenewalUrl()
+    {
+    }
+
+    /**
+     * Test attribute "subscription_number"
+     */
+    public function testPropertySubscriptionNumber()
+    {
+    }
 }
