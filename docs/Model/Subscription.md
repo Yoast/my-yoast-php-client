@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **start_date** | [**\DateTime**](\DateTime.md) |  | 
 **end_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **source_id** | **double** |  | [optional] 
+**source_line_item_id** | **double** |  | [optional] 
 **source_shop_id** | **double** |  | 
 **status** | **string** |  | [optional] 
 **currency** | **string** |  | [optional] 

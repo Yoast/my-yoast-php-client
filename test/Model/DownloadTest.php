@@ -118,4 +118,11 @@ class DownloadTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMimetype()
     {
     }
+
+    /**
+     * Test attribute "public"
+     */
+    public function testPropertyPublic()
+    {
+    }
 }

@@ -193,12 +193,32 @@ class DownloadApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for downloadPrototypeCountProductGroups
+     *
+     * Counts productGroups of Download..
+     *
+     */
+    public function testDownloadPrototypeCountProductGroups()
+    {
+    }
+
+    /**
      * Test case for downloadPrototypeCountProducts
      *
      * Counts products of Download..
      *
      */
     public function testDownloadPrototypeCountProducts()
+    {
+    }
+
+    /**
+     * Test case for downloadPrototypeCreateProductGroups
+     *
+     * Creates a new instance in productGroups of this model..
+     *
+     */
+    public function testDownloadPrototypeCreateProductGroups()
     {
     }
 
@@ -213,12 +233,32 @@ class DownloadApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for downloadPrototypeDeleteProductGroups
+     *
+     * Deletes all productGroups of this model..
+     *
+     */
+    public function testDownloadPrototypeDeleteProductGroups()
+    {
+    }
+
+    /**
      * Test case for downloadPrototypeDeleteProducts
      *
      * Deletes all products of this model..
      *
      */
     public function testDownloadPrototypeDeleteProducts()
+    {
+    }
+
+    /**
+     * Test case for downloadPrototypeDestroyByIdProductGroups
+     *
+     * Delete a related item by id for productGroups..
+     *
+     */
+    public function testDownloadPrototypeDestroyByIdProductGroups()
     {
     }
 
@@ -233,12 +273,32 @@ class DownloadApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for downloadPrototypeExistsProductGroups
+     *
+     * Check the existence of productGroups relation to an item by id..
+     *
+     */
+    public function testDownloadPrototypeExistsProductGroups()
+    {
+    }
+
+    /**
      * Test case for downloadPrototypeExistsProducts
      *
      * Check the existence of products relation to an item by id..
      *
      */
     public function testDownloadPrototypeExistsProducts()
+    {
+    }
+
+    /**
+     * Test case for downloadPrototypeFindByIdProductGroups
+     *
+     * Find a related item by id for productGroups..
+     *
+     */
+    public function testDownloadPrototypeFindByIdProductGroups()
     {
     }
 
@@ -253,12 +313,32 @@ class DownloadApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for downloadPrototypeGetProductGroups
+     *
+     * Queries productGroups of Download..
+     *
+     */
+    public function testDownloadPrototypeGetProductGroups()
+    {
+    }
+
+    /**
      * Test case for downloadPrototypeGetProducts
      *
      * Queries products of Download..
      *
      */
     public function testDownloadPrototypeGetProducts()
+    {
+    }
+
+    /**
+     * Test case for downloadPrototypeLinkProductGroups
+     *
+     * Add a related item by id for productGroups..
+     *
+     */
+    public function testDownloadPrototypeLinkProductGroups()
     {
     }
 
@@ -283,12 +363,32 @@ class DownloadApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for downloadPrototypeUnlinkProductGroups
+     *
+     * Remove the productGroups relation to an item by id..
+     *
+     */
+    public function testDownloadPrototypeUnlinkProductGroups()
+    {
+    }
+
+    /**
      * Test case for downloadPrototypeUnlinkProducts
      *
      * Remove the products relation to an item by id..
      *
      */
     public function testDownloadPrototypeUnlinkProducts()
+    {
+    }
+
+    /**
+     * Test case for downloadPrototypeUpdateByIdProductGroups
+     *
+     * Update a related item by id for productGroups..
+     *
+     */
+    public function testDownloadPrototypeUpdateByIdProductGroups()
     {
     }
 

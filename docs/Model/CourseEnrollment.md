@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **trial_completed** | **bool** |  | [optional] [default to false]
 **is_trial** | **bool** |  | [optional] [default to false]
 **outside_trial_progress** | **bool** |  | [optional] [default to false]
+**line_item_id** | **string** |  | [optional] 
+**line_item_number** | **double** |  | [optional] 
 **course_id** | **string** |  | [optional] 
 **buyer_id** | **string** |  | [optional] 
 **student_id** | **string** |  | [optional] 

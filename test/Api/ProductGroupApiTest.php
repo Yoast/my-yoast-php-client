@@ -193,12 +193,52 @@ class ProductGroupApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productGroupPrototypeCountChildren
+     *
+     * Counts children of ProductGroup..
+     *
+     */
+    public function testProductGroupPrototypeCountChildren()
+    {
+    }
+
+    /**
+     * Test case for productGroupPrototypeCountDownload
+     *
+     * Counts download of ProductGroup..
+     *
+     */
+    public function testProductGroupPrototypeCountDownload()
+    {
+    }
+
+    /**
      * Test case for productGroupPrototypeCountProducts
      *
      * Counts products of ProductGroup..
      *
      */
     public function testProductGroupPrototypeCountProducts()
+    {
+    }
+
+    /**
+     * Test case for productGroupPrototypeCreateChildren
+     *
+     * Creates a new instance in children of this model..
+     *
+     */
+    public function testProductGroupPrototypeCreateChildren()
+    {
+    }
+
+    /**
+     * Test case for productGroupPrototypeCreateDownload
+     *
+     * Creates a new instance in download of this model..
+     *
+     */
+    public function testProductGroupPrototypeCreateDownload()
     {
     }
 
@@ -213,12 +253,52 @@ class ProductGroupApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productGroupPrototypeDeleteChildren
+     *
+     * Deletes all children of this model..
+     *
+     */
+    public function testProductGroupPrototypeDeleteChildren()
+    {
+    }
+
+    /**
+     * Test case for productGroupPrototypeDeleteDownload
+     *
+     * Deletes all download of this model..
+     *
+     */
+    public function testProductGroupPrototypeDeleteDownload()
+    {
+    }
+
+    /**
      * Test case for productGroupPrototypeDeleteProducts
      *
      * Deletes all products of this model..
      *
      */
     public function testProductGroupPrototypeDeleteProducts()
+    {
+    }
+
+    /**
+     * Test case for productGroupPrototypeDestroyByIdChildren
+     *
+     * Delete a related item by id for children..
+     *
+     */
+    public function testProductGroupPrototypeDestroyByIdChildren()
+    {
+    }
+
+    /**
+     * Test case for productGroupPrototypeDestroyByIdDownload
+     *
+     * Delete a related item by id for download..
+     *
+     */
+    public function testProductGroupPrototypeDestroyByIdDownload()
     {
     }
 
@@ -233,12 +313,42 @@ class ProductGroupApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productGroupPrototypeExistsDownload
+     *
+     * Check the existence of download relation to an item by id..
+     *
+     */
+    public function testProductGroupPrototypeExistsDownload()
+    {
+    }
+
+    /**
      * Test case for productGroupPrototypeExistsProducts
      *
      * Check the existence of products relation to an item by id..
      *
      */
     public function testProductGroupPrototypeExistsProducts()
+    {
+    }
+
+    /**
+     * Test case for productGroupPrototypeFindByIdChildren
+     *
+     * Find a related item by id for children..
+     *
+     */
+    public function testProductGroupPrototypeFindByIdChildren()
+    {
+    }
+
+    /**
+     * Test case for productGroupPrototypeFindByIdDownload
+     *
+     * Find a related item by id for download..
+     *
+     */
+    public function testProductGroupPrototypeFindByIdDownload()
     {
     }
 
@@ -253,12 +363,32 @@ class ProductGroupApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productGroupPrototypeGetChildren
+     *
+     * Queries children of ProductGroup..
+     *
+     */
+    public function testProductGroupPrototypeGetChildren()
+    {
+    }
+
+    /**
      * Test case for productGroupPrototypeGetCourse
      *
      * Fetches belongsTo relation course..
      *
      */
     public function testProductGroupPrototypeGetCourse()
+    {
+    }
+
+    /**
+     * Test case for productGroupPrototypeGetDownload
+     *
+     * Queries download of ProductGroup..
+     *
+     */
+    public function testProductGroupPrototypeGetDownload()
     {
     }
 
@@ -283,6 +413,16 @@ class ProductGroupApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productGroupPrototypeLinkDownload
+     *
+     * Add a related item by id for download..
+     *
+     */
+    public function testProductGroupPrototypeLinkDownload()
+    {
+    }
+
+    /**
      * Test case for productGroupPrototypeLinkProducts
      *
      * Add a related item by id for products..
@@ -303,12 +443,42 @@ class ProductGroupApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for productGroupPrototypeUnlinkDownload
+     *
+     * Remove the download relation to an item by id..
+     *
+     */
+    public function testProductGroupPrototypeUnlinkDownload()
+    {
+    }
+
+    /**
      * Test case for productGroupPrototypeUnlinkProducts
      *
      * Remove the products relation to an item by id..
      *
      */
     public function testProductGroupPrototypeUnlinkProducts()
+    {
+    }
+
+    /**
+     * Test case for productGroupPrototypeUpdateByIdChildren
+     *
+     * Update a related item by id for children..
+     *
+     */
+    public function testProductGroupPrototypeUpdateByIdChildren()
+    {
+    }
+
+    /**
+     * Test case for productGroupPrototypeUpdateByIdDownload
+     *
+     * Update a related item by id for download..
+     *
+     */
+    public function testProductGroupPrototypeUpdateByIdDownload()
     {
     }
 

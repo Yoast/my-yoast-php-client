@@ -1455,7 +1455,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **siteSwitchSubscriptionNumberOfTimes**
-> double siteSwitchSubscriptionNumberOfTimes($from_source_id, $to_source_id, $product_id, $quantity)
+> double siteSwitchSubscriptionNumberOfTimes($from_source_id, $to_source_id, $product_id)
 
 
 
@@ -1468,10 +1468,9 @@ $api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
 $from_source_id = 1.2; // double | 
 $to_source_id = 1.2; // double | 
 $product_id = 1.2; // double | 
-$quantity = 1.2; // double | 
 
 try {
-    $result = $api_instance->siteSwitchSubscriptionNumberOfTimes($from_source_id, $to_source_id, $product_id, $quantity);
+    $result = $api_instance->siteSwitchSubscriptionNumberOfTimes($from_source_id, $to_source_id, $product_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->siteSwitchSubscriptionNumberOfTimes: ', $e->getMessage(), PHP_EOL;
@@ -1486,7 +1485,6 @@ Name | Type | Description  | Notes
  **from_source_id** | **double**|  |
  **to_source_id** | **double**|  |
  **product_id** | **double**|  |
- **quantity** | **double**|  |
 
 ### Return type
 

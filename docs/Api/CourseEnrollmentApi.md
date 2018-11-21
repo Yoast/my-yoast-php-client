@@ -4,6 +4,7 @@ All URIs are relative to *https://localhost/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**courseEnrollmentBulkInvite**](CourseEnrollmentApi.md#courseEnrollmentBulkInvite) | **POST** /CourseEnrollments/bulkInvite | Bulk invites another Customer by email to use this Course Enrollment.
 [**courseEnrollmentCount**](CourseEnrollmentApi.md#courseEnrollmentCount) | **GET** /CourseEnrollments/count | Count instances of the model matched by where from the data source.
 [**courseEnrollmentCreate**](CourseEnrollmentApi.md#courseEnrollmentCreate) | **POST** /CourseEnrollments | Create a new instance of the model and persist it into the data source.
 [**courseEnrollmentCreateChangeStreamGetCourseEnrollmentsChangeStream**](CourseEnrollmentApi.md#courseEnrollmentCreateChangeStreamGetCourseEnrollmentsChangeStream) | **GET** /CourseEnrollments/change-stream | Create a change stream.
@@ -30,6 +31,53 @@ Method | HTTP request | Description
 [**courseEnrollmentUpdateAll**](CourseEnrollmentApi.md#courseEnrollmentUpdateAll) | **POST** /CourseEnrollments/update | Update instances of the model matched by {{where}} from the data source.
 [**courseEnrollmentUpsertWithWhere**](CourseEnrollmentApi.md#courseEnrollmentUpsertWithWhere) | **POST** /CourseEnrollments/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
+
+# **courseEnrollmentBulkInvite**
+> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] courseEnrollmentBulkInvite($line_item_id, $line_item_number, $email)
+
+Bulk invites another Customer by email to use this Course Enrollment.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$line_item_id = "line_item_id_example"; // string | 
+$line_item_number = "line_item_number_example"; // string | 
+$email = "email_example"; // string | 
+
+try {
+    $result = $api_instance->courseEnrollmentBulkInvite($line_item_id, $line_item_number, $email);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentBulkInvite: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **line_item_id** | **string**|  | [optional]
+ **line_item_number** | **string**|  | [optional]
+ **email** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\CourseEnrollment[]**](../Model/CourseEnrollment.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **courseEnrollmentCount**
 > \Yoast\MyYoastApiClient\Model\InlineResponse200 courseEnrollmentCount($where)

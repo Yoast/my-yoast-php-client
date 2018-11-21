@@ -16,16 +16,26 @@ Method | HTTP request | Description
 [**downloadFindById**](DownloadApi.md#downloadFindById) | **GET** /Downloads/{id} | Find a model instance by {{id}} from the data source.
 [**downloadFindOne**](DownloadApi.md#downloadFindOne) | **GET** /Downloads/findOne | Find first instance of the model matched by filter from the data source.
 [**downloadPatchOrCreate**](DownloadApi.md#downloadPatchOrCreate) | **PATCH** /Downloads | Patch an existing model instance or insert a new one into the data source.
+[**downloadPrototypeCountProductGroups**](DownloadApi.md#downloadPrototypeCountProductGroups) | **GET** /Downloads/{id}/productGroups/count | Counts productGroups of Download.
 [**downloadPrototypeCountProducts**](DownloadApi.md#downloadPrototypeCountProducts) | **GET** /Downloads/{id}/products/count | Counts products of Download.
+[**downloadPrototypeCreateProductGroups**](DownloadApi.md#downloadPrototypeCreateProductGroups) | **POST** /Downloads/{id}/productGroups | Creates a new instance in productGroups of this model.
 [**downloadPrototypeCreateProducts**](DownloadApi.md#downloadPrototypeCreateProducts) | **POST** /Downloads/{id}/products | Creates a new instance in products of this model.
+[**downloadPrototypeDeleteProductGroups**](DownloadApi.md#downloadPrototypeDeleteProductGroups) | **DELETE** /Downloads/{id}/productGroups | Deletes all productGroups of this model.
 [**downloadPrototypeDeleteProducts**](DownloadApi.md#downloadPrototypeDeleteProducts) | **DELETE** /Downloads/{id}/products | Deletes all products of this model.
+[**downloadPrototypeDestroyByIdProductGroups**](DownloadApi.md#downloadPrototypeDestroyByIdProductGroups) | **DELETE** /Downloads/{id}/productGroups/{fk} | Delete a related item by id for productGroups.
 [**downloadPrototypeDestroyByIdProducts**](DownloadApi.md#downloadPrototypeDestroyByIdProducts) | **DELETE** /Downloads/{id}/products/{fk} | Delete a related item by id for products.
+[**downloadPrototypeExistsProductGroups**](DownloadApi.md#downloadPrototypeExistsProductGroups) | **HEAD** /Downloads/{id}/productGroups/rel/{fk} | Check the existence of productGroups relation to an item by id.
 [**downloadPrototypeExistsProducts**](DownloadApi.md#downloadPrototypeExistsProducts) | **HEAD** /Downloads/{id}/products/rel/{fk} | Check the existence of products relation to an item by id.
+[**downloadPrototypeFindByIdProductGroups**](DownloadApi.md#downloadPrototypeFindByIdProductGroups) | **GET** /Downloads/{id}/productGroups/{fk} | Find a related item by id for productGroups.
 [**downloadPrototypeFindByIdProducts**](DownloadApi.md#downloadPrototypeFindByIdProducts) | **GET** /Downloads/{id}/products/{fk} | Find a related item by id for products.
+[**downloadPrototypeGetProductGroups**](DownloadApi.md#downloadPrototypeGetProductGroups) | **GET** /Downloads/{id}/productGroups | Queries productGroups of Download.
 [**downloadPrototypeGetProducts**](DownloadApi.md#downloadPrototypeGetProducts) | **GET** /Downloads/{id}/products | Queries products of Download.
+[**downloadPrototypeLinkProductGroups**](DownloadApi.md#downloadPrototypeLinkProductGroups) | **PUT** /Downloads/{id}/productGroups/rel/{fk} | Add a related item by id for productGroups.
 [**downloadPrototypeLinkProducts**](DownloadApi.md#downloadPrototypeLinkProducts) | **PUT** /Downloads/{id}/products/rel/{fk} | Add a related item by id for products.
 [**downloadPrototypePatchAttributes**](DownloadApi.md#downloadPrototypePatchAttributes) | **PATCH** /Downloads/{id} | Patch attributes for a model instance and persist it into the data source.
+[**downloadPrototypeUnlinkProductGroups**](DownloadApi.md#downloadPrototypeUnlinkProductGroups) | **DELETE** /Downloads/{id}/productGroups/rel/{fk} | Remove the productGroups relation to an item by id.
 [**downloadPrototypeUnlinkProducts**](DownloadApi.md#downloadPrototypeUnlinkProducts) | **DELETE** /Downloads/{id}/products/rel/{fk} | Remove the products relation to an item by id.
+[**downloadPrototypeUpdateByIdProductGroups**](DownloadApi.md#downloadPrototypeUpdateByIdProductGroups) | **PUT** /Downloads/{id}/productGroups/{fk} | Update a related item by id for productGroups.
 [**downloadPrototypeUpdateByIdProducts**](DownloadApi.md#downloadPrototypeUpdateByIdProducts) | **PUT** /Downloads/{id}/products/{fk} | Update a related item by id for products.
 [**downloadReplaceByIdPostDownloadsidReplace**](DownloadApi.md#downloadReplaceByIdPostDownloadsidReplace) | **POST** /Downloads/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 [**downloadReplaceByIdPutDownloadsid**](DownloadApi.md#downloadReplaceByIdPutDownloadsid) | **PUT** /Downloads/{id} | Replace attributes for a model instance and persist it into the data source.
@@ -558,6 +568,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **downloadPrototypeCountProductGroups**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 downloadPrototypeCountProductGroups($id, $where)
+
+Counts productGroups of Download.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\DownloadApi();
+$id = "id_example"; // string | Download id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->downloadPrototypeCountProductGroups($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DownloadApi->downloadPrototypeCountProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Download id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **downloadPrototypeCountProducts**
 > \Yoast\MyYoastApiClient\Model\InlineResponse200 downloadPrototypeCountProducts($id, $where)
 
@@ -591,6 +646,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **downloadPrototypeCreateProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup downloadPrototypeCreateProductGroups($id, $data)
+
+Creates a new instance in productGroups of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\DownloadApi();
+$id = "id_example"; // string | Download id
+$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
+
+try {
+    $result = $api_instance->downloadPrototypeCreateProductGroups($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DownloadApi->downloadPrototypeCreateProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Download id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
 
 ### Authorization
 
@@ -648,6 +748,48 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **downloadPrototypeDeleteProductGroups**
+> downloadPrototypeDeleteProductGroups($id)
+
+Deletes all productGroups of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\DownloadApi();
+$id = "id_example"; // string | Download id
+
+try {
+    $api_instance->downloadPrototypeDeleteProductGroups($id);
+} catch (Exception $e) {
+    echo 'Exception when calling DownloadApi->downloadPrototypeDeleteProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Download id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **downloadPrototypeDeleteProducts**
 > downloadPrototypeDeleteProducts($id)
 
@@ -674,6 +816,50 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Download id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **downloadPrototypeDestroyByIdProductGroups**
+> downloadPrototypeDestroyByIdProductGroups($id, $fk)
+
+Delete a related item by id for productGroups.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\DownloadApi();
+$id = "id_example"; // string | Download id
+$fk = "fk_example"; // string | Foreign key for productGroups
+
+try {
+    $api_instance->downloadPrototypeDestroyByIdProductGroups($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling DownloadApi->downloadPrototypeDestroyByIdProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Download id |
+ **fk** | **string**| Foreign key for productGroups |
 
 ### Return type
 
@@ -734,6 +920,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **downloadPrototypeExistsProductGroups**
+> bool downloadPrototypeExistsProductGroups($id, $fk)
+
+Check the existence of productGroups relation to an item by id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\DownloadApi();
+$id = "id_example"; // string | Download id
+$fk = "fk_example"; // string | Foreign key for productGroups
+
+try {
+    $result = $api_instance->downloadPrototypeExistsProductGroups($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DownloadApi->downloadPrototypeExistsProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Download id |
+ **fk** | **string**| Foreign key for productGroups |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **downloadPrototypeExistsProducts**
 > bool downloadPrototypeExistsProducts($id, $fk)
 
@@ -767,6 +998,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 **bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **downloadPrototypeFindByIdProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup downloadPrototypeFindByIdProductGroups($id, $fk)
+
+Find a related item by id for productGroups.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\DownloadApi();
+$id = "id_example"; // string | Download id
+$fk = "fk_example"; // string | Foreign key for productGroups
+
+try {
+    $result = $api_instance->downloadPrototypeFindByIdProductGroups($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DownloadApi->downloadPrototypeFindByIdProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Download id |
+ **fk** | **string**| Foreign key for productGroups |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
 
 ### Authorization
 
@@ -824,6 +1100,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **downloadPrototypeGetProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup[] downloadPrototypeGetProductGroups($id, $filter)
+
+Queries productGroups of Download.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\DownloadApi();
+$id = "id_example"; // string | Download id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->downloadPrototypeGetProductGroups($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DownloadApi->downloadPrototypeGetProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Download id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup[]**](../Model/ProductGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **downloadPrototypeGetProducts**
 > \Yoast\MyYoastApiClient\Model\Product[] downloadPrototypeGetProducts($id, $filter)
 
@@ -857,6 +1178,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Product[]**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **downloadPrototypeLinkProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroupDownloads downloadPrototypeLinkProductGroups($id, $fk, $data)
+
+Add a related item by id for productGroups.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\DownloadApi();
+$id = "id_example"; // string | Download id
+$fk = "fk_example"; // string | Foreign key for productGroups
+$data = new \Yoast\MyYoastApiClient\Model\ProductGroupDownloads(); // \Yoast\MyYoastApiClient\Model\ProductGroupDownloads | 
+
+try {
+    $result = $api_instance->downloadPrototypeLinkProductGroups($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DownloadApi->downloadPrototypeLinkProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Download id |
+ **fk** | **string**| Foreign key for productGroups |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroupDownloads**](../Model/ProductGroupDownloads.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroupDownloads**](../Model/ProductGroupDownloads.md)
 
 ### Authorization
 
@@ -961,6 +1329,50 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **downloadPrototypeUnlinkProductGroups**
+> downloadPrototypeUnlinkProductGroups($id, $fk)
+
+Remove the productGroups relation to an item by id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\DownloadApi();
+$id = "id_example"; // string | Download id
+$fk = "fk_example"; // string | Foreign key for productGroups
+
+try {
+    $api_instance->downloadPrototypeUnlinkProductGroups($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling DownloadApi->downloadPrototypeUnlinkProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Download id |
+ **fk** | **string**| Foreign key for productGroups |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **downloadPrototypeUnlinkProducts**
 > downloadPrototypeUnlinkProducts($id, $fk)
 
@@ -993,6 +1405,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **downloadPrototypeUpdateByIdProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup downloadPrototypeUpdateByIdProductGroups($id, $fk, $data)
+
+Update a related item by id for productGroups.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\DownloadApi();
+$id = "id_example"; // string | Download id
+$fk = "fk_example"; // string | Foreign key for productGroups
+$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
+
+try {
+    $result = $api_instance->downloadPrototypeUpdateByIdProductGroups($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DownloadApi->downloadPrototypeUpdateByIdProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Download id |
+ **fk** | **string**| Foreign key for productGroups |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
 
 ### Authorization
 

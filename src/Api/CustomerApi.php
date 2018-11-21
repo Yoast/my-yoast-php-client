@@ -172,14 +172,14 @@ class CustomerApi
      * Cancels a subscription of a plugin.
      *
      * @param string $id  (required)
-     * @param double $shop  (required)
      * @param string $subscription  (required)
+     * @param double $amount  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse2005
      */
-    public function customerCancelSubscription($id, $shop, $subscription)
+    public function customerCancelSubscription($id, $subscription, $amount)
     {
-        list($response) = $this->customerCancelSubscriptionWithHttpInfo($id, $shop, $subscription);
+        list($response) = $this->customerCancelSubscriptionWithHttpInfo($id, $subscription, $amount);
         return $response;
     }
 
@@ -189,27 +189,27 @@ class CustomerApi
      * Cancels a subscription of a plugin.
      *
      * @param string $id  (required)
-     * @param double $shop  (required)
      * @param string $subscription  (required)
+     * @param double $amount  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerCancelSubscriptionWithHttpInfo($id, $shop, $subscription)
+    public function customerCancelSubscriptionWithHttpInfo($id, $subscription, $amount)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $id when calling customerCancelSubscription');
         }
-        // verify the required parameter 'shop' is set
-        if ($shop === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $shop when calling customerCancelSubscription');
-        }
         // verify the required parameter 'subscription' is set
         if ($subscription === null) {
             throw new \InvalidArgumentException('Missing the required parameter $subscription when calling customerCancelSubscription');
         }
+        // verify the required parameter 'amount' is set
+        if ($amount === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $amount when calling customerCancelSubscription');
+        }
         // parse inputs
-        $resourcePath = "/Customers/{id}/shop/{shop}/subscriptions/{subscription}/cancel";
+        $resourcePath = "/Customers/{id}/subscriptions/{subscription}/cancel";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -229,20 +229,16 @@ class CustomerApi
             );
         }
         // path params
-        if ($shop !== null) {
-            $resourcePath = str_replace(
-                "{" . "shop" . "}",
-                $this->apiClient->getSerializer()->toPathValue($shop),
-                $resourcePath
-            );
-        }
-        // path params
         if ($subscription !== null) {
             $resourcePath = str_replace(
                 "{" . "subscription" . "}",
                 $this->apiClient->getSerializer()->toPathValue($subscription),
                 $resourcePath
             );
+        }
+        // form params
+        if ($amount !== null) {
+            $formParams['amount'] = $this->apiClient->getSerializer()->toFormValue($amount);
         }
 
         // for model (json/xml)
@@ -260,7 +256,7 @@ class CustomerApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse2005',
-                '/Customers/{id}/shop/{shop}/subscriptions/{subscription}/cancel'
+                '/Customers/{id}/subscriptions/{subscription}/cancel'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];

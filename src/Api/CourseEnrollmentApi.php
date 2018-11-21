@@ -88,6 +88,92 @@ class CourseEnrollmentApi
     }
 
     /**
+     * Operation courseEnrollmentBulkInvite
+     *
+     * Bulk invites another Customer by email to use this Course Enrollment.
+     *
+     * @param string $line_item_id  (optional)
+     * @param string $line_item_number  (optional)
+     * @param string $email  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\CourseEnrollment[]
+     */
+    public function courseEnrollmentBulkInvite($line_item_id = null, $line_item_number = null, $email = null)
+    {
+        list($response) = $this->courseEnrollmentBulkInviteWithHttpInfo($line_item_id, $line_item_number, $email);
+        return $response;
+    }
+
+    /**
+     * Operation courseEnrollmentBulkInviteWithHttpInfo
+     *
+     * Bulk invites another Customer by email to use this Course Enrollment.
+     *
+     * @param string $line_item_id  (optional)
+     * @param string $line_item_number  (optional)
+     * @param string $email  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\CourseEnrollment[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function courseEnrollmentBulkInviteWithHttpInfo($line_item_id = null, $line_item_number = null, $email = null)
+    {
+        // parse inputs
+        $resourcePath = "/CourseEnrollments/bulkInvite";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // form params
+        if ($line_item_id !== null) {
+            $formParams['lineItemId'] = $this->apiClient->getSerializer()->toFormValue($line_item_id);
+        }
+        // form params
+        if ($line_item_number !== null) {
+            $formParams['lineItemNumber'] = $this->apiClient->getSerializer()->toFormValue($line_item_number);
+        }
+        // form params
+        if ($email !== null) {
+            $formParams['email'] = $this->apiClient->getSerializer()->toFormValue($email);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\CourseEnrollment[]',
+                '/CourseEnrollments/bulkInvite'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CourseEnrollment[]', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CourseEnrollment[]', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation courseEnrollmentCount
      *
      * Count instances of the model matched by where from the data source.

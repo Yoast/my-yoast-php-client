@@ -156,6 +156,7 @@ Class | Method | HTTP request | Description
 *CourseApi* | [**courseReplaceOrCreatePutCourses**](docs/Api/CourseApi.md#coursereplaceorcreateputcourses) | **PUT** /Courses | Replace an existing model instance or insert a new one into the data source.
 *CourseApi* | [**courseUpdateAll**](docs/Api/CourseApi.md#courseupdateall) | **POST** /Courses/update | Update instances of the model matched by {{where}} from the data source.
 *CourseApi* | [**courseUpsertWithWhere**](docs/Api/CourseApi.md#courseupsertwithwhere) | **POST** /Courses/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*CourseEnrollmentApi* | [**courseEnrollmentBulkInvite**](docs/Api/CourseEnrollmentApi.md#courseenrollmentbulkinvite) | **POST** /CourseEnrollments/bulkInvite | Bulk invites another Customer by email to use this Course Enrollment.
 *CourseEnrollmentApi* | [**courseEnrollmentCount**](docs/Api/CourseEnrollmentApi.md#courseenrollmentcount) | **GET** /CourseEnrollments/count | Count instances of the model matched by where from the data source.
 *CourseEnrollmentApi* | [**courseEnrollmentCreate**](docs/Api/CourseEnrollmentApi.md#courseenrollmentcreate) | **POST** /CourseEnrollments | Create a new instance of the model and persist it into the data source.
 *CourseEnrollmentApi* | [**courseEnrollmentCreateChangeStreamGetCourseEnrollmentsChangeStream**](docs/Api/CourseEnrollmentApi.md#courseenrollmentcreatechangestreamgetcourseenrollmentschangestream) | **GET** /CourseEnrollments/change-stream | Create a change stream.
@@ -182,7 +183,7 @@ Class | Method | HTTP request | Description
 *CourseEnrollmentApi* | [**courseEnrollmentUpdateAll**](docs/Api/CourseEnrollmentApi.md#courseenrollmentupdateall) | **POST** /CourseEnrollments/update | Update instances of the model matched by {{where}} from the data source.
 *CourseEnrollmentApi* | [**courseEnrollmentUpsertWithWhere**](docs/Api/CourseEnrollmentApi.md#courseenrollmentupsertwithwhere) | **POST** /CourseEnrollments/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 *CustomerApi* | [**customerActivate**](docs/Api/CustomerApi.md#customeractivate) | **POST** /Customers/activate | Activates the account of a user.
-*CustomerApi* | [**customerCancelSubscription**](docs/Api/CustomerApi.md#customercancelsubscription) | **POST** /Customers/{id}/shop/{shop}/subscriptions/{subscription}/cancel | Cancels a subscription of a plugin.
+*CustomerApi* | [**customerCancelSubscription**](docs/Api/CustomerApi.md#customercancelsubscription) | **POST** /Customers/{id}/subscriptions/{subscription}/cancel | Cancels a subscription of a plugin.
 *CustomerApi* | [**customerChangePassword**](docs/Api/CustomerApi.md#customerchangepassword) | **POST** /Customers/change-password | Change a user&#39;s password.
 *CustomerApi* | [**customerConfirm**](docs/Api/CustomerApi.md#customerconfirm) | **GET** /Customers/confirm | Confirm a user registration with email verification token.
 *CustomerApi* | [**customerCount**](docs/Api/CustomerApi.md#customercount) | **GET** /Customers/count | Count instances of the model matched by where from the data source.
@@ -354,16 +355,26 @@ Class | Method | HTTP request | Description
 *DownloadApi* | [**downloadFindById**](docs/Api/DownloadApi.md#downloadfindbyid) | **GET** /Downloads/{id} | Find a model instance by {{id}} from the data source.
 *DownloadApi* | [**downloadFindOne**](docs/Api/DownloadApi.md#downloadfindone) | **GET** /Downloads/findOne | Find first instance of the model matched by filter from the data source.
 *DownloadApi* | [**downloadPatchOrCreate**](docs/Api/DownloadApi.md#downloadpatchorcreate) | **PATCH** /Downloads | Patch an existing model instance or insert a new one into the data source.
+*DownloadApi* | [**downloadPrototypeCountProductGroups**](docs/Api/DownloadApi.md#downloadprototypecountproductgroups) | **GET** /Downloads/{id}/productGroups/count | Counts productGroups of Download.
 *DownloadApi* | [**downloadPrototypeCountProducts**](docs/Api/DownloadApi.md#downloadprototypecountproducts) | **GET** /Downloads/{id}/products/count | Counts products of Download.
+*DownloadApi* | [**downloadPrototypeCreateProductGroups**](docs/Api/DownloadApi.md#downloadprototypecreateproductgroups) | **POST** /Downloads/{id}/productGroups | Creates a new instance in productGroups of this model.
 *DownloadApi* | [**downloadPrototypeCreateProducts**](docs/Api/DownloadApi.md#downloadprototypecreateproducts) | **POST** /Downloads/{id}/products | Creates a new instance in products of this model.
+*DownloadApi* | [**downloadPrototypeDeleteProductGroups**](docs/Api/DownloadApi.md#downloadprototypedeleteproductgroups) | **DELETE** /Downloads/{id}/productGroups | Deletes all productGroups of this model.
 *DownloadApi* | [**downloadPrototypeDeleteProducts**](docs/Api/DownloadApi.md#downloadprototypedeleteproducts) | **DELETE** /Downloads/{id}/products | Deletes all products of this model.
+*DownloadApi* | [**downloadPrototypeDestroyByIdProductGroups**](docs/Api/DownloadApi.md#downloadprototypedestroybyidproductgroups) | **DELETE** /Downloads/{id}/productGroups/{fk} | Delete a related item by id for productGroups.
 *DownloadApi* | [**downloadPrototypeDestroyByIdProducts**](docs/Api/DownloadApi.md#downloadprototypedestroybyidproducts) | **DELETE** /Downloads/{id}/products/{fk} | Delete a related item by id for products.
+*DownloadApi* | [**downloadPrototypeExistsProductGroups**](docs/Api/DownloadApi.md#downloadprototypeexistsproductgroups) | **HEAD** /Downloads/{id}/productGroups/rel/{fk} | Check the existence of productGroups relation to an item by id.
 *DownloadApi* | [**downloadPrototypeExistsProducts**](docs/Api/DownloadApi.md#downloadprototypeexistsproducts) | **HEAD** /Downloads/{id}/products/rel/{fk} | Check the existence of products relation to an item by id.
+*DownloadApi* | [**downloadPrototypeFindByIdProductGroups**](docs/Api/DownloadApi.md#downloadprototypefindbyidproductgroups) | **GET** /Downloads/{id}/productGroups/{fk} | Find a related item by id for productGroups.
 *DownloadApi* | [**downloadPrototypeFindByIdProducts**](docs/Api/DownloadApi.md#downloadprototypefindbyidproducts) | **GET** /Downloads/{id}/products/{fk} | Find a related item by id for products.
+*DownloadApi* | [**downloadPrototypeGetProductGroups**](docs/Api/DownloadApi.md#downloadprototypegetproductgroups) | **GET** /Downloads/{id}/productGroups | Queries productGroups of Download.
 *DownloadApi* | [**downloadPrototypeGetProducts**](docs/Api/DownloadApi.md#downloadprototypegetproducts) | **GET** /Downloads/{id}/products | Queries products of Download.
+*DownloadApi* | [**downloadPrototypeLinkProductGroups**](docs/Api/DownloadApi.md#downloadprototypelinkproductgroups) | **PUT** /Downloads/{id}/productGroups/rel/{fk} | Add a related item by id for productGroups.
 *DownloadApi* | [**downloadPrototypeLinkProducts**](docs/Api/DownloadApi.md#downloadprototypelinkproducts) | **PUT** /Downloads/{id}/products/rel/{fk} | Add a related item by id for products.
 *DownloadApi* | [**downloadPrototypePatchAttributes**](docs/Api/DownloadApi.md#downloadprototypepatchattributes) | **PATCH** /Downloads/{id} | Patch attributes for a model instance and persist it into the data source.
+*DownloadApi* | [**downloadPrototypeUnlinkProductGroups**](docs/Api/DownloadApi.md#downloadprototypeunlinkproductgroups) | **DELETE** /Downloads/{id}/productGroups/rel/{fk} | Remove the productGroups relation to an item by id.
 *DownloadApi* | [**downloadPrototypeUnlinkProducts**](docs/Api/DownloadApi.md#downloadprototypeunlinkproducts) | **DELETE** /Downloads/{id}/products/rel/{fk} | Remove the products relation to an item by id.
+*DownloadApi* | [**downloadPrototypeUpdateByIdProductGroups**](docs/Api/DownloadApi.md#downloadprototypeupdatebyidproductgroups) | **PUT** /Downloads/{id}/productGroups/{fk} | Update a related item by id for productGroups.
 *DownloadApi* | [**downloadPrototypeUpdateByIdProducts**](docs/Api/DownloadApi.md#downloadprototypeupdatebyidproducts) | **PUT** /Downloads/{id}/products/{fk} | Update a related item by id for products.
 *DownloadApi* | [**downloadReplaceByIdPostDownloadsidReplace**](docs/Api/DownloadApi.md#downloadreplacebyidpostdownloadsidreplace) | **POST** /Downloads/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *DownloadApi* | [**downloadReplaceByIdPutDownloadsid**](docs/Api/DownloadApi.md#downloadreplacebyidputdownloadsid) | **PUT** /Downloads/{id} | Replace attributes for a model instance and persist it into the data source.
@@ -533,30 +544,30 @@ Class | Method | HTTP request | Description
 *ProductApi* | [**productFromWooCommerce**](docs/Api/ProductApi.md#productfromwoocommerce) | **PUT** /Products/fromWooCommerce | 
 *ProductApi* | [**productPatchOrCreate**](docs/Api/ProductApi.md#productpatchorcreate) | **PATCH** /Products | Patch an existing model instance or insert a new one into the data source.
 *ProductApi* | [**productPrototypeCountLineItems**](docs/Api/ProductApi.md#productprototypecountlineitems) | **GET** /Products/{id}/lineItems/count | Counts lineItems of Product.
-*ProductApi* | [**productPrototypeCountProductGroup**](docs/Api/ProductApi.md#productprototypecountproductgroup) | **GET** /Products/{id}/productGroup/count | Counts productGroup of Product.
+*ProductApi* | [**productPrototypeCountProductGroups**](docs/Api/ProductApi.md#productprototypecountproductgroups) | **GET** /Products/{id}/productGroups/count | Counts productGroups of Product.
 *ProductApi* | [**productPrototypeCountSubscriptions**](docs/Api/ProductApi.md#productprototypecountsubscriptions) | **GET** /Products/{id}/subscriptions/count | Counts subscriptions of Product.
 *ProductApi* | [**productPrototypeCreateLineItems**](docs/Api/ProductApi.md#productprototypecreatelineitems) | **POST** /Products/{id}/lineItems | Creates a new instance in lineItems of this model.
-*ProductApi* | [**productPrototypeCreateProductGroup**](docs/Api/ProductApi.md#productprototypecreateproductgroup) | **POST** /Products/{id}/productGroup | Creates a new instance in productGroup of this model.
+*ProductApi* | [**productPrototypeCreateProductGroups**](docs/Api/ProductApi.md#productprototypecreateproductgroups) | **POST** /Products/{id}/productGroups | Creates a new instance in productGroups of this model.
 *ProductApi* | [**productPrototypeCreateSubscriptions**](docs/Api/ProductApi.md#productprototypecreatesubscriptions) | **POST** /Products/{id}/subscriptions | Creates a new instance in subscriptions of this model.
 *ProductApi* | [**productPrototypeDeleteLineItems**](docs/Api/ProductApi.md#productprototypedeletelineitems) | **DELETE** /Products/{id}/lineItems | Deletes all lineItems of this model.
-*ProductApi* | [**productPrototypeDeleteProductGroup**](docs/Api/ProductApi.md#productprototypedeleteproductgroup) | **DELETE** /Products/{id}/productGroup | Deletes all productGroup of this model.
+*ProductApi* | [**productPrototypeDeleteProductGroups**](docs/Api/ProductApi.md#productprototypedeleteproductgroups) | **DELETE** /Products/{id}/productGroups | Deletes all productGroups of this model.
 *ProductApi* | [**productPrototypeDeleteSubscriptions**](docs/Api/ProductApi.md#productprototypedeletesubscriptions) | **DELETE** /Products/{id}/subscriptions | Deletes all subscriptions of this model.
 *ProductApi* | [**productPrototypeDestroyByIdLineItems**](docs/Api/ProductApi.md#productprototypedestroybyidlineitems) | **DELETE** /Products/{id}/lineItems/{fk} | Delete a related item by id for lineItems.
-*ProductApi* | [**productPrototypeDestroyByIdProductGroup**](docs/Api/ProductApi.md#productprototypedestroybyidproductgroup) | **DELETE** /Products/{id}/productGroup/{fk} | Delete a related item by id for productGroup.
+*ProductApi* | [**productPrototypeDestroyByIdProductGroups**](docs/Api/ProductApi.md#productprototypedestroybyidproductgroups) | **DELETE** /Products/{id}/productGroups/{fk} | Delete a related item by id for productGroups.
 *ProductApi* | [**productPrototypeDestroyByIdSubscriptions**](docs/Api/ProductApi.md#productprototypedestroybyidsubscriptions) | **DELETE** /Products/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
-*ProductApi* | [**productPrototypeExistsProductGroup**](docs/Api/ProductApi.md#productprototypeexistsproductgroup) | **HEAD** /Products/{id}/productGroup/rel/{fk} | Check the existence of productGroup relation to an item by id.
+*ProductApi* | [**productPrototypeExistsProductGroups**](docs/Api/ProductApi.md#productprototypeexistsproductgroups) | **HEAD** /Products/{id}/productGroups/rel/{fk} | Check the existence of productGroups relation to an item by id.
 *ProductApi* | [**productPrototypeFindByIdLineItems**](docs/Api/ProductApi.md#productprototypefindbyidlineitems) | **GET** /Products/{id}/lineItems/{fk} | Find a related item by id for lineItems.
-*ProductApi* | [**productPrototypeFindByIdProductGroup**](docs/Api/ProductApi.md#productprototypefindbyidproductgroup) | **GET** /Products/{id}/productGroup/{fk} | Find a related item by id for productGroup.
+*ProductApi* | [**productPrototypeFindByIdProductGroups**](docs/Api/ProductApi.md#productprototypefindbyidproductgroups) | **GET** /Products/{id}/productGroups/{fk} | Find a related item by id for productGroups.
 *ProductApi* | [**productPrototypeFindByIdSubscriptions**](docs/Api/ProductApi.md#productprototypefindbyidsubscriptions) | **GET** /Products/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
 *ProductApi* | [**productPrototypeGetCourses**](docs/Api/ProductApi.md#productprototypegetcourses) | **GET** /Products/{id}/courses | Fetches belongsTo relation courses.
 *ProductApi* | [**productPrototypeGetLineItems**](docs/Api/ProductApi.md#productprototypegetlineitems) | **GET** /Products/{id}/lineItems | Queries lineItems of Product.
-*ProductApi* | [**productPrototypeGetProductGroup**](docs/Api/ProductApi.md#productprototypegetproductgroup) | **GET** /Products/{id}/productGroup | Queries productGroup of Product.
+*ProductApi* | [**productPrototypeGetProductGroups**](docs/Api/ProductApi.md#productprototypegetproductgroups) | **GET** /Products/{id}/productGroups | Queries productGroups of Product.
 *ProductApi* | [**productPrototypeGetSubscriptions**](docs/Api/ProductApi.md#productprototypegetsubscriptions) | **GET** /Products/{id}/subscriptions | Queries subscriptions of Product.
-*ProductApi* | [**productPrototypeLinkProductGroup**](docs/Api/ProductApi.md#productprototypelinkproductgroup) | **PUT** /Products/{id}/productGroup/rel/{fk} | Add a related item by id for productGroup.
+*ProductApi* | [**productPrototypeLinkProductGroups**](docs/Api/ProductApi.md#productprototypelinkproductgroups) | **PUT** /Products/{id}/productGroups/rel/{fk} | Add a related item by id for productGroups.
 *ProductApi* | [**productPrototypePatchAttributes**](docs/Api/ProductApi.md#productprototypepatchattributes) | **PATCH** /Products/{id} | Patch attributes for a model instance and persist it into the data source.
-*ProductApi* | [**productPrototypeUnlinkProductGroup**](docs/Api/ProductApi.md#productprototypeunlinkproductgroup) | **DELETE** /Products/{id}/productGroup/rel/{fk} | Remove the productGroup relation to an item by id.
+*ProductApi* | [**productPrototypeUnlinkProductGroups**](docs/Api/ProductApi.md#productprototypeunlinkproductgroups) | **DELETE** /Products/{id}/productGroups/rel/{fk} | Remove the productGroups relation to an item by id.
 *ProductApi* | [**productPrototypeUpdateByIdLineItems**](docs/Api/ProductApi.md#productprototypeupdatebyidlineitems) | **PUT** /Products/{id}/lineItems/{fk} | Update a related item by id for lineItems.
-*ProductApi* | [**productPrototypeUpdateByIdProductGroup**](docs/Api/ProductApi.md#productprototypeupdatebyidproductgroup) | **PUT** /Products/{id}/productGroup/{fk} | Update a related item by id for productGroup.
+*ProductApi* | [**productPrototypeUpdateByIdProductGroups**](docs/Api/ProductApi.md#productprototypeupdatebyidproductgroups) | **PUT** /Products/{id}/productGroups/{fk} | Update a related item by id for productGroups.
 *ProductApi* | [**productPrototypeUpdateByIdSubscriptions**](docs/Api/ProductApi.md#productprototypeupdatebyidsubscriptions) | **PUT** /Products/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
 *ProductApi* | [**productReplaceByIdPostProductsidReplace**](docs/Api/ProductApi.md#productreplacebyidpostproductsidreplace) | **POST** /Products/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *ProductApi* | [**productReplaceByIdPutProductsid**](docs/Api/ProductApi.md#productreplacebyidputproductsid) | **PUT** /Products/{id} | Replace attributes for a model instance and persist it into the data source.
@@ -576,18 +587,35 @@ Class | Method | HTTP request | Description
 *ProductGroupApi* | [**productGroupFindOne**](docs/Api/ProductGroupApi.md#productgroupfindone) | **GET** /ProductGroups/findOne | Find first instance of the model matched by filter from the data source.
 *ProductGroupApi* | [**productGroupFromWooCommerce**](docs/Api/ProductGroupApi.md#productgroupfromwoocommerce) | **PUT** /ProductGroups/fromWooCommerce | 
 *ProductGroupApi* | [**productGroupPatchOrCreate**](docs/Api/ProductGroupApi.md#productgrouppatchorcreate) | **PATCH** /ProductGroups | Patch an existing model instance or insert a new one into the data source.
+*ProductGroupApi* | [**productGroupPrototypeCountChildren**](docs/Api/ProductGroupApi.md#productgroupprototypecountchildren) | **GET** /ProductGroups/{id}/children/count | Counts children of ProductGroup.
+*ProductGroupApi* | [**productGroupPrototypeCountDownload**](docs/Api/ProductGroupApi.md#productgroupprototypecountdownload) | **GET** /ProductGroups/{id}/download/count | Counts download of ProductGroup.
 *ProductGroupApi* | [**productGroupPrototypeCountProducts**](docs/Api/ProductGroupApi.md#productgroupprototypecountproducts) | **GET** /ProductGroups/{id}/products/count | Counts products of ProductGroup.
+*ProductGroupApi* | [**productGroupPrototypeCreateChildren**](docs/Api/ProductGroupApi.md#productgroupprototypecreatechildren) | **POST** /ProductGroups/{id}/children | Creates a new instance in children of this model.
+*ProductGroupApi* | [**productGroupPrototypeCreateDownload**](docs/Api/ProductGroupApi.md#productgroupprototypecreatedownload) | **POST** /ProductGroups/{id}/download | Creates a new instance in download of this model.
 *ProductGroupApi* | [**productGroupPrototypeCreateProducts**](docs/Api/ProductGroupApi.md#productgroupprototypecreateproducts) | **POST** /ProductGroups/{id}/products | Creates a new instance in products of this model.
+*ProductGroupApi* | [**productGroupPrototypeDeleteChildren**](docs/Api/ProductGroupApi.md#productgroupprototypedeletechildren) | **DELETE** /ProductGroups/{id}/children | Deletes all children of this model.
+*ProductGroupApi* | [**productGroupPrototypeDeleteDownload**](docs/Api/ProductGroupApi.md#productgroupprototypedeletedownload) | **DELETE** /ProductGroups/{id}/download | Deletes all download of this model.
 *ProductGroupApi* | [**productGroupPrototypeDeleteProducts**](docs/Api/ProductGroupApi.md#productgroupprototypedeleteproducts) | **DELETE** /ProductGroups/{id}/products | Deletes all products of this model.
+*ProductGroupApi* | [**productGroupPrototypeDestroyByIdChildren**](docs/Api/ProductGroupApi.md#productgroupprototypedestroybyidchildren) | **DELETE** /ProductGroups/{id}/children/{fk} | Delete a related item by id for children.
+*ProductGroupApi* | [**productGroupPrototypeDestroyByIdDownload**](docs/Api/ProductGroupApi.md#productgroupprototypedestroybyiddownload) | **DELETE** /ProductGroups/{id}/download/{fk} | Delete a related item by id for download.
 *ProductGroupApi* | [**productGroupPrototypeDestroyByIdProducts**](docs/Api/ProductGroupApi.md#productgroupprototypedestroybyidproducts) | **DELETE** /ProductGroups/{id}/products/{fk} | Delete a related item by id for products.
+*ProductGroupApi* | [**productGroupPrototypeExistsDownload**](docs/Api/ProductGroupApi.md#productgroupprototypeexistsdownload) | **HEAD** /ProductGroups/{id}/download/rel/{fk} | Check the existence of download relation to an item by id.
 *ProductGroupApi* | [**productGroupPrototypeExistsProducts**](docs/Api/ProductGroupApi.md#productgroupprototypeexistsproducts) | **HEAD** /ProductGroups/{id}/products/rel/{fk} | Check the existence of products relation to an item by id.
+*ProductGroupApi* | [**productGroupPrototypeFindByIdChildren**](docs/Api/ProductGroupApi.md#productgroupprototypefindbyidchildren) | **GET** /ProductGroups/{id}/children/{fk} | Find a related item by id for children.
+*ProductGroupApi* | [**productGroupPrototypeFindByIdDownload**](docs/Api/ProductGroupApi.md#productgroupprototypefindbyiddownload) | **GET** /ProductGroups/{id}/download/{fk} | Find a related item by id for download.
 *ProductGroupApi* | [**productGroupPrototypeFindByIdProducts**](docs/Api/ProductGroupApi.md#productgroupprototypefindbyidproducts) | **GET** /ProductGroups/{id}/products/{fk} | Find a related item by id for products.
+*ProductGroupApi* | [**productGroupPrototypeGetChildren**](docs/Api/ProductGroupApi.md#productgroupprototypegetchildren) | **GET** /ProductGroups/{id}/children | Queries children of ProductGroup.
 *ProductGroupApi* | [**productGroupPrototypeGetCourse**](docs/Api/ProductGroupApi.md#productgroupprototypegetcourse) | **GET** /ProductGroups/{id}/course | Fetches belongsTo relation course.
+*ProductGroupApi* | [**productGroupPrototypeGetDownload**](docs/Api/ProductGroupApi.md#productgroupprototypegetdownload) | **GET** /ProductGroups/{id}/download | Queries download of ProductGroup.
 *ProductGroupApi* | [**productGroupPrototypeGetParent**](docs/Api/ProductGroupApi.md#productgroupprototypegetparent) | **GET** /ProductGroups/{id}/parent | Fetches belongsTo relation parent.
 *ProductGroupApi* | [**productGroupPrototypeGetProducts**](docs/Api/ProductGroupApi.md#productgroupprototypegetproducts) | **GET** /ProductGroups/{id}/products | Queries products of ProductGroup.
+*ProductGroupApi* | [**productGroupPrototypeLinkDownload**](docs/Api/ProductGroupApi.md#productgroupprototypelinkdownload) | **PUT** /ProductGroups/{id}/download/rel/{fk} | Add a related item by id for download.
 *ProductGroupApi* | [**productGroupPrototypeLinkProducts**](docs/Api/ProductGroupApi.md#productgroupprototypelinkproducts) | **PUT** /ProductGroups/{id}/products/rel/{fk} | Add a related item by id for products.
 *ProductGroupApi* | [**productGroupPrototypePatchAttributes**](docs/Api/ProductGroupApi.md#productgroupprototypepatchattributes) | **PATCH** /ProductGroups/{id} | Patch attributes for a model instance and persist it into the data source.
+*ProductGroupApi* | [**productGroupPrototypeUnlinkDownload**](docs/Api/ProductGroupApi.md#productgroupprototypeunlinkdownload) | **DELETE** /ProductGroups/{id}/download/rel/{fk} | Remove the download relation to an item by id.
 *ProductGroupApi* | [**productGroupPrototypeUnlinkProducts**](docs/Api/ProductGroupApi.md#productgroupprototypeunlinkproducts) | **DELETE** /ProductGroups/{id}/products/rel/{fk} | Remove the products relation to an item by id.
+*ProductGroupApi* | [**productGroupPrototypeUpdateByIdChildren**](docs/Api/ProductGroupApi.md#productgroupprototypeupdatebyidchildren) | **PUT** /ProductGroups/{id}/children/{fk} | Update a related item by id for children.
+*ProductGroupApi* | [**productGroupPrototypeUpdateByIdDownload**](docs/Api/ProductGroupApi.md#productgroupprototypeupdatebyiddownload) | **PUT** /ProductGroups/{id}/download/{fk} | Update a related item by id for download.
 *ProductGroupApi* | [**productGroupPrototypeUpdateByIdProducts**](docs/Api/ProductGroupApi.md#productgroupprototypeupdatebyidproducts) | **PUT** /ProductGroups/{id}/products/{fk} | Update a related item by id for products.
 *ProductGroupApi* | [**productGroupReplaceByIdPostProductGroupsidReplace**](docs/Api/ProductGroupApi.md#productgroupreplacebyidpostproductgroupsidreplace) | **POST** /ProductGroups/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *ProductGroupApi* | [**productGroupReplaceByIdPutProductGroupsid**](docs/Api/ProductGroupApi.md#productgroupreplacebyidputproductgroupsid) | **PUT** /ProductGroups/{id} | Replace attributes for a model instance and persist it into the data source.
@@ -828,6 +856,7 @@ Class | Method | HTTP request | Description
  - [Order](docs/Model/Order.md)
  - [Product](docs/Model/Product.md)
  - [ProductGroup](docs/Model/ProductGroup.md)
+ - [ProductGroupDownloads](docs/Model/ProductGroupDownloads.md)
  - [ProductGroupProducts](docs/Model/ProductGroupProducts.md)
  - [Refund](docs/Model/Refund.md)
  - [RefundLineItem](docs/Model/RefundLineItem.md)

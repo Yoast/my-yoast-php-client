@@ -1,6 +1,6 @@
 <?php
 /**
- * LineItemTest
+ * ProductGroupDownloadsTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * LineItemTest Class Doc Comment
+ * ProductGroupDownloadsTest Class Doc Comment
  *
  * @category    Class */
-// * @description LineItem
+// * @description ProductGroupDownloads
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LineItemTest extends \PHPUnit_Framework_TestCase
+class ProductGroupDownloadsTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "LineItem"
+     * Test "ProductGroupDownloads"
      */
-    public function testLineItem()
+    public function testProductGroupDownloads()
     {
     }
 
@@ -85,72 +85,16 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "order_id"
+     * Test attribute "product_group_id"
      */
-    public function testPropertyOrderId()
+    public function testPropertyProductGroupId()
     {
     }
 
     /**
-     * Test attribute "subtotal_amount"
+     * Test attribute "download_id"
      */
-    public function testPropertySubtotalAmount()
-    {
-    }
-
-    /**
-     * Test attribute "total_amount"
-     */
-    public function testPropertyTotalAmount()
-    {
-    }
-
-    /**
-     * Test attribute "vat_amount"
-     */
-    public function testPropertyVatAmount()
-    {
-    }
-
-    /**
-     * Test attribute "product_id"
-     */
-    public function testPropertyProductId()
-    {
-    }
-
-    /**
-     * Test attribute "product_name"
-     */
-    public function testPropertyProductName()
-    {
-    }
-
-    /**
-     * Test attribute "quantity"
-     */
-    public function testPropertyQuantity()
-    {
-    }
-
-    /**
-     * Test attribute "source_id"
-     */
-    public function testPropertySourceId()
-    {
-    }
-
-    /**
-     * Test attribute "source_shop_id"
-     */
-    public function testPropertySourceShopId()
-    {
-    }
-
-    /**
-     * Test attribute "parent_id"
-     */
-    public function testPropertyParentId()
+    public function testPropertyDownloadId()
     {
     }
 }

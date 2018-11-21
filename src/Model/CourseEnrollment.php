@@ -60,6 +60,8 @@ class CourseEnrollment implements ArrayAccess
         'trial_completed' => 'bool',
         'is_trial' => 'bool',
         'outside_trial_progress' => 'bool',
+        'line_item_id' => 'string',
+        'line_item_number' => 'double',
         'course_id' => 'string',
         'buyer_id' => 'string',
         'student_id' => 'string',
@@ -77,6 +79,8 @@ class CourseEnrollment implements ArrayAccess
         'trial_completed' => null,
         'is_trial' => null,
         'outside_trial_progress' => null,
+        'line_item_id' => null,
+        'line_item_number' => 'double',
         'course_id' => null,
         'buyer_id' => null,
         'student_id' => null,
@@ -104,6 +108,8 @@ class CourseEnrollment implements ArrayAccess
         'trial_completed' => 'trialCompleted',
         'is_trial' => 'isTrial',
         'outside_trial_progress' => 'outsideTrialProgress',
+        'line_item_id' => 'lineItemId',
+        'line_item_number' => 'lineItemNumber',
         'course_id' => 'courseId',
         'buyer_id' => 'buyerId',
         'student_id' => 'studentId',
@@ -122,6 +128,8 @@ class CourseEnrollment implements ArrayAccess
         'trial_completed' => 'setTrialCompleted',
         'is_trial' => 'setIsTrial',
         'outside_trial_progress' => 'setOutsideTrialProgress',
+        'line_item_id' => 'setLineItemId',
+        'line_item_number' => 'setLineItemNumber',
         'course_id' => 'setCourseId',
         'buyer_id' => 'setBuyerId',
         'student_id' => 'setStudentId',
@@ -140,6 +148,8 @@ class CourseEnrollment implements ArrayAccess
         'trial_completed' => 'getTrialCompleted',
         'is_trial' => 'getIsTrial',
         'outside_trial_progress' => 'getOutsideTrialProgress',
+        'line_item_id' => 'getLineItemId',
+        'line_item_number' => 'getLineItemNumber',
         'course_id' => 'getCourseId',
         'buyer_id' => 'getBuyerId',
         'student_id' => 'getStudentId',
@@ -183,6 +193,8 @@ class CourseEnrollment implements ArrayAccess
         $this->container['trial_completed'] = isset($data['trial_completed']) ? $data['trial_completed'] : false;
         $this->container['is_trial'] = isset($data['is_trial']) ? $data['is_trial'] : false;
         $this->container['outside_trial_progress'] = isset($data['outside_trial_progress']) ? $data['outside_trial_progress'] : false;
+        $this->container['line_item_id'] = isset($data['line_item_id']) ? $data['line_item_id'] : null;
+        $this->container['line_item_number'] = isset($data['line_item_number']) ? $data['line_item_number'] : null;
         $this->container['course_id'] = isset($data['course_id']) ? $data['course_id'] : null;
         $this->container['buyer_id'] = isset($data['buyer_id']) ? $data['buyer_id'] : null;
         $this->container['student_id'] = isset($data['student_id']) ? $data['student_id'] : null;
@@ -354,6 +366,48 @@ class CourseEnrollment implements ArrayAccess
     public function setOutsideTrialProgress($outside_trial_progress)
     {
         $this->container['outside_trial_progress'] = $outside_trial_progress;
+
+        return $this;
+    }
+
+    /**
+     * Gets line_item_id
+     * @return string
+     */
+    public function getLineItemId()
+    {
+        return $this->container['line_item_id'];
+    }
+
+    /**
+     * Sets line_item_id
+     * @param string $line_item_id
+     * @return $this
+     */
+    public function setLineItemId($line_item_id)
+    {
+        $this->container['line_item_id'] = $line_item_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets line_item_number
+     * @return double
+     */
+    public function getLineItemNumber()
+    {
+        return $this->container['line_item_number'];
+    }
+
+    /**
+     * Sets line_item_number
+     * @param double $line_item_number
+     * @return $this
+     */
+    public function setLineItemNumber($line_item_number)
+    {
+        $this->container['line_item_number'] = $line_item_number;
 
         return $this;
     }

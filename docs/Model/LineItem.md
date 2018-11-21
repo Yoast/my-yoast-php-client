@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **product_id** | **string** |  | 
 **product_name** | **string** |  | 
 **quantity** | **double** |  | [default to 1.0]
+**source_id** | **double** |  | 
+**source_shop_id** | **double** |  | 
 **parent_id** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

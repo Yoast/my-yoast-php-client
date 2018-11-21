@@ -203,12 +203,12 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productPrototypeCountProductGroup
+     * Test case for productPrototypeCountProductGroups
      *
-     * Counts productGroup of Product..
+     * Counts productGroups of Product..
      *
      */
-    public function testProductPrototypeCountProductGroup()
+    public function testProductPrototypeCountProductGroups()
     {
     }
 
@@ -233,12 +233,12 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productPrototypeCreateProductGroup
+     * Test case for productPrototypeCreateProductGroups
      *
-     * Creates a new instance in productGroup of this model..
+     * Creates a new instance in productGroups of this model..
      *
      */
-    public function testProductPrototypeCreateProductGroup()
+    public function testProductPrototypeCreateProductGroups()
     {
     }
 
@@ -263,12 +263,12 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productPrototypeDeleteProductGroup
+     * Test case for productPrototypeDeleteProductGroups
      *
-     * Deletes all productGroup of this model..
+     * Deletes all productGroups of this model..
      *
      */
-    public function testProductPrototypeDeleteProductGroup()
+    public function testProductPrototypeDeleteProductGroups()
     {
     }
 
@@ -293,12 +293,12 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productPrototypeDestroyByIdProductGroup
+     * Test case for productPrototypeDestroyByIdProductGroups
      *
-     * Delete a related item by id for productGroup..
+     * Delete a related item by id for productGroups..
      *
      */
-    public function testProductPrototypeDestroyByIdProductGroup()
+    public function testProductPrototypeDestroyByIdProductGroups()
     {
     }
 
@@ -313,12 +313,12 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productPrototypeExistsProductGroup
+     * Test case for productPrototypeExistsProductGroups
      *
-     * Check the existence of productGroup relation to an item by id..
+     * Check the existence of productGroups relation to an item by id..
      *
      */
-    public function testProductPrototypeExistsProductGroup()
+    public function testProductPrototypeExistsProductGroups()
     {
     }
 
@@ -333,12 +333,12 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productPrototypeFindByIdProductGroup
+     * Test case for productPrototypeFindByIdProductGroups
      *
-     * Find a related item by id for productGroup..
+     * Find a related item by id for productGroups..
      *
      */
-    public function testProductPrototypeFindByIdProductGroup()
+    public function testProductPrototypeFindByIdProductGroups()
     {
     }
 
@@ -373,12 +373,12 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productPrototypeGetProductGroup
+     * Test case for productPrototypeGetProductGroups
      *
-     * Queries productGroup of Product..
+     * Queries productGroups of Product..
      *
      */
-    public function testProductPrototypeGetProductGroup()
+    public function testProductPrototypeGetProductGroups()
     {
     }
 
@@ -393,12 +393,12 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productPrototypeLinkProductGroup
+     * Test case for productPrototypeLinkProductGroups
      *
-     * Add a related item by id for productGroup..
+     * Add a related item by id for productGroups..
      *
      */
-    public function testProductPrototypeLinkProductGroup()
+    public function testProductPrototypeLinkProductGroups()
     {
     }
 
@@ -413,12 +413,12 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productPrototypeUnlinkProductGroup
+     * Test case for productPrototypeUnlinkProductGroups
      *
-     * Remove the productGroup relation to an item by id..
+     * Remove the productGroups relation to an item by id..
      *
      */
-    public function testProductPrototypeUnlinkProductGroup()
+    public function testProductPrototypeUnlinkProductGroups()
     {
     }
 
@@ -433,12 +433,12 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productPrototypeUpdateByIdProductGroup
+     * Test case for productPrototypeUpdateByIdProductGroups
      *
-     * Update a related item by id for productGroup..
+     * Update a related item by id for productGroups..
      *
      */
-    public function testProductPrototypeUpdateByIdProductGroup()
+    public function testProductPrototypeUpdateByIdProductGroups()
     {
     }
 

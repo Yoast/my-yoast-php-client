@@ -120,6 +120,20 @@ class CourseEnrollmentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "line_item_id"
+     */
+    public function testPropertyLineItemId()
+    {
+    }
+
+    /**
+     * Test attribute "line_item_number"
+     */
+    public function testPropertyLineItemNumber()
+    {
+    }
+
+    /**
      * Test attribute "course_id"
      */
     public function testPropertyCourseId()

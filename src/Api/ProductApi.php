@@ -1114,39 +1114,39 @@ class ProductApi
     }
 
     /**
-     * Operation productPrototypeCountProductGroup
+     * Operation productPrototypeCountProductGroups
      *
-     * Counts productGroup of Product.
+     * Counts productGroups of Product.
      *
      * @param string $id Product id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function productPrototypeCountProductGroup($id, $where = null)
+    public function productPrototypeCountProductGroups($id, $where = null)
     {
-        list($response) = $this->productPrototypeCountProductGroupWithHttpInfo($id, $where);
+        list($response) = $this->productPrototypeCountProductGroupsWithHttpInfo($id, $where);
         return $response;
     }
 
     /**
-     * Operation productPrototypeCountProductGroupWithHttpInfo
+     * Operation productPrototypeCountProductGroupsWithHttpInfo
      *
-     * Counts productGroup of Product.
+     * Counts productGroups of Product.
      *
      * @param string $id Product id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeCountProductGroupWithHttpInfo($id, $where = null)
+    public function productPrototypeCountProductGroupsWithHttpInfo($id, $where = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeCountProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeCountProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Products/{id}/productGroup/count";
+        $resourcePath = "/Products/{id}/productGroups/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1185,7 +1185,7 @@ class ProductApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/Products/{id}/productGroup/count'
+                '/Products/{id}/productGroups/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -1379,39 +1379,39 @@ class ProductApi
     }
 
     /**
-     * Operation productPrototypeCreateProductGroup
+     * Operation productPrototypeCreateProductGroups
      *
-     * Creates a new instance in productGroup of this model.
+     * Creates a new instance in productGroups of this model.
      *
      * @param string $id Product id (required)
      * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function productPrototypeCreateProductGroup($id, $data = null)
+    public function productPrototypeCreateProductGroups($id, $data = null)
     {
-        list($response) = $this->productPrototypeCreateProductGroupWithHttpInfo($id, $data);
+        list($response) = $this->productPrototypeCreateProductGroupsWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation productPrototypeCreateProductGroupWithHttpInfo
+     * Operation productPrototypeCreateProductGroupsWithHttpInfo
      *
-     * Creates a new instance in productGroup of this model.
+     * Creates a new instance in productGroups of this model.
      *
      * @param string $id Product id (required)
      * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeCreateProductGroupWithHttpInfo($id, $data = null)
+    public function productPrototypeCreateProductGroupsWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeCreateProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeCreateProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Products/{id}/productGroup";
+        $resourcePath = "/Products/{id}/productGroups";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1451,7 +1451,7 @@ class ProductApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\ProductGroup',
-                '/Products/{id}/productGroup'
+                '/Products/{id}/productGroups'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
@@ -1635,37 +1635,37 @@ class ProductApi
     }
 
     /**
-     * Operation productPrototypeDeleteProductGroup
+     * Operation productPrototypeDeleteProductGroups
      *
-     * Deletes all productGroup of this model.
+     * Deletes all productGroups of this model.
      *
      * @param string $id Product id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function productPrototypeDeleteProductGroup($id)
+    public function productPrototypeDeleteProductGroups($id)
     {
-        list($response) = $this->productPrototypeDeleteProductGroupWithHttpInfo($id);
+        list($response) = $this->productPrototypeDeleteProductGroupsWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation productPrototypeDeleteProductGroupWithHttpInfo
+     * Operation productPrototypeDeleteProductGroupsWithHttpInfo
      *
-     * Deletes all productGroup of this model.
+     * Deletes all productGroups of this model.
      *
      * @param string $id Product id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeDeleteProductGroupWithHttpInfo($id)
+    public function productPrototypeDeleteProductGroupsWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeDeleteProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeDeleteProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Products/{id}/productGroup";
+        $resourcePath = "/Products/{id}/productGroups";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1700,7 +1700,7 @@ class ProductApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/Products/{id}/productGroup'
+                '/Products/{id}/productGroups'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -1883,43 +1883,43 @@ class ProductApi
     }
 
     /**
-     * Operation productPrototypeDestroyByIdProductGroup
+     * Operation productPrototypeDestroyByIdProductGroups
      *
-     * Delete a related item by id for productGroup.
+     * Delete a related item by id for productGroups.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function productPrototypeDestroyByIdProductGroup($id, $fk)
+    public function productPrototypeDestroyByIdProductGroups($id, $fk)
     {
-        list($response) = $this->productPrototypeDestroyByIdProductGroupWithHttpInfo($id, $fk);
+        list($response) = $this->productPrototypeDestroyByIdProductGroupsWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation productPrototypeDestroyByIdProductGroupWithHttpInfo
+     * Operation productPrototypeDestroyByIdProductGroupsWithHttpInfo
      *
-     * Delete a related item by id for productGroup.
+     * Delete a related item by id for productGroups.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeDestroyByIdProductGroupWithHttpInfo($id, $fk)
+    public function productPrototypeDestroyByIdProductGroupsWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeDestroyByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeDestroyByIdProductGroups');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeDestroyByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeDestroyByIdProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Products/{id}/productGroup/{fk}";
+        $resourcePath = "/Products/{id}/productGroups/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1962,7 +1962,7 @@ class ProductApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/Products/{id}/productGroup/{fk}'
+                '/Products/{id}/productGroups/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -2067,43 +2067,43 @@ class ProductApi
     }
 
     /**
-     * Operation productPrototypeExistsProductGroup
+     * Operation productPrototypeExistsProductGroups
      *
-     * Check the existence of productGroup relation to an item by id.
+     * Check the existence of productGroups relation to an item by id.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return bool
      */
-    public function productPrototypeExistsProductGroup($id, $fk)
+    public function productPrototypeExistsProductGroups($id, $fk)
     {
-        list($response) = $this->productPrototypeExistsProductGroupWithHttpInfo($id, $fk);
+        list($response) = $this->productPrototypeExistsProductGroupsWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation productPrototypeExistsProductGroupWithHttpInfo
+     * Operation productPrototypeExistsProductGroupsWithHttpInfo
      *
-     * Check the existence of productGroup relation to an item by id.
+     * Check the existence of productGroups relation to an item by id.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of bool, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeExistsProductGroupWithHttpInfo($id, $fk)
+    public function productPrototypeExistsProductGroupsWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeExistsProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeExistsProductGroups');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeExistsProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeExistsProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Products/{id}/productGroup/rel/{fk}";
+        $resourcePath = "/Products/{id}/productGroups/rel/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2146,7 +2146,7 @@ class ProductApi
                 $httpBody,
                 $headerParams,
                 'bool',
-                '/Products/{id}/productGroup/rel/{fk}'
+                '/Products/{id}/productGroups/rel/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, 'bool', $httpHeader), $statusCode, $httpHeader];
@@ -2259,43 +2259,43 @@ class ProductApi
     }
 
     /**
-     * Operation productPrototypeFindByIdProductGroup
+     * Operation productPrototypeFindByIdProductGroups
      *
-     * Find a related item by id for productGroup.
+     * Find a related item by id for productGroups.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function productPrototypeFindByIdProductGroup($id, $fk)
+    public function productPrototypeFindByIdProductGroups($id, $fk)
     {
-        list($response) = $this->productPrototypeFindByIdProductGroupWithHttpInfo($id, $fk);
+        list($response) = $this->productPrototypeFindByIdProductGroupsWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation productPrototypeFindByIdProductGroupWithHttpInfo
+     * Operation productPrototypeFindByIdProductGroupsWithHttpInfo
      *
-     * Find a related item by id for productGroup.
+     * Find a related item by id for productGroups.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeFindByIdProductGroupWithHttpInfo($id, $fk)
+    public function productPrototypeFindByIdProductGroupsWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeFindByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeFindByIdProductGroups');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeFindByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeFindByIdProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Products/{id}/productGroup/{fk}";
+        $resourcePath = "/Products/{id}/productGroups/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2338,7 +2338,7 @@ class ProductApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\ProductGroup',
-                '/Products/{id}/productGroup/{fk}'
+                '/Products/{id}/productGroups/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
@@ -2627,39 +2627,39 @@ class ProductApi
     }
 
     /**
-     * Operation productPrototypeGetProductGroup
+     * Operation productPrototypeGetProductGroups
      *
-     * Queries productGroup of Product.
+     * Queries productGroups of Product.
      *
      * @param string $id Product id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup[]
      */
-    public function productPrototypeGetProductGroup($id, $filter = null)
+    public function productPrototypeGetProductGroups($id, $filter = null)
     {
-        list($response) = $this->productPrototypeGetProductGroupWithHttpInfo($id, $filter);
+        list($response) = $this->productPrototypeGetProductGroupsWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation productPrototypeGetProductGroupWithHttpInfo
+     * Operation productPrototypeGetProductGroupsWithHttpInfo
      *
-     * Queries productGroup of Product.
+     * Queries productGroups of Product.
      *
      * @param string $id Product id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeGetProductGroupWithHttpInfo($id, $filter = null)
+    public function productPrototypeGetProductGroupsWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeGetProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeGetProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Products/{id}/productGroup";
+        $resourcePath = "/Products/{id}/productGroups";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2698,7 +2698,7 @@ class ProductApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\ProductGroup[]',
-                '/Products/{id}/productGroup'
+                '/Products/{id}/productGroups'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup[]', $httpHeader), $statusCode, $httpHeader];
@@ -2803,45 +2803,45 @@ class ProductApi
     }
 
     /**
-     * Operation productPrototypeLinkProductGroup
+     * Operation productPrototypeLinkProductGroups
      *
-     * Add a related item by id for productGroup.
+     * Add a related item by id for productGroups.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @param \Yoast\MyYoastApiClient\Model\ProductGroupProducts $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\ProductGroupProducts
      */
-    public function productPrototypeLinkProductGroup($id, $fk, $data = null)
+    public function productPrototypeLinkProductGroups($id, $fk, $data = null)
     {
-        list($response) = $this->productPrototypeLinkProductGroupWithHttpInfo($id, $fk, $data);
+        list($response) = $this->productPrototypeLinkProductGroupsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation productPrototypeLinkProductGroupWithHttpInfo
+     * Operation productPrototypeLinkProductGroupsWithHttpInfo
      *
-     * Add a related item by id for productGroup.
+     * Add a related item by id for productGroups.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @param \Yoast\MyYoastApiClient\Model\ProductGroupProducts $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroupProducts, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeLinkProductGroupWithHttpInfo($id, $fk, $data = null)
+    public function productPrototypeLinkProductGroupsWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeLinkProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeLinkProductGroups');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeLinkProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeLinkProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Products/{id}/productGroup/rel/{fk}";
+        $resourcePath = "/Products/{id}/productGroups/rel/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2889,7 +2889,7 @@ class ProductApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\ProductGroupProducts',
-                '/Products/{id}/productGroup/rel/{fk}'
+                '/Products/{id}/productGroups/rel/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroupProducts', $httpHeader), $statusCode, $httpHeader];
@@ -2995,43 +2995,43 @@ class ProductApi
     }
 
     /**
-     * Operation productPrototypeUnlinkProductGroup
+     * Operation productPrototypeUnlinkProductGroups
      *
-     * Remove the productGroup relation to an item by id.
+     * Remove the productGroups relation to an item by id.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function productPrototypeUnlinkProductGroup($id, $fk)
+    public function productPrototypeUnlinkProductGroups($id, $fk)
     {
-        list($response) = $this->productPrototypeUnlinkProductGroupWithHttpInfo($id, $fk);
+        list($response) = $this->productPrototypeUnlinkProductGroupsWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation productPrototypeUnlinkProductGroupWithHttpInfo
+     * Operation productPrototypeUnlinkProductGroupsWithHttpInfo
      *
-     * Remove the productGroup relation to an item by id.
+     * Remove the productGroups relation to an item by id.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeUnlinkProductGroupWithHttpInfo($id, $fk)
+    public function productPrototypeUnlinkProductGroupsWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeUnlinkProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeUnlinkProductGroups');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeUnlinkProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeUnlinkProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Products/{id}/productGroup/rel/{fk}";
+        $resourcePath = "/Products/{id}/productGroups/rel/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3074,7 +3074,7 @@ class ProductApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/Products/{id}/productGroup/rel/{fk}'
+                '/Products/{id}/productGroups/rel/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -3190,45 +3190,45 @@ class ProductApi
     }
 
     /**
-     * Operation productPrototypeUpdateByIdProductGroup
+     * Operation productPrototypeUpdateByIdProductGroups
      *
-     * Update a related item by id for productGroup.
+     * Update a related item by id for productGroups.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function productPrototypeUpdateByIdProductGroup($id, $fk, $data = null)
+    public function productPrototypeUpdateByIdProductGroups($id, $fk, $data = null)
     {
-        list($response) = $this->productPrototypeUpdateByIdProductGroupWithHttpInfo($id, $fk, $data);
+        list($response) = $this->productPrototypeUpdateByIdProductGroupsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation productPrototypeUpdateByIdProductGroupWithHttpInfo
+     * Operation productPrototypeUpdateByIdProductGroupsWithHttpInfo
      *
-     * Update a related item by id for productGroup.
+     * Update a related item by id for productGroups.
      *
      * @param string $id Product id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productPrototypeUpdateByIdProductGroupWithHttpInfo($id, $fk, $data = null)
+    public function productPrototypeUpdateByIdProductGroupsWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeUpdateByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productPrototypeUpdateByIdProductGroups');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeUpdateByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productPrototypeUpdateByIdProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Products/{id}/productGroup/{fk}";
+        $resourcePath = "/Products/{id}/productGroups/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -3276,7 +3276,7 @@ class ProductApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\ProductGroup',
-                '/Products/{id}/productGroup/{fk}'
+                '/Products/{id}/productGroups/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];

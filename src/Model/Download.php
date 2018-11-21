@@ -59,7 +59,8 @@ class Download implements ArrayAccess
         'version' => 'string',
         'secret' => 'string',
         'extension' => 'string',
-        'mimetype' => 'string'
+        'mimetype' => 'string',
+        'public' => 'bool'
     ];
 
     /**
@@ -72,7 +73,8 @@ class Download implements ArrayAccess
         'version' => null,
         'secret' => null,
         'extension' => null,
-        'mimetype' => null
+        'mimetype' => null,
+        'public' => null
     ];
 
     public static function swaggerTypes()
@@ -95,7 +97,8 @@ class Download implements ArrayAccess
         'version' => 'version',
         'secret' => 'secret',
         'extension' => 'extension',
-        'mimetype' => 'mimetype'
+        'mimetype' => 'mimetype',
+        'public' => 'public'
     ];
 
 
@@ -109,7 +112,8 @@ class Download implements ArrayAccess
         'version' => 'setVersion',
         'secret' => 'setSecret',
         'extension' => 'setExtension',
-        'mimetype' => 'setMimetype'
+        'mimetype' => 'setMimetype',
+        'public' => 'setPublic'
     ];
 
 
@@ -123,7 +127,8 @@ class Download implements ArrayAccess
         'version' => 'getVersion',
         'secret' => 'getSecret',
         'extension' => 'getExtension',
-        'mimetype' => 'getMimetype'
+        'mimetype' => 'getMimetype',
+        'public' => 'getPublic'
     ];
 
     public static function attributeMap()
@@ -163,6 +168,7 @@ class Download implements ArrayAccess
         $this->container['secret'] = isset($data['secret']) ? $data['secret'] : null;
         $this->container['extension'] = isset($data['extension']) ? $data['extension'] : null;
         $this->container['mimetype'] = isset($data['mimetype']) ? $data['mimetype'] : null;
+        $this->container['public'] = isset($data['public']) ? $data['public'] : false;
     }
 
     /**
@@ -348,6 +354,27 @@ class Download implements ArrayAccess
     public function setMimetype($mimetype)
     {
         $this->container['mimetype'] = $mimetype;
+
+        return $this;
+    }
+
+    /**
+     * Gets public
+     * @return bool
+     */
+    public function getPublic()
+    {
+        return $this->container['public'];
+    }
+
+    /**
+     * Sets public
+     * @param bool $public
+     * @return $this
+     */
+    public function setPublic($public)
+    {
+        $this->container['public'] = $public;
 
         return $this;
     }

@@ -17,30 +17,30 @@ Method | HTTP request | Description
 [**productFromWooCommerce**](ProductApi.md#productFromWooCommerce) | **PUT** /Products/fromWooCommerce | 
 [**productPatchOrCreate**](ProductApi.md#productPatchOrCreate) | **PATCH** /Products | Patch an existing model instance or insert a new one into the data source.
 [**productPrototypeCountLineItems**](ProductApi.md#productPrototypeCountLineItems) | **GET** /Products/{id}/lineItems/count | Counts lineItems of Product.
-[**productPrototypeCountProductGroup**](ProductApi.md#productPrototypeCountProductGroup) | **GET** /Products/{id}/productGroup/count | Counts productGroup of Product.
+[**productPrototypeCountProductGroups**](ProductApi.md#productPrototypeCountProductGroups) | **GET** /Products/{id}/productGroups/count | Counts productGroups of Product.
 [**productPrototypeCountSubscriptions**](ProductApi.md#productPrototypeCountSubscriptions) | **GET** /Products/{id}/subscriptions/count | Counts subscriptions of Product.
 [**productPrototypeCreateLineItems**](ProductApi.md#productPrototypeCreateLineItems) | **POST** /Products/{id}/lineItems | Creates a new instance in lineItems of this model.
-[**productPrototypeCreateProductGroup**](ProductApi.md#productPrototypeCreateProductGroup) | **POST** /Products/{id}/productGroup | Creates a new instance in productGroup of this model.
+[**productPrototypeCreateProductGroups**](ProductApi.md#productPrototypeCreateProductGroups) | **POST** /Products/{id}/productGroups | Creates a new instance in productGroups of this model.
 [**productPrototypeCreateSubscriptions**](ProductApi.md#productPrototypeCreateSubscriptions) | **POST** /Products/{id}/subscriptions | Creates a new instance in subscriptions of this model.
 [**productPrototypeDeleteLineItems**](ProductApi.md#productPrototypeDeleteLineItems) | **DELETE** /Products/{id}/lineItems | Deletes all lineItems of this model.
-[**productPrototypeDeleteProductGroup**](ProductApi.md#productPrototypeDeleteProductGroup) | **DELETE** /Products/{id}/productGroup | Deletes all productGroup of this model.
+[**productPrototypeDeleteProductGroups**](ProductApi.md#productPrototypeDeleteProductGroups) | **DELETE** /Products/{id}/productGroups | Deletes all productGroups of this model.
 [**productPrototypeDeleteSubscriptions**](ProductApi.md#productPrototypeDeleteSubscriptions) | **DELETE** /Products/{id}/subscriptions | Deletes all subscriptions of this model.
 [**productPrototypeDestroyByIdLineItems**](ProductApi.md#productPrototypeDestroyByIdLineItems) | **DELETE** /Products/{id}/lineItems/{fk} | Delete a related item by id for lineItems.
-[**productPrototypeDestroyByIdProductGroup**](ProductApi.md#productPrototypeDestroyByIdProductGroup) | **DELETE** /Products/{id}/productGroup/{fk} | Delete a related item by id for productGroup.
+[**productPrototypeDestroyByIdProductGroups**](ProductApi.md#productPrototypeDestroyByIdProductGroups) | **DELETE** /Products/{id}/productGroups/{fk} | Delete a related item by id for productGroups.
 [**productPrototypeDestroyByIdSubscriptions**](ProductApi.md#productPrototypeDestroyByIdSubscriptions) | **DELETE** /Products/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
-[**productPrototypeExistsProductGroup**](ProductApi.md#productPrototypeExistsProductGroup) | **HEAD** /Products/{id}/productGroup/rel/{fk} | Check the existence of productGroup relation to an item by id.
+[**productPrototypeExistsProductGroups**](ProductApi.md#productPrototypeExistsProductGroups) | **HEAD** /Products/{id}/productGroups/rel/{fk} | Check the existence of productGroups relation to an item by id.
 [**productPrototypeFindByIdLineItems**](ProductApi.md#productPrototypeFindByIdLineItems) | **GET** /Products/{id}/lineItems/{fk} | Find a related item by id for lineItems.
-[**productPrototypeFindByIdProductGroup**](ProductApi.md#productPrototypeFindByIdProductGroup) | **GET** /Products/{id}/productGroup/{fk} | Find a related item by id for productGroup.
+[**productPrototypeFindByIdProductGroups**](ProductApi.md#productPrototypeFindByIdProductGroups) | **GET** /Products/{id}/productGroups/{fk} | Find a related item by id for productGroups.
 [**productPrototypeFindByIdSubscriptions**](ProductApi.md#productPrototypeFindByIdSubscriptions) | **GET** /Products/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
 [**productPrototypeGetCourses**](ProductApi.md#productPrototypeGetCourses) | **GET** /Products/{id}/courses | Fetches belongsTo relation courses.
 [**productPrototypeGetLineItems**](ProductApi.md#productPrototypeGetLineItems) | **GET** /Products/{id}/lineItems | Queries lineItems of Product.
-[**productPrototypeGetProductGroup**](ProductApi.md#productPrototypeGetProductGroup) | **GET** /Products/{id}/productGroup | Queries productGroup of Product.
+[**productPrototypeGetProductGroups**](ProductApi.md#productPrototypeGetProductGroups) | **GET** /Products/{id}/productGroups | Queries productGroups of Product.
 [**productPrototypeGetSubscriptions**](ProductApi.md#productPrototypeGetSubscriptions) | **GET** /Products/{id}/subscriptions | Queries subscriptions of Product.
-[**productPrototypeLinkProductGroup**](ProductApi.md#productPrototypeLinkProductGroup) | **PUT** /Products/{id}/productGroup/rel/{fk} | Add a related item by id for productGroup.
+[**productPrototypeLinkProductGroups**](ProductApi.md#productPrototypeLinkProductGroups) | **PUT** /Products/{id}/productGroups/rel/{fk} | Add a related item by id for productGroups.
 [**productPrototypePatchAttributes**](ProductApi.md#productPrototypePatchAttributes) | **PATCH** /Products/{id} | Patch attributes for a model instance and persist it into the data source.
-[**productPrototypeUnlinkProductGroup**](ProductApi.md#productPrototypeUnlinkProductGroup) | **DELETE** /Products/{id}/productGroup/rel/{fk} | Remove the productGroup relation to an item by id.
+[**productPrototypeUnlinkProductGroups**](ProductApi.md#productPrototypeUnlinkProductGroups) | **DELETE** /Products/{id}/productGroups/rel/{fk} | Remove the productGroups relation to an item by id.
 [**productPrototypeUpdateByIdLineItems**](ProductApi.md#productPrototypeUpdateByIdLineItems) | **PUT** /Products/{id}/lineItems/{fk} | Update a related item by id for lineItems.
-[**productPrototypeUpdateByIdProductGroup**](ProductApi.md#productPrototypeUpdateByIdProductGroup) | **PUT** /Products/{id}/productGroup/{fk} | Update a related item by id for productGroup.
+[**productPrototypeUpdateByIdProductGroups**](ProductApi.md#productPrototypeUpdateByIdProductGroups) | **PUT** /Products/{id}/productGroups/{fk} | Update a related item by id for productGroups.
 [**productPrototypeUpdateByIdSubscriptions**](ProductApi.md#productPrototypeUpdateByIdSubscriptions) | **PUT** /Products/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
 [**productReplaceByIdPostProductsidReplace**](ProductApi.md#productReplaceByIdPostProductsidReplace) | **POST** /Products/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 [**productReplaceByIdPutProductsid**](ProductApi.md#productReplaceByIdPutProductsid) | **PUT** /Products/{id} | Replace attributes for a model instance and persist it into the data source.
@@ -615,10 +615,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productPrototypeCountProductGroup**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 productPrototypeCountProductGroup($id, $where)
+# **productPrototypeCountProductGroups**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 productPrototypeCountProductGroups($id, $where)
 
-Counts productGroup of Product.
+Counts productGroups of Product.
 
 ### Example
 ```php
@@ -630,10 +630,10 @@ $id = "id_example"; // string | Product id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->productPrototypeCountProductGroup($id, $where);
+    $result = $api_instance->productPrototypeCountProductGroups($id, $where);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productPrototypeCountProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productPrototypeCountProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -750,10 +750,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productPrototypeCreateProductGroup**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productPrototypeCreateProductGroup($id, $data)
+# **productPrototypeCreateProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup productPrototypeCreateProductGroups($id, $data)
 
-Creates a new instance in productGroup of this model.
+Creates a new instance in productGroups of this model.
 
 ### Example
 ```php
@@ -765,10 +765,10 @@ $id = "id_example"; // string | Product id
 $data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
 
 try {
-    $result = $api_instance->productPrototypeCreateProductGroup($id, $data);
+    $result = $api_instance->productPrototypeCreateProductGroups($id, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productPrototypeCreateProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productPrototypeCreateProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -882,10 +882,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productPrototypeDeleteProductGroup**
-> productPrototypeDeleteProductGroup($id)
+# **productPrototypeDeleteProductGroups**
+> productPrototypeDeleteProductGroups($id)
 
-Deletes all productGroup of this model.
+Deletes all productGroups of this model.
 
 ### Example
 ```php
@@ -896,9 +896,9 @@ $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
 $id = "id_example"; // string | Product id
 
 try {
-    $api_instance->productPrototypeDeleteProductGroup($id);
+    $api_instance->productPrototypeDeleteProductGroups($id);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productPrototypeDeleteProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productPrototypeDeleteProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1010,10 +1010,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productPrototypeDestroyByIdProductGroup**
-> productPrototypeDestroyByIdProductGroup($id, $fk)
+# **productPrototypeDestroyByIdProductGroups**
+> productPrototypeDestroyByIdProductGroups($id, $fk)
 
-Delete a related item by id for productGroup.
+Delete a related item by id for productGroups.
 
 ### Example
 ```php
@@ -1022,12 +1022,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
 $id = "id_example"; // string | Product id
-$fk = "fk_example"; // string | Foreign key for productGroup
+$fk = "fk_example"; // string | Foreign key for productGroups
 
 try {
-    $api_instance->productPrototypeDestroyByIdProductGroup($id, $fk);
+    $api_instance->productPrototypeDestroyByIdProductGroups($id, $fk);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productPrototypeDestroyByIdProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productPrototypeDestroyByIdProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1037,7 +1037,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Product id |
- **fk** | **string**| Foreign key for productGroup |
+ **fk** | **string**| Foreign key for productGroups |
 
 ### Return type
 
@@ -1098,10 +1098,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productPrototypeExistsProductGroup**
-> bool productPrototypeExistsProductGroup($id, $fk)
+# **productPrototypeExistsProductGroups**
+> bool productPrototypeExistsProductGroups($id, $fk)
 
-Check the existence of productGroup relation to an item by id.
+Check the existence of productGroups relation to an item by id.
 
 ### Example
 ```php
@@ -1110,13 +1110,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
 $id = "id_example"; // string | Product id
-$fk = "fk_example"; // string | Foreign key for productGroup
+$fk = "fk_example"; // string | Foreign key for productGroups
 
 try {
-    $result = $api_instance->productPrototypeExistsProductGroup($id, $fk);
+    $result = $api_instance->productPrototypeExistsProductGroups($id, $fk);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productPrototypeExistsProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productPrototypeExistsProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1126,7 +1126,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Product id |
- **fk** | **string**| Foreign key for productGroup |
+ **fk** | **string**| Foreign key for productGroups |
 
 ### Return type
 
@@ -1188,10 +1188,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productPrototypeFindByIdProductGroup**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productPrototypeFindByIdProductGroup($id, $fk)
+# **productPrototypeFindByIdProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup productPrototypeFindByIdProductGroups($id, $fk)
 
-Find a related item by id for productGroup.
+Find a related item by id for productGroups.
 
 ### Example
 ```php
@@ -1200,13 +1200,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
 $id = "id_example"; // string | Product id
-$fk = "fk_example"; // string | Foreign key for productGroup
+$fk = "fk_example"; // string | Foreign key for productGroups
 
 try {
-    $result = $api_instance->productPrototypeFindByIdProductGroup($id, $fk);
+    $result = $api_instance->productPrototypeFindByIdProductGroups($id, $fk);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productPrototypeFindByIdProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productPrototypeFindByIdProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1216,7 +1216,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Product id |
- **fk** | **string**| Foreign key for productGroup |
+ **fk** | **string**| Foreign key for productGroups |
 
 ### Return type
 
@@ -1368,10 +1368,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productPrototypeGetProductGroup**
-> \Yoast\MyYoastApiClient\Model\ProductGroup[] productPrototypeGetProductGroup($id, $filter)
+# **productPrototypeGetProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup[] productPrototypeGetProductGroups($id, $filter)
 
-Queries productGroup of Product.
+Queries productGroups of Product.
 
 ### Example
 ```php
@@ -1383,10 +1383,10 @@ $id = "id_example"; // string | Product id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $api_instance->productPrototypeGetProductGroup($id, $filter);
+    $result = $api_instance->productPrototypeGetProductGroups($id, $filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productPrototypeGetProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productPrototypeGetProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1458,10 +1458,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productPrototypeLinkProductGroup**
-> \Yoast\MyYoastApiClient\Model\ProductGroupProducts productPrototypeLinkProductGroup($id, $fk, $data)
+# **productPrototypeLinkProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroupProducts productPrototypeLinkProductGroups($id, $fk, $data)
 
-Add a related item by id for productGroup.
+Add a related item by id for productGroups.
 
 ### Example
 ```php
@@ -1470,14 +1470,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
 $id = "id_example"; // string | Product id
-$fk = "fk_example"; // string | Foreign key for productGroup
+$fk = "fk_example"; // string | Foreign key for productGroups
 $data = new \Yoast\MyYoastApiClient\Model\ProductGroupProducts(); // \Yoast\MyYoastApiClient\Model\ProductGroupProducts | 
 
 try {
-    $result = $api_instance->productPrototypeLinkProductGroup($id, $fk, $data);
+    $result = $api_instance->productPrototypeLinkProductGroups($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productPrototypeLinkProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productPrototypeLinkProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1487,7 +1487,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Product id |
- **fk** | **string**| Foreign key for productGroup |
+ **fk** | **string**| Foreign key for productGroups |
  **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroupProducts**](../Model/ProductGroupProducts.md)|  | [optional]
 
 ### Return type
@@ -1550,10 +1550,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productPrototypeUnlinkProductGroup**
-> productPrototypeUnlinkProductGroup($id, $fk)
+# **productPrototypeUnlinkProductGroups**
+> productPrototypeUnlinkProductGroups($id, $fk)
 
-Remove the productGroup relation to an item by id.
+Remove the productGroups relation to an item by id.
 
 ### Example
 ```php
@@ -1562,12 +1562,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
 $id = "id_example"; // string | Product id
-$fk = "fk_example"; // string | Foreign key for productGroup
+$fk = "fk_example"; // string | Foreign key for productGroups
 
 try {
-    $api_instance->productPrototypeUnlinkProductGroup($id, $fk);
+    $api_instance->productPrototypeUnlinkProductGroups($id, $fk);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productPrototypeUnlinkProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productPrototypeUnlinkProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1577,7 +1577,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Product id |
- **fk** | **string**| Foreign key for productGroup |
+ **fk** | **string**| Foreign key for productGroups |
 
 ### Return type
 
@@ -1641,10 +1641,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productPrototypeUpdateByIdProductGroup**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productPrototypeUpdateByIdProductGroup($id, $fk, $data)
+# **productPrototypeUpdateByIdProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup productPrototypeUpdateByIdProductGroups($id, $fk, $data)
 
-Update a related item by id for productGroup.
+Update a related item by id for productGroups.
 
 ### Example
 ```php
@@ -1653,14 +1653,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
 $id = "id_example"; // string | Product id
-$fk = "fk_example"; // string | Foreign key for productGroup
+$fk = "fk_example"; // string | Foreign key for productGroups
 $data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
 
 try {
-    $result = $api_instance->productPrototypeUpdateByIdProductGroup($id, $fk, $data);
+    $result = $api_instance->productPrototypeUpdateByIdProductGroups($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productPrototypeUpdateByIdProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productPrototypeUpdateByIdProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1670,7 +1670,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Product id |
- **fk** | **string**| Foreign key for productGroup |
+ **fk** | **string**| Foreign key for productGroups |
  **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  | [optional]
 
 ### Return type

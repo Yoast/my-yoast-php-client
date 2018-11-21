@@ -1036,6 +1036,182 @@ class ProductGroupApi
     }
 
     /**
+     * Operation productGroupPrototypeCountChildren
+     *
+     * Counts children of ProductGroup.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     */
+    public function productGroupPrototypeCountChildren($id, $where = null)
+    {
+        list($response) = $this->productGroupPrototypeCountChildrenWithHttpInfo($id, $where);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeCountChildrenWithHttpInfo
+     *
+     * Counts children of ProductGroup.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeCountChildrenWithHttpInfo($id, $where = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeCountChildren');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/children/count";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($where !== null) {
+            $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '/ProductGroups/{id}/children/count'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeCountDownload
+     *
+     * Counts download of ProductGroup.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     */
+    public function productGroupPrototypeCountDownload($id, $where = null)
+    {
+        list($response) = $this->productGroupPrototypeCountDownloadWithHttpInfo($id, $where);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeCountDownloadWithHttpInfo
+     *
+     * Counts download of ProductGroup.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $where Criteria to match model instances (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeCountDownloadWithHttpInfo($id, $where = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeCountDownload');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/download/count";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($where !== null) {
+            $queryParams['where'] = $this->apiClient->getSerializer()->toQueryValue($where);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                '/ProductGroups/{id}/download/count'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation productGroupPrototypeCountProducts
      *
      * Counts products of ProductGroup.
@@ -1115,6 +1291,184 @@ class ProductGroupApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse200', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeCreateChildren
+     *
+     * Creates a new instance in children of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
+     */
+    public function productGroupPrototypeCreateChildren($id, $data = null)
+    {
+        list($response) = $this->productGroupPrototypeCreateChildrenWithHttpInfo($id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeCreateChildrenWithHttpInfo
+     *
+     * Creates a new instance in children of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeCreateChildrenWithHttpInfo($id, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeCreateChildren');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/children";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups/{id}/children'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeCreateDownload
+     *
+     * Creates a new instance in download of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Download $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Download
+     */
+    public function productGroupPrototypeCreateDownload($id, $data = null)
+    {
+        list($response) = $this->productGroupPrototypeCreateDownloadWithHttpInfo($id, $data);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeCreateDownloadWithHttpInfo
+     *
+     * Creates a new instance in download of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param \Yoast\MyYoastApiClient\Model\Download $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Download, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeCreateDownloadWithHttpInfo($id, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeCreateDownload');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/download";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Download',
+                '/ProductGroups/{id}/download'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Download', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Download', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1213,6 +1567,162 @@ class ProductGroupApi
     }
 
     /**
+     * Operation productGroupPrototypeDeleteChildren
+     *
+     * Deletes all children of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function productGroupPrototypeDeleteChildren($id)
+    {
+        list($response) = $this->productGroupPrototypeDeleteChildrenWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeDeleteChildrenWithHttpInfo
+     *
+     * Deletes all children of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeDeleteChildrenWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeDeleteChildren');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/children";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/ProductGroups/{id}/children'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeDeleteDownload
+     *
+     * Deletes all download of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function productGroupPrototypeDeleteDownload($id)
+    {
+        list($response) = $this->productGroupPrototypeDeleteDownloadWithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeDeleteDownloadWithHttpInfo
+     *
+     * Deletes all download of this model.
+     *
+     * @param string $id ProductGroup id (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeDeleteDownloadWithHttpInfo($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeDeleteDownload');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/download";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/ProductGroups/{id}/download'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation productGroupPrototypeDeleteProducts
      *
      * Deletes all products of this model.
@@ -1279,6 +1789,190 @@ class ProductGroupApi
                 $headerParams,
                 null,
                 '/ProductGroups/{id}/products'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeDestroyByIdChildren
+     *
+     * Delete a related item by id for children.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for children (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function productGroupPrototypeDestroyByIdChildren($id, $fk)
+    {
+        list($response) = $this->productGroupPrototypeDestroyByIdChildrenWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeDestroyByIdChildrenWithHttpInfo
+     *
+     * Delete a related item by id for children.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for children (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeDestroyByIdChildrenWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeDestroyByIdChildren');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeDestroyByIdChildren');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/children/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/ProductGroups/{id}/children/{fk}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeDestroyByIdDownload
+     *
+     * Delete a related item by id for download.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function productGroupPrototypeDestroyByIdDownload($id, $fk)
+    {
+        list($response) = $this->productGroupPrototypeDestroyByIdDownloadWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeDestroyByIdDownloadWithHttpInfo
+     *
+     * Delete a related item by id for download.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeDestroyByIdDownloadWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeDestroyByIdDownload');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeDestroyByIdDownload');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/download/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/ProductGroups/{id}/download/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -1383,6 +2077,102 @@ class ProductGroupApi
     }
 
     /**
+     * Operation productGroupPrototypeExistsDownload
+     *
+     * Check the existence of download relation to an item by id.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return bool
+     */
+    public function productGroupPrototypeExistsDownload($id, $fk)
+    {
+        list($response) = $this->productGroupPrototypeExistsDownloadWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeExistsDownloadWithHttpInfo
+     *
+     * Check the existence of download relation to an item by id.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of bool, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeExistsDownloadWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeExistsDownload');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeExistsDownload');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/download/rel/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'HEAD',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'bool',
+                '/ProductGroups/{id}/download/rel/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'bool', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'bool', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation productGroupPrototypeExistsProducts
      *
      * Check the existence of products relation to an item by id.
@@ -1470,6 +2260,198 @@ class ProductGroupApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'bool', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeFindByIdChildren
+     *
+     * Find a related item by id for children.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for children (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
+     */
+    public function productGroupPrototypeFindByIdChildren($id, $fk)
+    {
+        list($response) = $this->productGroupPrototypeFindByIdChildrenWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeFindByIdChildrenWithHttpInfo
+     *
+     * Find a related item by id for children.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for children (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeFindByIdChildrenWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeFindByIdChildren');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeFindByIdChildren');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/children/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups/{id}/children/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeFindByIdDownload
+     *
+     * Find a related item by id for download.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Download
+     */
+    public function productGroupPrototypeFindByIdDownload($id, $fk)
+    {
+        list($response) = $this->productGroupPrototypeFindByIdDownloadWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeFindByIdDownloadWithHttpInfo
+     *
+     * Find a related item by id for download.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Download, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeFindByIdDownloadWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeFindByIdDownload');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeFindByIdDownload');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/download/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Download',
+                '/ProductGroups/{id}/download/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Download', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Download', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1575,6 +2557,94 @@ class ProductGroupApi
     }
 
     /**
+     * Operation productGroupPrototypeGetChildren
+     *
+     * Queries children of ProductGroup.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $filter  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup[]
+     */
+    public function productGroupPrototypeGetChildren($id, $filter = null)
+    {
+        list($response) = $this->productGroupPrototypeGetChildrenWithHttpInfo($id, $filter);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeGetChildrenWithHttpInfo
+     *
+     * Queries children of ProductGroup.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $filter  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeGetChildrenWithHttpInfo($id, $filter = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeGetChildren');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/children";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ProductGroup[]',
+                '/ProductGroups/{id}/children'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup[]', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup[]', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation productGroupPrototypeGetCourse
      *
      * Fetches belongsTo relation course.
@@ -1654,6 +2724,94 @@ class ProductGroupApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Course', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeGetDownload
+     *
+     * Queries download of ProductGroup.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $filter  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Download[]
+     */
+    public function productGroupPrototypeGetDownload($id, $filter = null)
+    {
+        list($response) = $this->productGroupPrototypeGetDownloadWithHttpInfo($id, $filter);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeGetDownloadWithHttpInfo
+     *
+     * Queries download of ProductGroup.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $filter  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Download[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeGetDownloadWithHttpInfo($id, $filter = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeGetDownload');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/download";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = $this->apiClient->getSerializer()->toQueryValue($filter);
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Download[]',
+                '/ProductGroups/{id}/download'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Download[]', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Download[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1830,6 +2988,109 @@ class ProductGroupApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Product[]', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeLinkDownload
+     *
+     * Add a related item by id for download.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroupDownloads $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroupDownloads
+     */
+    public function productGroupPrototypeLinkDownload($id, $fk, $data = null)
+    {
+        list($response) = $this->productGroupPrototypeLinkDownloadWithHttpInfo($id, $fk, $data);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeLinkDownloadWithHttpInfo
+     *
+     * Add a related item by id for download.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroupDownloads $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroupDownloads, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeLinkDownloadWithHttpInfo($id, $fk, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeLinkDownload');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeLinkDownload');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/download/rel/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ProductGroupDownloads',
+                '/ProductGroups/{id}/download/rel/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroupDownloads', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroupDownloads', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2031,6 +3292,98 @@ class ProductGroupApi
     }
 
     /**
+     * Operation productGroupPrototypeUnlinkDownload
+     *
+     * Remove the download relation to an item by id.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return void
+     */
+    public function productGroupPrototypeUnlinkDownload($id, $fk)
+    {
+        list($response) = $this->productGroupPrototypeUnlinkDownloadWithHttpInfo($id, $fk);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeUnlinkDownloadWithHttpInfo
+     *
+     * Remove the download relation to an item by id.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeUnlinkDownloadWithHttpInfo($id, $fk)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeUnlinkDownload');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeUnlinkDownload');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/download/rel/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                null,
+                '/ProductGroups/{id}/download/rel/{fk}'
+            );
+
+            return [null, $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation productGroupPrototypeUnlinkProducts
      *
      * Remove the products relation to an item by id.
@@ -2116,6 +3469,212 @@ class ProductGroupApi
             return [null, $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeUpdateByIdChildren
+     *
+     * Update a related item by id for children.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for children (required)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\ProductGroup
+     */
+    public function productGroupPrototypeUpdateByIdChildren($id, $fk, $data = null)
+    {
+        list($response) = $this->productGroupPrototypeUpdateByIdChildrenWithHttpInfo($id, $fk, $data);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeUpdateByIdChildrenWithHttpInfo
+     *
+     * Update a related item by id for children.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for children (required)
+     * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeUpdateByIdChildrenWithHttpInfo($id, $fk, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeUpdateByIdChildren');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeUpdateByIdChildren');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/children/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\ProductGroup',
+                '/ProductGroups/{id}/children/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\ProductGroup', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation productGroupPrototypeUpdateByIdDownload
+     *
+     * Update a related item by id for download.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @param \Yoast\MyYoastApiClient\Model\Download $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\Download
+     */
+    public function productGroupPrototypeUpdateByIdDownload($id, $fk, $data = null)
+    {
+        list($response) = $this->productGroupPrototypeUpdateByIdDownloadWithHttpInfo($id, $fk, $data);
+        return $response;
+    }
+
+    /**
+     * Operation productGroupPrototypeUpdateByIdDownloadWithHttpInfo
+     *
+     * Update a related item by id for download.
+     *
+     * @param string $id ProductGroup id (required)
+     * @param string $fk Foreign key for download (required)
+     * @param \Yoast\MyYoastApiClient\Model\Download $data  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\Download, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function productGroupPrototypeUpdateByIdDownloadWithHttpInfo($id, $fk, $data = null)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling productGroupPrototypeUpdateByIdDownload');
+        }
+        // verify the required parameter 'fk' is set
+        if ($fk === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling productGroupPrototypeUpdateByIdDownload');
+        }
+        // parse inputs
+        $resourcePath = "/ProductGroups/{id}/download/{fk}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                "{" . "id" . "}",
+                $this->apiClient->getSerializer()->toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($fk !== null) {
+            $resourcePath = str_replace(
+                "{" . "fk" . "}",
+                $this->apiClient->getSerializer()->toPathValue($fk),
+                $resourcePath
+            );
+        }
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\Download',
+                '/ProductGroups/{id}/download/{fk}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\Download', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Download', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
             }
 
             throw $e;

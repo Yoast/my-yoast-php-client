@@ -5,7 +5,7 @@ All URIs are relative to *https://localhost/api*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**customerActivate**](CustomerApi.md#customerActivate) | **POST** /Customers/activate | Activates the account of a user.
-[**customerCancelSubscription**](CustomerApi.md#customerCancelSubscription) | **POST** /Customers/{id}/shop/{shop}/subscriptions/{subscription}/cancel | Cancels a subscription of a plugin.
+[**customerCancelSubscription**](CustomerApi.md#customerCancelSubscription) | **POST** /Customers/{id}/subscriptions/{subscription}/cancel | Cancels a subscription of a plugin.
 [**customerChangePassword**](CustomerApi.md#customerChangePassword) | **POST** /Customers/change-password | Change a user&#39;s password.
 [**customerConfirm**](CustomerApi.md#customerConfirm) | **GET** /Customers/confirm | Confirm a user registration with email verification token.
 [**customerCount**](CustomerApi.md#customerCount) | **GET** /Customers/count | Count instances of the model matched by where from the data source.
@@ -172,7 +172,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customerCancelSubscription**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerCancelSubscription($id, $shop, $subscription)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerCancelSubscription($id, $subscription, $amount)
 
 Cancels a subscription of a plugin.
 
@@ -183,11 +183,11 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
 $id = "id_example"; // string | 
-$shop = 1.2; // double | 
 $subscription = "subscription_example"; // string | 
+$amount = 1.2; // double | 
 
 try {
-    $result = $api_instance->customerCancelSubscription($id, $shop, $subscription);
+    $result = $api_instance->customerCancelSubscription($id, $subscription, $amount);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->customerCancelSubscription: ', $e->getMessage(), PHP_EOL;
@@ -200,8 +200,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **shop** | **double**|  |
  **subscription** | **string**|  |
+ **amount** | **double**|  |
 
 ### Return type
 

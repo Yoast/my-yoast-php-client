@@ -2805,13 +2805,12 @@ class SiteApi
      * @param double $from_source_id  (required)
      * @param double $to_source_id  (required)
      * @param double $product_id  (required)
-     * @param double $quantity  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return double
      */
-    public function siteSwitchSubscriptionNumberOfTimes($from_source_id, $to_source_id, $product_id, $quantity)
+    public function siteSwitchSubscriptionNumberOfTimes($from_source_id, $to_source_id, $product_id)
     {
-        list($response) = $this->siteSwitchSubscriptionNumberOfTimesWithHttpInfo($from_source_id, $to_source_id, $product_id, $quantity);
+        list($response) = $this->siteSwitchSubscriptionNumberOfTimesWithHttpInfo($from_source_id, $to_source_id, $product_id);
         return $response;
     }
 
@@ -2821,11 +2820,10 @@ class SiteApi
      * @param double $from_source_id  (required)
      * @param double $to_source_id  (required)
      * @param double $product_id  (required)
-     * @param double $quantity  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of double, HTTP status code, HTTP response headers (array of strings)
      */
-    public function siteSwitchSubscriptionNumberOfTimesWithHttpInfo($from_source_id, $to_source_id, $product_id, $quantity)
+    public function siteSwitchSubscriptionNumberOfTimesWithHttpInfo($from_source_id, $to_source_id, $product_id)
     {
         // verify the required parameter 'from_source_id' is set
         if ($from_source_id === null) {
@@ -2838,10 +2836,6 @@ class SiteApi
         // verify the required parameter 'product_id' is set
         if ($product_id === null) {
             throw new \InvalidArgumentException('Missing the required parameter $product_id when calling siteSwitchSubscriptionNumberOfTimes');
-        }
-        // verify the required parameter 'quantity' is set
-        if ($quantity === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $quantity when calling siteSwitchSubscriptionNumberOfTimes');
         }
         // parse inputs
         $resourcePath = "/Sites/switchSubscriptionNumberOfTimes";
@@ -2866,10 +2860,6 @@ class SiteApi
         // form params
         if ($product_id !== null) {
             $formParams['productId'] = $this->apiClient->getSerializer()->toFormValue($product_id);
-        }
-        // form params
-        if ($quantity !== null) {
-            $formParams['quantity'] = $this->apiClient->getSerializer()->toFormValue($quantity);
         }
 
         // for model (json/xml)

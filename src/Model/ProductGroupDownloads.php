@@ -1,6 +1,6 @@
 <?php
 /**
- * DiscountLineItem
+ * ProductGroupDownloads
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * DiscountLineItem Class Doc Comment
+ * ProductGroupDownloads Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class DiscountLineItem implements ArrayAccess
+class ProductGroupDownloads implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class DiscountLineItem implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'DiscountLineItem';
+    protected static $swaggerModelName = 'ProductGroupDownloads';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,12 +55,8 @@ class DiscountLineItem implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'order_id' => 'string',
-        'coupon_code' => 'string',
-        'amount' => 'double',
-        'amount_vat' => 'double',
-        'source_id' => 'double',
-        'source_shop_id' => 'double'
+        'product_group_id' => 'string',
+        'download_id' => 'string'
     ];
 
     /**
@@ -69,12 +65,8 @@ class DiscountLineItem implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-        'order_id' => null,
-        'coupon_code' => null,
-        'amount' => 'double',
-        'amount_vat' => 'double',
-        'source_id' => 'double',
-        'source_shop_id' => 'double'
+        'product_group_id' => null,
+        'download_id' => null
     ];
 
     public static function swaggerTypes()
@@ -93,12 +85,8 @@ class DiscountLineItem implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'order_id' => 'orderId',
-        'coupon_code' => 'couponCode',
-        'amount' => 'amount',
-        'amount_vat' => 'amountVat',
-        'source_id' => 'sourceId',
-        'source_shop_id' => 'sourceShopId'
+        'product_group_id' => 'productGroupId',
+        'download_id' => 'downloadId'
     ];
 
 
@@ -108,12 +96,8 @@ class DiscountLineItem implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'order_id' => 'setOrderId',
-        'coupon_code' => 'setCouponCode',
-        'amount' => 'setAmount',
-        'amount_vat' => 'setAmountVat',
-        'source_id' => 'setSourceId',
-        'source_shop_id' => 'setSourceShopId'
+        'product_group_id' => 'setProductGroupId',
+        'download_id' => 'setDownloadId'
     ];
 
 
@@ -123,12 +107,8 @@ class DiscountLineItem implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'order_id' => 'getOrderId',
-        'coupon_code' => 'getCouponCode',
-        'amount' => 'getAmount',
-        'amount_vat' => 'getAmountVat',
-        'source_id' => 'getSourceId',
-        'source_shop_id' => 'getSourceShopId'
+        'product_group_id' => 'getProductGroupId',
+        'download_id' => 'getDownloadId'
     ];
 
     public static function attributeMap()
@@ -163,12 +143,8 @@ class DiscountLineItem implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['order_id'] = isset($data['order_id']) ? $data['order_id'] : null;
-        $this->container['coupon_code'] = isset($data['coupon_code']) ? $data['coupon_code'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['amount_vat'] = isset($data['amount_vat']) ? $data['amount_vat'] : null;
-        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
-        $this->container['source_shop_id'] = isset($data['source_shop_id']) ? $data['source_shop_id'] : null;
+        $this->container['product_group_id'] = isset($data['product_group_id']) ? $data['product_group_id'] : null;
+        $this->container['download_id'] = isset($data['download_id']) ? $data['download_id'] : null;
     }
 
     /**
@@ -183,23 +159,11 @@ class DiscountLineItem implements ArrayAccess
         if ($this->container['id'] === null) {
             $invalid_properties[] = "'id' can't be null";
         }
-        if ($this->container['order_id'] === null) {
-            $invalid_properties[] = "'order_id' can't be null";
+        if ($this->container['product_group_id'] === null) {
+            $invalid_properties[] = "'product_group_id' can't be null";
         }
-        if ($this->container['coupon_code'] === null) {
-            $invalid_properties[] = "'coupon_code' can't be null";
-        }
-        if ($this->container['amount'] === null) {
-            $invalid_properties[] = "'amount' can't be null";
-        }
-        if ($this->container['amount_vat'] === null) {
-            $invalid_properties[] = "'amount_vat' can't be null";
-        }
-        if ($this->container['source_id'] === null) {
-            $invalid_properties[] = "'source_id' can't be null";
-        }
-        if ($this->container['source_shop_id'] === null) {
-            $invalid_properties[] = "'source_shop_id' can't be null";
+        if ($this->container['download_id'] === null) {
+            $invalid_properties[] = "'download_id' can't be null";
         }
         return $invalid_properties;
     }
@@ -216,22 +180,10 @@ class DiscountLineItem implements ArrayAccess
         if ($this->container['id'] === null) {
             return false;
         }
-        if ($this->container['order_id'] === null) {
+        if ($this->container['product_group_id'] === null) {
             return false;
         }
-        if ($this->container['coupon_code'] === null) {
-            return false;
-        }
-        if ($this->container['amount'] === null) {
-            return false;
-        }
-        if ($this->container['amount_vat'] === null) {
-            return false;
-        }
-        if ($this->container['source_id'] === null) {
-            return false;
-        }
-        if ($this->container['source_shop_id'] === null) {
+        if ($this->container['download_id'] === null) {
             return false;
         }
         return true;
@@ -260,127 +212,43 @@ class DiscountLineItem implements ArrayAccess
     }
 
     /**
-     * Gets order_id
+     * Gets product_group_id
      * @return string
      */
-    public function getOrderId()
+    public function getProductGroupId()
     {
-        return $this->container['order_id'];
+        return $this->container['product_group_id'];
     }
 
     /**
-     * Sets order_id
-     * @param string $order_id
+     * Sets product_group_id
+     * @param string $product_group_id
      * @return $this
      */
-    public function setOrderId($order_id)
+    public function setProductGroupId($product_group_id)
     {
-        $this->container['order_id'] = $order_id;
+        $this->container['product_group_id'] = $product_group_id;
 
         return $this;
     }
 
     /**
-     * Gets coupon_code
+     * Gets download_id
      * @return string
      */
-    public function getCouponCode()
+    public function getDownloadId()
     {
-        return $this->container['coupon_code'];
+        return $this->container['download_id'];
     }
 
     /**
-     * Sets coupon_code
-     * @param string $coupon_code
+     * Sets download_id
+     * @param string $download_id
      * @return $this
      */
-    public function setCouponCode($coupon_code)
+    public function setDownloadId($download_id)
     {
-        $this->container['coupon_code'] = $coupon_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     * @return double
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     * @param double $amount
-     * @return $this
-     */
-    public function setAmount($amount)
-    {
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount_vat
-     * @return double
-     */
-    public function getAmountVat()
-    {
-        return $this->container['amount_vat'];
-    }
-
-    /**
-     * Sets amount_vat
-     * @param double $amount_vat
-     * @return $this
-     */
-    public function setAmountVat($amount_vat)
-    {
-        $this->container['amount_vat'] = $amount_vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets source_id
-     * @return double
-     */
-    public function getSourceId()
-    {
-        return $this->container['source_id'];
-    }
-
-    /**
-     * Sets source_id
-     * @param double $source_id
-     * @return $this
-     */
-    public function setSourceId($source_id)
-    {
-        $this->container['source_id'] = $source_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets source_shop_id
-     * @return double
-     */
-    public function getSourceShopId()
-    {
-        return $this->container['source_shop_id'];
-    }
-
-    /**
-     * Sets source_shop_id
-     * @param double $source_shop_id
-     * @return $this
-     */
-    public function setSourceShopId($source_shop_id)
-    {
-        $this->container['source_shop_id'] = $source_shop_id;
+        $this->container['download_id'] = $download_id;
 
         return $this;
     }

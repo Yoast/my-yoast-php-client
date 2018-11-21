@@ -59,6 +59,7 @@ class Subscription implements ArrayAccess
         'start_date' => '\DateTime',
         'end_date' => '\DateTime',
         'source_id' => 'double',
+        'source_line_item_id' => 'double',
         'source_shop_id' => 'double',
         'status' => 'string',
         'currency' => 'string',
@@ -84,6 +85,7 @@ class Subscription implements ArrayAccess
         'start_date' => 'date-time',
         'end_date' => 'date-time',
         'source_id' => 'double',
+        'source_line_item_id' => 'double',
         'source_shop_id' => 'double',
         'status' => null,
         'currency' => null,
@@ -119,6 +121,7 @@ class Subscription implements ArrayAccess
         'start_date' => 'startDate',
         'end_date' => 'endDate',
         'source_id' => 'sourceId',
+        'source_line_item_id' => 'sourceLineItemId',
         'source_shop_id' => 'sourceShopId',
         'status' => 'status',
         'currency' => 'currency',
@@ -145,6 +148,7 @@ class Subscription implements ArrayAccess
         'start_date' => 'setStartDate',
         'end_date' => 'setEndDate',
         'source_id' => 'setSourceId',
+        'source_line_item_id' => 'setSourceLineItemId',
         'source_shop_id' => 'setSourceShopId',
         'status' => 'setStatus',
         'currency' => 'setCurrency',
@@ -171,6 +175,7 @@ class Subscription implements ArrayAccess
         'start_date' => 'getStartDate',
         'end_date' => 'getEndDate',
         'source_id' => 'getSourceId',
+        'source_line_item_id' => 'getSourceLineItemId',
         'source_shop_id' => 'getSourceShopId',
         'status' => 'getStatus',
         'currency' => 'getCurrency',
@@ -222,6 +227,7 @@ class Subscription implements ArrayAccess
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
+        $this->container['source_line_item_id'] = isset($data['source_line_item_id']) ? $data['source_line_item_id'] : null;
         $this->container['source_shop_id'] = isset($data['source_shop_id']) ? $data['source_shop_id'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
@@ -399,6 +405,27 @@ class Subscription implements ArrayAccess
     public function setSourceId($source_id)
     {
         $this->container['source_id'] = $source_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_line_item_id
+     * @return double
+     */
+    public function getSourceLineItemId()
+    {
+        return $this->container['source_line_item_id'];
+    }
+
+    /**
+     * Sets source_line_item_id
+     * @param double $source_line_item_id
+     * @return $this
+     */
+    public function setSourceLineItemId($source_line_item_id)
+    {
+        $this->container['source_line_item_id'] = $source_line_item_id;
 
         return $this;
     }

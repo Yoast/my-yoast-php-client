@@ -73,6 +73,16 @@ class CourseEnrollmentApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for courseEnrollmentBulkInvite
+     *
+     * Bulk invites another Customer by email to use this Course Enrollment..
+     *
+     */
+    public function testCourseEnrollmentBulkInvite()
+    {
+    }
+
+    /**
      * Test case for courseEnrollmentCount
      *
      * Count instances of the model matched by where from the data source..

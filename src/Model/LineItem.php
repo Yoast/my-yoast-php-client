@@ -62,6 +62,8 @@ class LineItem implements ArrayAccess
         'product_id' => 'string',
         'product_name' => 'string',
         'quantity' => 'double',
+        'source_id' => 'double',
+        'source_shop_id' => 'double',
         'parent_id' => 'string'
     ];
 
@@ -78,6 +80,8 @@ class LineItem implements ArrayAccess
         'product_id' => null,
         'product_name' => null,
         'quantity' => 'double',
+        'source_id' => 'double',
+        'source_shop_id' => 'double',
         'parent_id' => null
     ];
 
@@ -104,6 +108,8 @@ class LineItem implements ArrayAccess
         'product_id' => 'productId',
         'product_name' => 'productName',
         'quantity' => 'quantity',
+        'source_id' => 'sourceId',
+        'source_shop_id' => 'sourceShopId',
         'parent_id' => 'parentId'
     ];
 
@@ -121,6 +127,8 @@ class LineItem implements ArrayAccess
         'product_id' => 'setProductId',
         'product_name' => 'setProductName',
         'quantity' => 'setQuantity',
+        'source_id' => 'setSourceId',
+        'source_shop_id' => 'setSourceShopId',
         'parent_id' => 'setParentId'
     ];
 
@@ -138,6 +146,8 @@ class LineItem implements ArrayAccess
         'product_id' => 'getProductId',
         'product_name' => 'getProductName',
         'quantity' => 'getQuantity',
+        'source_id' => 'getSourceId',
+        'source_shop_id' => 'getSourceShopId',
         'parent_id' => 'getParentId'
     ];
 
@@ -180,6 +190,8 @@ class LineItem implements ArrayAccess
         $this->container['product_id'] = isset($data['product_id']) ? $data['product_id'] : null;
         $this->container['product_name'] = isset($data['product_name']) ? $data['product_name'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : 1.0;
+        $this->container['source_id'] = isset($data['source_id']) ? $data['source_id'] : null;
+        $this->container['source_shop_id'] = isset($data['source_shop_id']) ? $data['source_shop_id'] : null;
         $this->container['parent_id'] = isset($data['parent_id']) ? $data['parent_id'] : null;
     }
 
@@ -216,6 +228,12 @@ class LineItem implements ArrayAccess
         if ($this->container['quantity'] === null) {
             $invalid_properties[] = "'quantity' can't be null";
         }
+        if ($this->container['source_id'] === null) {
+            $invalid_properties[] = "'source_id' can't be null";
+        }
+        if ($this->container['source_shop_id'] === null) {
+            $invalid_properties[] = "'source_shop_id' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -250,6 +268,12 @@ class LineItem implements ArrayAccess
             return false;
         }
         if ($this->container['quantity'] === null) {
+            return false;
+        }
+        if ($this->container['source_id'] === null) {
+            return false;
+        }
+        if ($this->container['source_shop_id'] === null) {
             return false;
         }
         return true;
@@ -420,6 +444,48 @@ class LineItem implements ArrayAccess
     public function setQuantity($quantity)
     {
         $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_id
+     * @return double
+     */
+    public function getSourceId()
+    {
+        return $this->container['source_id'];
+    }
+
+    /**
+     * Sets source_id
+     * @param double $source_id
+     * @return $this
+     */
+    public function setSourceId($source_id)
+    {
+        $this->container['source_id'] = $source_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_shop_id
+     * @return double
+     */
+    public function getSourceShopId()
+    {
+        return $this->container['source_shop_id'];
+    }
+
+    /**
+     * Sets source_shop_id
+     * @param double $source_shop_id
+     * @return $this
+     */
+    public function setSourceShopId($source_shop_id)
+    {
+        $this->container['source_shop_id'] = $source_shop_id;
 
         return $this;
     }

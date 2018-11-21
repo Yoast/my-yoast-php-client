@@ -111,4 +111,18 @@ class DiscountLineItemTest extends \PHPUnit_Framework_TestCase
     public function testPropertyAmountVat()
     {
     }
+
+    /**
+     * Test attribute "source_id"
+     */
+    public function testPropertySourceId()
+    {
+    }
+
+    /**
+     * Test attribute "source_shop_id"
+     */
+    public function testPropertySourceShopId()
+    {
+    }
 }
