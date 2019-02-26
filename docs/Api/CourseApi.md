@@ -16,20 +16,20 @@ Method | HTTP request | Description
 [**courseFindOne**](CourseApi.md#courseFindOne) | **GET** /Courses/findOne | Find first instance of the model matched by filter from the data source.
 [**courseFromAcademy**](CourseApi.md#courseFromAcademy) | **PUT** /Courses/fromAcademy | 
 [**coursePatchOrCreate**](CourseApi.md#coursePatchOrCreate) | **PATCH** /Courses | Patch an existing model instance or insert a new one into the data source.
-[**coursePrototypeCountProductGroup**](CourseApi.md#coursePrototypeCountProductGroup) | **GET** /Courses/{id}/productGroup/count | Counts productGroup of Course.
+[**coursePrototypeCountProductGroups**](CourseApi.md#coursePrototypeCountProductGroups) | **GET** /Courses/{id}/productGroups/count | Counts productGroups of Course.
 [**coursePrototypeCountProducts**](CourseApi.md#coursePrototypeCountProducts) | **GET** /Courses/{id}/products/count | Counts products of Course.
-[**coursePrototypeCreateProductGroup**](CourseApi.md#coursePrototypeCreateProductGroup) | **POST** /Courses/{id}/productGroup | Creates a new instance in productGroup of this model.
+[**coursePrototypeCreateProductGroups**](CourseApi.md#coursePrototypeCreateProductGroups) | **POST** /Courses/{id}/productGroups | Creates a new instance in productGroups of this model.
 [**coursePrototypeCreateProducts**](CourseApi.md#coursePrototypeCreateProducts) | **POST** /Courses/{id}/products | Creates a new instance in products of this model.
-[**coursePrototypeDeleteProductGroup**](CourseApi.md#coursePrototypeDeleteProductGroup) | **DELETE** /Courses/{id}/productGroup | Deletes all productGroup of this model.
+[**coursePrototypeDeleteProductGroups**](CourseApi.md#coursePrototypeDeleteProductGroups) | **DELETE** /Courses/{id}/productGroups | Deletes all productGroups of this model.
 [**coursePrototypeDeleteProducts**](CourseApi.md#coursePrototypeDeleteProducts) | **DELETE** /Courses/{id}/products | Deletes all products of this model.
-[**coursePrototypeDestroyByIdProductGroup**](CourseApi.md#coursePrototypeDestroyByIdProductGroup) | **DELETE** /Courses/{id}/productGroup/{fk} | Delete a related item by id for productGroup.
+[**coursePrototypeDestroyByIdProductGroups**](CourseApi.md#coursePrototypeDestroyByIdProductGroups) | **DELETE** /Courses/{id}/productGroups/{fk} | Delete a related item by id for productGroups.
 [**coursePrototypeDestroyByIdProducts**](CourseApi.md#coursePrototypeDestroyByIdProducts) | **DELETE** /Courses/{id}/products/{fk} | Delete a related item by id for products.
-[**coursePrototypeFindByIdProductGroup**](CourseApi.md#coursePrototypeFindByIdProductGroup) | **GET** /Courses/{id}/productGroup/{fk} | Find a related item by id for productGroup.
+[**coursePrototypeFindByIdProductGroups**](CourseApi.md#coursePrototypeFindByIdProductGroups) | **GET** /Courses/{id}/productGroups/{fk} | Find a related item by id for productGroups.
 [**coursePrototypeFindByIdProducts**](CourseApi.md#coursePrototypeFindByIdProducts) | **GET** /Courses/{id}/products/{fk} | Find a related item by id for products.
-[**coursePrototypeGetProductGroup**](CourseApi.md#coursePrototypeGetProductGroup) | **GET** /Courses/{id}/productGroup | Queries productGroup of Course.
+[**coursePrototypeGetProductGroups**](CourseApi.md#coursePrototypeGetProductGroups) | **GET** /Courses/{id}/productGroups | Queries productGroups of Course.
 [**coursePrototypeGetProducts**](CourseApi.md#coursePrototypeGetProducts) | **GET** /Courses/{id}/products | Queries products of Course.
 [**coursePrototypePatchAttributes**](CourseApi.md#coursePrototypePatchAttributes) | **PATCH** /Courses/{id} | Patch attributes for a model instance and persist it into the data source.
-[**coursePrototypeUpdateByIdProductGroup**](CourseApi.md#coursePrototypeUpdateByIdProductGroup) | **PUT** /Courses/{id}/productGroup/{fk} | Update a related item by id for productGroup.
+[**coursePrototypeUpdateByIdProductGroups**](CourseApi.md#coursePrototypeUpdateByIdProductGroups) | **PUT** /Courses/{id}/productGroups/{fk} | Update a related item by id for productGroups.
 [**coursePrototypeUpdateByIdProducts**](CourseApi.md#coursePrototypeUpdateByIdProducts) | **PUT** /Courses/{id}/products/{fk} | Update a related item by id for products.
 [**courseReplaceByIdPostCoursesidReplace**](CourseApi.md#courseReplaceByIdPostCoursesidReplace) | **POST** /Courses/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 [**courseReplaceByIdPutCoursesid**](CourseApi.md#courseReplaceByIdPutCoursesid) | **PUT** /Courses/{id} | Replace attributes for a model instance and persist it into the data source.
@@ -559,10 +559,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **coursePrototypeCountProductGroup**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 coursePrototypeCountProductGroup($id, $where)
+# **coursePrototypeCountProductGroups**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 coursePrototypeCountProductGroups($id, $where)
 
-Counts productGroup of Course.
+Counts productGroups of Course.
 
 ### Example
 ```php
@@ -574,10 +574,10 @@ $id = "id_example"; // string | Course id
 $where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $api_instance->coursePrototypeCountProductGroup($id, $where);
+    $result = $api_instance->coursePrototypeCountProductGroups($id, $where);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->coursePrototypeCountProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeCountProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -649,10 +649,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **coursePrototypeCreateProductGroup**
-> \Yoast\MyYoastApiClient\Model\ProductGroup coursePrototypeCreateProductGroup($id, $data)
+# **coursePrototypeCreateProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup coursePrototypeCreateProductGroups($id, $data)
 
-Creates a new instance in productGroup of this model.
+Creates a new instance in productGroups of this model.
 
 ### Example
 ```php
@@ -664,10 +664,10 @@ $id = "id_example"; // string | Course id
 $data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
 
 try {
-    $result = $api_instance->coursePrototypeCreateProductGroup($id, $data);
+    $result = $api_instance->coursePrototypeCreateProductGroups($id, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->coursePrototypeCreateProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeCreateProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -739,10 +739,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **coursePrototypeDeleteProductGroup**
-> coursePrototypeDeleteProductGroup($id)
+# **coursePrototypeDeleteProductGroups**
+> coursePrototypeDeleteProductGroups($id)
 
-Deletes all productGroup of this model.
+Deletes all productGroups of this model.
 
 ### Example
 ```php
@@ -753,9 +753,9 @@ $api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
 $id = "id_example"; // string | Course id
 
 try {
-    $api_instance->coursePrototypeDeleteProductGroup($id);
+    $api_instance->coursePrototypeDeleteProductGroups($id);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->coursePrototypeDeleteProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeDeleteProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -823,10 +823,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **coursePrototypeDestroyByIdProductGroup**
-> coursePrototypeDestroyByIdProductGroup($id, $fk)
+# **coursePrototypeDestroyByIdProductGroups**
+> coursePrototypeDestroyByIdProductGroups($id, $fk)
 
-Delete a related item by id for productGroup.
+Delete a related item by id for productGroups.
 
 ### Example
 ```php
@@ -835,12 +835,12 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
 $id = "id_example"; // string | Course id
-$fk = "fk_example"; // string | Foreign key for productGroup
+$fk = "fk_example"; // string | Foreign key for productGroups
 
 try {
-    $api_instance->coursePrototypeDestroyByIdProductGroup($id, $fk);
+    $api_instance->coursePrototypeDestroyByIdProductGroups($id, $fk);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->coursePrototypeDestroyByIdProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeDestroyByIdProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -850,7 +850,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Course id |
- **fk** | **string**| Foreign key for productGroup |
+ **fk** | **string**| Foreign key for productGroups |
 
 ### Return type
 
@@ -911,10 +911,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **coursePrototypeFindByIdProductGroup**
-> \Yoast\MyYoastApiClient\Model\ProductGroup coursePrototypeFindByIdProductGroup($id, $fk)
+# **coursePrototypeFindByIdProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup coursePrototypeFindByIdProductGroups($id, $fk)
 
-Find a related item by id for productGroup.
+Find a related item by id for productGroups.
 
 ### Example
 ```php
@@ -923,13 +923,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
 $id = "id_example"; // string | Course id
-$fk = "fk_example"; // string | Foreign key for productGroup
+$fk = "fk_example"; // string | Foreign key for productGroups
 
 try {
-    $result = $api_instance->coursePrototypeFindByIdProductGroup($id, $fk);
+    $result = $api_instance->coursePrototypeFindByIdProductGroups($id, $fk);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->coursePrototypeFindByIdProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeFindByIdProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -939,7 +939,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Course id |
- **fk** | **string**| Foreign key for productGroup |
+ **fk** | **string**| Foreign key for productGroups |
 
 ### Return type
 
@@ -1001,10 +1001,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **coursePrototypeGetProductGroup**
-> \Yoast\MyYoastApiClient\Model\ProductGroup[] coursePrototypeGetProductGroup($id, $filter)
+# **coursePrototypeGetProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup[] coursePrototypeGetProductGroups($id, $filter)
 
-Queries productGroup of Course.
+Queries productGroups of Course.
 
 ### Example
 ```php
@@ -1016,10 +1016,10 @@ $id = "id_example"; // string | Course id
 $filter = "filter_example"; // string | 
 
 try {
-    $result = $api_instance->coursePrototypeGetProductGroup($id, $filter);
+    $result = $api_instance->coursePrototypeGetProductGroups($id, $filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->coursePrototypeGetProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeGetProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1136,10 +1136,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **coursePrototypeUpdateByIdProductGroup**
-> \Yoast\MyYoastApiClient\Model\ProductGroup coursePrototypeUpdateByIdProductGroup($id, $fk, $data)
+# **coursePrototypeUpdateByIdProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup coursePrototypeUpdateByIdProductGroups($id, $fk, $data)
 
-Update a related item by id for productGroup.
+Update a related item by id for productGroups.
 
 ### Example
 ```php
@@ -1148,14 +1148,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
 $id = "id_example"; // string | Course id
-$fk = "fk_example"; // string | Foreign key for productGroup
+$fk = "fk_example"; // string | Foreign key for productGroups
 $data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
 
 try {
-    $result = $api_instance->coursePrototypeUpdateByIdProductGroup($id, $fk, $data);
+    $result = $api_instance->coursePrototypeUpdateByIdProductGroups($id, $fk, $data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->coursePrototypeUpdateByIdProductGroup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeUpdateByIdProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1165,7 +1165,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Course id |
- **fk** | **string**| Foreign key for productGroup |
+ **fk** | **string**| Foreign key for productGroups |
  **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  | [optional]
 
 ### Return type

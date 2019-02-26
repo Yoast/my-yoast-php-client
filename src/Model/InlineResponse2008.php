@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2005
+ * InlineResponse2008
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Yoast\MyYoastApiClient\Model;
 use \ArrayAccess;
 
 /**
- * InlineResponse2005 Class Doc Comment
+ * InlineResponse2008 Class Doc Comment
  *
  * @category    Class
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2005 implements ArrayAccess
+class InlineResponse2008 implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class InlineResponse2005 implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'inline_response_200_5';
+    protected static $swaggerModelName = 'inline_response_200_8';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,8 +55,7 @@ class InlineResponse2005 implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'body' => 'object',
-        'content_type' => 'string',
-        'content_disposition' => 'string'
+        'content_type' => 'string'
     ];
 
     /**
@@ -65,8 +64,7 @@ class InlineResponse2005 implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'body' => null,
-        'content_type' => null,
-        'content_disposition' => null
+        'content_type' => null
     ];
 
     public static function swaggerTypes()
@@ -85,8 +83,7 @@ class InlineResponse2005 implements ArrayAccess
      */
     protected static $attributeMap = [
         'body' => 'body',
-        'content_type' => 'Content-Type',
-        'content_disposition' => 'Content-Disposition'
+        'content_type' => 'Content-Type'
     ];
 
 
@@ -96,8 +93,7 @@ class InlineResponse2005 implements ArrayAccess
      */
     protected static $setters = [
         'body' => 'setBody',
-        'content_type' => 'setContentType',
-        'content_disposition' => 'setContentDisposition'
+        'content_type' => 'setContentType'
     ];
 
 
@@ -107,8 +103,7 @@ class InlineResponse2005 implements ArrayAccess
      */
     protected static $getters = [
         'body' => 'getBody',
-        'content_type' => 'getContentType',
-        'content_disposition' => 'getContentDisposition'
+        'content_type' => 'getContentType'
     ];
 
     public static function attributeMap()
@@ -144,7 +139,6 @@ class InlineResponse2005 implements ArrayAccess
     {
         $this->container['body'] = isset($data['body']) ? $data['body'] : null;
         $this->container['content_type'] = isset($data['content_type']) ? $data['content_type'] : null;
-        $this->container['content_disposition'] = isset($data['content_disposition']) ? $data['content_disposition'] : null;
     }
 
     /**
@@ -210,27 +204,6 @@ class InlineResponse2005 implements ArrayAccess
     public function setContentType($content_type)
     {
         $this->container['content_type'] = $content_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets content_disposition
-     * @return string
-     */
-    public function getContentDisposition()
-    {
-        return $this->container['content_disposition'];
-    }
-
-    /**
-     * Sets content_disposition
-     * @param string $content_disposition
-     * @return $this
-     */
-    public function setContentDisposition($content_disposition)
-    {
-        $this->container['content_disposition'] = $content_disposition;
 
         return $this;
     }

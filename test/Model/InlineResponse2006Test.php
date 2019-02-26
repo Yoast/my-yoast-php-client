@@ -78,9 +78,9 @@ class InlineResponse2006Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "nonce"
+     * Test attribute "undefined"
      */
-    public function testPropertyNonce()
+    public function testPropertyUndefined()
     {
     }
 }

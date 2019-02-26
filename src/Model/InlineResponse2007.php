@@ -54,8 +54,7 @@ class InlineResponse2007 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'body' => 'object',
-        'content_type' => 'string'
+        'nonce' => 'string'
     ];
 
     /**
@@ -63,8 +62,7 @@ class InlineResponse2007 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'body' => null,
-        'content_type' => null
+        'nonce' => null
     ];
 
     public static function swaggerTypes()
@@ -82,8 +80,7 @@ class InlineResponse2007 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'body' => 'body',
-        'content_type' => 'Content-Type'
+        'nonce' => 'nonce'
     ];
 
 
@@ -92,8 +89,7 @@ class InlineResponse2007 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'body' => 'setBody',
-        'content_type' => 'setContentType'
+        'nonce' => 'setNonce'
     ];
 
 
@@ -102,8 +98,7 @@ class InlineResponse2007 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'body' => 'getBody',
-        'content_type' => 'getContentType'
+        'nonce' => 'getNonce'
     ];
 
     public static function attributeMap()
@@ -137,8 +132,7 @@ class InlineResponse2007 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['body'] = isset($data['body']) ? $data['body'] : null;
-        $this->container['content_type'] = isset($data['content_type']) ? $data['content_type'] : null;
+        $this->container['nonce'] = isset($data['nonce']) ? $data['nonce'] : null;
     }
 
     /**
@@ -167,43 +161,22 @@ class InlineResponse2007 implements ArrayAccess
 
 
     /**
-     * Gets body
-     * @return object
-     */
-    public function getBody()
-    {
-        return $this->container['body'];
-    }
-
-    /**
-     * Sets body
-     * @param object $body
-     * @return $this
-     */
-    public function setBody($body)
-    {
-        $this->container['body'] = $body;
-
-        return $this;
-    }
-
-    /**
-     * Gets content_type
+     * Gets nonce
      * @return string
      */
-    public function getContentType()
+    public function getNonce()
     {
-        return $this->container['content_type'];
+        return $this->container['nonce'];
     }
 
     /**
-     * Sets content_type
-     * @param string $content_type
+     * Sets nonce
+     * @param string $nonce
      * @return $this
      */
-    public function setContentType($content_type)
+    public function setNonce($nonce)
     {
-        $this->container['content_type'] = $content_type;
+        $this->container['nonce'] = $nonce;
 
         return $this;
     }

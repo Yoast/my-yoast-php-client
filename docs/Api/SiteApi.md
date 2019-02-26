@@ -4,16 +4,19 @@ All URIs are relative to *https://localhost/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**siteConnect**](SiteApi.md#siteConnect) | **POST** /Sites/connect | 
 [**siteCount**](SiteApi.md#siteCount) | **GET** /Sites/count | Count instances of the model matched by where from the data source.
 [**siteCreate**](SiteApi.md#siteCreate) | **POST** /Sites | Create a new instance of the model and persist it into the data source.
 [**siteCreateChangeStreamGetSitesChangeStream**](SiteApi.md#siteCreateChangeStreamGetSitesChangeStream) | **GET** /Sites/change-stream | Create a change stream.
 [**siteCreateChangeStreamPostSitesChangeStream**](SiteApi.md#siteCreateChangeStreamPostSitesChangeStream) | **POST** /Sites/change-stream | Create a change stream.
+[**siteCurrent**](SiteApi.md#siteCurrent) | **GET** /Sites/current | 
 [**siteDeleteById**](SiteApi.md#siteDeleteById) | **DELETE** /Sites/{id} | Delete a model instance by {{id}} from the data source.
 [**siteExistsGetSitesidExists**](SiteApi.md#siteExistsGetSitesidExists) | **GET** /Sites/{id}/exists | Check whether a model instance exists in the data source.
 [**siteExistsHeadSitesid**](SiteApi.md#siteExistsHeadSitesid) | **HEAD** /Sites/{id} | Check whether a model instance exists in the data source.
 [**siteFind**](SiteApi.md#siteFind) | **GET** /Sites | Find all instances of the model matched by filter from the data source.
 [**siteFindById**](SiteApi.md#siteFindById) | **GET** /Sites/{id} | Find a model instance by {{id}} from the data source.
 [**siteFindOne**](SiteApi.md#siteFindOne) | **GET** /Sites/findOne | Find first instance of the model matched by filter from the data source.
+[**siteIndex**](SiteApi.md#siteIndex) | **POST** /Sites/index | 
 [**sitePatchOrCreate**](SiteApi.md#sitePatchOrCreate) | **PATCH** /Sites | Patch an existing model instance or insert a new one into the data source.
 [**sitePrototypeCountSubscriptions**](SiteApi.md#sitePrototypeCountSubscriptions) | **GET** /Sites/{id}/subscriptions/count | Counts subscriptions of Site.
 [**sitePrototypeCreateConfigurationServiceRequest**](SiteApi.md#sitePrototypeCreateConfigurationServiceRequest) | **POST** /Sites/{id}/configurationServiceRequest | Creates a new instance in configurationServiceRequest of this model.
@@ -41,6 +44,59 @@ Method | HTTP request | Description
 [**siteUpdateAll**](SiteApi.md#siteUpdateAll) | **POST** /Sites/update | Update instances of the model matched by {{where}} from the data source.
 [**siteUpsertWithWhere**](SiteApi.md#siteUpsertWithWhere) | **POST** /Sites/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
+
+# **siteConnect**
+> string siteConnect($url, $client_id, $extensions, $redirect_url, $credentials_url, $type)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$url = "url_example"; // string | 
+$client_id = "client_id_example"; // string | 
+$extensions = "extensions_example"; // string | 
+$redirect_url = "redirect_url_example"; // string | 
+$credentials_url = "credentials_url_example"; // string | 
+$type = "type_example"; // string | 
+
+try {
+    $result = $api_instance->siteConnect($url, $client_id, $extensions, $redirect_url, $credentials_url, $type);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->siteConnect: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **url** | **string**|  |
+ **client_id** | **string**|  |
+ **extensions** | **string**|  |
+ **redirect_url** | **string**|  |
+ **credentials_url** | **string**|  |
+ **type** | **string**|  |
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **siteCount**
 > \Yoast\MyYoastApiClient\Model\InlineResponse200 siteCount($where)
@@ -202,6 +258,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\SplFileObject**](../Model/\SplFileObject.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **siteCurrent**
+> object siteCurrent($token, $url)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$token = "token_example"; // string | 
+$url = "url_example"; // string | 
+
+try {
+    $result = $api_instance->siteCurrent($token, $url);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->siteCurrent: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**|  | [optional]
+ **url** | **string**|  | [optional]
+
+### Return type
+
+**object**
 
 ### Authorization
 
@@ -462,6 +563,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **siteIndex**
+> object siteIndex($token, $url, $method)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+$token = "token_example"; // string | 
+$url = "url_example"; // string | 
+$method = "method_example"; // string | 
+
+try {
+    $result = $api_instance->siteIndex($token, $url, $method);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->siteIndex: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **string**|  |
+ **url** | **string**|  |
+ **method** | **string**|  |
+
+### Return type
+
+**object**
 
 ### Authorization
 

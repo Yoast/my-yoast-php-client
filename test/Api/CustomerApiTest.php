@@ -333,6 +333,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for customerNewsletterSubscribeByEmail
+     *
+     * Subscribes a customer to the newsletter..
+     *
+     */
+    public function testCustomerNewsletterSubscribeByEmail()
+    {
+    }
+
+    /**
      * Test case for customerNewsletterUnsubscribe
      *
      * Unsubscribes a customer from the newsletter..

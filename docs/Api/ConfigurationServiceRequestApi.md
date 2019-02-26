@@ -1042,7 +1042,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **configurationServiceRequestReport**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2007 configurationServiceRequestReport($id)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2008 configurationServiceRequestReport($id)
 
 
 
@@ -1071,7 +1071,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
 
 ### Authorization
 

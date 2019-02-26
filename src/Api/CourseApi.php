@@ -1026,39 +1026,39 @@ class CourseApi
     }
 
     /**
-     * Operation coursePrototypeCountProductGroup
+     * Operation coursePrototypeCountProductGroups
      *
-     * Counts productGroup of Course.
+     * Counts productGroups of Course.
      *
      * @param string $id Course id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
      */
-    public function coursePrototypeCountProductGroup($id, $where = null)
+    public function coursePrototypeCountProductGroups($id, $where = null)
     {
-        list($response) = $this->coursePrototypeCountProductGroupWithHttpInfo($id, $where);
+        list($response) = $this->coursePrototypeCountProductGroupsWithHttpInfo($id, $where);
         return $response;
     }
 
     /**
-     * Operation coursePrototypeCountProductGroupWithHttpInfo
+     * Operation coursePrototypeCountProductGroupsWithHttpInfo
      *
-     * Counts productGroup of Course.
+     * Counts productGroups of Course.
      *
      * @param string $id Course id (required)
      * @param string $where Criteria to match model instances (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePrototypeCountProductGroupWithHttpInfo($id, $where = null)
+    public function coursePrototypeCountProductGroupsWithHttpInfo($id, $where = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeCountProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeCountProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup/count";
+        $resourcePath = "/Courses/{id}/productGroups/count";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1097,7 +1097,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\InlineResponse200',
-                '/Courses/{id}/productGroup/count'
+                '/Courses/{id}/productGroups/count'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse200', $httpHeader), $statusCode, $httpHeader];
@@ -1202,39 +1202,39 @@ class CourseApi
     }
 
     /**
-     * Operation coursePrototypeCreateProductGroup
+     * Operation coursePrototypeCreateProductGroups
      *
-     * Creates a new instance in productGroup of this model.
+     * Creates a new instance in productGroups of this model.
      *
      * @param string $id Course id (required)
      * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function coursePrototypeCreateProductGroup($id, $data = null)
+    public function coursePrototypeCreateProductGroups($id, $data = null)
     {
-        list($response) = $this->coursePrototypeCreateProductGroupWithHttpInfo($id, $data);
+        list($response) = $this->coursePrototypeCreateProductGroupsWithHttpInfo($id, $data);
         return $response;
     }
 
     /**
-     * Operation coursePrototypeCreateProductGroupWithHttpInfo
+     * Operation coursePrototypeCreateProductGroupsWithHttpInfo
      *
-     * Creates a new instance in productGroup of this model.
+     * Creates a new instance in productGroups of this model.
      *
      * @param string $id Course id (required)
      * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePrototypeCreateProductGroupWithHttpInfo($id, $data = null)
+    public function coursePrototypeCreateProductGroupsWithHttpInfo($id, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeCreateProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeCreateProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup";
+        $resourcePath = "/Courses/{id}/productGroups";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1274,7 +1274,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\ProductGroup',
-                '/Courses/{id}/productGroup'
+                '/Courses/{id}/productGroups'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
@@ -1380,37 +1380,37 @@ class CourseApi
     }
 
     /**
-     * Operation coursePrototypeDeleteProductGroup
+     * Operation coursePrototypeDeleteProductGroups
      *
-     * Deletes all productGroup of this model.
+     * Deletes all productGroups of this model.
      *
      * @param string $id Course id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function coursePrototypeDeleteProductGroup($id)
+    public function coursePrototypeDeleteProductGroups($id)
     {
-        list($response) = $this->coursePrototypeDeleteProductGroupWithHttpInfo($id);
+        list($response) = $this->coursePrototypeDeleteProductGroupsWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation coursePrototypeDeleteProductGroupWithHttpInfo
+     * Operation coursePrototypeDeleteProductGroupsWithHttpInfo
      *
-     * Deletes all productGroup of this model.
+     * Deletes all productGroups of this model.
      *
      * @param string $id Course id (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePrototypeDeleteProductGroupWithHttpInfo($id)
+    public function coursePrototypeDeleteProductGroupsWithHttpInfo($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeDeleteProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeDeleteProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup";
+        $resourcePath = "/Courses/{id}/productGroups";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1445,7 +1445,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/Courses/{id}/productGroup'
+                '/Courses/{id}/productGroups'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -1536,43 +1536,43 @@ class CourseApi
     }
 
     /**
-     * Operation coursePrototypeDestroyByIdProductGroup
+     * Operation coursePrototypeDestroyByIdProductGroups
      *
-     * Delete a related item by id for productGroup.
+     * Delete a related item by id for productGroups.
      *
      * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return void
      */
-    public function coursePrototypeDestroyByIdProductGroup($id, $fk)
+    public function coursePrototypeDestroyByIdProductGroups($id, $fk)
     {
-        list($response) = $this->coursePrototypeDestroyByIdProductGroupWithHttpInfo($id, $fk);
+        list($response) = $this->coursePrototypeDestroyByIdProductGroupsWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation coursePrototypeDestroyByIdProductGroupWithHttpInfo
+     * Operation coursePrototypeDestroyByIdProductGroupsWithHttpInfo
      *
-     * Delete a related item by id for productGroup.
+     * Delete a related item by id for productGroups.
      *
      * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePrototypeDestroyByIdProductGroupWithHttpInfo($id, $fk)
+    public function coursePrototypeDestroyByIdProductGroupsWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeDestroyByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeDestroyByIdProductGroups');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeDestroyByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeDestroyByIdProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup/{fk}";
+        $resourcePath = "/Courses/{id}/productGroups/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1615,7 +1615,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 null,
-                '/Courses/{id}/productGroup/{fk}'
+                '/Courses/{id}/productGroups/{fk}'
             );
 
             return [null, $statusCode, $httpHeader];
@@ -1720,43 +1720,43 @@ class CourseApi
     }
 
     /**
-     * Operation coursePrototypeFindByIdProductGroup
+     * Operation coursePrototypeFindByIdProductGroups
      *
-     * Find a related item by id for productGroup.
+     * Find a related item by id for productGroups.
      *
      * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function coursePrototypeFindByIdProductGroup($id, $fk)
+    public function coursePrototypeFindByIdProductGroups($id, $fk)
     {
-        list($response) = $this->coursePrototypeFindByIdProductGroupWithHttpInfo($id, $fk);
+        list($response) = $this->coursePrototypeFindByIdProductGroupsWithHttpInfo($id, $fk);
         return $response;
     }
 
     /**
-     * Operation coursePrototypeFindByIdProductGroupWithHttpInfo
+     * Operation coursePrototypeFindByIdProductGroupsWithHttpInfo
      *
-     * Find a related item by id for productGroup.
+     * Find a related item by id for productGroups.
      *
      * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePrototypeFindByIdProductGroupWithHttpInfo($id, $fk)
+    public function coursePrototypeFindByIdProductGroupsWithHttpInfo($id, $fk)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeFindByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeFindByIdProductGroups');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeFindByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeFindByIdProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup/{fk}";
+        $resourcePath = "/Courses/{id}/productGroups/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1799,7 +1799,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\ProductGroup',
-                '/Courses/{id}/productGroup/{fk}'
+                '/Courses/{id}/productGroups/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];
@@ -1912,39 +1912,39 @@ class CourseApi
     }
 
     /**
-     * Operation coursePrototypeGetProductGroup
+     * Operation coursePrototypeGetProductGroups
      *
-     * Queries productGroup of Course.
+     * Queries productGroups of Course.
      *
      * @param string $id Course id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup[]
      */
-    public function coursePrototypeGetProductGroup($id, $filter = null)
+    public function coursePrototypeGetProductGroups($id, $filter = null)
     {
-        list($response) = $this->coursePrototypeGetProductGroupWithHttpInfo($id, $filter);
+        list($response) = $this->coursePrototypeGetProductGroupsWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation coursePrototypeGetProductGroupWithHttpInfo
+     * Operation coursePrototypeGetProductGroupsWithHttpInfo
      *
-     * Queries productGroup of Course.
+     * Queries productGroups of Course.
      *
      * @param string $id Course id (required)
      * @param string $filter  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePrototypeGetProductGroupWithHttpInfo($id, $filter = null)
+    public function coursePrototypeGetProductGroupsWithHttpInfo($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeGetProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeGetProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup";
+        $resourcePath = "/Courses/{id}/productGroups";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -1983,7 +1983,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\ProductGroup[]',
-                '/Courses/{id}/productGroup'
+                '/Courses/{id}/productGroups'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup[]', $httpHeader), $statusCode, $httpHeader];
@@ -2177,45 +2177,45 @@ class CourseApi
     }
 
     /**
-     * Operation coursePrototypeUpdateByIdProductGroup
+     * Operation coursePrototypeUpdateByIdProductGroups
      *
-     * Update a related item by id for productGroup.
+     * Update a related item by id for productGroups.
      *
      * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function coursePrototypeUpdateByIdProductGroup($id, $fk, $data = null)
+    public function coursePrototypeUpdateByIdProductGroups($id, $fk, $data = null)
     {
-        list($response) = $this->coursePrototypeUpdateByIdProductGroupWithHttpInfo($id, $fk, $data);
+        list($response) = $this->coursePrototypeUpdateByIdProductGroupsWithHttpInfo($id, $fk, $data);
         return $response;
     }
 
     /**
-     * Operation coursePrototypeUpdateByIdProductGroupWithHttpInfo
+     * Operation coursePrototypeUpdateByIdProductGroupsWithHttpInfo
      *
-     * Update a related item by id for productGroup.
+     * Update a related item by id for productGroups.
      *
      * @param string $id Course id (required)
-     * @param string $fk Foreign key for productGroup (required)
+     * @param string $fk Foreign key for productGroups (required)
      * @param \Yoast\MyYoastApiClient\Model\ProductGroup $data  (optional)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function coursePrototypeUpdateByIdProductGroupWithHttpInfo($id, $fk, $data = null)
+    public function coursePrototypeUpdateByIdProductGroupsWithHttpInfo($id, $fk, $data = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeUpdateByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling coursePrototypeUpdateByIdProductGroups');
         }
         // verify the required parameter 'fk' is set
         if ($fk === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeUpdateByIdProductGroup');
+            throw new \InvalidArgumentException('Missing the required parameter $fk when calling coursePrototypeUpdateByIdProductGroups');
         }
         // parse inputs
-        $resourcePath = "/Courses/{id}/productGroup/{fk}";
+        $resourcePath = "/Courses/{id}/productGroups/{fk}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -2263,7 +2263,7 @@ class CourseApi
                 $httpBody,
                 $headerParams,
                 '\Yoast\MyYoastApiClient\Model\ProductGroup',
-                '/Courses/{id}/productGroup/{fk}'
+                '/Courses/{id}/productGroups/{fk}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\ProductGroup', $httpHeader), $statusCode, $httpHeader];

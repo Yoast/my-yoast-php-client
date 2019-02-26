@@ -135,20 +135,20 @@ Class | Method | HTTP request | Description
 *CourseApi* | [**courseFindOne**](docs/Api/CourseApi.md#coursefindone) | **GET** /Courses/findOne | Find first instance of the model matched by filter from the data source.
 *CourseApi* | [**courseFromAcademy**](docs/Api/CourseApi.md#coursefromacademy) | **PUT** /Courses/fromAcademy | 
 *CourseApi* | [**coursePatchOrCreate**](docs/Api/CourseApi.md#coursepatchorcreate) | **PATCH** /Courses | Patch an existing model instance or insert a new one into the data source.
-*CourseApi* | [**coursePrototypeCountProductGroup**](docs/Api/CourseApi.md#courseprototypecountproductgroup) | **GET** /Courses/{id}/productGroup/count | Counts productGroup of Course.
+*CourseApi* | [**coursePrototypeCountProductGroups**](docs/Api/CourseApi.md#courseprototypecountproductgroups) | **GET** /Courses/{id}/productGroups/count | Counts productGroups of Course.
 *CourseApi* | [**coursePrototypeCountProducts**](docs/Api/CourseApi.md#courseprototypecountproducts) | **GET** /Courses/{id}/products/count | Counts products of Course.
-*CourseApi* | [**coursePrototypeCreateProductGroup**](docs/Api/CourseApi.md#courseprototypecreateproductgroup) | **POST** /Courses/{id}/productGroup | Creates a new instance in productGroup of this model.
+*CourseApi* | [**coursePrototypeCreateProductGroups**](docs/Api/CourseApi.md#courseprototypecreateproductgroups) | **POST** /Courses/{id}/productGroups | Creates a new instance in productGroups of this model.
 *CourseApi* | [**coursePrototypeCreateProducts**](docs/Api/CourseApi.md#courseprototypecreateproducts) | **POST** /Courses/{id}/products | Creates a new instance in products of this model.
-*CourseApi* | [**coursePrototypeDeleteProductGroup**](docs/Api/CourseApi.md#courseprototypedeleteproductgroup) | **DELETE** /Courses/{id}/productGroup | Deletes all productGroup of this model.
+*CourseApi* | [**coursePrototypeDeleteProductGroups**](docs/Api/CourseApi.md#courseprototypedeleteproductgroups) | **DELETE** /Courses/{id}/productGroups | Deletes all productGroups of this model.
 *CourseApi* | [**coursePrototypeDeleteProducts**](docs/Api/CourseApi.md#courseprototypedeleteproducts) | **DELETE** /Courses/{id}/products | Deletes all products of this model.
-*CourseApi* | [**coursePrototypeDestroyByIdProductGroup**](docs/Api/CourseApi.md#courseprototypedestroybyidproductgroup) | **DELETE** /Courses/{id}/productGroup/{fk} | Delete a related item by id for productGroup.
+*CourseApi* | [**coursePrototypeDestroyByIdProductGroups**](docs/Api/CourseApi.md#courseprototypedestroybyidproductgroups) | **DELETE** /Courses/{id}/productGroups/{fk} | Delete a related item by id for productGroups.
 *CourseApi* | [**coursePrototypeDestroyByIdProducts**](docs/Api/CourseApi.md#courseprototypedestroybyidproducts) | **DELETE** /Courses/{id}/products/{fk} | Delete a related item by id for products.
-*CourseApi* | [**coursePrototypeFindByIdProductGroup**](docs/Api/CourseApi.md#courseprototypefindbyidproductgroup) | **GET** /Courses/{id}/productGroup/{fk} | Find a related item by id for productGroup.
+*CourseApi* | [**coursePrototypeFindByIdProductGroups**](docs/Api/CourseApi.md#courseprototypefindbyidproductgroups) | **GET** /Courses/{id}/productGroups/{fk} | Find a related item by id for productGroups.
 *CourseApi* | [**coursePrototypeFindByIdProducts**](docs/Api/CourseApi.md#courseprototypefindbyidproducts) | **GET** /Courses/{id}/products/{fk} | Find a related item by id for products.
-*CourseApi* | [**coursePrototypeGetProductGroup**](docs/Api/CourseApi.md#courseprototypegetproductgroup) | **GET** /Courses/{id}/productGroup | Queries productGroup of Course.
+*CourseApi* | [**coursePrototypeGetProductGroups**](docs/Api/CourseApi.md#courseprototypegetproductgroups) | **GET** /Courses/{id}/productGroups | Queries productGroups of Course.
 *CourseApi* | [**coursePrototypeGetProducts**](docs/Api/CourseApi.md#courseprototypegetproducts) | **GET** /Courses/{id}/products | Queries products of Course.
 *CourseApi* | [**coursePrototypePatchAttributes**](docs/Api/CourseApi.md#courseprototypepatchattributes) | **PATCH** /Courses/{id} | Patch attributes for a model instance and persist it into the data source.
-*CourseApi* | [**coursePrototypeUpdateByIdProductGroup**](docs/Api/CourseApi.md#courseprototypeupdatebyidproductgroup) | **PUT** /Courses/{id}/productGroup/{fk} | Update a related item by id for productGroup.
+*CourseApi* | [**coursePrototypeUpdateByIdProductGroups**](docs/Api/CourseApi.md#courseprototypeupdatebyidproductgroups) | **PUT** /Courses/{id}/productGroups/{fk} | Update a related item by id for productGroups.
 *CourseApi* | [**coursePrototypeUpdateByIdProducts**](docs/Api/CourseApi.md#courseprototypeupdatebyidproducts) | **PUT** /Courses/{id}/products/{fk} | Update a related item by id for products.
 *CourseApi* | [**courseReplaceByIdPostCoursesidReplace**](docs/Api/CourseApi.md#coursereplacebyidpostcoursesidreplace) | **POST** /Courses/{id}/replace | Replace attributes for a model instance and persist it into the data source.
 *CourseApi* | [**courseReplaceByIdPutCoursesid**](docs/Api/CourseApi.md#coursereplacebyidputcoursesid) | **PUT** /Courses/{id} | Replace attributes for a model instance and persist it into the data source.
@@ -168,6 +168,7 @@ Class | Method | HTTP request | Description
 *CourseEnrollmentApi* | [**courseEnrollmentFindById**](docs/Api/CourseEnrollmentApi.md#courseenrollmentfindbyid) | **GET** /CourseEnrollments/{id} | Find a model instance by {{id}} from the data source.
 *CourseEnrollmentApi* | [**courseEnrollmentFindOne**](docs/Api/CourseEnrollmentApi.md#courseenrollmentfindone) | **GET** /CourseEnrollments/findOne | Find first instance of the model matched by filter from the data source.
 *CourseEnrollmentApi* | [**courseEnrollmentFromAcademy**](docs/Api/CourseEnrollmentApi.md#courseenrollmentfromacademy) | **PUT** /CourseEnrollments/fromAcademy | 
+*CourseEnrollmentApi* | [**courseEnrollmentGetLegacyExpiring**](docs/Api/CourseEnrollmentApi.md#courseenrollmentgetlegacyexpiring) | **GET** /CourseEnrollments/getLegacyExpiring | 
 *CourseEnrollmentApi* | [**courseEnrollmentInvite**](docs/Api/CourseEnrollmentApi.md#courseenrollmentinvite) | **POST** /CourseEnrollments/{id}/invite | Invites another Customer by email to use this Course Enrollment.
 *CourseEnrollmentApi* | [**courseEnrollmentPatchOrCreate**](docs/Api/CourseEnrollmentApi.md#courseenrollmentpatchorcreate) | **PATCH** /CourseEnrollments | Patch an existing model instance or insert a new one into the data source.
 *CourseEnrollmentApi* | [**courseEnrollmentPrototypeGetBuyer**](docs/Api/CourseEnrollmentApi.md#courseenrollmentprototypegetbuyer) | **GET** /CourseEnrollments/{id}/buyer | Fetches belongsTo relation buyer.
@@ -208,6 +209,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**customerLogoutUser**](docs/Api/CustomerApi.md#customerlogoutuser) | **POST** /Customers/logout-user | Log a user out on yoast.com
 *CustomerApi* | [**customerNewsletterStatus**](docs/Api/CustomerApi.md#customernewsletterstatus) | **GET** /Customers/{id}/newsletter | Returns the newsletter status for a customer.
 *CustomerApi* | [**customerNewsletterSubscribe**](docs/Api/CustomerApi.md#customernewslettersubscribe) | **POST** /Customers/{id}/newsletter | Subscribes a customer to the newsletter.
+*CustomerApi* | [**customerNewsletterSubscribeByEmail**](docs/Api/CustomerApi.md#customernewslettersubscribebyemail) | **POST** /Customers/newsletter/{list}/subscribe | Subscribes a customer to the newsletter.
 *CustomerApi* | [**customerNewsletterUnsubscribe**](docs/Api/CustomerApi.md#customernewsletterunsubscribe) | **DELETE** /Customers/{id}/newsletter | Unsubscribes a customer from the newsletter.
 *CustomerApi* | [**customerPatchOrCreate**](docs/Api/CustomerApi.md#customerpatchorcreate) | **PATCH** /Customers | Patch an existing model instance or insert a new one into the data source.
 *CustomerApi* | [**customerPatchProfile**](docs/Api/CustomerApi.md#customerpatchprofile) | **PATCH** /Customers/{id}/profile | Updates the profile with the supplied information.
@@ -686,16 +688,19 @@ Class | Method | HTTP request | Description
 *RefundLineItemApi* | [**refundLineItemReplaceOrCreatePutRefundLineItems**](docs/Api/RefundLineItemApi.md#refundlineitemreplaceorcreateputrefundlineitems) | **PUT** /RefundLineItems | Replace an existing model instance or insert a new one into the data source.
 *RefundLineItemApi* | [**refundLineItemUpdateAll**](docs/Api/RefundLineItemApi.md#refundlineitemupdateall) | **POST** /RefundLineItems/update | Update instances of the model matched by {{where}} from the data source.
 *RefundLineItemApi* | [**refundLineItemUpsertWithWhere**](docs/Api/RefundLineItemApi.md#refundlineitemupsertwithwhere) | **POST** /RefundLineItems/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+*SiteApi* | [**siteConnect**](docs/Api/SiteApi.md#siteconnect) | **POST** /Sites/connect | 
 *SiteApi* | [**siteCount**](docs/Api/SiteApi.md#sitecount) | **GET** /Sites/count | Count instances of the model matched by where from the data source.
 *SiteApi* | [**siteCreate**](docs/Api/SiteApi.md#sitecreate) | **POST** /Sites | Create a new instance of the model and persist it into the data source.
 *SiteApi* | [**siteCreateChangeStreamGetSitesChangeStream**](docs/Api/SiteApi.md#sitecreatechangestreamgetsiteschangestream) | **GET** /Sites/change-stream | Create a change stream.
 *SiteApi* | [**siteCreateChangeStreamPostSitesChangeStream**](docs/Api/SiteApi.md#sitecreatechangestreampostsiteschangestream) | **POST** /Sites/change-stream | Create a change stream.
+*SiteApi* | [**siteCurrent**](docs/Api/SiteApi.md#sitecurrent) | **GET** /Sites/current | 
 *SiteApi* | [**siteDeleteById**](docs/Api/SiteApi.md#sitedeletebyid) | **DELETE** /Sites/{id} | Delete a model instance by {{id}} from the data source.
 *SiteApi* | [**siteExistsGetSitesidExists**](docs/Api/SiteApi.md#siteexistsgetsitesidexists) | **GET** /Sites/{id}/exists | Check whether a model instance exists in the data source.
 *SiteApi* | [**siteExistsHeadSitesid**](docs/Api/SiteApi.md#siteexistsheadsitesid) | **HEAD** /Sites/{id} | Check whether a model instance exists in the data source.
 *SiteApi* | [**siteFind**](docs/Api/SiteApi.md#sitefind) | **GET** /Sites | Find all instances of the model matched by filter from the data source.
 *SiteApi* | [**siteFindById**](docs/Api/SiteApi.md#sitefindbyid) | **GET** /Sites/{id} | Find a model instance by {{id}} from the data source.
 *SiteApi* | [**siteFindOne**](docs/Api/SiteApi.md#sitefindone) | **GET** /Sites/findOne | Find first instance of the model matched by filter from the data source.
+*SiteApi* | [**siteIndex**](docs/Api/SiteApi.md#siteindex) | **POST** /Sites/index | 
 *SiteApi* | [**sitePatchOrCreate**](docs/Api/SiteApi.md#sitepatchorcreate) | **PATCH** /Sites | Patch an existing model instance or insert a new one into the data source.
 *SiteApi* | [**sitePrototypeCountSubscriptions**](docs/Api/SiteApi.md#siteprototypecountsubscriptions) | **GET** /Sites/{id}/subscriptions/count | Counts subscriptions of Site.
 *SiteApi* | [**sitePrototypeCreateConfigurationServiceRequest**](docs/Api/SiteApi.md#siteprototypecreateconfigurationservicerequest) | **POST** /Sites/{id}/configurationServiceRequest | Creates a new instance in configurationServiceRequest of this model.
@@ -849,6 +854,7 @@ Class | Method | HTTP request | Description
  - [InlineResponse2005](docs/Model/InlineResponse2005.md)
  - [InlineResponse2006](docs/Model/InlineResponse2006.md)
  - [InlineResponse2007](docs/Model/InlineResponse2007.md)
+ - [InlineResponse2008](docs/Model/InlineResponse2008.md)
  - [Invoice](docs/Model/Invoice.md)
  - [LineItem](docs/Model/LineItem.md)
  - [Migration](docs/Model/Migration.md)

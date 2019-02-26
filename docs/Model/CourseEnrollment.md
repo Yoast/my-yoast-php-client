@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **outside_trial_progress** | **bool** |  | [optional] [default to false]
 **line_item_id** | **string** |  | [optional] 
 **line_item_number** | **double** |  | [optional] 
+**expiry_date** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **course_id** | **string** |  | [optional] 
 **buyer_id** | **string** |  | [optional] 
 **student_id** | **string** |  | [optional] 

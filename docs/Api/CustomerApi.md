@@ -30,6 +30,7 @@ Method | HTTP request | Description
 [**customerLogoutUser**](CustomerApi.md#customerLogoutUser) | **POST** /Customers/logout-user | Log a user out on yoast.com
 [**customerNewsletterStatus**](CustomerApi.md#customerNewsletterStatus) | **GET** /Customers/{id}/newsletter | Returns the newsletter status for a customer.
 [**customerNewsletterSubscribe**](CustomerApi.md#customerNewsletterSubscribe) | **POST** /Customers/{id}/newsletter | Subscribes a customer to the newsletter.
+[**customerNewsletterSubscribeByEmail**](CustomerApi.md#customerNewsletterSubscribeByEmail) | **POST** /Customers/newsletter/{list}/subscribe | Subscribes a customer to the newsletter.
 [**customerNewsletterUnsubscribe**](CustomerApi.md#customerNewsletterUnsubscribe) | **DELETE** /Customers/{id}/newsletter | Unsubscribes a customer from the newsletter.
 [**customerPatchOrCreate**](CustomerApi.md#customerPatchOrCreate) | **PATCH** /Customers | Patch an existing model instance or insert a new one into the data source.
 [**customerPatchProfile**](CustomerApi.md#customerPatchProfile) | **PATCH** /Customers/{id}/profile | Updates the profile with the supplied information.
@@ -129,7 +130,7 @@ Method | HTTP request | Description
 
 
 # **customerActivate**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerActivate($activate_data)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2006 customerActivate($activate_data)
 
 Activates the account of a user.
 
@@ -158,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
 
 ### Authorization
 
@@ -172,7 +173,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customerCancelSubscription**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerCancelSubscription($id, $subscription, $amount)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2006 customerCancelSubscription($id, $subscription, $amount)
 
 Cancels a subscription of a plugin.
 
@@ -205,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
 
 ### Authorization
 
@@ -952,7 +953,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customerGetNonce**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2006 customerGetNonce()
+> \Yoast\MyYoastApiClient\Model\InlineResponse2007 customerGetNonce()
 
 Get a user's yoast.com nonce
 
@@ -977,7 +978,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
 
 ### Authorization
 
@@ -1036,7 +1037,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customerLoginUser**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerLoginUser($login_data)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2006 customerLoginUser($login_data)
 
 Login a user on yoast.com
 
@@ -1065,7 +1066,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
 
 ### Authorization
 
@@ -1117,7 +1118,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **customerLogoutUser**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerLogoutUser($nonce)
+> \Yoast\MyYoastApiClient\Model\InlineResponse2006 customerLogoutUser($nonce)
 
 Log a user out on yoast.com
 
@@ -1146,7 +1147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
 
 ### Authorization
 
@@ -1229,6 +1230,55 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerNewsletterSubscribeByEmail**
+> object customerNewsletterSubscribeByEmail($list, $email, $first_name, $last_name)
+
+Subscribes a customer to the newsletter.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$list = "list_example"; // string | 
+$email = "email_example"; // string | 
+$first_name = "first_name_example"; // string | 
+$last_name = "last_name_example"; // string | 
+
+try {
+    $result = $api_instance->customerNewsletterSubscribeByEmail($list, $email, $first_name, $last_name);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->customerNewsletterSubscribeByEmail: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **list** | **string**|  |
+ **email** | **string**|  | [optional]
+ **first_name** | **string**|  | [optional]
+ **last_name** | **string**|  | [optional]
 
 ### Return type
 

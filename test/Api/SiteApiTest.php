@@ -73,6 +73,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for siteConnect
+     *
+     * .
+     *
+     */
+    public function testSiteConnect()
+    {
+    }
+
+    /**
      * Test case for siteCount
      *
      * Count instances of the model matched by where from the data source..
@@ -109,6 +119,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSiteCreateChangeStreamPostSitesChangeStream()
+    {
+    }
+
+    /**
+     * Test case for siteCurrent
+     *
+     * .
+     *
+     */
+    public function testSiteCurrent()
     {
     }
 
@@ -169,6 +189,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testSiteFindOne()
+    {
+    }
+
+    /**
+     * Test case for siteIndex
+     *
+     * .
+     *
+     */
+    public function testSiteIndex()
     {
     }
 

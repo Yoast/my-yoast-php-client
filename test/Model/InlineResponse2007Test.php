@@ -78,16 +78,9 @@ class InlineResponse2007Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "body"
+     * Test attribute "nonce"
      */
-    public function testPropertyBody()
-    {
-    }
-
-    /**
-     * Test attribute "content_type"
-     */
-    public function testPropertyContentType()
+    public function testPropertyNonce()
     {
     }
 }

@@ -64,7 +64,10 @@ class Site implements ArrayAccess
         'protocol' => 'string',
         'port' => 'double',
         'path' => 'string',
-        'type' => 'string'
+        'type' => 'string',
+        'status' => 'string',
+        'client_id' => 'string',
+        'client_secret' => 'string'
     ];
 
     /**
@@ -82,7 +85,10 @@ class Site implements ArrayAccess
         'protocol' => null,
         'port' => 'double',
         'path' => null,
-        'type' => null
+        'type' => null,
+        'status' => null,
+        'client_id' => null,
+        'client_secret' => null
     ];
 
     public static function swaggerTypes()
@@ -110,7 +116,10 @@ class Site implements ArrayAccess
         'protocol' => 'protocol',
         'port' => 'port',
         'path' => 'path',
-        'type' => 'type'
+        'type' => 'type',
+        'status' => 'status',
+        'client_id' => 'clientId',
+        'client_secret' => 'clientSecret'
     ];
 
 
@@ -129,7 +138,10 @@ class Site implements ArrayAccess
         'protocol' => 'setProtocol',
         'port' => 'setPort',
         'path' => 'setPath',
-        'type' => 'setType'
+        'type' => 'setType',
+        'status' => 'setStatus',
+        'client_id' => 'setClientId',
+        'client_secret' => 'setClientSecret'
     ];
 
 
@@ -148,7 +160,10 @@ class Site implements ArrayAccess
         'protocol' => 'getProtocol',
         'port' => 'getPort',
         'path' => 'getPath',
-        'type' => 'getType'
+        'type' => 'getType',
+        'status' => 'getStatus',
+        'client_id' => 'getClientId',
+        'client_secret' => 'getClientSecret'
     ];
 
     public static function attributeMap()
@@ -193,6 +208,9 @@ class Site implements ArrayAccess
         $this->container['port'] = isset($data['port']) ? $data['port'] : null;
         $this->container['path'] = isset($data['path']) ? $data['path'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : 'wordpress';
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['client_id'] = isset($data['client_id']) ? $data['client_id'] : null;
+        $this->container['client_secret'] = isset($data['client_secret']) ? $data['client_secret'] : null;
     }
 
     /**
@@ -477,6 +495,69 @@ class Site implements ArrayAccess
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     * @param string $status
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->container['status'] = $status;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_id
+     * @return string
+     */
+    public function getClientId()
+    {
+        return $this->container['client_id'];
+    }
+
+    /**
+     * Sets client_id
+     * @param string $client_id
+     * @return $this
+     */
+    public function setClientId($client_id)
+    {
+        $this->container['client_id'] = $client_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_secret
+     * @return string
+     */
+    public function getClientSecret()
+    {
+        return $this->container['client_secret'];
+    }
+
+    /**
+     * Sets client_secret
+     * @param string $client_secret
+     * @return $this
+     */
+    public function setClientSecret($client_secret)
+    {
+        $this->container['client_secret'] = $client_secret;
 
         return $this;
     }

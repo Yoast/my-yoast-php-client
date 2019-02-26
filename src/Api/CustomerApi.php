@@ -94,7 +94,7 @@ class CustomerApi
      *
      * @param object $activate_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2005
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2006
      */
     public function customerActivate($activate_data)
     {
@@ -109,7 +109,7 @@ class CustomerApi
      *
      * @param object $activate_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function customerActivateWithHttpInfo($activate_data)
     {
@@ -149,15 +149,15 @@ class CustomerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2005',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2006',
                 '/Customers/activate'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -175,7 +175,7 @@ class CustomerApi
      * @param string $subscription  (required)
      * @param double $amount  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2005
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2006
      */
     public function customerCancelSubscription($id, $subscription, $amount)
     {
@@ -192,7 +192,7 @@ class CustomerApi
      * @param string $subscription  (required)
      * @param double $amount  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function customerCancelSubscriptionWithHttpInfo($id, $subscription, $amount)
     {
@@ -255,15 +255,15 @@ class CustomerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2005',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2006',
                 '/Customers/{id}/subscriptions/{subscription}/cancel'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1615,7 +1615,7 @@ class CustomerApi
      * Get a user's yoast.com nonce
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2006
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2007
      */
     public function customerGetNonce()
     {
@@ -1629,7 +1629,7 @@ class CustomerApi
      * Get a user's yoast.com nonce
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2007, HTTP status code, HTTP response headers (array of strings)
      */
     public function customerGetNonceWithHttpInfo()
     {
@@ -1660,15 +1660,15 @@ class CustomerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2006',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2007',
                 '/Customers/nonce'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2007', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2007', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1769,7 +1769,7 @@ class CustomerApi
      *
      * @param object $login_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2005
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2006
      */
     public function customerLoginUser($login_data)
     {
@@ -1784,7 +1784,7 @@ class CustomerApi
      *
      * @param object $login_data  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function customerLoginUserWithHttpInfo($login_data)
     {
@@ -1824,15 +1824,15 @@ class CustomerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2005',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2006',
                 '/Customers/login-user'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1912,7 +1912,7 @@ class CustomerApi
      *
      * @param object $nonce  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2005
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse2006
      */
     public function customerLogoutUser($nonce)
     {
@@ -1927,7 +1927,7 @@ class CustomerApi
      *
      * @param object $nonce  (required)
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2005, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
      */
     public function customerLogoutUserWithHttpInfo($nonce)
     {
@@ -1967,15 +1967,15 @@ class CustomerApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Yoast\MyYoastApiClient\Model\InlineResponse2005',
+                '\Yoast\MyYoastApiClient\Model\InlineResponse2006',
                 '/Customers/logout-user'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2005', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\InlineResponse2006', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -2133,6 +2133,106 @@ class CustomerApi
                 $headerParams,
                 'object',
                 '/Customers/{id}/newsletter'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation customerNewsletterSubscribeByEmail
+     *
+     * Subscribes a customer to the newsletter.
+     *
+     * @param string $list  (required)
+     * @param string $email  (optional)
+     * @param string $first_name  (optional)
+     * @param string $last_name  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return object
+     */
+    public function customerNewsletterSubscribeByEmail($list, $email = null, $first_name = null, $last_name = null)
+    {
+        list($response) = $this->customerNewsletterSubscribeByEmailWithHttpInfo($list, $email, $first_name, $last_name);
+        return $response;
+    }
+
+    /**
+     * Operation customerNewsletterSubscribeByEmailWithHttpInfo
+     *
+     * Subscribes a customer to the newsletter.
+     *
+     * @param string $list  (required)
+     * @param string $email  (optional)
+     * @param string $first_name  (optional)
+     * @param string $last_name  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function customerNewsletterSubscribeByEmailWithHttpInfo($list, $email = null, $first_name = null, $last_name = null)
+    {
+        // verify the required parameter 'list' is set
+        if ($list === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $list when calling customerNewsletterSubscribeByEmail');
+        }
+        // parse inputs
+        $resourcePath = "/Customers/newsletter/{list}/subscribe";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // path params
+        if ($list !== null) {
+            $resourcePath = str_replace(
+                "{" . "list" . "}",
+                $this->apiClient->getSerializer()->toPathValue($list),
+                $resourcePath
+            );
+        }
+        // form params
+        if ($email !== null) {
+            $formParams['email'] = $this->apiClient->getSerializer()->toFormValue($email);
+        }
+        // form params
+        if ($first_name !== null) {
+            $formParams['firstName'] = $this->apiClient->getSerializer()->toFormValue($first_name);
+        }
+        // form params
+        if ($last_name !== null) {
+            $formParams['lastName'] = $this->apiClient->getSerializer()->toFormValue($last_name);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/Customers/newsletter/{list}/subscribe'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];

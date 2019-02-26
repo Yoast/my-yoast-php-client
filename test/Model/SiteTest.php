@@ -153,4 +153,25 @@ class SiteTest extends \PHPUnit_Framework_TestCase
     public function testPropertyType()
     {
     }
+
+    /**
+     * Test attribute "status"
+     */
+    public function testPropertyStatus()
+    {
+    }
+
+    /**
+     * Test attribute "client_id"
+     */
+    public function testPropertyClientId()
+    {
+    }
+
+    /**
+     * Test attribute "client_secret"
+     */
+    public function testPropertyClientSecret()
+    {
+    }
 }

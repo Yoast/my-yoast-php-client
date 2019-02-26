@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**courseEnrollmentFindById**](CourseEnrollmentApi.md#courseEnrollmentFindById) | **GET** /CourseEnrollments/{id} | Find a model instance by {{id}} from the data source.
 [**courseEnrollmentFindOne**](CourseEnrollmentApi.md#courseEnrollmentFindOne) | **GET** /CourseEnrollments/findOne | Find first instance of the model matched by filter from the data source.
 [**courseEnrollmentFromAcademy**](CourseEnrollmentApi.md#courseEnrollmentFromAcademy) | **PUT** /CourseEnrollments/fromAcademy | 
+[**courseEnrollmentGetLegacyExpiring**](CourseEnrollmentApi.md#courseEnrollmentGetLegacyExpiring) | **GET** /CourseEnrollments/getLegacyExpiring | 
 [**courseEnrollmentInvite**](CourseEnrollmentApi.md#courseEnrollmentInvite) | **POST** /CourseEnrollments/{id}/invite | Invites another Customer by email to use this Course Enrollment.
 [**courseEnrollmentPatchOrCreate**](CourseEnrollmentApi.md#courseEnrollmentPatchOrCreate) | **PATCH** /CourseEnrollments | Patch an existing model instance or insert a new one into the data source.
 [**courseEnrollmentPrototypeGetBuyer**](CourseEnrollmentApi.md#courseEnrollmentPrototypeGetBuyer) | **GET** /CourseEnrollments/{id}/buyer | Fetches belongsTo relation buyer.
@@ -542,6 +543,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseEnrollmentGetLegacyExpiring**
+> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] courseEnrollmentGetLegacyExpiring($from, $until)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi();
+$from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
+$until = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
+
+try {
+    $result = $api_instance->courseEnrollmentGetLegacyExpiring($from, $until);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseEnrollmentApi->courseEnrollmentGetLegacyExpiring: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **\DateTime**|  |
+ **until** | **\DateTime**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\CourseEnrollment[]**](../Model/CourseEnrollment.md)
 
 ### Authorization
 

@@ -193,6 +193,16 @@ class CourseEnrollmentApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for courseEnrollmentGetLegacyExpiring
+     *
+     * .
+     *
+     */
+    public function testCourseEnrollmentGetLegacyExpiring()
+    {
+    }
+
+    /**
      * Test case for courseEnrollmentInvite
      *
      * Invites another Customer by email to use this Course Enrollment..

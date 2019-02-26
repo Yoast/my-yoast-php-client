@@ -54,7 +54,7 @@ class InlineResponse2006 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'nonce' => 'string'
+        'undefined' => 'object'
     ];
 
     /**
@@ -62,7 +62,7 @@ class InlineResponse2006 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'nonce' => null
+        'undefined' => null
     ];
 
     public static function swaggerTypes()
@@ -80,7 +80,7 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'nonce' => 'nonce'
+        'undefined' => 'undefined'
     ];
 
 
@@ -89,7 +89,7 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'nonce' => 'setNonce'
+        'undefined' => 'setUndefined'
     ];
 
 
@@ -98,7 +98,7 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'nonce' => 'getNonce'
+        'undefined' => 'getUndefined'
     ];
 
     public static function attributeMap()
@@ -132,7 +132,7 @@ class InlineResponse2006 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['nonce'] = isset($data['nonce']) ? $data['nonce'] : null;
+        $this->container['undefined'] = isset($data['undefined']) ? $data['undefined'] : null;
     }
 
     /**
@@ -161,22 +161,22 @@ class InlineResponse2006 implements ArrayAccess
 
 
     /**
-     * Gets nonce
-     * @return string
+     * Gets undefined
+     * @return object
      */
-    public function getNonce()
+    public function getUndefined()
     {
-        return $this->container['nonce'];
+        return $this->container['undefined'];
     }
 
     /**
-     * Sets nonce
-     * @param string $nonce
+     * Sets undefined
+     * @param object $undefined
      * @return $this
      */
-    public function setNonce($nonce)
+    public function setUndefined($undefined)
     {
-        $this->container['nonce'] = $nonce;
+        $this->container['undefined'] = $undefined;
 
         return $this;
     }

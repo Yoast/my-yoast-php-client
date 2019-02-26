@@ -134,6 +134,13 @@ class CourseEnrollmentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "expiry_date"
+     */
+    public function testPropertyExpiryDate()
+    {
+    }
+
+    /**
      * Test attribute "course_id"
      */
     public function testPropertyCourseId()

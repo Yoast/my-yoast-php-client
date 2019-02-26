@@ -88,6 +88,130 @@ class SiteApi
     }
 
     /**
+     * Operation siteConnect
+     *
+     * @param string $url  (required)
+     * @param string $client_id  (required)
+     * @param string $extensions  (required)
+     * @param string $redirect_url  (required)
+     * @param string $credentials_url  (required)
+     * @param string $type  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return string
+     */
+    public function siteConnect($url, $client_id, $extensions, $redirect_url, $credentials_url, $type)
+    {
+        list($response) = $this->siteConnectWithHttpInfo($url, $client_id, $extensions, $redirect_url, $credentials_url, $type);
+        return $response;
+    }
+
+    /**
+     * Operation siteConnectWithHttpInfo
+     *
+     * @param string $url  (required)
+     * @param string $client_id  (required)
+     * @param string $extensions  (required)
+     * @param string $redirect_url  (required)
+     * @param string $credentials_url  (required)
+     * @param string $type  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function siteConnectWithHttpInfo($url, $client_id, $extensions, $redirect_url, $credentials_url, $type)
+    {
+        // verify the required parameter 'url' is set
+        if ($url === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $url when calling siteConnect');
+        }
+        // verify the required parameter 'client_id' is set
+        if ($client_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $client_id when calling siteConnect');
+        }
+        // verify the required parameter 'extensions' is set
+        if ($extensions === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $extensions when calling siteConnect');
+        }
+        // verify the required parameter 'redirect_url' is set
+        if ($redirect_url === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $redirect_url when calling siteConnect');
+        }
+        // verify the required parameter 'credentials_url' is set
+        if ($credentials_url === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $credentials_url when calling siteConnect');
+        }
+        // verify the required parameter 'type' is set
+        if ($type === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $type when calling siteConnect');
+        }
+        // parse inputs
+        $resourcePath = "/Sites/connect";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // form params
+        if ($url !== null) {
+            $formParams['url'] = $this->apiClient->getSerializer()->toFormValue($url);
+        }
+        // form params
+        if ($client_id !== null) {
+            $formParams['clientId'] = $this->apiClient->getSerializer()->toFormValue($client_id);
+        }
+        // form params
+        if ($extensions !== null) {
+            $formParams['extensions'] = $this->apiClient->getSerializer()->toFormValue($extensions);
+        }
+        // form params
+        if ($redirect_url !== null) {
+            $formParams['redirectUrl'] = $this->apiClient->getSerializer()->toFormValue($redirect_url);
+        }
+        // form params
+        if ($credentials_url !== null) {
+            $formParams['credentialsUrl'] = $this->apiClient->getSerializer()->toFormValue($credentials_url);
+        }
+        // form params
+        if ($type !== null) {
+            $formParams['type'] = $this->apiClient->getSerializer()->toFormValue($type);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'string',
+                '/Sites/connect'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'string', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'string', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation siteCount
      *
      * Count instances of the model matched by where from the data source.
@@ -376,6 +500,82 @@ class SiteApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation siteCurrent
+     *
+     * @param string $token  (optional)
+     * @param string $url  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return object
+     */
+    public function siteCurrent($token = null, $url = null)
+    {
+        list($response) = $this->siteCurrentWithHttpInfo($token, $url);
+        return $response;
+    }
+
+    /**
+     * Operation siteCurrentWithHttpInfo
+     *
+     * @param string $token  (optional)
+     * @param string $url  (optional)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function siteCurrentWithHttpInfo($token = null, $url = null)
+    {
+        // parse inputs
+        $resourcePath = "/Sites/current";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($token !== null) {
+            $queryParams['token'] = $this->apiClient->getSerializer()->toQueryValue($token);
+        }
+        // query params
+        if ($url !== null) {
+            $queryParams['url'] = $this->apiClient->getSerializer()->toQueryValue($url);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/Sites/current'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -858,6 +1058,100 @@ class SiteApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\Site', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation siteIndex
+     *
+     * @param string $token  (required)
+     * @param string $url  (required)
+     * @param string $method  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return object
+     */
+    public function siteIndex($token, $url, $method)
+    {
+        list($response) = $this->siteIndexWithHttpInfo($token, $url, $method);
+        return $response;
+    }
+
+    /**
+     * Operation siteIndexWithHttpInfo
+     *
+     * @param string $token  (required)
+     * @param string $url  (required)
+     * @param string $method  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function siteIndexWithHttpInfo($token, $url, $method)
+    {
+        // verify the required parameter 'token' is set
+        if ($token === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $token when calling siteIndex');
+        }
+        // verify the required parameter 'url' is set
+        if ($url === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $url when calling siteIndex');
+        }
+        // verify the required parameter 'method' is set
+        if ($method === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $method when calling siteIndex');
+        }
+        // parse inputs
+        $resourcePath = "/Sites/index";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // form params
+        if ($token !== null) {
+            $formParams['token'] = $this->apiClient->getSerializer()->toFormValue($token);
+        }
+        // form params
+        if ($url !== null) {
+            $formParams['url'] = $this->apiClient->getSerializer()->toFormValue($url);
+        }
+        // form params
+        if ($method !== null) {
+            $formParams['method'] = $this->apiClient->getSerializer()->toFormValue($method);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                'object',
+                '/Sites/index'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, 'object', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), 'object', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

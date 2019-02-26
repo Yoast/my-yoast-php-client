@@ -1027,6 +1027,90 @@ class CourseEnrollmentApi
     }
 
     /**
+     * Operation courseEnrollmentGetLegacyExpiring
+     *
+     * @param \DateTime $from  (required)
+     * @param \DateTime $until  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return \Yoast\MyYoastApiClient\Model\CourseEnrollment[]
+     */
+    public function courseEnrollmentGetLegacyExpiring($from, $until)
+    {
+        list($response) = $this->courseEnrollmentGetLegacyExpiringWithHttpInfo($from, $until);
+        return $response;
+    }
+
+    /**
+     * Operation courseEnrollmentGetLegacyExpiringWithHttpInfo
+     *
+     * @param \DateTime $from  (required)
+     * @param \DateTime $until  (required)
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @return array of \Yoast\MyYoastApiClient\Model\CourseEnrollment[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function courseEnrollmentGetLegacyExpiringWithHttpInfo($from, $until)
+    {
+        // verify the required parameter 'from' is set
+        if ($from === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $from when calling courseEnrollmentGetLegacyExpiring');
+        }
+        // verify the required parameter 'until' is set
+        if ($until === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $until when calling courseEnrollmentGetLegacyExpiring');
+        }
+        // parse inputs
+        $resourcePath = "/CourseEnrollments/getLegacyExpiring";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json', 'application/xml', 'text/xml', 'application/javascript', 'text/javascript']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json', 'application/x-www-form-urlencoded', 'application/xml', 'text/xml']);
+
+        // query params
+        if ($from !== null) {
+            $queryParams['from'] = $this->apiClient->getSerializer()->toQueryValue($from);
+        }
+        // query params
+        if ($until !== null) {
+            $queryParams['until'] = $this->apiClient->getSerializer()->toQueryValue($until);
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Yoast\MyYoastApiClient\Model\CourseEnrollment[]',
+                '/CourseEnrollments/getLegacyExpiring'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Yoast\MyYoastApiClient\Model\CourseEnrollment[]', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Yoast\MyYoastApiClient\Model\CourseEnrollment[]', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation courseEnrollmentInvite
      *
      * Invites another Customer by email to use this Course Enrollment.

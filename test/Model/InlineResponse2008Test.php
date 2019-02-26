@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2005Test
+ * InlineResponse2008Test
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * InlineResponse2005Test Class Doc Comment
+ * InlineResponse2008Test Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse2005
+// * @description InlineResponse2008
 /**
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InlineResponse2005Test extends \PHPUnit_Framework_TestCase
+class InlineResponse2008Test extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class InlineResponse2005Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "InlineResponse2005"
+     * Test "InlineResponse2008"
      */
-    public function testInlineResponse2005()
+    public function testInlineResponse2008()
     {
     }
 
@@ -88,13 +88,6 @@ class InlineResponse2005Test extends \PHPUnit_Framework_TestCase
      * Test attribute "content_type"
      */
     public function testPropertyContentType()
-    {
-    }
-
-    /**
-     * Test attribute "content_disposition"
-     */
-    public function testPropertyContentDisposition()
     {
     }
 }
