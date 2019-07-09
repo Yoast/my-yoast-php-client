@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCourseEnrollmentsFromAcademyPut**
-> apiCourseEnrollmentsFromAcademyPut()
+> apiCourseEnrollmentsFromAcademyPut($body)
 
 Update a CourseEnrollment
 
@@ -144,9 +144,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
     new GuzzleHttp\Client(),
     $config
 );
+$body = new \Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto(); // \Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto | 
 
 try {
-    $apiInstance->apiCourseEnrollmentsFromAcademyPut();
+    $apiInstance->apiCourseEnrollmentsFromAcademyPut($body);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->apiCourseEnrollmentsFromAcademyPut: ', $e->getMessage(), PHP_EOL;
 }
@@ -154,7 +155,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto**](../Model/CourseEnrollmentFromAcademyDto.md)|  |
 
 ### Return type
 
@@ -166,7 +170,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

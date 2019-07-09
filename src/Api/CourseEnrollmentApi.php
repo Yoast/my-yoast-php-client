@@ -615,14 +615,15 @@ class CourseEnrollmentApi
      *
      * Update a CourseEnrollment
      *
+     * @param  \Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto $body body (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function apiCourseEnrollmentsFromAcademyPut()
+    public function apiCourseEnrollmentsFromAcademyPut($body)
     {
-        $this->apiCourseEnrollmentsFromAcademyPutWithHttpInfo();
+        $this->apiCourseEnrollmentsFromAcademyPutWithHttpInfo($body);
     }
 
     /**
@@ -630,15 +631,16 @@ class CourseEnrollmentApi
      *
      * Update a CourseEnrollment
      *
+     * @param  \Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto $body (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCourseEnrollmentsFromAcademyPutWithHttpInfo()
+    public function apiCourseEnrollmentsFromAcademyPutWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->apiCourseEnrollmentsFromAcademyPutRequest();
+        $request = $this->apiCourseEnrollmentsFromAcademyPutRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -682,13 +684,14 @@ class CourseEnrollmentApi
      *
      * Update a CourseEnrollment
      *
+     * @param  \Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCourseEnrollmentsFromAcademyPutAsync()
+    public function apiCourseEnrollmentsFromAcademyPutAsync($body)
     {
-        return $this->apiCourseEnrollmentsFromAcademyPutAsyncWithHttpInfo()
+        return $this->apiCourseEnrollmentsFromAcademyPutAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -701,14 +704,15 @@ class CourseEnrollmentApi
      *
      * Update a CourseEnrollment
      *
+     * @param  \Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCourseEnrollmentsFromAcademyPutAsyncWithHttpInfo()
+    public function apiCourseEnrollmentsFromAcademyPutAsyncWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->apiCourseEnrollmentsFromAcademyPutRequest();
+        $request = $this->apiCourseEnrollmentsFromAcademyPutRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -736,12 +740,19 @@ class CourseEnrollmentApi
     /**
      * Create request for operation 'apiCourseEnrollmentsFromAcademyPut'
      *
+     * @param  \Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCourseEnrollmentsFromAcademyPutRequest()
+    protected function apiCourseEnrollmentsFromAcademyPutRequest($body)
     {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling apiCourseEnrollmentsFromAcademyPut'
+            );
+        }
 
         $resourcePath = '/api/CourseEnrollments/fromAcademy';
         $formParams = [];
@@ -754,6 +765,9 @@ class CourseEnrollmentApi
 
         // body params
         $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -762,7 +776,7 @@ class CourseEnrollmentApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 [],
-                []
+                ['application/json']
             );
         }
 
