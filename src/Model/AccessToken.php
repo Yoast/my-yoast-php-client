@@ -57,7 +57,7 @@ class AccessToken implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-'ttl' => 'BigDecimal',
+'ttl' => 'int',
 'created' => 'string',
 'createdAt' => 'string',
 'modifiedAt' => 'string'    ];
@@ -262,7 +262,7 @@ class AccessToken implements ModelInterface, ArrayAccess
     /**
      * Gets ttl
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getTtl()
     {
@@ -272,7 +272,7 @@ class AccessToken implements ModelInterface, ArrayAccess
     /**
      * Sets ttl
      *
-     * @param BigDecimal $ttl ttl
+     * @param int $ttl ttl
      *
      * @return $this
      */

@@ -56,14 +56,14 @@ class SubscriptionData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'BigDecimal',
-'parentId' => 'BigDecimal',
+        'id' => 'int',
+'parentId' => 'int',
 'lineItems' => 'string[]',
 'startDate' => 'string',
 'endDate' => 'string',
 'nextPaymentDate' => 'string',
 'dateCreated' => 'string',
-'customerId' => 'BigDecimal',
+'customerId' => 'int',
 'status' => 'string',
 'currency' => 'string',
 'number' => 'string'    ];
@@ -292,7 +292,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getId()
     {
@@ -302,7 +302,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param BigDecimal $id id
+     * @param int $id id
      *
      * @return $this
      */
@@ -316,7 +316,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Gets parentId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getParentId()
     {
@@ -326,7 +326,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Sets parentId
      *
-     * @param BigDecimal $parentId parentId
+     * @param int $parentId parentId
      *
      * @return $this
      */
@@ -460,7 +460,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Gets customerId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getCustomerId()
     {
@@ -470,7 +470,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Sets customerId
      *
-     * @param BigDecimal $customerId customerId
+     * @param int $customerId customerId
      *
      * @return $this
      */

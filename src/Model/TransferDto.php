@@ -1,6 +1,6 @@
 <?php
 /**
- * SwitchSubscriptionNumberOfTimesDto
+ * TransferDto
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * SwitchSubscriptionNumberOfTimesDto Class Doc Comment
+ * TransferDto Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SwitchSubscriptionNumberOfTimesDto implements ModelInterface, ArrayAccess
+class TransferDto implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class SwitchSubscriptionNumberOfTimesDto implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SwitchSubscriptionNumberOfTimesDto';
+    protected static $swaggerModelName = 'TransferDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class SwitchSubscriptionNumberOfTimesDto implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'fromSourceId' => 'int',
-'toSourceId' => 'int',
-'productId' => 'int'    ];
+'toSourceId' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -67,8 +66,7 @@ class SwitchSubscriptionNumberOfTimesDto implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'fromSourceId' => null,
-'toSourceId' => null,
-'productId' => null    ];
+'toSourceId' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -98,8 +96,7 @@ class SwitchSubscriptionNumberOfTimesDto implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'fromSourceId' => 'fromSourceId',
-'toSourceId' => 'toSourceId',
-'productId' => 'productId'    ];
+'toSourceId' => 'toSourceId'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -108,8 +105,7 @@ class SwitchSubscriptionNumberOfTimesDto implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'fromSourceId' => 'setFromSourceId',
-'toSourceId' => 'setToSourceId',
-'productId' => 'setProductId'    ];
+'toSourceId' => 'setToSourceId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -118,8 +114,7 @@ class SwitchSubscriptionNumberOfTimesDto implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'fromSourceId' => 'getFromSourceId',
-'toSourceId' => 'getToSourceId',
-'productId' => 'getProductId'    ];
+'toSourceId' => 'getToSourceId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -181,7 +176,6 @@ class SwitchSubscriptionNumberOfTimesDto implements ModelInterface, ArrayAccess
     {
         $this->container['fromSourceId'] = isset($data['fromSourceId']) ? $data['fromSourceId'] : null;
         $this->container['toSourceId'] = isset($data['toSourceId']) ? $data['toSourceId'] : null;
-        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
     }
 
     /**
@@ -198,9 +192,6 @@ class SwitchSubscriptionNumberOfTimesDto implements ModelInterface, ArrayAccess
         }
         if ($this->container['toSourceId'] === null) {
             $invalidProperties[] = "'toSourceId' can't be null";
-        }
-        if ($this->container['productId'] === null) {
-            $invalidProperties[] = "'productId' can't be null";
         }
         return $invalidProperties;
     }
@@ -261,30 +252,6 @@ class SwitchSubscriptionNumberOfTimesDto implements ModelInterface, ArrayAccess
     public function setToSourceId($toSourceId)
     {
         $this->container['toSourceId'] = $toSourceId;
-
-        return $this;
-    }
-
-    /**
-     * Gets productId
-     *
-     * @return int
-     */
-    public function getProductId()
-    {
-        return $this->container['productId'];
-    }
-
-    /**
-     * Sets productId
-     *
-     * @param int $productId productId
-     *
-     * @return $this
-     */
-    public function setProductId($productId)
-    {
-        $this->container['productId'] = $productId;
 
         return $this;
     }

@@ -56,8 +56,8 @@ class TransferSiteDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'fromSourceId' => 'BigDecimal',
-'toSourceId' => 'BigDecimal'    ];
+        'fromSourceId' => 'int',
+'toSourceId' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -211,7 +211,7 @@ class TransferSiteDto implements ModelInterface, ArrayAccess
     /**
      * Gets fromSourceId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getFromSourceId()
     {
@@ -221,7 +221,7 @@ class TransferSiteDto implements ModelInterface, ArrayAccess
     /**
      * Sets fromSourceId
      *
-     * @param BigDecimal $fromSourceId fromSourceId
+     * @param int $fromSourceId fromSourceId
      *
      * @return $this
      */
@@ -235,7 +235,7 @@ class TransferSiteDto implements ModelInterface, ArrayAccess
     /**
      * Gets toSourceId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getToSourceId()
     {
@@ -245,7 +245,7 @@ class TransferSiteDto implements ModelInterface, ArrayAccess
     /**
      * Sets toSourceId
      *
-     * @param BigDecimal $toSourceId toSourceId
+     * @param int $toSourceId toSourceId
      *
      * @return $this
      */

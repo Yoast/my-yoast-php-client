@@ -56,7 +56,7 @@ class RefundDataDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'BigDecimal',
+        'id' => 'int',
 'dateCreatedGmt' => 'string',
 'amount' => 'string',
 'reason' => 'string'    ];
@@ -229,7 +229,7 @@ class RefundDataDto implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getId()
     {
@@ -239,7 +239,7 @@ class RefundDataDto implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param BigDecimal $id id
+     * @param int $id id
      *
      * @return $this
      */

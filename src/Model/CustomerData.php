@@ -56,7 +56,7 @@ class CustomerData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'BigDecimal',
+        'id' => 'int',
 'avatarUrl' => 'string',
 'billing' => '\Yoast\MyYoastApiClient\Model\BillingDto',
 'dateCreated' => 'string',
@@ -68,7 +68,7 @@ class CustomerData implements ModelInterface, ArrayAccess
 'isPayingCustomer' => 'bool',
 'lastName' => 'string',
 'metaData' => 'string[]',
-'ordersCount' => 'BigDecimal',
+'ordersCount' => 'int',
 'role' => 'string',
 'shipping' => '\Yoast\MyYoastApiClient\Model\ShippingDto',
 'totalSpent' => 'string',
@@ -346,7 +346,7 @@ class CustomerData implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getId()
     {
@@ -356,7 +356,7 @@ class CustomerData implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param BigDecimal $id id
+     * @param int $id id
      *
      * @return $this
      */
@@ -634,7 +634,7 @@ class CustomerData implements ModelInterface, ArrayAccess
     /**
      * Gets ordersCount
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getOrdersCount()
     {
@@ -644,7 +644,7 @@ class CustomerData implements ModelInterface, ArrayAccess
     /**
      * Sets ordersCount
      *
-     * @param BigDecimal $ordersCount ordersCount
+     * @param int $ordersCount ordersCount
      *
      * @return $this
      */

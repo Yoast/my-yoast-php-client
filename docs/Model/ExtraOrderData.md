@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **customer** | [**\Yoast\MyYoastApiClient\Model\CustomerData**](CustomerData.md) |  | 
-**shopId** | [**BigDecimal**](BigDecimal.md) |  | 
+**shopId** | **int** |  | 
 **paymentReference** | **string** |  | 
 **automatic** | **bool** |  | 
 **transactions** | [**\Yoast\MyYoastApiClient\Model\TransactionDataDto[]**](TransactionDataDto.md) |  | 

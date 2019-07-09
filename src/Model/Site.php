@@ -63,7 +63,7 @@ class Site implements ModelInterface, ArrayAccess
 'creationDate' => 'string',
 'hostname' => 'string',
 'protocol' => 'string',
-'port' => 'BigDecimal',
+'port' => 'int',
 'path' => 'string',
 'createdAt' => 'string',
 'modifiedAt' => 'string',
@@ -496,7 +496,7 @@ class Site implements ModelInterface, ArrayAccess
     /**
      * Gets port
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getPort()
     {
@@ -506,7 +506,7 @@ class Site implements ModelInterface, ArrayAccess
     /**
      * Sets port
      *
-     * @param BigDecimal $port port
+     * @param int $port port
      *
      * @return $this
      */

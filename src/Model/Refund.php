@@ -57,12 +57,12 @@ class Refund implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-'amount' => 'BigDecimal',
+'amount' => 'int',
 'date' => 'string',
 'modifiedAt' => 'string',
 'reason' => 'string',
-'sourceId' => 'BigDecimal',
-'sourceShopId' => 'BigDecimal',
+'sourceId' => 'int',
+'sourceShopId' => 'int',
 'createdAt' => 'string'    ];
 
     /**
@@ -289,7 +289,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Gets amount
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getAmount()
     {
@@ -299,7 +299,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param BigDecimal $amount amount
+     * @param int $amount amount
      *
      * @return $this
      */
@@ -385,7 +385,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Gets sourceId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSourceId()
     {
@@ -395,7 +395,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Sets sourceId
      *
-     * @param BigDecimal $sourceId sourceId
+     * @param int $sourceId sourceId
      *
      * @return $this
      */
@@ -409,7 +409,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Gets sourceShopId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSourceShopId()
     {
@@ -419,7 +419,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Sets sourceShopId
      *
-     * @param BigDecimal $sourceShopId sourceShopId
+     * @param int $sourceShopId sourceShopId
      *
      * @return $this
      */

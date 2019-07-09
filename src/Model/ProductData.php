@@ -58,7 +58,7 @@ class ProductData implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]',
 'images' => '\Yoast\MyYoastApiClient\Model\ProductImage[]',
-'id' => 'BigDecimal',
+'id' => 'int',
 'name' => 'string',
 'description' => 'string',
 'permalink' => 'string',
@@ -385,7 +385,7 @@ class ProductData implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getId()
     {
@@ -395,7 +395,7 @@ class ProductData implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param BigDecimal $id id
+     * @param int $id id
      *
      * @return $this
      */

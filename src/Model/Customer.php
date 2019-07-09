@@ -57,7 +57,7 @@ class Customer implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-'sourceId' => 'BigDecimal',
+'sourceId' => 'int',
 'enabled' => 'bool',
 'realm' => 'string',
 'username' => 'string',
@@ -424,7 +424,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets sourceId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSourceId()
     {
@@ -434,7 +434,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets sourceId
      *
-     * @param BigDecimal $sourceId sourceId
+     * @param int $sourceId sourceId
      *
      * @return $this
      */

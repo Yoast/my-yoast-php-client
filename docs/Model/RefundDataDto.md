@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**BigDecimal**](BigDecimal.md) |  | 
+**id** | **int** |  | 
 **dateCreatedGmt** | **string** |  | 
 **amount** | **string** |  | 
 **reason** | **string** |  | 

@@ -56,7 +56,7 @@ class MetaDataDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'BigDecimal',
+        'id' => 'int',
 'key' => 'string',
 'value' => 'object'    ];
 
@@ -220,7 +220,7 @@ class MetaDataDto implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getId()
     {
@@ -230,7 +230,7 @@ class MetaDataDto implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param BigDecimal $id id
+     * @param int $id id
      *
      * @return $this
      */

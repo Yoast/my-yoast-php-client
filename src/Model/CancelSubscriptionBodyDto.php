@@ -56,7 +56,7 @@ class CancelSubscriptionBodyDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'amount' => 'BigDecimal'    ];
+        'amount' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -202,7 +202,7 @@ class CancelSubscriptionBodyDto implements ModelInterface, ArrayAccess
     /**
      * Gets amount
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getAmount()
     {
@@ -212,7 +212,7 @@ class CancelSubscriptionBodyDto implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param BigDecimal $amount amount
+     * @param int $amount amount
      *
      * @return $this
      */

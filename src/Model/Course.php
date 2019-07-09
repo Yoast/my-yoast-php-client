@@ -61,7 +61,7 @@ class Course implements ModelInterface, ArrayAccess
 'description' => 'string',
 'courseUrl' => 'string',
 'certificateUrl' => 'string',
-'sourceId' => 'BigDecimal',
+'sourceId' => 'int',
 'createdAt' => 'string',
 'modifiedAt' => 'string',
 'iconUrl' => 'string',
@@ -448,7 +448,7 @@ class Course implements ModelInterface, ArrayAccess
     /**
      * Gets sourceId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSourceId()
     {
@@ -458,7 +458,7 @@ class Course implements ModelInterface, ArrayAccess
     /**
      * Sets sourceId
      *
-     * @param BigDecimal $sourceId sourceId
+     * @param int $sourceId sourceId
      *
      * @return $this
      */

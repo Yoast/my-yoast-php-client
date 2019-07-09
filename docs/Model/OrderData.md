@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**BigDecimal**](BigDecimal.md) |  | 
+**id** | **int** |  | 
 **billing** | [**\Yoast\MyYoastApiClient\Model\BillingDto**](BillingDto.md) |  | 
 **cartHash** | **string** |  | 
 **cartTax** | **string** |  | 
 **createdVia** | **string** |  | 
 **currency** | **string** |  | 
-**customerId** | [**BigDecimal**](BigDecimal.md) |  | 
+**customerId** | **int** |  | 
 **customerIpAddress** | **string** |  | 
 **customerNote** | **string** |  | 
 **customerUserAgent** | **string** |  | 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
 **number** | **string** |  | 
 **orderKey** | **string** |  | 
-**parentId** | [**BigDecimal**](BigDecimal.md) |  | 
+**parentId** | **int** |  | 
 **paymentMethod** | **string** |  | 
 **paymentMethodTitle** | **string** |  | 
 **pricesIncludeTax** | **bool** |  | 

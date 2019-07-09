@@ -57,7 +57,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'customer' => '\Yoast\MyYoastApiClient\Model\CustomerData',
-'shopId' => 'BigDecimal',
+'shopId' => 'int',
 'paymentReference' => 'string',
 'automatic' => 'bool',
 'transactions' => '\Yoast\MyYoastApiClient\Model\TransactionDataDto[]',
@@ -271,7 +271,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
     /**
      * Gets shopId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getShopId()
     {
@@ -281,7 +281,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
     /**
      * Sets shopId
      *
-     * @param BigDecimal $shopId shopId
+     * @param int $shopId shopId
      *
      * @return $this
      */

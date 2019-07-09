@@ -59,12 +59,12 @@ class LineItemData implements ModelInterface, ArrayAccess
         'bundledBy' => 'string',
 'bundledItems' => 'string[]',
 'bundledItemTitle' => 'string',
-'id' => 'BigDecimal',
+'id' => 'int',
 'metaData' => 'string[]',
 'name' => 'string',
-'price' => 'BigDecimal',
-'productId' => 'BigDecimal',
-'quantity' => 'BigDecimal',
+'price' => 'int',
+'productId' => 'int',
+'quantity' => 'int',
 'sku' => 'string',
 'subtotal' => 'string',
 'subtotalTax' => 'string',
@@ -72,7 +72,7 @@ class LineItemData implements ModelInterface, ArrayAccess
 'taxClass' => 'string',
 'total' => 'string',
 'totalTax' => 'string',
-'variationId' => 'BigDecimal'    ];
+'variationId' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -418,7 +418,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getId()
     {
@@ -428,7 +428,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param BigDecimal $id id
+     * @param int $id id
      *
      * @return $this
      */
@@ -490,7 +490,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getPrice()
     {
@@ -500,7 +500,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param BigDecimal $price price
+     * @param int $price price
      *
      * @return $this
      */
@@ -514,7 +514,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Gets productId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getProductId()
     {
@@ -524,7 +524,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Sets productId
      *
-     * @param BigDecimal $productId productId
+     * @param int $productId productId
      *
      * @return $this
      */
@@ -538,7 +538,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Gets quantity
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getQuantity()
     {
@@ -548,7 +548,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Sets quantity
      *
-     * @param BigDecimal $quantity quantity
+     * @param int $quantity quantity
      *
      * @return $this
      */
@@ -730,7 +730,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Gets variationId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getVariationId()
     {
@@ -740,7 +740,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Sets variationId
      *
-     * @param BigDecimal $variationId variationId
+     * @param int $variationId variationId
      *
      * @return $this
      */

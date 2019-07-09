@@ -58,19 +58,19 @@ class Order implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'countryOfOrigin' => 'string',
 'id' => 'string',
-'totalAmount' => 'BigDecimal',
-'subtotalAmount' => 'BigDecimal',
+'totalAmount' => 'int',
+'subtotalAmount' => 'int',
 'date' => 'string',
 'vatNumber' => 'string',
 'paymentProvider' => 'string',
 'paymentGateway' => 'string',
 'paymentReference' => 'string',
-'vatTotal' => 'BigDecimal',
-'discountTotal' => 'BigDecimal',
+'vatTotal' => 'int',
+'discountTotal' => 'int',
 'glNumber' => 'string',
 'status' => 'string',
-'sourceId' => 'BigDecimal',
-'sourceShopId' => 'BigDecimal',
+'sourceId' => 'int',
+'sourceShopId' => 'int',
 'invoiceNumber' => 'string',
 'currency' => 'string',
 'customerEmail' => 'string',
@@ -538,7 +538,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets totalAmount
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getTotalAmount()
     {
@@ -548,7 +548,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets totalAmount
      *
-     * @param BigDecimal $totalAmount totalAmount
+     * @param int $totalAmount totalAmount
      *
      * @return $this
      */
@@ -562,7 +562,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets subtotalAmount
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSubtotalAmount()
     {
@@ -572,7 +572,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets subtotalAmount
      *
-     * @param BigDecimal $subtotalAmount subtotalAmount
+     * @param int $subtotalAmount subtotalAmount
      *
      * @return $this
      */
@@ -706,7 +706,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets vatTotal
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getVatTotal()
     {
@@ -716,7 +716,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets vatTotal
      *
-     * @param BigDecimal $vatTotal vatTotal
+     * @param int $vatTotal vatTotal
      *
      * @return $this
      */
@@ -730,7 +730,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets discountTotal
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getDiscountTotal()
     {
@@ -740,7 +740,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets discountTotal
      *
-     * @param BigDecimal $discountTotal discountTotal
+     * @param int $discountTotal discountTotal
      *
      * @return $this
      */
@@ -802,7 +802,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets sourceId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSourceId()
     {
@@ -812,7 +812,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets sourceId
      *
-     * @param BigDecimal $sourceId sourceId
+     * @param int $sourceId sourceId
      *
      * @return $this
      */
@@ -826,7 +826,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets sourceShopId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSourceShopId()
     {
@@ -836,7 +836,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets sourceShopId
      *
-     * @param BigDecimal $sourceShopId sourceShopId
+     * @param int $sourceShopId sourceShopId
      *
      * @return $this
      */

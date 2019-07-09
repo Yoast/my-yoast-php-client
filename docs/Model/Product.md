@@ -10,12 +10,12 @@ Name | Type | Description | Notes
 **glNumber** | **string** |  | 
 **isDownloadOnly** | **bool** |  | 
 **icon** | **string** |  | 
-**sourceId** | [**BigDecimal**](BigDecimal.md) |  | 
-**sourceShopId** | [**BigDecimal**](BigDecimal.md) |  | 
+**sourceId** | **int** |  | 
+**sourceShopId** | **int** |  | 
 **shopProductType** | **string** |  | 
 **shopStatus** | **string** |  | 
-**price** | [**BigDecimal**](BigDecimal.md) |  | 
-**shopRegularPrice** | [**BigDecimal**](BigDecimal.md) |  | 
+**price** | **int** |  | 
+**shopRegularPrice** | **int** |  | 
 **shopTaxStatus** | **string** |  | 
 **shopTaxClass** | **string** |  | 
 **currentVersion** | **string** |  | 

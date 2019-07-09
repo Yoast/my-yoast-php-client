@@ -157,6 +157,7 @@ Class | Method | HTTP request | Description
 *CourseApi* | [**apiCoursesPost**](docs/Api/CourseApi.md#apicoursespost) | **POST** /api/Courses | Create one Course
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsBulkInvitePost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsbulkinvitepost) | **POST** /api/CourseEnrollments/bulkInvite | Bulk invite for Course Enrollment.
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsBulkPost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsbulkpost) | **POST** /api/CourseEnrollments/bulk | Create many CourseEnrollment
+*CourseEnrollmentApi* | [**apiCourseEnrollmentsFromAcademyPut**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsfromacademyput) | **PUT** /api/CourseEnrollments/fromAcademy | Update a CourseEnrollment
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsget) | **GET** /api/CourseEnrollments | Retrieve many CourseEnrollment
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsGetLegacyExpiringGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsgetlegacyexpiringget) | **GET** /api/CourseEnrollments/getLegacyExpiring | Get legacy course enrollments that expire between two given dates
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsIdDelete**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsiddelete) | **DELETE** /api/CourseEnrollments/{id} | Delete one CourseEnrollment
@@ -271,7 +272,7 @@ Class | Method | HTTP request | Description
  - [ActivateAccountDto](docs/Model/ActivateAccountDto.md)
  - [BillingDto](docs/Model/BillingDto.md)
  - [BulkDto](docs/Model/BulkDto.md)
- - [BulkInviteDTO](docs/Model/BulkInviteDTO.md)
+ - [BulkInviteDto](docs/Model/BulkInviteDto.md)
  - [CancelSubscriptionBodyDto](docs/Model/CancelSubscriptionBodyDto.md)
  - [ComposerToken](docs/Model/ComposerToken.md)
  - [Course](docs/Model/Course.md)
@@ -326,6 +327,7 @@ Class | Method | HTTP request | Description
  - [TaxLineItem](docs/Model/TaxLineItem.md)
  - [Transaction](docs/Model/Transaction.md)
  - [TransactionDataDto](docs/Model/TransactionDataDto.md)
+ - [TransferDto](docs/Model/TransferDto.md)
  - [TransferSiteDto](docs/Model/TransferSiteDto.md)
  - [UpdateFileDto](docs/Model/UpdateFileDto.md)
  - [UpdateUserToWordpressDto](docs/Model/UpdateUserToWordpressDto.md)

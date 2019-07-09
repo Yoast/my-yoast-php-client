@@ -63,12 +63,12 @@ class Product implements ModelInterface, ArrayAccess
 'glNumber' => 'string',
 'isDownloadOnly' => 'bool',
 'icon' => 'string',
-'sourceId' => 'BigDecimal',
-'sourceShopId' => 'BigDecimal',
+'sourceId' => 'int',
+'sourceShopId' => 'int',
 'shopProductType' => 'string',
 'shopStatus' => 'string',
-'price' => 'BigDecimal',
-'shopRegularPrice' => 'BigDecimal',
+'price' => 'int',
+'shopRegularPrice' => 'int',
 'shopTaxStatus' => 'string',
 'shopTaxClass' => 'string',
 'currentVersion' => 'string',
@@ -550,7 +550,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets sourceId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSourceId()
     {
@@ -560,7 +560,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets sourceId
      *
-     * @param BigDecimal $sourceId sourceId
+     * @param int $sourceId sourceId
      *
      * @return $this
      */
@@ -574,7 +574,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets sourceShopId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSourceShopId()
     {
@@ -584,7 +584,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets sourceShopId
      *
-     * @param BigDecimal $sourceShopId sourceShopId
+     * @param int $sourceShopId sourceShopId
      *
      * @return $this
      */
@@ -646,7 +646,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getPrice()
     {
@@ -656,7 +656,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param BigDecimal $price price
+     * @param int $price price
      *
      * @return $this
      */
@@ -670,7 +670,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets shopRegularPrice
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getShopRegularPrice()
     {
@@ -680,7 +680,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets shopRegularPrice
      *
-     * @param BigDecimal $shopRegularPrice shopRegularPrice
+     * @param int $shopRegularPrice shopRegularPrice
      *
      * @return $this
      */

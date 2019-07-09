@@ -1,6 +1,6 @@
 <?php
 /**
- * BulkInviteDTO
+ * BulkInviteDto
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * BulkInviteDTO Class Doc Comment
+ * BulkInviteDto Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class BulkInviteDTO implements ModelInterface, ArrayAccess
+class BulkInviteDto implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class BulkInviteDTO implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'BulkInviteDTO';
+    protected static $swaggerModelName = 'BulkInviteDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

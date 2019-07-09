@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**BigDecimal**](BigDecimal.md) |  | 
+**id** | **int** |  | 
 **subtotal** | **string** |  | 
 **total** | **string** |  | 
 

@@ -59,17 +59,17 @@ class Subscription implements ModelInterface, ArrayAccess
         'id' => 'string',
 'startDate' => 'string',
 'endDate' => 'string',
-'sourceId' => 'BigDecimal',
-'sourceLineItemId' => 'BigDecimal',
-'sourceShopId' => 'BigDecimal',
+'sourceId' => 'int',
+'sourceLineItemId' => 'int',
+'sourceShopId' => 'int',
 'status' => 'string',
 'currency' => 'string',
 'date' => 'string',
-'price' => 'BigDecimal',
+'price' => 'int',
 'name' => 'string',
 'nextPayment' => 'string',
-'limit' => 'BigDecimal',
-'used' => 'BigDecimal',
+'limit' => 'int',
+'used' => 'int',
 'createdAt' => 'string',
 'modifiedAt' => 'string',
 'requiresManualRenewal' => 'bool',
@@ -436,7 +436,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets sourceId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSourceId()
     {
@@ -446,7 +446,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets sourceId
      *
-     * @param BigDecimal $sourceId sourceId
+     * @param int $sourceId sourceId
      *
      * @return $this
      */
@@ -460,7 +460,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets sourceLineItemId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSourceLineItemId()
     {
@@ -470,7 +470,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets sourceLineItemId
      *
-     * @param BigDecimal $sourceLineItemId sourceLineItemId
+     * @param int $sourceLineItemId sourceLineItemId
      *
      * @return $this
      */
@@ -484,7 +484,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets sourceShopId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getSourceShopId()
     {
@@ -494,7 +494,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets sourceShopId
      *
-     * @param BigDecimal $sourceShopId sourceShopId
+     * @param int $sourceShopId sourceShopId
      *
      * @return $this
      */
@@ -580,7 +580,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getPrice()
     {
@@ -590,7 +590,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param BigDecimal $price price
+     * @param int $price price
      *
      * @return $this
      */
@@ -652,7 +652,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets limit
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getLimit()
     {
@@ -662,7 +662,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets limit
      *
-     * @param BigDecimal $limit limit
+     * @param int $limit limit
      *
      * @return $this
      */
@@ -676,7 +676,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets used
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getUsed()
     {
@@ -686,7 +686,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets used
      *
-     * @param BigDecimal $used used
+     * @param int $used used
      *
      * @return $this
      */

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **creationDate** | **string** |  | 
 **hostname** | **string** |  | 
 **protocol** | **string** |  | 
-**port** | [**BigDecimal**](BigDecimal.md) |  | 
+**port** | **int** |  | 
 **path** | **string** |  | 
 **createdAt** | **string** |  | 
 **modifiedAt** | **string** |  | 

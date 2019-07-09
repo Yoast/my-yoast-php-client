@@ -5,19 +5,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **countryOfOrigin** | **string** |  | 
 **id** | **string** |  | 
-**totalAmount** | [**BigDecimal**](BigDecimal.md) |  | 
-**subtotalAmount** | [**BigDecimal**](BigDecimal.md) |  | 
+**totalAmount** | **int** |  | 
+**subtotalAmount** | **int** |  | 
 **date** | **string** |  | 
 **vatNumber** | **string** |  | 
 **paymentProvider** | **string** |  | 
 **paymentGateway** | **string** |  | 
 **paymentReference** | **string** |  | 
-**vatTotal** | [**BigDecimal**](BigDecimal.md) |  | 
-**discountTotal** | [**BigDecimal**](BigDecimal.md) |  | 
+**vatTotal** | **int** |  | 
+**discountTotal** | **int** |  | 
 **glNumber** | **string** |  | 
 **status** | **string** |  | 
-**sourceId** | [**BigDecimal**](BigDecimal.md) |  | 
-**sourceShopId** | [**BigDecimal**](BigDecimal.md) |  | 
+**sourceId** | **int** |  | 
+**sourceShopId** | **int** |  | 
 **invoiceNumber** | **string** |  | 
 **currency** | **string** |  | 
 **customerEmail** | **string** |  | 

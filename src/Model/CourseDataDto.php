@@ -57,7 +57,7 @@ class CourseDataDto implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'postTitle' => 'string',
-'iD' => 'BigDecimal'    ];
+'iD' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -235,7 +235,7 @@ class CourseDataDto implements ModelInterface, ArrayAccess
     /**
      * Gets iD
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getID()
     {
@@ -245,7 +245,7 @@ class CourseDataDto implements ModelInterface, ArrayAccess
     /**
      * Sets iD
      *
-     * @param BigDecimal $iD iD
+     * @param int $iD iD
      *
      * @return $this
      */

@@ -56,13 +56,13 @@ class OrderData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'BigDecimal',
+        'id' => 'int',
 'billing' => '\Yoast\MyYoastApiClient\Model\BillingDto',
 'cartHash' => 'string',
 'cartTax' => 'string',
 'createdVia' => 'string',
 'currency' => 'string',
-'customerId' => 'BigDecimal',
+'customerId' => 'int',
 'customerIpAddress' => 'string',
 'customerNote' => 'string',
 'customerUserAgent' => 'string',
@@ -81,7 +81,7 @@ class OrderData implements ModelInterface, ArrayAccess
 'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]',
 'number' => 'string',
 'orderKey' => 'string',
-'parentId' => 'BigDecimal',
+'parentId' => 'int',
 'paymentMethod' => 'string',
 'paymentMethodTitle' => 'string',
 'pricesIncludeTax' => 'bool',
@@ -553,7 +553,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getId()
     {
@@ -563,7 +563,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param BigDecimal $id id
+     * @param int $id id
      *
      * @return $this
      */
@@ -697,7 +697,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets customerId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getCustomerId()
     {
@@ -707,7 +707,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets customerId
      *
-     * @param BigDecimal $customerId customerId
+     * @param int $customerId customerId
      *
      * @return $this
      */
@@ -1153,7 +1153,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets parentId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getParentId()
     {
@@ -1163,7 +1163,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets parentId
      *
-     * @param BigDecimal $parentId parentId
+     * @param int $parentId parentId
      *
      * @return $this
      */

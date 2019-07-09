@@ -56,7 +56,7 @@ class ProductImage implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'BigDecimal',
+        'id' => 'int',
 'dateCreated' => 'string',
 'dateCreatedGmt' => 'string',
 'dateModified' => 'string',
@@ -64,7 +64,7 @@ class ProductImage implements ModelInterface, ArrayAccess
 'src' => 'string',
 'name' => 'string',
 'alt' => 'string',
-'position' => 'BigDecimal'    ];
+'position' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -274,7 +274,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getId()
     {
@@ -284,7 +284,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param BigDecimal $id id
+     * @param int $id id
      *
      * @return $this
      */
@@ -466,7 +466,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Gets position
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getPosition()
     {
@@ -476,7 +476,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Sets position
      *
-     * @param BigDecimal $position position
+     * @param int $position position
      *
      * @return $this
      */

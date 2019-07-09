@@ -91,6 +91,16 @@ class CourseEnrollmentApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiCourseEnrollmentsFromAcademyPut
+     *
+     * Update a CourseEnrollment.
+     *
+     */
+    public function testApiCourseEnrollmentsFromAcademyPut()
+    {
+    }
+
+    /**
      * Test case for apiCourseEnrollmentsGet
      *
      * Retrieve many CourseEnrollment.

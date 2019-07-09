@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
-**ttl** | [**BigDecimal**](BigDecimal.md) |  | 
+**ttl** | **int** |  | 
 **created** | **string** |  | 
 **createdAt** | **string** |  | 
 **modifiedAt** | **string** |  | 

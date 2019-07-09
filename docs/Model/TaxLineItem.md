@@ -3,12 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**BigDecimal**](BigDecimal.md) |  | 
+**id** | **int** |  | 
 **compound** | **bool** |  | 
 **label** | **string** |  | 
 **metaData** | **string[]** |  | 
 **rateCode** | **string** |  | 
-**rateId** | [**BigDecimal**](BigDecimal.md) |  | 
+**rateId** | **int** |  | 
 **shippingTaxTotal** | **string** |  | 
 **taxTotal** | **string** |  | 
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**BigDecimal**](BigDecimal.md) |  | 
+**id** | **int** |  | 
 **avatarUrl** | **string** |  | 
 **billing** | [**\Yoast\MyYoastApiClient\Model\BillingDto**](BillingDto.md) |  | 
 **dateCreated** | **string** |  | 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **isPayingCustomer** | **bool** |  | 
 **lastName** | **string** |  | 
 **metaData** | **string[]** |  | 
-**ordersCount** | [**BigDecimal**](BigDecimal.md) |  | 
+**ordersCount** | **int** |  | 
 **role** | **string** |  | 
 **shipping** | [**\Yoast\MyYoastApiClient\Model\ShippingDto**](ShippingDto.md) |  | 
 **totalSpent** | **string** |  | 

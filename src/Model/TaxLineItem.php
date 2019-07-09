@@ -56,12 +56,12 @@ class TaxLineItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'BigDecimal',
+        'id' => 'int',
 'compound' => 'bool',
 'label' => 'string',
 'metaData' => 'string[]',
 'rateCode' => 'string',
-'rateId' => 'BigDecimal',
+'rateId' => 'int',
 'shippingTaxTotal' => 'string',
 'taxTotal' => 'string'    ];
 
@@ -265,7 +265,7 @@ class TaxLineItem implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getId()
     {
@@ -275,7 +275,7 @@ class TaxLineItem implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param BigDecimal $id id
+     * @param int $id id
      *
      * @return $this
      */
@@ -385,7 +385,7 @@ class TaxLineItem implements ModelInterface, ArrayAccess
     /**
      * Gets rateId
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getRateId()
     {
@@ -395,7 +395,7 @@ class TaxLineItem implements ModelInterface, ArrayAccess
     /**
      * Sets rateId
      *
-     * @param BigDecimal $rateId rateId
+     * @param int $rateId rateId
      *
      * @return $this
      */

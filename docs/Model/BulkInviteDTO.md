@@ -1,4 +1,4 @@
-# BulkInviteDTO
+# BulkInviteDto
 
 ## Properties
 Name | Type | Description | Notes

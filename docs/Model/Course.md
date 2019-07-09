@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **description** | **string** |  | 
 **courseUrl** | **string** |  | 
 **certificateUrl** | **string** |  | 
-**sourceId** | [**BigDecimal**](BigDecimal.md) |  | 
+**sourceId** | **int** |  | 
 **createdAt** | **string** |  | 
 **modifiedAt** | **string** |  | 
 **iconUrl** | **string** |  | 

@@ -1,6 +1,6 @@
 <?php
 /**
- * BulkInviteDtoTest
+ * TransferDtoTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * BulkInviteDtoTest Class Doc Comment
+ * TransferDtoTest Class Doc Comment
  *
  * @category    Class
- * @description BulkInviteDto
+ * @description TransferDto
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class BulkInviteDtoTest extends \PHPUnit_Framework_TestCase
+class TransferDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,30 +69,23 @@ class BulkInviteDtoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "BulkInviteDto"
+     * Test "TransferDto"
      */
-    public function testBulkInviteDto()
+    public function testTransferDto()
     {
     }
 
     /**
-     * Test attribute "lineItemId"
+     * Test attribute "fromSourceId"
      */
-    public function testPropertyLineItemId()
+    public function testPropertyFromSourceId()
     {
     }
 
     /**
-     * Test attribute "lineItemNumber"
+     * Test attribute "toSourceId"
      */
-    public function testPropertyLineItemNumber()
-    {
-    }
-
-    /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
+    public function testPropertyToSourceId()
     {
     }
 }

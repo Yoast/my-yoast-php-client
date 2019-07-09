@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | [**BigDecimal**](BigDecimal.md) |  | 
-**parentId** | [**BigDecimal**](BigDecimal.md) |  | 
+**id** | **int** |  | 
+**parentId** | **int** |  | 
 **lineItems** | **string[]** |  | 
 **startDate** | **string** |  | 
 **endDate** | **string** |  | 
 **nextPaymentDate** | **string** |  | 
 **dateCreated** | **string** |  | 
-**customerId** | [**BigDecimal**](BigDecimal.md) |  | 
+**customerId** | **int** |  | 
 **status** | **string** |  | 
 **currency** | **string** |  | 
 **number** | **string** |  | 

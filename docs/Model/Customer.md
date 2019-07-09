@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
-**sourceId** | [**BigDecimal**](BigDecimal.md) |  | 
+**sourceId** | **int** |  | 
 **enabled** | **bool** |  | 
 **realm** | **string** |  | 
 **username** | **string** |  | 

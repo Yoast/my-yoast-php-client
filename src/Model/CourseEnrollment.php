@@ -58,14 +58,14 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
 'status' => 'string',
-'progress' => 'BigDecimal',
+'progress' => 'int',
 'createdAt' => 'string',
 'modifiedAt' => 'string',
 'isTrial' => 'bool',
 'outsideTrialProgress' => 'bool',
 'trialCompleted' => 'bool',
 'lineItemId' => 'string',
-'lineItemNumber' => 'BigDecimal',
+'lineItemNumber' => 'int',
 'expiryDate' => 'string'    ];
 
     /**
@@ -340,7 +340,7 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
     /**
      * Gets progress
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getProgress()
     {
@@ -350,7 +350,7 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
     /**
      * Sets progress
      *
-     * @param BigDecimal $progress progress
+     * @param int $progress progress
      *
      * @return $this
      */
@@ -508,7 +508,7 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
     /**
      * Gets lineItemNumber
      *
-     * @return BigDecimal
+     * @return int
      */
     public function getLineItemNumber()
     {
@@ -518,7 +518,7 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
     /**
      * Sets lineItemNumber
      *
-     * @param BigDecimal $lineItemNumber lineItemNumber
+     * @param int $lineItemNumber lineItemNumber
      *
      * @return $this
      */
