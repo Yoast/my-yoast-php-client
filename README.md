@@ -287,6 +287,7 @@ Class | Method | HTTP request | Description
  - [EddDTO](docs/Model/EddDTO.md)
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)
+ - [ExtraProductData](docs/Model/ExtraProductData.md)
  - [FromAcademyDto](docs/Model/FromAcademyDto.md)
  - [GenerateDto](docs/Model/GenerateDto.md)
  - [HelpScoutCustomerData](docs/Model/HelpScoutCustomerData.md)

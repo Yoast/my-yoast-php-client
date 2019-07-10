@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductFromWooDto
+ * ExtraProductData
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * ProductFromWooDto Class Doc Comment
+ * ExtraProductData Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ProductFromWooDto implements ModelInterface, ArrayAccess
+class ExtraProductData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ProductFromWooDto implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ProductFromWooDto';
+    protected static $swaggerModelName = 'ExtraProductData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +56,9 @@ class ProductFromWooDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'productData' => '\Yoast\MyYoastApiClient\Model\ProductData',
-'extraData' => '\Yoast\MyYoastApiClient\Model\ExtraProductData'    ];
+        'shopId' => 'int',
+'changelog' => 'string',
+'productGroupSlugs' => 'string[]'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -65,8 +66,9 @@ class ProductFromWooDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'productData' => null,
-'extraData' => null    ];
+        'shopId' => null,
+'changelog' => null,
+'productGroupSlugs' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -95,8 +97,9 @@ class ProductFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'productData' => 'productData',
-'extraData' => 'extraData'    ];
+        'shopId' => 'shop_id',
+'changelog' => 'changelog',
+'productGroupSlugs' => 'product_group_slugs'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -104,8 +107,9 @@ class ProductFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'productData' => 'setProductData',
-'extraData' => 'setExtraData'    ];
+        'shopId' => 'setShopId',
+'changelog' => 'setChangelog',
+'productGroupSlugs' => 'setProductGroupSlugs'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -113,8 +117,9 @@ class ProductFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'productData' => 'getProductData',
-'extraData' => 'getExtraData'    ];
+        'shopId' => 'getShopId',
+'changelog' => 'getChangelog',
+'productGroupSlugs' => 'getProductGroupSlugs'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -174,8 +179,9 @@ class ProductFromWooDto implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['productData'] = isset($data['productData']) ? $data['productData'] : null;
-        $this->container['extraData'] = isset($data['extraData']) ? $data['extraData'] : null;
+        $this->container['shopId'] = isset($data['shopId']) ? $data['shopId'] : null;
+        $this->container['changelog'] = isset($data['changelog']) ? $data['changelog'] : null;
+        $this->container['productGroupSlugs'] = isset($data['productGroupSlugs']) ? $data['productGroupSlugs'] : null;
     }
 
     /**
@@ -187,11 +193,14 @@ class ProductFromWooDto implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['productData'] === null) {
-            $invalidProperties[] = "'productData' can't be null";
+        if ($this->container['shopId'] === null) {
+            $invalidProperties[] = "'shopId' can't be null";
         }
-        if ($this->container['extraData'] === null) {
-            $invalidProperties[] = "'extraData' can't be null";
+        if ($this->container['changelog'] === null) {
+            $invalidProperties[] = "'changelog' can't be null";
+        }
+        if ($this->container['productGroupSlugs'] === null) {
+            $invalidProperties[] = "'productGroupSlugs' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,49 +218,73 @@ class ProductFromWooDto implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets productData
+     * Gets shopId
      *
-     * @return \Yoast\MyYoastApiClient\Model\ProductData
+     * @return int
      */
-    public function getProductData()
+    public function getShopId()
     {
-        return $this->container['productData'];
+        return $this->container['shopId'];
     }
 
     /**
-     * Sets productData
+     * Sets shopId
      *
-     * @param \Yoast\MyYoastApiClient\Model\ProductData $productData productData
+     * @param int $shopId shopId
      *
      * @return $this
      */
-    public function setProductData($productData)
+    public function setShopId($shopId)
     {
-        $this->container['productData'] = $productData;
+        $this->container['shopId'] = $shopId;
 
         return $this;
     }
 
     /**
-     * Gets extraData
+     * Gets changelog
      *
-     * @return \Yoast\MyYoastApiClient\Model\ExtraProductData
+     * @return string
      */
-    public function getExtraData()
+    public function getChangelog()
     {
-        return $this->container['extraData'];
+        return $this->container['changelog'];
     }
 
     /**
-     * Sets extraData
+     * Sets changelog
      *
-     * @param \Yoast\MyYoastApiClient\Model\ExtraProductData $extraData extraData
+     * @param string $changelog changelog
      *
      * @return $this
      */
-    public function setExtraData($extraData)
+    public function setChangelog($changelog)
     {
-        $this->container['extraData'] = $extraData;
+        $this->container['changelog'] = $changelog;
+
+        return $this;
+    }
+
+    /**
+     * Gets productGroupSlugs
+     *
+     * @return string[]
+     */
+    public function getProductGroupSlugs()
+    {
+        return $this->container['productGroupSlugs'];
+    }
+
+    /**
+     * Sets productGroupSlugs
+     *
+     * @param string[] $productGroupSlugs productGroupSlugs
+     *
+     * @return $this
+     */
+    public function setProductGroupSlugs($productGroupSlugs)
+    {
+        $this->container['productGroupSlugs'] = $productGroupSlugs;
 
         return $this;
     }
