@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductGroupFromWooDto
+ * ProductGroupExtraData
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * ProductGroupFromWooDto Class Doc Comment
+ * ProductGroupExtraData Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
+class ProductGroupExtraData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ProductGroupFromWooDto';
+    protected static $swaggerModelName = 'ProductGroupExtraData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,9 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'productGroupTerm' => '\Yoast\MyYoastApiClient\Model\ProductGroupTerm',
-'productGroupMeta' => '\Yoast\MyYoastApiClient\Model\ProductGroupMeta',
-'extraData' => '\Yoast\MyYoastApiClient\Model\ProductGroupExtraData'    ];
+        'parentSlug' => 'string',
+'icon' => 'string',
+'changelog' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +66,9 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'productGroupTerm' => null,
-'productGroupMeta' => null,
-'extraData' => null    ];
+        'parentSlug' => null,
+'icon' => null,
+'changelog' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +97,9 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'productGroupTerm' => 'productGroupTerm',
-'productGroupMeta' => 'productGroupMeta',
-'extraData' => 'extraData'    ];
+        'parentSlug' => 'parent_slug',
+'icon' => 'icon',
+'changelog' => 'changelog'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +107,9 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'productGroupTerm' => 'setProductGroupTerm',
-'productGroupMeta' => 'setProductGroupMeta',
-'extraData' => 'setExtraData'    ];
+        'parentSlug' => 'setParentSlug',
+'icon' => 'setIcon',
+'changelog' => 'setChangelog'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +117,9 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'productGroupTerm' => 'getProductGroupTerm',
-'productGroupMeta' => 'getProductGroupMeta',
-'extraData' => 'getExtraData'    ];
+        'parentSlug' => 'getParentSlug',
+'icon' => 'getIcon',
+'changelog' => 'getChangelog'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +179,9 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['productGroupTerm'] = isset($data['productGroupTerm']) ? $data['productGroupTerm'] : null;
-        $this->container['productGroupMeta'] = isset($data['productGroupMeta']) ? $data['productGroupMeta'] : null;
-        $this->container['extraData'] = isset($data['extraData']) ? $data['extraData'] : null;
+        $this->container['parentSlug'] = isset($data['parentSlug']) ? $data['parentSlug'] : null;
+        $this->container['icon'] = isset($data['icon']) ? $data['icon'] : null;
+        $this->container['changelog'] = isset($data['changelog']) ? $data['changelog'] : null;
     }
 
     /**
@@ -193,14 +193,14 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['productGroupTerm'] === null) {
-            $invalidProperties[] = "'productGroupTerm' can't be null";
+        if ($this->container['parentSlug'] === null) {
+            $invalidProperties[] = "'parentSlug' can't be null";
         }
-        if ($this->container['productGroupMeta'] === null) {
-            $invalidProperties[] = "'productGroupMeta' can't be null";
+        if ($this->container['icon'] === null) {
+            $invalidProperties[] = "'icon' can't be null";
         }
-        if ($this->container['extraData'] === null) {
-            $invalidProperties[] = "'extraData' can't be null";
+        if ($this->container['changelog'] === null) {
+            $invalidProperties[] = "'changelog' can't be null";
         }
         return $invalidProperties;
     }
@@ -218,73 +218,73 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets productGroupTerm
+     * Gets parentSlug
      *
-     * @return \Yoast\MyYoastApiClient\Model\ProductGroupTerm
+     * @return string
      */
-    public function getProductGroupTerm()
+    public function getParentSlug()
     {
-        return $this->container['productGroupTerm'];
+        return $this->container['parentSlug'];
     }
 
     /**
-     * Sets productGroupTerm
+     * Sets parentSlug
      *
-     * @param \Yoast\MyYoastApiClient\Model\ProductGroupTerm $productGroupTerm productGroupTerm
+     * @param string $parentSlug parentSlug
      *
      * @return $this
      */
-    public function setProductGroupTerm($productGroupTerm)
+    public function setParentSlug($parentSlug)
     {
-        $this->container['productGroupTerm'] = $productGroupTerm;
+        $this->container['parentSlug'] = $parentSlug;
 
         return $this;
     }
 
     /**
-     * Gets productGroupMeta
+     * Gets icon
      *
-     * @return \Yoast\MyYoastApiClient\Model\ProductGroupMeta
+     * @return string
      */
-    public function getProductGroupMeta()
+    public function getIcon()
     {
-        return $this->container['productGroupMeta'];
+        return $this->container['icon'];
     }
 
     /**
-     * Sets productGroupMeta
+     * Sets icon
      *
-     * @param \Yoast\MyYoastApiClient\Model\ProductGroupMeta $productGroupMeta productGroupMeta
+     * @param string $icon icon
      *
      * @return $this
      */
-    public function setProductGroupMeta($productGroupMeta)
+    public function setIcon($icon)
     {
-        $this->container['productGroupMeta'] = $productGroupMeta;
+        $this->container['icon'] = $icon;
 
         return $this;
     }
 
     /**
-     * Gets extraData
+     * Gets changelog
      *
-     * @return \Yoast\MyYoastApiClient\Model\ProductGroupExtraData
+     * @return string
      */
-    public function getExtraData()
+    public function getChangelog()
     {
-        return $this->container['extraData'];
+        return $this->container['changelog'];
     }
 
     /**
-     * Sets extraData
+     * Sets changelog
      *
-     * @param \Yoast\MyYoastApiClient\Model\ProductGroupExtraData $extraData extraData
+     * @param string $changelog changelog
      *
      * @return $this
      */
-    public function setExtraData($extraData)
+    public function setChangelog($changelog)
     {
-        $this->container['extraData'] = $extraData;
+        $this->container['changelog'] = $changelog;
 
         return $this;
     }

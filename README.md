@@ -308,6 +308,7 @@ Class | Method | HTTP request | Description
  - [ProductDownload](docs/Model/ProductDownload.md)
  - [ProductFromWooDto](docs/Model/ProductFromWooDto.md)
  - [ProductGroup](docs/Model/ProductGroup.md)
+ - [ProductGroupExtraData](docs/Model/ProductGroupExtraData.md)
  - [ProductGroupFromWooDto](docs/Model/ProductGroupFromWooDto.md)
  - [ProductGroupMeta](docs/Model/ProductGroupMeta.md)
  - [ProductGroupTerm](docs/Model/ProductGroupTerm.md)
