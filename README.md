@@ -259,6 +259,7 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**apiSitesSwitchSubscriptionPost**](docs/Api/SiteApi.md#apisitesswitchsubscriptionpost) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
 *SiteApi* | [**apiSitesTransferPost**](docs/Api/SiteApi.md#apisitestransferpost) | **POST** /api/Sites/transfer | Transfer sites.
 *SubscriptionApi* | [**apiSubscriptionsBulkPost**](docs/Api/SubscriptionApi.md#apisubscriptionsbulkpost) | **POST** /api/Subscriptions/bulk | Create many Subscription
+*SubscriptionApi* | [**apiSubscriptionsExpiringGet**](docs/Api/SubscriptionApi.md#apisubscriptionsexpiringget) | **GET** /api/Subscriptions/expiring | 
 *SubscriptionApi* | [**apiSubscriptionsGet**](docs/Api/SubscriptionApi.md#apisubscriptionsget) | **GET** /api/Subscriptions | Retrieve many Subscription
 *SubscriptionApi* | [**apiSubscriptionsIdDelete**](docs/Api/SubscriptionApi.md#apisubscriptionsiddelete) | **DELETE** /api/Subscriptions/{id} | Delete one Subscription
 *SubscriptionApi* | [**apiSubscriptionsIdGet**](docs/Api/SubscriptionApi.md#apisubscriptionsidget) | **GET** /api/Subscriptions/{id} | Retrieve one Subscription
