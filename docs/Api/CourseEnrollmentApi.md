@@ -265,8 +265,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$from = "from_example"; // string | 
-$until = "until_example"; // string | 
+$from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
+$until = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 
 try {
     $result = $apiInstance->apiCourseEnrollmentsGetLegacyExpiringGet($from, $until);
@@ -281,8 +281,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **from** | **string**|  |
- **until** | **string**|  |
+ **from** | **\DateTime**|  |
+ **until** | **\DateTime**|  |
 
 ### Return type
 

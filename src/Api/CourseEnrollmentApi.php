@@ -1169,8 +1169,8 @@ class CourseEnrollmentApi
      *
      * Get legacy course enrollments that expire between two given dates
      *
-     * @param  string $from from (required)
-     * @param  string $until until (required)
+     * @param  \DateTime $from from (required)
+     * @param  \DateTime $until until (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1187,8 +1187,8 @@ class CourseEnrollmentApi
      *
      * Get legacy course enrollments that expire between two given dates
      *
-     * @param  string $from (required)
-     * @param  string $until (required)
+     * @param  \DateTime $from (required)
+     * @param  \DateTime $until (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1263,8 +1263,8 @@ class CourseEnrollmentApi
      *
      * Get legacy course enrollments that expire between two given dates
      *
-     * @param  string $from (required)
-     * @param  string $until (required)
+     * @param  \DateTime $from (required)
+     * @param  \DateTime $until (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1284,8 +1284,8 @@ class CourseEnrollmentApi
      *
      * Get legacy course enrollments that expire between two given dates
      *
-     * @param  string $from (required)
-     * @param  string $until (required)
+     * @param  \DateTime $from (required)
+     * @param  \DateTime $until (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1335,8 +1335,8 @@ class CourseEnrollmentApi
     /**
      * Create request for operation 'apiCourseEnrollmentsGetLegacyExpiringGet'
      *
-     * @param  string $from (required)
-     * @param  string $until (required)
+     * @param  \DateTime $from (required)
+     * @param  \DateTime $until (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
