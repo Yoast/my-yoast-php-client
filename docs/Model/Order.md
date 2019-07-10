@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | 
 **totalAmount** | **int** |  | 
 **subtotalAmount** | **int** |  | 
-**date** | **string** |  | 
+**date** | [**\DateTime**](\DateTime.md) |  | 
 **vatNumber** | **string** |  | 
 **paymentProvider** | **string** |  | 
 **paymentGateway** | **string** |  | 
@@ -32,8 +32,8 @@ Name | Type | Description | Notes
 **addressZipcode** | **string** |  | 
 **addressCountry** | **string** |  | 
 **excludeFromRevenue** | **bool** |  | 
-**createdAt** | **string** |  | 
-**modifiedAt** | **string** |  | 
+**createdAt** | [**\DateTime**](\DateTime.md) |  | 
+**modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 **renewal** | **bool** |  | 
 **automatic** | **bool** |  | 
 

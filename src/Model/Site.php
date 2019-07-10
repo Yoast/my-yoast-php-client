@@ -60,13 +60,13 @@ class Site implements ModelInterface, ArrayAccess
 'url' => 'string',
 'header' => 'string',
 'icon' => 'string',
-'creationDate' => 'string',
+'creationDate' => '\DateTime',
 'hostname' => 'string',
 'protocol' => 'string',
 'port' => 'int',
 'path' => 'string',
-'createdAt' => 'string',
-'modifiedAt' => 'string',
+'createdAt' => '\DateTime',
+'modifiedAt' => '\DateTime',
 'type' => 'string',
 'status' => 'string',
 'clientId' => 'string',
@@ -82,13 +82,13 @@ class Site implements ModelInterface, ArrayAccess
 'url' => null,
 'header' => null,
 'icon' => null,
-'creationDate' => null,
+'creationDate' => 'date-time',
 'hostname' => null,
 'protocol' => null,
 'port' => null,
 'path' => null,
-'createdAt' => null,
-'modifiedAt' => null,
+'createdAt' => 'date-time',
+'modifiedAt' => 'date-time',
 'type' => null,
 'status' => null,
 'clientId' => null,
@@ -424,7 +424,7 @@ class Site implements ModelInterface, ArrayAccess
     /**
      * Gets creationDate
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreationDate()
     {
@@ -434,7 +434,7 @@ class Site implements ModelInterface, ArrayAccess
     /**
      * Sets creationDate
      *
-     * @param string $creationDate creationDate
+     * @param \DateTime $creationDate creationDate
      *
      * @return $this
      */
@@ -544,7 +544,7 @@ class Site implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -554,7 +554,7 @@ class Site implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */
@@ -568,7 +568,7 @@ class Site implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -578,7 +578,7 @@ class Site implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param string $modifiedAt modifiedAt
+     * @param \DateTime $modifiedAt modifiedAt
      *
      * @return $this
      */

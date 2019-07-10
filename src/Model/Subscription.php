@@ -57,21 +57,21 @@ class Subscription implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-'startDate' => 'string',
-'endDate' => 'string',
+'startDate' => '\DateTime',
+'endDate' => '\DateTime',
 'sourceId' => 'int',
 'sourceLineItemId' => 'int',
 'sourceShopId' => 'int',
 'status' => 'string',
 'currency' => 'string',
-'date' => 'string',
+'date' => '\DateTime',
 'price' => 'int',
 'name' => 'string',
-'nextPayment' => 'string',
+'nextPayment' => '\DateTime',
 'limit' => 'int',
 'used' => 'int',
-'createdAt' => 'string',
-'modifiedAt' => 'string',
+'createdAt' => '\DateTime',
+'modifiedAt' => '\DateTime',
 'requiresManualRenewal' => 'bool',
 'renewalUrl' => 'string',
 'subscriptionNumber' => 'string'    ];
@@ -83,21 +83,21 @@ class Subscription implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-'startDate' => null,
-'endDate' => null,
+'startDate' => 'date-time',
+'endDate' => 'date-time',
 'sourceId' => null,
 'sourceLineItemId' => null,
 'sourceShopId' => null,
 'status' => null,
 'currency' => null,
-'date' => null,
+'date' => 'date-time',
 'price' => null,
 'name' => null,
-'nextPayment' => null,
+'nextPayment' => 'date-time',
 'limit' => null,
 'used' => null,
-'createdAt' => null,
-'modifiedAt' => null,
+'createdAt' => 'date-time',
+'modifiedAt' => 'date-time',
 'requiresManualRenewal' => null,
 'renewalUrl' => null,
 'subscriptionNumber' => null    ];
@@ -388,7 +388,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets startDate
      *
-     * @return string
+     * @return \DateTime
      */
     public function getStartDate()
     {
@@ -398,7 +398,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets startDate
      *
-     * @param string $startDate startDate
+     * @param \DateTime $startDate startDate
      *
      * @return $this
      */
@@ -412,7 +412,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets endDate
      *
-     * @return string
+     * @return \DateTime
      */
     public function getEndDate()
     {
@@ -422,7 +422,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets endDate
      *
-     * @param string $endDate endDate
+     * @param \DateTime $endDate endDate
      *
      * @return $this
      */
@@ -556,7 +556,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets date
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -566,7 +566,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets date
      *
-     * @param string $date date
+     * @param \DateTime $date date
      *
      * @return $this
      */
@@ -628,7 +628,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets nextPayment
      *
-     * @return string
+     * @return \DateTime
      */
     public function getNextPayment()
     {
@@ -638,7 +638,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets nextPayment
      *
-     * @param string $nextPayment nextPayment
+     * @param \DateTime $nextPayment nextPayment
      *
      * @return $this
      */
@@ -700,7 +700,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -710,7 +710,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */
@@ -724,7 +724,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -734,7 +734,7 @@ class Subscription implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param string $modifiedAt modifiedAt
+     * @param \DateTime $modifiedAt modifiedAt
      *
      * @return $this
      */

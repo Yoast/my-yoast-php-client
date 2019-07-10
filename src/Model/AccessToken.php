@@ -58,9 +58,9 @@ class AccessToken implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
 'ttl' => 'int',
-'created' => '\Yoast\MyYoastApiClient\Model\\DateTime',
-'createdAt' => '\Yoast\MyYoastApiClient\Model\\DateTime',
-'modifiedAt' => '\Yoast\MyYoastApiClient\Model\\DateTime'    ];
+'created' => '\DateTime',
+'createdAt' => '\DateTime',
+'modifiedAt' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +70,9 @@ class AccessToken implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'ttl' => null,
-'created' => null,
-'createdAt' => null,
-'modifiedAt' => null    ];
+'created' => 'date-time',
+'createdAt' => 'date-time',
+'modifiedAt' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -286,7 +286,7 @@ class AccessToken implements ModelInterface, ArrayAccess
     /**
      * Gets created
      *
-     * @return \Yoast\MyYoastApiClient\Model\\DateTime
+     * @return \DateTime
      */
     public function getCreated()
     {
@@ -296,7 +296,7 @@ class AccessToken implements ModelInterface, ArrayAccess
     /**
      * Sets created
      *
-     * @param \Yoast\MyYoastApiClient\Model\\DateTime $created created
+     * @param \DateTime $created created
      *
      * @return $this
      */
@@ -310,7 +310,7 @@ class AccessToken implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return \Yoast\MyYoastApiClient\Model\\DateTime
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -320,7 +320,7 @@ class AccessToken implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param \Yoast\MyYoastApiClient\Model\\DateTime $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class AccessToken implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return \Yoast\MyYoastApiClient\Model\\DateTime
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -344,7 +344,7 @@ class AccessToken implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param \Yoast\MyYoastApiClient\Model\\DateTime $modifiedAt modifiedAt
+     * @param \DateTime $modifiedAt modifiedAt
      *
      * @return $this
      */

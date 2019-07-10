@@ -62,8 +62,8 @@ class Download implements ModelInterface, ArrayAccess
 'secret' => 'string',
 'extension' => 'string',
 'mimetype' => 'string',
-'createdAt' => 'string',
-'modifiedAt' => 'string',
+'createdAt' => '\DateTime',
+'modifiedAt' => '\DateTime',
 'public' => 'bool'    ];
 
     /**
@@ -78,8 +78,8 @@ class Download implements ModelInterface, ArrayAccess
 'secret' => null,
 'extension' => null,
 'mimetype' => null,
-'createdAt' => null,
-'modifiedAt' => null,
+'createdAt' => 'date-time',
+'modifiedAt' => 'date-time',
 'public' => null    ];
 
     /**
@@ -418,7 +418,7 @@ class Download implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -428,7 +428,7 @@ class Download implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */
@@ -442,7 +442,7 @@ class Download implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -452,7 +452,7 @@ class Download implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param string $modifiedAt modifiedAt
+     * @param \DateTime $modifiedAt modifiedAt
      *
      * @return $this
      */

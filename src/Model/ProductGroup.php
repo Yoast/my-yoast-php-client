@@ -57,8 +57,8 @@ class ProductGroup implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-'updatedAt' => 'string',
-'createdAt' => 'string',
+'updatedAt' => '\DateTime',
+'createdAt' => '\DateTime',
 'name' => 'string',
 'slug' => 'string',
 'description' => 'string',
@@ -74,8 +74,8 @@ class ProductGroup implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-'updatedAt' => null,
-'createdAt' => null,
+'updatedAt' => 'date-time',
+'createdAt' => 'date-time',
 'name' => null,
 'slug' => null,
 'description' => null,
@@ -307,7 +307,7 @@ class ProductGroup implements ModelInterface, ArrayAccess
     /**
      * Gets updatedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -317,7 +317,7 @@ class ProductGroup implements ModelInterface, ArrayAccess
     /**
      * Sets updatedAt
      *
-     * @param string $updatedAt updatedAt
+     * @param \DateTime $updatedAt updatedAt
      *
      * @return $this
      */
@@ -331,7 +331,7 @@ class ProductGroup implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -341,7 +341,7 @@ class ProductGroup implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */

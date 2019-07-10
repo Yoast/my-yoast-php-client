@@ -62,8 +62,8 @@ class Course implements ModelInterface, ArrayAccess
 'courseUrl' => 'string',
 'certificateUrl' => 'string',
 'sourceId' => 'int',
-'createdAt' => 'string',
-'modifiedAt' => 'string',
+'createdAt' => '\DateTime',
+'modifiedAt' => '\DateTime',
 'iconUrl' => 'string',
 'complimentary' => 'bool',
 'open' => 'bool',
@@ -84,8 +84,8 @@ class Course implements ModelInterface, ArrayAccess
 'courseUrl' => null,
 'certificateUrl' => null,
 'sourceId' => null,
-'createdAt' => null,
-'modifiedAt' => null,
+'createdAt' => 'date-time',
+'modifiedAt' => 'date-time',
 'iconUrl' => null,
 'complimentary' => null,
 'open' => null,
@@ -472,7 +472,7 @@ class Course implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -482,7 +482,7 @@ class Course implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */
@@ -496,7 +496,7 @@ class Course implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -506,7 +506,7 @@ class Course implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param string $modifiedAt modifiedAt
+     * @param \DateTime $modifiedAt modifiedAt
      *
      * @return $this
      */

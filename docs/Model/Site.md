@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **url** | **string** |  | 
 **header** | **string** |  | 
 **icon** | **string** |  | 
-**creationDate** | **string** |  | 
+**creationDate** | [**\DateTime**](\DateTime.md) |  | 
 **hostname** | **string** |  | 
 **protocol** | **string** |  | 
 **port** | **int** |  | 
 **path** | **string** |  | 
-**createdAt** | **string** |  | 
-**modifiedAt** | **string** |  | 
+**createdAt** | [**\DateTime**](\DateTime.md) |  | 
+**modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 **type** | **string** |  | 
 **status** | **string** |  | 
 **clientId** | **string** |  | 

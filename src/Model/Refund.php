@@ -58,12 +58,12 @@ class Refund implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'string',
 'amount' => 'int',
-'date' => 'string',
-'modifiedAt' => 'string',
+'date' => '\DateTime',
+'modifiedAt' => '\DateTime',
 'reason' => 'string',
 'sourceId' => 'int',
 'sourceShopId' => 'int',
-'createdAt' => 'string'    ];
+'createdAt' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,12 +73,12 @@ class Refund implements ModelInterface, ArrayAccess
     protected static $swaggerFormats = [
         'id' => null,
 'amount' => null,
-'date' => null,
-'modifiedAt' => null,
+'date' => 'date-time',
+'modifiedAt' => 'date-time',
 'reason' => null,
 'sourceId' => null,
 'sourceShopId' => null,
-'createdAt' => null    ];
+'createdAt' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -313,7 +313,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Gets date
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -323,7 +323,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Sets date
      *
-     * @param string $date date
+     * @param \DateTime $date date
      *
      * @return $this
      */
@@ -337,7 +337,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -347,7 +347,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param string $modifiedAt modifiedAt
+     * @param \DateTime $modifiedAt modifiedAt
      *
      * @return $this
      */
@@ -433,7 +433,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -443,7 +443,7 @@ class Refund implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */

@@ -64,8 +64,8 @@ class LineItem implements ModelInterface, ArrayAccess
 'quantity' => 'int',
 'sourceId' => 'int',
 'sourceShopId' => 'int',
-'createdAt' => 'string',
-'modifiedAt' => 'string'    ];
+'createdAt' => '\DateTime',
+'modifiedAt' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -81,8 +81,8 @@ class LineItem implements ModelInterface, ArrayAccess
 'quantity' => null,
 'sourceId' => null,
 'sourceShopId' => null,
-'createdAt' => null,
-'modifiedAt' => null    ];
+'createdAt' => 'date-time',
+'modifiedAt' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -475,7 +475,7 @@ class LineItem implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -485,7 +485,7 @@ class LineItem implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */
@@ -499,7 +499,7 @@ class LineItem implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -509,7 +509,7 @@ class LineItem implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param string $modifiedAt modifiedAt
+     * @param \DateTime $modifiedAt modifiedAt
      *
      * @return $this
      */

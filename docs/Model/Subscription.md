@@ -4,21 +4,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
-**startDate** | **string** |  | 
-**endDate** | **string** |  | 
+**startDate** | [**\DateTime**](\DateTime.md) |  | 
+**endDate** | [**\DateTime**](\DateTime.md) |  | 
 **sourceId** | **int** |  | 
 **sourceLineItemId** | **int** |  | 
 **sourceShopId** | **int** |  | 
 **status** | **string** |  | 
 **currency** | **string** |  | 
-**date** | **string** |  | 
+**date** | [**\DateTime**](\DateTime.md) |  | 
 **price** | **int** |  | 
 **name** | **string** |  | 
-**nextPayment** | **string** |  | 
+**nextPayment** | [**\DateTime**](\DateTime.md) |  | 
 **limit** | **int** |  | 
 **used** | **int** |  | 
-**createdAt** | **string** |  | 
-**modifiedAt** | **string** |  | 
+**createdAt** | [**\DateTime**](\DateTime.md) |  | 
+**modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 **requiresManualRenewal** | **bool** |  | 
 **renewalUrl** | **string** |  | 
 **subscriptionNumber** | **string** |  | 

@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **courseUrl** | **string** |  | 
 **certificateUrl** | **string** |  | 
 **sourceId** | **int** |  | 
-**createdAt** | **string** |  | 
-**modifiedAt** | **string** |  | 
+**createdAt** | [**\DateTime**](\DateTime.md) |  | 
+**modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 **iconUrl** | **string** |  | 
 **complimentary** | **bool** |  | 
 **open** | **bool** |  | 

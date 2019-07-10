@@ -60,7 +60,7 @@ class Order implements ModelInterface, ArrayAccess
 'id' => 'string',
 'totalAmount' => 'int',
 'subtotalAmount' => 'int',
-'date' => 'string',
+'date' => '\DateTime',
 'vatNumber' => 'string',
 'paymentProvider' => 'string',
 'paymentGateway' => 'string',
@@ -85,8 +85,8 @@ class Order implements ModelInterface, ArrayAccess
 'addressZipcode' => 'string',
 'addressCountry' => 'string',
 'excludeFromRevenue' => 'bool',
-'createdAt' => 'string',
-'modifiedAt' => 'string',
+'createdAt' => '\DateTime',
+'modifiedAt' => '\DateTime',
 'renewal' => 'bool',
 'automatic' => 'bool'    ];
 
@@ -100,7 +100,7 @@ class Order implements ModelInterface, ArrayAccess
 'id' => null,
 'totalAmount' => null,
 'subtotalAmount' => null,
-'date' => null,
+'date' => 'date-time',
 'vatNumber' => null,
 'paymentProvider' => null,
 'paymentGateway' => null,
@@ -125,8 +125,8 @@ class Order implements ModelInterface, ArrayAccess
 'addressZipcode' => null,
 'addressCountry' => null,
 'excludeFromRevenue' => null,
-'createdAt' => null,
-'modifiedAt' => null,
+'createdAt' => 'date-time',
+'modifiedAt' => 'date-time',
 'renewal' => null,
 'automatic' => null    ];
 
@@ -586,7 +586,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets date
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -596,7 +596,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets date
      *
-     * @param string $date date
+     * @param \DateTime $date date
      *
      * @return $this
      */
@@ -1186,7 +1186,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -1196,7 +1196,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */
@@ -1210,7 +1210,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -1220,7 +1220,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param string $modifiedAt modifiedAt
+     * @param \DateTime $modifiedAt modifiedAt
      *
      * @return $this
      */

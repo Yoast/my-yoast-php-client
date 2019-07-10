@@ -65,8 +65,8 @@ class Customer implements ModelInterface, ArrayAccess
 'email' => 'string',
 'emailVerified' => 'bool',
 'verificationToken' => 'string',
-'createdAt' => 'string',
-'modifiedAt' => 'string',
+'createdAt' => '\DateTime',
+'modifiedAt' => '\DateTime',
 'userEmail' => 'string',
 'userFirstName' => 'string',
 'userLastName' => 'string',
@@ -95,8 +95,8 @@ class Customer implements ModelInterface, ArrayAccess
 'email' => null,
 'emailVerified' => null,
 'verificationToken' => null,
-'createdAt' => null,
-'modifiedAt' => null,
+'createdAt' => 'date-time',
+'modifiedAt' => 'date-time',
 'userEmail' => null,
 'userFirstName' => null,
 'userLastName' => null,
@@ -616,7 +616,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -626,7 +626,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */
@@ -640,7 +640,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -650,7 +650,7 @@ class Customer implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param string $modifiedAt modifiedAt
+     * @param \DateTime $modifiedAt modifiedAt
      *
      * @return $this
      */

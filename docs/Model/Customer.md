@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **email** | **string** |  | 
 **emailVerified** | **bool** |  | 
 **verificationToken** | **string** |  | 
-**createdAt** | **string** |  | 
-**modifiedAt** | **string** |  | 
+**createdAt** | [**\DateTime**](\DateTime.md) |  | 
+**modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 **userEmail** | **string** |  | 
 **userFirstName** | **string** |  | 
 **userLastName** | **string** |  | 

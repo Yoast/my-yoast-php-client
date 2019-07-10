@@ -59,8 +59,8 @@ class ComposerToken implements ModelInterface, ArrayAccess
         'id' => 'string',
 'name' => 'string',
 'enabled' => 'bool',
-'createdAt' => 'string',
-'modifiedAt' => 'string'    ];
+'createdAt' => '\DateTime',
+'modifiedAt' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,8 +71,8 @@ class ComposerToken implements ModelInterface, ArrayAccess
         'id' => null,
 'name' => null,
 'enabled' => null,
-'createdAt' => null,
-'modifiedAt' => null    ];
+'createdAt' => 'date-time',
+'modifiedAt' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -310,7 +310,7 @@ class ComposerToken implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -320,7 +320,7 @@ class ComposerToken implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class ComposerToken implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -344,7 +344,7 @@ class ComposerToken implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param string $modifiedAt modifiedAt
+     * @param \DateTime $modifiedAt modifiedAt
      *
      * @return $this
      */

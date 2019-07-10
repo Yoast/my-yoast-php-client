@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
-**updatedAt** | **string** |  | 
-**createdAt** | **string** |  | 
+**updatedAt** | [**\DateTime**](\DateTime.md) |  | 
+**createdAt** | [**\DateTime**](\DateTime.md) |  | 
 **name** | **string** |  | 
 **slug** | **string** |  | 
 **description** | **string** |  | 

@@ -57,10 +57,10 @@ class CustomerNote implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-'updatedAt' => 'string',
-'createdAt' => 'string',
+'updatedAt' => '\DateTime',
+'createdAt' => '\DateTime',
 'content' => 'string',
-'nextContactDate' => 'string'    ];
+'nextContactDate' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,10 +69,10 @@ class CustomerNote implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-'updatedAt' => null,
-'createdAt' => null,
+'updatedAt' => 'date-time',
+'createdAt' => 'date-time',
 'content' => null,
-'nextContactDate' => null    ];
+'nextContactDate' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -262,7 +262,7 @@ class CustomerNote implements ModelInterface, ArrayAccess
     /**
      * Gets updatedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -272,7 +272,7 @@ class CustomerNote implements ModelInterface, ArrayAccess
     /**
      * Sets updatedAt
      *
-     * @param string $updatedAt updatedAt
+     * @param \DateTime $updatedAt updatedAt
      *
      * @return $this
      */
@@ -286,7 +286,7 @@ class CustomerNote implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -296,7 +296,7 @@ class CustomerNote implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */
@@ -334,7 +334,7 @@ class CustomerNote implements ModelInterface, ArrayAccess
     /**
      * Gets nextContactDate
      *
-     * @return string
+     * @return \DateTime
      */
     public function getNextContactDate()
     {
@@ -344,7 +344,7 @@ class CustomerNote implements ModelInterface, ArrayAccess
     /**
      * Sets nextContactDate
      *
-     * @param string $nextContactDate nextContactDate
+     * @param \DateTime $nextContactDate nextContactDate
      *
      * @return $this
      */

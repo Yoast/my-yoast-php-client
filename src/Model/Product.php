@@ -75,8 +75,8 @@ class Product implements ModelInterface, ArrayAccess
 'changelog' => 'string',
 'type' => 'string',
 'currency' => 'string',
-'createdAt' => 'string',
-'modifiedAt' => 'string'    ];
+'createdAt' => '\DateTime',
+'modifiedAt' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -103,8 +103,8 @@ class Product implements ModelInterface, ArrayAccess
 'changelog' => null,
 'type' => null,
 'currency' => null,
-'createdAt' => null,
-'modifiedAt' => null    ];
+'createdAt' => 'date-time',
+'modifiedAt' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -838,7 +838,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets createdAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -848,7 +848,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets createdAt
      *
-     * @param string $createdAt createdAt
+     * @param \DateTime $createdAt createdAt
      *
      * @return $this
      */
@@ -862,7 +862,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Gets modifiedAt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getModifiedAt()
     {
@@ -872,7 +872,7 @@ class Product implements ModelInterface, ArrayAccess
     /**
      * Sets modifiedAt
      *
-     * @param string $modifiedAt modifiedAt
+     * @param \DateTime $modifiedAt modifiedAt
      *
      * @return $this
      */
