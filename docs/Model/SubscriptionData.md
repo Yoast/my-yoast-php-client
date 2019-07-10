@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
 **parentId** | **int** |  | 
-**lineItems** | **string[]** |  | 
+**lineItems** | [**\Yoast\MyYoastApiClient\Model\LineItem[]**](LineItem.md) |  | 
 **startDate** | **string** |  | 
 **endDate** | **string** |  | 
 **nextPaymentDate** | **string** |  | 

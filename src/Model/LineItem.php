@@ -1,6 +1,6 @@
 <?php
 /**
- * SubscriptionData
+ * LineItem
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * SubscriptionData Class Doc Comment
+ * LineItem Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SubscriptionData implements ModelInterface, ArrayAccess
+class LineItem implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SubscriptionData';
+    protected static $swaggerModelName = 'LineItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,17 +56,16 @@ class SubscriptionData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'int',
-'parentId' => 'int',
-'lineItems' => '\Yoast\MyYoastApiClient\Model\LineItem[]',
-'startDate' => 'string',
-'endDate' => 'string',
-'nextPaymentDate' => 'string',
-'dateCreated' => 'string',
-'customerId' => 'int',
-'status' => 'string',
-'currency' => 'string',
-'number' => 'string'    ];
+        'id' => 'string',
+'subtotalAmount' => 'int',
+'totalAmount' => 'int',
+'vatAmount' => 'int',
+'productName' => 'string',
+'quantity' => 'int',
+'sourceId' => 'int',
+'sourceShopId' => 'int',
+'createdAt' => 'string',
+'modifiedAt' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -75,16 +74,15 @@ class SubscriptionData implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-'parentId' => null,
-'lineItems' => null,
-'startDate' => null,
-'endDate' => null,
-'nextPaymentDate' => null,
-'dateCreated' => null,
-'customerId' => null,
-'status' => null,
-'currency' => null,
-'number' => null    ];
+'subtotalAmount' => null,
+'totalAmount' => null,
+'vatAmount' => null,
+'productName' => null,
+'quantity' => null,
+'sourceId' => null,
+'sourceShopId' => null,
+'createdAt' => null,
+'modifiedAt' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -114,16 +112,15 @@ class SubscriptionData implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-'parentId' => 'parent_id',
-'lineItems' => 'line_items',
-'startDate' => 'start_date',
-'endDate' => 'end_date',
-'nextPaymentDate' => 'next_payment_date',
-'dateCreated' => 'date_created',
-'customerId' => 'customer_id',
-'status' => 'status',
-'currency' => 'currency',
-'number' => 'number'    ];
+'subtotalAmount' => 'subtotalAmount',
+'totalAmount' => 'totalAmount',
+'vatAmount' => 'vatAmount',
+'productName' => 'productName',
+'quantity' => 'quantity',
+'sourceId' => 'sourceId',
+'sourceShopId' => 'sourceShopId',
+'createdAt' => 'createdAt',
+'modifiedAt' => 'modifiedAt'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -132,16 +129,15 @@ class SubscriptionData implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-'parentId' => 'setParentId',
-'lineItems' => 'setLineItems',
-'startDate' => 'setStartDate',
-'endDate' => 'setEndDate',
-'nextPaymentDate' => 'setNextPaymentDate',
-'dateCreated' => 'setDateCreated',
-'customerId' => 'setCustomerId',
-'status' => 'setStatus',
-'currency' => 'setCurrency',
-'number' => 'setNumber'    ];
+'subtotalAmount' => 'setSubtotalAmount',
+'totalAmount' => 'setTotalAmount',
+'vatAmount' => 'setVatAmount',
+'productName' => 'setProductName',
+'quantity' => 'setQuantity',
+'sourceId' => 'setSourceId',
+'sourceShopId' => 'setSourceShopId',
+'createdAt' => 'setCreatedAt',
+'modifiedAt' => 'setModifiedAt'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -150,16 +146,15 @@ class SubscriptionData implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-'parentId' => 'getParentId',
-'lineItems' => 'getLineItems',
-'startDate' => 'getStartDate',
-'endDate' => 'getEndDate',
-'nextPaymentDate' => 'getNextPaymentDate',
-'dateCreated' => 'getDateCreated',
-'customerId' => 'getCustomerId',
-'status' => 'getStatus',
-'currency' => 'getCurrency',
-'number' => 'getNumber'    ];
+'subtotalAmount' => 'getSubtotalAmount',
+'totalAmount' => 'getTotalAmount',
+'vatAmount' => 'getVatAmount',
+'productName' => 'getProductName',
+'quantity' => 'getQuantity',
+'sourceId' => 'getSourceId',
+'sourceShopId' => 'getSourceShopId',
+'createdAt' => 'getCreatedAt',
+'modifiedAt' => 'getModifiedAt'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -220,16 +215,15 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['parentId'] = isset($data['parentId']) ? $data['parentId'] : null;
-        $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
-        $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
-        $this->container['endDate'] = isset($data['endDate']) ? $data['endDate'] : null;
-        $this->container['nextPaymentDate'] = isset($data['nextPaymentDate']) ? $data['nextPaymentDate'] : null;
-        $this->container['dateCreated'] = isset($data['dateCreated']) ? $data['dateCreated'] : null;
-        $this->container['customerId'] = isset($data['customerId']) ? $data['customerId'] : null;
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['number'] = isset($data['number']) ? $data['number'] : null;
+        $this->container['subtotalAmount'] = isset($data['subtotalAmount']) ? $data['subtotalAmount'] : null;
+        $this->container['totalAmount'] = isset($data['totalAmount']) ? $data['totalAmount'] : null;
+        $this->container['vatAmount'] = isset($data['vatAmount']) ? $data['vatAmount'] : null;
+        $this->container['productName'] = isset($data['productName']) ? $data['productName'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['sourceId'] = isset($data['sourceId']) ? $data['sourceId'] : null;
+        $this->container['sourceShopId'] = isset($data['sourceShopId']) ? $data['sourceShopId'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
+        $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
     }
 
     /**
@@ -244,35 +238,32 @@ class SubscriptionData implements ModelInterface, ArrayAccess
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
-        if ($this->container['parentId'] === null) {
-            $invalidProperties[] = "'parentId' can't be null";
+        if ($this->container['subtotalAmount'] === null) {
+            $invalidProperties[] = "'subtotalAmount' can't be null";
         }
-        if ($this->container['lineItems'] === null) {
-            $invalidProperties[] = "'lineItems' can't be null";
+        if ($this->container['totalAmount'] === null) {
+            $invalidProperties[] = "'totalAmount' can't be null";
         }
-        if ($this->container['startDate'] === null) {
-            $invalidProperties[] = "'startDate' can't be null";
+        if ($this->container['vatAmount'] === null) {
+            $invalidProperties[] = "'vatAmount' can't be null";
         }
-        if ($this->container['endDate'] === null) {
-            $invalidProperties[] = "'endDate' can't be null";
+        if ($this->container['productName'] === null) {
+            $invalidProperties[] = "'productName' can't be null";
         }
-        if ($this->container['nextPaymentDate'] === null) {
-            $invalidProperties[] = "'nextPaymentDate' can't be null";
+        if ($this->container['quantity'] === null) {
+            $invalidProperties[] = "'quantity' can't be null";
         }
-        if ($this->container['dateCreated'] === null) {
-            $invalidProperties[] = "'dateCreated' can't be null";
+        if ($this->container['sourceId'] === null) {
+            $invalidProperties[] = "'sourceId' can't be null";
         }
-        if ($this->container['customerId'] === null) {
-            $invalidProperties[] = "'customerId' can't be null";
+        if ($this->container['sourceShopId'] === null) {
+            $invalidProperties[] = "'sourceShopId' can't be null";
         }
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+        if ($this->container['createdAt'] === null) {
+            $invalidProperties[] = "'createdAt' can't be null";
         }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
-        if ($this->container['number'] === null) {
-            $invalidProperties[] = "'number' can't be null";
+        if ($this->container['modifiedAt'] === null) {
+            $invalidProperties[] = "'modifiedAt' can't be null";
         }
         return $invalidProperties;
     }
@@ -292,7 +283,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Gets id
      *
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -302,7 +293,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id id
+     * @param string $id id
      *
      * @return $this
      */
@@ -314,241 +305,217 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets parentId
+     * Gets subtotalAmount
      *
      * @return int
      */
-    public function getParentId()
+    public function getSubtotalAmount()
     {
-        return $this->container['parentId'];
+        return $this->container['subtotalAmount'];
     }
 
     /**
-     * Sets parentId
+     * Sets subtotalAmount
      *
-     * @param int $parentId parentId
+     * @param int $subtotalAmount subtotalAmount
      *
      * @return $this
      */
-    public function setParentId($parentId)
+    public function setSubtotalAmount($subtotalAmount)
     {
-        $this->container['parentId'] = $parentId;
+        $this->container['subtotalAmount'] = $subtotalAmount;
 
         return $this;
     }
 
     /**
-     * Gets lineItems
-     *
-     * @return \Yoast\MyYoastApiClient\Model\LineItem[]
-     */
-    public function getLineItems()
-    {
-        return $this->container['lineItems'];
-    }
-
-    /**
-     * Sets lineItems
-     *
-     * @param \Yoast\MyYoastApiClient\Model\LineItem[] $lineItems lineItems
-     *
-     * @return $this
-     */
-    public function setLineItems($lineItems)
-    {
-        $this->container['lineItems'] = $lineItems;
-
-        return $this;
-    }
-
-    /**
-     * Gets startDate
-     *
-     * @return string
-     */
-    public function getStartDate()
-    {
-        return $this->container['startDate'];
-    }
-
-    /**
-     * Sets startDate
-     *
-     * @param string $startDate startDate
-     *
-     * @return $this
-     */
-    public function setStartDate($startDate)
-    {
-        $this->container['startDate'] = $startDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets endDate
-     *
-     * @return string
-     */
-    public function getEndDate()
-    {
-        return $this->container['endDate'];
-    }
-
-    /**
-     * Sets endDate
-     *
-     * @param string $endDate endDate
-     *
-     * @return $this
-     */
-    public function setEndDate($endDate)
-    {
-        $this->container['endDate'] = $endDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets nextPaymentDate
-     *
-     * @return string
-     */
-    public function getNextPaymentDate()
-    {
-        return $this->container['nextPaymentDate'];
-    }
-
-    /**
-     * Sets nextPaymentDate
-     *
-     * @param string $nextPaymentDate nextPaymentDate
-     *
-     * @return $this
-     */
-    public function setNextPaymentDate($nextPaymentDate)
-    {
-        $this->container['nextPaymentDate'] = $nextPaymentDate;
-
-        return $this;
-    }
-
-    /**
-     * Gets dateCreated
-     *
-     * @return string
-     */
-    public function getDateCreated()
-    {
-        return $this->container['dateCreated'];
-    }
-
-    /**
-     * Sets dateCreated
-     *
-     * @param string $dateCreated dateCreated
-     *
-     * @return $this
-     */
-    public function setDateCreated($dateCreated)
-    {
-        $this->container['dateCreated'] = $dateCreated;
-
-        return $this;
-    }
-
-    /**
-     * Gets customerId
+     * Gets totalAmount
      *
      * @return int
      */
-    public function getCustomerId()
+    public function getTotalAmount()
     {
-        return $this->container['customerId'];
+        return $this->container['totalAmount'];
     }
 
     /**
-     * Sets customerId
+     * Sets totalAmount
      *
-     * @param int $customerId customerId
+     * @param int $totalAmount totalAmount
      *
      * @return $this
      */
-    public function setCustomerId($customerId)
+    public function setTotalAmount($totalAmount)
     {
-        $this->container['customerId'] = $customerId;
+        $this->container['totalAmount'] = $totalAmount;
 
         return $this;
     }
 
     /**
-     * Gets status
+     * Gets vatAmount
      *
-     * @return string
+     * @return int
      */
-    public function getStatus()
+    public function getVatAmount()
     {
-        return $this->container['status'];
+        return $this->container['vatAmount'];
     }
 
     /**
-     * Sets status
+     * Sets vatAmount
      *
-     * @param string $status status
+     * @param int $vatAmount vatAmount
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setVatAmount($vatAmount)
     {
-        $this->container['status'] = $status;
+        $this->container['vatAmount'] = $vatAmount;
 
         return $this;
     }
 
     /**
-     * Gets currency
+     * Gets productName
      *
      * @return string
      */
-    public function getCurrency()
+    public function getProductName()
     {
-        return $this->container['currency'];
+        return $this->container['productName'];
     }
 
     /**
-     * Sets currency
+     * Sets productName
      *
-     * @param string $currency currency
+     * @param string $productName productName
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setProductName($productName)
     {
-        $this->container['currency'] = $currency;
+        $this->container['productName'] = $productName;
 
         return $this;
     }
 
     /**
-     * Gets number
+     * Gets quantity
      *
-     * @return string
+     * @return int
      */
-    public function getNumber()
+    public function getQuantity()
     {
-        return $this->container['number'];
+        return $this->container['quantity'];
     }
 
     /**
-     * Sets number
+     * Sets quantity
      *
-     * @param string $number number
+     * @param int $quantity quantity
      *
      * @return $this
      */
-    public function setNumber($number)
+    public function setQuantity($quantity)
     {
-        $this->container['number'] = $number;
+        $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets sourceId
+     *
+     * @return int
+     */
+    public function getSourceId()
+    {
+        return $this->container['sourceId'];
+    }
+
+    /**
+     * Sets sourceId
+     *
+     * @param int $sourceId sourceId
+     *
+     * @return $this
+     */
+    public function setSourceId($sourceId)
+    {
+        $this->container['sourceId'] = $sourceId;
+
+        return $this;
+    }
+
+    /**
+     * Gets sourceShopId
+     *
+     * @return int
+     */
+    public function getSourceShopId()
+    {
+        return $this->container['sourceShopId'];
+    }
+
+    /**
+     * Sets sourceShopId
+     *
+     * @param int $sourceShopId sourceShopId
+     *
+     * @return $this
+     */
+    public function setSourceShopId($sourceShopId)
+    {
+        $this->container['sourceShopId'] = $sourceShopId;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return string
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param string $createdAt createdAt
+     *
+     * @return $this
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * Gets modifiedAt
+     *
+     * @return string
+     */
+    public function getModifiedAt()
+    {
+        return $this->container['modifiedAt'];
+    }
+
+    /**
+     * Sets modifiedAt
+     *
+     * @param string $modifiedAt modifiedAt
+     *
+     * @return $this
+     */
+    public function setModifiedAt($modifiedAt)
+    {
+        $this->container['modifiedAt'] = $modifiedAt;
 
         return $this;
     }

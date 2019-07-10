@@ -1,6 +1,6 @@
 <?php
 /**
- * SubscriptionFromWooDto
+ * ExtraSubscriptionData
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * SubscriptionFromWooDto Class Doc Comment
+ * ExtraSubscriptionData Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SubscriptionFromWooDto implements ModelInterface, ArrayAccess
+class ExtraSubscriptionData implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class SubscriptionFromWooDto implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'SubscriptionFromWooDto';
+    protected static $swaggerModelName = 'ExtraSubscriptionData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +56,10 @@ class SubscriptionFromWooDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'subscriptionData' => '\Yoast\MyYoastApiClient\Model\SubscriptionData',
-'extraData' => '\Yoast\MyYoastApiClient\Model\ExtraSubscriptionData'    ];
+        'shopId' => 'int',
+'requiresManualRenewal' => 'bool',
+'renewalPrices' => 'string[]',
+'renewalUrl' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -65,8 +67,10 @@ class SubscriptionFromWooDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'subscriptionData' => null,
-'extraData' => null    ];
+        'shopId' => null,
+'requiresManualRenewal' => null,
+'renewalPrices' => null,
+'renewalUrl' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -95,8 +99,10 @@ class SubscriptionFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'subscriptionData' => 'subscriptionData',
-'extraData' => 'extraData'    ];
+        'shopId' => 'shop_id',
+'requiresManualRenewal' => 'requires_manual_renewal',
+'renewalPrices' => 'renewal_prices',
+'renewalUrl' => 'renewal_url'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -104,8 +110,10 @@ class SubscriptionFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'subscriptionData' => 'setSubscriptionData',
-'extraData' => 'setExtraData'    ];
+        'shopId' => 'setShopId',
+'requiresManualRenewal' => 'setRequiresManualRenewal',
+'renewalPrices' => 'setRenewalPrices',
+'renewalUrl' => 'setRenewalUrl'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -113,8 +121,10 @@ class SubscriptionFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'subscriptionData' => 'getSubscriptionData',
-'extraData' => 'getExtraData'    ];
+        'shopId' => 'getShopId',
+'requiresManualRenewal' => 'getRequiresManualRenewal',
+'renewalPrices' => 'getRenewalPrices',
+'renewalUrl' => 'getRenewalUrl'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -174,8 +184,10 @@ class SubscriptionFromWooDto implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['subscriptionData'] = isset($data['subscriptionData']) ? $data['subscriptionData'] : null;
-        $this->container['extraData'] = isset($data['extraData']) ? $data['extraData'] : null;
+        $this->container['shopId'] = isset($data['shopId']) ? $data['shopId'] : null;
+        $this->container['requiresManualRenewal'] = isset($data['requiresManualRenewal']) ? $data['requiresManualRenewal'] : null;
+        $this->container['renewalPrices'] = isset($data['renewalPrices']) ? $data['renewalPrices'] : null;
+        $this->container['renewalUrl'] = isset($data['renewalUrl']) ? $data['renewalUrl'] : null;
     }
 
     /**
@@ -187,11 +199,17 @@ class SubscriptionFromWooDto implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['subscriptionData'] === null) {
-            $invalidProperties[] = "'subscriptionData' can't be null";
+        if ($this->container['shopId'] === null) {
+            $invalidProperties[] = "'shopId' can't be null";
         }
-        if ($this->container['extraData'] === null) {
-            $invalidProperties[] = "'extraData' can't be null";
+        if ($this->container['requiresManualRenewal'] === null) {
+            $invalidProperties[] = "'requiresManualRenewal' can't be null";
+        }
+        if ($this->container['renewalPrices'] === null) {
+            $invalidProperties[] = "'renewalPrices' can't be null";
+        }
+        if ($this->container['renewalUrl'] === null) {
+            $invalidProperties[] = "'renewalUrl' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,49 +227,97 @@ class SubscriptionFromWooDto implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets subscriptionData
+     * Gets shopId
      *
-     * @return \Yoast\MyYoastApiClient\Model\SubscriptionData
+     * @return int
      */
-    public function getSubscriptionData()
+    public function getShopId()
     {
-        return $this->container['subscriptionData'];
+        return $this->container['shopId'];
     }
 
     /**
-     * Sets subscriptionData
+     * Sets shopId
      *
-     * @param \Yoast\MyYoastApiClient\Model\SubscriptionData $subscriptionData subscriptionData
+     * @param int $shopId shopId
      *
      * @return $this
      */
-    public function setSubscriptionData($subscriptionData)
+    public function setShopId($shopId)
     {
-        $this->container['subscriptionData'] = $subscriptionData;
+        $this->container['shopId'] = $shopId;
 
         return $this;
     }
 
     /**
-     * Gets extraData
+     * Gets requiresManualRenewal
      *
-     * @return \Yoast\MyYoastApiClient\Model\ExtraSubscriptionData
+     * @return bool
      */
-    public function getExtraData()
+    public function getRequiresManualRenewal()
     {
-        return $this->container['extraData'];
+        return $this->container['requiresManualRenewal'];
     }
 
     /**
-     * Sets extraData
+     * Sets requiresManualRenewal
      *
-     * @param \Yoast\MyYoastApiClient\Model\ExtraSubscriptionData $extraData extraData
+     * @param bool $requiresManualRenewal requiresManualRenewal
      *
      * @return $this
      */
-    public function setExtraData($extraData)
+    public function setRequiresManualRenewal($requiresManualRenewal)
     {
-        $this->container['extraData'] = $extraData;
+        $this->container['requiresManualRenewal'] = $requiresManualRenewal;
+
+        return $this;
+    }
+
+    /**
+     * Gets renewalPrices
+     *
+     * @return string[]
+     */
+    public function getRenewalPrices()
+    {
+        return $this->container['renewalPrices'];
+    }
+
+    /**
+     * Sets renewalPrices
+     *
+     * @param string[] $renewalPrices renewalPrices
+     *
+     * @return $this
+     */
+    public function setRenewalPrices($renewalPrices)
+    {
+        $this->container['renewalPrices'] = $renewalPrices;
+
+        return $this;
+    }
+
+    /**
+     * Gets renewalUrl
+     *
+     * @return string
+     */
+    public function getRenewalUrl()
+    {
+        return $this->container['renewalUrl'];
+    }
+
+    /**
+     * Sets renewalUrl
+     *
+     * @param string $renewalUrl renewalUrl
+     *
+     * @return $this
+     */
+    public function setRenewalUrl($renewalUrl)
+    {
+        $this->container['renewalUrl'] = $renewalUrl;
 
         return $this;
     }
