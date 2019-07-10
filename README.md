@@ -283,6 +283,7 @@ Class | Method | HTTP request | Description
  - [CustomerData](docs/Model/CustomerData.md)
  - [CustomerFromWooDto](docs/Model/CustomerFromWooDto.md)
  - [CustomerNote](docs/Model/CustomerNote.md)
+ - [Date](docs/Model/Date.md)
  - [Download](docs/Model/Download.md)
  - [EddDTO](docs/Model/EddDTO.md)
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)

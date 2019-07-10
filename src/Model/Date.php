@@ -1,6 +1,6 @@
 <?php
 /**
- * AccessToken
+ * Date
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * AccessToken Class Doc Comment
+ * Date Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AccessToken implements ModelInterface, ArrayAccess
+class Date implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class AccessToken implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AccessToken';
+    protected static $swaggerModelName = 'Date';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,11 +56,7 @@ class AccessToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-'ttl' => 'int',
-'created' => '\Yoast\MyYoastApiClient\Model\\DateTime',
-'createdAt' => '\Yoast\MyYoastApiClient\Model\\DateTime',
-'modifiedAt' => '\Yoast\MyYoastApiClient\Model\\DateTime'    ];
+            ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -68,11 +64,7 @@ class AccessToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-'ttl' => null,
-'created' => null,
-'createdAt' => null,
-'modifiedAt' => null    ];
+            ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -101,11 +93,7 @@ class AccessToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-'ttl' => 'ttl',
-'created' => 'created',
-'createdAt' => 'createdAt',
-'modifiedAt' => 'modifiedAt'    ];
+            ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -113,11 +101,7 @@ class AccessToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-'ttl' => 'setTtl',
-'created' => 'setCreated',
-'createdAt' => 'setCreatedAt',
-'modifiedAt' => 'setModifiedAt'    ];
+            ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -125,11 +109,7 @@ class AccessToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-'ttl' => 'getTtl',
-'created' => 'getCreated',
-'createdAt' => 'getCreatedAt',
-'modifiedAt' => 'getModifiedAt'    ];
+            ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -189,11 +169,6 @@ class AccessToken implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['ttl'] = isset($data['ttl']) ? $data['ttl'] : null;
-        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
-        $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
     }
 
     /**
@@ -205,21 +180,6 @@ class AccessToken implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['ttl'] === null) {
-            $invalidProperties[] = "'ttl' can't be null";
-        }
-        if ($this->container['created'] === null) {
-            $invalidProperties[] = "'created' can't be null";
-        }
-        if ($this->container['createdAt'] === null) {
-            $invalidProperties[] = "'createdAt' can't be null";
-        }
-        if ($this->container['modifiedAt'] === null) {
-            $invalidProperties[] = "'modifiedAt' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -234,126 +194,6 @@ class AccessToken implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets ttl
-     *
-     * @return int
-     */
-    public function getTtl()
-    {
-        return $this->container['ttl'];
-    }
-
-    /**
-     * Sets ttl
-     *
-     * @param int $ttl ttl
-     *
-     * @return $this
-     */
-    public function setTtl($ttl)
-    {
-        $this->container['ttl'] = $ttl;
-
-        return $this;
-    }
-
-    /**
-     * Gets created
-     *
-     * @return \Yoast\MyYoastApiClient\Model\\DateTime
-     */
-    public function getCreated()
-    {
-        return $this->container['created'];
-    }
-
-    /**
-     * Sets created
-     *
-     * @param \Yoast\MyYoastApiClient\Model\\DateTime $created created
-     *
-     * @return $this
-     */
-    public function setCreated($created)
-    {
-        $this->container['created'] = $created;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdAt
-     *
-     * @return \Yoast\MyYoastApiClient\Model\\DateTime
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['createdAt'];
-    }
-
-    /**
-     * Sets createdAt
-     *
-     * @param \Yoast\MyYoastApiClient\Model\\DateTime $createdAt createdAt
-     *
-     * @return $this
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->container['createdAt'] = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets modifiedAt
-     *
-     * @return \Yoast\MyYoastApiClient\Model\\DateTime
-     */
-    public function getModifiedAt()
-    {
-        return $this->container['modifiedAt'];
-    }
-
-    /**
-     * Sets modifiedAt
-     *
-     * @param \Yoast\MyYoastApiClient\Model\\DateTime $modifiedAt modifiedAt
-     *
-     * @return $this
-     */
-    public function setModifiedAt($modifiedAt)
-    {
-        $this->container['modifiedAt'] = $modifiedAt;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *
