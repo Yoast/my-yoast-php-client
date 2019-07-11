@@ -151,4 +151,32 @@ class CourseEnrollmentTest extends \PHPUnit_Framework_TestCase
     public function testPropertyExpiryDate()
     {
     }
+
+    /**
+     * Test attribute "studentId"
+     */
+    public function testPropertyStudentId()
+    {
+    }
+
+    /**
+     * Test attribute "buyerId"
+     */
+    public function testPropertyBuyerId()
+    {
+    }
+
+    /**
+     * Test attribute "orderId"
+     */
+    public function testPropertyOrderId()
+    {
+    }
+
+    /**
+     * Test attribute "courseId"
+     */
+    public function testPropertyCourseId()
+    {
+    }
 }

@@ -14,6 +14,10 @@ Name | Type | Description | Notes
 **lineItemId** | **string** |  | 
 **lineItemNumber** | **int** |  | 
 **expiryDate** | [**\DateTime**](\DateTime.md) |  | 
+**studentId** | **string** |  | 
+**buyerId** | **string** |  | 
+**orderId** | **string** |  | 
+**courseId** | **string** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -66,7 +66,11 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
 'trialCompleted' => 'bool',
 'lineItemId' => 'string',
 'lineItemNumber' => 'int',
-'expiryDate' => '\DateTime'    ];
+'expiryDate' => '\DateTime',
+'studentId' => 'string',
+'buyerId' => 'string',
+'orderId' => 'string',
+'courseId' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -84,7 +88,11 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
 'trialCompleted' => null,
 'lineItemId' => null,
 'lineItemNumber' => null,
-'expiryDate' => 'date-time'    ];
+'expiryDate' => 'date-time',
+'studentId' => 'uuid',
+'buyerId' => 'uuid',
+'orderId' => 'uuid',
+'courseId' => 'uuid'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -123,7 +131,11 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
 'trialCompleted' => 'trialCompleted',
 'lineItemId' => 'lineItemId',
 'lineItemNumber' => 'lineItemNumber',
-'expiryDate' => 'expiryDate'    ];
+'expiryDate' => 'expiryDate',
+'studentId' => 'studentId',
+'buyerId' => 'buyerId',
+'orderId' => 'orderId',
+'courseId' => 'courseId'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -141,7 +153,11 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
 'trialCompleted' => 'setTrialCompleted',
 'lineItemId' => 'setLineItemId',
 'lineItemNumber' => 'setLineItemNumber',
-'expiryDate' => 'setExpiryDate'    ];
+'expiryDate' => 'setExpiryDate',
+'studentId' => 'setStudentId',
+'buyerId' => 'setBuyerId',
+'orderId' => 'setOrderId',
+'courseId' => 'setCourseId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -159,7 +175,11 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
 'trialCompleted' => 'getTrialCompleted',
 'lineItemId' => 'getLineItemId',
 'lineItemNumber' => 'getLineItemNumber',
-'expiryDate' => 'getExpiryDate'    ];
+'expiryDate' => 'getExpiryDate',
+'studentId' => 'getStudentId',
+'buyerId' => 'getBuyerId',
+'orderId' => 'getOrderId',
+'courseId' => 'getCourseId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -230,6 +250,10 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
         $this->container['lineItemId'] = isset($data['lineItemId']) ? $data['lineItemId'] : null;
         $this->container['lineItemNumber'] = isset($data['lineItemNumber']) ? $data['lineItemNumber'] : null;
         $this->container['expiryDate'] = isset($data['expiryDate']) ? $data['expiryDate'] : null;
+        $this->container['studentId'] = isset($data['studentId']) ? $data['studentId'] : null;
+        $this->container['buyerId'] = isset($data['buyerId']) ? $data['buyerId'] : null;
+        $this->container['orderId'] = isset($data['orderId']) ? $data['orderId'] : null;
+        $this->container['courseId'] = isset($data['courseId']) ? $data['courseId'] : null;
     }
 
     /**
@@ -273,6 +297,18 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
         }
         if ($this->container['expiryDate'] === null) {
             $invalidProperties[] = "'expiryDate' can't be null";
+        }
+        if ($this->container['studentId'] === null) {
+            $invalidProperties[] = "'studentId' can't be null";
+        }
+        if ($this->container['buyerId'] === null) {
+            $invalidProperties[] = "'buyerId' can't be null";
+        }
+        if ($this->container['orderId'] === null) {
+            $invalidProperties[] = "'orderId' can't be null";
+        }
+        if ($this->container['courseId'] === null) {
+            $invalidProperties[] = "'courseId' can't be null";
         }
         return $invalidProperties;
     }
@@ -549,6 +585,102 @@ class CourseEnrollment implements ModelInterface, ArrayAccess
     public function setExpiryDate($expiryDate)
     {
         $this->container['expiryDate'] = $expiryDate;
+
+        return $this;
+    }
+
+    /**
+     * Gets studentId
+     *
+     * @return string
+     */
+    public function getStudentId()
+    {
+        return $this->container['studentId'];
+    }
+
+    /**
+     * Sets studentId
+     *
+     * @param string $studentId studentId
+     *
+     * @return $this
+     */
+    public function setStudentId($studentId)
+    {
+        $this->container['studentId'] = $studentId;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyerId
+     *
+     * @return string
+     */
+    public function getBuyerId()
+    {
+        return $this->container['buyerId'];
+    }
+
+    /**
+     * Sets buyerId
+     *
+     * @param string $buyerId buyerId
+     *
+     * @return $this
+     */
+    public function setBuyerId($buyerId)
+    {
+        $this->container['buyerId'] = $buyerId;
+
+        return $this;
+    }
+
+    /**
+     * Gets orderId
+     *
+     * @return string
+     */
+    public function getOrderId()
+    {
+        return $this->container['orderId'];
+    }
+
+    /**
+     * Sets orderId
+     *
+     * @param string $orderId orderId
+     *
+     * @return $this
+     */
+    public function setOrderId($orderId)
+    {
+        $this->container['orderId'] = $orderId;
+
+        return $this;
+    }
+
+    /**
+     * Gets courseId
+     *
+     * @return string
+     */
+    public function getCourseId()
+    {
+        return $this->container['courseId'];
+    }
+
+    /**
+     * Sets courseId
+     *
+     * @param string $courseId courseId
+     *
+     * @return $this
+     */
+    public function setCourseId($courseId)
+    {
+        $this->container['courseId'] = $courseId;
 
         return $this;
     }
