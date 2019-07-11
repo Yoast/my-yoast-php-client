@@ -111,6 +111,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiCustomersCustomerIdCourseEnrollmentsGet
+     *
+     * Find Course Enrollments.
+     *
+     */
+    public function testApiCustomersCustomerIdCourseEnrollmentsGet()
+    {
+    }
+
+    /**
      * Test case for apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost
      *
      * Cancel (part of) a subscription..

@@ -170,6 +170,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**apiCustomersAllrolesGet**](docs/Api/CustomerApi.md#apicustomersallrolesget) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
 *CustomerApi* | [**apiCustomersBulkPost**](docs/Api/CustomerApi.md#apicustomersbulkpost) | **POST** /api/Customers/bulk | Create many Customer
 *CustomerApi* | [**apiCustomersCurrentGet**](docs/Api/CustomerApi.md#apicustomerscurrentget) | **GET** /api/Customers/current | Get the current customer
+*CustomerApi* | [**apiCustomersCustomerIdCourseEnrollmentsGet**](docs/Api/CustomerApi.md#apicustomerscustomeridcourseenrollmentsget) | **GET** /api/Customers/{customerId}/courseEnrollments | Find Course Enrollments
 *CustomerApi* | [**apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionssubscriptionidcancelpost) | **POST** /api/Customers/{customerId}/subscriptions/{subscriptionId}/cancel | Cancel (part of) a subscription.
 *CustomerApi* | [**apiCustomersGet**](docs/Api/CustomerApi.md#apicustomersget) | **GET** /api/Customers | Retrieve many Customer
 *CustomerApi* | [**apiCustomersIdAvatarPost**](docs/Api/CustomerApi.md#apicustomersidavatarpost) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
