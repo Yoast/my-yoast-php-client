@@ -223,6 +223,7 @@ Class | Method | HTTP request | Description
  - [BulkInviteDto](docs/Model/BulkInviteDto.md)
  - [CancelSubscriptionBodyDto](docs/Model/CancelSubscriptionBodyDto.md)
  - [ComposerToken](docs/Model/ComposerToken.md)
+ - [CouponLineDto](docs/Model/CouponLineDto.md)
  - [Course](docs/Model/Course.md)
  - [CourseDataDto](docs/Model/CourseDataDto.md)
  - [CourseEnrollment](docs/Model/CourseEnrollment.md)

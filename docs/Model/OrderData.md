@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **datePaidGmt** | **string** |  | 
 **discountTax** | **string** |  | 
 **discountTotal** | **string** |  | 
-**couponLines** | [**\Yoast\MyYoastApiClient\Model\LineItemData[]**](LineItemData.md) |  | 
+**couponLines** | [**\Yoast\MyYoastApiClient\Model\CouponLineDto[]**](CouponLineDto.md) |  | 
 **feeLines** | **string[]** |  | 
 **lineItems** | [**\Yoast\MyYoastApiClient\Model\LineItemData[]**](LineItemData.md) |  | 
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 

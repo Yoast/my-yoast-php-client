@@ -77,7 +77,7 @@ class OrderData implements ModelInterface, ArrayAccess
         'datePaidGmt' => 'string',
         'discountTax' => 'string',
         'discountTotal' => 'string',
-        'couponLines' => '\Yoast\MyYoastApiClient\Model\LineItemData[]',
+        'couponLines' => '\Yoast\MyYoastApiClient\Model\CouponLineDto[]',
         'feeLines' => 'string[]',
         'lineItems' => '\Yoast\MyYoastApiClient\Model\LineItemData[]',
         'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]',
@@ -1050,7 +1050,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets couponLines
      *
-     * @return \Yoast\MyYoastApiClient\Model\LineItemData[]
+     * @return \Yoast\MyYoastApiClient\Model\CouponLineDto[]
      */
     public function getCouponLines()
     {
@@ -1060,7 +1060,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets couponLines
      *
-     * @param \Yoast\MyYoastApiClient\Model\LineItemData[] $couponLines couponLines
+     * @param \Yoast\MyYoastApiClient\Model\CouponLineDto[] $couponLines couponLines
      *
      * @return $this
      */
