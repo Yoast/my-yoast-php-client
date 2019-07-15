@@ -217,6 +217,13 @@ class OrderDataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "couponLines"
+     */
+    public function testPropertyCouponLines()
+    {
+    }
+
+    /**
      * Test attribute "feeLines"
      */
     public function testPropertyFeeLines()

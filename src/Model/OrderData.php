@@ -77,6 +77,7 @@ class OrderData implements ModelInterface, ArrayAccess
         'datePaidGmt' => 'string',
         'discountTax' => 'string',
         'discountTotal' => 'string',
+        'couponLines' => '\Yoast\MyYoastApiClient\Model\LineItemData[]',
         'feeLines' => 'string[]',
         'lineItems' => '\Yoast\MyYoastApiClient\Model\LineItemData[]',
         'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]',
@@ -125,6 +126,7 @@ class OrderData implements ModelInterface, ArrayAccess
         'datePaidGmt' => null,
         'discountTax' => null,
         'discountTotal' => null,
+        'couponLines' => null,
         'feeLines' => null,
         'lineItems' => null,
         'metaData' => null,
@@ -194,6 +196,7 @@ class OrderData implements ModelInterface, ArrayAccess
         'datePaidGmt' => 'date_paid_gmt',
         'discountTax' => 'discount_tax',
         'discountTotal' => 'discount_total',
+        'couponLines' => 'coupon_lines',
         'feeLines' => 'fee_lines',
         'lineItems' => 'line_items',
         'metaData' => 'meta_data',
@@ -242,6 +245,7 @@ class OrderData implements ModelInterface, ArrayAccess
         'datePaidGmt' => 'setDatePaidGmt',
         'discountTax' => 'setDiscountTax',
         'discountTotal' => 'setDiscountTotal',
+        'couponLines' => 'setCouponLines',
         'feeLines' => 'setFeeLines',
         'lineItems' => 'setLineItems',
         'metaData' => 'setMetaData',
@@ -290,6 +294,7 @@ class OrderData implements ModelInterface, ArrayAccess
         'datePaidGmt' => 'getDatePaidGmt',
         'discountTax' => 'getDiscountTax',
         'discountTotal' => 'getDiscountTotal',
+        'couponLines' => 'getCouponLines',
         'feeLines' => 'getFeeLines',
         'lineItems' => 'getLineItems',
         'metaData' => 'getMetaData',
@@ -392,6 +397,7 @@ class OrderData implements ModelInterface, ArrayAccess
         $this->container['datePaidGmt'] = isset($data['datePaidGmt']) ? $data['datePaidGmt'] : null;
         $this->container['discountTax'] = isset($data['discountTax']) ? $data['discountTax'] : null;
         $this->container['discountTotal'] = isset($data['discountTotal']) ? $data['discountTotal'] : null;
+        $this->container['couponLines'] = isset($data['couponLines']) ? $data['couponLines'] : null;
         $this->container['feeLines'] = isset($data['feeLines']) ? $data['feeLines'] : null;
         $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
         $this->container['metaData'] = isset($data['metaData']) ? $data['metaData'] : null;
@@ -482,6 +488,9 @@ class OrderData implements ModelInterface, ArrayAccess
         }
         if ($this->container['discountTotal'] === null) {
             $invalidProperties[] = "'discountTotal' can't be null";
+        }
+        if ($this->container['couponLines'] === null) {
+            $invalidProperties[] = "'couponLines' can't be null";
         }
         if ($this->container['feeLines'] === null) {
             $invalidProperties[] = "'feeLines' can't be null";
@@ -1034,6 +1043,30 @@ class OrderData implements ModelInterface, ArrayAccess
     public function setDiscountTotal($discountTotal)
     {
         $this->container['discountTotal'] = $discountTotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets couponLines
+     *
+     * @return \Yoast\MyYoastApiClient\Model\LineItemData[]
+     */
+    public function getCouponLines()
+    {
+        return $this->container['couponLines'];
+    }
+
+    /**
+     * Sets couponLines
+     *
+     * @param \Yoast\MyYoastApiClient\Model\LineItemData[] $couponLines couponLines
+     *
+     * @return $this
+     */
+    public function setCouponLines($couponLines)
+    {
+        $this->container['couponLines'] = $couponLines;
 
         return $this;
     }
