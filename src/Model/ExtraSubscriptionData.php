@@ -59,7 +59,7 @@ class ExtraSubscriptionData implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'shopId' => 'float',
         'requiresManualRenewal' => 'bool',
-        'renewalPrices' => 'string[]',
+        'renewalPrices' => 'object',
         'renewalUrl' => 'string'
     ];
 
@@ -285,7 +285,7 @@ class ExtraSubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Gets renewalPrices
      *
-     * @return string[]
+     * @return object
      */
     public function getRenewalPrices()
     {
@@ -295,7 +295,7 @@ class ExtraSubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Sets renewalPrices
      *
-     * @param string[] $renewalPrices renewalPrices
+     * @param object $renewalPrices renewalPrices
      *
      * @return $this
      */
