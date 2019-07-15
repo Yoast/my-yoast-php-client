@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 **id** | **float** |  | 
 **parentId** | **float** |  | 
 **lineItems** | [**\Yoast\MyYoastApiClient\Model\LineItem[]**](LineItem.md) |  | 
-**startDate** | **string** |  | 
-**endDate** | **string** |  | 
-**nextPaymentDate** | **string** |  | 
-**dateCreated** | **string** |  | 
+**startDate** | [**\DateTime**](\DateTime.md) |  | 
+**endDate** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**nextPaymentDate** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**dateCreated** | [**\DateTime**](\DateTime.md) |  | 
 **customerId** | **float** |  | 
 **status** | **string** |  | 
 **currency** | **string** |  | 

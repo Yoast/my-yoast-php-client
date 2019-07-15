@@ -60,10 +60,10 @@ class SubscriptionData implements ModelInterface, ArrayAccess
         'id' => 'float',
         'parentId' => 'float',
         'lineItems' => '\Yoast\MyYoastApiClient\Model\LineItem[]',
-        'startDate' => 'string',
-        'endDate' => 'string',
-        'nextPaymentDate' => 'string',
-        'dateCreated' => 'string',
+        'startDate' => '\DateTime',
+        'endDate' => '\DateTime',
+        'nextPaymentDate' => '\DateTime',
+        'dateCreated' => '\DateTime',
         'customerId' => 'float',
         'status' => 'string',
         'currency' => 'string',
@@ -79,10 +79,10 @@ class SubscriptionData implements ModelInterface, ArrayAccess
         'id' => null,
         'parentId' => null,
         'lineItems' => null,
-        'startDate' => null,
-        'endDate' => null,
-        'nextPaymentDate' => null,
-        'dateCreated' => null,
+        'startDate' => 'date-time',
+        'endDate' => 'date-time',
+        'nextPaymentDate' => 'date-time',
+        'dateCreated' => 'date-time',
         'customerId' => null,
         'status' => null,
         'currency' => null,
@@ -261,12 +261,6 @@ class SubscriptionData implements ModelInterface, ArrayAccess
         if ($this->container['startDate'] === null) {
             $invalidProperties[] = "'startDate' can't be null";
         }
-        if ($this->container['endDate'] === null) {
-            $invalidProperties[] = "'endDate' can't be null";
-        }
-        if ($this->container['nextPaymentDate'] === null) {
-            $invalidProperties[] = "'nextPaymentDate' can't be null";
-        }
         if ($this->container['dateCreated'] === null) {
             $invalidProperties[] = "'dateCreated' can't be null";
         }
@@ -372,7 +366,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Gets startDate
      *
-     * @return string
+     * @return \DateTime
      */
     public function getStartDate()
     {
@@ -382,7 +376,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Sets startDate
      *
-     * @param string $startDate startDate
+     * @param \DateTime $startDate startDate
      *
      * @return $this
      */
@@ -396,7 +390,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Gets endDate
      *
-     * @return string
+     * @return \DateTime
      */
     public function getEndDate()
     {
@@ -406,7 +400,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Sets endDate
      *
-     * @param string $endDate endDate
+     * @param \DateTime $endDate endDate
      *
      * @return $this
      */
@@ -420,7 +414,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Gets nextPaymentDate
      *
-     * @return string
+     * @return \DateTime
      */
     public function getNextPaymentDate()
     {
@@ -430,7 +424,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Sets nextPaymentDate
      *
-     * @param string $nextPaymentDate nextPaymentDate
+     * @param \DateTime $nextPaymentDate nextPaymentDate
      *
      * @return $this
      */
@@ -444,7 +438,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Gets dateCreated
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -454,7 +448,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Sets dateCreated
      *
-     * @param string $dateCreated dateCreated
+     * @param \DateTime $dateCreated dateCreated
      *
      * @return $this
      */

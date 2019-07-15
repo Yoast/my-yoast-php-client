@@ -67,14 +67,14 @@ class OrderData implements ModelInterface, ArrayAccess
         'customerIpAddress' => 'string',
         'customerNote' => 'string',
         'customerUserAgent' => 'string',
-        'dateCompleted' => 'string',
-        'dateCompletedGmt' => 'string',
-        'dateCreated' => 'string',
-        'dateCreatedGmt' => 'string',
-        'dateModified' => 'string',
-        'dateModifiedGmt' => 'string',
-        'datePaid' => 'string',
-        'datePaidGmt' => 'string',
+        'dateCompleted' => '\DateTime',
+        'dateCompletedGmt' => '\DateTime',
+        'dateCreated' => '\DateTime',
+        'dateCreatedGmt' => '\DateTime',
+        'dateModified' => '\DateTime',
+        'dateModifiedGmt' => '\DateTime',
+        'datePaid' => '\DateTime',
+        'datePaidGmt' => '\DateTime',
         'discountTax' => 'string',
         'discountTotal' => 'string',
         'couponLines' => '\Yoast\MyYoastApiClient\Model\CouponLineDto[]',
@@ -116,14 +116,14 @@ class OrderData implements ModelInterface, ArrayAccess
         'customerIpAddress' => null,
         'customerNote' => null,
         'customerUserAgent' => null,
-        'dateCompleted' => null,
-        'dateCompletedGmt' => null,
-        'dateCreated' => null,
-        'dateCreatedGmt' => null,
-        'dateModified' => null,
-        'dateModifiedGmt' => null,
-        'datePaid' => null,
-        'datePaidGmt' => null,
+        'dateCompleted' => 'date-time',
+        'dateCompletedGmt' => 'date-time',
+        'dateCreated' => 'date-time',
+        'dateCreatedGmt' => 'date-time',
+        'dateModified' => 'date-time',
+        'dateModifiedGmt' => 'date-time',
+        'datePaid' => 'date-time',
+        'datePaidGmt' => 'date-time',
         'discountTax' => null,
         'discountTotal' => null,
         'couponLines' => null,
@@ -459,29 +459,11 @@ class OrderData implements ModelInterface, ArrayAccess
         if ($this->container['customerUserAgent'] === null) {
             $invalidProperties[] = "'customerUserAgent' can't be null";
         }
-        if ($this->container['dateCompleted'] === null) {
-            $invalidProperties[] = "'dateCompleted' can't be null";
-        }
-        if ($this->container['dateCompletedGmt'] === null) {
-            $invalidProperties[] = "'dateCompletedGmt' can't be null";
-        }
         if ($this->container['dateCreated'] === null) {
             $invalidProperties[] = "'dateCreated' can't be null";
         }
         if ($this->container['dateCreatedGmt'] === null) {
             $invalidProperties[] = "'dateCreatedGmt' can't be null";
-        }
-        if ($this->container['dateModified'] === null) {
-            $invalidProperties[] = "'dateModified' can't be null";
-        }
-        if ($this->container['dateModifiedGmt'] === null) {
-            $invalidProperties[] = "'dateModifiedGmt' can't be null";
-        }
-        if ($this->container['datePaid'] === null) {
-            $invalidProperties[] = "'datePaid' can't be null";
-        }
-        if ($this->container['datePaidGmt'] === null) {
-            $invalidProperties[] = "'datePaidGmt' can't be null";
         }
         if ($this->container['discountTax'] === null) {
             $invalidProperties[] = "'discountTax' can't be null";
@@ -810,7 +792,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets dateCompleted
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateCompleted()
     {
@@ -820,7 +802,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets dateCompleted
      *
-     * @param string $dateCompleted dateCompleted
+     * @param \DateTime $dateCompleted dateCompleted
      *
      * @return $this
      */
@@ -834,7 +816,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets dateCompletedGmt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateCompletedGmt()
     {
@@ -844,7 +826,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets dateCompletedGmt
      *
-     * @param string $dateCompletedGmt dateCompletedGmt
+     * @param \DateTime $dateCompletedGmt dateCompletedGmt
      *
      * @return $this
      */
@@ -858,7 +840,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets dateCreated
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -868,7 +850,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets dateCreated
      *
-     * @param string $dateCreated dateCreated
+     * @param \DateTime $dateCreated dateCreated
      *
      * @return $this
      */
@@ -882,7 +864,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets dateCreatedGmt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateCreatedGmt()
     {
@@ -892,7 +874,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets dateCreatedGmt
      *
-     * @param string $dateCreatedGmt dateCreatedGmt
+     * @param \DateTime $dateCreatedGmt dateCreatedGmt
      *
      * @return $this
      */
@@ -906,7 +888,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets dateModified
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateModified()
     {
@@ -916,7 +898,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets dateModified
      *
-     * @param string $dateModified dateModified
+     * @param \DateTime $dateModified dateModified
      *
      * @return $this
      */
@@ -930,7 +912,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets dateModifiedGmt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateModifiedGmt()
     {
@@ -940,7 +922,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets dateModifiedGmt
      *
-     * @param string $dateModifiedGmt dateModifiedGmt
+     * @param \DateTime $dateModifiedGmt dateModifiedGmt
      *
      * @return $this
      */
@@ -954,7 +936,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets datePaid
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDatePaid()
     {
@@ -964,7 +946,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets datePaid
      *
-     * @param string $datePaid datePaid
+     * @param \DateTime $datePaid datePaid
      *
      * @return $this
      */
@@ -978,7 +960,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets datePaidGmt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDatePaidGmt()
     {
@@ -988,7 +970,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets datePaidGmt
      *
-     * @param string $datePaidGmt datePaidGmt
+     * @param \DateTime $datePaidGmt datePaidGmt
      *
      * @return $this
      */

@@ -58,10 +58,10 @@ class ProductImage implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'float',
-        'dateCreated' => 'string',
-        'dateCreatedGmt' => 'string',
-        'dateModified' => 'string',
-        'dateModifiedGmt' => 'string',
+        'dateCreated' => '\DateTime',
+        'dateCreatedGmt' => '\DateTime',
+        'dateModified' => '\DateTime',
+        'dateModifiedGmt' => '\DateTime',
         'src' => 'string',
         'name' => 'string',
         'alt' => 'string',
@@ -75,10 +75,10 @@ class ProductImage implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
-        'dateCreated' => null,
-        'dateCreatedGmt' => null,
-        'dateModified' => null,
-        'dateModifiedGmt' => null,
+        'dateCreated' => 'date-time',
+        'dateCreatedGmt' => 'date-time',
+        'dateModified' => 'date-time',
+        'dateModifiedGmt' => 'date-time',
         'src' => null,
         'name' => null,
         'alt' => null,
@@ -306,7 +306,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Gets dateCreated
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateCreated()
     {
@@ -316,7 +316,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Sets dateCreated
      *
-     * @param string $dateCreated dateCreated
+     * @param \DateTime $dateCreated dateCreated
      *
      * @return $this
      */
@@ -330,7 +330,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Gets dateCreatedGmt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateCreatedGmt()
     {
@@ -340,7 +340,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Sets dateCreatedGmt
      *
-     * @param string $dateCreatedGmt dateCreatedGmt
+     * @param \DateTime $dateCreatedGmt dateCreatedGmt
      *
      * @return $this
      */
@@ -354,7 +354,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Gets dateModified
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateModified()
     {
@@ -364,7 +364,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Sets dateModified
      *
-     * @param string $dateModified dateModified
+     * @param \DateTime $dateModified dateModified
      *
      * @return $this
      */
@@ -378,7 +378,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Gets dateModifiedGmt
      *
-     * @return string
+     * @return \DateTime
      */
     public function getDateModifiedGmt()
     {
@@ -388,7 +388,7 @@ class ProductImage implements ModelInterface, ArrayAccess
     /**
      * Sets dateModifiedGmt
      *
-     * @param string $dateModifiedGmt dateModifiedGmt
+     * @param \DateTime $dateModifiedGmt dateModifiedGmt
      *
      * @return $this
      */

@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **float** |  | 
-**dateCreated** | **string** |  | 
-**dateCreatedGmt** | **string** |  | 
-**dateModified** | **string** |  | 
-**dateModifiedGmt** | **string** |  | 
+**dateCreated** | [**\DateTime**](\DateTime.md) |  | 
+**dateCreatedGmt** | [**\DateTime**](\DateTime.md) |  | 
+**dateModified** | [**\DateTime**](\DateTime.md) |  | 
+**dateModifiedGmt** | [**\DateTime**](\DateTime.md) |  | 
 **src** | **string** |  | 
 **name** | **string** |  | 
 **alt** | **string** |  | 

@@ -13,14 +13,14 @@ Name | Type | Description | Notes
 **customerIpAddress** | **string** |  | 
 **customerNote** | **string** |  | 
 **customerUserAgent** | **string** |  | 
-**dateCompleted** | **string** |  | 
-**dateCompletedGmt** | **string** |  | 
-**dateCreated** | **string** |  | 
-**dateCreatedGmt** | **string** |  | 
-**dateModified** | **string** |  | 
-**dateModifiedGmt** | **string** |  | 
-**datePaid** | **string** |  | 
-**datePaidGmt** | **string** |  | 
+**dateCompleted** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**dateCompletedGmt** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**dateCreated** | [**\DateTime**](\DateTime.md) |  | 
+**dateCreatedGmt** | [**\DateTime**](\DateTime.md) |  | 
+**dateModified** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**dateModifiedGmt** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**datePaid** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**datePaidGmt** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **discountTax** | **string** |  | 
 **discountTotal** | **string** |  | 
 **couponLines** | [**\Yoast\MyYoastApiClient\Model\CouponLineDto[]**](CouponLineDto.md) |  | 
