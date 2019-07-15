@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **creationDate** | [**\DateTime**](\DateTime.md) |  | 
 **hostname** | **string** |  | 
 **protocol** | **string** |  | 
-**port** | **int** |  | 
+**port** | **float** |  | 
 **path** | **string** |  | 
 **createdAt** | [**\DateTime**](\DateTime.md) |  | 
 **modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **clientId** | **string** |  | 
 **clientSecret** | **string** |  | 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

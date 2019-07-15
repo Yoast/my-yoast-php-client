@@ -5,19 +5,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **countryOfOrigin** | **string** |  | 
 **id** | **string** |  | 
-**totalAmount** | **int** |  | 
-**subtotalAmount** | **int** |  | 
+**totalAmount** | **float** |  | 
+**subtotalAmount** | **float** |  | 
 **date** | [**\DateTime**](\DateTime.md) |  | 
 **vatNumber** | **string** |  | 
 **paymentProvider** | **string** |  | 
 **paymentGateway** | **string** |  | 
 **paymentReference** | **string** |  | 
-**vatTotal** | **int** |  | 
-**discountTotal** | **int** |  | 
+**vatTotal** | **float** |  | 
+**discountTotal** | **float** |  | 
 **glNumber** | **string** |  | 
 **status** | **string** |  | 
-**sourceId** | **int** |  | 
-**sourceShopId** | **int** |  | 
+**sourceId** | **float** |  | 
+**sourceShopId** | **float** |  | 
 **invoiceNumber** | **string** |  | 
 **currency** | **string** |  | 
 **customerEmail** | **string** |  | 
@@ -36,6 +36,8 @@ Name | Type | Description | Notes
 **modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 **renewal** | **bool** |  | 
 **automatic** | **bool** |  | 
+**customerId** | **string** |  | 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

@@ -1,10 +1,11 @@
 # Yoast\MyYoastApiClient\RobotsApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**robotsTxtGet**](RobotsApi.md#robotstxtget) | **GET** /robots.txt | 
+[**robotsTxtGet**](RobotsApi.md#robotsTxtGet) | **GET** /robots.txt | 
+
 
 # **robotsTxtGet**
 > \SplFileObject robotsTxtGet()
@@ -44,7 +45,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

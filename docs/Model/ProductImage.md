@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | 
+**id** | **float** |  | 
 **dateCreated** | **string** |  | 
 **dateCreatedGmt** | **string** |  | 
 **dateModified** | **string** |  | 
@@ -11,7 +11,8 @@ Name | Type | Description | Notes
 **src** | **string** |  | 
 **name** | **string** |  | 
 **alt** | **string** |  | 
-**position** | **int** |  | 
+**position** | **float** |  | 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

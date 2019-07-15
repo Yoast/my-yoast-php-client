@@ -1,13 +1,14 @@
 # Yoast\MyYoastApiClient\HelpscoutApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**helpscoutPost**](HelpscoutApi.md#helpscoutpost) | **POST** /helpscout | Get information about a customer
+[**helpscoutPost**](HelpscoutApi.md#helpscoutPost) | **POST** /helpscout | Get information about a customer
+
 
 # **helpscoutPost**
-> object helpscoutPost($body, $xHelpScoutSignature)
+> object helpscoutPost($helpScoutDto, $xHelpScoutSignature)
 
 Get information about a customer
 
@@ -23,11 +24,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\HelpscoutApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Yoast\MyYoastApiClient\Model\HelpScoutDto(); // \Yoast\MyYoastApiClient\Model\HelpScoutDto | 
+$helpScoutDto = new \Yoast\MyYoastApiClient\Model\HelpScoutDto(); // \Yoast\MyYoastApiClient\Model\HelpScoutDto | 
 $xHelpScoutSignature = "xHelpScoutSignature_example"; // string | The Helpscout signature
 
 try {
-    $result = $apiInstance->helpscoutPost($body, $xHelpScoutSignature);
+    $result = $apiInstance->helpscoutPost($helpScoutDto, $xHelpScoutSignature);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HelpscoutApi->helpscoutPost: ', $e->getMessage(), PHP_EOL;
@@ -39,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\HelpScoutDto**](../Model/HelpScoutDto.md)|  |
+ **helpScoutDto** | [**\Yoast\MyYoastApiClient\Model\HelpScoutDto**](../Model/HelpScoutDto.md)|  |
  **xHelpScoutSignature** | **string**| The Helpscout signature |
 
 ### Return type

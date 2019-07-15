@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **description** | **string** |  | 
 **courseUrl** | **string** |  | 
 **certificateUrl** | **string** |  | 
-**sourceId** | **int** |  | 
+**sourceId** | **float** |  | 
 **createdAt** | [**\DateTime**](\DateTime.md) |  | 
 **modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 **iconUrl** | **string** |  | 
@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **sale** | **bool** |  | 
 **saleLabel** | **string** |  | 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 
