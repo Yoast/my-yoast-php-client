@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 **bundledBy** | **string** |  | 
 **bundledItems** | **string[]** |  | 
 **bundledItemTitle** | **string** |  | 
-**id** | **float** |  | 
+**id** | **int** |  | 
 **metaData** | **string[]** |  | 
 **name** | **string** |  | 
-**price** | **float** |  | 
-**productId** | **float** |  | 
-**quantity** | **float** |  | 
+**price** | **int** |  | 
+**productId** | **int** |  | 
+**quantity** | **int** |  | 
 **sku** | **string** |  | 
 **subtotal** | **string** |  | 
 **subtotalTax** | **string** |  | 
@@ -19,8 +19,7 @@ Name | Type | Description | Notes
 **taxClass** | **string** |  | 
 **total** | **string** |  | 
 **totalTax** | **string** |  | 
-**variationId** | **float** |  | 
+**variationId** | **int** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -10,12 +10,12 @@ Name | Type | Description | Notes
 **glNumber** | **string** |  | 
 **isDownloadOnly** | **bool** |  | 
 **icon** | **string** |  | 
-**sourceId** | **float** |  | 
-**sourceShopId** | **float** |  | 
+**sourceId** | **int** |  | 
+**sourceShopId** | **int** |  | 
 **shopProductType** | **string** |  | 
 **shopStatus** | **string** |  | 
-**price** | **float** |  | 
-**shopRegularPrice** | **float** |  | 
+**price** | **int** |  | 
+**shopRegularPrice** | **int** |  | 
 **shopTaxStatus** | **string** |  | 
 **shopTaxClass** | **string** |  | 
 **currentVersion** | **string** |  | 
@@ -25,6 +25,5 @@ Name | Type | Description | Notes
 **createdAt** | [**\DateTime**](\DateTime.md) |  | 
 **modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

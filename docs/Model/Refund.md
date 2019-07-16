@@ -4,14 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
-**amount** | **float** |  | 
+**amount** | **int** |  | 
 **date** | [**\DateTime**](\DateTime.md) |  | 
 **modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 **reason** | **string** |  | 
-**sourceId** | **float** |  | 
-**sourceShopId** | **float** |  | 
+**sourceId** | **int** |  | 
+**sourceShopId** | **int** |  | 
 **createdAt** | [**\DateTime**](\DateTime.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

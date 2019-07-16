@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **float** |  | 
+**id** | **int** |  | 
 **avatarUrl** | **string** |  | [optional] 
 **billing** | [**\Yoast\MyYoastApiClient\Model\BillingDto**](BillingDto.md) |  | 
 **dateCreated** | [**\DateTime**](\DateTime.md) |  | 
@@ -15,12 +15,11 @@ Name | Type | Description | Notes
 **isPayingCustomer** | **bool** |  | 
 **lastName** | **string** |  | 
 **metaData** | **string[]** |  | 
-**ordersCount** | **float** |  | 
+**ordersCount** | **int** |  | 
 **role** | **string** |  | 
 **shipping** | [**\Yoast\MyYoastApiClient\Model\ShippingDto**](ShippingDto.md) |  | 
 **totalSpent** | **string** |  | 
 **username** | **string** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

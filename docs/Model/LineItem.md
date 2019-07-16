@@ -4,16 +4,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
-**subtotalAmount** | **float** |  | 
-**totalAmount** | **float** |  | 
-**vatAmount** | **float** |  | 
+**subtotalAmount** | **int** |  | 
+**totalAmount** | **int** |  | 
+**vatAmount** | **int** |  | 
 **productName** | **string** |  | 
-**quantity** | **float** |  | 
-**sourceId** | **float** |  | 
-**sourceShopId** | **float** |  | 
+**quantity** | **int** |  | 
+**sourceId** | **int** |  | 
+**sourceShopId** | **int** |  | 
 **createdAt** | [**\DateTime**](\DateTime.md) |  | 
 **modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
