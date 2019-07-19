@@ -277,9 +277,6 @@ class LineItemData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['bundledBy'] === null) {
-            $invalidProperties[] = "'bundledBy' can't be null";
-        }
         if ($this->container['bundledItems'] === null) {
             $invalidProperties[] = "'bundledItems' can't be null";
         }
