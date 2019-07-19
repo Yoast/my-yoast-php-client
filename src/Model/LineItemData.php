@@ -56,7 +56,7 @@ class LineItemData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'bundledBy' => 'string',
+        'bundledBy' => 'int',
 'bundledItems' => 'string[]',
 'bundledItemTitle' => 'string',
 'id' => 'int',
@@ -346,7 +346,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Gets bundledBy
      *
-     * @return string
+     * @return int
      */
     public function getBundledBy()
     {
@@ -356,7 +356,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Sets bundledBy
      *
-     * @param string $bundledBy bundledBy
+     * @param int $bundledBy bundledBy
      *
      * @return $this
      */

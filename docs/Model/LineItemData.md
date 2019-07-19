@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bundledBy** | **string** |  | 
+**bundledBy** | **int** |  | 
 **bundledItems** | **string[]** |  | 
 **bundledItemTitle** | **string** |  | 
 **id** | **int** |  | 
