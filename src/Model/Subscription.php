@@ -295,9 +295,6 @@ class Subscription implements ModelInterface, ArrayAccess
         if ($this->container['startDate'] === null) {
             $invalidProperties[] = "'startDate' can't be null";
         }
-        if ($this->container['endDate'] === null) {
-            $invalidProperties[] = "'endDate' can't be null";
-        }
         if ($this->container['sourceId'] === null) {
             $invalidProperties[] = "'sourceId' can't be null";
         }

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
 **startDate** | [**\DateTime**](\DateTime.md) |  | 
-**endDate** | [**\DateTime**](\DateTime.md) |  | 
+**endDate** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **sourceId** | **int** |  | 
 **sourceLineItemId** | **int** |  | 
 **sourceShopId** | **int** |  | 
