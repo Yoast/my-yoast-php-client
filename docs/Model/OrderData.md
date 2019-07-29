@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
 **number** | **string** |  | 
 **orderKey** | **string** |  | 
-**parentId** | **int** |  | 
+**parentId** | **int** |  | [optional] 
 **paymentMethod** | **string** |  | 
 **paymentMethodTitle** | **string** |  | 
 **pricesIncludeTax** | **bool** |  | 
@@ -45,5 +45,6 @@ Name | Type | Description | Notes
 **transactionId** | **string** |  | 
 **version** | **string** |  | 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

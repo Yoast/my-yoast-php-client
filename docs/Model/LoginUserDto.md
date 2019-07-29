@@ -8,5 +8,6 @@ Name | Type | Description | Notes
 **rememberMe** | **bool** | Whether or not the user wants to remain logged in after closing their browser. | [optional] 
 **otp** | **string** | A one time password AKA 2 factor authentication key. | [optional] 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

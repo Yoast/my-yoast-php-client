@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | 
 **name** | **string** |  | 
 **storeUrl** | **string** |  | 
-**downloadsJSON** | **string** |  | 
+**downloads** | **string[]** |  | 
 **glNumber** | **string** |  | 
 **isDownloadOnly** | **bool** |  | 
 **icon** | **string** |  | 
@@ -25,5 +25,6 @@ Name | Type | Description | Notes
 **createdAt** | [**\DateTime**](\DateTime.md) |  | 
 **modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

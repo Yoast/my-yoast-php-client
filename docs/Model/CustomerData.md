@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **billing** | [**\Yoast\MyYoastApiClient\Model\BillingDto**](BillingDto.md) |  | 
 **dateCreated** | [**\DateTime**](\DateTime.md) |  | 
 **dateCreatedGmt** | [**\DateTime**](\DateTime.md) |  | 
-**dateModified** | [**\DateTime**](\DateTime.md) |  | 
-**dateModifiedGmt** | [**\DateTime**](\DateTime.md) |  | 
+**dateModified** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**dateModifiedGmt** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **email** | **string** |  | 
 **firstName** | **string** |  | 
 **isPayingCustomer** | **bool** |  | 
@@ -21,5 +21,6 @@ Name | Type | Description | Notes
 **totalSpent** | **string** |  | 
 **username** | **string** |  | 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

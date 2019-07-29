@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
 **startDate** | [**\DateTime**](\DateTime.md) |  | 
-**endDate** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**endDate** | [**\DateTime**](\DateTime.md) |  | 
 **sourceId** | **int** |  | 
 **sourceLineItemId** | **int** |  | 
 **sourceShopId** | **int** |  | 
@@ -22,6 +22,9 @@ Name | Type | Description | Notes
 **requiresManualRenewal** | **bool** |  | 
 **renewalUrl** | **string** |  | 
 **subscriptionNumber** | **string** |  | 
+**subscriberId** | **string** |  | 
+**productId** | **string** |  | 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 
