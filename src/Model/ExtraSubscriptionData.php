@@ -58,7 +58,7 @@ class ExtraSubscriptionData implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'shopId' => 'int',
 'requiresManualRenewal' => 'bool',
-'renewalPrices' => 'object',
+'renewalPrices' => '\Yoast\MyYoastApiClient\Model\RenewalPrices',
 'renewalUrl' => 'string'    ];
 
     /**
@@ -277,7 +277,7 @@ class ExtraSubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Gets renewalPrices
      *
-     * @return object
+     * @return \Yoast\MyYoastApiClient\Model\RenewalPrices
      */
     public function getRenewalPrices()
     {
@@ -287,7 +287,7 @@ class ExtraSubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Sets renewalPrices
      *
-     * @param object $renewalPrices renewalPrices
+     * @param \Yoast\MyYoastApiClient\Model\RenewalPrices $renewalPrices renewalPrices
      *
      * @return $this
      */

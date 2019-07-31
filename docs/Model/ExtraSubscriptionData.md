@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **shopId** | **int** |  | 
 **requiresManualRenewal** | **bool** |  | 
-**renewalPrices** | [**object**](.md) |  | 
+**renewalPrices** | [**\Yoast\MyYoastApiClient\Model\RenewalPrices**](RenewalPrices.md) |  | 
 **renewalUrl** | **string** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
