@@ -56,7 +56,7 @@ class RenewalAmount implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'lineItem' => 'string',
+        'lineItemNumber' => 'int',
 'amount' => 'int'    ];
 
     /**
@@ -65,7 +65,7 @@ class RenewalAmount implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'lineItem' => null,
+        'lineItemNumber' => null,
 'amount' => null    ];
 
     /**
@@ -95,7 +95,7 @@ class RenewalAmount implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'lineItem' => 'lineItem',
+        'lineItemNumber' => 'lineItemNumber',
 'amount' => 'amount'    ];
 
     /**
@@ -104,7 +104,7 @@ class RenewalAmount implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'lineItem' => 'setLineItem',
+        'lineItemNumber' => 'setLineItemNumber',
 'amount' => 'setAmount'    ];
 
     /**
@@ -113,7 +113,7 @@ class RenewalAmount implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'lineItem' => 'getLineItem',
+        'lineItemNumber' => 'getLineItemNumber',
 'amount' => 'getAmount'    ];
 
     /**
@@ -174,7 +174,7 @@ class RenewalAmount implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['lineItem'] = isset($data['lineItem']) ? $data['lineItem'] : null;
+        $this->container['lineItemNumber'] = isset($data['lineItemNumber']) ? $data['lineItemNumber'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
     }
 
@@ -187,8 +187,8 @@ class RenewalAmount implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['lineItem'] === null) {
-            $invalidProperties[] = "'lineItem' can't be null";
+        if ($this->container['lineItemNumber'] === null) {
+            $invalidProperties[] = "'lineItemNumber' can't be null";
         }
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
@@ -209,25 +209,25 @@ class RenewalAmount implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets lineItem
+     * Gets lineItemNumber
      *
-     * @return string
+     * @return int
      */
-    public function getLineItem()
+    public function getLineItemNumber()
     {
-        return $this->container['lineItem'];
+        return $this->container['lineItemNumber'];
     }
 
     /**
-     * Sets lineItem
+     * Sets lineItemNumber
      *
-     * @param string $lineItem lineItem
+     * @param int $lineItemNumber lineItemNumber
      *
      * @return $this
      */
-    public function setLineItem($lineItem)
+    public function setLineItemNumber($lineItemNumber)
     {
-        $this->container['lineItem'] = $lineItem;
+        $this->container['lineItemNumber'] = $lineItemNumber;
 
         return $this;
     }

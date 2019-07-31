@@ -76,9 +76,9 @@ class RenewalAmountTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "lineItem"
+     * Test attribute "lineItemNumber"
      */
-    public function testPropertyLineItem()
+    public function testPropertyLineItemNumber()
     {
     }
 
