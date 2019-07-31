@@ -1,6 +1,6 @@
 <?php
 /**
- * RenewalPricesTest
+ * RenewalAmountTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * RenewalPricesTest Class Doc Comment
+ * RenewalAmountTest Class Doc Comment
  *
  * @category    Class
- * @description RenewalPrices
+ * @description RenewalAmount
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RenewalPricesTest extends \PHPUnit_Framework_TestCase
+class RenewalAmountTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,9 +69,23 @@ class RenewalPricesTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "RenewalPrices"
+     * Test "RenewalAmount"
      */
-    public function testRenewalPrices()
+    public function testRenewalAmount()
+    {
+    }
+
+    /**
+     * Test attribute "lineItem"
+     */
+    public function testPropertyLineItem()
+    {
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
     {
     }
 }

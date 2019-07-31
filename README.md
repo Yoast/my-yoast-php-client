@@ -335,7 +335,7 @@ Class | Method | HTTP request | Description
  - [Refund](docs/Model/Refund.md)
  - [RefundDataDto](docs/Model/RefundDataDto.md)
  - [RenameBodyDto](docs/Model/RenameBodyDto.md)
- - [RenewalPrices](docs/Model/RenewalPrices.md)
+ - [RenewalAmount](docs/Model/RenewalAmount.md)
  - [ResetPasswordDto](docs/Model/ResetPasswordDto.md)
  - [SendResetPasswordEmailDto](docs/Model/SendResetPasswordEmailDto.md)
  - [ShippingDto](docs/Model/ShippingDto.md)

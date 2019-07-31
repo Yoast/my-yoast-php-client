@@ -1,6 +1,6 @@
 <?php
 /**
- * RenewalPrices
+ * RenewalAmount
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * RenewalPrices Class Doc Comment
+ * RenewalAmount Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RenewalPrices implements ModelInterface, ArrayAccess
+class RenewalAmount implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class RenewalPrices implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'RenewalPrices';
+    protected static $swaggerModelName = 'RenewalAmount';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,7 +56,8 @@ class RenewalPrices implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-            ];
+        'lineItem' => 'string',
+'amount' => 'int'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +65,8 @@ class RenewalPrices implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-            ];
+        'lineItem' => null,
+'amount' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +95,8 @@ class RenewalPrices implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-            ];
+        'lineItem' => 'lineItem',
+'amount' => 'amount'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +104,8 @@ class RenewalPrices implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-            ];
+        'lineItem' => 'setLineItem',
+'amount' => 'setAmount'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +113,8 @@ class RenewalPrices implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-            ];
+        'lineItem' => 'getLineItem',
+'amount' => 'getAmount'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -169,6 +174,8 @@ class RenewalPrices implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['lineItem'] = isset($data['lineItem']) ? $data['lineItem'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
     }
 
     /**
@@ -180,6 +187,12 @@ class RenewalPrices implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['lineItem'] === null) {
+            $invalidProperties[] = "'lineItem' can't be null";
+        }
+        if ($this->container['amount'] === null) {
+            $invalidProperties[] = "'amount' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -194,6 +207,54 @@ class RenewalPrices implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets lineItem
+     *
+     * @return string
+     */
+    public function getLineItem()
+    {
+        return $this->container['lineItem'];
+    }
+
+    /**
+     * Sets lineItem
+     *
+     * @param string $lineItem lineItem
+     *
+     * @return $this
+     */
+    public function setLineItem($lineItem)
+    {
+        $this->container['lineItem'] = $lineItem;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     *
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     *
+     * @param int $amount amount
+     *
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
