@@ -1,13 +1,12 @@
 # Yoast\MyYoastApiClient\PackagesApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**packagesDistOrgNameArchiveZipGet**](PackagesApi.md#packagesDistOrgNameArchiveZipGet) | **GET** /packages/dist/{org}/{name}/{archive}.zip | Serves an .zip of the plugin.
-[**packagesPOrgNameAndHashJsonGet**](PackagesApi.md#packagesPOrgNameAndHashJsonGet) | **GET** /packages/p/{org}/{nameAndHash}.json | Serves the requested provider.json
-[**packagesPackagesJsonGet**](PackagesApi.md#packagesPackagesJsonGet) | **GET** /packages/packages.json | Serves the general packages.json file.
-
+[**packagesDistOrgNameArchiveZipGet**](PackagesApi.md#packagesdistorgnamearchivezipget) | **GET** /packages/dist/{org}/{name}/{archive}.zip | Serves an .zip of the plugin.
+[**packagesPOrgNameAndHashJsonGet**](PackagesApi.md#packagesporgnameandhashjsonget) | **GET** /packages/p/{org}/{nameAndHash}.json | Serves the requested provider.json
+[**packagesPackagesJsonGet**](PackagesApi.md#packagespackagesjsonget) | **GET** /packages/packages.json | Serves the general packages.json file.
 
 # **packagesDistOrgNameArchiveZipGet**
 > \SplFileObject packagesDistOrgNameArchiveZipGet($org, $archive, $name)
@@ -20,7 +19,6 @@ Serves an .zip of the plugin, described by the parameters passed in the request.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -63,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -79,7 +77,6 @@ Serves the requested provider.json defined by the org, name and hash of the file
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -120,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -165,7 +162,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

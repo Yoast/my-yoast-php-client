@@ -1,11 +1,10 @@
 # Yoast\MyYoastApiClient\ExportOrdersApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**exportOrdersYearMonthTypeGet**](ExportOrdersApi.md#exportOrdersYearMonthTypeGet) | **GET** /export-orders/{year}/{month}/{type} | 
-
+[**exportOrdersYearMonthTypeGet**](ExportOrdersApi.md#exportordersyearmonthtypeget) | **GET** /export-orders/{year}/{month}/{type} | 
 
 # **exportOrdersYearMonthTypeGet**
 > \SplFileObject exportOrdersYearMonthTypeGet($year, $month, $type)
@@ -53,7 +52,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
