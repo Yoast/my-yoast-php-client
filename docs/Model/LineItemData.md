@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bundledBy** | **int** |  | [optional] 
-**bundledItems** | **string[]** |  | 
-**bundledItemTitle** | **string** |  | 
+**bundledItems** | **string[]** |  | [optional] 
+**bundledItemTitle** | **string** |  | [optional] 
 **id** | **int** |  | 
 **metaData** | **string[]** |  | 
 **name** | **string** |  | 
@@ -21,5 +21,6 @@ Name | Type | Description | Notes
 **totalTax** | **string** |  | 
 **variationId** | **int** |  | 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 

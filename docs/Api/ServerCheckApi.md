@@ -1,10 +1,11 @@
 # Yoast\MyYoastApiClient\ServerCheckApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serverCheckGet**](ServerCheckApi.md#servercheckget) | **GET** /server-check | Server health check
+[**serverCheckGet**](ServerCheckApi.md#serverCheckGet) | **GET** /server-check | Server health check
+
 
 # **serverCheckGet**
 > string serverCheckGet()
@@ -46,7 +47,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

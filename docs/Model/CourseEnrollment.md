@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
 **status** | **string** |  | 
-**progress** | **int** |  | 
+**progress** | **float** |  | 
 **createdAt** | [**\DateTime**](\DateTime.md) |  | 
 **modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 **isTrial** | **bool** |  | 
@@ -19,5 +19,6 @@ Name | Type | Description | Notes
 **orderId** | **string** |  | 
 **courseId** | **string** |  | 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 
