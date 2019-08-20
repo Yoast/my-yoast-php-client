@@ -5,25 +5,24 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
 **name** | **string** |  | 
-**storeUrl** | **string** |  | 
-**downloads** | [**\Yoast\MyYoastApiClient\Model\ProductDownload[]**](ProductDownload.md) |  | [optional] 
-**glNumber** | **string** |  | 
-**isDownloadOnly** | **bool** |  | 
-**icon** | **string** |  | 
-**sourceId** | **int** |  | 
-**sourceShopId** | **int** |  | 
-**shopProductType** | **string** |  | 
-**shopStatus** | **string** |  | 
-**price** | **int** |  | 
-**shopRegularPrice** | **int** |  | 
-**shopTaxStatus** | **string** |  | 
-**shopTaxClass** | **string** |  | 
-**currentVersion** | **string** |  | 
-**changelog** | **string** |  | 
-**type** | **string** |  | 
-**currency** | **string** |  | 
-**createdAt** | [**\DateTime**](\DateTime.md) |  | 
-**modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
+**store_url** | **string** |  | 
+**downloads** | **object[]** |  | [optional] 
+**gl_number** | **string** |  | [optional] 
+**is_download_only** | **bool** |  | [optional] [default to false]
+**icon** | **string** |  | [optional] 
+**source_id** | **double** |  | 
+**source_shop_id** | **double** |  | 
+**shop_product_type** | **string** |  | [optional] 
+**shop_status** | **string** |  | [optional] 
+**price** | **double** |  | [optional] 
+**shop_regular_price** | **double** |  | [optional] 
+**shop_tax_status** | **string** |  | [optional] 
+**shop_tax_class** | **string** |  | [optional] 
+**current_version** | **string** |  | [optional] 
+**changelog** | **string** |  | [optional] 
+**type** | **string** |  | [optional] 
+**currency** | **string** |  | [optional] 
+**course_id** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

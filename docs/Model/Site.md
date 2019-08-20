@@ -5,19 +5,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
 **url** | **string** |  | 
-**header** | **string** |  | 
-**icon** | **string** |  | 
-**creationDate** | [**\DateTime**](\DateTime.md) |  | 
-**hostname** | **string** |  | 
-**protocol** | **string** |  | 
-**port** | **int** |  | 
-**path** | **string** |  | 
-**createdAt** | [**\DateTime**](\DateTime.md) |  | 
-**modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
-**type** | **string** |  | 
-**status** | **string** |  | 
-**clientId** | **string** |  | 
-**clientSecret** | **string** |  | 
+**header** | **string** |  | [optional] 
+**icon** | **string** |  | [optional] 
+**creation_date** | [**\DateTime**](\DateTime.md) |  | 
+**user_id** | **string** |  | 
+**hostname** | **string** |  | [optional] 
+**protocol** | **string** |  | [optional] 
+**port** | **double** |  | [optional] 
+**path** | **string** |  | [optional] 
+**type** | **string** |  | [default to 'wordpress']
+**status** | **string** |  | [optional] 
+**client_id** | **string** |  | [optional] 
+**client_secret** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

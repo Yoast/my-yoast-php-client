@@ -1,45 +1,73 @@
 # Yoast\MyYoastApiClient\ProductApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://localhost/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiProductsBulkPost**](ProductApi.md#apiProductsBulkPost) | **POST** /api/Products/bulk | Create many Product
-[**apiProductsGet**](ProductApi.md#apiProductsGet) | **GET** /api/Products | Retrieve many Product
-[**apiProductsIdDelete**](ProductApi.md#apiProductsIdDelete) | **DELETE** /api/Products/{id} | Delete one Product
-[**apiProductsIdGet**](ProductApi.md#apiProductsIdGet) | **GET** /api/Products/{id} | Retrieve one Product
-[**apiProductsIdPatch**](ProductApi.md#apiProductsIdPatch) | **PATCH** /api/Products/{id} | Update one Product
-[**apiProductsPost**](ProductApi.md#apiProductsPost) | **POST** /api/Products | Create one Product
+[**productCount**](ProductApi.md#productCount) | **GET** /Products/count | Count instances of the model matched by where from the data source.
+[**productCreate**](ProductApi.md#productCreate) | **POST** /Products | Create a new instance of the model and persist it into the data source.
+[**productCreateChangeStreamGetProductsChangeStream**](ProductApi.md#productCreateChangeStreamGetProductsChangeStream) | **GET** /Products/change-stream | Create a change stream.
+[**productCreateChangeStreamPostProductsChangeStream**](ProductApi.md#productCreateChangeStreamPostProductsChangeStream) | **POST** /Products/change-stream | Create a change stream.
+[**productDeleteById**](ProductApi.md#productDeleteById) | **DELETE** /Products/{id} | Delete a model instance by {{id}} from the data source.
+[**productExistsGetProductsidExists**](ProductApi.md#productExistsGetProductsidExists) | **GET** /Products/{id}/exists | Check whether a model instance exists in the data source.
+[**productExistsHeadProductsid**](ProductApi.md#productExistsHeadProductsid) | **HEAD** /Products/{id} | Check whether a model instance exists in the data source.
+[**productFind**](ProductApi.md#productFind) | **GET** /Products | Find all instances of the model matched by filter from the data source.
+[**productFindById**](ProductApi.md#productFindById) | **GET** /Products/{id} | Find a model instance by {{id}} from the data source.
+[**productFindOne**](ProductApi.md#productFindOne) | **GET** /Products/findOne | Find first instance of the model matched by filter from the data source.
+[**productFromWooCommerce**](ProductApi.md#productFromWooCommerce) | **PUT** /Products/fromWooCommerce | 
+[**productPatchOrCreate**](ProductApi.md#productPatchOrCreate) | **PATCH** /Products | Patch an existing model instance or insert a new one into the data source.
+[**productPrototypeCountLineItems**](ProductApi.md#productPrototypeCountLineItems) | **GET** /Products/{id}/lineItems/count | Counts lineItems of Product.
+[**productPrototypeCountProductGroups**](ProductApi.md#productPrototypeCountProductGroups) | **GET** /Products/{id}/productGroups/count | Counts productGroups of Product.
+[**productPrototypeCountSubscriptions**](ProductApi.md#productPrototypeCountSubscriptions) | **GET** /Products/{id}/subscriptions/count | Counts subscriptions of Product.
+[**productPrototypeCreateLineItems**](ProductApi.md#productPrototypeCreateLineItems) | **POST** /Products/{id}/lineItems | Creates a new instance in lineItems of this model.
+[**productPrototypeCreateProductGroups**](ProductApi.md#productPrototypeCreateProductGroups) | **POST** /Products/{id}/productGroups | Creates a new instance in productGroups of this model.
+[**productPrototypeCreateSubscriptions**](ProductApi.md#productPrototypeCreateSubscriptions) | **POST** /Products/{id}/subscriptions | Creates a new instance in subscriptions of this model.
+[**productPrototypeDeleteLineItems**](ProductApi.md#productPrototypeDeleteLineItems) | **DELETE** /Products/{id}/lineItems | Deletes all lineItems of this model.
+[**productPrototypeDeleteProductGroups**](ProductApi.md#productPrototypeDeleteProductGroups) | **DELETE** /Products/{id}/productGroups | Deletes all productGroups of this model.
+[**productPrototypeDeleteSubscriptions**](ProductApi.md#productPrototypeDeleteSubscriptions) | **DELETE** /Products/{id}/subscriptions | Deletes all subscriptions of this model.
+[**productPrototypeDestroyByIdLineItems**](ProductApi.md#productPrototypeDestroyByIdLineItems) | **DELETE** /Products/{id}/lineItems/{fk} | Delete a related item by id for lineItems.
+[**productPrototypeDestroyByIdProductGroups**](ProductApi.md#productPrototypeDestroyByIdProductGroups) | **DELETE** /Products/{id}/productGroups/{fk} | Delete a related item by id for productGroups.
+[**productPrototypeDestroyByIdSubscriptions**](ProductApi.md#productPrototypeDestroyByIdSubscriptions) | **DELETE** /Products/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
+[**productPrototypeExistsProductGroups**](ProductApi.md#productPrototypeExistsProductGroups) | **HEAD** /Products/{id}/productGroups/rel/{fk} | Check the existence of productGroups relation to an item by id.
+[**productPrototypeFindByIdLineItems**](ProductApi.md#productPrototypeFindByIdLineItems) | **GET** /Products/{id}/lineItems/{fk} | Find a related item by id for lineItems.
+[**productPrototypeFindByIdProductGroups**](ProductApi.md#productPrototypeFindByIdProductGroups) | **GET** /Products/{id}/productGroups/{fk} | Find a related item by id for productGroups.
+[**productPrototypeFindByIdSubscriptions**](ProductApi.md#productPrototypeFindByIdSubscriptions) | **GET** /Products/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
+[**productPrototypeGetCourses**](ProductApi.md#productPrototypeGetCourses) | **GET** /Products/{id}/courses | Fetches belongsTo relation courses.
+[**productPrototypeGetLineItems**](ProductApi.md#productPrototypeGetLineItems) | **GET** /Products/{id}/lineItems | Queries lineItems of Product.
+[**productPrototypeGetProductGroups**](ProductApi.md#productPrototypeGetProductGroups) | **GET** /Products/{id}/productGroups | Queries productGroups of Product.
+[**productPrototypeGetSubscriptions**](ProductApi.md#productPrototypeGetSubscriptions) | **GET** /Products/{id}/subscriptions | Queries subscriptions of Product.
+[**productPrototypeLinkProductGroups**](ProductApi.md#productPrototypeLinkProductGroups) | **PUT** /Products/{id}/productGroups/rel/{fk} | Add a related item by id for productGroups.
+[**productPrototypePatchAttributes**](ProductApi.md#productPrototypePatchAttributes) | **PATCH** /Products/{id} | Patch attributes for a model instance and persist it into the data source.
+[**productPrototypeUnlinkProductGroups**](ProductApi.md#productPrototypeUnlinkProductGroups) | **DELETE** /Products/{id}/productGroups/rel/{fk} | Remove the productGroups relation to an item by id.
+[**productPrototypeUpdateByIdLineItems**](ProductApi.md#productPrototypeUpdateByIdLineItems) | **PUT** /Products/{id}/lineItems/{fk} | Update a related item by id for lineItems.
+[**productPrototypeUpdateByIdProductGroups**](ProductApi.md#productPrototypeUpdateByIdProductGroups) | **PUT** /Products/{id}/productGroups/{fk} | Update a related item by id for productGroups.
+[**productPrototypeUpdateByIdSubscriptions**](ProductApi.md#productPrototypeUpdateByIdSubscriptions) | **PUT** /Products/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
+[**productReplaceByIdPostProductsidReplace**](ProductApi.md#productReplaceByIdPostProductsidReplace) | **POST** /Products/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+[**productReplaceByIdPutProductsid**](ProductApi.md#productReplaceByIdPutProductsid) | **PUT** /Products/{id} | Replace attributes for a model instance and persist it into the data source.
+[**productReplaceOrCreatePostProductsReplaceOrCreate**](ProductApi.md#productReplaceOrCreatePostProductsReplaceOrCreate) | **POST** /Products/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+[**productReplaceOrCreatePutProducts**](ProductApi.md#productReplaceOrCreatePutProducts) | **PUT** /Products | Replace an existing model instance or insert a new one into the data source.
+[**productUpdateAll**](ProductApi.md#productUpdateAll) | **POST** /Products/update | Update instances of the model matched by {{where}} from the data source.
+[**productUpsertWithWhere**](ProductApi.md#productUpsertWithWhere) | **POST** /Products/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
 
-# **apiProductsBulkPost**
-> \Yoast\MyYoastApiClient\Model\Product[] apiProductsBulkPost($bulkDto)
+# **productCount**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 productCount($where)
 
-Create many Product
+Count instances of the model matched by where from the data source.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$bulkDto = new \Yoast\MyYoastApiClient\Model\BulkDto(); // \Yoast\MyYoastApiClient\Model\BulkDto | 
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->apiProductsBulkPost($bulkDto);
+    $result = $api_instance->productCount($where);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->apiProductsBulkPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productCount: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -48,74 +76,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bulkDto** | [**\Yoast\MyYoastApiClient\Model\BulkDto**](../Model/BulkDto.md)|  |
+ **where** | **string**| Criteria to match model instances | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Product[]**](../Model/Product.md)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **apiProductsGet**
-> \Yoast\MyYoastApiClient\Model\Product[] apiProductsGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
-
-Retrieve many Product
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
-$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
-$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
-$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
-$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
-$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
-$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
-$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
-$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
-
-try {
-    $result = $apiInstance->apiProductsGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductApi->apiProductsGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
- **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
- **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
- **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
- **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
- **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
- **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
- **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
- **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Product[]**](../Model/Product.md)
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -123,39 +88,29 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiProductsIdDelete**
-> \Yoast\MyYoastApiClient\Model\Product apiProductsIdDelete($id)
+# **productCreate**
+> \Yoast\MyYoastApiClient\Model\Product productCreate($data)
 
-Delete one Product
+Create a new instance of the model and persist it into the data source.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = "id_example"; // string | 
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | Model instance data
 
 try {
-    $result = $apiInstance->apiProductsIdDelete($id);
+    $result = $api_instance->productCreate($data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->apiProductsIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productCreate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -164,60 +119,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **apiProductsIdGet**
-> \Yoast\MyYoastApiClient\Model\Product apiProductsIdGet($id, $fields, $join, $cache)
-
-Retrieve one Product
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$id = "id_example"; // string | 
-$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
-$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
-$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
-
-try {
-    $result = $apiInstance->apiProductsIdGet($id, $fields, $join, $cache);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductApi->apiProductsIdGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
- **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
- **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -229,40 +131,29 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiProductsIdPatch**
-> \Yoast\MyYoastApiClient\Model\Product apiProductsIdPatch($product, $id)
+# **productCreateChangeStreamGetProductsChangeStream**
+> \SplFileObject productCreateChangeStreamGetProductsChangeStream($options)
 
-Update one Product
+Create a change stream.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$product = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
-$id = "id_example"; // string | 
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->apiProductsIdPatch($product, $id);
+    $result = $api_instance->productCreateChangeStreamGetProductsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->apiProductsIdPatch: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productCreateChangeStreamGetProductsChangeStream: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -271,52 +162,41 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)|  |
- **id** | **string**|  |
+ **options** | **string**|  | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+[**\SplFileObject**](../Model/\SplFileObject.md)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiProductsPost**
-> \Yoast\MyYoastApiClient\Model\Product apiProductsPost($product)
+# **productCreateChangeStreamPostProductsChangeStream**
+> \SplFileObject productCreateChangeStreamPostProductsChangeStream($options)
 
-Create one Product
+Create a change stream.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$product = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$options = "options_example"; // string | 
 
 try {
-    $result = $apiInstance->apiProductsPost($product);
+    $result = $api_instance->productCreateChangeStreamPostProductsChangeStream($options);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->apiProductsPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->productCreateChangeStreamPostProductsChangeStream: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -325,7 +205,224 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **product** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)|  |
+ **options** | **string**|  | [optional]
+
+### Return type
+
+[**\SplFileObject**](../Model/\SplFileObject.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productDeleteById**
+> object productDeleteById($id)
+
+Delete a model instance by {{id}} from the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Model id
+
+try {
+    $result = $api_instance->productDeleteById($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productDeleteById: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Model id |
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productExistsGetProductsidExists**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2001 productExistsGetProductsidExists($id)
+
+Check whether a model instance exists in the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Model id
+
+try {
+    $result = $api_instance->productExistsGetProductsidExists($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productExistsGetProductsidExists: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Model id |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productExistsHeadProductsid**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2001 productExistsHeadProductsid($id)
+
+Check whether a model instance exists in the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Model id
+
+try {
+    $result = $api_instance->productExistsHeadProductsid($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productExistsHeadProductsid: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Model id |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productFind**
+> \Yoast\MyYoastApiClient\Model\Product[] productFind($filter)
+
+Find all instances of the model matched by filter from the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
+
+try {
+    $result = $api_instance->productFind($filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productFind: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product[]**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productFindById**
+> \Yoast\MyYoastApiClient\Model\Product productFindById($id, $filter)
+
+Find a model instance by {{id}} from the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Model id
+$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
+
+try {
+    $result = $api_instance->productFindById($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productFindById: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Model id |
+ **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -333,12 +430,1574 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productFindOne**
+> \Yoast\MyYoastApiClient\Model\Product productFindOne($filter)
+
+Find first instance of the model matched by filter from the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
+
+try {
+    $result = $api_instance->productFindOne($filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productFindOne: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productFromWooCommerce**
+> \Yoast\MyYoastApiClient\Model\Product productFromWooCommerce($product_data, $extra_data)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$product_data = "product_data_example"; // string | 
+$extra_data = "extra_data_example"; // string | 
+
+try {
+    $result = $api_instance->productFromWooCommerce($product_data, $extra_data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productFromWooCommerce: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_data** | **string**|  |
+ **extra_data** | **string**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPatchOrCreate**
+> \Yoast\MyYoastApiClient\Model\Product productPatchOrCreate($data)
+
+Patch an existing model instance or insert a new one into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | Model instance data
+
+try {
+    $result = $api_instance->productPatchOrCreate($data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPatchOrCreate: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeCountLineItems**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 productPrototypeCountLineItems($id, $where)
+
+Counts lineItems of Product.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->productPrototypeCountLineItems($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeCountLineItems: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeCountProductGroups**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 productPrototypeCountProductGroups($id, $where)
+
+Counts productGroups of Product.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->productPrototypeCountProductGroups($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeCountProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeCountSubscriptions**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 productPrototypeCountSubscriptions($id, $where)
+
+Counts subscriptions of Product.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->productPrototypeCountSubscriptions($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeCountSubscriptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeCreateLineItems**
+> \Yoast\MyYoastApiClient\Model\LineItem productPrototypeCreateLineItems($id, $data)
+
+Creates a new instance in lineItems of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | 
+
+try {
+    $result = $api_instance->productPrototypeCreateLineItems($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeCreateLineItems: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeCreateProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup productPrototypeCreateProductGroups($id, $data)
+
+Creates a new instance in productGroups of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
+
+try {
+    $result = $api_instance->productPrototypeCreateProductGroups($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeCreateProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeCreateSubscriptions**
+> \Yoast\MyYoastApiClient\Model\Subscription productPrototypeCreateSubscriptions($id, $data)
+
+Creates a new instance in subscriptions of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
+
+try {
+    $result = $api_instance->productPrototypeCreateSubscriptions($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeCreateSubscriptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeDeleteLineItems**
+> productPrototypeDeleteLineItems($id)
+
+Deletes all lineItems of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+
+try {
+    $api_instance->productPrototypeDeleteLineItems($id);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeDeleteLineItems: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeDeleteProductGroups**
+> productPrototypeDeleteProductGroups($id)
+
+Deletes all productGroups of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+
+try {
+    $api_instance->productPrototypeDeleteProductGroups($id);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeDeleteProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeDeleteSubscriptions**
+> productPrototypeDeleteSubscriptions($id)
+
+Deletes all subscriptions of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+
+try {
+    $api_instance->productPrototypeDeleteSubscriptions($id);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeDeleteSubscriptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeDestroyByIdLineItems**
+> productPrototypeDestroyByIdLineItems($id, $fk)
+
+Delete a related item by id for lineItems.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for lineItems
+
+try {
+    $api_instance->productPrototypeDestroyByIdLineItems($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeDestroyByIdLineItems: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for lineItems |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeDestroyByIdProductGroups**
+> productPrototypeDestroyByIdProductGroups($id, $fk)
+
+Delete a related item by id for productGroups.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for productGroups
+
+try {
+    $api_instance->productPrototypeDestroyByIdProductGroups($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeDestroyByIdProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for productGroups |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeDestroyByIdSubscriptions**
+> productPrototypeDestroyByIdSubscriptions($id, $fk)
+
+Delete a related item by id for subscriptions.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for subscriptions
+
+try {
+    $api_instance->productPrototypeDestroyByIdSubscriptions($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeDestroyByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for subscriptions |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeExistsProductGroups**
+> bool productPrototypeExistsProductGroups($id, $fk)
+
+Check the existence of productGroups relation to an item by id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for productGroups
+
+try {
+    $result = $api_instance->productPrototypeExistsProductGroups($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeExistsProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for productGroups |
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeFindByIdLineItems**
+> \Yoast\MyYoastApiClient\Model\LineItem productPrototypeFindByIdLineItems($id, $fk)
+
+Find a related item by id for lineItems.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for lineItems
+
+try {
+    $result = $api_instance->productPrototypeFindByIdLineItems($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeFindByIdLineItems: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for lineItems |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeFindByIdProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup productPrototypeFindByIdProductGroups($id, $fk)
+
+Find a related item by id for productGroups.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for productGroups
+
+try {
+    $result = $api_instance->productPrototypeFindByIdProductGroups($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeFindByIdProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for productGroups |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeFindByIdSubscriptions**
+> \Yoast\MyYoastApiClient\Model\Subscription productPrototypeFindByIdSubscriptions($id, $fk)
+
+Find a related item by id for subscriptions.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for subscriptions
+
+try {
+    $result = $api_instance->productPrototypeFindByIdSubscriptions($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeFindByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for subscriptions |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeGetCourses**
+> \Yoast\MyYoastApiClient\Model\Course productPrototypeGetCourses($id, $refresh)
+
+Fetches belongsTo relation courses.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$refresh = true; // bool | 
+
+try {
+    $result = $api_instance->productPrototypeGetCourses($id, $refresh);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeGetCourses: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **refresh** | **bool**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeGetLineItems**
+> \Yoast\MyYoastApiClient\Model\LineItem[] productPrototypeGetLineItems($id, $filter)
+
+Queries lineItems of Product.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->productPrototypeGetLineItems($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeGetLineItems: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\LineItem[]**](../Model/LineItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeGetProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup[] productPrototypeGetProductGroups($id, $filter)
+
+Queries productGroups of Product.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->productPrototypeGetProductGroups($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeGetProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup[]**](../Model/ProductGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeGetSubscriptions**
+> \Yoast\MyYoastApiClient\Model\Subscription[] productPrototypeGetSubscriptions($id, $filter)
+
+Queries subscriptions of Product.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->productPrototypeGetSubscriptions($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeGetSubscriptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription[]**](../Model/Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeLinkProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroupProducts productPrototypeLinkProductGroups($id, $fk, $data)
+
+Add a related item by id for productGroups.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for productGroups
+$data = new \Yoast\MyYoastApiClient\Model\ProductGroupProducts(); // \Yoast\MyYoastApiClient\Model\ProductGroupProducts | 
+
+try {
+    $result = $api_instance->productPrototypeLinkProductGroups($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeLinkProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for productGroups |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroupProducts**](../Model/ProductGroupProducts.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroupProducts**](../Model/ProductGroupProducts.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypePatchAttributes**
+> \Yoast\MyYoastApiClient\Model\Product productPrototypePatchAttributes($id, $data)
+
+Patch attributes for a model instance and persist it into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | An object of model property name/value pairs
+
+try {
+    $result = $api_instance->productPrototypePatchAttributes($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| An object of model property name/value pairs | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeUnlinkProductGroups**
+> productPrototypeUnlinkProductGroups($id, $fk)
+
+Remove the productGroups relation to an item by id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for productGroups
+
+try {
+    $api_instance->productPrototypeUnlinkProductGroups($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeUnlinkProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for productGroups |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeUpdateByIdLineItems**
+> \Yoast\MyYoastApiClient\Model\LineItem productPrototypeUpdateByIdLineItems($id, $fk, $data)
+
+Update a related item by id for lineItems.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for lineItems
+$data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | 
+
+try {
+    $result = $api_instance->productPrototypeUpdateByIdLineItems($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeUpdateByIdLineItems: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for lineItems |
+ **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeUpdateByIdProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup productPrototypeUpdateByIdProductGroups($id, $fk, $data)
+
+Update a related item by id for productGroups.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for productGroups
+$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
+
+try {
+    $result = $api_instance->productPrototypeUpdateByIdProductGroups($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeUpdateByIdProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for productGroups |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productPrototypeUpdateByIdSubscriptions**
+> \Yoast\MyYoastApiClient\Model\Subscription productPrototypeUpdateByIdSubscriptions($id, $fk, $data)
+
+Update a related item by id for subscriptions.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Product id
+$fk = "fk_example"; // string | Foreign key for subscriptions
+$data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
+
+try {
+    $result = $api_instance->productPrototypeUpdateByIdSubscriptions($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productPrototypeUpdateByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Product id |
+ **fk** | **string**| Foreign key for subscriptions |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productReplaceByIdPostProductsidReplace**
+> \Yoast\MyYoastApiClient\Model\Product productReplaceByIdPostProductsidReplace($id, $data)
+
+Replace attributes for a model instance and persist it into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Model id
+$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | Model instance data
+
+try {
+    $result = $api_instance->productReplaceByIdPostProductsidReplace($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productReplaceByIdPostProductsidReplace: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Model id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productReplaceByIdPutProductsid**
+> \Yoast\MyYoastApiClient\Model\Product productReplaceByIdPutProductsid($id, $data)
+
+Replace attributes for a model instance and persist it into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$id = "id_example"; // string | Model id
+$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | Model instance data
+
+try {
+    $result = $api_instance->productReplaceByIdPutProductsid($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productReplaceByIdPutProductsid: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Model id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productReplaceOrCreatePostProductsReplaceOrCreate**
+> \Yoast\MyYoastApiClient\Model\Product productReplaceOrCreatePostProductsReplaceOrCreate($data)
+
+Replace an existing model instance or insert a new one into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | Model instance data
+
+try {
+    $result = $api_instance->productReplaceOrCreatePostProductsReplaceOrCreate($data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productReplaceOrCreatePostProductsReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productReplaceOrCreatePutProducts**
+> \Yoast\MyYoastApiClient\Model\Product productReplaceOrCreatePutProducts($data)
+
+Replace an existing model instance or insert a new one into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | Model instance data
+
+try {
+    $result = $api_instance->productReplaceOrCreatePutProducts($data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productReplaceOrCreatePutProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| Model instance data | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productUpdateAll**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2002 productUpdateAll($where, $data)
+
+Update instances of the model matched by {{where}} from the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$where = "where_example"; // string | Criteria to match model instances
+$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | An object of model property name/value pairs
+
+try {
+    $result = $api_instance->productUpdateAll($where, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productUpdateAll: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **where** | **string**| Criteria to match model instances | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| An object of model property name/value pairs | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **productUpsertWithWhere**
+> \Yoast\MyYoastApiClient\Model\Product productUpsertWithWhere($where, $data)
+
+Update an existing model instance or insert a new one into the data source based on the where criteria.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\ProductApi();
+$where = "where_example"; // string | Criteria to match model instances
+$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | An object of model property name/value pairs
+
+try {
+    $result = $api_instance->productUpsertWithWhere($where, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductApi->productUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **where** | **string**| Criteria to match model instances | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)| An object of model property name/value pairs | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

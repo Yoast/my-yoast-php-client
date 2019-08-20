@@ -5,9 +5,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
 **name** | **string** |  | 
-**enabled** | **bool** |  | 
-**createdAt** | [**\DateTime**](\DateTime.md) |  | 
-**modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
+**enabled** | **bool** |  | [optional] [default to true]
+**user_id** | **string** |  | [optional] 
+**created_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**modified_at** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

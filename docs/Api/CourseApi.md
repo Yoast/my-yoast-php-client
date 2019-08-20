@@ -1,46 +1,62 @@
 # Yoast\MyYoastApiClient\CourseApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://localhost/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiCoursesBulkPost**](CourseApi.md#apiCoursesBulkPost) | **POST** /api/Courses/bulk | Create many Course
-[**apiCoursesFromAcademyPut**](CourseApi.md#apiCoursesFromAcademyPut) | **PUT** /api/Courses/fromAcademy | Upserts a course
-[**apiCoursesGet**](CourseApi.md#apiCoursesGet) | **GET** /api/Courses | Retrieve many Course
-[**apiCoursesIdDelete**](CourseApi.md#apiCoursesIdDelete) | **DELETE** /api/Courses/{id} | Delete one Course
-[**apiCoursesIdGet**](CourseApi.md#apiCoursesIdGet) | **GET** /api/Courses/{id} | Retrieve one Course
-[**apiCoursesIdPatch**](CourseApi.md#apiCoursesIdPatch) | **PATCH** /api/Courses/{id} | Update one Course
-[**apiCoursesPost**](CourseApi.md#apiCoursesPost) | **POST** /api/Courses | Create one Course
+[**courseCount**](CourseApi.md#courseCount) | **GET** /Courses/count | Count instances of the model matched by where from the data source.
+[**courseCreate**](CourseApi.md#courseCreate) | **POST** /Courses | Create a new instance of the model and persist it into the data source.
+[**courseCreateChangeStreamGetCoursesChangeStream**](CourseApi.md#courseCreateChangeStreamGetCoursesChangeStream) | **GET** /Courses/change-stream | Create a change stream.
+[**courseCreateChangeStreamPostCoursesChangeStream**](CourseApi.md#courseCreateChangeStreamPostCoursesChangeStream) | **POST** /Courses/change-stream | Create a change stream.
+[**courseDeleteById**](CourseApi.md#courseDeleteById) | **DELETE** /Courses/{id} | Delete a model instance by {{id}} from the data source.
+[**courseExistsGetCoursesidExists**](CourseApi.md#courseExistsGetCoursesidExists) | **GET** /Courses/{id}/exists | Check whether a model instance exists in the data source.
+[**courseExistsHeadCoursesid**](CourseApi.md#courseExistsHeadCoursesid) | **HEAD** /Courses/{id} | Check whether a model instance exists in the data source.
+[**courseFind**](CourseApi.md#courseFind) | **GET** /Courses | Find all instances of the model matched by filter from the data source.
+[**courseFindById**](CourseApi.md#courseFindById) | **GET** /Courses/{id} | Find a model instance by {{id}} from the data source.
+[**courseFindOne**](CourseApi.md#courseFindOne) | **GET** /Courses/findOne | Find first instance of the model matched by filter from the data source.
+[**courseFromAcademy**](CourseApi.md#courseFromAcademy) | **PUT** /Courses/fromAcademy | 
+[**coursePatchOrCreate**](CourseApi.md#coursePatchOrCreate) | **PATCH** /Courses | Patch an existing model instance or insert a new one into the data source.
+[**coursePrototypeCountProductGroups**](CourseApi.md#coursePrototypeCountProductGroups) | **GET** /Courses/{id}/productGroups/count | Counts productGroups of Course.
+[**coursePrototypeCountProducts**](CourseApi.md#coursePrototypeCountProducts) | **GET** /Courses/{id}/products/count | Counts products of Course.
+[**coursePrototypeCreateProductGroups**](CourseApi.md#coursePrototypeCreateProductGroups) | **POST** /Courses/{id}/productGroups | Creates a new instance in productGroups of this model.
+[**coursePrototypeCreateProducts**](CourseApi.md#coursePrototypeCreateProducts) | **POST** /Courses/{id}/products | Creates a new instance in products of this model.
+[**coursePrototypeDeleteProductGroups**](CourseApi.md#coursePrototypeDeleteProductGroups) | **DELETE** /Courses/{id}/productGroups | Deletes all productGroups of this model.
+[**coursePrototypeDeleteProducts**](CourseApi.md#coursePrototypeDeleteProducts) | **DELETE** /Courses/{id}/products | Deletes all products of this model.
+[**coursePrototypeDestroyByIdProductGroups**](CourseApi.md#coursePrototypeDestroyByIdProductGroups) | **DELETE** /Courses/{id}/productGroups/{fk} | Delete a related item by id for productGroups.
+[**coursePrototypeDestroyByIdProducts**](CourseApi.md#coursePrototypeDestroyByIdProducts) | **DELETE** /Courses/{id}/products/{fk} | Delete a related item by id for products.
+[**coursePrototypeFindByIdProductGroups**](CourseApi.md#coursePrototypeFindByIdProductGroups) | **GET** /Courses/{id}/productGroups/{fk} | Find a related item by id for productGroups.
+[**coursePrototypeFindByIdProducts**](CourseApi.md#coursePrototypeFindByIdProducts) | **GET** /Courses/{id}/products/{fk} | Find a related item by id for products.
+[**coursePrototypeGetProductGroups**](CourseApi.md#coursePrototypeGetProductGroups) | **GET** /Courses/{id}/productGroups | Queries productGroups of Course.
+[**coursePrototypeGetProducts**](CourseApi.md#coursePrototypeGetProducts) | **GET** /Courses/{id}/products | Queries products of Course.
+[**coursePrototypePatchAttributes**](CourseApi.md#coursePrototypePatchAttributes) | **PATCH** /Courses/{id} | Patch attributes for a model instance and persist it into the data source.
+[**coursePrototypeUpdateByIdProductGroups**](CourseApi.md#coursePrototypeUpdateByIdProductGroups) | **PUT** /Courses/{id}/productGroups/{fk} | Update a related item by id for productGroups.
+[**coursePrototypeUpdateByIdProducts**](CourseApi.md#coursePrototypeUpdateByIdProducts) | **PUT** /Courses/{id}/products/{fk} | Update a related item by id for products.
+[**courseReplaceByIdPostCoursesidReplace**](CourseApi.md#courseReplaceByIdPostCoursesidReplace) | **POST** /Courses/{id}/replace | Replace attributes for a model instance and persist it into the data source.
+[**courseReplaceByIdPutCoursesid**](CourseApi.md#courseReplaceByIdPutCoursesid) | **PUT** /Courses/{id} | Replace attributes for a model instance and persist it into the data source.
+[**courseReplaceOrCreatePostCoursesReplaceOrCreate**](CourseApi.md#courseReplaceOrCreatePostCoursesReplaceOrCreate) | **POST** /Courses/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
+[**courseReplaceOrCreatePutCourses**](CourseApi.md#courseReplaceOrCreatePutCourses) | **PUT** /Courses | Replace an existing model instance or insert a new one into the data source.
+[**courseUpdateAll**](CourseApi.md#courseUpdateAll) | **POST** /Courses/update | Update instances of the model matched by {{where}} from the data source.
+[**courseUpsertWithWhere**](CourseApi.md#courseUpsertWithWhere) | **POST** /Courses/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
 
 
-# **apiCoursesBulkPost**
-> \Yoast\MyYoastApiClient\Model\Course[] apiCoursesBulkPost($bulkDto)
+# **courseCount**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 courseCount($where)
 
-Create many Course
+Count instances of the model matched by where from the data source.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CourseApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$bulkDto = new \Yoast\MyYoastApiClient\Model\BulkDto(); // \Yoast\MyYoastApiClient\Model\BulkDto | 
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->apiCoursesBulkPost($bulkDto);
+    $result = $api_instance->courseCount($where);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->apiCoursesBulkPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->courseCount: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -49,7 +65,308 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bulkDto** | [**\Yoast\MyYoastApiClient\Model\BulkDto**](../Model/BulkDto.md)|  |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseCreate**
+> \Yoast\MyYoastApiClient\Model\Course courseCreate($data)
+
+Create a new instance of the model and persist it into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$data = new \Yoast\MyYoastApiClient\Model\Course(); // \Yoast\MyYoastApiClient\Model\Course | Model instance data
+
+try {
+    $result = $api_instance->courseCreate($data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseCreate: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)| Model instance data | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseCreateChangeStreamGetCoursesChangeStream**
+> \SplFileObject courseCreateChangeStreamGetCoursesChangeStream($options)
+
+Create a change stream.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$options = "options_example"; // string | 
+
+try {
+    $result = $api_instance->courseCreateChangeStreamGetCoursesChangeStream($options);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseCreateChangeStreamGetCoursesChangeStream: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **options** | **string**|  | [optional]
+
+### Return type
+
+[**\SplFileObject**](../Model/\SplFileObject.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseCreateChangeStreamPostCoursesChangeStream**
+> \SplFileObject courseCreateChangeStreamPostCoursesChangeStream($options)
+
+Create a change stream.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$options = "options_example"; // string | 
+
+try {
+    $result = $api_instance->courseCreateChangeStreamPostCoursesChangeStream($options);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseCreateChangeStreamPostCoursesChangeStream: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **options** | **string**|  | [optional]
+
+### Return type
+
+[**\SplFileObject**](../Model/\SplFileObject.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseDeleteById**
+> object courseDeleteById($id)
+
+Delete a model instance by {{id}} from the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Model id
+
+try {
+    $result = $api_instance->courseDeleteById($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseDeleteById: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Model id |
+
+### Return type
+
+**object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseExistsGetCoursesidExists**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2001 courseExistsGetCoursesidExists($id)
+
+Check whether a model instance exists in the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Model id
+
+try {
+    $result = $api_instance->courseExistsGetCoursesidExists($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseExistsGetCoursesidExists: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Model id |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseExistsHeadCoursesid**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2001 courseExistsHeadCoursesid($id)
+
+Check whether a model instance exists in the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Model id
+
+try {
+    $result = $api_instance->courseExistsHeadCoursesid($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseExistsHeadCoursesid: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Model id |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseFind**
+> \Yoast\MyYoastApiClient\Model\Course[] courseFind($filter)
+
+Find all instances of the model matched by filter from the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
+
+try {
+    $result = $api_instance->courseFind($filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseFind: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -57,45 +374,34 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiCoursesFromAcademyPut**
-> \Yoast\MyYoastApiClient\Model\Course apiCoursesFromAcademyPut($fromAcademyDto)
+# **courseFindById**
+> \Yoast\MyYoastApiClient\Model\Course courseFindById($id, $filter)
 
-Upserts a course
-
-Updates a course, or creates it if it doesn't exist
+Find a model instance by {{id}} from the data source.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CourseApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$fromAcademyDto = new \Yoast\MyYoastApiClient\Model\FromAcademyDto(); // \Yoast\MyYoastApiClient\Model\FromAcademyDto | 
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Model id
+$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->apiCoursesFromAcademyPut($fromAcademyDto);
+    $result = $api_instance->courseFindById($id, $filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->apiCoursesFromAcademyPut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->courseFindById: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -104,7 +410,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fromAcademyDto** | [**\Yoast\MyYoastApiClient\Model\FromAcademyDto**](../Model/FromAcademyDto.md)|  |
+ **id** | **string**| Model id |
+ **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -112,51 +419,33 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiCoursesGet**
-> \Yoast\MyYoastApiClient\Model\Course[] apiCoursesGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
+# **courseFindOne**
+> \Yoast\MyYoastApiClient\Model\Course courseFindOne($filter)
 
-Retrieve many Course
+Find first instance of the model matched by filter from the data source.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CourseApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
-$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
-$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
-$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
-$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
-$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
-$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
-$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
-$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
 
 try {
-    $result = $apiInstance->apiCoursesGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
+    $result = $api_instance->courseFindOne($filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->apiCoursesGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->courseFindOne: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -165,68 +454,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
- **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
- **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
- **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
- **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
- **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
- **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
- **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
- **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Course[]**](../Model/Course.md)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **apiCoursesIdDelete**
-> \Yoast\MyYoastApiClient\Model\Course apiCoursesIdDelete($id)
-
-Delete one Course
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CourseApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = "id_example"; // string | 
-
-try {
-    $result = $apiInstance->apiCoursesIdDelete($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CourseApi->apiCoursesIdDelete: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
 
 ### Return type
 
@@ -234,46 +462,34 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiCoursesIdGet**
-> \Yoast\MyYoastApiClient\Model\Course apiCoursesIdGet($id, $fields, $join, $cache)
+# **courseFromAcademy**
+> \Yoast\MyYoastApiClient\Model\Course courseFromAcademy($course_data, $extra_data)
 
-Retrieve one Course
+
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CourseApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = "id_example"; // string | 
-$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
-$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
-$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$course_data = "course_data_example"; // string | 
+$extra_data = "extra_data_example"; // string | 
 
 try {
-    $result = $apiInstance->apiCoursesIdGet($id, $fields, $join, $cache);
+    $result = $api_instance->courseFromAcademy($course_data, $extra_data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->apiCoursesIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->courseFromAcademy: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -282,10 +498,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
- **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
- **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
+ **course_data** | **string**|  |
+ **extra_data** | **string**|  |
 
 ### Return type
 
@@ -293,44 +507,33 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiCoursesIdPatch**
-> \Yoast\MyYoastApiClient\Model\Course apiCoursesIdPatch($course, $id)
+# **coursePatchOrCreate**
+> \Yoast\MyYoastApiClient\Model\Course coursePatchOrCreate($data)
 
-Update one Course
+Patch an existing model instance or insert a new one into the data source.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CourseApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$course = new \Yoast\MyYoastApiClient\Model\Course(); // \Yoast\MyYoastApiClient\Model\Course | 
-$id = "id_example"; // string | 
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$data = new \Yoast\MyYoastApiClient\Model\Course(); // \Yoast\MyYoastApiClient\Model\Course | Model instance data
 
 try {
-    $result = $apiInstance->apiCoursesIdPatch($course, $id);
+    $result = $api_instance->coursePatchOrCreate($data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->apiCoursesIdPatch: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePatchOrCreate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -339,8 +542,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **course** | [**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)|  |
- **id** | **string**|  |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)| Model instance data | [optional]
 
 ### Return type
 
@@ -348,43 +550,34 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiCoursesPost**
-> \Yoast\MyYoastApiClient\Model\Course apiCoursesPost($course)
+# **coursePrototypeCountProductGroups**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 coursePrototypeCountProductGroups($id, $where)
 
-Create one Course
+Counts productGroups of Course.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CourseApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$course = new \Yoast\MyYoastApiClient\Model\Course(); // \Yoast\MyYoastApiClient\Model\Course | 
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$where = "where_example"; // string | Criteria to match model instances
 
 try {
-    $result = $apiInstance->apiCoursesPost($course);
+    $result = $api_instance->coursePrototypeCountProductGroups($id, $where);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->apiCoursesPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->coursePrototypeCountProductGroups: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -393,7 +586,540 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **course** | [**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)|  |
+ **id** | **string**| Course id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeCountProducts**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 coursePrototypeCountProducts($id, $where)
+
+Counts products of Course.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$where = "where_example"; // string | Criteria to match model instances
+
+try {
+    $result = $api_instance->coursePrototypeCountProducts($id, $where);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeCountProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **where** | **string**| Criteria to match model instances | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeCreateProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup coursePrototypeCreateProductGroups($id, $data)
+
+Creates a new instance in productGroups of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
+
+try {
+    $result = $api_instance->coursePrototypeCreateProductGroups($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeCreateProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeCreateProducts**
+> \Yoast\MyYoastApiClient\Model\Product coursePrototypeCreateProducts($id, $data)
+
+Creates a new instance in products of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
+
+try {
+    $result = $api_instance->coursePrototypeCreateProducts($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeCreateProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeDeleteProductGroups**
+> coursePrototypeDeleteProductGroups($id)
+
+Deletes all productGroups of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+
+try {
+    $api_instance->coursePrototypeDeleteProductGroups($id);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeDeleteProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeDeleteProducts**
+> coursePrototypeDeleteProducts($id)
+
+Deletes all products of this model.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+
+try {
+    $api_instance->coursePrototypeDeleteProducts($id);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeDeleteProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeDestroyByIdProductGroups**
+> coursePrototypeDestroyByIdProductGroups($id, $fk)
+
+Delete a related item by id for productGroups.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$fk = "fk_example"; // string | Foreign key for productGroups
+
+try {
+    $api_instance->coursePrototypeDestroyByIdProductGroups($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeDestroyByIdProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **fk** | **string**| Foreign key for productGroups |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeDestroyByIdProducts**
+> coursePrototypeDestroyByIdProducts($id, $fk)
+
+Delete a related item by id for products.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$fk = "fk_example"; // string | Foreign key for products
+
+try {
+    $api_instance->coursePrototypeDestroyByIdProducts($id, $fk);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeDestroyByIdProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **fk** | **string**| Foreign key for products |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeFindByIdProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup coursePrototypeFindByIdProductGroups($id, $fk)
+
+Find a related item by id for productGroups.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$fk = "fk_example"; // string | Foreign key for productGroups
+
+try {
+    $result = $api_instance->coursePrototypeFindByIdProductGroups($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeFindByIdProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **fk** | **string**| Foreign key for productGroups |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeFindByIdProducts**
+> \Yoast\MyYoastApiClient\Model\Product coursePrototypeFindByIdProducts($id, $fk)
+
+Find a related item by id for products.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$fk = "fk_example"; // string | Foreign key for products
+
+try {
+    $result = $api_instance->coursePrototypeFindByIdProducts($id, $fk);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeFindByIdProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **fk** | **string**| Foreign key for products |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeGetProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup[] coursePrototypeGetProductGroups($id, $filter)
+
+Queries productGroups of Course.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->coursePrototypeGetProductGroups($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeGetProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup[]**](../Model/ProductGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeGetProducts**
+> \Yoast\MyYoastApiClient\Model\Product[] coursePrototypeGetProducts($id, $filter)
+
+Queries products of Course.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$filter = "filter_example"; // string | 
+
+try {
+    $result = $api_instance->coursePrototypeGetProducts($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeGetProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **filter** | **string**|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product[]**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypePatchAttributes**
+> \Yoast\MyYoastApiClient\Model\Course coursePrototypePatchAttributes($id, $data)
+
+Patch attributes for a model instance and persist it into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$data = new \Yoast\MyYoastApiClient\Model\Course(); // \Yoast\MyYoastApiClient\Model\Course | An object of model property name/value pairs
+
+try {
+    $result = $api_instance->coursePrototypePatchAttributes($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)| An object of model property name/value pairs | [optional]
 
 ### Return type
 
@@ -401,12 +1127,372 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeUpdateByIdProductGroups**
+> \Yoast\MyYoastApiClient\Model\ProductGroup coursePrototypeUpdateByIdProductGroups($id, $fk, $data)
+
+Update a related item by id for productGroups.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$fk = "fk_example"; // string | Foreign key for productGroups
+$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
+
+try {
+    $result = $api_instance->coursePrototypeUpdateByIdProductGroups($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeUpdateByIdProductGroups: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **fk** | **string**| Foreign key for productGroups |
+ **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **coursePrototypeUpdateByIdProducts**
+> \Yoast\MyYoastApiClient\Model\Product coursePrototypeUpdateByIdProducts($id, $fk, $data)
+
+Update a related item by id for products.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Course id
+$fk = "fk_example"; // string | Foreign key for products
+$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
+
+try {
+    $result = $api_instance->coursePrototypeUpdateByIdProducts($id, $fk, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->coursePrototypeUpdateByIdProducts: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Course id |
+ **fk** | **string**| Foreign key for products |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseReplaceByIdPostCoursesidReplace**
+> \Yoast\MyYoastApiClient\Model\Course courseReplaceByIdPostCoursesidReplace($id, $data)
+
+Replace attributes for a model instance and persist it into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Model id
+$data = new \Yoast\MyYoastApiClient\Model\Course(); // \Yoast\MyYoastApiClient\Model\Course | Model instance data
+
+try {
+    $result = $api_instance->courseReplaceByIdPostCoursesidReplace($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseReplaceByIdPostCoursesidReplace: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Model id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)| Model instance data | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseReplaceByIdPutCoursesid**
+> \Yoast\MyYoastApiClient\Model\Course courseReplaceByIdPutCoursesid($id, $data)
+
+Replace attributes for a model instance and persist it into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$id = "id_example"; // string | Model id
+$data = new \Yoast\MyYoastApiClient\Model\Course(); // \Yoast\MyYoastApiClient\Model\Course | Model instance data
+
+try {
+    $result = $api_instance->courseReplaceByIdPutCoursesid($id, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseReplaceByIdPutCoursesid: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Model id |
+ **data** | [**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)| Model instance data | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseReplaceOrCreatePostCoursesReplaceOrCreate**
+> \Yoast\MyYoastApiClient\Model\Course courseReplaceOrCreatePostCoursesReplaceOrCreate($data)
+
+Replace an existing model instance or insert a new one into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$data = new \Yoast\MyYoastApiClient\Model\Course(); // \Yoast\MyYoastApiClient\Model\Course | Model instance data
+
+try {
+    $result = $api_instance->courseReplaceOrCreatePostCoursesReplaceOrCreate($data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseReplaceOrCreatePostCoursesReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)| Model instance data | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseReplaceOrCreatePutCourses**
+> \Yoast\MyYoastApiClient\Model\Course courseReplaceOrCreatePutCourses($data)
+
+Replace an existing model instance or insert a new one into the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$data = new \Yoast\MyYoastApiClient\Model\Course(); // \Yoast\MyYoastApiClient\Model\Course | Model instance data
+
+try {
+    $result = $api_instance->courseReplaceOrCreatePutCourses($data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseReplaceOrCreatePutCourses: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)| Model instance data | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseUpdateAll**
+> \Yoast\MyYoastApiClient\Model\InlineResponse2002 courseUpdateAll($where, $data)
+
+Update instances of the model matched by {{where}} from the data source.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$where = "where_example"; // string | Criteria to match model instances
+$data = new \Yoast\MyYoastApiClient\Model\Course(); // \Yoast\MyYoastApiClient\Model\Course | An object of model property name/value pairs
+
+try {
+    $result = $api_instance->courseUpdateAll($where, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseUpdateAll: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **where** | **string**| Criteria to match model instances | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)| An object of model property name/value pairs | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **courseUpsertWithWhere**
+> \Yoast\MyYoastApiClient\Model\Course courseUpsertWithWhere($where, $data)
+
+Update an existing model instance or insert a new one into the data source based on the where criteria.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Yoast\MyYoastApiClient\Api\CourseApi();
+$where = "where_example"; // string | Criteria to match model instances
+$data = new \Yoast\MyYoastApiClient\Model\Course(); // \Yoast\MyYoastApiClient\Model\Course | An object of model property name/value pairs
+
+try {
+    $result = $api_instance->courseUpsertWithWhere($where, $data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseApi->courseUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **where** | **string**| Criteria to match model instances | [optional]
+ **data** | [**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)| An object of model property name/value pairs | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
+ - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
