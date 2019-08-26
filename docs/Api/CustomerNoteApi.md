@@ -1,49 +1,45 @@
 # Yoast\MyYoastApiClient\CustomerNoteApi
 
-All URIs are relative to *https://localhost/api*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**customerNoteCount**](CustomerNoteApi.md#customerNoteCount) | **GET** /CustomerNotes/count | Count instances of the model matched by where from the data source.
-[**customerNoteCreate**](CustomerNoteApi.md#customerNoteCreate) | **POST** /CustomerNotes | Create a new instance of the model and persist it into the data source.
-[**customerNoteCreateChangeStreamGetCustomerNotesChangeStream**](CustomerNoteApi.md#customerNoteCreateChangeStreamGetCustomerNotesChangeStream) | **GET** /CustomerNotes/change-stream | Create a change stream.
-[**customerNoteCreateChangeStreamPostCustomerNotesChangeStream**](CustomerNoteApi.md#customerNoteCreateChangeStreamPostCustomerNotesChangeStream) | **POST** /CustomerNotes/change-stream | Create a change stream.
-[**customerNoteDeleteById**](CustomerNoteApi.md#customerNoteDeleteById) | **DELETE** /CustomerNotes/{id} | Delete a model instance by {{id}} from the data source.
-[**customerNoteExistsGetCustomerNotesidExists**](CustomerNoteApi.md#customerNoteExistsGetCustomerNotesidExists) | **GET** /CustomerNotes/{id}/exists | Check whether a model instance exists in the data source.
-[**customerNoteExistsHeadCustomerNotesid**](CustomerNoteApi.md#customerNoteExistsHeadCustomerNotesid) | **HEAD** /CustomerNotes/{id} | Check whether a model instance exists in the data source.
-[**customerNoteFind**](CustomerNoteApi.md#customerNoteFind) | **GET** /CustomerNotes | Find all instances of the model matched by filter from the data source.
-[**customerNoteFindById**](CustomerNoteApi.md#customerNoteFindById) | **GET** /CustomerNotes/{id} | Find a model instance by {{id}} from the data source.
-[**customerNoteFindOne**](CustomerNoteApi.md#customerNoteFindOne) | **GET** /CustomerNotes/findOne | Find first instance of the model matched by filter from the data source.
-[**customerNotePatchOrCreate**](CustomerNoteApi.md#customerNotePatchOrCreate) | **PATCH** /CustomerNotes | Patch an existing model instance or insert a new one into the data source.
-[**customerNotePrototypeGetAuthor**](CustomerNoteApi.md#customerNotePrototypeGetAuthor) | **GET** /CustomerNotes/{id}/author | Fetches belongsTo relation author.
-[**customerNotePrototypeGetCustomer**](CustomerNoteApi.md#customerNotePrototypeGetCustomer) | **GET** /CustomerNotes/{id}/customer | Fetches belongsTo relation customer.
-[**customerNotePrototypePatchAttributes**](CustomerNoteApi.md#customerNotePrototypePatchAttributes) | **PATCH** /CustomerNotes/{id} | Patch attributes for a model instance and persist it into the data source.
-[**customerNoteReplaceByIdPostCustomerNotesidReplace**](CustomerNoteApi.md#customerNoteReplaceByIdPostCustomerNotesidReplace) | **POST** /CustomerNotes/{id}/replace | Replace attributes for a model instance and persist it into the data source.
-[**customerNoteReplaceByIdPutCustomerNotesid**](CustomerNoteApi.md#customerNoteReplaceByIdPutCustomerNotesid) | **PUT** /CustomerNotes/{id} | Replace attributes for a model instance and persist it into the data source.
-[**customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreate**](CustomerNoteApi.md#customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreate) | **POST** /CustomerNotes/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
-[**customerNoteReplaceOrCreatePutCustomerNotes**](CustomerNoteApi.md#customerNoteReplaceOrCreatePutCustomerNotes) | **PUT** /CustomerNotes | Replace an existing model instance or insert a new one into the data source.
-[**customerNoteUpdateAll**](CustomerNoteApi.md#customerNoteUpdateAll) | **POST** /CustomerNotes/update | Update instances of the model matched by {{where}} from the data source.
-[**customerNoteUpsertWithWhere**](CustomerNoteApi.md#customerNoteUpsertWithWhere) | **POST** /CustomerNotes/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+[**apiCustomerNotesBulkPost**](CustomerNoteApi.md#apiCustomerNotesBulkPost) | **POST** /api/CustomerNotes/bulk | Create many CustomerNote
+[**apiCustomerNotesGet**](CustomerNoteApi.md#apiCustomerNotesGet) | **GET** /api/CustomerNotes | Retrieve many CustomerNote
+[**apiCustomerNotesIdDelete**](CustomerNoteApi.md#apiCustomerNotesIdDelete) | **DELETE** /api/CustomerNotes/{id} | Delete one CustomerNote
+[**apiCustomerNotesIdGet**](CustomerNoteApi.md#apiCustomerNotesIdGet) | **GET** /api/CustomerNotes/{id} | Retrieve one CustomerNote
+[**apiCustomerNotesIdPatch**](CustomerNoteApi.md#apiCustomerNotesIdPatch) | **PATCH** /api/CustomerNotes/{id} | Update one CustomerNote
+[**apiCustomerNotesPost**](CustomerNoteApi.md#apiCustomerNotesPost) | **POST** /api/CustomerNotes | Create one CustomerNote
 
 
-# **customerNoteCount**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerNoteCount($where)
+# **apiCustomerNotesBulkPost**
+> \Yoast\MyYoastApiClient\Model\CustomerNote[] apiCustomerNotesBulkPost($bulkDto)
 
-Count instances of the model matched by where from the data source.
+Create many CustomerNote
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$where = "where_example"; // string | Criteria to match model instances
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$bulkDto = new \Yoast\MyYoastApiClient\Model\BulkDto(); // \Yoast\MyYoastApiClient\Model\BulkDto | 
 
 try {
-    $result = $api_instance->customerNoteCount($where);
+    $result = $apiInstance->apiCustomerNotesBulkPost($bulkDto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteCount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerNoteApi->apiCustomerNotesBulkPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -52,308 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteCreate**
-> \Yoast\MyYoastApiClient\Model\CustomerNote customerNoteCreate($data)
-
-Create a new instance of the model and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$data = new \Yoast\MyYoastApiClient\Model\CustomerNote(); // \Yoast\MyYoastApiClient\Model\CustomerNote | Model instance data
-
-try {
-    $result = $api_instance->customerNoteCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteCreateChangeStreamGetCustomerNotesChangeStream**
-> \SplFileObject customerNoteCreateChangeStreamGetCustomerNotesChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->customerNoteCreateChangeStreamGetCustomerNotesChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteCreateChangeStreamGetCustomerNotesChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteCreateChangeStreamPostCustomerNotesChangeStream**
-> \SplFileObject customerNoteCreateChangeStreamPostCustomerNotesChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->customerNoteCreateChangeStreamPostCustomerNotesChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteCreateChangeStreamPostCustomerNotesChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteDeleteById**
-> object customerNoteDeleteById($id)
-
-Delete a model instance by {{id}} from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->customerNoteDeleteById($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteDeleteById: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteExistsGetCustomerNotesidExists**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 customerNoteExistsGetCustomerNotesidExists($id)
-
-Check whether a model instance exists in the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->customerNoteExistsGetCustomerNotesidExists($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteExistsGetCustomerNotesidExists: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteExistsHeadCustomerNotesid**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 customerNoteExistsHeadCustomerNotesid($id)
-
-Check whether a model instance exists in the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->customerNoteExistsHeadCustomerNotesid($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteExistsHeadCustomerNotesid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteFind**
-> \Yoast\MyYoastApiClient\Model\CustomerNote[] customerNoteFind($filter)
-
-Find all instances of the model matched by filter from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
-
-try {
-    $result = $api_instance->customerNoteFind($filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteFind: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **bulkDto** | [**\Yoast\MyYoastApiClient\Model\BulkDto**](../Model/BulkDto.md)|  |
 
 ### Return type
 
@@ -361,34 +56,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerNoteFindById**
-> \Yoast\MyYoastApiClient\Model\CustomerNote customerNoteFindById($id, $filter)
+# **apiCustomerNotesGet**
+> \Yoast\MyYoastApiClient\Model\CustomerNote[] apiCustomerNotesGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
 
-Find a model instance by {{id}} from the data source.
+Retrieve many CustomerNote
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$id = "id_example"; // string | Model id
-$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
+$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
+$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
+$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
+$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->customerNoteFindById($id, $filter);
+    $result = $apiInstance->apiCustomerNotesGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteFindById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerNoteApi->apiCustomerNotesGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -397,8 +109,68 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
+ **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
+ **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
+ **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\CustomerNote[]**](../Model/CustomerNote.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomerNotesIdDelete**
+> \Yoast\MyYoastApiClient\Model\CustomerNote apiCustomerNotesIdDelete($id)
+
+Delete one CustomerNote
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+
+try {
+    $result = $apiInstance->apiCustomerNotesIdDelete($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerNoteApi->apiCustomerNotesIdDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
 
 ### Return type
 
@@ -406,33 +178,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerNoteFindOne**
-> \Yoast\MyYoastApiClient\Model\CustomerNote customerNoteFindOne($filter)
+# **apiCustomerNotesIdGet**
+> \Yoast\MyYoastApiClient\Model\CustomerNote apiCustomerNotesIdGet($id, $fields, $join, $cache)
 
-Find first instance of the model matched by filter from the data source.
+Retrieve one CustomerNote
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->customerNoteFindOne($filter);
+    $result = $apiInstance->apiCustomerNotesIdGet($id, $fields, $join, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteFindOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerNoteApi->apiCustomerNotesIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -441,7 +226,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **id** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
@@ -449,33 +237,44 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerNotePatchOrCreate**
-> \Yoast\MyYoastApiClient\Model\CustomerNote customerNotePatchOrCreate($data)
+# **apiCustomerNotesIdPatch**
+> \Yoast\MyYoastApiClient\Model\CustomerNote apiCustomerNotesIdPatch($customerNote, $id)
 
-Patch an existing model instance or insert a new one into the data source.
+Update one CustomerNote
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$data = new \Yoast\MyYoastApiClient\Model\CustomerNote(); // \Yoast\MyYoastApiClient\Model\CustomerNote | Model instance data
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerNote = new \Yoast\MyYoastApiClient\Model\CustomerNote(); // \Yoast\MyYoastApiClient\Model\CustomerNote | 
+$id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->customerNotePatchOrCreate($data);
+    $result = $apiInstance->apiCustomerNotesIdPatch($customerNote, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNotePatchOrCreate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerNoteApi->apiCustomerNotesIdPatch: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -484,7 +283,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)| Model instance data | [optional]
+ **customerNote** | [**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)|  |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -492,34 +292,43 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerNotePrototypeGetAuthor**
-> \Yoast\MyYoastApiClient\Model\Customer customerNotePrototypeGetAuthor($id, $refresh)
+# **apiCustomerNotesPost**
+> \Yoast\MyYoastApiClient\Model\CustomerNote apiCustomerNotesPost($customerNote)
 
-Fetches belongsTo relation author.
+Create one CustomerNote
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$id = "id_example"; // string | CustomerNote id
-$refresh = true; // bool | 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerNote = new \Yoast\MyYoastApiClient\Model\CustomerNote(); // \Yoast\MyYoastApiClient\Model\CustomerNote | 
 
 try {
-    $result = $api_instance->customerNotePrototypeGetAuthor($id, $refresh);
+    $result = $apiInstance->apiCustomerNotesPost($customerNote);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNotePrototypeGetAuthor: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerNoteApi->apiCustomerNotesPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -528,98 +337,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| CustomerNote id |
- **refresh** | **bool**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNotePrototypeGetCustomer**
-> \Yoast\MyYoastApiClient\Model\Customer customerNotePrototypeGetCustomer($id, $refresh)
-
-Fetches belongsTo relation customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$id = "id_example"; // string | CustomerNote id
-$refresh = true; // bool | 
-
-try {
-    $result = $api_instance->customerNotePrototypeGetCustomer($id, $refresh);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNotePrototypeGetCustomer: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| CustomerNote id |
- **refresh** | **bool**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNotePrototypePatchAttributes**
-> \Yoast\MyYoastApiClient\Model\CustomerNote customerNotePrototypePatchAttributes($id, $data)
-
-Patch attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$id = "id_example"; // string | CustomerNote id
-$data = new \Yoast\MyYoastApiClient\Model\CustomerNote(); // \Yoast\MyYoastApiClient\Model\CustomerNote | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->customerNotePrototypePatchAttributes($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNotePrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| CustomerNote id |
- **data** | [**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)| An object of model property name/value pairs | [optional]
+ **customerNote** | [**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)|  |
 
 ### Return type
 
@@ -627,278 +345,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteReplaceByIdPostCustomerNotesidReplace**
-> \Yoast\MyYoastApiClient\Model\CustomerNote customerNoteReplaceByIdPostCustomerNotesidReplace($id, $data)
-
-Replace attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\CustomerNote(); // \Yoast\MyYoastApiClient\Model\CustomerNote | Model instance data
-
-try {
-    $result = $api_instance->customerNoteReplaceByIdPostCustomerNotesidReplace($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteReplaceByIdPostCustomerNotesidReplace: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteReplaceByIdPutCustomerNotesid**
-> \Yoast\MyYoastApiClient\Model\CustomerNote customerNoteReplaceByIdPutCustomerNotesid($id, $data)
-
-Replace attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\CustomerNote(); // \Yoast\MyYoastApiClient\Model\CustomerNote | Model instance data
-
-try {
-    $result = $api_instance->customerNoteReplaceByIdPutCustomerNotesid($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteReplaceByIdPutCustomerNotesid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreate**
-> \Yoast\MyYoastApiClient\Model\CustomerNote customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreate($data)
-
-Replace an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$data = new \Yoast\MyYoastApiClient\Model\CustomerNote(); // \Yoast\MyYoastApiClient\Model\CustomerNote | Model instance data
-
-try {
-    $result = $api_instance->customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteReplaceOrCreatePostCustomerNotesReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteReplaceOrCreatePutCustomerNotes**
-> \Yoast\MyYoastApiClient\Model\CustomerNote customerNoteReplaceOrCreatePutCustomerNotes($data)
-
-Replace an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$data = new \Yoast\MyYoastApiClient\Model\CustomerNote(); // \Yoast\MyYoastApiClient\Model\CustomerNote | Model instance data
-
-try {
-    $result = $api_instance->customerNoteReplaceOrCreatePutCustomerNotes($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteReplaceOrCreatePutCustomerNotes: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteUpdateAll**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2002 customerNoteUpdateAll($where, $data)
-
-Update instances of the model matched by {{where}} from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\CustomerNote(); // \Yoast\MyYoastApiClient\Model\CustomerNote | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->customerNoteUpdateAll($where, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteUpdateAll: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNoteUpsertWithWhere**
-> \Yoast\MyYoastApiClient\Model\CustomerNote customerNoteUpsertWithWhere($where, $data)
-
-Update an existing model instance or insert a new one into the data source based on the where criteria.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\CustomerNote(); // \Yoast\MyYoastApiClient\Model\CustomerNote | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->customerNoteUpsertWithWhere($where, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->customerNoteUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -1,77 +1,45 @@
 # Yoast\MyYoastApiClient\ProductGroupApi
 
-All URIs are relative to *https://localhost/api*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**productGroupCount**](ProductGroupApi.md#productGroupCount) | **GET** /ProductGroups/count | Count instances of the model matched by where from the data source.
-[**productGroupCreate**](ProductGroupApi.md#productGroupCreate) | **POST** /ProductGroups | Create a new instance of the model and persist it into the data source.
-[**productGroupCreateChangeStreamGetProductGroupsChangeStream**](ProductGroupApi.md#productGroupCreateChangeStreamGetProductGroupsChangeStream) | **GET** /ProductGroups/change-stream | Create a change stream.
-[**productGroupCreateChangeStreamPostProductGroupsChangeStream**](ProductGroupApi.md#productGroupCreateChangeStreamPostProductGroupsChangeStream) | **POST** /ProductGroups/change-stream | Create a change stream.
-[**productGroupDeleteById**](ProductGroupApi.md#productGroupDeleteById) | **DELETE** /ProductGroups/{id} | Delete a model instance by {{id}} from the data source.
-[**productGroupExistsGetProductGroupsidExists**](ProductGroupApi.md#productGroupExistsGetProductGroupsidExists) | **GET** /ProductGroups/{id}/exists | Check whether a model instance exists in the data source.
-[**productGroupExistsHeadProductGroupsid**](ProductGroupApi.md#productGroupExistsHeadProductGroupsid) | **HEAD** /ProductGroups/{id} | Check whether a model instance exists in the data source.
-[**productGroupFind**](ProductGroupApi.md#productGroupFind) | **GET** /ProductGroups | Find all instances of the model matched by filter from the data source.
-[**productGroupFindById**](ProductGroupApi.md#productGroupFindById) | **GET** /ProductGroups/{id} | Find a model instance by {{id}} from the data source.
-[**productGroupFindOne**](ProductGroupApi.md#productGroupFindOne) | **GET** /ProductGroups/findOne | Find first instance of the model matched by filter from the data source.
-[**productGroupFromWooCommerce**](ProductGroupApi.md#productGroupFromWooCommerce) | **PUT** /ProductGroups/fromWooCommerce | 
-[**productGroupPatchOrCreate**](ProductGroupApi.md#productGroupPatchOrCreate) | **PATCH** /ProductGroups | Patch an existing model instance or insert a new one into the data source.
-[**productGroupPrototypeCountChildren**](ProductGroupApi.md#productGroupPrototypeCountChildren) | **GET** /ProductGroups/{id}/children/count | Counts children of ProductGroup.
-[**productGroupPrototypeCountDownload**](ProductGroupApi.md#productGroupPrototypeCountDownload) | **GET** /ProductGroups/{id}/download/count | Counts download of ProductGroup.
-[**productGroupPrototypeCountProducts**](ProductGroupApi.md#productGroupPrototypeCountProducts) | **GET** /ProductGroups/{id}/products/count | Counts products of ProductGroup.
-[**productGroupPrototypeCreateChildren**](ProductGroupApi.md#productGroupPrototypeCreateChildren) | **POST** /ProductGroups/{id}/children | Creates a new instance in children of this model.
-[**productGroupPrototypeCreateDownload**](ProductGroupApi.md#productGroupPrototypeCreateDownload) | **POST** /ProductGroups/{id}/download | Creates a new instance in download of this model.
-[**productGroupPrototypeCreateProducts**](ProductGroupApi.md#productGroupPrototypeCreateProducts) | **POST** /ProductGroups/{id}/products | Creates a new instance in products of this model.
-[**productGroupPrototypeDeleteChildren**](ProductGroupApi.md#productGroupPrototypeDeleteChildren) | **DELETE** /ProductGroups/{id}/children | Deletes all children of this model.
-[**productGroupPrototypeDeleteDownload**](ProductGroupApi.md#productGroupPrototypeDeleteDownload) | **DELETE** /ProductGroups/{id}/download | Deletes all download of this model.
-[**productGroupPrototypeDeleteProducts**](ProductGroupApi.md#productGroupPrototypeDeleteProducts) | **DELETE** /ProductGroups/{id}/products | Deletes all products of this model.
-[**productGroupPrototypeDestroyByIdChildren**](ProductGroupApi.md#productGroupPrototypeDestroyByIdChildren) | **DELETE** /ProductGroups/{id}/children/{fk} | Delete a related item by id for children.
-[**productGroupPrototypeDestroyByIdDownload**](ProductGroupApi.md#productGroupPrototypeDestroyByIdDownload) | **DELETE** /ProductGroups/{id}/download/{fk} | Delete a related item by id for download.
-[**productGroupPrototypeDestroyByIdProducts**](ProductGroupApi.md#productGroupPrototypeDestroyByIdProducts) | **DELETE** /ProductGroups/{id}/products/{fk} | Delete a related item by id for products.
-[**productGroupPrototypeExistsDownload**](ProductGroupApi.md#productGroupPrototypeExistsDownload) | **HEAD** /ProductGroups/{id}/download/rel/{fk} | Check the existence of download relation to an item by id.
-[**productGroupPrototypeExistsProducts**](ProductGroupApi.md#productGroupPrototypeExistsProducts) | **HEAD** /ProductGroups/{id}/products/rel/{fk} | Check the existence of products relation to an item by id.
-[**productGroupPrototypeFindByIdChildren**](ProductGroupApi.md#productGroupPrototypeFindByIdChildren) | **GET** /ProductGroups/{id}/children/{fk} | Find a related item by id for children.
-[**productGroupPrototypeFindByIdDownload**](ProductGroupApi.md#productGroupPrototypeFindByIdDownload) | **GET** /ProductGroups/{id}/download/{fk} | Find a related item by id for download.
-[**productGroupPrototypeFindByIdProducts**](ProductGroupApi.md#productGroupPrototypeFindByIdProducts) | **GET** /ProductGroups/{id}/products/{fk} | Find a related item by id for products.
-[**productGroupPrototypeGetChildren**](ProductGroupApi.md#productGroupPrototypeGetChildren) | **GET** /ProductGroups/{id}/children | Queries children of ProductGroup.
-[**productGroupPrototypeGetCourse**](ProductGroupApi.md#productGroupPrototypeGetCourse) | **GET** /ProductGroups/{id}/course | Fetches belongsTo relation course.
-[**productGroupPrototypeGetDownload**](ProductGroupApi.md#productGroupPrototypeGetDownload) | **GET** /ProductGroups/{id}/download | Queries download of ProductGroup.
-[**productGroupPrototypeGetParent**](ProductGroupApi.md#productGroupPrototypeGetParent) | **GET** /ProductGroups/{id}/parent | Fetches belongsTo relation parent.
-[**productGroupPrototypeGetProducts**](ProductGroupApi.md#productGroupPrototypeGetProducts) | **GET** /ProductGroups/{id}/products | Queries products of ProductGroup.
-[**productGroupPrototypeLinkDownload**](ProductGroupApi.md#productGroupPrototypeLinkDownload) | **PUT** /ProductGroups/{id}/download/rel/{fk} | Add a related item by id for download.
-[**productGroupPrototypeLinkProducts**](ProductGroupApi.md#productGroupPrototypeLinkProducts) | **PUT** /ProductGroups/{id}/products/rel/{fk} | Add a related item by id for products.
-[**productGroupPrototypePatchAttributes**](ProductGroupApi.md#productGroupPrototypePatchAttributes) | **PATCH** /ProductGroups/{id} | Patch attributes for a model instance and persist it into the data source.
-[**productGroupPrototypeUnlinkDownload**](ProductGroupApi.md#productGroupPrototypeUnlinkDownload) | **DELETE** /ProductGroups/{id}/download/rel/{fk} | Remove the download relation to an item by id.
-[**productGroupPrototypeUnlinkProducts**](ProductGroupApi.md#productGroupPrototypeUnlinkProducts) | **DELETE** /ProductGroups/{id}/products/rel/{fk} | Remove the products relation to an item by id.
-[**productGroupPrototypeUpdateByIdChildren**](ProductGroupApi.md#productGroupPrototypeUpdateByIdChildren) | **PUT** /ProductGroups/{id}/children/{fk} | Update a related item by id for children.
-[**productGroupPrototypeUpdateByIdDownload**](ProductGroupApi.md#productGroupPrototypeUpdateByIdDownload) | **PUT** /ProductGroups/{id}/download/{fk} | Update a related item by id for download.
-[**productGroupPrototypeUpdateByIdProducts**](ProductGroupApi.md#productGroupPrototypeUpdateByIdProducts) | **PUT** /ProductGroups/{id}/products/{fk} | Update a related item by id for products.
-[**productGroupReplaceByIdPostProductGroupsidReplace**](ProductGroupApi.md#productGroupReplaceByIdPostProductGroupsidReplace) | **POST** /ProductGroups/{id}/replace | Replace attributes for a model instance and persist it into the data source.
-[**productGroupReplaceByIdPutProductGroupsid**](ProductGroupApi.md#productGroupReplaceByIdPutProductGroupsid) | **PUT** /ProductGroups/{id} | Replace attributes for a model instance and persist it into the data source.
-[**productGroupReplaceOrCreatePostProductGroupsReplaceOrCreate**](ProductGroupApi.md#productGroupReplaceOrCreatePostProductGroupsReplaceOrCreate) | **POST** /ProductGroups/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
-[**productGroupReplaceOrCreatePutProductGroups**](ProductGroupApi.md#productGroupReplaceOrCreatePutProductGroups) | **PUT** /ProductGroups | Replace an existing model instance or insert a new one into the data source.
-[**productGroupUpdateAll**](ProductGroupApi.md#productGroupUpdateAll) | **POST** /ProductGroups/update | Update instances of the model matched by {{where}} from the data source.
-[**productGroupUpsertWithWhere**](ProductGroupApi.md#productGroupUpsertWithWhere) | **POST** /ProductGroups/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+[**apiProductGroupsBulkPost**](ProductGroupApi.md#apiProductGroupsBulkPost) | **POST** /api/ProductGroups/bulk | Create many ProductGroup
+[**apiProductGroupsGet**](ProductGroupApi.md#apiProductGroupsGet) | **GET** /api/ProductGroups | Retrieve many ProductGroup
+[**apiProductGroupsIdDelete**](ProductGroupApi.md#apiProductGroupsIdDelete) | **DELETE** /api/ProductGroups/{id} | Delete one ProductGroup
+[**apiProductGroupsIdGet**](ProductGroupApi.md#apiProductGroupsIdGet) | **GET** /api/ProductGroups/{id} | Retrieve one ProductGroup
+[**apiProductGroupsIdPatch**](ProductGroupApi.md#apiProductGroupsIdPatch) | **PATCH** /api/ProductGroups/{id} | Update one ProductGroup
+[**apiProductGroupsPost**](ProductGroupApi.md#apiProductGroupsPost) | **POST** /api/ProductGroups | Create one ProductGroup
 
 
-# **productGroupCount**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 productGroupCount($where)
+# **apiProductGroupsBulkPost**
+> \Yoast\MyYoastApiClient\Model\ProductGroup[] apiProductGroupsBulkPost($bulkDto)
 
-Count instances of the model matched by where from the data source.
+Create many ProductGroup
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$where = "where_example"; // string | Criteria to match model instances
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ProductGroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$bulkDto = new \Yoast\MyYoastApiClient\Model\BulkDto(); // \Yoast\MyYoastApiClient\Model\BulkDto | 
 
 try {
-    $result = $api_instance->productGroupCount($where);
+    $result = $apiInstance->apiProductGroupsBulkPost($bulkDto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupCount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductGroupApi->apiProductGroupsBulkPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -80,308 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupCreate**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupCreate($data)
-
-Create a new instance of the model and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | Model instance data
-
-try {
-    $result = $api_instance->productGroupCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupCreateChangeStreamGetProductGroupsChangeStream**
-> \SplFileObject productGroupCreateChangeStreamGetProductGroupsChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->productGroupCreateChangeStreamGetProductGroupsChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupCreateChangeStreamGetProductGroupsChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupCreateChangeStreamPostProductGroupsChangeStream**
-> \SplFileObject productGroupCreateChangeStreamPostProductGroupsChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->productGroupCreateChangeStreamPostProductGroupsChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupCreateChangeStreamPostProductGroupsChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupDeleteById**
-> object productGroupDeleteById($id)
-
-Delete a model instance by {{id}} from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->productGroupDeleteById($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupDeleteById: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupExistsGetProductGroupsidExists**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 productGroupExistsGetProductGroupsidExists($id)
-
-Check whether a model instance exists in the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->productGroupExistsGetProductGroupsidExists($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupExistsGetProductGroupsidExists: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupExistsHeadProductGroupsid**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 productGroupExistsHeadProductGroupsid($id)
-
-Check whether a model instance exists in the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->productGroupExistsHeadProductGroupsid($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupExistsHeadProductGroupsid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupFind**
-> \Yoast\MyYoastApiClient\Model\ProductGroup[] productGroupFind($filter)
-
-Find all instances of the model matched by filter from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
-
-try {
-    $result = $api_instance->productGroupFind($filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupFind: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **bulkDto** | [**\Yoast\MyYoastApiClient\Model\BulkDto**](../Model/BulkDto.md)|  |
 
 ### Return type
 
@@ -389,34 +56,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productGroupFindById**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupFindById($id, $filter)
+# **apiProductGroupsGet**
+> \Yoast\MyYoastApiClient\Model\ProductGroup[] apiProductGroupsGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
 
-Find a model instance by {{id}} from the data source.
+Retrieve many ProductGroup
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | Model id
-$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ProductGroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
+$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
+$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
+$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
+$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->productGroupFindById($id, $filter);
+    $result = $apiInstance->apiProductGroupsGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupFindById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductGroupApi->apiProductGroupsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -425,939 +109,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupFindOne**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupFindOne($filter)
-
-Find first instance of the model matched by filter from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
-
-try {
-    $result = $api_instance->productGroupFindOne($filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupFindOne: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupFromWooCommerce**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupFromWooCommerce($product_group_term, $product_group_meta, $extra_data)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$product_group_term = "product_group_term_example"; // string | 
-$product_group_meta = "product_group_meta_example"; // string | 
-$extra_data = "extra_data_example"; // string | 
-
-try {
-    $result = $api_instance->productGroupFromWooCommerce($product_group_term, $product_group_meta, $extra_data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupFromWooCommerce: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product_group_term** | **string**|  |
- **product_group_meta** | **string**|  |
- **extra_data** | **string**|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPatchOrCreate**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupPatchOrCreate($data)
-
-Patch an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | Model instance data
-
-try {
-    $result = $api_instance->productGroupPatchOrCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPatchOrCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeCountChildren**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 productGroupPrototypeCountChildren($id, $where)
-
-Counts children of ProductGroup.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->productGroupPrototypeCountChildren($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeCountChildren: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeCountDownload**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 productGroupPrototypeCountDownload($id, $where)
-
-Counts download of ProductGroup.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->productGroupPrototypeCountDownload($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeCountDownload: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeCountProducts**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 productGroupPrototypeCountProducts($id, $where)
-
-Counts products of ProductGroup.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->productGroupPrototypeCountProducts($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeCountProducts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeCreateChildren**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupPrototypeCreateChildren($id, $data)
-
-Creates a new instance in children of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
-
-try {
-    $result = $api_instance->productGroupPrototypeCreateChildren($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeCreateChildren: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeCreateDownload**
-> \Yoast\MyYoastApiClient\Model\Download productGroupPrototypeCreateDownload($id, $data)
-
-Creates a new instance in download of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$data = new \Yoast\MyYoastApiClient\Model\Download(); // \Yoast\MyYoastApiClient\Model\Download | 
-
-try {
-    $result = $api_instance->productGroupPrototypeCreateDownload($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeCreateDownload: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Download**](../Model/Download.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Download**](../Model/Download.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeCreateProducts**
-> \Yoast\MyYoastApiClient\Model\Product productGroupPrototypeCreateProducts($id, $data)
-
-Creates a new instance in products of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
-
-try {
-    $result = $api_instance->productGroupPrototypeCreateProducts($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeCreateProducts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeDeleteChildren**
-> productGroupPrototypeDeleteChildren($id)
-
-Deletes all children of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-
-try {
-    $api_instance->productGroupPrototypeDeleteChildren($id);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeDeleteChildren: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeDeleteDownload**
-> productGroupPrototypeDeleteDownload($id)
-
-Deletes all download of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-
-try {
-    $api_instance->productGroupPrototypeDeleteDownload($id);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeDeleteDownload: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeDeleteProducts**
-> productGroupPrototypeDeleteProducts($id)
-
-Deletes all products of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-
-try {
-    $api_instance->productGroupPrototypeDeleteProducts($id);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeDeleteProducts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeDestroyByIdChildren**
-> productGroupPrototypeDestroyByIdChildren($id, $fk)
-
-Delete a related item by id for children.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for children
-
-try {
-    $api_instance->productGroupPrototypeDestroyByIdChildren($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeDestroyByIdChildren: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for children |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeDestroyByIdDownload**
-> productGroupPrototypeDestroyByIdDownload($id, $fk)
-
-Delete a related item by id for download.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for download
-
-try {
-    $api_instance->productGroupPrototypeDestroyByIdDownload($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeDestroyByIdDownload: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for download |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeDestroyByIdProducts**
-> productGroupPrototypeDestroyByIdProducts($id, $fk)
-
-Delete a related item by id for products.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for products
-
-try {
-    $api_instance->productGroupPrototypeDestroyByIdProducts($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeDestroyByIdProducts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for products |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeExistsDownload**
-> bool productGroupPrototypeExistsDownload($id, $fk)
-
-Check the existence of download relation to an item by id.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for download
-
-try {
-    $result = $api_instance->productGroupPrototypeExistsDownload($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeExistsDownload: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for download |
-
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeExistsProducts**
-> bool productGroupPrototypeExistsProducts($id, $fk)
-
-Check the existence of products relation to an item by id.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for products
-
-try {
-    $result = $api_instance->productGroupPrototypeExistsProducts($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeExistsProducts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for products |
-
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeFindByIdChildren**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupPrototypeFindByIdChildren($id, $fk)
-
-Find a related item by id for children.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for children
-
-try {
-    $result = $api_instance->productGroupPrototypeFindByIdChildren($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeFindByIdChildren: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for children |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeFindByIdDownload**
-> \Yoast\MyYoastApiClient\Model\Download productGroupPrototypeFindByIdDownload($id, $fk)
-
-Find a related item by id for download.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for download
-
-try {
-    $result = $api_instance->productGroupPrototypeFindByIdDownload($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeFindByIdDownload: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for download |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Download**](../Model/Download.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeFindByIdProducts**
-> \Yoast\MyYoastApiClient\Model\Product productGroupPrototypeFindByIdProducts($id, $fk)
-
-Find a related item by id for products.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for products
-
-try {
-    $result = $api_instance->productGroupPrototypeFindByIdProducts($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeFindByIdProducts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for products |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeGetChildren**
-> \Yoast\MyYoastApiClient\Model\ProductGroup[] productGroupPrototypeGetChildren($id, $filter)
-
-Queries children of ProductGroup.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->productGroupPrototypeGetChildren($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeGetChildren: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **filter** | **string**|  | [optional]
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
+ **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
+ **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
+ **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
@@ -1365,34 +125,43 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productGroupPrototypeGetCourse**
-> \Yoast\MyYoastApiClient\Model\Course productGroupPrototypeGetCourse($id, $refresh)
+# **apiProductGroupsIdDelete**
+> \Yoast\MyYoastApiClient\Model\ProductGroup apiProductGroupsIdDelete($id)
 
-Fetches belongsTo relation course.
+Delete one ProductGroup
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$refresh = true; // bool | 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ProductGroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->productGroupPrototypeGetCourse($id, $refresh);
+    $result = $apiInstance->apiProductGroupsIdDelete($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeGetCourse: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductGroupApi->apiProductGroupsIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1401,98 +170,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **refresh** | **bool**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Course**](../Model/Course.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeGetDownload**
-> \Yoast\MyYoastApiClient\Model\Download[] productGroupPrototypeGetDownload($id, $filter)
-
-Queries download of ProductGroup.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->productGroupPrototypeGetDownload($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeGetDownload: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Download[]**](../Model/Download.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeGetParent**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupPrototypeGetParent($id, $refresh)
-
-Fetches belongsTo relation parent.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$refresh = true; // bool | 
-
-try {
-    $result = $api_instance->productGroupPrototypeGetParent($id, $refresh);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeGetParent: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **refresh** | **bool**|  | [optional]
+ **id** | **string**|  |
 
 ### Return type
 
@@ -1500,34 +178,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productGroupPrototypeGetProducts**
-> \Yoast\MyYoastApiClient\Model\Product[] productGroupPrototypeGetProducts($id, $filter)
+# **apiProductGroupsIdGet**
+> \Yoast\MyYoastApiClient\Model\ProductGroup apiProductGroupsIdGet($id, $fields, $join, $cache)
 
-Queries products of ProductGroup.
+Retrieve one ProductGroup
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$filter = "filter_example"; // string | 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ProductGroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->productGroupPrototypeGetProducts($id, $filter);
+    $result = $apiInstance->apiProductGroupsIdGet($id, $fields, $join, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeGetProducts: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductGroupApi->apiProductGroupsIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1536,147 +226,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Product[]**](../Model/Product.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeLinkDownload**
-> \Yoast\MyYoastApiClient\Model\ProductGroupDownloads productGroupPrototypeLinkDownload($id, $fk, $data)
-
-Add a related item by id for download.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for download
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroupDownloads(); // \Yoast\MyYoastApiClient\Model\ProductGroupDownloads | 
-
-try {
-    $result = $api_instance->productGroupPrototypeLinkDownload($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeLinkDownload: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for download |
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroupDownloads**](../Model/ProductGroupDownloads.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroupDownloads**](../Model/ProductGroupDownloads.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeLinkProducts**
-> \Yoast\MyYoastApiClient\Model\ProductGroupProducts productGroupPrototypeLinkProducts($id, $fk, $data)
-
-Add a related item by id for products.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for products
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroupProducts(); // \Yoast\MyYoastApiClient\Model\ProductGroupProducts | 
-
-try {
-    $result = $api_instance->productGroupPrototypeLinkProducts($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeLinkProducts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for products |
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroupProducts**](../Model/ProductGroupProducts.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroupProducts**](../Model/ProductGroupProducts.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypePatchAttributes**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupPrototypePatchAttributes($id, $data)
-
-Patch attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->productGroupPrototypePatchAttributes($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)| An object of model property name/value pairs | [optional]
+ **id** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
@@ -1684,123 +237,44 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productGroupPrototypeUnlinkDownload**
-> productGroupPrototypeUnlinkDownload($id, $fk)
+# **apiProductGroupsIdPatch**
+> \Yoast\MyYoastApiClient\Model\ProductGroup apiProductGroupsIdPatch($productGroup, $id)
 
-Remove the download relation to an item by id.
+Update one ProductGroup
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for download
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ProductGroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$productGroup = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
+$id = "id_example"; // string | 
 
 try {
-    $api_instance->productGroupPrototypeUnlinkDownload($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeUnlinkDownload: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for download |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeUnlinkProducts**
-> productGroupPrototypeUnlinkProducts($id, $fk)
-
-Remove the products relation to an item by id.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for products
-
-try {
-    $api_instance->productGroupPrototypeUnlinkProducts($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeUnlinkProducts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for products |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeUpdateByIdChildren**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupPrototypeUpdateByIdChildren($id, $fk, $data)
-
-Update a related item by id for children.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for children
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
-
-try {
-    $result = $api_instance->productGroupPrototypeUpdateByIdChildren($id, $fk, $data);
+    $result = $apiInstance->apiProductGroupsIdPatch($productGroup, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeUpdateByIdChildren: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductGroupApi->apiProductGroupsIdPatch: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1809,9 +283,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for children |
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  | [optional]
+ **productGroup** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -1819,35 +292,43 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productGroupPrototypeUpdateByIdDownload**
-> \Yoast\MyYoastApiClient\Model\Download productGroupPrototypeUpdateByIdDownload($id, $fk, $data)
+# **apiProductGroupsPost**
+> \Yoast\MyYoastApiClient\Model\ProductGroup apiProductGroupsPost($productGroup)
 
-Update a related item by id for download.
+Create one ProductGroup
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for download
-$data = new \Yoast\MyYoastApiClient\Model\Download(); // \Yoast\MyYoastApiClient\Model\Download | 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ProductGroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$productGroup = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | 
 
 try {
-    $result = $api_instance->productGroupPrototypeUpdateByIdDownload($id, $fk, $data);
+    $result = $apiInstance->apiProductGroupsPost($productGroup);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeUpdateByIdDownload: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductGroupApi->apiProductGroupsPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1856,101 +337,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for download |
- **data** | [**\Yoast\MyYoastApiClient\Model\Download**](../Model/Download.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Download**](../Model/Download.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupPrototypeUpdateByIdProducts**
-> \Yoast\MyYoastApiClient\Model\Product productGroupPrototypeUpdateByIdProducts($id, $fk, $data)
-
-Update a related item by id for products.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | ProductGroup id
-$fk = "fk_example"; // string | Foreign key for products
-$data = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
-
-try {
-    $result = $api_instance->productGroupPrototypeUpdateByIdProducts($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupPrototypeUpdateByIdProducts: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ProductGroup id |
- **fk** | **string**| Foreign key for products |
- **data** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupReplaceByIdPostProductGroupsidReplace**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupReplaceByIdPostProductGroupsidReplace($id, $data)
-
-Replace attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | Model instance data
-
-try {
-    $result = $api_instance->productGroupReplaceByIdPostProductGroupsidReplace($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupReplaceByIdPostProductGroupsidReplace: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)| Model instance data | [optional]
+ **productGroup** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)|  |
 
 ### Return type
 
@@ -1958,233 +345,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupReplaceByIdPutProductGroupsid**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupReplaceByIdPutProductGroupsid($id, $data)
-
-Replace attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | Model instance data
-
-try {
-    $result = $api_instance->productGroupReplaceByIdPutProductGroupsid($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupReplaceByIdPutProductGroupsid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupReplaceOrCreatePostProductGroupsReplaceOrCreate**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupReplaceOrCreatePostProductGroupsReplaceOrCreate($data)
-
-Replace an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | Model instance data
-
-try {
-    $result = $api_instance->productGroupReplaceOrCreatePostProductGroupsReplaceOrCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupReplaceOrCreatePostProductGroupsReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupReplaceOrCreatePutProductGroups**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupReplaceOrCreatePutProductGroups($data)
-
-Replace an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | Model instance data
-
-try {
-    $result = $api_instance->productGroupReplaceOrCreatePutProductGroups($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupReplaceOrCreatePutProductGroups: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupUpdateAll**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2002 productGroupUpdateAll($where, $data)
-
-Update instances of the model matched by {{where}} from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->productGroupUpdateAll($where, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupUpdateAll: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **productGroupUpsertWithWhere**
-> \Yoast\MyYoastApiClient\Model\ProductGroup productGroupUpsertWithWhere($where, $data)
-
-Update an existing model instance or insert a new one into the data source based on the where criteria.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ProductGroupApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\ProductGroup(); // \Yoast\MyYoastApiClient\Model\ProductGroup | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->productGroupUpsertWithWhere($where, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->productGroupUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

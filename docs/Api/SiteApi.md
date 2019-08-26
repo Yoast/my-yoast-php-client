@@ -1,600 +1,50 @@
 # Yoast\MyYoastApiClient\SiteApi
 
-All URIs are relative to *https://localhost/api*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**siteConnect**](SiteApi.md#siteConnect) | **POST** /Sites/connect | 
-[**siteCount**](SiteApi.md#siteCount) | **GET** /Sites/count | Count instances of the model matched by where from the data source.
-[**siteCreate**](SiteApi.md#siteCreate) | **POST** /Sites | Create a new instance of the model and persist it into the data source.
-[**siteCreateChangeStreamGetSitesChangeStream**](SiteApi.md#siteCreateChangeStreamGetSitesChangeStream) | **GET** /Sites/change-stream | Create a change stream.
-[**siteCreateChangeStreamPostSitesChangeStream**](SiteApi.md#siteCreateChangeStreamPostSitesChangeStream) | **POST** /Sites/change-stream | Create a change stream.
-[**siteCurrent**](SiteApi.md#siteCurrent) | **GET** /Sites/current | 
-[**siteDeleteById**](SiteApi.md#siteDeleteById) | **DELETE** /Sites/{id} | Delete a model instance by {{id}} from the data source.
-[**siteExistsGetSitesidExists**](SiteApi.md#siteExistsGetSitesidExists) | **GET** /Sites/{id}/exists | Check whether a model instance exists in the data source.
-[**siteExistsHeadSitesid**](SiteApi.md#siteExistsHeadSitesid) | **HEAD** /Sites/{id} | Check whether a model instance exists in the data source.
-[**siteFind**](SiteApi.md#siteFind) | **GET** /Sites | Find all instances of the model matched by filter from the data source.
-[**siteFindById**](SiteApi.md#siteFindById) | **GET** /Sites/{id} | Find a model instance by {{id}} from the data source.
-[**siteFindOne**](SiteApi.md#siteFindOne) | **GET** /Sites/findOne | Find first instance of the model matched by filter from the data source.
-[**siteIndex**](SiteApi.md#siteIndex) | **POST** /Sites/index | 
-[**sitePatchOrCreate**](SiteApi.md#sitePatchOrCreate) | **PATCH** /Sites | Patch an existing model instance or insert a new one into the data source.
-[**sitePrototypeCountSubscriptions**](SiteApi.md#sitePrototypeCountSubscriptions) | **GET** /Sites/{id}/subscriptions/count | Counts subscriptions of Site.
-[**sitePrototypeCreateConfigurationServiceRequest**](SiteApi.md#sitePrototypeCreateConfigurationServiceRequest) | **POST** /Sites/{id}/configurationServiceRequest | Creates a new instance in configurationServiceRequest of this model.
-[**sitePrototypeCreateSubscriptions**](SiteApi.md#sitePrototypeCreateSubscriptions) | **POST** /Sites/{id}/subscriptions | Creates a new instance in subscriptions of this model.
-[**sitePrototypeDeleteSubscriptions**](SiteApi.md#sitePrototypeDeleteSubscriptions) | **DELETE** /Sites/{id}/subscriptions | Deletes all subscriptions of this model.
-[**sitePrototypeDestroyByIdSubscriptions**](SiteApi.md#sitePrototypeDestroyByIdSubscriptions) | **DELETE** /Sites/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
-[**sitePrototypeDestroyConfigurationServiceRequest**](SiteApi.md#sitePrototypeDestroyConfigurationServiceRequest) | **DELETE** /Sites/{id}/configurationServiceRequest | Deletes configurationServiceRequest of this model.
-[**sitePrototypeExistsSubscriptions**](SiteApi.md#sitePrototypeExistsSubscriptions) | **HEAD** /Sites/{id}/subscriptions/rel/{fk} | Check the existence of subscriptions relation to an item by id.
-[**sitePrototypeFindByIdSubscriptions**](SiteApi.md#sitePrototypeFindByIdSubscriptions) | **GET** /Sites/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
-[**sitePrototypeGetConfigurationServiceRequest**](SiteApi.md#sitePrototypeGetConfigurationServiceRequest) | **GET** /Sites/{id}/configurationServiceRequest | Fetches hasOne relation configurationServiceRequest.
-[**sitePrototypeGetSubscriptions**](SiteApi.md#sitePrototypeGetSubscriptions) | **GET** /Sites/{id}/subscriptions | Queries subscriptions of Site.
-[**sitePrototypeGetUser**](SiteApi.md#sitePrototypeGetUser) | **GET** /Sites/{id}/user | Fetches belongsTo relation user.
-[**sitePrototypeLinkSubscriptions**](SiteApi.md#sitePrototypeLinkSubscriptions) | **PUT** /Sites/{id}/subscriptions/rel/{fk} | Add a related item by id for subscriptions.
-[**sitePrototypePatchAttributes**](SiteApi.md#sitePrototypePatchAttributes) | **PATCH** /Sites/{id} | Patch attributes for a model instance and persist it into the data source.
-[**sitePrototypeUnlinkSubscriptions**](SiteApi.md#sitePrototypeUnlinkSubscriptions) | **DELETE** /Sites/{id}/subscriptions/rel/{fk} | Remove the subscriptions relation to an item by id.
-[**sitePrototypeUpdateByIdSubscriptions**](SiteApi.md#sitePrototypeUpdateByIdSubscriptions) | **PUT** /Sites/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
-[**sitePrototypeUpdateConfigurationServiceRequest**](SiteApi.md#sitePrototypeUpdateConfigurationServiceRequest) | **PUT** /Sites/{id}/configurationServiceRequest | Update configurationServiceRequest of this model.
-[**siteReplaceByIdPostSitesidReplace**](SiteApi.md#siteReplaceByIdPostSitesidReplace) | **POST** /Sites/{id}/replace | Replace attributes for a model instance and persist it into the data source.
-[**siteReplaceByIdPutSitesid**](SiteApi.md#siteReplaceByIdPutSitesid) | **PUT** /Sites/{id} | Replace attributes for a model instance and persist it into the data source.
-[**siteReplaceOrCreatePostSitesReplaceOrCreate**](SiteApi.md#siteReplaceOrCreatePostSitesReplaceOrCreate) | **POST** /Sites/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
-[**siteReplaceOrCreatePutSites**](SiteApi.md#siteReplaceOrCreatePutSites) | **PUT** /Sites | Replace an existing model instance or insert a new one into the data source.
-[**siteSwitchSubscription**](SiteApi.md#siteSwitchSubscription) | **POST** /Sites/switchSubscription | 
-[**siteSwitchSubscriptionNumberOfTimes**](SiteApi.md#siteSwitchSubscriptionNumberOfTimes) | **POST** /Sites/switchSubscriptionNumberOfTimes | 
-[**siteTransfer**](SiteApi.md#siteTransfer) | **POST** /Sites/transfer | 
-[**siteUpdateAll**](SiteApi.md#siteUpdateAll) | **POST** /Sites/update | Update instances of the model matched by {{where}} from the data source.
-[**siteUpsertWithWhere**](SiteApi.md#siteUpsertWithWhere) | **POST** /Sites/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+[**apiSitesCurrentGet**](SiteApi.md#apiSitesCurrentGet) | **GET** /api/Sites/current | Get the current connected site for an access token.
+[**apiSitesGet**](SiteApi.md#apiSitesGet) | **GET** /api/Sites | Retrieve many Site
+[**apiSitesIdGet**](SiteApi.md#apiSitesIdGet) | **GET** /api/Sites/{id} | Retrieve one Site
+[**apiSitesIdPatch**](SiteApi.md#apiSitesIdPatch) | **PATCH** /api/Sites/{id} | Update one Site
+[**apiSitesIdSubscriptionsPut**](SiteApi.md#apiSitesIdSubscriptionsPut) | **PUT** /api/Sites/{id}/subscriptions | Adds a subscription to a site
+[**apiSitesIdSubscriptionsSubscriptionIdDelete**](SiteApi.md#apiSitesIdSubscriptionsSubscriptionIdDelete) | **DELETE** /api/Sites/{id}/subscriptions/{subscriptionId} | Removes a subscription from a site
+[**apiSitesIndexPost**](SiteApi.md#apiSitesIndexPost) | **POST** /api/Sites/index | 
+[**apiSitesSwitchSubscriptionNumberOfTimesPost**](SiteApi.md#apiSitesSwitchSubscriptionNumberOfTimesPost) | **POST** /api/Sites/switchSubscriptionNumberOfTimes | Switches the subscription for a number of times.
+[**apiSitesSwitchSubscriptionPost**](SiteApi.md#apiSitesSwitchSubscriptionPost) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
+[**apiSitesTransferPost**](SiteApi.md#apiSitesTransferPost) | **POST** /api/Sites/transfer | Transfer sites.
 
 
-# **siteConnect**
-> string siteConnect($url, $client_id, $extensions, $redirect_url, $credentials_url, $type)
+# **apiSitesCurrentGet**
+> object apiSitesCurrentGet($token, $url)
 
-
+Get the current connected site for an access token.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$url = "url_example"; // string | 
-$client_id = "client_id_example"; // string | 
-$extensions = "extensions_example"; // string | 
-$redirect_url = "redirect_url_example"; // string | 
-$credentials_url = "credentials_url_example"; // string | 
-$type = "type_example"; // string | 
-
-try {
-    $result = $api_instance->siteConnect($url, $client_id, $extensions, $redirect_url, $credentials_url, $type);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteConnect: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **string**|  |
- **client_id** | **string**|  |
- **extensions** | **string**|  |
- **redirect_url** | **string**|  |
- **credentials_url** | **string**|  |
- **type** | **string**|  |
-
-### Return type
-
-**string**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteCount**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 siteCount($where)
-
-Count instances of the model matched by where from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->siteCount($where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteCount: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteCreate**
-> \Yoast\MyYoastApiClient\Model\Site siteCreate($data)
-
-Create a new instance of the model and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
-
-try {
-    $result = $api_instance->siteCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteCreateChangeStreamGetSitesChangeStream**
-> \SplFileObject siteCreateChangeStreamGetSitesChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->siteCreateChangeStreamGetSitesChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteCreateChangeStreamGetSitesChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteCreateChangeStreamPostSitesChangeStream**
-> \SplFileObject siteCreateChangeStreamPostSitesChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->siteCreateChangeStreamPostSitesChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteCreateChangeStreamPostSitesChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteCurrent**
-> object siteCurrent($token, $url)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $token = "token_example"; // string | 
 $url = "url_example"; // string | 
 
 try {
-    $result = $api_instance->siteCurrent($token, $url);
+    $result = $apiInstance->apiSitesCurrentGet($token, $url);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteCurrent: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **token** | **string**|  | [optional]
- **url** | **string**|  | [optional]
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteDeleteById**
-> object siteDeleteById($id)
-
-Delete a model instance by {{id}} from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->siteDeleteById($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteDeleteById: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteExistsGetSitesidExists**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 siteExistsGetSitesidExists($id)
-
-Check whether a model instance exists in the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->siteExistsGetSitesidExists($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteExistsGetSitesidExists: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteExistsHeadSitesid**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 siteExistsHeadSitesid($id)
-
-Check whether a model instance exists in the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->siteExistsHeadSitesid($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteExistsHeadSitesid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteFind**
-> \Yoast\MyYoastApiClient\Model\Site[] siteFind($filter)
-
-Find all instances of the model matched by filter from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
-
-try {
-    $result = $api_instance->siteFind($filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteFind: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site[]**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteFindById**
-> \Yoast\MyYoastApiClient\Model\Site siteFindById($id, $filter)
-
-Find a model instance by {{id}} from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Model id
-$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
-
-try {
-    $result = $api_instance->siteFindById($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteFindById: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteFindOne**
-> \Yoast\MyYoastApiClient\Model\Site siteFindOne($filter)
-
-Find first instance of the model matched by filter from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
-
-try {
-    $result = $api_instance->siteFindOne($filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteFindOne: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteIndex**
-> object siteIndex($token, $url, $method)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$token = "token_example"; // string | 
-$url = "url_example"; // string | 
-$method = "method_example"; // string | 
-
-try {
-    $result = $api_instance->siteIndex($token, $url, $method);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteIndex: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SiteApi->apiSitesCurrentGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -605,7 +55,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**|  |
  **url** | **string**|  |
- **method** | **string**|  |
 
 ### Return type
 
@@ -613,33 +62,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **sitePatchOrCreate**
-> \Yoast\MyYoastApiClient\Model\Site sitePatchOrCreate($data)
+# **apiSitesGet**
+> \Yoast\MyYoastApiClient\Model\Site[] apiSitesGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
 
-Patch an existing model instance or insert a new one into the data source.
+Retrieve many Site
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
+$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
+$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
+$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
+$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->sitePatchOrCreate($data);
+    $result = $apiInstance->apiSitesGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePatchOrCreate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SiteApi->apiSitesGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -648,1036 +115,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeCountSubscriptions**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 sitePrototypeCountSubscriptions($id, $where)
-
-Counts subscriptions of Site.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->sitePrototypeCountSubscriptions($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeCountSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeCreateConfigurationServiceRequest**
-> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest sitePrototypeCreateConfigurationServiceRequest($id, $data)
-
-Creates a new instance in configurationServiceRequest of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$data = new \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest(); // \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest | 
-
-try {
-    $result = $api_instance->sitePrototypeCreateConfigurationServiceRequest($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeCreateConfigurationServiceRequest: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **data** | [**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeCreateSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription sitePrototypeCreateSubscriptions($id, $data)
-
-Creates a new instance in subscriptions of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
-
-try {
-    $result = $api_instance->sitePrototypeCreateSubscriptions($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeCreateSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeDeleteSubscriptions**
-> sitePrototypeDeleteSubscriptions($id)
-
-Deletes all subscriptions of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-
-try {
-    $api_instance->sitePrototypeDeleteSubscriptions($id);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeDeleteSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeDestroyByIdSubscriptions**
-> sitePrototypeDestroyByIdSubscriptions($id, $fk)
-
-Delete a related item by id for subscriptions.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$fk = "fk_example"; // string | Foreign key for subscriptions
-
-try {
-    $api_instance->sitePrototypeDestroyByIdSubscriptions($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeDestroyByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **fk** | **string**| Foreign key for subscriptions |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeDestroyConfigurationServiceRequest**
-> sitePrototypeDestroyConfigurationServiceRequest($id)
-
-Deletes configurationServiceRequest of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-
-try {
-    $api_instance->sitePrototypeDestroyConfigurationServiceRequest($id);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeDestroyConfigurationServiceRequest: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeExistsSubscriptions**
-> bool sitePrototypeExistsSubscriptions($id, $fk)
-
-Check the existence of subscriptions relation to an item by id.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$fk = "fk_example"; // string | Foreign key for subscriptions
-
-try {
-    $result = $api_instance->sitePrototypeExistsSubscriptions($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeExistsSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **fk** | **string**| Foreign key for subscriptions |
-
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeFindByIdSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription sitePrototypeFindByIdSubscriptions($id, $fk)
-
-Find a related item by id for subscriptions.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$fk = "fk_example"; // string | Foreign key for subscriptions
-
-try {
-    $result = $api_instance->sitePrototypeFindByIdSubscriptions($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeFindByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **fk** | **string**| Foreign key for subscriptions |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeGetConfigurationServiceRequest**
-> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest sitePrototypeGetConfigurationServiceRequest($id, $refresh)
-
-Fetches hasOne relation configurationServiceRequest.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$refresh = true; // bool | 
-
-try {
-    $result = $api_instance->sitePrototypeGetConfigurationServiceRequest($id, $refresh);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeGetConfigurationServiceRequest: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **refresh** | **bool**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeGetSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription[] sitePrototypeGetSubscriptions($id, $filter)
-
-Queries subscriptions of Site.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->sitePrototypeGetSubscriptions($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeGetSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Subscription[]**](../Model/Subscription.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeGetUser**
-> \Yoast\MyYoastApiClient\Model\Customer sitePrototypeGetUser($id, $refresh)
-
-Fetches belongsTo relation user.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$refresh = true; // bool | 
-
-try {
-    $result = $api_instance->sitePrototypeGetUser($id, $refresh);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeGetUser: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **refresh** | **bool**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeLinkSubscriptions**
-> \Yoast\MyYoastApiClient\Model\SiteSubscriptions sitePrototypeLinkSubscriptions($id, $fk, $data)
-
-Add a related item by id for subscriptions.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$fk = "fk_example"; // string | Foreign key for subscriptions
-$data = new \Yoast\MyYoastApiClient\Model\SiteSubscriptions(); // \Yoast\MyYoastApiClient\Model\SiteSubscriptions | 
-
-try {
-    $result = $api_instance->sitePrototypeLinkSubscriptions($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeLinkSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **fk** | **string**| Foreign key for subscriptions |
- **data** | [**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/SiteSubscriptions.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\SiteSubscriptions**](../Model/SiteSubscriptions.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypePatchAttributes**
-> \Yoast\MyYoastApiClient\Model\Site sitePrototypePatchAttributes($id, $data)
-
-Patch attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->sitePrototypePatchAttributes($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeUnlinkSubscriptions**
-> sitePrototypeUnlinkSubscriptions($id, $fk)
-
-Remove the subscriptions relation to an item by id.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$fk = "fk_example"; // string | Foreign key for subscriptions
-
-try {
-    $api_instance->sitePrototypeUnlinkSubscriptions($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeUnlinkSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **fk** | **string**| Foreign key for subscriptions |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeUpdateByIdSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription sitePrototypeUpdateByIdSubscriptions($id, $fk, $data)
-
-Update a related item by id for subscriptions.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$fk = "fk_example"; // string | Foreign key for subscriptions
-$data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
-
-try {
-    $result = $api_instance->sitePrototypeUpdateByIdSubscriptions($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeUpdateByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **fk** | **string**| Foreign key for subscriptions |
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **sitePrototypeUpdateConfigurationServiceRequest**
-> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest sitePrototypeUpdateConfigurationServiceRequest($id, $data)
-
-Update configurationServiceRequest of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Site id
-$data = new \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest(); // \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest | 
-
-try {
-    $result = $api_instance->sitePrototypeUpdateConfigurationServiceRequest($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->sitePrototypeUpdateConfigurationServiceRequest: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Site id |
- **data** | [**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteReplaceByIdPostSitesidReplace**
-> \Yoast\MyYoastApiClient\Model\Site siteReplaceByIdPostSitesidReplace($id, $data)
-
-Replace attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
-
-try {
-    $result = $api_instance->siteReplaceByIdPostSitesidReplace($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteReplaceByIdPostSitesidReplace: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteReplaceByIdPutSitesid**
-> \Yoast\MyYoastApiClient\Model\Site siteReplaceByIdPutSitesid($id, $data)
-
-Replace attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
-
-try {
-    $result = $api_instance->siteReplaceByIdPutSitesid($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteReplaceByIdPutSitesid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteReplaceOrCreatePostSitesReplaceOrCreate**
-> \Yoast\MyYoastApiClient\Model\Site siteReplaceOrCreatePostSitesReplaceOrCreate($data)
-
-Replace an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
-
-try {
-    $result = $api_instance->siteReplaceOrCreatePostSitesReplaceOrCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteReplaceOrCreatePostSitesReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteReplaceOrCreatePutSites**
-> \Yoast\MyYoastApiClient\Model\Site siteReplaceOrCreatePutSites($data)
-
-Replace an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | Model instance data
-
-try {
-    $result = $api_instance->siteReplaceOrCreatePutSites($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteReplaceOrCreatePutSites: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteSwitchSubscription**
-> double siteSwitchSubscription($from_source_id, $to_source_id)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$from_source_id = 1.2; // double | 
-$to_source_id = 1.2; // double | 
-
-try {
-    $result = $api_instance->siteSwitchSubscription($from_source_id, $to_source_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteSwitchSubscription: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from_source_id** | **double**|  |
- **to_source_id** | **double**|  |
-
-### Return type
-
-**double**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteSwitchSubscriptionNumberOfTimes**
-> double siteSwitchSubscriptionNumberOfTimes($from_source_id, $to_source_id, $product_id)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$from_source_id = 1.2; // double | 
-$to_source_id = 1.2; // double | 
-$product_id = 1.2; // double | 
-
-try {
-    $result = $api_instance->siteSwitchSubscriptionNumberOfTimes($from_source_id, $to_source_id, $product_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteSwitchSubscriptionNumberOfTimes: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from_source_id** | **double**|  |
- **to_source_id** | **double**|  |
- **product_id** | **double**|  |
-
-### Return type
-
-**double**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteTransfer**
-> \Yoast\MyYoastApiClient\Model\Site[] siteTransfer($from_source_id, $to_source_id)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$from_source_id = 1.2; // double | 
-$to_source_id = 1.2; // double | 
-
-try {
-    $result = $api_instance->siteTransfer($from_source_id, $to_source_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteTransfer: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **from_source_id** | **double**|  |
- **to_source_id** | **double**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
+ **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
+ **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
+ **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
@@ -1685,34 +131,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **siteUpdateAll**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2002 siteUpdateAll($where, $data)
+# **apiSitesIdGet**
+> \Yoast\MyYoastApiClient\Model\Site apiSitesIdGet($id, $fields, $join, $cache)
 
-Update instances of the model matched by {{where}} from the data source.
+Retrieve one Site
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | An object of model property name/value pairs
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->siteUpdateAll($where, $data);
+    $result = $apiInstance->apiSitesIdGet($id, $fields, $join, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteUpdateAll: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SiteApi->apiSitesIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1721,53 +179,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **siteUpsertWithWhere**
-> \Yoast\MyYoastApiClient\Model\Site siteUpsertWithWhere($where, $data)
-
-Update an existing model instance or insert a new one into the data source based on the where criteria.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\SiteApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->siteUpsertWithWhere($where, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->siteUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)| An object of model property name/value pairs | [optional]
+ **id** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
@@ -1775,12 +190,399 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiSitesIdPatch**
+> \Yoast\MyYoastApiClient\Model\Site apiSitesIdPatch($site, $id)
+
+Update one Site
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$site = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | 
+$id = "id_example"; // string | 
+
+try {
+    $result = $apiInstance->apiSitesIdPatch($site, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->apiSitesIdPatch: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **site** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)|  |
+ **id** | **string**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiSitesIdSubscriptionsPut**
+> \Yoast\MyYoastApiClient\Model\Site apiSitesIdSubscriptionsPut($addSubscriptionDto, $id)
+
+Adds a subscription to a site
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$addSubscriptionDto = new \Yoast\MyYoastApiClient\Model\AddSubscriptionDto(); // \Yoast\MyYoastApiClient\Model\AddSubscriptionDto | 
+$id = "id_example"; // string | 
+
+try {
+    $result = $apiInstance->apiSitesIdSubscriptionsPut($addSubscriptionDto, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->apiSitesIdSubscriptionsPut: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **addSubscriptionDto** | [**\Yoast\MyYoastApiClient\Model\AddSubscriptionDto**](../Model/AddSubscriptionDto.md)|  |
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiSitesIdSubscriptionsSubscriptionIdDelete**
+> \Yoast\MyYoastApiClient\Model\Site apiSitesIdSubscriptionsSubscriptionIdDelete($id, $subscriptionId)
+
+Removes a subscription from a site
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$subscriptionId = "subscriptionId_example"; // string | 
+
+try {
+    $result = $apiInstance->apiSitesIdSubscriptionsSubscriptionIdDelete($id, $subscriptionId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->apiSitesIdSubscriptionsSubscriptionIdDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+ **subscriptionId** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiSitesIndexPost**
+> object apiSitesIndexPost($method, $url, $token)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$method = "method_example"; // string | 
+$url = "url_example"; // string | 
+$token = "token_example"; // string | 
+
+try {
+    $result = $apiInstance->apiSitesIndexPost($method, $url, $token);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->apiSitesIndexPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **method** | **string**|  |
+ **url** | **string**|  |
+ **token** | **string**|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiSitesSwitchSubscriptionNumberOfTimesPost**
+> object apiSitesSwitchSubscriptionNumberOfTimesPost($switchSubscriptionNumberOfTimesDto)
+
+Switches the subscription for a number of times.
+
+Switches the subscription for a number of times.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$switchSubscriptionNumberOfTimesDto = new \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto(); // \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto | 
+
+try {
+    $result = $apiInstance->apiSitesSwitchSubscriptionNumberOfTimesPost($switchSubscriptionNumberOfTimesDto);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->apiSitesSwitchSubscriptionNumberOfTimesPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **switchSubscriptionNumberOfTimesDto** | [**\Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto**](../Model/SwitchSubscriptionNumberOfTimesDto.md)|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiSitesSwitchSubscriptionPost**
+> float apiSitesSwitchSubscriptionPost($transferSiteDto)
+
+Switches the subscription for a number of times.
+
+Switches the subscription for a number of times.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$transferSiteDto = new \Yoast\MyYoastApiClient\Model\TransferSiteDto(); // \Yoast\MyYoastApiClient\Model\TransferSiteDto | 
+
+try {
+    $result = $apiInstance->apiSitesSwitchSubscriptionPost($transferSiteDto);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->apiSitesSwitchSubscriptionPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transferSiteDto** | [**\Yoast\MyYoastApiClient\Model\TransferSiteDto**](../Model/TransferSiteDto.md)|  |
+
+### Return type
+
+**float**
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiSitesTransferPost**
+> \Yoast\MyYoastApiClient\Model\Site[] apiSitesTransferPost($transferSiteDto)
+
+Transfer sites.
+
+Transfers the sites from one customer to another customer.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$transferSiteDto = new \Yoast\MyYoastApiClient\Model\TransferSiteDto(); // \Yoast\MyYoastApiClient\Model\TransferSiteDto | 
+
+try {
+    $result = $apiInstance->apiSitesTransferPost($transferSiteDto);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->apiSitesTransferPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transferSiteDto** | [**\Yoast\MyYoastApiClient\Model\TransferSiteDto**](../Model/TransferSiteDto.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Site[]**](../Model/Site.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

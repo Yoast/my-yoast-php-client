@@ -1,51 +1,48 @@
 # Yoast\MyYoastApiClient\ComposerTokenApi
 
-All URIs are relative to *https://localhost/api*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**composerTokenCount**](ComposerTokenApi.md#composerTokenCount) | **GET** /ComposerTokens/count | Count instances of the model matched by where from the data source.
-[**composerTokenCreate**](ComposerTokenApi.md#composerTokenCreate) | **POST** /ComposerTokens | Create a new instance of the model and persist it into the data source.
-[**composerTokenCreateChangeStreamGetComposerTokensChangeStream**](ComposerTokenApi.md#composerTokenCreateChangeStreamGetComposerTokensChangeStream) | **GET** /ComposerTokens/change-stream | Create a change stream.
-[**composerTokenCreateChangeStreamPostComposerTokensChangeStream**](ComposerTokenApi.md#composerTokenCreateChangeStreamPostComposerTokensChangeStream) | **POST** /ComposerTokens/change-stream | Create a change stream.
-[**composerTokenDelete**](ComposerTokenApi.md#composerTokenDelete) | **POST** /ComposerTokens/{id}/delete | 
-[**composerTokenDeleteById**](ComposerTokenApi.md#composerTokenDeleteById) | **DELETE** /ComposerTokens/{id} | Delete a model instance by {{id}} from the data source.
-[**composerTokenExistsGetComposerTokensidExists**](ComposerTokenApi.md#composerTokenExistsGetComposerTokensidExists) | **GET** /ComposerTokens/{id}/exists | Check whether a model instance exists in the data source.
-[**composerTokenExistsHeadComposerTokensid**](ComposerTokenApi.md#composerTokenExistsHeadComposerTokensid) | **HEAD** /ComposerTokens/{id} | Check whether a model instance exists in the data source.
-[**composerTokenFind**](ComposerTokenApi.md#composerTokenFind) | **GET** /ComposerTokens | Find all instances of the model matched by filter from the data source.
-[**composerTokenFindById**](ComposerTokenApi.md#composerTokenFindById) | **GET** /ComposerTokens/{id} | Find a model instance by {{id}} from the data source.
-[**composerTokenFindOne**](ComposerTokenApi.md#composerTokenFindOne) | **GET** /ComposerTokens/findOne | Find first instance of the model matched by filter from the data source.
-[**composerTokenGenerate**](ComposerTokenApi.md#composerTokenGenerate) | **POST** /ComposerTokens/generate | 
-[**composerTokenPatchOrCreate**](ComposerTokenApi.md#composerTokenPatchOrCreate) | **PATCH** /ComposerTokens | Patch an existing model instance or insert a new one into the data source.
-[**composerTokenPrototypeGetCustomer**](ComposerTokenApi.md#composerTokenPrototypeGetCustomer) | **GET** /ComposerTokens/{id}/customer | Fetches belongsTo relation customer.
-[**composerTokenPrototypePatchAttributes**](ComposerTokenApi.md#composerTokenPrototypePatchAttributes) | **PATCH** /ComposerTokens/{id} | Patch attributes for a model instance and persist it into the data source.
-[**composerTokenRename**](ComposerTokenApi.md#composerTokenRename) | **POST** /ComposerTokens/{id}/rename | 
-[**composerTokenReplaceByIdPostComposerTokensidReplace**](ComposerTokenApi.md#composerTokenReplaceByIdPostComposerTokensidReplace) | **POST** /ComposerTokens/{id}/replace | Replace attributes for a model instance and persist it into the data source.
-[**composerTokenReplaceByIdPutComposerTokensid**](ComposerTokenApi.md#composerTokenReplaceByIdPutComposerTokensid) | **PUT** /ComposerTokens/{id} | Replace attributes for a model instance and persist it into the data source.
-[**composerTokenReplaceOrCreatePostComposerTokensReplaceOrCreate**](ComposerTokenApi.md#composerTokenReplaceOrCreatePostComposerTokensReplaceOrCreate) | **POST** /ComposerTokens/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
-[**composerTokenReplaceOrCreatePutComposerTokens**](ComposerTokenApi.md#composerTokenReplaceOrCreatePutComposerTokens) | **PUT** /ComposerTokens | Replace an existing model instance or insert a new one into the data source.
-[**composerTokenUpdateAll**](ComposerTokenApi.md#composerTokenUpdateAll) | **POST** /ComposerTokens/update | Update instances of the model matched by {{where}} from the data source.
-[**composerTokenUpsertWithWhere**](ComposerTokenApi.md#composerTokenUpsertWithWhere) | **POST** /ComposerTokens/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+[**apiComposerTokensBulkPost**](ComposerTokenApi.md#apiComposerTokensBulkPost) | **POST** /api/ComposerTokens/bulk | Create many ComposerToken
+[**apiComposerTokensGeneratePost**](ComposerTokenApi.md#apiComposerTokensGeneratePost) | **POST** /api/ComposerTokens/generate | Generates a Composer token
+[**apiComposerTokensGet**](ComposerTokenApi.md#apiComposerTokensGet) | **GET** /api/ComposerTokens | Retrieve many ComposerToken
+[**apiComposerTokensIdDelete**](ComposerTokenApi.md#apiComposerTokensIdDelete) | **DELETE** /api/ComposerTokens/{id} | Delete one ComposerToken
+[**apiComposerTokensIdDeletePost**](ComposerTokenApi.md#apiComposerTokensIdDeletePost) | **POST** /api/ComposerTokens/{id}/delete | Disable a composer token
+[**apiComposerTokensIdGet**](ComposerTokenApi.md#apiComposerTokensIdGet) | **GET** /api/ComposerTokens/{id} | Retrieve one ComposerToken
+[**apiComposerTokensIdPatch**](ComposerTokenApi.md#apiComposerTokensIdPatch) | **PATCH** /api/ComposerTokens/{id} | Update one ComposerToken
+[**apiComposerTokensIdRenamePost**](ComposerTokenApi.md#apiComposerTokensIdRenamePost) | **POST** /api/ComposerTokens/{id}/rename | Renames a Composer token
+[**apiComposerTokensPost**](ComposerTokenApi.md#apiComposerTokensPost) | **POST** /api/ComposerTokens | Create one ComposerToken
 
 
-# **composerTokenCount**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 composerTokenCount($where)
+# **apiComposerTokensBulkPost**
+> \Yoast\MyYoastApiClient\Model\ComposerToken[] apiComposerTokensBulkPost($bulkDto)
 
-Count instances of the model matched by where from the data source.
+Create many ComposerToken
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$where = "where_example"; // string | Criteria to match model instances
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$bulkDto = new \Yoast\MyYoastApiClient\Model\BulkDto(); // \Yoast\MyYoastApiClient\Model\BulkDto | 
 
 try {
-    $result = $api_instance->composerTokenCount($where);
+    $result = $apiInstance->apiComposerTokensBulkPost($bulkDto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenCount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->apiComposerTokensBulkPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -54,351 +51,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenCreate**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenCreate($data)
-
-Create a new instance of the model and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
-
-try {
-    $result = $api_instance->composerTokenCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenCreateChangeStreamGetComposerTokensChangeStream**
-> \SplFileObject composerTokenCreateChangeStreamGetComposerTokensChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->composerTokenCreateChangeStreamGetComposerTokensChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenCreateChangeStreamGetComposerTokensChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenCreateChangeStreamPostComposerTokensChangeStream**
-> \SplFileObject composerTokenCreateChangeStreamPostComposerTokensChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->composerTokenCreateChangeStreamPostComposerTokensChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenCreateChangeStreamPostComposerTokensChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenDelete**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenDelete($id)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$id = "id_example"; // string | 
-
-try {
-    $result = $api_instance->composerTokenDelete($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenDelete: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenDeleteById**
-> object composerTokenDeleteById($id)
-
-Delete a model instance by {{id}} from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->composerTokenDeleteById($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenDeleteById: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenExistsGetComposerTokensidExists**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 composerTokenExistsGetComposerTokensidExists($id)
-
-Check whether a model instance exists in the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->composerTokenExistsGetComposerTokensidExists($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenExistsGetComposerTokensidExists: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenExistsHeadComposerTokensid**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 composerTokenExistsHeadComposerTokensid($id)
-
-Check whether a model instance exists in the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->composerTokenExistsHeadComposerTokensid($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenExistsHeadComposerTokensid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenFind**
-> \Yoast\MyYoastApiClient\Model\ComposerToken[] composerTokenFind($filter)
-
-Find all instances of the model matched by filter from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
-
-try {
-    $result = $api_instance->composerTokenFind($filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenFind: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **bulkDto** | [**\Yoast\MyYoastApiClient\Model\BulkDto**](../Model/BulkDto.md)|  |
 
 ### Return type
 
@@ -406,34 +59,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **composerTokenFindById**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenFindById($id, $filter)
+# **apiComposerTokensGeneratePost**
+> \Yoast\MyYoastApiClient\Model\ComposerToken apiComposerTokensGeneratePost($generateDto)
 
-Find a model instance by {{id}} from the data source.
+Generates a Composer token
+
+Generates a personal token for the logged in customer that can be used to download our plugins with Composer.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$id = "id_example"; // string | Model id
-$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$generateDto = new \Yoast\MyYoastApiClient\Model\GenerateDto(); // \Yoast\MyYoastApiClient\Model\GenerateDto | 
 
 try {
-    $result = $api_instance->composerTokenFindById($id, $filter);
+    $result = $apiInstance->apiComposerTokensGeneratePost($generateDto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenFindById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->apiComposerTokensGeneratePost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -442,8 +106,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **generateDto** | [**\Yoast\MyYoastApiClient\Model\GenerateDto**](../Model/GenerateDto.md)|  |
 
 ### Return type
 
@@ -451,33 +114,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **composerTokenFindOne**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenFindOne($filter)
+# **apiComposerTokensGet**
+> \Yoast\MyYoastApiClient\Model\ComposerToken[] apiComposerTokensGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
 
-Find first instance of the model matched by filter from the data source.
+Retrieve many ComposerToken
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
+$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
+$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
+$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
+$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->composerTokenFindOne($filter);
+    $result = $apiInstance->apiComposerTokensGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenFindOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->apiComposerTokensGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -486,218 +167,59 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
+ **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
+ **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
+ **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
+[**\Yoast\MyYoastApiClient\Model\ComposerToken[]**](../Model/ComposerToken.md)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **composerTokenGenerate**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenGenerate($data)
+# **apiComposerTokensIdDelete**
+> \Yoast\MyYoastApiClient\Model\ComposerToken apiComposerTokensIdDelete($id)
 
-
+Delete one ComposerToken
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-try {
-    $result = $api_instance->composerTokenGenerate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenGenerate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenPatchOrCreate**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenPatchOrCreate($data)
-
-Patch an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
-
-try {
-    $result = $api_instance->composerTokenPatchOrCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenPatchOrCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenPrototypeGetCustomer**
-> \Yoast\MyYoastApiClient\Model\Customer composerTokenPrototypeGetCustomer($id, $refresh)
-
-Fetches belongsTo relation customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$id = "id_example"; // string | ComposerToken id
-$refresh = true; // bool | 
-
-try {
-    $result = $api_instance->composerTokenPrototypeGetCustomer($id, $refresh);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenPrototypeGetCustomer: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ComposerToken id |
- **refresh** | **bool**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenPrototypePatchAttributes**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenPrototypePatchAttributes($id, $data)
-
-Patch attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$id = "id_example"; // string | ComposerToken id
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->composerTokenPrototypePatchAttributes($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| ComposerToken id |
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenRename**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenRename($id, $data)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | 
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | 
 
 try {
-    $result = $api_instance->composerTokenRename($id, $data);
+    $result = $apiInstance->apiComposerTokensIdDelete($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenRename: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->apiComposerTokensIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -707,7 +229,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)|  | [optional]
 
 ### Return type
 
@@ -715,34 +236,45 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **composerTokenReplaceByIdPostComposerTokensidReplace**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenReplaceByIdPostComposerTokensidReplace($id, $data)
+# **apiComposerTokensIdDeletePost**
+> \Yoast\MyYoastApiClient\Model\ComposerToken apiComposerTokensIdDeletePost($id)
 
-Replace attributes for a model instance and persist it into the data source.
+Disable a composer token
+
+Renders a single composer token unusable
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->composerTokenReplaceByIdPostComposerTokensidReplace($id, $data);
+    $result = $apiInstance->apiComposerTokensIdDeletePost($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenReplaceByIdPostComposerTokensidReplace: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->apiComposerTokensIdDeletePost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -751,8 +283,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)| Model instance data | [optional]
+ **id** | **string**|  |
 
 ### Return type
 
@@ -760,34 +291,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **composerTokenReplaceByIdPutComposerTokensid**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenReplaceByIdPutComposerTokensid($id, $data)
+# **apiComposerTokensIdGet**
+> \Yoast\MyYoastApiClient\Model\ComposerToken apiComposerTokensIdGet($id, $fields, $join, $cache)
 
-Replace attributes for a model instance and persist it into the data source.
+Retrieve one ComposerToken
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->composerTokenReplaceByIdPutComposerTokensid($id, $data);
+    $result = $apiInstance->apiComposerTokensIdGet($id, $fields, $join, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenReplaceByIdPutComposerTokensid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->apiComposerTokensIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -796,8 +339,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)| Model instance data | [optional]
+ **id** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
@@ -805,33 +350,44 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **composerTokenReplaceOrCreatePostComposerTokensReplaceOrCreate**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenReplaceOrCreatePostComposerTokensReplaceOrCreate($data)
+# **apiComposerTokensIdPatch**
+> \Yoast\MyYoastApiClient\Model\ComposerToken apiComposerTokensIdPatch($composerToken, $id)
 
-Replace an existing model instance or insert a new one into the data source.
+Update one ComposerToken
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$composerToken = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | 
+$id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->composerTokenReplaceOrCreatePostComposerTokensReplaceOrCreate($data);
+    $result = $apiInstance->apiComposerTokensIdPatch($composerToken, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenReplaceOrCreatePostComposerTokensReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->apiComposerTokensIdPatch: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -840,7 +396,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)| Model instance data | [optional]
+ **composerToken** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)|  |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -848,33 +405,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **composerTokenReplaceOrCreatePutComposerTokens**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenReplaceOrCreatePutComposerTokens($data)
+# **apiComposerTokensIdRenamePost**
+> \Yoast\MyYoastApiClient\Model\ComposerToken apiComposerTokensIdRenamePost($renameBodyDto, $id)
 
-Replace an existing model instance or insert a new one into the data source.
+Renames a Composer token
+
+Changes the name of a Composer token
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | Model instance data
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$renameBodyDto = new \Yoast\MyYoastApiClient\Model\RenameBodyDto(); // \Yoast\MyYoastApiClient\Model\RenameBodyDto | 
+$id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->composerTokenReplaceOrCreatePutComposerTokens($data);
+    $result = $apiInstance->apiComposerTokensIdRenamePost($renameBodyDto, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenReplaceOrCreatePutComposerTokens: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->apiComposerTokensIdRenamePost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -883,7 +453,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)| Model instance data | [optional]
+ **renameBodyDto** | [**\Yoast\MyYoastApiClient\Model\RenameBodyDto**](../Model/RenameBodyDto.md)|  |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -891,34 +462,43 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **composerTokenUpdateAll**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2002 composerTokenUpdateAll($where, $data)
+# **apiComposerTokensPost**
+> \Yoast\MyYoastApiClient\Model\ComposerToken apiComposerTokensPost($composerToken)
 
-Update instances of the model matched by {{where}} from the data source.
+Create one ComposerToken
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | An object of model property name/value pairs
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$composerToken = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | 
 
 try {
-    $result = $api_instance->composerTokenUpdateAll($where, $data);
+    $result = $apiInstance->apiComposerTokensPost($composerToken);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenUpdateAll: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->apiComposerTokensPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -927,53 +507,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **composerTokenUpsertWithWhere**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenUpsertWithWhere($where, $data)
-
-Update an existing model instance or insert a new one into the data source based on the where criteria.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->composerTokenUpsertWithWhere($where, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)| An object of model property name/value pairs | [optional]
+ **composerToken** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)|  |
 
 ### Return type
 
@@ -981,12 +515,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

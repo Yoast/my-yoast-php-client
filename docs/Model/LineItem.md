@@ -4,16 +4,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
-**order_id** | **string** |  | 
-**subtotal_amount** | **double** |  | 
-**total_amount** | **double** |  | 
-**vat_amount** | **double** |  | [default to 0.0]
-**product_id** | **string** |  | 
-**product_name** | **string** |  | 
-**quantity** | **double** |  | [default to 1.0]
-**source_id** | **double** |  | 
-**source_shop_id** | **double** |  | 
-**parent_id** | **string** |  | [optional] 
+**subtotalAmount** | **int** |  | 
+**totalAmount** | **int** |  | 
+**vatAmount** | **int** |  | 
+**productName** | **string** |  | 
+**quantity** | **int** |  | 
+**sourceId** | **int** |  | 
+**sourceShopId** | **int** |  | 
+**createdAt** | [**\DateTime**](\DateTime.md) |  | 
+**modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

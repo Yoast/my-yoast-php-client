@@ -1,161 +1,70 @@
 # Yoast\MyYoastApiClient\CustomerApi
 
-All URIs are relative to *https://localhost/api*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**customerActivate**](CustomerApi.md#customerActivate) | **POST** /Customers/activate | Activates the account of a user.
-[**customerCancelSubscription**](CustomerApi.md#customerCancelSubscription) | **POST** /Customers/{id}/subscriptions/{subscription}/cancel | Cancels a subscription of a plugin.
-[**customerChangePassword**](CustomerApi.md#customerChangePassword) | **POST** /Customers/change-password | Change a user&#39;s password.
-[**customerConfirm**](CustomerApi.md#customerConfirm) | **GET** /Customers/confirm | Confirm a user registration with email verification token.
-[**customerCount**](CustomerApi.md#customerCount) | **GET** /Customers/count | Count instances of the model matched by where from the data source.
-[**customerCreate**](CustomerApi.md#customerCreate) | **POST** /Customers | Create a new instance of the model and persist it into the data source.
-[**customerCreateChangeStreamGetCustomersChangeStream**](CustomerApi.md#customerCreateChangeStreamGetCustomersChangeStream) | **GET** /Customers/change-stream | Create a change stream.
-[**customerCreateChangeStreamPostCustomersChangeStream**](CustomerApi.md#customerCreateChangeStreamPostCustomersChangeStream) | **POST** /Customers/change-stream | Create a change stream.
-[**customerCurrent**](CustomerApi.md#customerCurrent) | **GET** /Customers/current | 
-[**customerDeleteById**](CustomerApi.md#customerDeleteById) | **DELETE** /Customers/{id} | Delete a model instance by {{id}} from the data source.
-[**customerDownloadProfile**](CustomerApi.md#customerDownloadProfile) | **GET** /Customers/{id}/download | Downloads the data of the given customer as CSV files inside a ZIP file.
-[**customerEnable**](CustomerApi.md#customerEnable) | **POST** /Customers/{id}/enable | Enables the customer with the given id.
-[**customerExistsGetCustomersidExists**](CustomerApi.md#customerExistsGetCustomersidExists) | **GET** /Customers/{id}/exists | Check whether a model instance exists in the data source.
-[**customerExistsHeadCustomersid**](CustomerApi.md#customerExistsHeadCustomersid) | **HEAD** /Customers/{id} | Check whether a model instance exists in the data source.
-[**customerFind**](CustomerApi.md#customerFind) | **GET** /Customers | Find all instances of the model matched by filter from the data source.
-[**customerFindById**](CustomerApi.md#customerFindById) | **GET** /Customers/{id} | Find a model instance by {{id}} from the data source.
-[**customerFindOne**](CustomerApi.md#customerFindOne) | **GET** /Customers/findOne | Find first instance of the model matched by filter from the data source.
-[**customerFindRefunds**](CustomerApi.md#customerFindRefunds) | **GET** /Customers/{id}/findRefunds | Finds all refunds for a customer.
-[**customerFromWooCommerce**](CustomerApi.md#customerFromWooCommerce) | **PUT** /Customers/fromWooCommerce | 
-[**customerGetAllRoles**](CustomerApi.md#customerGetAllRoles) | **GET** /Customers/allroles | Retrieves all existing roles from the db, matched to their ids.
-[**customerGetCustomersWithRole**](CustomerApi.md#customerGetCustomersWithRole) | **GET** /Customers/rolemapping-ids | Retrieves all the customer ids from the RoleMapping table.
-[**customerGetNonce**](CustomerApi.md#customerGetNonce) | **GET** /Customers/nonce | Get a user&#39;s yoast.com nonce
-[**customerLogin**](CustomerApi.md#customerLogin) | **POST** /Customers/login | Login a user with username/email and password.
-[**customerLoginUser**](CustomerApi.md#customerLoginUser) | **POST** /Customers/login-user | Login a user on yoast.com
-[**customerLogout**](CustomerApi.md#customerLogout) | **POST** /Customers/logout | Logout a user with access token.
-[**customerLogoutUser**](CustomerApi.md#customerLogoutUser) | **POST** /Customers/logout-user | Log a user out on yoast.com
-[**customerNewsletterStatus**](CustomerApi.md#customerNewsletterStatus) | **GET** /Customers/{id}/newsletter | Returns the newsletter status for a customer.
-[**customerNewsletterSubscribe**](CustomerApi.md#customerNewsletterSubscribe) | **POST** /Customers/{id}/newsletter | Subscribes a customer to the newsletter.
-[**customerNewsletterSubscribeByEmail**](CustomerApi.md#customerNewsletterSubscribeByEmail) | **POST** /Customers/newsletter/{list}/subscribe | Subscribes a customer to the newsletter.
-[**customerNewsletterUnsubscribe**](CustomerApi.md#customerNewsletterUnsubscribe) | **DELETE** /Customers/{id}/newsletter | Unsubscribes a customer from the newsletter.
-[**customerPatchOrCreate**](CustomerApi.md#customerPatchOrCreate) | **PATCH** /Customers | Patch an existing model instance or insert a new one into the data source.
-[**customerPatchProfile**](CustomerApi.md#customerPatchProfile) | **PATCH** /Customers/{id}/profile | Updates the profile with the supplied information.
-[**customerProfile**](CustomerApi.md#customerProfile) | **GET** /Customers/{id}/profile | Finds the profile for the customer with the given id.
-[**customerPrototypeCountAccessTokens**](CustomerApi.md#customerPrototypeCountAccessTokens) | **GET** /Customers/{id}/accessTokens/count | Counts accessTokens of Customer.
-[**customerPrototypeCountComposerTokens**](CustomerApi.md#customerPrototypeCountComposerTokens) | **GET** /Customers/{id}/composerTokens/count | Counts composerTokens of Customer.
-[**customerPrototypeCountConfigurationServiceRequests**](CustomerApi.md#customerPrototypeCountConfigurationServiceRequests) | **GET** /Customers/{id}/configurationServiceRequests/count | Counts configurationServiceRequests of Customer.
-[**customerPrototypeCountCourseEnrollments**](CustomerApi.md#customerPrototypeCountCourseEnrollments) | **GET** /Customers/{id}/courseEnrollments/count | Counts courseEnrollments of Customer.
-[**customerPrototypeCountCredentials**](CustomerApi.md#customerPrototypeCountCredentials) | **GET** /Customers/{id}/credentials/count | Counts credentials of Customer.
-[**customerPrototypeCountIdentities**](CustomerApi.md#customerPrototypeCountIdentities) | **GET** /Customers/{id}/identities/count | Counts identities of Customer.
-[**customerPrototypeCountOrders**](CustomerApi.md#customerPrototypeCountOrders) | **GET** /Customers/{id}/orders/count | Counts orders of Customer.
-[**customerPrototypeCountOwnedCourseEnrollments**](CustomerApi.md#customerPrototypeCountOwnedCourseEnrollments) | **GET** /Customers/{id}/ownedCourseEnrollments/count | Counts ownedCourseEnrollments of Customer.
-[**customerPrototypeCountRoleMapping**](CustomerApi.md#customerPrototypeCountRoleMapping) | **GET** /Customers/{id}/roleMapping/count | Counts roleMapping of Customer.
-[**customerPrototypeCountRoles**](CustomerApi.md#customerPrototypeCountRoles) | **GET** /Customers/{id}/roles/count | Counts roles of Customer.
-[**customerPrototypeCountSites**](CustomerApi.md#customerPrototypeCountSites) | **GET** /Customers/{id}/sites/count | Counts sites of Customer.
-[**customerPrototypeCountSubscriptions**](CustomerApi.md#customerPrototypeCountSubscriptions) | **GET** /Customers/{id}/subscriptions/count | Counts subscriptions of Customer.
-[**customerPrototypeCreateAccessTokens**](CustomerApi.md#customerPrototypeCreateAccessTokens) | **POST** /Customers/{id}/accessTokens | Creates a new instance in accessTokens of this model.
-[**customerPrototypeCreateComposerTokens**](CustomerApi.md#customerPrototypeCreateComposerTokens) | **POST** /Customers/{id}/composerTokens | Creates a new instance in composerTokens of this model.
-[**customerPrototypeCreateConfigurationServiceRequests**](CustomerApi.md#customerPrototypeCreateConfigurationServiceRequests) | **POST** /Customers/{id}/configurationServiceRequests | Creates a new instance in configurationServiceRequests of this model.
-[**customerPrototypeCreateCourseEnrollments**](CustomerApi.md#customerPrototypeCreateCourseEnrollments) | **POST** /Customers/{id}/courseEnrollments | Creates a new instance in courseEnrollments of this model.
-[**customerPrototypeCreateCredentials**](CustomerApi.md#customerPrototypeCreateCredentials) | **POST** /Customers/{id}/credentials | Creates a new instance in credentials of this model.
-[**customerPrototypeCreateIdentities**](CustomerApi.md#customerPrototypeCreateIdentities) | **POST** /Customers/{id}/identities | Creates a new instance in identities of this model.
-[**customerPrototypeCreateOrders**](CustomerApi.md#customerPrototypeCreateOrders) | **POST** /Customers/{id}/orders | Creates a new instance in orders of this model.
-[**customerPrototypeCreateOwnedCourseEnrollments**](CustomerApi.md#customerPrototypeCreateOwnedCourseEnrollments) | **POST** /Customers/{id}/ownedCourseEnrollments | Creates a new instance in ownedCourseEnrollments of this model.
-[**customerPrototypeCreateRoleMapping**](CustomerApi.md#customerPrototypeCreateRoleMapping) | **POST** /Customers/{id}/roleMapping | Creates a new instance in roleMapping of this model.
-[**customerPrototypeCreateRoles**](CustomerApi.md#customerPrototypeCreateRoles) | **POST** /Customers/{id}/roles | Creates a new instance in roles of this model.
-[**customerPrototypeCreateSites**](CustomerApi.md#customerPrototypeCreateSites) | **POST** /Customers/{id}/sites | Creates a new instance in sites of this model.
-[**customerPrototypeCreateSubscriptions**](CustomerApi.md#customerPrototypeCreateSubscriptions) | **POST** /Customers/{id}/subscriptions | Creates a new instance in subscriptions of this model.
-[**customerPrototypeDeleteAccessTokens**](CustomerApi.md#customerPrototypeDeleteAccessTokens) | **DELETE** /Customers/{id}/accessTokens | Deletes all accessTokens of this model.
-[**customerPrototypeDeleteComposerTokens**](CustomerApi.md#customerPrototypeDeleteComposerTokens) | **DELETE** /Customers/{id}/composerTokens | Deletes all composerTokens of this model.
-[**customerPrototypeDeleteConfigurationServiceRequests**](CustomerApi.md#customerPrototypeDeleteConfigurationServiceRequests) | **DELETE** /Customers/{id}/configurationServiceRequests | Deletes all configurationServiceRequests of this model.
-[**customerPrototypeDeleteCourseEnrollments**](CustomerApi.md#customerPrototypeDeleteCourseEnrollments) | **DELETE** /Customers/{id}/courseEnrollments | Deletes all courseEnrollments of this model.
-[**customerPrototypeDeleteCredentials**](CustomerApi.md#customerPrototypeDeleteCredentials) | **DELETE** /Customers/{id}/credentials | Deletes all credentials of this model.
-[**customerPrototypeDeleteIdentities**](CustomerApi.md#customerPrototypeDeleteIdentities) | **DELETE** /Customers/{id}/identities | Deletes all identities of this model.
-[**customerPrototypeDeleteOrders**](CustomerApi.md#customerPrototypeDeleteOrders) | **DELETE** /Customers/{id}/orders | Deletes all orders of this model.
-[**customerPrototypeDeleteOwnedCourseEnrollments**](CustomerApi.md#customerPrototypeDeleteOwnedCourseEnrollments) | **DELETE** /Customers/{id}/ownedCourseEnrollments | Deletes all ownedCourseEnrollments of this model.
-[**customerPrototypeDeleteRoleMapping**](CustomerApi.md#customerPrototypeDeleteRoleMapping) | **DELETE** /Customers/{id}/roleMapping | Deletes all roleMapping of this model.
-[**customerPrototypeDeleteRoles**](CustomerApi.md#customerPrototypeDeleteRoles) | **DELETE** /Customers/{id}/roles | Deletes all roles of this model.
-[**customerPrototypeDeleteSites**](CustomerApi.md#customerPrototypeDeleteSites) | **DELETE** /Customers/{id}/sites | Deletes all sites of this model.
-[**customerPrototypeDeleteSubscriptions**](CustomerApi.md#customerPrototypeDeleteSubscriptions) | **DELETE** /Customers/{id}/subscriptions | Deletes all subscriptions of this model.
-[**customerPrototypeDestroyByIdAccessTokens**](CustomerApi.md#customerPrototypeDestroyByIdAccessTokens) | **DELETE** /Customers/{id}/accessTokens/{fk} | Delete a related item by id for accessTokens.
-[**customerPrototypeDestroyByIdComposerTokens**](CustomerApi.md#customerPrototypeDestroyByIdComposerTokens) | **DELETE** /Customers/{id}/composerTokens/{fk} | Delete a related item by id for composerTokens.
-[**customerPrototypeDestroyByIdConfigurationServiceRequests**](CustomerApi.md#customerPrototypeDestroyByIdConfigurationServiceRequests) | **DELETE** /Customers/{id}/configurationServiceRequests/{fk} | Delete a related item by id for configurationServiceRequests.
-[**customerPrototypeDestroyByIdCourseEnrollments**](CustomerApi.md#customerPrototypeDestroyByIdCourseEnrollments) | **DELETE** /Customers/{id}/courseEnrollments/{fk} | Delete a related item by id for courseEnrollments.
-[**customerPrototypeDestroyByIdCredentials**](CustomerApi.md#customerPrototypeDestroyByIdCredentials) | **DELETE** /Customers/{id}/credentials/{fk} | Delete a related item by id for credentials.
-[**customerPrototypeDestroyByIdIdentities**](CustomerApi.md#customerPrototypeDestroyByIdIdentities) | **DELETE** /Customers/{id}/identities/{fk} | Delete a related item by id for identities.
-[**customerPrototypeDestroyByIdOrders**](CustomerApi.md#customerPrototypeDestroyByIdOrders) | **DELETE** /Customers/{id}/orders/{fk} | Delete a related item by id for orders.
-[**customerPrototypeDestroyByIdOwnedCourseEnrollments**](CustomerApi.md#customerPrototypeDestroyByIdOwnedCourseEnrollments) | **DELETE** /Customers/{id}/ownedCourseEnrollments/{fk} | Delete a related item by id for ownedCourseEnrollments.
-[**customerPrototypeDestroyByIdRoleMapping**](CustomerApi.md#customerPrototypeDestroyByIdRoleMapping) | **DELETE** /Customers/{id}/roleMapping/{fk} | Delete a related item by id for roleMapping.
-[**customerPrototypeDestroyByIdRoles**](CustomerApi.md#customerPrototypeDestroyByIdRoles) | **DELETE** /Customers/{id}/roles/{fk} | Delete a related item by id for roles.
-[**customerPrototypeDestroyByIdSites**](CustomerApi.md#customerPrototypeDestroyByIdSites) | **DELETE** /Customers/{id}/sites/{fk} | Delete a related item by id for sites.
-[**customerPrototypeDestroyByIdSubscriptions**](CustomerApi.md#customerPrototypeDestroyByIdSubscriptions) | **DELETE** /Customers/{id}/subscriptions/{fk} | Delete a related item by id for subscriptions.
-[**customerPrototypeExistsRoles**](CustomerApi.md#customerPrototypeExistsRoles) | **HEAD** /Customers/{id}/roles/rel/{fk} | Check the existence of roles relation to an item by id.
-[**customerPrototypeFindByIdAccessTokens**](CustomerApi.md#customerPrototypeFindByIdAccessTokens) | **GET** /Customers/{id}/accessTokens/{fk} | Find a related item by id for accessTokens.
-[**customerPrototypeFindByIdComposerTokens**](CustomerApi.md#customerPrototypeFindByIdComposerTokens) | **GET** /Customers/{id}/composerTokens/{fk} | Find a related item by id for composerTokens.
-[**customerPrototypeFindByIdConfigurationServiceRequests**](CustomerApi.md#customerPrototypeFindByIdConfigurationServiceRequests) | **GET** /Customers/{id}/configurationServiceRequests/{fk} | Find a related item by id for configurationServiceRequests.
-[**customerPrototypeFindByIdCourseEnrollments**](CustomerApi.md#customerPrototypeFindByIdCourseEnrollments) | **GET** /Customers/{id}/courseEnrollments/{fk} | Find a related item by id for courseEnrollments.
-[**customerPrototypeFindByIdCredentials**](CustomerApi.md#customerPrototypeFindByIdCredentials) | **GET** /Customers/{id}/credentials/{fk} | Find a related item by id for credentials.
-[**customerPrototypeFindByIdIdentities**](CustomerApi.md#customerPrototypeFindByIdIdentities) | **GET** /Customers/{id}/identities/{fk} | Find a related item by id for identities.
-[**customerPrototypeFindByIdOrders**](CustomerApi.md#customerPrototypeFindByIdOrders) | **GET** /Customers/{id}/orders/{fk} | Find a related item by id for orders.
-[**customerPrototypeFindByIdOwnedCourseEnrollments**](CustomerApi.md#customerPrototypeFindByIdOwnedCourseEnrollments) | **GET** /Customers/{id}/ownedCourseEnrollments/{fk} | Find a related item by id for ownedCourseEnrollments.
-[**customerPrototypeFindByIdRoleMapping**](CustomerApi.md#customerPrototypeFindByIdRoleMapping) | **GET** /Customers/{id}/roleMapping/{fk} | Find a related item by id for roleMapping.
-[**customerPrototypeFindByIdRoles**](CustomerApi.md#customerPrototypeFindByIdRoles) | **GET** /Customers/{id}/roles/{fk} | Find a related item by id for roles.
-[**customerPrototypeFindByIdSites**](CustomerApi.md#customerPrototypeFindByIdSites) | **GET** /Customers/{id}/sites/{fk} | Find a related item by id for sites.
-[**customerPrototypeFindByIdSubscriptions**](CustomerApi.md#customerPrototypeFindByIdSubscriptions) | **GET** /Customers/{id}/subscriptions/{fk} | Find a related item by id for subscriptions.
-[**customerPrototypeGetAccessTokens**](CustomerApi.md#customerPrototypeGetAccessTokens) | **GET** /Customers/{id}/accessTokens | Queries accessTokens of Customer.
-[**customerPrototypeGetComposerTokens**](CustomerApi.md#customerPrototypeGetComposerTokens) | **GET** /Customers/{id}/composerTokens | Queries composerTokens of Customer.
-[**customerPrototypeGetConfigurationServiceRequests**](CustomerApi.md#customerPrototypeGetConfigurationServiceRequests) | **GET** /Customers/{id}/configurationServiceRequests | Queries configurationServiceRequests of Customer.
-[**customerPrototypeGetCourseEnrollments**](CustomerApi.md#customerPrototypeGetCourseEnrollments) | **GET** /Customers/{id}/courseEnrollments | Queries courseEnrollments of Customer.
-[**customerPrototypeGetCredentials**](CustomerApi.md#customerPrototypeGetCredentials) | **GET** /Customers/{id}/credentials | Queries credentials of Customer.
-[**customerPrototypeGetIdentities**](CustomerApi.md#customerPrototypeGetIdentities) | **GET** /Customers/{id}/identities | Queries identities of Customer.
-[**customerPrototypeGetOrders**](CustomerApi.md#customerPrototypeGetOrders) | **GET** /Customers/{id}/orders | Queries orders of Customer.
-[**customerPrototypeGetOwnedCourseEnrollments**](CustomerApi.md#customerPrototypeGetOwnedCourseEnrollments) | **GET** /Customers/{id}/ownedCourseEnrollments | Queries ownedCourseEnrollments of Customer.
-[**customerPrototypeGetRoleMapping**](CustomerApi.md#customerPrototypeGetRoleMapping) | **GET** /Customers/{id}/roleMapping | Queries roleMapping of Customer.
-[**customerPrototypeGetRoles**](CustomerApi.md#customerPrototypeGetRoles) | **GET** /Customers/{id}/roles | Queries roles of Customer.
-[**customerPrototypeGetSites**](CustomerApi.md#customerPrototypeGetSites) | **GET** /Customers/{id}/sites | Queries sites of Customer.
-[**customerPrototypeGetSubscriptions**](CustomerApi.md#customerPrototypeGetSubscriptions) | **GET** /Customers/{id}/subscriptions | Queries subscriptions of Customer.
-[**customerPrototypeLinkRoles**](CustomerApi.md#customerPrototypeLinkRoles) | **PUT** /Customers/{id}/roles/rel/{fk} | Add a related item by id for roles.
-[**customerPrototypePatchAttributes**](CustomerApi.md#customerPrototypePatchAttributes) | **PATCH** /Customers/{id} | Patch attributes for a model instance and persist it into the data source.
-[**customerPrototypeUnlinkRoles**](CustomerApi.md#customerPrototypeUnlinkRoles) | **DELETE** /Customers/{id}/roles/rel/{fk} | Remove the roles relation to an item by id.
-[**customerPrototypeUpdateByIdAccessTokens**](CustomerApi.md#customerPrototypeUpdateByIdAccessTokens) | **PUT** /Customers/{id}/accessTokens/{fk} | Update a related item by id for accessTokens.
-[**customerPrototypeUpdateByIdComposerTokens**](CustomerApi.md#customerPrototypeUpdateByIdComposerTokens) | **PUT** /Customers/{id}/composerTokens/{fk} | Update a related item by id for composerTokens.
-[**customerPrototypeUpdateByIdConfigurationServiceRequests**](CustomerApi.md#customerPrototypeUpdateByIdConfigurationServiceRequests) | **PUT** /Customers/{id}/configurationServiceRequests/{fk} | Update a related item by id for configurationServiceRequests.
-[**customerPrototypeUpdateByIdCourseEnrollments**](CustomerApi.md#customerPrototypeUpdateByIdCourseEnrollments) | **PUT** /Customers/{id}/courseEnrollments/{fk} | Update a related item by id for courseEnrollments.
-[**customerPrototypeUpdateByIdCredentials**](CustomerApi.md#customerPrototypeUpdateByIdCredentials) | **PUT** /Customers/{id}/credentials/{fk} | Update a related item by id for credentials.
-[**customerPrototypeUpdateByIdIdentities**](CustomerApi.md#customerPrototypeUpdateByIdIdentities) | **PUT** /Customers/{id}/identities/{fk} | Update a related item by id for identities.
-[**customerPrototypeUpdateByIdOrders**](CustomerApi.md#customerPrototypeUpdateByIdOrders) | **PUT** /Customers/{id}/orders/{fk} | Update a related item by id for orders.
-[**customerPrototypeUpdateByIdOwnedCourseEnrollments**](CustomerApi.md#customerPrototypeUpdateByIdOwnedCourseEnrollments) | **PUT** /Customers/{id}/ownedCourseEnrollments/{fk} | Update a related item by id for ownedCourseEnrollments.
-[**customerPrototypeUpdateByIdRoleMapping**](CustomerApi.md#customerPrototypeUpdateByIdRoleMapping) | **PUT** /Customers/{id}/roleMapping/{fk} | Update a related item by id for roleMapping.
-[**customerPrototypeUpdateByIdRoles**](CustomerApi.md#customerPrototypeUpdateByIdRoles) | **PUT** /Customers/{id}/roles/{fk} | Update a related item by id for roles.
-[**customerPrototypeUpdateByIdSites**](CustomerApi.md#customerPrototypeUpdateByIdSites) | **PUT** /Customers/{id}/sites/{fk} | Update a related item by id for sites.
-[**customerPrototypeUpdateByIdSubscriptions**](CustomerApi.md#customerPrototypeUpdateByIdSubscriptions) | **PUT** /Customers/{id}/subscriptions/{fk} | Update a related item by id for subscriptions.
-[**customerReplaceByIdPostCustomersidReplace**](CustomerApi.md#customerReplaceByIdPostCustomersidReplace) | **POST** /Customers/{id}/replace | Replace attributes for a model instance and persist it into the data source.
-[**customerReplaceByIdPutCustomersid**](CustomerApi.md#customerReplaceByIdPutCustomersid) | **PUT** /Customers/{id} | Replace attributes for a model instance and persist it into the data source.
-[**customerReplaceOrCreatePostCustomersReplaceOrCreate**](CustomerApi.md#customerReplaceOrCreatePostCustomersReplaceOrCreate) | **POST** /Customers/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
-[**customerReplaceOrCreatePutCustomers**](CustomerApi.md#customerReplaceOrCreatePutCustomers) | **PUT** /Customers | Replace an existing model instance or insert a new one into the data source.
-[**customerResetPasswordPatchCustomersResetPassword**](CustomerApi.md#customerResetPasswordPatchCustomersResetPassword) | **PATCH** /Customers/resetPassword | Reset the password of the user
-[**customerResetPasswordPostCustomersReset**](CustomerApi.md#customerResetPasswordPostCustomersReset) | **POST** /Customers/reset | Reset password for a user with email.
-[**customerSendResetPasswordEmail**](CustomerApi.md#customerSendResetPasswordEmail) | **POST** /Customers/sendResetPasswordEmail | Sends the reset password email
-[**customerSignup**](CustomerApi.md#customerSignup) | **POST** /Customers/signup | Signup: Creates an account for a new user.
-[**customerUpdateAll**](CustomerApi.md#customerUpdateAll) | **POST** /Customers/update | Update instances of the model matched by {{where}} from the data source.
-[**customerUploadAvatar**](CustomerApi.md#customerUploadAvatar) | **POST** /Customers/{id}/avatar | Uploads a new avatar.
-[**customerUpsertWithWhere**](CustomerApi.md#customerUpsertWithWhere) | **POST** /Customers/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+[**apiCustomersActivatePost**](CustomerApi.md#apiCustomersActivatePost) | **POST** /api/Customers/activate | Activate the account of a user
+[**apiCustomersAllrolesGet**](CustomerApi.md#apiCustomersAllrolesGet) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
+[**apiCustomersCurrentGet**](CustomerApi.md#apiCustomersCurrentGet) | **GET** /api/Customers/current | Get the current customer
+[**apiCustomersCustomerIdBuyerCourseEnrollmentsGet**](CustomerApi.md#apiCustomersCustomerIdBuyerCourseEnrollmentsGet) | **GET** /api/Customers/{customerId}/buyerCourseEnrollments | Find Course Enrollments that a customer is buyer of
+[**apiCustomersCustomerIdComposerTokensGet**](CustomerApi.md#apiCustomersCustomerIdComposerTokensGet) | **GET** /api/Customers/{customerId}/composerTokens | Retrieve many ComposerToken
+[**apiCustomersCustomerIdComposerTokensIdGet**](CustomerApi.md#apiCustomersCustomerIdComposerTokensIdGet) | **GET** /api/Customers/{customerId}/composerTokens/{id} | Retrieve one ComposerToken
+[**apiCustomersCustomerIdCourseEnrollmentsGet**](CustomerApi.md#apiCustomersCustomerIdCourseEnrollmentsGet) | **GET** /api/Customers/{customerId}/courseEnrollments | Find Course Enrollments
+[**apiCustomersCustomerIdNewsletterDelete**](CustomerApi.md#apiCustomersCustomerIdNewsletterDelete) | **DELETE** /api/Customers/{customerId}/newsletter | Unsubscribe from the newsletter
+[**apiCustomersCustomerIdNewsletterGet**](CustomerApi.md#apiCustomersCustomerIdNewsletterGet) | **GET** /api/Customers/{customerId}/newsletter | Newsletter subscription status
+[**apiCustomersCustomerIdNewsletterPost**](CustomerApi.md#apiCustomersCustomerIdNewsletterPost) | **POST** /api/Customers/{customerId}/newsletter | Subscribe to the newsletter
+[**apiCustomersCustomerIdOrdersGet**](CustomerApi.md#apiCustomersCustomerIdOrdersGet) | **GET** /api/Customers/{customerId}/orders | Retrieve many Order
+[**apiCustomersCustomerIdOrdersIdGet**](CustomerApi.md#apiCustomersCustomerIdOrdersIdGet) | **GET** /api/Customers/{customerId}/orders/{id} | Retrieve one Order
+[**apiCustomersCustomerIdSitesGet**](CustomerApi.md#apiCustomersCustomerIdSitesGet) | **GET** /api/Customers/{customerId}/sites | Retrieve many Site
+[**apiCustomersCustomerIdSitesIdGet**](CustomerApi.md#apiCustomersCustomerIdSitesIdGet) | **GET** /api/Customers/{customerId}/sites/{id} | Retrieve one Site
+[**apiCustomersCustomerIdSitesPost**](CustomerApi.md#apiCustomersCustomerIdSitesPost) | **POST** /api/Customers/{customerId}/sites | Create a site for a user
+[**apiCustomersCustomerIdStudentCourseEnrollmentsGet**](CustomerApi.md#apiCustomersCustomerIdStudentCourseEnrollmentsGet) | **GET** /api/Customers/{customerId}/studentCourseEnrollments | Find Course Enrollments that a customer is student in
+[**apiCustomersCustomerIdSubscriptionsGet**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsGet) | **GET** /api/Customers/{customerId}/subscriptions | Retrieve many Subscription
+[**apiCustomersCustomerIdSubscriptionsIdGet**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsIdGet) | **GET** /api/Customers/{customerId}/subscriptions/{id} | Retrieve one Subscription
+[**apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost) | **POST** /api/Customers/{customerId}/subscriptions/{subscriptionId}/cancel | Cancel (part of) a subscription.
+[**apiCustomersGet**](CustomerApi.md#apiCustomersGet) | **GET** /api/Customers | Retrieve many Customer
+[**apiCustomersIdAvatarPost**](CustomerApi.md#apiCustomersIdAvatarPost) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
+[**apiCustomersIdDownloadGet**](CustomerApi.md#apiCustomersIdDownloadGet) | **GET** /api/Customers/{id}/download | Download profile.
+[**apiCustomersIdEnablePost**](CustomerApi.md#apiCustomersIdEnablePost) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
+[**apiCustomersIdFindRefundsGet**](CustomerApi.md#apiCustomersIdFindRefundsGet) | **GET** /api/Customers/{id}/findRefunds | Find refunds for user
+[**apiCustomersIdGet**](CustomerApi.md#apiCustomersIdGet) | **GET** /api/Customers/{id} | Retrieve one Customer
+[**apiCustomersIdPasswordPatch**](CustomerApi.md#apiCustomersIdPasswordPatch) | **PATCH** /api/Customers/{id}/password | Update a customer&#39;s password in WordPress
+[**apiCustomersIdPatch**](CustomerApi.md#apiCustomersIdPatch) | **PATCH** /api/Customers/{id} | Update one Customer
+[**apiCustomersIdProfileGet**](CustomerApi.md#apiCustomersIdProfileGet) | **GET** /api/Customers/{id}/profile | 
+[**apiCustomersIdProfilePatch**](CustomerApi.md#apiCustomersIdProfilePatch) | **PATCH** /api/Customers/{id}/profile | Update a customer to WordPress
+[**apiCustomersNewsletterListSubscribePost**](CustomerApi.md#apiCustomersNewsletterListSubscribePost) | **POST** /api/Customers/newsletter/{list}/subscribe | Subscribes a user to a newsletter
+[**apiCustomersNonceGet**](CustomerApi.md#apiCustomersNonceGet) | **GET** /api/Customers/nonce | Get a nonce from Yoast.com
+[**apiCustomersResetPasswordPatch**](CustomerApi.md#apiCustomersResetPasswordPatch) | **PATCH** /api/Customers/resetPassword | Reset the user&#39;s password.
+[**apiCustomersRolemappingIdsGet**](CustomerApi.md#apiCustomersRolemappingIdsGet) | **GET** /api/Customers/rolemapping-ids | Get the ids of all customers with at least one role.
+[**apiCustomersSendResetPasswordEmailPost**](CustomerApi.md#apiCustomersSendResetPasswordEmailPost) | **POST** /api/Customers/sendResetPasswordEmail | Send a reset password email to the user.
+[**apiCustomersSignupPost**](CustomerApi.md#apiCustomersSignupPost) | **POST** /api/Customers/signup | Signup a customer on yoast.com.
 
 
-# **customerActivate**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2006 customerActivate($activate_data)
+# **apiCustomersActivatePost**
+> object apiCustomersActivatePost($activateAccountDto)
 
-Activates the account of a user.
+Activate the account of a user
+
+This route can be used to activate the account of a new user.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$activate_data = NULL; // object | 
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$activateAccountDto = new \Yoast\MyYoastApiClient\Model\ActivateAccountDto(); // \Yoast\MyYoastApiClient\Model\ActivateAccountDto | 
 
 try {
-    $result = $api_instance->customerActivate($activate_data);
+    $result = $apiInstance->apiCustomersActivatePost($activateAccountDto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerActivate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersActivatePost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -164,11 +73,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activate_data** | **object**|  |
+ **activateAccountDto** | [**\Yoast\MyYoastApiClient\Model\ActivateAccountDto**](../Model/ActivateAccountDto.md)|  |
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+**object**
 
 ### Authorization
 
@@ -176,337 +85,87 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerCancelSubscription**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2006 customerCancelSubscription($id, $subscription, $amount)
+# **apiCustomersAllrolesGet**
+> object apiCustomersAllrolesGet()
 
-Cancels a subscription of a plugin.
+Get all existing roles with their ID.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | 
-$subscription = "subscription_example"; // string | 
-$amount = 1.2; // double | 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
-    $result = $api_instance->customerCancelSubscription($id, $subscription, $amount);
+    $result = $apiInstance->apiCustomersAllrolesGet();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerCancelSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersAllrolesGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **subscription** | **string**|  |
- **amount** | **double**|  |
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+**object**
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerChangePassword**
-> customerChangePassword($old_password, $new_password)
+# **apiCustomersCurrentGet**
+> \Yoast\MyYoastApiClient\Model\Customer apiCustomersCurrentGet()
 
-Change a user's password.
+Get the current customer
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$old_password = "old_password_example"; // string | 
-$new_password = "new_password_example"; // string | 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
-    $api_instance->customerChangePassword($old_password, $new_password);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerChangePassword: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **old_password** | **string**|  |
- **new_password** | **string**|  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerConfirm**
-> customerConfirm($uid, $token, $redirect)
-
-Confirm a user registration with email verification token.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$uid = "uid_example"; // string | 
-$token = "token_example"; // string | 
-$redirect = "redirect_example"; // string | 
-
-try {
-    $api_instance->customerConfirm($uid, $token, $redirect);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerConfirm: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uid** | **string**|  |
- **token** | **string**|  |
- **redirect** | **string**|  | [optional]
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerCount**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerCount($where)
-
-Count instances of the model matched by where from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerCount($where);
+    $result = $apiInstance->apiCustomersCurrentGet();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerCount: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerCreate**
-> \Yoast\MyYoastApiClient\Model\Customer customerCreate($data)
-
-Create a new instance of the model and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$data = new \Yoast\MyYoastApiClient\Model\Customer(); // \Yoast\MyYoastApiClient\Model\Customer | Model instance data
-
-try {
-    $result = $api_instance->customerCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerCreateChangeStreamGetCustomersChangeStream**
-> \SplFileObject customerCreateChangeStreamGetCustomersChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->customerCreateChangeStreamGetCustomersChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerCreateChangeStreamGetCustomersChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerCreateChangeStreamPostCustomersChangeStream**
-> \SplFileObject customerCreateChangeStreamPostCustomersChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->customerCreateChangeStreamPostCustomersChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerCreateChangeStreamPostCustomersChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerCurrent**
-> \Yoast\MyYoastApiClient\Model\Customer customerCurrent()
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-
-try {
-    $result = $api_instance->customerCurrent();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerCurrent: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersCurrentGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -520,33 +179,43 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerDeleteById**
-> object customerDeleteById($id)
+# **apiCustomersCustomerIdBuyerCourseEnrollmentsGet**
+> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] apiCustomersCustomerIdBuyerCourseEnrollmentsGet($customerId)
 
-Delete a model instance by {{id}} from the data source.
+Find Course Enrollments that a customer is buyer of
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Model id
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "customerId_example"; // string | 
 
 try {
-    $result = $api_instance->customerDeleteById($id);
+    $result = $apiInstance->apiCustomersCustomerIdBuyerCourseEnrollmentsGet($customerId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerDeleteById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdBuyerCourseEnrollmentsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -555,7 +224,251 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
+ **customerId** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\CourseEnrollment[]**](../Model/CourseEnrollment.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersCustomerIdComposerTokensGet**
+> \Yoast\MyYoastApiClient\Model\ComposerToken[] apiCustomersCustomerIdComposerTokensGet($customerId, $fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
+
+Retrieve many ComposerToken
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "customerId_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
+$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
+$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
+$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
+$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
+
+try {
+    $result = $apiInstance->apiCustomersCustomerIdComposerTokensGet($customerId, $fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdComposerTokensGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
+ **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
+ **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
+ **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ComposerToken[]**](../Model/ComposerToken.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersCustomerIdComposerTokensIdGet**
+> \Yoast\MyYoastApiClient\Model\ComposerToken apiCustomersCustomerIdComposerTokensIdGet($id, $customerId, $fields, $join, $cache)
+
+Retrieve one ComposerToken
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$customerId = "customerId_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
+
+try {
+    $result = $apiInstance->apiCustomersCustomerIdComposerTokensIdGet($id, $customerId, $fields, $join, $cache);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdComposerTokensIdGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **customerId** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersCustomerIdCourseEnrollmentsGet**
+> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] apiCustomersCustomerIdCourseEnrollmentsGet($ownershipRelation, $customerId, $courseId)
+
+Find Course Enrollments
+
+Find Course Enrollments and filter by course or ownership relation.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$ownershipRelation = "ownershipRelation_example"; // string | 
+$customerId = "customerId_example"; // string | 
+$courseId = "courseId_example"; // string | 
+
+try {
+    $result = $apiInstance->apiCustomersCustomerIdCourseEnrollmentsGet($ownershipRelation, $customerId, $courseId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdCourseEnrollmentsGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ownershipRelation** | [**string**](../Model/.md)|  |
+ **customerId** | [**string**](../Model/.md)|  |
+ **courseId** | [**string**](../Model/.md)|  | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\CourseEnrollment[]**](../Model/CourseEnrollment.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersCustomerIdNewsletterDelete**
+> object apiCustomersCustomerIdNewsletterDelete($customerId)
+
+Unsubscribe from the newsletter
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "customerId_example"; // string | 
+
+try {
+    $result = $apiInstance->apiCustomersCustomerIdNewsletterDelete($customerId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdNewsletterDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | [**string**](../Model/.md)|  |
 
 ### Return type
 
@@ -563,33 +476,224 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerDownloadProfile**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2005 customerDownloadProfile($id)
+# **apiCustomersCustomerIdNewsletterGet**
+> object apiCustomersCustomerIdNewsletterGet($customerId)
 
-Downloads the data of the given customer as CSV files inside a ZIP file.
+Newsletter subscription status
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "customerId_example"; // string | 
 
 try {
-    $result = $api_instance->customerDownloadProfile($id);
+    $result = $apiInstance->apiCustomersCustomerIdNewsletterGet($customerId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerDownloadProfile: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdNewsletterGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | [**string**](../Model/.md)|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersCustomerIdNewsletterPost**
+> object apiCustomersCustomerIdNewsletterPost($customerId)
+
+Subscribe to the newsletter
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "customerId_example"; // string | 
+
+try {
+    $result = $apiInstance->apiCustomersCustomerIdNewsletterPost($customerId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdNewsletterPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | [**string**](../Model/.md)|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersCustomerIdOrdersGet**
+> \Yoast\MyYoastApiClient\Model\Order[] apiCustomersCustomerIdOrdersGet($customerId, $fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
+
+Retrieve many Order
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "customerId_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
+$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
+$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
+$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
+$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
+
+try {
+    $result = $apiInstance->apiCustomersCustomerIdOrdersGet($customerId, $fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdOrdersGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
+ **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
+ **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
+ **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Order[]**](../Model/Order.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersCustomerIdOrdersIdGet**
+> \Yoast\MyYoastApiClient\Model\Order apiCustomersCustomerIdOrdersIdGet($id, $customerId, $fields, $join, $cache)
+
+Retrieve one Order
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$customerId = "customerId_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
+
+try {
+    $result = $apiInstance->apiCustomersCustomerIdOrdersIdGet($id, $customerId, $fields, $join, $cache);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdOrdersIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -599,40 +703,129 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
+ **customerId** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerEnable**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2004 customerEnable($id)
+# **apiCustomersCustomerIdSitesGet**
+> \Yoast\MyYoastApiClient\Model\Site[] apiCustomersCustomerIdSitesGet($customerId, $fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
 
-Enables the customer with the given id.
+Retrieve many Site
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "customerId_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
+$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
+$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
+$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
+$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->customerEnable($id);
+    $result = $apiInstance->apiCustomersCustomerIdSitesGet($customerId, $fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerEnable: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSitesGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
+ **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
+ **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
+ **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Site[]**](../Model/Site.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersCustomerIdSitesIdGet**
+> \Yoast\MyYoastApiClient\Model\Site apiCustomersCustomerIdSitesIdGet($id, $customerId, $fields, $join, $cache)
+
+Retrieve one Site
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$customerId = "customerId_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
+
+try {
+    $result = $apiInstance->apiCustomersCustomerIdSitesIdGet($id, $customerId, $fields, $join, $cache);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSitesIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -642,40 +835,57 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**|  |
+ **customerId** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerExistsGetCustomersidExists**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 customerExistsGetCustomersidExists($id)
+# **apiCustomersCustomerIdSitesPost**
+> \Yoast\MyYoastApiClient\Model\Site apiCustomersCustomerIdSitesPost($createSiteBodyDto, $customerId)
 
-Check whether a model instance exists in the data source.
+Create a site for a user
+
+Create a site record so we can link a subscription to a site which is linked to a customer
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Model id
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$createSiteBodyDto = new \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto(); // \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto | 
+$customerId = "customerId_example"; // string | 
 
 try {
-    $result = $api_instance->customerExistsGetCustomersidExists($id);
+    $result = $apiInstance->apiCustomersCustomerIdSitesPost($createSiteBodyDto, $customerId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerExistsGetCustomersidExists: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSitesPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -684,41 +894,52 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
+ **createSiteBodyDto** | [**\Yoast\MyYoastApiClient\Model\CreateSiteBodyDto**](../Model/CreateSiteBodyDto.md)|  |
+ **customerId** | **string**|  |
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerExistsHeadCustomersid**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 customerExistsHeadCustomersid($id)
+# **apiCustomersCustomerIdStudentCourseEnrollmentsGet**
+> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] apiCustomersCustomerIdStudentCourseEnrollmentsGet($customerId)
 
-Check whether a model instance exists in the data source.
+Find Course Enrollments that a customer is student in
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Model id
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "customerId_example"; // string | 
 
 try {
-    $result = $api_instance->customerExistsHeadCustomersid($id);
+    $result = $apiInstance->apiCustomersCustomerIdStudentCourseEnrollmentsGet($customerId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerExistsHeadCustomersid: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdStudentCourseEnrollmentsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -727,41 +948,60 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
+ **customerId** | [**string**](../Model/.md)|  |
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Yoast\MyYoastApiClient\Model\CourseEnrollment[]**](../Model/CourseEnrollment.md)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerFind**
-> \Yoast\MyYoastApiClient\Model\Customer[] customerFind($filter)
+# **apiCustomersCustomerIdSubscriptionsGet**
+> \Yoast\MyYoastApiClient\Model\Subscription[] apiCustomersCustomerIdSubscriptionsGet($customerId, $fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
 
-Find all instances of the model matched by filter from the data source.
+Retrieve many Subscription
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "customerId_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
+$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
+$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
+$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
+$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->customerFind($filter);
+    $result = $apiInstance->apiCustomersCustomerIdSubscriptionsGet($customerId, $fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerFind: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSubscriptionsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -770,7 +1010,199 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **customerId** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
+ **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
+ **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
+ **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription[]**](../Model/Subscription.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersCustomerIdSubscriptionsIdGet**
+> \Yoast\MyYoastApiClient\Model\Subscription apiCustomersCustomerIdSubscriptionsIdGet($id, $customerId, $fields, $join, $cache)
+
+Retrieve one Subscription
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$customerId = "customerId_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
+
+try {
+    $result = $apiInstance->apiCustomersCustomerIdSubscriptionsIdGet($id, $customerId, $fields, $join, $cache);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSubscriptionsIdGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **customerId** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost**
+> object apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost($cancelSubscriptionBodyDto, $customerId, $subscriptionId)
+
+Cancel (part of) a subscription.
+
+Communicates a (partial) subscription to yoast.com.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$cancelSubscriptionBodyDto = new \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto(); // \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto | 
+$customerId = "customerId_example"; // string | 
+$subscriptionId = "subscriptionId_example"; // string | 
+
+try {
+    $result = $apiInstance->apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost($cancelSubscriptionBodyDto, $customerId, $subscriptionId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cancelSubscriptionBodyDto** | [**\Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto**](../Model/CancelSubscriptionBodyDto.md)|  |
+ **customerId** | **string**|  |
+ **subscriptionId** | **string**|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersGet**
+> \Yoast\MyYoastApiClient\Model\Customer[] apiCustomersGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
+
+Retrieve many Customer
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
+$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
+$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
+$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
+$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
+
+try {
+    $result = $apiInstance->apiCustomersGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
+ **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
+ **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
+ **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
@@ -782,30 +1214,41 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerFindById**
-> \Yoast\MyYoastApiClient\Model\Customer customerFindById($id, $filter)
+# **apiCustomersIdAvatarPost**
+> \Yoast\MyYoastApiClient\Model\Customer apiCustomersIdAvatarPost($id)
 
-Find a model instance by {{id}} from the data source.
+Upload a new UserAvatar to WordPress
+
+This route allows the user to upload a new UserAvatar to their WordPress account
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Model id
-$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->customerFindById($id, $filter);
+    $result = $apiInstance->apiCustomersIdAvatarPost($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerFindById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersIdAvatarPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -814,8 +1257,225 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersIdDownloadGet**
+> \Yoast\MyYoastApiClient\Model\JSZip apiCustomersIdDownloadGet($id)
+
+Download profile.
+
+Downloads the data of the given customer as CSV files inside a ZIP file.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+
+try {
+    $result = $apiInstance->apiCustomersIdDownloadGet($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersIdDownloadGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\JSZip**](../Model/JSZip.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersIdEnablePost**
+> object apiCustomersIdEnablePost($id)
+
+Enables the customer with the given ID
+
+Used when customers accidentally disable their own account
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+
+try {
+    $result = $apiInstance->apiCustomersIdEnablePost($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersIdEnablePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersIdFindRefundsGet**
+> \Yoast\MyYoastApiClient\Model\Refund[] apiCustomersIdFindRefundsGet($id)
+
+Find refunds for user
+
+Find the refunds for provided user id.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+
+try {
+    $result = $apiInstance->apiCustomersIdFindRefundsGet($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersIdFindRefundsGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Refund[]**](../Model/Refund.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersIdGet**
+> \Yoast\MyYoastApiClient\Model\Customer apiCustomersIdGet($id, $fields, $join, $cache)
+
+Retrieve one Customer
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
+
+try {
+    $result = $apiInstance->apiCustomersIdGet($id, $fields, $join, $cache);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersIdGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
@@ -827,29 +1487,42 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerFindOne**
-> \Yoast\MyYoastApiClient\Model\Customer customerFindOne($filter)
+# **apiCustomersIdPasswordPatch**
+> \Yoast\MyYoastApiClient\Model\Customer apiCustomersIdPasswordPatch($changePasswordDto, $id)
 
-Find first instance of the model matched by filter from the data source.
+Update a customer's password in WordPress
+
+This route allows a customer to updates their password on WordPress.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$changePasswordDto = new \Yoast\MyYoastApiClient\Model\ChangePasswordDto(); // \Yoast\MyYoastApiClient\Model\ChangePasswordDto | 
+$id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->customerFindOne($filter);
+    $result = $apiInstance->apiCustomersIdPasswordPatch($changePasswordDto, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerFindOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersIdPasswordPatch: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -858,7 +1531,57 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **changePasswordDto** | [**\Yoast\MyYoastApiClient\Model\ChangePasswordDto**](../Model/ChangePasswordDto.md)|  |
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersIdPatch**
+> \Yoast\MyYoastApiClient\Model\Customer apiCustomersIdPatch($customer, $id)
+
+Update one Customer
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$customer = new \Yoast\MyYoastApiClient\Model\Customer(); // \Yoast\MyYoastApiClient\Model\Customer | 
+$id = "id_example"; // string | 
+
+try {
+    $result = $apiInstance->apiCustomersIdPatch($customer, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersIdPatch: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customer** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)|  |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -870,29 +1593,39 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerFindRefunds**
-> object customerFindRefunds($id)
+# **apiCustomersIdProfileGet**
+> object apiCustomersIdProfileGet($id)
 
-Finds all refunds for a customer.
+
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->customerFindRefunds($id);
+    $result = $apiInstance->apiCustomersIdProfileGet($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerFindRefunds: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersIdProfileGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -901,7 +1634,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **id** | [**string**](../Model/.md)|  |
 
 ### Return type
 
@@ -909,33 +1642,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerFromWooCommerce**
-> \Yoast\MyYoastApiClient\Model\Customer customerFromWooCommerce($customer_data)
+# **apiCustomersIdProfilePatch**
+> \Yoast\MyYoastApiClient\Model\Customer apiCustomersIdProfilePatch($id, $updateUserToWordpressDto)
 
+Update a customer to WordPress
 
+This route allows a customer to updates their profile on WordPress.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$customer_data = "customer_data_example"; // string | 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$updateUserToWordpressDto = new \Yoast\MyYoastApiClient\Model\UpdateUserToWordpressDto(); // \Yoast\MyYoastApiClient\Model\UpdateUserToWordpressDto | 
 
 try {
-    $result = $api_instance->customerFromWooCommerce($customer_data);
+    $result = $apiInstance->apiCustomersIdProfilePatch($id, $updateUserToWordpressDto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerFromWooCommerce: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersIdProfilePatch: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -944,7 +1690,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customer_data** | **string**|  |
+ **id** | [**string**](../Model/.md)|  |
+ **updateUserToWordpressDto** | [**\Yoast\MyYoastApiClient\Model\UpdateUserToWordpressDto**](../Model/UpdateUserToWordpressDto.md)|  |
 
 ### Return type
 
@@ -952,408 +1699,40 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerGetAllRoles**
-> \Yoast\MyYoastApiClient\Model\XAny[] customerGetAllRoles()
+# **apiCustomersNewsletterListSubscribePost**
+> object apiCustomersNewsletterListSubscribePost($subscribeByEmailBodyDto, $list)
 
-Retrieves all existing roles from the db, matched to their ids.
+Subscribes a user to a newsletter
+
+Subscribes a user to the given (url) newsletter.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-
-try {
-    $result = $api_instance->customerGetAllRoles();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerGetAllRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\XAny[]**](../Model/XAny.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerGetCustomersWithRole**
-> \Yoast\MyYoastApiClient\Model\XAny[] customerGetCustomersWithRole()
-
-Retrieves all the customer ids from the RoleMapping table.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-
-try {
-    $result = $api_instance->customerGetCustomersWithRole();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerGetCustomersWithRole: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\XAny[]**](../Model/XAny.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerGetNonce**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2007 customerGetNonce()
-
-Get a user's yoast.com nonce
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-
-try {
-    $result = $api_instance->customerGetNonce();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerGetNonce: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerLogin**
-> object customerLogin($credentials, $include)
-
-Login a user with username/email and password.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$credentials = NULL; // object | 
-$include = "include_example"; // string | Related objects to include in the response. See the description of return value for more details.
-
-try {
-    $result = $api_instance->customerLogin($credentials, $include);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerLogin: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **credentials** | **object**|  |
- **include** | **string**| Related objects to include in the response. See the description of return value for more details. | [optional]
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerLoginUser**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2006 customerLoginUser($login_data)
-
-Login a user on yoast.com
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$login_data = NULL; // object | 
-
-try {
-    $result = $api_instance->customerLoginUser($login_data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerLoginUser: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **login_data** | **object**|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerLogout**
-> customerLogout()
-
-Logout a user with access token.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-
-try {
-    $api_instance->customerLogout();
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerLogout: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerLogoutUser**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2006 customerLogoutUser($nonce)
-
-Log a user out on yoast.com
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$nonce = NULL; // object | 
-
-try {
-    $result = $api_instance->customerLogoutUser($nonce);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerLogoutUser: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **nonce** | **object**|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNewsletterStatus**
-> object customerNewsletterStatus($id)
-
-Returns the newsletter status for a customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | 
-
-try {
-    $result = $api_instance->customerNewsletterStatus($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerNewsletterStatus: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNewsletterSubscribe**
-> object customerNewsletterSubscribe($id)
-
-Subscribes a customer to the newsletter.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | 
-
-try {
-    $result = $api_instance->customerNewsletterSubscribe($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerNewsletterSubscribe: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerNewsletterSubscribeByEmail**
-> object customerNewsletterSubscribeByEmail($list, $email, $first_name, $last_name)
-
-Subscribes a customer to the newsletter.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$subscribeByEmailBodyDto = new \Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto(); // \Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto | 
 $list = "list_example"; // string | 
-$email = "email_example"; // string | 
-$first_name = "first_name_example"; // string | 
-$last_name = "last_name_example"; // string | 
 
 try {
-    $result = $api_instance->customerNewsletterSubscribeByEmail($list, $email, $first_name, $last_name);
+    $result = $apiInstance->apiCustomersNewsletterListSubscribePost($subscribeByEmailBodyDto, $list);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerNewsletterSubscribeByEmail: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersNewsletterListSubscribePost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1362,10 +1741,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **subscribeByEmailBodyDto** | [**\Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto**](../Model/SubscribeByEmailBodyDto.md)|  |
  **list** | **string**|  |
- **email** | **string**|  | [optional]
- **first_name** | **string**|  | [optional]
- **last_name** | **string**|  | [optional]
 
 ### Return type
 
@@ -1377,126 +1754,40 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerNewsletterUnsubscribe**
-> object customerNewsletterUnsubscribe($id)
+# **apiCustomersNonceGet**
+> object apiCustomersNonceGet()
 
-Unsubscribes a customer from the newsletter.
+Get a nonce from Yoast.com
+
+Get a nonce from Yoast.com for usage with further requests to Yoast.com
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | 
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 
 try {
-    $result = $api_instance->customerNewsletterUnsubscribe($id);
+    $result = $apiInstance->apiCustomersNonceGet();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerNewsletterUnsubscribe: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersNonceGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPatchOrCreate**
-> \Yoast\MyYoastApiClient\Model\Customer customerPatchOrCreate($data)
-
-Patch an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$data = new \Yoast\MyYoastApiClient\Model\Customer(); // \Yoast\MyYoastApiClient\Model\Customer | Model instance data
-
-try {
-    $result = $api_instance->customerPatchOrCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPatchOrCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPatchProfile**
-> object customerPatchProfile($id, $profile)
-
-Updates the profile with the supplied information.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | 
-$profile = NULL; // object | 
-
-try {
-    $result = $api_instance->customerPatchProfile($id, $profile);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPatchProfile: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
- **profile** | **object**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1508,4185 +1799,35 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerProfile**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2003 customerProfile($id)
+# **apiCustomersResetPasswordPatch**
+> object apiCustomersResetPasswordPatch($resetPasswordDto)
 
-Finds the profile for the customer with the given id.
+Reset the user's password.
 
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | 
-
-try {
-    $result = $api_instance->customerProfile($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerProfile: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountAccessTokens**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountAccessTokens($id, $where)
-
-Counts accessTokens of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountAccessTokens($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountAccessTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountComposerTokens**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountComposerTokens($id, $where)
-
-Counts composerTokens of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountComposerTokens($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountComposerTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountConfigurationServiceRequests**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountConfigurationServiceRequests($id, $where)
-
-Counts configurationServiceRequests of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountConfigurationServiceRequests($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountCourseEnrollments**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountCourseEnrollments($id, $where)
-
-Counts courseEnrollments of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountCourseEnrollments($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountCredentials**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountCredentials($id, $where)
-
-Counts credentials of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountCredentials($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountCredentials: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountIdentities**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountIdentities($id, $where)
-
-Counts identities of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountIdentities($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountIdentities: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountOrders**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountOrders($id, $where)
-
-Counts orders of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountOrders($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountOrders: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountOwnedCourseEnrollments**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountOwnedCourseEnrollments($id, $where)
-
-Counts ownedCourseEnrollments of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountOwnedCourseEnrollments($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountOwnedCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountRoleMapping**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountRoleMapping($id, $where)
-
-Counts roleMapping of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountRoleMapping($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountRoleMapping: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountRoles**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountRoles($id, $where)
-
-Counts roles of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountRoles($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountSites**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountSites($id, $where)
-
-Counts sites of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountSites($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountSites: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCountSubscriptions**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 customerPrototypeCountSubscriptions($id, $where)
-
-Counts subscriptions of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->customerPrototypeCountSubscriptions($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCountSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateAccessTokens**
-> \Yoast\MyYoastApiClient\Model\AccessToken customerPrototypeCreateAccessTokens($id, $data)
-
-Creates a new instance in accessTokens of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\AccessToken(); // \Yoast\MyYoastApiClient\Model\AccessToken | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateAccessTokens($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateAccessTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\AccessToken**](../Model/AccessToken.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\AccessToken**](../Model/AccessToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateComposerTokens**
-> \Yoast\MyYoastApiClient\Model\ComposerToken customerPrototypeCreateComposerTokens($id, $data)
-
-Creates a new instance in composerTokens of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateComposerTokens($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateComposerTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateConfigurationServiceRequests**
-> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest customerPrototypeCreateConfigurationServiceRequests($id, $data)
-
-Creates a new instance in configurationServiceRequests of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest(); // \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateConfigurationServiceRequests($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateCourseEnrollments**
-> \Yoast\MyYoastApiClient\Model\CourseEnrollment customerPrototypeCreateCourseEnrollments($id, $data)
-
-Creates a new instance in courseEnrollments of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateCourseEnrollments($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateCredentials**
-> \Yoast\MyYoastApiClient\Model\UserCredential customerPrototypeCreateCredentials($id, $data)
-
-Creates a new instance in credentials of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\UserCredential(); // \Yoast\MyYoastApiClient\Model\UserCredential | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateCredentials($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateCredentials: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\UserCredential**](../Model/UserCredential.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\UserCredential**](../Model/UserCredential.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateIdentities**
-> \Yoast\MyYoastApiClient\Model\UserIdentity customerPrototypeCreateIdentities($id, $data)
-
-Creates a new instance in identities of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\UserIdentity(); // \Yoast\MyYoastApiClient\Model\UserIdentity | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateIdentities($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateIdentities: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\UserIdentity**](../Model/UserIdentity.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\UserIdentity**](../Model/UserIdentity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateOrders**
-> \Yoast\MyYoastApiClient\Model\Order customerPrototypeCreateOrders($id, $data)
-
-Creates a new instance in orders of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateOrders($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateOrders: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateOwnedCourseEnrollments**
-> \Yoast\MyYoastApiClient\Model\CourseEnrollment customerPrototypeCreateOwnedCourseEnrollments($id, $data)
-
-Creates a new instance in ownedCourseEnrollments of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateOwnedCourseEnrollments($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateOwnedCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateRoleMapping**
-> \Yoast\MyYoastApiClient\Model\RoleMapping customerPrototypeCreateRoleMapping($id, $data)
-
-Creates a new instance in roleMapping of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\RoleMapping(); // \Yoast\MyYoastApiClient\Model\RoleMapping | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateRoleMapping($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateRoleMapping: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\RoleMapping**](../Model/RoleMapping.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\RoleMapping**](../Model/RoleMapping.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateRoles**
-> \Yoast\MyYoastApiClient\Model\Role customerPrototypeCreateRoles($id, $data)
-
-Creates a new instance in roles of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\Role(); // \Yoast\MyYoastApiClient\Model\Role | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateRoles($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Role**](../Model/Role.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Role**](../Model/Role.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateSites**
-> \Yoast\MyYoastApiClient\Model\Site customerPrototypeCreateSites($id, $data)
-
-Creates a new instance in sites of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateSites($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateSites: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeCreateSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription customerPrototypeCreateSubscriptions($id, $data)
-
-Creates a new instance in subscriptions of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
-
-try {
-    $result = $api_instance->customerPrototypeCreateSubscriptions($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeCreateSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteAccessTokens**
-> customerPrototypeDeleteAccessTokens($id)
-
-Deletes all accessTokens of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteAccessTokens($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteAccessTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteComposerTokens**
-> customerPrototypeDeleteComposerTokens($id)
-
-Deletes all composerTokens of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteComposerTokens($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteComposerTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteConfigurationServiceRequests**
-> customerPrototypeDeleteConfigurationServiceRequests($id)
-
-Deletes all configurationServiceRequests of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteConfigurationServiceRequests($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteCourseEnrollments**
-> customerPrototypeDeleteCourseEnrollments($id)
-
-Deletes all courseEnrollments of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteCourseEnrollments($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteCredentials**
-> customerPrototypeDeleteCredentials($id)
-
-Deletes all credentials of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteCredentials($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteCredentials: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteIdentities**
-> customerPrototypeDeleteIdentities($id)
-
-Deletes all identities of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteIdentities($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteIdentities: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteOrders**
-> customerPrototypeDeleteOrders($id)
-
-Deletes all orders of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteOrders($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteOrders: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteOwnedCourseEnrollments**
-> customerPrototypeDeleteOwnedCourseEnrollments($id)
-
-Deletes all ownedCourseEnrollments of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteOwnedCourseEnrollments($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteOwnedCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteRoleMapping**
-> customerPrototypeDeleteRoleMapping($id)
-
-Deletes all roleMapping of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteRoleMapping($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteRoleMapping: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteRoles**
-> customerPrototypeDeleteRoles($id)
-
-Deletes all roles of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteRoles($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteSites**
-> customerPrototypeDeleteSites($id)
-
-Deletes all sites of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteSites($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteSites: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDeleteSubscriptions**
-> customerPrototypeDeleteSubscriptions($id)
-
-Deletes all subscriptions of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-
-try {
-    $api_instance->customerPrototypeDeleteSubscriptions($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDeleteSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdAccessTokens**
-> customerPrototypeDestroyByIdAccessTokens($id, $fk)
-
-Delete a related item by id for accessTokens.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for accessTokens
-
-try {
-    $api_instance->customerPrototypeDestroyByIdAccessTokens($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdAccessTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for accessTokens |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdComposerTokens**
-> customerPrototypeDestroyByIdComposerTokens($id, $fk)
-
-Delete a related item by id for composerTokens.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for composerTokens
-
-try {
-    $api_instance->customerPrototypeDestroyByIdComposerTokens($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdComposerTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for composerTokens |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdConfigurationServiceRequests**
-> customerPrototypeDestroyByIdConfigurationServiceRequests($id, $fk)
-
-Delete a related item by id for configurationServiceRequests.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for configurationServiceRequests
-
-try {
-    $api_instance->customerPrototypeDestroyByIdConfigurationServiceRequests($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for configurationServiceRequests |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdCourseEnrollments**
-> customerPrototypeDestroyByIdCourseEnrollments($id, $fk)
-
-Delete a related item by id for courseEnrollments.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for courseEnrollments
-
-try {
-    $api_instance->customerPrototypeDestroyByIdCourseEnrollments($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for courseEnrollments |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdCredentials**
-> customerPrototypeDestroyByIdCredentials($id, $fk)
-
-Delete a related item by id for credentials.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for credentials
-
-try {
-    $api_instance->customerPrototypeDestroyByIdCredentials($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdCredentials: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for credentials |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdIdentities**
-> customerPrototypeDestroyByIdIdentities($id, $fk)
-
-Delete a related item by id for identities.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for identities
-
-try {
-    $api_instance->customerPrototypeDestroyByIdIdentities($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdIdentities: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for identities |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdOrders**
-> customerPrototypeDestroyByIdOrders($id, $fk)
-
-Delete a related item by id for orders.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for orders
-
-try {
-    $api_instance->customerPrototypeDestroyByIdOrders($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdOrders: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for orders |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdOwnedCourseEnrollments**
-> customerPrototypeDestroyByIdOwnedCourseEnrollments($id, $fk)
-
-Delete a related item by id for ownedCourseEnrollments.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for ownedCourseEnrollments
-
-try {
-    $api_instance->customerPrototypeDestroyByIdOwnedCourseEnrollments($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdOwnedCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for ownedCourseEnrollments |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdRoleMapping**
-> customerPrototypeDestroyByIdRoleMapping($id, $fk)
-
-Delete a related item by id for roleMapping.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for roleMapping
-
-try {
-    $api_instance->customerPrototypeDestroyByIdRoleMapping($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdRoleMapping: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for roleMapping |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdRoles**
-> customerPrototypeDestroyByIdRoles($id, $fk)
-
-Delete a related item by id for roles.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for roles
-
-try {
-    $api_instance->customerPrototypeDestroyByIdRoles($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for roles |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdSites**
-> customerPrototypeDestroyByIdSites($id, $fk)
-
-Delete a related item by id for sites.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for sites
-
-try {
-    $api_instance->customerPrototypeDestroyByIdSites($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdSites: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for sites |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeDestroyByIdSubscriptions**
-> customerPrototypeDestroyByIdSubscriptions($id, $fk)
-
-Delete a related item by id for subscriptions.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for subscriptions
-
-try {
-    $api_instance->customerPrototypeDestroyByIdSubscriptions($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeDestroyByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for subscriptions |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeExistsRoles**
-> bool customerPrototypeExistsRoles($id, $fk)
-
-Check the existence of roles relation to an item by id.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for roles
-
-try {
-    $result = $api_instance->customerPrototypeExistsRoles($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeExistsRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for roles |
-
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdAccessTokens**
-> \Yoast\MyYoastApiClient\Model\AccessToken customerPrototypeFindByIdAccessTokens($id, $fk)
-
-Find a related item by id for accessTokens.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for accessTokens
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdAccessTokens($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdAccessTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for accessTokens |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\AccessToken**](../Model/AccessToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdComposerTokens**
-> \Yoast\MyYoastApiClient\Model\ComposerToken customerPrototypeFindByIdComposerTokens($id, $fk)
-
-Find a related item by id for composerTokens.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for composerTokens
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdComposerTokens($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdComposerTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for composerTokens |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdConfigurationServiceRequests**
-> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest customerPrototypeFindByIdConfigurationServiceRequests($id, $fk)
-
-Find a related item by id for configurationServiceRequests.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for configurationServiceRequests
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdConfigurationServiceRequests($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for configurationServiceRequests |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdCourseEnrollments**
-> \Yoast\MyYoastApiClient\Model\CourseEnrollment customerPrototypeFindByIdCourseEnrollments($id, $fk)
-
-Find a related item by id for courseEnrollments.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for courseEnrollments
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdCourseEnrollments($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for courseEnrollments |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdCredentials**
-> \Yoast\MyYoastApiClient\Model\UserCredential customerPrototypeFindByIdCredentials($id, $fk)
-
-Find a related item by id for credentials.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for credentials
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdCredentials($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdCredentials: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for credentials |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\UserCredential**](../Model/UserCredential.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdIdentities**
-> \Yoast\MyYoastApiClient\Model\UserIdentity customerPrototypeFindByIdIdentities($id, $fk)
-
-Find a related item by id for identities.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for identities
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdIdentities($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdIdentities: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for identities |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\UserIdentity**](../Model/UserIdentity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdOrders**
-> \Yoast\MyYoastApiClient\Model\Order customerPrototypeFindByIdOrders($id, $fk)
-
-Find a related item by id for orders.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for orders
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdOrders($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdOrders: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for orders |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdOwnedCourseEnrollments**
-> \Yoast\MyYoastApiClient\Model\CourseEnrollment customerPrototypeFindByIdOwnedCourseEnrollments($id, $fk)
-
-Find a related item by id for ownedCourseEnrollments.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for ownedCourseEnrollments
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdOwnedCourseEnrollments($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdOwnedCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for ownedCourseEnrollments |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdRoleMapping**
-> \Yoast\MyYoastApiClient\Model\RoleMapping customerPrototypeFindByIdRoleMapping($id, $fk)
-
-Find a related item by id for roleMapping.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for roleMapping
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdRoleMapping($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdRoleMapping: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for roleMapping |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\RoleMapping**](../Model/RoleMapping.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdRoles**
-> \Yoast\MyYoastApiClient\Model\Role customerPrototypeFindByIdRoles($id, $fk)
-
-Find a related item by id for roles.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for roles
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdRoles($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for roles |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Role**](../Model/Role.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdSites**
-> \Yoast\MyYoastApiClient\Model\Site customerPrototypeFindByIdSites($id, $fk)
-
-Find a related item by id for sites.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for sites
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdSites($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdSites: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for sites |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeFindByIdSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription customerPrototypeFindByIdSubscriptions($id, $fk)
-
-Find a related item by id for subscriptions.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for subscriptions
-
-try {
-    $result = $api_instance->customerPrototypeFindByIdSubscriptions($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeFindByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for subscriptions |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetAccessTokens**
-> \Yoast\MyYoastApiClient\Model\AccessToken[] customerPrototypeGetAccessTokens($id, $filter)
-
-Queries accessTokens of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetAccessTokens($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetAccessTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\AccessToken[]**](../Model/AccessToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetComposerTokens**
-> \Yoast\MyYoastApiClient\Model\ComposerToken[] customerPrototypeGetComposerTokens($id, $filter)
-
-Queries composerTokens of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetComposerTokens($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetComposerTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ComposerToken[]**](../Model/ComposerToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetConfigurationServiceRequests**
-> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest[] customerPrototypeGetConfigurationServiceRequests($id, $filter)
-
-Queries configurationServiceRequests of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetConfigurationServiceRequests($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest[]**](../Model/ConfigurationServiceRequest.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetCourseEnrollments**
-> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] customerPrototypeGetCourseEnrollments($id, $filter)
-
-Queries courseEnrollments of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetCourseEnrollments($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CourseEnrollment[]**](../Model/CourseEnrollment.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetCredentials**
-> \Yoast\MyYoastApiClient\Model\UserCredential[] customerPrototypeGetCredentials($id, $filter)
-
-Queries credentials of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetCredentials($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetCredentials: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\UserCredential[]**](../Model/UserCredential.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetIdentities**
-> \Yoast\MyYoastApiClient\Model\UserIdentity[] customerPrototypeGetIdentities($id, $filter)
-
-Queries identities of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetIdentities($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetIdentities: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\UserIdentity[]**](../Model/UserIdentity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetOrders**
-> \Yoast\MyYoastApiClient\Model\Order[] customerPrototypeGetOrders($id, $filter)
-
-Queries orders of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetOrders($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetOrders: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Order[]**](../Model/Order.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetOwnedCourseEnrollments**
-> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] customerPrototypeGetOwnedCourseEnrollments($id, $filter)
-
-Queries ownedCourseEnrollments of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetOwnedCourseEnrollments($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetOwnedCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CourseEnrollment[]**](../Model/CourseEnrollment.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetRoleMapping**
-> \Yoast\MyYoastApiClient\Model\RoleMapping[] customerPrototypeGetRoleMapping($id, $filter)
-
-Queries roleMapping of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetRoleMapping($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetRoleMapping: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\RoleMapping[]**](../Model/RoleMapping.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetRoles**
-> \Yoast\MyYoastApiClient\Model\Role[] customerPrototypeGetRoles($id, $filter)
-
-Queries roles of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetRoles($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Role[]**](../Model/Role.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetSites**
-> \Yoast\MyYoastApiClient\Model\Site[] customerPrototypeGetSites($id, $filter)
-
-Queries sites of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetSites($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetSites: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site[]**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeGetSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription[] customerPrototypeGetSubscriptions($id, $filter)
-
-Queries subscriptions of Customer.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->customerPrototypeGetSubscriptions($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeGetSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Subscription[]**](../Model/Subscription.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeLinkRoles**
-> \Yoast\MyYoastApiClient\Model\RoleMapping customerPrototypeLinkRoles($id, $fk, $data)
-
-Add a related item by id for roles.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for roles
-$data = new \Yoast\MyYoastApiClient\Model\RoleMapping(); // \Yoast\MyYoastApiClient\Model\RoleMapping | 
-
-try {
-    $result = $api_instance->customerPrototypeLinkRoles($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeLinkRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for roles |
- **data** | [**\Yoast\MyYoastApiClient\Model\RoleMapping**](../Model/RoleMapping.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\RoleMapping**](../Model/RoleMapping.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypePatchAttributes**
-> \Yoast\MyYoastApiClient\Model\Customer customerPrototypePatchAttributes($id, $data)
-
-Patch attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$data = new \Yoast\MyYoastApiClient\Model\Customer(); // \Yoast\MyYoastApiClient\Model\Customer | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->customerPrototypePatchAttributes($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUnlinkRoles**
-> customerPrototypeUnlinkRoles($id, $fk)
-
-Remove the roles relation to an item by id.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for roles
-
-try {
-    $api_instance->customerPrototypeUnlinkRoles($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUnlinkRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for roles |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdAccessTokens**
-> \Yoast\MyYoastApiClient\Model\AccessToken customerPrototypeUpdateByIdAccessTokens($id, $fk, $data)
-
-Update a related item by id for accessTokens.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for accessTokens
-$data = new \Yoast\MyYoastApiClient\Model\AccessToken(); // \Yoast\MyYoastApiClient\Model\AccessToken | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdAccessTokens($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdAccessTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for accessTokens |
- **data** | [**\Yoast\MyYoastApiClient\Model\AccessToken**](../Model/AccessToken.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\AccessToken**](../Model/AccessToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdComposerTokens**
-> \Yoast\MyYoastApiClient\Model\ComposerToken customerPrototypeUpdateByIdComposerTokens($id, $fk, $data)
-
-Update a related item by id for composerTokens.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for composerTokens
-$data = new \Yoast\MyYoastApiClient\Model\ComposerToken(); // \Yoast\MyYoastApiClient\Model\ComposerToken | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdComposerTokens($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdComposerTokens: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for composerTokens |
- **data** | [**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdConfigurationServiceRequests**
-> \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest customerPrototypeUpdateByIdConfigurationServiceRequests($id, $fk, $data)
-
-Update a related item by id for configurationServiceRequests.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for configurationServiceRequests
-$data = new \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest(); // \Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdConfigurationServiceRequests($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdConfigurationServiceRequests: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for configurationServiceRequests |
- **data** | [**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\ConfigurationServiceRequest**](../Model/ConfigurationServiceRequest.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdCourseEnrollments**
-> \Yoast\MyYoastApiClient\Model\CourseEnrollment customerPrototypeUpdateByIdCourseEnrollments($id, $fk, $data)
-
-Update a related item by id for courseEnrollments.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for courseEnrollments
-$data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdCourseEnrollments($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for courseEnrollments |
- **data** | [**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdCredentials**
-> \Yoast\MyYoastApiClient\Model\UserCredential customerPrototypeUpdateByIdCredentials($id, $fk, $data)
-
-Update a related item by id for credentials.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for credentials
-$data = new \Yoast\MyYoastApiClient\Model\UserCredential(); // \Yoast\MyYoastApiClient\Model\UserCredential | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdCredentials($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdCredentials: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for credentials |
- **data** | [**\Yoast\MyYoastApiClient\Model\UserCredential**](../Model/UserCredential.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\UserCredential**](../Model/UserCredential.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdIdentities**
-> \Yoast\MyYoastApiClient\Model\UserIdentity customerPrototypeUpdateByIdIdentities($id, $fk, $data)
-
-Update a related item by id for identities.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for identities
-$data = new \Yoast\MyYoastApiClient\Model\UserIdentity(); // \Yoast\MyYoastApiClient\Model\UserIdentity | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdIdentities($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdIdentities: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for identities |
- **data** | [**\Yoast\MyYoastApiClient\Model\UserIdentity**](../Model/UserIdentity.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\UserIdentity**](../Model/UserIdentity.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdOrders**
-> \Yoast\MyYoastApiClient\Model\Order customerPrototypeUpdateByIdOrders($id, $fk, $data)
-
-Update a related item by id for orders.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for orders
-$data = new \Yoast\MyYoastApiClient\Model\Order(); // \Yoast\MyYoastApiClient\Model\Order | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdOrders($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdOrders: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for orders |
- **data** | [**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdOwnedCourseEnrollments**
-> \Yoast\MyYoastApiClient\Model\CourseEnrollment customerPrototypeUpdateByIdOwnedCourseEnrollments($id, $fk, $data)
-
-Update a related item by id for ownedCourseEnrollments.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for ownedCourseEnrollments
-$data = new \Yoast\MyYoastApiClient\Model\CourseEnrollment(); // \Yoast\MyYoastApiClient\Model\CourseEnrollment | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdOwnedCourseEnrollments($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdOwnedCourseEnrollments: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for ownedCourseEnrollments |
- **data** | [**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdRoleMapping**
-> \Yoast\MyYoastApiClient\Model\RoleMapping customerPrototypeUpdateByIdRoleMapping($id, $fk, $data)
-
-Update a related item by id for roleMapping.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for roleMapping
-$data = new \Yoast\MyYoastApiClient\Model\RoleMapping(); // \Yoast\MyYoastApiClient\Model\RoleMapping | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdRoleMapping($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdRoleMapping: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for roleMapping |
- **data** | [**\Yoast\MyYoastApiClient\Model\RoleMapping**](../Model/RoleMapping.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\RoleMapping**](../Model/RoleMapping.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdRoles**
-> \Yoast\MyYoastApiClient\Model\Role customerPrototypeUpdateByIdRoles($id, $fk, $data)
-
-Update a related item by id for roles.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for roles
-$data = new \Yoast\MyYoastApiClient\Model\Role(); // \Yoast\MyYoastApiClient\Model\Role | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdRoles($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdRoles: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for roles |
- **data** | [**\Yoast\MyYoastApiClient\Model\Role**](../Model/Role.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Role**](../Model/Role.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdSites**
-> \Yoast\MyYoastApiClient\Model\Site customerPrototypeUpdateByIdSites($id, $fk, $data)
-
-Update a related item by id for sites.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for sites
-$data = new \Yoast\MyYoastApiClient\Model\Site(); // \Yoast\MyYoastApiClient\Model\Site | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdSites($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdSites: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for sites |
- **data** | [**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerPrototypeUpdateByIdSubscriptions**
-> \Yoast\MyYoastApiClient\Model\Subscription customerPrototypeUpdateByIdSubscriptions($id, $fk, $data)
-
-Update a related item by id for subscriptions.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Customer id
-$fk = "fk_example"; // string | Foreign key for subscriptions
-$data = new \Yoast\MyYoastApiClient\Model\Subscription(); // \Yoast\MyYoastApiClient\Model\Subscription | 
-
-try {
-    $result = $api_instance->customerPrototypeUpdateByIdSubscriptions($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerPrototypeUpdateByIdSubscriptions: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Customer id |
- **fk** | **string**| Foreign key for subscriptions |
- **data** | [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerReplaceByIdPostCustomersidReplace**
-> \Yoast\MyYoastApiClient\Model\Customer customerReplaceByIdPostCustomersidReplace($id, $data)
-
-Replace attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\Customer(); // \Yoast\MyYoastApiClient\Model\Customer | Model instance data
-
-try {
-    $result = $api_instance->customerReplaceByIdPostCustomersidReplace($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerReplaceByIdPostCustomersidReplace: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerReplaceByIdPutCustomersid**
-> \Yoast\MyYoastApiClient\Model\Customer customerReplaceByIdPutCustomersid($id, $data)
-
-Replace attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\Customer(); // \Yoast\MyYoastApiClient\Model\Customer | Model instance data
-
-try {
-    $result = $api_instance->customerReplaceByIdPutCustomersid($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerReplaceByIdPutCustomersid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerReplaceOrCreatePostCustomersReplaceOrCreate**
-> \Yoast\MyYoastApiClient\Model\Customer customerReplaceOrCreatePostCustomersReplaceOrCreate($data)
-
-Replace an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$data = new \Yoast\MyYoastApiClient\Model\Customer(); // \Yoast\MyYoastApiClient\Model\Customer | Model instance data
-
-try {
-    $result = $api_instance->customerReplaceOrCreatePostCustomersReplaceOrCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerReplaceOrCreatePostCustomersReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerReplaceOrCreatePutCustomers**
-> \Yoast\MyYoastApiClient\Model\Customer customerReplaceOrCreatePutCustomers($data)
-
-Replace an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$data = new \Yoast\MyYoastApiClient\Model\Customer(); // \Yoast\MyYoastApiClient\Model\Customer | Model instance data
-
-try {
-    $result = $api_instance->customerReplaceOrCreatePutCustomers($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerReplaceOrCreatePutCustomers: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerResetPasswordPatchCustomersResetPassword**
-> object customerResetPasswordPatchCustomersResetPassword($password_data)
-
-Reset the password of the user
+This route allows a user to reset its password.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$password_data = NULL; // object | 
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$resetPasswordDto = new \Yoast\MyYoastApiClient\Model\ResetPasswordDto(); // \Yoast\MyYoastApiClient\Model\ResetPasswordDto | 
 
 try {
-    $result = $api_instance->customerResetPasswordPatchCustomersResetPassword($password_data);
+    $result = $apiInstance->apiCustomersResetPasswordPatch($resetPasswordDto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerResetPasswordPatchCustomersResetPassword: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersResetPasswordPatch: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -5695,7 +1836,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **password_data** | **object**|  | [optional]
+ **resetPasswordDto** | [**\Yoast\MyYoastApiClient\Model\ResetPasswordDto**](../Model/ResetPasswordDto.md)|  |
 
 ### Return type
 
@@ -5707,71 +1848,86 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerResetPasswordPostCustomersReset**
-> customerResetPasswordPostCustomersReset($options)
+# **apiCustomersRolemappingIdsGet**
+> string[] apiCustomersRolemappingIdsGet()
 
-Reset password for a user with email.
+Get the ids of all customers with at least one role.
+
+Requires the caller to have the admin role.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$options = NULL; // object | 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
-    $api_instance->customerResetPasswordPostCustomersReset($options);
+    $result = $apiInstance->apiCustomersRolemappingIdsGet();
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerResetPasswordPostCustomersReset: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersRolemappingIdsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **object**|  |
+This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+**string[]**
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerSendResetPasswordEmail**
-> object customerSendResetPasswordEmail($email_data)
+# **apiCustomersSendResetPasswordEmailPost**
+> object apiCustomersSendResetPasswordEmailPost($sendResetPasswordEmailDto)
 
-Sends the reset password email
+Send a reset password email to the user.
+
+Use yoast.com to send a password reset email to the user email specified in the request body.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$email_data = NULL; // object | 
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$sendResetPasswordEmailDto = new \Yoast\MyYoastApiClient\Model\SendResetPasswordEmailDto(); // \Yoast\MyYoastApiClient\Model\SendResetPasswordEmailDto | 
 
 try {
-    $result = $api_instance->customerSendResetPasswordEmail($email_data);
+    $result = $apiInstance->apiCustomersSendResetPasswordEmailPost($sendResetPasswordEmailDto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerSendResetPasswordEmail: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersSendResetPasswordEmailPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -5780,7 +1936,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email_data** | **object**|  | [optional]
+ **sendResetPasswordEmailDto** | [**\Yoast\MyYoastApiClient\Model\SendResetPasswordEmailDto**](../Model/SendResetPasswordEmailDto.md)|  |
 
 ### Return type
 
@@ -5792,29 +1948,35 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **customerSignup**
-> object customerSignup($signup_data)
+# **apiCustomersSignupPost**
+> object apiCustomersSignupPost($signupAccountDto)
 
-Signup: Creates an account for a new user.
+Signup a customer on yoast.com.
+
+Using this route, a new account can be created on yoast.com
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$signup_data = NULL; // object | 
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$signupAccountDto = new \Yoast\MyYoastApiClient\Model\SignupAccountDto(); // \Yoast\MyYoastApiClient\Model\SignupAccountDto | 
 
 try {
-    $result = $api_instance->customerSignup($signup_data);
+    $result = $apiInstance->apiCustomersSignupPost($signupAccountDto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerSignup: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersSignupPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -5823,7 +1985,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **signup_data** | **object**|  | [optional]
+ **signupAccountDto** | [**\Yoast\MyYoastApiClient\Model\SignupAccountDto**](../Model/SignupAccountDto.md)|  |
 
 ### Return type
 
@@ -5835,141 +1997,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerUpdateAll**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2002 customerUpdateAll($where, $data)
-
-Update instances of the model matched by {{where}} from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\Customer(); // \Yoast\MyYoastApiClient\Model\Customer | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->customerUpdateAll($where, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerUpdateAll: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerUploadAvatar**
-> object customerUploadAvatar($id)
-
-Uploads a new avatar.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$id = "id_example"; // string | 
-
-try {
-    $result = $api_instance->customerUploadAvatar($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerUploadAvatar: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **customerUpsertWithWhere**
-> \Yoast\MyYoastApiClient\Model\Customer customerUpsertWithWhere($where, $data)
-
-Update an existing model instance or insert a new one into the data source based on the where criteria.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\CustomerApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\Customer(); // \Yoast\MyYoastApiClient\Model\Customer | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->customerUpsertWithWhere($where, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->customerUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

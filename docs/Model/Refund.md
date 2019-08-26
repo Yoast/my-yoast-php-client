@@ -4,12 +4,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
-**order_id** | **string** |  | 
-**amount** | **double** |  | 
+**amount** | **int** |  | 
 **date** | [**\DateTime**](\DateTime.md) |  | 
-**reason** | **string** |  | [optional] [default to '']
-**source_id** | **double** |  | [optional] 
-**source_shop_id** | **double** |  | [optional] 
+**modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
+**reason** | **string** |  | 
+**sourceId** | **int** |  | 
+**sourceShopId** | **int** |  | 
+**createdAt** | [**\DateTime**](\DateTime.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

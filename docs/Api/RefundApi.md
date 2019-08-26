@@ -1,72 +1,45 @@
 # Yoast\MyYoastApiClient\RefundApi
 
-All URIs are relative to *https://localhost/api*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**refundCount**](RefundApi.md#refundCount) | **GET** /Refunds/count | Count instances of the model matched by where from the data source.
-[**refundCreate**](RefundApi.md#refundCreate) | **POST** /Refunds | Create a new instance of the model and persist it into the data source.
-[**refundCreateChangeStreamGetRefundsChangeStream**](RefundApi.md#refundCreateChangeStreamGetRefundsChangeStream) | **GET** /Refunds/change-stream | Create a change stream.
-[**refundCreateChangeStreamPostRefundsChangeStream**](RefundApi.md#refundCreateChangeStreamPostRefundsChangeStream) | **POST** /Refunds/change-stream | Create a change stream.
-[**refundDeleteById**](RefundApi.md#refundDeleteById) | **DELETE** /Refunds/{id} | Delete a model instance by {{id}} from the data source.
-[**refundExistsGetRefundsidExists**](RefundApi.md#refundExistsGetRefundsidExists) | **GET** /Refunds/{id}/exists | Check whether a model instance exists in the data source.
-[**refundExistsHeadRefundsid**](RefundApi.md#refundExistsHeadRefundsid) | **HEAD** /Refunds/{id} | Check whether a model instance exists in the data source.
-[**refundFind**](RefundApi.md#refundFind) | **GET** /Refunds | Find all instances of the model matched by filter from the data source.
-[**refundFindById**](RefundApi.md#refundFindById) | **GET** /Refunds/{id} | Find a model instance by {{id}} from the data source.
-[**refundFindOne**](RefundApi.md#refundFindOne) | **GET** /Refunds/findOne | Find first instance of the model matched by filter from the data source.
-[**refundPatchOrCreate**](RefundApi.md#refundPatchOrCreate) | **PATCH** /Refunds | Patch an existing model instance or insert a new one into the data source.
-[**refundPrototypeCountInvoices**](RefundApi.md#refundPrototypeCountInvoices) | **GET** /Refunds/{id}/invoices/count | Counts invoices of Refund.
-[**refundPrototypeCountLineItems**](RefundApi.md#refundPrototypeCountLineItems) | **GET** /Refunds/{id}/lineItems/count | Counts lineItems of Refund.
-[**refundPrototypeCountRefundLineItems**](RefundApi.md#refundPrototypeCountRefundLineItems) | **GET** /Refunds/{id}/refundLineItems/count | Counts refundLineItems of Refund.
-[**refundPrototypeCreateInvoices**](RefundApi.md#refundPrototypeCreateInvoices) | **POST** /Refunds/{id}/invoices | Creates a new instance in invoices of this model.
-[**refundPrototypeCreateLineItems**](RefundApi.md#refundPrototypeCreateLineItems) | **POST** /Refunds/{id}/lineItems | Creates a new instance in lineItems of this model.
-[**refundPrototypeCreateRefundLineItems**](RefundApi.md#refundPrototypeCreateRefundLineItems) | **POST** /Refunds/{id}/refundLineItems | Creates a new instance in refundLineItems of this model.
-[**refundPrototypeDeleteInvoices**](RefundApi.md#refundPrototypeDeleteInvoices) | **DELETE** /Refunds/{id}/invoices | Deletes all invoices of this model.
-[**refundPrototypeDeleteLineItems**](RefundApi.md#refundPrototypeDeleteLineItems) | **DELETE** /Refunds/{id}/lineItems | Deletes all lineItems of this model.
-[**refundPrototypeDeleteRefundLineItems**](RefundApi.md#refundPrototypeDeleteRefundLineItems) | **DELETE** /Refunds/{id}/refundLineItems | Deletes all refundLineItems of this model.
-[**refundPrototypeDestroyByIdInvoices**](RefundApi.md#refundPrototypeDestroyByIdInvoices) | **DELETE** /Refunds/{id}/invoices/{fk} | Delete a related item by id for invoices.
-[**refundPrototypeDestroyByIdLineItems**](RefundApi.md#refundPrototypeDestroyByIdLineItems) | **DELETE** /Refunds/{id}/lineItems/{fk} | Delete a related item by id for lineItems.
-[**refundPrototypeDestroyByIdRefundLineItems**](RefundApi.md#refundPrototypeDestroyByIdRefundLineItems) | **DELETE** /Refunds/{id}/refundLineItems/{fk} | Delete a related item by id for refundLineItems.
-[**refundPrototypeExistsLineItems**](RefundApi.md#refundPrototypeExistsLineItems) | **HEAD** /Refunds/{id}/lineItems/rel/{fk} | Check the existence of lineItems relation to an item by id.
-[**refundPrototypeFindByIdInvoices**](RefundApi.md#refundPrototypeFindByIdInvoices) | **GET** /Refunds/{id}/invoices/{fk} | Find a related item by id for invoices.
-[**refundPrototypeFindByIdLineItems**](RefundApi.md#refundPrototypeFindByIdLineItems) | **GET** /Refunds/{id}/lineItems/{fk} | Find a related item by id for lineItems.
-[**refundPrototypeFindByIdRefundLineItems**](RefundApi.md#refundPrototypeFindByIdRefundLineItems) | **GET** /Refunds/{id}/refundLineItems/{fk} | Find a related item by id for refundLineItems.
-[**refundPrototypeGetInvoices**](RefundApi.md#refundPrototypeGetInvoices) | **GET** /Refunds/{id}/invoices | Queries invoices of Refund.
-[**refundPrototypeGetLineItems**](RefundApi.md#refundPrototypeGetLineItems) | **GET** /Refunds/{id}/lineItems | Queries lineItems of Refund.
-[**refundPrototypeGetOrder**](RefundApi.md#refundPrototypeGetOrder) | **GET** /Refunds/{id}/order | Fetches belongsTo relation order.
-[**refundPrototypeGetRefundLineItems**](RefundApi.md#refundPrototypeGetRefundLineItems) | **GET** /Refunds/{id}/refundLineItems | Queries refundLineItems of Refund.
-[**refundPrototypeLinkLineItems**](RefundApi.md#refundPrototypeLinkLineItems) | **PUT** /Refunds/{id}/lineItems/rel/{fk} | Add a related item by id for lineItems.
-[**refundPrototypePatchAttributes**](RefundApi.md#refundPrototypePatchAttributes) | **PATCH** /Refunds/{id} | Patch attributes for a model instance and persist it into the data source.
-[**refundPrototypeUnlinkLineItems**](RefundApi.md#refundPrototypeUnlinkLineItems) | **DELETE** /Refunds/{id}/lineItems/rel/{fk} | Remove the lineItems relation to an item by id.
-[**refundPrototypeUpdateByIdInvoices**](RefundApi.md#refundPrototypeUpdateByIdInvoices) | **PUT** /Refunds/{id}/invoices/{fk} | Update a related item by id for invoices.
-[**refundPrototypeUpdateByIdLineItems**](RefundApi.md#refundPrototypeUpdateByIdLineItems) | **PUT** /Refunds/{id}/lineItems/{fk} | Update a related item by id for lineItems.
-[**refundPrototypeUpdateByIdRefundLineItems**](RefundApi.md#refundPrototypeUpdateByIdRefundLineItems) | **PUT** /Refunds/{id}/refundLineItems/{fk} | Update a related item by id for refundLineItems.
-[**refundReplaceByIdPostRefundsidReplace**](RefundApi.md#refundReplaceByIdPostRefundsidReplace) | **POST** /Refunds/{id}/replace | Replace attributes for a model instance and persist it into the data source.
-[**refundReplaceByIdPutRefundsid**](RefundApi.md#refundReplaceByIdPutRefundsid) | **PUT** /Refunds/{id} | Replace attributes for a model instance and persist it into the data source.
-[**refundReplaceOrCreatePostRefundsReplaceOrCreate**](RefundApi.md#refundReplaceOrCreatePostRefundsReplaceOrCreate) | **POST** /Refunds/replaceOrCreate | Replace an existing model instance or insert a new one into the data source.
-[**refundReplaceOrCreatePutRefunds**](RefundApi.md#refundReplaceOrCreatePutRefunds) | **PUT** /Refunds | Replace an existing model instance or insert a new one into the data source.
-[**refundUpdateAll**](RefundApi.md#refundUpdateAll) | **POST** /Refunds/update | Update instances of the model matched by {{where}} from the data source.
-[**refundUpsertWithWhere**](RefundApi.md#refundUpsertWithWhere) | **POST** /Refunds/upsertWithWhere | Update an existing model instance or insert a new one into the data source based on the where criteria.
+[**apiRefundsBulkPost**](RefundApi.md#apiRefundsBulkPost) | **POST** /api/Refunds/bulk | Create many Refund
+[**apiRefundsGet**](RefundApi.md#apiRefundsGet) | **GET** /api/Refunds | Retrieve many Refund
+[**apiRefundsIdDelete**](RefundApi.md#apiRefundsIdDelete) | **DELETE** /api/Refunds/{id} | Delete one Refund
+[**apiRefundsIdGet**](RefundApi.md#apiRefundsIdGet) | **GET** /api/Refunds/{id} | Retrieve one Refund
+[**apiRefundsIdPatch**](RefundApi.md#apiRefundsIdPatch) | **PATCH** /api/Refunds/{id} | Update one Refund
+[**apiRefundsPost**](RefundApi.md#apiRefundsPost) | **POST** /api/Refunds | Create one Refund
 
 
-# **refundCount**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 refundCount($where)
+# **apiRefundsBulkPost**
+> \Yoast\MyYoastApiClient\Model\Refund[] apiRefundsBulkPost($bulkDto)
 
-Count instances of the model matched by where from the data source.
+Create many Refund
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$where = "where_example"; // string | Criteria to match model instances
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$bulkDto = new \Yoast\MyYoastApiClient\Model\BulkDto(); // \Yoast\MyYoastApiClient\Model\BulkDto | 
 
 try {
-    $result = $api_instance->refundCount($where);
+    $result = $apiInstance->apiRefundsBulkPost($bulkDto);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundCount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundApi->apiRefundsBulkPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -75,308 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundCreate**
-> \Yoast\MyYoastApiClient\Model\Refund refundCreate($data)
-
-Create a new instance of the model and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
-
-try {
-    $result = $api_instance->refundCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundCreateChangeStreamGetRefundsChangeStream**
-> \SplFileObject refundCreateChangeStreamGetRefundsChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->refundCreateChangeStreamGetRefundsChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundCreateChangeStreamGetRefundsChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundCreateChangeStreamPostRefundsChangeStream**
-> \SplFileObject refundCreateChangeStreamPostRefundsChangeStream($options)
-
-Create a change stream.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$options = "options_example"; // string | 
-
-try {
-    $result = $api_instance->refundCreateChangeStreamPostRefundsChangeStream($options);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundCreateChangeStreamPostRefundsChangeStream: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **options** | **string**|  | [optional]
-
-### Return type
-
-[**\SplFileObject**](../Model/\SplFileObject.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundDeleteById**
-> object refundDeleteById($id)
-
-Delete a model instance by {{id}} from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->refundDeleteById($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundDeleteById: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundExistsGetRefundsidExists**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 refundExistsGetRefundsidExists($id)
-
-Check whether a model instance exists in the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->refundExistsGetRefundsidExists($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundExistsGetRefundsidExists: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundExistsHeadRefundsid**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2001 refundExistsHeadRefundsid($id)
-
-Check whether a model instance exists in the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Model id
-
-try {
-    $result = $api_instance->refundExistsHeadRefundsid($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundExistsHeadRefundsid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundFind**
-> \Yoast\MyYoastApiClient\Model\Refund[] refundFind($filter)
-
-Find all instances of the model matched by filter from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
-
-try {
-    $result = $api_instance->refundFind($filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundFind: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **bulkDto** | [**\Yoast\MyYoastApiClient\Model\BulkDto**](../Model/BulkDto.md)|  |
 
 ### Return type
 
@@ -384,34 +56,51 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **refundFindById**
-> \Yoast\MyYoastApiClient\Model\Refund refundFindById($id, $filter)
+# **apiRefundsGet**
+> \Yoast\MyYoastApiClient\Model\Refund[] apiRefundsGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache)
 
-Find a model instance by {{id}} from the data source.
+Retrieve many Refund
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Model id
-$filter = "filter_example"; // string | Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$filter = "filter_example"; // string | <h4>Adds fields request condition (multiple conditions) to the request.</h4><i>Syntax:</i> <strong>?filter[]=field||condition||value</strong><br/><i>Examples:</i> <ul><li><strong>?filter[]=name||eq||batman</strong></li><li><strong>?filter[]=isVillain||eq||false&filter[]=city||eq||Arkham</strong> (multiple filters are treated as a combination of AND type of conditions)</li><li><strong>?filter[]=shots||in||12,26</strong> (some conditions accept multiple values separated by commas)</li><li><strong>?filter[]=power||isnull</strong> (some conditions don't accept value)</li></ul><br/>Filter Conditions:<ul><li><strong><code>eq</code></strong> (<code>=</code>, equal)</li><li><strong><code>ne</code></strong> (<code>!=</code>, not equal)</li><li><strong><code>gt</code></strong> (<code>&gt;</code>, greater than)</li><li><strong><code>lt</code></strong> (<code>&lt;</code>, lower that)</li><li><strong><code>gte</code></strong> (<code>&gt;=</code>, greater than or equal)</li><li><strong><code>lte</code></strong> (<code>&lt;=</code>, lower than or equal)</li><li><strong><code>starts</code></strong> (<code>LIKE val%</code>, starts with)</li><li><strong><code>ends</code></strong> (<code>LIKE %val</code>, ends with)</li><li><strong><code>cont</code></strong> (<code>LIKE %val%</code>, contains)</li><li><strong><code>excl</code></strong> (<code>NOT LIKE %val%</code>, not contains)</li><li><strong><code>in</code></strong> (<code>IN</code>, in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>notin</code></strong> (<code>NOT IN</code>, not in range, <strong><em>accepts multiple values</em></strong>)</li><li><strong><code>isnull</code></strong> (<code>IS NULL</code>, is NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>notnull</code></strong> (<code>IS NOT NULL</code>, not NULL, <strong><em>doesn't accept value</em></strong>)</li><li><strong><code>between</code></strong> (<code>BETWEEN</code>, between, <strong><em>accepts two values</em></strong>)</li></ul>
+$or = "or_example"; // string | <h4>Adds <code>OR</code> conditions to the request.</h4><i>Syntax:</i> <strong>?or[]=field||condition||value</strong><br/>It uses the same conditions as the filter parameter<br/><i>Rules and <i>Examples:</i></i><ul><li>If there is only <strong>one</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as simple filter:</li><ul><li><strong>?or[]=name||eq||batman</strong></li></ul></ul><ul><li>If there are <strong>multiple</strong> <code>or</code> present (without <code>filter</code>) then it will be interpreted as a compination of <code>OR</code> conditions, as follows:<br><code>WHERE {or} OR {or} OR ...</code></li><ul><li><strong>?or[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If there are <strong>one</strong> <code>or</code> and <strong>one</strong> <code>filter</code> then it will be interpreted as <code>OR</code> condition, as follows:<br><code>WHERE {filter} OR {or}</code></li><ul><li><strong>?filter[]=name||eq||batman&or[]=name||eq||joker</strong></li></ul></ul><ul><li>If present <strong>both</strong> <code>or</code> and <code>filter</code> in any amount (<strong>one</strong> or <strong>miltiple</strong> each) then both interpreted as a combitation of <code>AND</code> conditions and compared with each other by <code>OR</code> condition, as follows:<br><code>WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)</code></li><ul><li><strong>?filter[]=type||eq||hero&filter[]=status||eq||alive&or[]=type||eq||villain&or[]=status||eq||dead</strong></li></ul></ul>
+$sort = "sort_example"; // string | <h4>Adds sort by field (by multiple fields) and order to query result.</h4><i>Syntax:</i> <strong>?sort[]=field,ASC|DESC</strong><br/><i>Examples:</i></i><ul><li><strong>?sort[]=name,ASC</strong></li><li><strong>?sort[]=name,ASC&sort[]=id,DESC</strong></li></ul>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$perPage = 8.14; // float | <h4>Receive <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?per_page=number</strong><br/><i>Example:</i> <strong>?per_page=10</strong>
+$offset = 8.14; // float | <h4>Offset <code>N</code> amount of entities.</h4><i>Syntax:</i> <strong>?offset=number</strong><br/><i>Example:</i> <strong>?offset=10</strong>
+$page = 8.14; // float | <h4>Receive a portion of <code>limit</code> entities (alternative to <code>offset</code>). Will be applied if <code>limit</code> is set up.</h4><i>Syntax:</i> <strong>?page=number</strong><br/><i>Example:</i> <strong>?page=2</strong>
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->refundFindById($id, $filter);
+    $result = $apiInstance->apiRefundsGet($fields, $filter, $or, $sort, $join, $perPage, $offset, $page, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundFindById: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundApi->apiRefundsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -420,8 +109,68 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **filter** | **string**| Filter defining fields and include - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **filter** | **string**| &lt;h4&gt;Adds fields request condition (multiple conditions) to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?filter[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt; &lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;isVillain||eq||false&amp;filter[]&#x3D;city||eq||Arkham&lt;/strong&gt; (multiple filters are treated as a combination of AND type of conditions)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;shots||in||12,26&lt;/strong&gt; (some conditions accept multiple values separated by commas)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;power||isnull&lt;/strong&gt; (some conditions don&#39;t accept value)&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;Filter Conditions:&lt;ul&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;eq&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&#x3D;&lt;/code&gt;, equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ne&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;!&#x3D;&lt;/code&gt;, not equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&lt;/code&gt;, greater than)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lt&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&lt;/code&gt;, lower that)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;gte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;gt;&#x3D;&lt;/code&gt;, greater than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;lte&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;&amp;lt;&#x3D;&lt;/code&gt;, lower than or equal)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;starts&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE val%&lt;/code&gt;, starts with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;ends&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val&lt;/code&gt;, ends with)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;cont&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;LIKE %val%&lt;/code&gt;, contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;excl&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT LIKE %val%&lt;/code&gt;, not contains)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;in&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IN&lt;/code&gt;, in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notin&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;NOT IN&lt;/code&gt;, not in range, &lt;strong&gt;&lt;em&gt;accepts multiple values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;isnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NULL&lt;/code&gt;, is NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;notnull&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;IS NOT NULL&lt;/code&gt;, not NULL, &lt;strong&gt;&lt;em&gt;doesn&#39;t accept value&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;li&gt;&lt;strong&gt;&lt;code&gt;between&lt;/code&gt;&lt;/strong&gt; (&lt;code&gt;BETWEEN&lt;/code&gt;, between, &lt;strong&gt;&lt;em&gt;accepts two values&lt;/em&gt;&lt;/strong&gt;)&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **or** | **string**| &lt;h4&gt;Adds &lt;code&gt;OR&lt;/code&gt; conditions to the request.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?or[]&#x3D;field||condition||value&lt;/strong&gt;&lt;br/&gt;It uses the same conditions as the filter parameter&lt;br/&gt;&lt;i&gt;Rules and &lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;If there is only &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as simple filter:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;multiple&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; present (without &lt;code&gt;filter&lt;/code&gt;) then it will be interpreted as a compination of &lt;code&gt;OR&lt;/code&gt; conditions, as follows:&lt;br&gt;&lt;code&gt;WHERE {or} OR {or} OR ...&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?or[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If there are &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;strong&gt;one&lt;/strong&gt; &lt;code&gt;filter&lt;/code&gt; then it will be interpreted as &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE {filter} OR {or}&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;name||eq||batman&amp;or[]&#x3D;name||eq||joker&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;ul&gt;&lt;li&gt;If present &lt;strong&gt;both&lt;/strong&gt; &lt;code&gt;or&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; in any amount (&lt;strong&gt;one&lt;/strong&gt; or &lt;strong&gt;miltiple&lt;/strong&gt; each) then both interpreted as a combitation of &lt;code&gt;AND&lt;/code&gt; conditions and compared with each other by &lt;code&gt;OR&lt;/code&gt; condition, as follows:&lt;br&gt;&lt;code&gt;WHERE ({filter} AND {filter} AND ...) OR ({or} AND {or} AND ...)&lt;/code&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?filter[]&#x3D;type||eq||hero&amp;filter[]&#x3D;status||eq||alive&amp;or[]&#x3D;type||eq||villain&amp;or[]&#x3D;status||eq||dead&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt; | [optional]
+ **sort** | **string**| &lt;h4&gt;Adds sort by field (by multiple fields) and order to query result.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?sort[]&#x3D;field,ASC|DESC&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?sort[]&#x3D;name,ASC&amp;sort[]&#x3D;id,DESC&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **perPage** | **float**| &lt;h4&gt;Receive &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?per_page&#x3D;10&lt;/strong&gt; | [optional]
+ **offset** | **float**| &lt;h4&gt;Offset &lt;code&gt;N&lt;/code&gt; amount of entities.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?offset&#x3D;10&lt;/strong&gt; | [optional]
+ **page** | **float**| &lt;h4&gt;Receive a portion of &lt;code&gt;limit&lt;/code&gt; entities (alternative to &lt;code&gt;offset&lt;/code&gt;). Will be applied if &lt;code&gt;limit&lt;/code&gt; is set up.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?page&#x3D;number&lt;/strong&gt;&lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?page&#x3D;2&lt;/strong&gt; | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Refund[]**](../Model/Refund.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiRefundsIdDelete**
+> \Yoast\MyYoastApiClient\Model\Refund apiRefundsIdDelete($id)
+
+Delete one Refund
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+
+try {
+    $result = $apiInstance->apiRefundsIdDelete($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling RefundApi->apiRefundsIdDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
 
 ### Return type
 
@@ -429,33 +178,46 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **refundFindOne**
-> \Yoast\MyYoastApiClient\Model\Refund refundFindOne($filter)
+# **apiRefundsIdGet**
+> \Yoast\MyYoastApiClient\Model\Refund apiRefundsIdGet($id, $fields, $join, $cache)
 
-Find first instance of the model matched by filter from the data source.
+Retrieve one Refund
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$filter = "filter_example"; // string | Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$fields = "fields_example"; // string | <h4>Selects fields that should be returned in the reponse body.</h4><i>Syntax:</i> <strong>?fields=field1,field2,...</strong> <br/><i>Example:</i> <strong>?fields=email,name</strong>
+$join = "join_example"; // string | <h4>Receive joined relational objects in GET result (with all or selected fields).</h4><i>Syntax:</i><ul><li><strong>?join[]=relation</strong></li><li><strong>?join[]=relation||field1,field2,...</strong></li><li><strong>?join[]=relation1||field11,field12,...&join[]=relation1.nested||field21,field22,...&join[]=...</strong></li></ul><br/><i>Examples:</i></i><ul><li><strong>?join[]=profile</strong></li><li><strong>?join[]=profile||firstName,email</strong></li><li><strong>?join[]=profile||firstName,email&join[]=notifications||content&join[]=tasks</strong></li><li><strong>?join[]=relation1&join[]=relation1.nested&join[]=relation1.nested.deepnested</strong></li></ul><strong><i>Notice:</i></strong> <code>id</code> field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above.
+$cache = 8.14; // float | <h4>Reset cache (if was enabled) and receive entities from the DB.</h4><i>Usage:</i> <strong>?cache=0</strong>
 
 try {
-    $result = $api_instance->refundFindOne($filter);
+    $result = $apiInstance->apiRefundsIdGet($id, $fields, $join, $cache);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundFindOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundApi->apiRefundsIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -464,7 +226,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **string**| Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\&quot;something\&quot;:\&quot;value\&quot;}) | [optional]
+ **id** | **string**|  |
+ **fields** | **string**| &lt;h4&gt;Selects fields that should be returned in the reponse body.&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;field1,field2,...&lt;/strong&gt; &lt;br/&gt;&lt;i&gt;Example:&lt;/i&gt; &lt;strong&gt;?fields&#x3D;email,name&lt;/strong&gt; | [optional]
+ **join** | **string**| &lt;h4&gt;Receive joined relational objects in GET result (with all or selected fields).&lt;/h4&gt;&lt;i&gt;Syntax:&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation||field1,field2,...&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1||field11,field12,...&amp;join[]&#x3D;relation1.nested||field21,field22,...&amp;join[]&#x3D;...&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;br/&gt;&lt;i&gt;Examples:&lt;/i&gt;&lt;/i&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;profile||firstName,email&amp;join[]&#x3D;notifications||content&amp;join[]&#x3D;tasks&lt;/strong&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;?join[]&#x3D;relation1&amp;join[]&#x3D;relation1.nested&amp;join[]&#x3D;relation1.nested.deepnested&lt;/strong&gt;&lt;/li&gt;&lt;/ul&gt;&lt;strong&gt;&lt;i&gt;Notice:&lt;/i&gt;&lt;/strong&gt; &lt;code&gt;id&lt;/code&gt; field always persists in relational objects. To use nested relations, the parent level MUST be set before the child level like example above. | [optional]
+ **cache** | **float**| &lt;h4&gt;Reset cache (if was enabled) and receive entities from the DB.&lt;/h4&gt;&lt;i&gt;Usage:&lt;/i&gt; &lt;strong&gt;?cache&#x3D;0&lt;/strong&gt; | [optional]
 
 ### Return type
 
@@ -472,33 +237,44 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **refundPatchOrCreate**
-> \Yoast\MyYoastApiClient\Model\Refund refundPatchOrCreate($data)
+# **apiRefundsIdPatch**
+> \Yoast\MyYoastApiClient\Model\Refund apiRefundsIdPatch($refund, $id)
 
-Patch an existing model instance or insert a new one into the data source.
+Update one Refund
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$refund = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | 
+$id = "id_example"; // string | 
 
 try {
-    $result = $api_instance->refundPatchOrCreate($data);
+    $result = $apiInstance->apiRefundsIdPatch($refund, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPatchOrCreate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundApi->apiRefundsIdPatch: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -507,7 +283,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)| Model instance data | [optional]
+ **refund** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)|  |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -515,34 +292,43 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **refundPrototypeCountInvoices**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 refundPrototypeCountInvoices($id, $where)
+# **apiRefundsPost**
+> \Yoast\MyYoastApiClient\Model\Refund apiRefundsPost($refund)
 
-Counts invoices of Refund.
+Create one Refund
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$where = "where_example"; // string | Criteria to match model instances
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$refund = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | 
 
 try {
-    $result = $api_instance->refundPrototypeCountInvoices($id, $where);
+    $result = $apiInstance->apiRefundsPost($refund);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeCountInvoices: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundApi->apiRefundsPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -551,943 +337,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeCountLineItems**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 refundPrototypeCountLineItems($id, $where)
-
-Counts lineItems of Refund.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->refundPrototypeCountLineItems($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeCountLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeCountRefundLineItems**
-> \Yoast\MyYoastApiClient\Model\InlineResponse200 refundPrototypeCountRefundLineItems($id, $where)
-
-Counts refundLineItems of Refund.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$where = "where_example"; // string | Criteria to match model instances
-
-try {
-    $result = $api_instance->refundPrototypeCountRefundLineItems($id, $where);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeCountRefundLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **where** | **string**| Criteria to match model instances | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeCreateInvoices**
-> \Yoast\MyYoastApiClient\Model\Invoice refundPrototypeCreateInvoices($id, $data)
-
-Creates a new instance in invoices of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$data = new \Yoast\MyYoastApiClient\Model\Invoice(); // \Yoast\MyYoastApiClient\Model\Invoice | 
-
-try {
-    $result = $api_instance->refundPrototypeCreateInvoices($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeCreateInvoices: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Invoice**](../Model/Invoice.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Invoice**](../Model/Invoice.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeCreateLineItems**
-> \Yoast\MyYoastApiClient\Model\LineItem refundPrototypeCreateLineItems($id, $data)
-
-Creates a new instance in lineItems of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | 
-
-try {
-    $result = $api_instance->refundPrototypeCreateLineItems($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeCreateLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeCreateRefundLineItems**
-> \Yoast\MyYoastApiClient\Model\RefundLineItem refundPrototypeCreateRefundLineItems($id, $data)
-
-Creates a new instance in refundLineItems of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$data = new \Yoast\MyYoastApiClient\Model\RefundLineItem(); // \Yoast\MyYoastApiClient\Model\RefundLineItem | 
-
-try {
-    $result = $api_instance->refundPrototypeCreateRefundLineItems($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeCreateRefundLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **data** | [**\Yoast\MyYoastApiClient\Model\RefundLineItem**](../Model/RefundLineItem.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\RefundLineItem**](../Model/RefundLineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeDeleteInvoices**
-> refundPrototypeDeleteInvoices($id)
-
-Deletes all invoices of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-
-try {
-    $api_instance->refundPrototypeDeleteInvoices($id);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeDeleteInvoices: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeDeleteLineItems**
-> refundPrototypeDeleteLineItems($id)
-
-Deletes all lineItems of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-
-try {
-    $api_instance->refundPrototypeDeleteLineItems($id);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeDeleteLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeDeleteRefundLineItems**
-> refundPrototypeDeleteRefundLineItems($id)
-
-Deletes all refundLineItems of this model.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-
-try {
-    $api_instance->refundPrototypeDeleteRefundLineItems($id);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeDeleteRefundLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeDestroyByIdInvoices**
-> refundPrototypeDestroyByIdInvoices($id, $fk)
-
-Delete a related item by id for invoices.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for invoices
-
-try {
-    $api_instance->refundPrototypeDestroyByIdInvoices($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeDestroyByIdInvoices: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for invoices |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeDestroyByIdLineItems**
-> refundPrototypeDestroyByIdLineItems($id, $fk)
-
-Delete a related item by id for lineItems.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for lineItems
-
-try {
-    $api_instance->refundPrototypeDestroyByIdLineItems($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeDestroyByIdLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for lineItems |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeDestroyByIdRefundLineItems**
-> refundPrototypeDestroyByIdRefundLineItems($id, $fk)
-
-Delete a related item by id for refundLineItems.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for refundLineItems
-
-try {
-    $api_instance->refundPrototypeDestroyByIdRefundLineItems($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeDestroyByIdRefundLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for refundLineItems |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeExistsLineItems**
-> bool refundPrototypeExistsLineItems($id, $fk)
-
-Check the existence of lineItems relation to an item by id.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for lineItems
-
-try {
-    $result = $api_instance->refundPrototypeExistsLineItems($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeExistsLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for lineItems |
-
-### Return type
-
-**bool**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeFindByIdInvoices**
-> \Yoast\MyYoastApiClient\Model\Invoice refundPrototypeFindByIdInvoices($id, $fk)
-
-Find a related item by id for invoices.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for invoices
-
-try {
-    $result = $api_instance->refundPrototypeFindByIdInvoices($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeFindByIdInvoices: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for invoices |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Invoice**](../Model/Invoice.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeFindByIdLineItems**
-> \Yoast\MyYoastApiClient\Model\LineItem refundPrototypeFindByIdLineItems($id, $fk)
-
-Find a related item by id for lineItems.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for lineItems
-
-try {
-    $result = $api_instance->refundPrototypeFindByIdLineItems($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeFindByIdLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for lineItems |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeFindByIdRefundLineItems**
-> \Yoast\MyYoastApiClient\Model\RefundLineItem refundPrototypeFindByIdRefundLineItems($id, $fk)
-
-Find a related item by id for refundLineItems.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for refundLineItems
-
-try {
-    $result = $api_instance->refundPrototypeFindByIdRefundLineItems($id, $fk);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeFindByIdRefundLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for refundLineItems |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\RefundLineItem**](../Model/RefundLineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeGetInvoices**
-> \Yoast\MyYoastApiClient\Model\Invoice[] refundPrototypeGetInvoices($id, $filter)
-
-Queries invoices of Refund.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->refundPrototypeGetInvoices($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeGetInvoices: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Invoice[]**](../Model/Invoice.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeGetLineItems**
-> \Yoast\MyYoastApiClient\Model\LineItem[] refundPrototypeGetLineItems($id, $filter)
-
-Queries lineItems of Refund.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->refundPrototypeGetLineItems($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeGetLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\LineItem[]**](../Model/LineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeGetOrder**
-> \Yoast\MyYoastApiClient\Model\Order refundPrototypeGetOrder($id, $refresh)
-
-Fetches belongsTo relation order.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$refresh = true; // bool | 
-
-try {
-    $result = $api_instance->refundPrototypeGetOrder($id, $refresh);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeGetOrder: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **refresh** | **bool**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeGetRefundLineItems**
-> \Yoast\MyYoastApiClient\Model\RefundLineItem[] refundPrototypeGetRefundLineItems($id, $filter)
-
-Queries refundLineItems of Refund.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$filter = "filter_example"; // string | 
-
-try {
-    $result = $api_instance->refundPrototypeGetRefundLineItems($id, $filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeGetRefundLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **filter** | **string**|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\RefundLineItem[]**](../Model/RefundLineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeLinkLineItems**
-> \Yoast\MyYoastApiClient\Model\RefundLineItem refundPrototypeLinkLineItems($id, $fk, $data)
-
-Add a related item by id for lineItems.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for lineItems
-$data = new \Yoast\MyYoastApiClient\Model\RefundLineItem(); // \Yoast\MyYoastApiClient\Model\RefundLineItem | 
-
-try {
-    $result = $api_instance->refundPrototypeLinkLineItems($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeLinkLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for lineItems |
- **data** | [**\Yoast\MyYoastApiClient\Model\RefundLineItem**](../Model/RefundLineItem.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\RefundLineItem**](../Model/RefundLineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypePatchAttributes**
-> \Yoast\MyYoastApiClient\Model\Refund refundPrototypePatchAttributes($id, $data)
-
-Patch attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->refundPrototypePatchAttributes($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypePatchAttributes: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)| An object of model property name/value pairs | [optional]
+ **refund** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)|  |
 
 ### Return type
 
@@ -1495,463 +345,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeUnlinkLineItems**
-> refundPrototypeUnlinkLineItems($id, $fk)
-
-Remove the lineItems relation to an item by id.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for lineItems
-
-try {
-    $api_instance->refundPrototypeUnlinkLineItems($id, $fk);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeUnlinkLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for lineItems |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeUpdateByIdInvoices**
-> \Yoast\MyYoastApiClient\Model\Invoice refundPrototypeUpdateByIdInvoices($id, $fk, $data)
-
-Update a related item by id for invoices.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for invoices
-$data = new \Yoast\MyYoastApiClient\Model\Invoice(); // \Yoast\MyYoastApiClient\Model\Invoice | 
-
-try {
-    $result = $api_instance->refundPrototypeUpdateByIdInvoices($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeUpdateByIdInvoices: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for invoices |
- **data** | [**\Yoast\MyYoastApiClient\Model\Invoice**](../Model/Invoice.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Invoice**](../Model/Invoice.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeUpdateByIdLineItems**
-> \Yoast\MyYoastApiClient\Model\LineItem refundPrototypeUpdateByIdLineItems($id, $fk, $data)
-
-Update a related item by id for lineItems.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for lineItems
-$data = new \Yoast\MyYoastApiClient\Model\LineItem(); // \Yoast\MyYoastApiClient\Model\LineItem | 
-
-try {
-    $result = $api_instance->refundPrototypeUpdateByIdLineItems($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeUpdateByIdLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for lineItems |
- **data** | [**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\LineItem**](../Model/LineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundPrototypeUpdateByIdRefundLineItems**
-> \Yoast\MyYoastApiClient\Model\RefundLineItem refundPrototypeUpdateByIdRefundLineItems($id, $fk, $data)
-
-Update a related item by id for refundLineItems.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Refund id
-$fk = "fk_example"; // string | Foreign key for refundLineItems
-$data = new \Yoast\MyYoastApiClient\Model\RefundLineItem(); // \Yoast\MyYoastApiClient\Model\RefundLineItem | 
-
-try {
-    $result = $api_instance->refundPrototypeUpdateByIdRefundLineItems($id, $fk, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundPrototypeUpdateByIdRefundLineItems: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Refund id |
- **fk** | **string**| Foreign key for refundLineItems |
- **data** | [**\Yoast\MyYoastApiClient\Model\RefundLineItem**](../Model/RefundLineItem.md)|  | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\RefundLineItem**](../Model/RefundLineItem.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundReplaceByIdPostRefundsidReplace**
-> \Yoast\MyYoastApiClient\Model\Refund refundReplaceByIdPostRefundsidReplace($id, $data)
-
-Replace attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
-
-try {
-    $result = $api_instance->refundReplaceByIdPostRefundsidReplace($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundReplaceByIdPostRefundsidReplace: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundReplaceByIdPutRefundsid**
-> \Yoast\MyYoastApiClient\Model\Refund refundReplaceByIdPutRefundsid($id, $data)
-
-Replace attributes for a model instance and persist it into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$id = "id_example"; // string | Model id
-$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
-
-try {
-    $result = $api_instance->refundReplaceByIdPutRefundsid($id, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundReplaceByIdPutRefundsid: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| Model id |
- **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundReplaceOrCreatePostRefundsReplaceOrCreate**
-> \Yoast\MyYoastApiClient\Model\Refund refundReplaceOrCreatePostRefundsReplaceOrCreate($data)
-
-Replace an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
-
-try {
-    $result = $api_instance->refundReplaceOrCreatePostRefundsReplaceOrCreate($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundReplaceOrCreatePostRefundsReplaceOrCreate: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundReplaceOrCreatePutRefunds**
-> \Yoast\MyYoastApiClient\Model\Refund refundReplaceOrCreatePutRefunds($data)
-
-Replace an existing model instance or insert a new one into the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | Model instance data
-
-try {
-    $result = $api_instance->refundReplaceOrCreatePutRefunds($data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundReplaceOrCreatePutRefunds: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)| Model instance data | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundUpdateAll**
-> \Yoast\MyYoastApiClient\Model\InlineResponse2002 refundUpdateAll($where, $data)
-
-Update instances of the model matched by {{where}} from the data source.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->refundUpdateAll($where, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundUpdateAll: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **refundUpsertWithWhere**
-> \Yoast\MyYoastApiClient\Model\Refund refundUpsertWithWhere($where, $data)
-
-Update an existing model instance or insert a new one into the data source based on the where criteria.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$api_instance = new Yoast\MyYoastApiClient\Api\RefundApi();
-$where = "where_example"; // string | Criteria to match model instances
-$data = new \Yoast\MyYoastApiClient\Model\Refund(); // \Yoast\MyYoastApiClient\Model\Refund | An object of model property name/value pairs
-
-try {
-    $result = $api_instance->refundUpsertWithWhere($where, $data);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundUpsertWithWhere: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **where** | **string**| Criteria to match model instances | [optional]
- **data** | [**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)| An object of model property name/value pairs | [optional]
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/x-www-form-urlencoded, application/xml, text/xml
- - **Accept**: application/json, application/xml, text/xml, application/javascript, text/javascript
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
