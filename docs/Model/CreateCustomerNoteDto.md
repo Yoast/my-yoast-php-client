@@ -1,4 +1,4 @@
-# BulkDto
+# CreateCustomerNoteDto
 
 ## Properties
 Name | Type | Description | Notes

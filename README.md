@@ -85,76 +85,62 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**authYoastCallbackGet**](docs/Api/AuthApi.md#authyoastcallbackget) | **GET** /auth/yoast/callback | 
 *AuthApi* | [**authYoastGet**](docs/Api/AuthApi.md#authyoastget) | **GET** /auth/yoast | 
 *AuthApi* | [**logoutGet**](docs/Api/AuthApi.md#logoutget) | **GET** /logout | 
-*ComposerTokenApi* | [**apiComposerTokensBulkPost**](docs/Api/ComposerTokenApi.md#apicomposertokensbulkpost) | **POST** /api/ComposerTokens/bulk | Create many ComposerToken
 *ComposerTokenApi* | [**apiComposerTokensGeneratePost**](docs/Api/ComposerTokenApi.md#apicomposertokensgeneratepost) | **POST** /api/ComposerTokens/generate | Generates a Composer token
-*ComposerTokenApi* | [**apiComposerTokensGet**](docs/Api/ComposerTokenApi.md#apicomposertokensget) | **GET** /api/ComposerTokens | Retrieve many ComposerToken
-*ComposerTokenApi* | [**apiComposerTokensIdDelete**](docs/Api/ComposerTokenApi.md#apicomposertokensiddelete) | **DELETE** /api/ComposerTokens/{id} | Delete one ComposerToken
 *ComposerTokenApi* | [**apiComposerTokensIdDeletePost**](docs/Api/ComposerTokenApi.md#apicomposertokensiddeletepost) | **POST** /api/ComposerTokens/{id}/delete | Disable a composer token
-*ComposerTokenApi* | [**apiComposerTokensIdGet**](docs/Api/ComposerTokenApi.md#apicomposertokensidget) | **GET** /api/ComposerTokens/{id} | Retrieve one ComposerToken
-*ComposerTokenApi* | [**apiComposerTokensIdPatch**](docs/Api/ComposerTokenApi.md#apicomposertokensidpatch) | **PATCH** /api/ComposerTokens/{id} | Update one ComposerToken
 *ComposerTokenApi* | [**apiComposerTokensIdRenamePost**](docs/Api/ComposerTokenApi.md#apicomposertokensidrenamepost) | **POST** /api/ComposerTokens/{id}/rename | Renames a Composer token
-*ComposerTokenApi* | [**apiComposerTokensPost**](docs/Api/ComposerTokenApi.md#apicomposertokenspost) | **POST** /api/ComposerTokens | Create one ComposerToken
-*CourseApi* | [**apiCoursesBulkPost**](docs/Api/CourseApi.md#apicoursesbulkpost) | **POST** /api/Courses/bulk | Create many Course
 *CourseApi* | [**apiCoursesFromAcademyPut**](docs/Api/CourseApi.md#apicoursesfromacademyput) | **PUT** /api/Courses/fromAcademy | Upserts a course
-*CourseApi* | [**apiCoursesGet**](docs/Api/CourseApi.md#apicoursesget) | **GET** /api/Courses | Retrieve many Course
-*CourseApi* | [**apiCoursesIdDelete**](docs/Api/CourseApi.md#apicoursesiddelete) | **DELETE** /api/Courses/{id} | Delete one Course
-*CourseApi* | [**apiCoursesIdGet**](docs/Api/CourseApi.md#apicoursesidget) | **GET** /api/Courses/{id} | Retrieve one Course
-*CourseApi* | [**apiCoursesIdPatch**](docs/Api/CourseApi.md#apicoursesidpatch) | **PATCH** /api/Courses/{id} | Update one Course
-*CourseApi* | [**apiCoursesPost**](docs/Api/CourseApi.md#apicoursespost) | **POST** /api/Courses | Create one Course
+*CourseApi* | [**apiCoursesGet**](docs/Api/CourseApi.md#apicoursesget) | **GET** /api/Courses | 
+*CourseApi* | [**apiCoursesIdGet**](docs/Api/CourseApi.md#apicoursesidget) | **GET** /api/Courses/{id} | 
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsBulkInvitePost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsbulkinvitepost) | **POST** /api/CourseEnrollments/bulkInvite | Bulk invite for Course Enrollment.
-*CourseEnrollmentApi* | [**apiCourseEnrollmentsBulkPost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsbulkpost) | **POST** /api/CourseEnrollments/bulk | Create many CourseEnrollment
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsFromAcademyPut**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsfromacademyput) | **PUT** /api/CourseEnrollments/fromAcademy | Update a CourseEnrollment
-*CourseEnrollmentApi* | [**apiCourseEnrollmentsGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsget) | **GET** /api/CourseEnrollments | Retrieve many CourseEnrollment
+*CourseEnrollmentApi* | [**apiCourseEnrollmentsGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsget) | **GET** /api/CourseEnrollments | 
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsGetLegacyExpiringGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsgetlegacyexpiringget) | **GET** /api/CourseEnrollments/getLegacyExpiring | Get legacy course enrollments that expire between two given dates
-*CourseEnrollmentApi* | [**apiCourseEnrollmentsIdDelete**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsiddelete) | **DELETE** /api/CourseEnrollments/{id} | Delete one CourseEnrollment
-*CourseEnrollmentApi* | [**apiCourseEnrollmentsIdGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsidget) | **GET** /api/CourseEnrollments/{id} | Retrieve one CourseEnrollment
+*CourseEnrollmentApi* | [**apiCourseEnrollmentsIdGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsidget) | **GET** /api/CourseEnrollments/{id} | 
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsIdInvitePost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsidinvitepost) | **POST** /api/CourseEnrollments/{id}/invite | Invite a customer
-*CourseEnrollmentApi* | [**apiCourseEnrollmentsIdPatch**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsidpatch) | **PATCH** /api/CourseEnrollments/{id} | Update one CourseEnrollment
-*CourseEnrollmentApi* | [**apiCourseEnrollmentsPost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentspost) | **POST** /api/CourseEnrollments | Create one CourseEnrollment
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsTransferPost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentstransferpost) | **POST** /api/CourseEnrollments/transfer | Transfer course enrollments
 *CustomerApi* | [**apiCustomersActivatePost**](docs/Api/CustomerApi.md#apicustomersactivatepost) | **POST** /api/Customers/activate | Activate the account of a user
 *CustomerApi* | [**apiCustomersAllrolesGet**](docs/Api/CustomerApi.md#apicustomersallrolesget) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
 *CustomerApi* | [**apiCustomersCurrentGet**](docs/Api/CustomerApi.md#apicustomerscurrentget) | **GET** /api/Customers/current | Get the current customer
 *CustomerApi* | [**apiCustomersCustomerIdBuyerCourseEnrollmentsGet**](docs/Api/CustomerApi.md#apicustomerscustomeridbuyercourseenrollmentsget) | **GET** /api/Customers/{customerId}/buyerCourseEnrollments | Find Course Enrollments that a customer is buyer of
-*CustomerApi* | [**apiCustomersCustomerIdComposerTokensGet**](docs/Api/CustomerApi.md#apicustomerscustomeridcomposertokensget) | **GET** /api/Customers/{customerId}/composerTokens | Retrieve many ComposerToken
-*CustomerApi* | [**apiCustomersCustomerIdComposerTokensIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridcomposertokensidget) | **GET** /api/Customers/{customerId}/composerTokens/{id} | Retrieve one ComposerToken
+*CustomerApi* | [**apiCustomersCustomerIdComposerTokensGet**](docs/Api/CustomerApi.md#apicustomerscustomeridcomposertokensget) | **GET** /api/Customers/{customerId}/composerTokens | 
+*CustomerApi* | [**apiCustomersCustomerIdComposerTokensIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridcomposertokensidget) | **GET** /api/Customers/{customerId}/composerTokens/{id} | 
 *CustomerApi* | [**apiCustomersCustomerIdCourseEnrollmentsGet**](docs/Api/CustomerApi.md#apicustomerscustomeridcourseenrollmentsget) | **GET** /api/Customers/{customerId}/courseEnrollments | Find Course Enrollments
+*CustomerApi* | [**apiCustomersCustomerIdIdentitiesGet**](docs/Api/CustomerApi.md#apicustomerscustomerididentitiesget) | **GET** /api/Customers/{customerId}/identities | 
 *CustomerApi* | [**apiCustomersCustomerIdNewsletterDelete**](docs/Api/CustomerApi.md#apicustomerscustomeridnewsletterdelete) | **DELETE** /api/Customers/{customerId}/newsletter | Unsubscribe from the newsletter
 *CustomerApi* | [**apiCustomersCustomerIdNewsletterGet**](docs/Api/CustomerApi.md#apicustomerscustomeridnewsletterget) | **GET** /api/Customers/{customerId}/newsletter | Newsletter subscription status
 *CustomerApi* | [**apiCustomersCustomerIdNewsletterPost**](docs/Api/CustomerApi.md#apicustomerscustomeridnewsletterpost) | **POST** /api/Customers/{customerId}/newsletter | Subscribe to the newsletter
-*CustomerApi* | [**apiCustomersCustomerIdOrdersGet**](docs/Api/CustomerApi.md#apicustomerscustomeridordersget) | **GET** /api/Customers/{customerId}/orders | Retrieve many Order
-*CustomerApi* | [**apiCustomersCustomerIdOrdersIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridordersidget) | **GET** /api/Customers/{customerId}/orders/{id} | Retrieve one Order
-*CustomerApi* | [**apiCustomersCustomerIdSitesGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsitesget) | **GET** /api/Customers/{customerId}/sites | Retrieve many Site
-*CustomerApi* | [**apiCustomersCustomerIdSitesIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsitesidget) | **GET** /api/Customers/{customerId}/sites/{id} | Retrieve one Site
+*CustomerApi* | [**apiCustomersCustomerIdOrdersGet**](docs/Api/CustomerApi.md#apicustomerscustomeridordersget) | **GET** /api/Customers/{customerId}/orders | 
+*CustomerApi* | [**apiCustomersCustomerIdOrdersIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridordersidget) | **GET** /api/Customers/{customerId}/orders/{id} | 
+*CustomerApi* | [**apiCustomersCustomerIdSitesGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsitesget) | **GET** /api/Customers/{customerId}/sites | 
+*CustomerApi* | [**apiCustomersCustomerIdSitesIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsitesidget) | **GET** /api/Customers/{customerId}/sites/{id} | 
 *CustomerApi* | [**apiCustomersCustomerIdSitesPost**](docs/Api/CustomerApi.md#apicustomerscustomeridsitespost) | **POST** /api/Customers/{customerId}/sites | Create a site for a user
 *CustomerApi* | [**apiCustomersCustomerIdStudentCourseEnrollmentsGet**](docs/Api/CustomerApi.md#apicustomerscustomeridstudentcourseenrollmentsget) | **GET** /api/Customers/{customerId}/studentCourseEnrollments | Find Course Enrollments that a customer is student in
-*CustomerApi* | [**apiCustomersCustomerIdSubscriptionsGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionsget) | **GET** /api/Customers/{customerId}/subscriptions | Retrieve many Subscription
-*CustomerApi* | [**apiCustomersCustomerIdSubscriptionsIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionsidget) | **GET** /api/Customers/{customerId}/subscriptions/{id} | Retrieve one Subscription
+*CustomerApi* | [**apiCustomersCustomerIdSubscriptionsGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionsget) | **GET** /api/Customers/{customerId}/subscriptions | 
+*CustomerApi* | [**apiCustomersCustomerIdSubscriptionsIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionsidget) | **GET** /api/Customers/{customerId}/subscriptions/{id} | 
 *CustomerApi* | [**apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionssubscriptionidcancelpost) | **POST** /api/Customers/{customerId}/subscriptions/{subscriptionId}/cancel | Cancel (part of) a subscription.
-*CustomerApi* | [**apiCustomersGet**](docs/Api/CustomerApi.md#apicustomersget) | **GET** /api/Customers | Retrieve many Customer
+*CustomerApi* | [**apiCustomersGet**](docs/Api/CustomerApi.md#apicustomersget) | **GET** /api/Customers | 
 *CustomerApi* | [**apiCustomersIdAvatarPost**](docs/Api/CustomerApi.md#apicustomersidavatarpost) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
 *CustomerApi* | [**apiCustomersIdDownloadGet**](docs/Api/CustomerApi.md#apicustomersiddownloadget) | **GET** /api/Customers/{id}/download | Download profile.
 *CustomerApi* | [**apiCustomersIdEnablePost**](docs/Api/CustomerApi.md#apicustomersidenablepost) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
 *CustomerApi* | [**apiCustomersIdFindRefundsGet**](docs/Api/CustomerApi.md#apicustomersidfindrefundsget) | **GET** /api/Customers/{id}/findRefunds | Find refunds for user
-*CustomerApi* | [**apiCustomersIdGet**](docs/Api/CustomerApi.md#apicustomersidget) | **GET** /api/Customers/{id} | Retrieve one Customer
+*CustomerApi* | [**apiCustomersIdGet**](docs/Api/CustomerApi.md#apicustomersidget) | **GET** /api/Customers/{id} | 
 *CustomerApi* | [**apiCustomersIdPasswordPatch**](docs/Api/CustomerApi.md#apicustomersidpasswordpatch) | **PATCH** /api/Customers/{id}/password | Update a customer&#39;s password in WordPress
-*CustomerApi* | [**apiCustomersIdPatch**](docs/Api/CustomerApi.md#apicustomersidpatch) | **PATCH** /api/Customers/{id} | Update one Customer
+*CustomerApi* | [**apiCustomersIdPatch**](docs/Api/CustomerApi.md#apicustomersidpatch) | **PATCH** /api/Customers/{id} | 
 *CustomerApi* | [**apiCustomersIdProfileGet**](docs/Api/CustomerApi.md#apicustomersidprofileget) | **GET** /api/Customers/{id}/profile | 
 *CustomerApi* | [**apiCustomersIdProfilePatch**](docs/Api/CustomerApi.md#apicustomersidprofilepatch) | **PATCH** /api/Customers/{id}/profile | Update a customer to WordPress
+*CustomerApi* | [**apiCustomersIdRoleMappingDelete**](docs/Api/CustomerApi.md#apicustomersidrolemappingdelete) | **DELETE** /api/Customers/{id}/roleMapping | 
+*CustomerApi* | [**apiCustomersIdRoleMappingPost**](docs/Api/CustomerApi.md#apicustomersidrolemappingpost) | **POST** /api/Customers/{id}/roleMapping | 
+*CustomerApi* | [**apiCustomersIdRolesGet**](docs/Api/CustomerApi.md#apicustomersidrolesget) | **GET** /api/Customers/{id}/roles | 
 *CustomerApi* | [**apiCustomersNewsletterListSubscribePost**](docs/Api/CustomerApi.md#apicustomersnewsletterlistsubscribepost) | **POST** /api/Customers/newsletter/{list}/subscribe | Subscribes a user to a newsletter
 *CustomerApi* | [**apiCustomersNonceGet**](docs/Api/CustomerApi.md#apicustomersnonceget) | **GET** /api/Customers/nonce | Get a nonce from Yoast.com
 *CustomerApi* | [**apiCustomersResetPasswordPatch**](docs/Api/CustomerApi.md#apicustomersresetpasswordpatch) | **PATCH** /api/Customers/resetPassword | Reset the user&#39;s password.
 *CustomerApi* | [**apiCustomersRolemappingIdsGet**](docs/Api/CustomerApi.md#apicustomersrolemappingidsget) | **GET** /api/Customers/rolemapping-ids | Get the ids of all customers with at least one role.
 *CustomerApi* | [**apiCustomersSendResetPasswordEmailPost**](docs/Api/CustomerApi.md#apicustomerssendresetpasswordemailpost) | **POST** /api/Customers/sendResetPasswordEmail | Send a reset password email to the user.
 *CustomerApi* | [**apiCustomersSignupPost**](docs/Api/CustomerApi.md#apicustomerssignuppost) | **POST** /api/Customers/signup | Signup a customer on yoast.com.
-*CustomerNoteApi* | [**apiCustomerNotesBulkPost**](docs/Api/CustomerNoteApi.md#apicustomernotesbulkpost) | **POST** /api/CustomerNotes/bulk | Create many CustomerNote
-*CustomerNoteApi* | [**apiCustomerNotesGet**](docs/Api/CustomerNoteApi.md#apicustomernotesget) | **GET** /api/CustomerNotes | Retrieve many CustomerNote
-*CustomerNoteApi* | [**apiCustomerNotesIdDelete**](docs/Api/CustomerNoteApi.md#apicustomernotesiddelete) | **DELETE** /api/CustomerNotes/{id} | Delete one CustomerNote
-*CustomerNoteApi* | [**apiCustomerNotesIdGet**](docs/Api/CustomerNoteApi.md#apicustomernotesidget) | **GET** /api/CustomerNotes/{id} | Retrieve one CustomerNote
-*CustomerNoteApi* | [**apiCustomerNotesIdPatch**](docs/Api/CustomerNoteApi.md#apicustomernotesidpatch) | **PATCH** /api/CustomerNotes/{id} | Update one CustomerNote
-*CustomerNoteApi* | [**apiCustomerNotesPost**](docs/Api/CustomerNoteApi.md#apicustomernotespost) | **POST** /api/CustomerNotes | Create one CustomerNote
-*DefaultApi* | [**apiCustomersIdRoleMappingDelete**](docs/Api/DefaultApi.md#apicustomersidrolemappingdelete) | **DELETE** /api/Customers/{id}/roleMapping | 
-*DefaultApi* | [**apiCustomersIdRoleMappingPost**](docs/Api/DefaultApi.md#apicustomersidrolemappingpost) | **POST** /api/Customers/{id}/roleMapping | 
+*CustomerNoteApi* | [**apiCustomerNotesGet**](docs/Api/CustomerNoteApi.md#apicustomernotesget) | **GET** /api/CustomerNotes | 
+*CustomerNoteApi* | [**apiCustomerNotesIdDelete**](docs/Api/CustomerNoteApi.md#apicustomernotesiddelete) | **DELETE** /api/CustomerNotes/{id} | 
+*CustomerNoteApi* | [**apiCustomerNotesIdGet**](docs/Api/CustomerNoteApi.md#apicustomernotesidget) | **GET** /api/CustomerNotes/{id} | 
+*CustomerNoteApi* | [**apiCustomerNotesPost**](docs/Api/CustomerNoteApi.md#apicustomernotespost) | **POST** /api/CustomerNotes | 
 *DownloadApi* | [**apiDownloadsFileNameGet**](docs/Api/DownloadApi.md#apidownloadsfilenameget) | **GET** /api/downloads/file/{name} | Route to download a file
 *DownloadApi* | [**apiDownloadsFileNamePost**](docs/Api/DownloadApi.md#apidownloadsfilenamepost) | **POST** /api/downloads/file/{name} | Route to update a file.
 *EDDApi* | [**eddSlApiGet**](docs/Api/EDDApi.md#eddslapiget) | **GET** /edd-sl-api | Activate or deactivate a site license
@@ -166,55 +152,37 @@ Class | Method | HTTP request | Description
 *FromWooCommerceApi* | [**apiProductsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apiproductsfromwoocommerceput) | **PUT** /api/Products/fromWooCommerce | Sync products to MyYoast.
 *FromWooCommerceApi* | [**apiSubscriptionsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apisubscriptionsfromwoocommerceput) | **PUT** /api/Subscriptions/fromWooCommerce | Sync subscriptions to MyYoast.
 *HelpscoutApi* | [**helpscoutPost**](docs/Api/HelpscoutApi.md#helpscoutpost) | **POST** /helpscout | Get information about a customer
-*OrderApi* | [**apiOrdersBulkPost**](docs/Api/OrderApi.md#apiordersbulkpost) | **POST** /api/Orders/bulk | Create many Order
-*OrderApi* | [**apiOrdersGet**](docs/Api/OrderApi.md#apiordersget) | **GET** /api/Orders | Retrieve many Order
-*OrderApi* | [**apiOrdersIdDelete**](docs/Api/OrderApi.md#apiordersiddelete) | **DELETE** /api/Orders/{id} | Delete one Order
-*OrderApi* | [**apiOrdersIdGet**](docs/Api/OrderApi.md#apiordersidget) | **GET** /api/Orders/{id} | Retrieve one Order
+*OrderApi* | [**apiOrdersGet**](docs/Api/OrderApi.md#apiordersget) | **GET** /api/Orders | 
+*OrderApi* | [**apiOrdersIdGet**](docs/Api/OrderApi.md#apiordersidget) | **GET** /api/Orders/id | 
 *OrderApi* | [**apiOrdersIdInvoiceGet**](docs/Api/OrderApi.md#apiordersidinvoiceget) | **GET** /api/Orders/{id}/invoice | Create invoice
-*OrderApi* | [**apiOrdersIdPatch**](docs/Api/OrderApi.md#apiordersidpatch) | **PATCH** /api/Orders/{id} | Update one Order
 *OrderApi* | [**apiOrdersIdRefundsRefundIdInvoiceGet**](docs/Api/OrderApi.md#apiordersidrefundsrefundidinvoiceget) | **GET** /api/Orders/{id}/refunds/{refundId}/invoice | Creates a credit note
-*OrderApi* | [**apiOrdersPost**](docs/Api/OrderApi.md#apiorderspost) | **POST** /api/Orders | Create one Order
 *PackagesApi* | [**packagesDistOrgNameArchiveZipGet**](docs/Api/PackagesApi.md#packagesdistorgnamearchivezipget) | **GET** /packages/dist/{org}/{name}/{archive}.zip | Serves an .zip of the plugin.
 *PackagesApi* | [**packagesPOrgNameAndHashJsonGet**](docs/Api/PackagesApi.md#packagesporgnameandhashjsonget) | **GET** /packages/p/{org}/{nameAndHash}.json | Serves the requested provider.json
 *PackagesApi* | [**packagesPackagesJsonGet**](docs/Api/PackagesApi.md#packagespackagesjsonget) | **GET** /packages/packages.json | Serves the general packages.json file.
-*ProductApi* | [**apiProductsBulkPost**](docs/Api/ProductApi.md#apiproductsbulkpost) | **POST** /api/Products/bulk | Create many Product
-*ProductApi* | [**apiProductsGet**](docs/Api/ProductApi.md#apiproductsget) | **GET** /api/Products | Retrieve many Product
-*ProductApi* | [**apiProductsIdDelete**](docs/Api/ProductApi.md#apiproductsiddelete) | **DELETE** /api/Products/{id} | Delete one Product
-*ProductApi* | [**apiProductsIdGet**](docs/Api/ProductApi.md#apiproductsidget) | **GET** /api/Products/{id} | Retrieve one Product
-*ProductApi* | [**apiProductsIdPatch**](docs/Api/ProductApi.md#apiproductsidpatch) | **PATCH** /api/Products/{id} | Update one Product
-*ProductApi* | [**apiProductsPost**](docs/Api/ProductApi.md#apiproductspost) | **POST** /api/Products | Create one Product
-*ProductGroupApi* | [**apiProductGroupsBulkPost**](docs/Api/ProductGroupApi.md#apiproductgroupsbulkpost) | **POST** /api/ProductGroups/bulk | Create many ProductGroup
-*ProductGroupApi* | [**apiProductGroupsGet**](docs/Api/ProductGroupApi.md#apiproductgroupsget) | **GET** /api/ProductGroups | Retrieve many ProductGroup
-*ProductGroupApi* | [**apiProductGroupsIdDelete**](docs/Api/ProductGroupApi.md#apiproductgroupsiddelete) | **DELETE** /api/ProductGroups/{id} | Delete one ProductGroup
-*ProductGroupApi* | [**apiProductGroupsIdGet**](docs/Api/ProductGroupApi.md#apiproductgroupsidget) | **GET** /api/ProductGroups/{id} | Retrieve one ProductGroup
-*ProductGroupApi* | [**apiProductGroupsIdPatch**](docs/Api/ProductGroupApi.md#apiproductgroupsidpatch) | **PATCH** /api/ProductGroups/{id} | Update one ProductGroup
-*ProductGroupApi* | [**apiProductGroupsPost**](docs/Api/ProductGroupApi.md#apiproductgroupspost) | **POST** /api/ProductGroups | Create one ProductGroup
-*RefundApi* | [**apiRefundsBulkPost**](docs/Api/RefundApi.md#apirefundsbulkpost) | **POST** /api/Refunds/bulk | Create many Refund
-*RefundApi* | [**apiRefundsGet**](docs/Api/RefundApi.md#apirefundsget) | **GET** /api/Refunds | Retrieve many Refund
-*RefundApi* | [**apiRefundsIdDelete**](docs/Api/RefundApi.md#apirefundsiddelete) | **DELETE** /api/Refunds/{id} | Delete one Refund
-*RefundApi* | [**apiRefundsIdGet**](docs/Api/RefundApi.md#apirefundsidget) | **GET** /api/Refunds/{id} | Retrieve one Refund
-*RefundApi* | [**apiRefundsIdPatch**](docs/Api/RefundApi.md#apirefundsidpatch) | **PATCH** /api/Refunds/{id} | Update one Refund
-*RefundApi* | [**apiRefundsPost**](docs/Api/RefundApi.md#apirefundspost) | **POST** /api/Refunds | Create one Refund
+*ProductApi* | [**apiProductsGet**](docs/Api/ProductApi.md#apiproductsget) | **GET** /api/Products | 
+*ProductApi* | [**apiProductsPost**](docs/Api/ProductApi.md#apiproductspost) | **POST** /api/Products | 
+*ProductApi* | [**apiProductsProductIdDelete**](docs/Api/ProductApi.md#apiproductsproductiddelete) | **DELETE** /api/Products/{productId} | 
+*ProductApi* | [**apiProductsProductIdGet**](docs/Api/ProductApi.md#apiproductsproductidget) | **GET** /api/Products/{productId} | 
+*ProductApi* | [**apiProductsProductIdPatch**](docs/Api/ProductApi.md#apiproductsproductidpatch) | **PATCH** /api/Products/{productId} | 
+*ProductGroupApi* | [**apiProductGroupsGet**](docs/Api/ProductGroupApi.md#apiproductgroupsget) | **GET** /api/ProductGroups | 
+*RefundApi* | [**apiRefundsGet**](docs/Api/RefundApi.md#apirefundsget) | **GET** /api/Refunds | 
+*RefundApi* | [**apiRefundsIdGet**](docs/Api/RefundApi.md#apirefundsidget) | **GET** /api/Refunds/{id} | 
 *RobotsApi* | [**robotsTxtGet**](docs/Api/RobotsApi.md#robotstxtget) | **GET** /robots.txt | 
 *ServerCheckApi* | [**serverCheckGet**](docs/Api/ServerCheckApi.md#servercheckget) | **GET** /server-check | Server health check
 *SiteApi* | [**apiSitesCurrentGet**](docs/Api/SiteApi.md#apisitescurrentget) | **GET** /api/Sites/current | Get the current connected site for an access token.
-*SiteApi* | [**apiSitesGet**](docs/Api/SiteApi.md#apisitesget) | **GET** /api/Sites | Retrieve many Site
-*SiteApi* | [**apiSitesIdGet**](docs/Api/SiteApi.md#apisitesidget) | **GET** /api/Sites/{id} | Retrieve one Site
-*SiteApi* | [**apiSitesIdPatch**](docs/Api/SiteApi.md#apisitesidpatch) | **PATCH** /api/Sites/{id} | Update one Site
+*SiteApi* | [**apiSitesGet**](docs/Api/SiteApi.md#apisitesget) | **GET** /api/Sites | 
+*SiteApi* | [**apiSitesIdGet**](docs/Api/SiteApi.md#apisitesidget) | **GET** /api/Sites/{id} | 
+*SiteApi* | [**apiSitesIdPatch**](docs/Api/SiteApi.md#apisitesidpatch) | **PATCH** /api/Sites/{id} | 
 *SiteApi* | [**apiSitesIdSubscriptionsPut**](docs/Api/SiteApi.md#apisitesidsubscriptionsput) | **PUT** /api/Sites/{id}/subscriptions | Adds a subscription to a site
 *SiteApi* | [**apiSitesIdSubscriptionsSubscriptionIdDelete**](docs/Api/SiteApi.md#apisitesidsubscriptionssubscriptioniddelete) | **DELETE** /api/Sites/{id}/subscriptions/{subscriptionId} | Removes a subscription from a site
 *SiteApi* | [**apiSitesIndexPost**](docs/Api/SiteApi.md#apisitesindexpost) | **POST** /api/Sites/index | 
 *SiteApi* | [**apiSitesSwitchSubscriptionNumberOfTimesPost**](docs/Api/SiteApi.md#apisitesswitchsubscriptionnumberoftimespost) | **POST** /api/Sites/switchSubscriptionNumberOfTimes | Switches the subscription for a number of times.
 *SiteApi* | [**apiSitesSwitchSubscriptionPost**](docs/Api/SiteApi.md#apisitesswitchsubscriptionpost) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
 *SiteApi* | [**apiSitesTransferPost**](docs/Api/SiteApi.md#apisitestransferpost) | **POST** /api/Sites/transfer | Transfer sites.
-*SubscriptionApi* | [**apiSubscriptionsBulkPost**](docs/Api/SubscriptionApi.md#apisubscriptionsbulkpost) | **POST** /api/Subscriptions/bulk | Create many Subscription
 *SubscriptionApi* | [**apiSubscriptionsExpiringGet**](docs/Api/SubscriptionApi.md#apisubscriptionsexpiringget) | **GET** /api/Subscriptions/expiring | 
-*SubscriptionApi* | [**apiSubscriptionsGet**](docs/Api/SubscriptionApi.md#apisubscriptionsget) | **GET** /api/Subscriptions | Retrieve many Subscription
-*SubscriptionApi* | [**apiSubscriptionsIdDelete**](docs/Api/SubscriptionApi.md#apisubscriptionsiddelete) | **DELETE** /api/Subscriptions/{id} | Delete one Subscription
-*SubscriptionApi* | [**apiSubscriptionsIdGet**](docs/Api/SubscriptionApi.md#apisubscriptionsidget) | **GET** /api/Subscriptions/{id} | Retrieve one Subscription
-*SubscriptionApi* | [**apiSubscriptionsIdPatch**](docs/Api/SubscriptionApi.md#apisubscriptionsidpatch) | **PATCH** /api/Subscriptions/{id} | Update one Subscription
+*SubscriptionApi* | [**apiSubscriptionsGet**](docs/Api/SubscriptionApi.md#apisubscriptionsget) | **GET** /api/Subscriptions | 
+*SubscriptionApi* | [**apiSubscriptionsIdGet**](docs/Api/SubscriptionApi.md#apisubscriptionsidget) | **GET** /api/Subscriptions/id | 
 *SubscriptionApi* | [**apiSubscriptionsIdRecalculateSubscriptionCountPost**](docs/Api/SubscriptionApi.md#apisubscriptionsidrecalculatesubscriptioncountpost) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
-*SubscriptionApi* | [**apiSubscriptionsPost**](docs/Api/SubscriptionApi.md#apisubscriptionspost) | **POST** /api/Subscriptions | Create one Subscription
 
 
 ## Documentation For Models
@@ -223,7 +191,6 @@ Class | Method | HTTP request | Description
  - [ActivateAccountDto](docs/Model/ActivateAccountDto.md)
  - [AddSubscriptionDto](docs/Model/AddSubscriptionDto.md)
  - [BillingDto](docs/Model/BillingDto.md)
- - [BulkDto](docs/Model/BulkDto.md)
  - [BulkInviteDto](docs/Model/BulkInviteDto.md)
  - [CancelSubscriptionBodyDto](docs/Model/CancelSubscriptionBodyDto.md)
  - [ChangePasswordDto](docs/Model/ChangePasswordDto.md)
@@ -233,11 +200,11 @@ Class | Method | HTTP request | Description
  - [CourseDataDto](docs/Model/CourseDataDto.md)
  - [CourseEnrollment](docs/Model/CourseEnrollment.md)
  - [CourseEnrollmentFromAcademyDto](docs/Model/CourseEnrollmentFromAcademyDto.md)
+ - [CreateCustomerNoteDto](docs/Model/CreateCustomerNoteDto.md)
  - [CreateSiteBodyDto](docs/Model/CreateSiteBodyDto.md)
  - [Customer](docs/Model/Customer.md)
  - [CustomerData](docs/Model/CustomerData.md)
  - [CustomerFromWooDto](docs/Model/CustomerFromWooDto.md)
- - [CustomerNote](docs/Model/CustomerNote.md)
  - [EddDTO](docs/Model/EddDTO.md)
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)
@@ -292,6 +259,7 @@ Class | Method | HTTP request | Description
  - [TransferDto](docs/Model/TransferDto.md)
  - [TransferSiteDto](docs/Model/TransferSiteDto.md)
  - [UpdateFileDto](docs/Model/UpdateFileDto.md)
+ - [UpdateUserDto](docs/Model/UpdateUserDto.md)
  - [UpdateUserToWordpressDto](docs/Model/UpdateUserToWordpressDto.md)
 
 
