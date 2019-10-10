@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerNoteApiTest
+ * GDPRApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Yoast\MyYoastApiClient\ApiException;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * CustomerNoteApiTest Class Doc Comment
+ * GDPRApiTest Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CustomerNoteApiTest extends \PHPUnit_Framework_TestCase
+class GDPRApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -72,42 +72,12 @@ class CustomerNoteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for apiCustomerNotesGet
+     * Test case for apiCustomersIdGdprDeleteDelete
      *
-     * Get customer notes.
-     *
-     */
-    public function testApiCustomerNotesGet()
-    {
-    }
-
-    /**
-     * Test case for apiCustomerNotesIdDelete
-     *
-     * .
+     * Performs a \"GDPR forget me\" request..
      *
      */
-    public function testApiCustomerNotesIdDelete()
-    {
-    }
-
-    /**
-     * Test case for apiCustomerNotesIdGet
-     *
-     * Get a customer note.
-     *
-     */
-    public function testApiCustomerNotesIdGet()
-    {
-    }
-
-    /**
-     * Test case for apiCustomerNotesPost
-     *
-     * .
-     *
-     */
-    public function testApiCustomerNotesPost()
+    public function testApiCustomersIdGdprDeleteDelete()
     {
     }
 }

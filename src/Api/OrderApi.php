@@ -90,28 +90,35 @@ class OrderApi
     /**
      * Operation apiOrdersGet
      *
+     * Get orders
+     *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Order[]
      */
-    public function apiOrdersGet()
+    public function apiOrdersGet($filter = null)
     {
-        $this->apiOrdersGetWithHttpInfo();
+        list($response) = $this->apiOrdersGetWithHttpInfo($filter);
+        return $response;
     }
 
     /**
      * Operation apiOrdersGetWithHttpInfo
      *
+     * Get orders
+     *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiOrdersGetWithHttpInfo()
+    public function apiOrdersGetWithHttpInfo($filter = null)
     {
-        $returnType = '';
-        $request = $this->apiOrdersGetRequest();
+        $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
+        $request = $this->apiOrdersGetRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -141,10 +148,32 @@ class OrderApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Order[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -153,15 +182,16 @@ class OrderApi
     /**
      * Operation apiOrdersGetAsync
      *
-     * 
+     * Get orders
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersGetAsync()
+    public function apiOrdersGetAsync($filter = null)
     {
-        return $this->apiOrdersGetAsyncWithHttpInfo()
+        return $this->apiOrdersGetAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -172,22 +202,37 @@ class OrderApi
     /**
      * Operation apiOrdersGetAsyncWithHttpInfo
      *
-     * 
+     * Get orders
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersGetAsyncWithHttpInfo()
+    public function apiOrdersGetAsyncWithHttpInfo($filter = null)
     {
-        $returnType = '';
-        $request = $this->apiOrdersGetRequest();
+        $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
+        $request = $this->apiOrdersGetRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -209,11 +254,12 @@ class OrderApi
     /**
      * Create request for operation 'apiOrdersGet'
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiOrdersGetRequest()
+    protected function apiOrdersGetRequest($filter = null)
     {
 
         $resourcePath = '/api/Orders';
@@ -223,6 +269,10 @@ class OrderApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
 
         // body params
@@ -297,30 +347,37 @@ class OrderApi
     /**
      * Operation apiOrdersIdGet
      *
+     * Get a order
+     *
      * @param  string $id id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function apiOrdersIdGet($id)
+    public function apiOrdersIdGet($id, $filter = null)
     {
-        $this->apiOrdersIdGetWithHttpInfo($id);
+        list($response) = $this->apiOrdersIdGetWithHttpInfo($id, $filter);
+        return $response;
     }
 
     /**
      * Operation apiOrdersIdGetWithHttpInfo
      *
+     * Get a order
+     *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiOrdersIdGetWithHttpInfo($id)
+    public function apiOrdersIdGetWithHttpInfo($id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiOrdersIdGetRequest($id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Order';
+        $request = $this->apiOrdersIdGetRequest($id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -350,10 +407,32 @@ class OrderApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Order',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -362,16 +441,17 @@ class OrderApi
     /**
      * Operation apiOrdersIdGetAsync
      *
-     * 
+     * Get a order
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersIdGetAsync($id)
+    public function apiOrdersIdGetAsync($id, $filter = null)
     {
-        return $this->apiOrdersIdGetAsyncWithHttpInfo($id)
+        return $this->apiOrdersIdGetAsyncWithHttpInfo($id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -382,23 +462,38 @@ class OrderApi
     /**
      * Operation apiOrdersIdGetAsyncWithHttpInfo
      *
-     * 
+     * Get a order
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersIdGetAsyncWithHttpInfo($id)
+    public function apiOrdersIdGetAsyncWithHttpInfo($id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiOrdersIdGetRequest($id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Order';
+        $request = $this->apiOrdersIdGetRequest($id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -421,11 +516,12 @@ class OrderApi
      * Create request for operation 'apiOrdersIdGet'
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiOrdersIdGetRequest($id)
+    protected function apiOrdersIdGetRequest($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -434,13 +530,17 @@ class OrderApi
             );
         }
 
-        $resourcePath = '/api/Orders/id';
+        $resourcePath = '/api/Orders/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($id !== null) {

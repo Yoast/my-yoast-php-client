@@ -5,7 +5,7 @@ All URIs are relative to *http://my.yoast.test:3000*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiCoursesFromAcademyPut**](CourseApi.md#apiCoursesFromAcademyPut) | **PUT** /api/Courses/fromAcademy | Upserts a course
-[**apiCoursesGet**](CourseApi.md#apiCoursesGet) | **GET** /api/Courses | 
+[**apiCoursesGet**](CourseApi.md#apiCoursesGet) | **GET** /api/Courses | Get courses
 [**apiCoursesIdGet**](CourseApi.md#apiCoursesIdGet) | **GET** /api/Courses/{id} | 
 
 
@@ -65,9 +65,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCoursesGet**
-> apiCoursesGet()
+> \Yoast\MyYoastApiClient\Model\Course[] apiCoursesGet($filter)
 
+Get courses
 
+Get and filter courses
 
 ### Example
 ```php
@@ -85,9 +87,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CourseApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCoursesGet();
+    $result = $apiInstance->apiCoursesGet($filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseApi->apiCoursesGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -95,11 +99,14 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Course[]**](../Model/Course.md)
 
 ### Authorization
 

@@ -5,8 +5,8 @@ All URIs are relative to *http://my.yoast.test:3000*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiSubscriptionsExpiringGet**](SubscriptionApi.md#apiSubscriptionsExpiringGet) | **GET** /api/Subscriptions/expiring | 
-[**apiSubscriptionsGet**](SubscriptionApi.md#apiSubscriptionsGet) | **GET** /api/Subscriptions | 
-[**apiSubscriptionsIdGet**](SubscriptionApi.md#apiSubscriptionsIdGet) | **GET** /api/Subscriptions/id | 
+[**apiSubscriptionsGet**](SubscriptionApi.md#apiSubscriptionsGet) | **GET** /api/Subscriptions | Get subscriptions
+[**apiSubscriptionsIdGet**](SubscriptionApi.md#apiSubscriptionsIdGet) | **GET** /api/Subscriptions/{id} | Get a subscription
 [**apiSubscriptionsIdRecalculateSubscriptionCountPost**](SubscriptionApi.md#apiSubscriptionsIdRecalculateSubscriptionCountPost) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 
 
@@ -68,9 +68,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSubscriptionsGet**
-> apiSubscriptionsGet()
+> \Yoast\MyYoastApiClient\Model\Subscription[] apiSubscriptionsGet($filter)
 
+Get subscriptions
 
+Get and filter subscriptions
 
 ### Example
 ```php
@@ -88,9 +90,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiSubscriptionsGet();
+    $result = $apiInstance->apiSubscriptionsGet($filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->apiSubscriptionsGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -98,11 +102,14 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Subscription[]**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -116,9 +123,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSubscriptionsIdGet**
-> apiSubscriptionsIdGet($id)
+> \Yoast\MyYoastApiClient\Model\Subscription apiSubscriptionsIdGet($id, $filter)
 
+Get a subscription
 
+Get a single subscription
 
 ### Example
 ```php
@@ -137,9 +146,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
     $config
 );
 $id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiSubscriptionsIdGet($id);
+    $result = $apiInstance->apiSubscriptionsIdGet($id, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->apiSubscriptionsIdGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -151,10 +162,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 

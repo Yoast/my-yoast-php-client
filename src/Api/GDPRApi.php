@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductGroupApi
+ * GDPRApi
  * PHP version 5
  *
  * @category Class
@@ -40,14 +40,14 @@ use Yoast\MyYoastApiClient\HeaderSelector;
 use Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * ProductGroupApi Class Doc Comment
+ * GDPRApi Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ProductGroupApi
+class GDPRApi
 {
     /**
      * @var ClientInterface
@@ -88,37 +88,37 @@ class ProductGroupApi
     }
 
     /**
-     * Operation apiProductGroupsGet
+     * Operation apiCustomersIdGdprDeleteDelete
      *
-     * Get productgroups
+     * Performs a \"GDPR forget me\" request.
      *
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     * @param  string $id id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\ProductGroup[]
+     * @return string
      */
-    public function apiProductGroupsGet($filter = null)
+    public function apiCustomersIdGdprDeleteDelete($id)
     {
-        list($response) = $this->apiProductGroupsGetWithHttpInfo($filter);
+        list($response) = $this->apiCustomersIdGdprDeleteDeleteWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation apiProductGroupsGetWithHttpInfo
+     * Operation apiCustomersIdGdprDeleteDeleteWithHttpInfo
      *
-     * Get productgroups
+     * Performs a \"GDPR forget me\" request.
      *
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     * @param  string $id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiProductGroupsGetWithHttpInfo($filter = null)
+    public function apiCustomersIdGdprDeleteDeleteWithHttpInfo($id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup[]';
-        $request = $this->apiProductGroupsGetRequest($filter);
+        $returnType = 'string';
+        $request = $this->apiCustomersIdGdprDeleteDeleteRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -169,7 +169,7 @@ class ProductGroupApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\ProductGroup[]',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -180,18 +180,18 @@ class ProductGroupApi
     }
 
     /**
-     * Operation apiProductGroupsGetAsync
+     * Operation apiCustomersIdGdprDeleteDeleteAsync
      *
-     * Get productgroups
+     * Performs a \"GDPR forget me\" request.
      *
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiProductGroupsGetAsync($filter = null)
+    public function apiCustomersIdGdprDeleteDeleteAsync($id)
     {
-        return $this->apiProductGroupsGetAsyncWithHttpInfo($filter)
+        return $this->apiCustomersIdGdprDeleteDeleteAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -200,19 +200,19 @@ class ProductGroupApi
     }
 
     /**
-     * Operation apiProductGroupsGetAsyncWithHttpInfo
+     * Operation apiCustomersIdGdprDeleteDeleteAsyncWithHttpInfo
      *
-     * Get productgroups
+     * Performs a \"GDPR forget me\" request.
      *
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiProductGroupsGetAsyncWithHttpInfo($filter = null)
+    public function apiCustomersIdGdprDeleteDeleteAsyncWithHttpInfo($id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup[]';
-        $request = $this->apiProductGroupsGetRequest($filter);
+        $returnType = 'string';
+        $request = $this->apiCustomersIdGdprDeleteDeleteRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -252,28 +252,38 @@ class ProductGroupApi
     }
 
     /**
-     * Create request for operation 'apiProductGroupsGet'
+     * Create request for operation 'apiCustomersIdGdprDeleteDelete'
      *
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiProductGroupsGetRequest($filter = null)
+    protected function apiCustomersIdGdprDeleteDeleteRequest($id)
     {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling apiCustomersIdGdprDeleteDelete'
+            );
+        }
 
-        $resourcePath = '/api/ProductGroups';
+        $resourcePath = '/api/Customers/{id}/gdpr-delete';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($filter !== null) {
-            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
-        }
 
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
 
         // body params
         $_tempBody = null;
@@ -337,7 +347,7 @@ class ProductGroupApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'GET',
+            'DELETE',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

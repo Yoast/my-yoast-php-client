@@ -90,28 +90,35 @@ class CustomerNoteApi
     /**
      * Operation apiCustomerNotesGet
      *
+     * Get customer notes
+     *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote[]
      */
-    public function apiCustomerNotesGet()
+    public function apiCustomerNotesGet($filter = null)
     {
-        $this->apiCustomerNotesGetWithHttpInfo();
+        list($response) = $this->apiCustomerNotesGetWithHttpInfo($filter);
+        return $response;
     }
 
     /**
      * Operation apiCustomerNotesGetWithHttpInfo
      *
+     * Get customer notes
+     *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomerNotesGetWithHttpInfo()
+    public function apiCustomerNotesGetWithHttpInfo($filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomerNotesGetRequest();
+        $returnType = '\Yoast\MyYoastApiClient\Model\CustomerNote[]';
+        $request = $this->apiCustomerNotesGetRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -141,10 +148,32 @@ class CustomerNoteApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\CustomerNote[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -153,15 +182,16 @@ class CustomerNoteApi
     /**
      * Operation apiCustomerNotesGetAsync
      *
-     * 
+     * Get customer notes
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomerNotesGetAsync()
+    public function apiCustomerNotesGetAsync($filter = null)
     {
-        return $this->apiCustomerNotesGetAsyncWithHttpInfo()
+        return $this->apiCustomerNotesGetAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -172,22 +202,37 @@ class CustomerNoteApi
     /**
      * Operation apiCustomerNotesGetAsyncWithHttpInfo
      *
-     * 
+     * Get customer notes
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomerNotesGetAsyncWithHttpInfo()
+    public function apiCustomerNotesGetAsyncWithHttpInfo($filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomerNotesGetRequest();
+        $returnType = '\Yoast\MyYoastApiClient\Model\CustomerNote[]';
+        $request = $this->apiCustomerNotesGetRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -209,11 +254,12 @@ class CustomerNoteApi
     /**
      * Create request for operation 'apiCustomerNotesGet'
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomerNotesGetRequest()
+    protected function apiCustomerNotesGetRequest($filter = null)
     {
 
         $resourcePath = '/api/CustomerNotes';
@@ -223,6 +269,10 @@ class CustomerNoteApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
 
         // body params
@@ -523,30 +573,37 @@ class CustomerNoteApi
     /**
      * Operation apiCustomerNotesIdGet
      *
+     * Get a customer note
+     *
      * @param  string $id id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\CustomerNote
      */
-    public function apiCustomerNotesIdGet($id)
+    public function apiCustomerNotesIdGet($id, $filter = null)
     {
-        $this->apiCustomerNotesIdGetWithHttpInfo($id);
+        list($response) = $this->apiCustomerNotesIdGetWithHttpInfo($id, $filter);
+        return $response;
     }
 
     /**
      * Operation apiCustomerNotesIdGetWithHttpInfo
      *
+     * Get a customer note
+     *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomerNotesIdGetWithHttpInfo($id)
+    public function apiCustomerNotesIdGetWithHttpInfo($id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomerNotesIdGetRequest($id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\CustomerNote';
+        $request = $this->apiCustomerNotesIdGetRequest($id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -576,10 +633,32 @@ class CustomerNoteApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\CustomerNote',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -588,16 +667,17 @@ class CustomerNoteApi
     /**
      * Operation apiCustomerNotesIdGetAsync
      *
-     * 
+     * Get a customer note
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomerNotesIdGetAsync($id)
+    public function apiCustomerNotesIdGetAsync($id, $filter = null)
     {
-        return $this->apiCustomerNotesIdGetAsyncWithHttpInfo($id)
+        return $this->apiCustomerNotesIdGetAsyncWithHttpInfo($id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -608,23 +688,38 @@ class CustomerNoteApi
     /**
      * Operation apiCustomerNotesIdGetAsyncWithHttpInfo
      *
-     * 
+     * Get a customer note
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomerNotesIdGetAsyncWithHttpInfo($id)
+    public function apiCustomerNotesIdGetAsyncWithHttpInfo($id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomerNotesIdGetRequest($id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\CustomerNote';
+        $request = $this->apiCustomerNotesIdGetRequest($id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -647,11 +742,12 @@ class CustomerNoteApi
      * Create request for operation 'apiCustomerNotesIdGet'
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomerNotesIdGetRequest($id)
+    protected function apiCustomerNotesIdGetRequest($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -667,6 +763,10 @@ class CustomerNoteApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($id !== null) {

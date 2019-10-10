@@ -4,14 +4,16 @@ All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiRefundsGet**](RefundApi.md#apiRefundsGet) | **GET** /api/Refunds | 
-[**apiRefundsIdGet**](RefundApi.md#apiRefundsIdGet) | **GET** /api/Refunds/{id} | 
+[**apiRefundsGet**](RefundApi.md#apiRefundsGet) | **GET** /api/Refunds | Get refunds
+[**apiRefundsIdGet**](RefundApi.md#apiRefundsIdGet) | **GET** /api/Refunds/{id} | Get a refund
 
 
 # **apiRefundsGet**
-> apiRefundsGet()
+> \Yoast\MyYoastApiClient\Model\Refund[] apiRefundsGet($filter)
 
+Get refunds
 
+Get and filter refunds
 
 ### Example
 ```php
@@ -29,9 +31,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiRefundsGet();
+    $result = $apiInstance->apiRefundsGet($filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->apiRefundsGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -39,11 +43,14 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Refund[]**](../Model/Refund.md)
 
 ### Authorization
 
@@ -57,9 +64,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiRefundsIdGet**
-> apiRefundsIdGet($id)
+> \Yoast\MyYoastApiClient\Model\Refund apiRefundsIdGet($id, $filter)
 
+Get a refund
 
+Get a single refund
 
 ### Example
 ```php
@@ -78,9 +87,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
     $config
 );
 $id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiRefundsIdGet($id);
+    $result = $apiInstance->apiRefundsIdGet($id, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->apiRefundsIdGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -92,10 +103,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Refund**](../Model/Refund.md)
 
 ### Authorization
 

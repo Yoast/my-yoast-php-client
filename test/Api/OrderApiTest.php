@@ -74,7 +74,7 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiOrdersGet
      *
-     * .
+     * Get orders.
      *
      */
     public function testApiOrdersGet()
@@ -84,7 +84,7 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiOrdersIdGet
      *
-     * .
+     * Get a order.
      *
      */
     public function testApiOrdersIdGet()

@@ -74,7 +74,7 @@ class ProductGroupApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiProductGroupsGet
      *
-     * .
+     * Get productgroups.
      *
      */
     public function testApiProductGroupsGet()

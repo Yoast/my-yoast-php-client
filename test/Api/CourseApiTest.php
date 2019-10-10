@@ -84,7 +84,7 @@ class CourseApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiCoursesGet
      *
-     * .
+     * Get courses.
      *
      */
     public function testApiCoursesGet()

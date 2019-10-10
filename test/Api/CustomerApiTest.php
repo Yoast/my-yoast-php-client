@@ -114,7 +114,7 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiCustomersCustomerIdComposerTokensGet
      *
-     * .
+     * Get composer tokens.
      *
      */
     public function testApiCustomersCustomerIdComposerTokensGet()
@@ -124,7 +124,7 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiCustomersCustomerIdComposerTokensIdGet
      *
-     * .
+     * Get a composer token.
      *
      */
     public function testApiCustomersCustomerIdComposerTokensIdGet()
@@ -144,7 +144,7 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiCustomersCustomerIdIdentitiesGet
      *
-     * .
+     * Get user identities.
      *
      */
     public function testApiCustomersCustomerIdIdentitiesGet()
@@ -184,7 +184,7 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiCustomersCustomerIdOrdersGet
      *
-     * .
+     * Get orders.
      *
      */
     public function testApiCustomersCustomerIdOrdersGet()
@@ -194,7 +194,7 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiCustomersCustomerIdOrdersIdGet
      *
-     * .
+     * Get a order.
      *
      */
     public function testApiCustomersCustomerIdOrdersIdGet()
@@ -204,7 +204,7 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiCustomersCustomerIdSitesGet
      *
-     * .
+     * Get sites.
      *
      */
     public function testApiCustomersCustomerIdSitesGet()
@@ -214,7 +214,7 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiCustomersCustomerIdSitesIdGet
      *
-     * .
+     * Get a site.
      *
      */
     public function testApiCustomersCustomerIdSitesIdGet()
@@ -244,7 +244,7 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiCustomersCustomerIdSubscriptionsGet
      *
-     * .
+     * Get subscriptions.
      *
      */
     public function testApiCustomersCustomerIdSubscriptionsGet()
@@ -252,9 +252,19 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiCustomersCustomerIdSubscriptionsIdCancelPost
+     *
+     * Cancel (part of) a subscription..
+     *
+     */
+    public function testApiCustomersCustomerIdSubscriptionsIdCancelPost()
+    {
+    }
+
+    /**
      * Test case for apiCustomersCustomerIdSubscriptionsIdGet
      *
-     * .
+     * Get a subscriptions.
      *
      */
     public function testApiCustomersCustomerIdSubscriptionsIdGet()
@@ -262,19 +272,9 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost
-     *
-     * Cancel (part of) a subscription..
-     *
-     */
-    public function testApiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost()
-    {
-    }
-
-    /**
      * Test case for apiCustomersGet
      *
-     * .
+     * Get customers.
      *
      */
     public function testApiCustomersGet()
@@ -322,9 +322,19 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiCustomersIdGdprDeleteDelete
+     *
+     * Performs a \"GDPR forget me\" request..
+     *
+     */
+    public function testApiCustomersIdGdprDeleteDelete()
+    {
+    }
+
+    /**
      * Test case for apiCustomersIdGet
      *
-     * .
+     * Get a customer.
      *
      */
     public function testApiCustomersIdGet()

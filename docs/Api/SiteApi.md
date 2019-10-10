@@ -5,8 +5,8 @@ All URIs are relative to *http://my.yoast.test:3000*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiSitesCurrentGet**](SiteApi.md#apiSitesCurrentGet) | **GET** /api/Sites/current | Get the current connected site for an access token.
-[**apiSitesGet**](SiteApi.md#apiSitesGet) | **GET** /api/Sites | 
-[**apiSitesIdGet**](SiteApi.md#apiSitesIdGet) | **GET** /api/Sites/{id} | 
+[**apiSitesGet**](SiteApi.md#apiSitesGet) | **GET** /api/Sites | Get sites
+[**apiSitesIdGet**](SiteApi.md#apiSitesIdGet) | **GET** /api/Sites/{id} | Get a site
 [**apiSitesIdPatch**](SiteApi.md#apiSitesIdPatch) | **PATCH** /api/Sites/{id} | 
 [**apiSitesIdSubscriptionsPut**](SiteApi.md#apiSitesIdSubscriptionsPut) | **PUT** /api/Sites/{id}/subscriptions | Adds a subscription to a site
 [**apiSitesIdSubscriptionsSubscriptionIdDelete**](SiteApi.md#apiSitesIdSubscriptionsSubscriptionIdDelete) | **DELETE** /api/Sites/{id}/subscriptions/{subscriptionId} | Removes a subscription from a site
@@ -72,9 +72,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSitesGet**
-> apiSitesGet()
+> \Yoast\MyYoastApiClient\Model\Site[] apiSitesGet($filter)
 
+Get sites
 
+Get and filter sites
 
 ### Example
 ```php
@@ -92,9 +94,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiSitesGet();
+    $result = $apiInstance->apiSitesGet($filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->apiSitesGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -102,11 +106,14 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Site[]**](../Model/Site.md)
 
 ### Authorization
 
@@ -120,9 +127,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSitesIdGet**
-> apiSitesIdGet($id)
+> \Yoast\MyYoastApiClient\Model\Site apiSitesIdGet($id, $filter)
 
+Get a site
 
+Get a single site
 
 ### Example
 ```php
@@ -141,9 +150,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     $config
 );
 $id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiSitesIdGet($id);
+    $result = $apiInstance->apiSitesIdGet($id, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->apiSitesIdGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -155,10 +166,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
 
 ### Authorization
 

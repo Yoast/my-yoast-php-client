@@ -84,7 +84,7 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiSubscriptionsGet
      *
-     * .
+     * Get subscriptions.
      *
      */
     public function testApiSubscriptionsGet()
@@ -94,7 +94,7 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiSubscriptionsIdGet
      *
-     * .
+     * Get a subscription.
      *
      */
     public function testApiSubscriptionsIdGet()

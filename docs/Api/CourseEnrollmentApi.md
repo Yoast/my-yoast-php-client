@@ -6,9 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiCourseEnrollmentsBulkInvitePost**](CourseEnrollmentApi.md#apiCourseEnrollmentsBulkInvitePost) | **POST** /api/CourseEnrollments/bulkInvite | Bulk invite for Course Enrollment.
 [**apiCourseEnrollmentsFromAcademyPut**](CourseEnrollmentApi.md#apiCourseEnrollmentsFromAcademyPut) | **PUT** /api/CourseEnrollments/fromAcademy | Update a CourseEnrollment
-[**apiCourseEnrollmentsGet**](CourseEnrollmentApi.md#apiCourseEnrollmentsGet) | **GET** /api/CourseEnrollments | 
+[**apiCourseEnrollmentsGet**](CourseEnrollmentApi.md#apiCourseEnrollmentsGet) | **GET** /api/CourseEnrollments | Get course enrollments
 [**apiCourseEnrollmentsGetLegacyExpiringGet**](CourseEnrollmentApi.md#apiCourseEnrollmentsGetLegacyExpiringGet) | **GET** /api/CourseEnrollments/getLegacyExpiring | Get legacy course enrollments that expire between two given dates
-[**apiCourseEnrollmentsIdGet**](CourseEnrollmentApi.md#apiCourseEnrollmentsIdGet) | **GET** /api/CourseEnrollments/{id} | 
+[**apiCourseEnrollmentsIdGet**](CourseEnrollmentApi.md#apiCourseEnrollmentsIdGet) | **GET** /api/CourseEnrollments/{id} | Get a course enrollment
 [**apiCourseEnrollmentsIdInvitePost**](CourseEnrollmentApi.md#apiCourseEnrollmentsIdInvitePost) | **POST** /api/CourseEnrollments/{id}/invite | Invite a customer
 [**apiCourseEnrollmentsTransferPost**](CourseEnrollmentApi.md#apiCourseEnrollmentsTransferPost) | **POST** /api/CourseEnrollments/transfer | Transfer course enrollments
 
@@ -123,9 +123,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCourseEnrollmentsGet**
-> apiCourseEnrollmentsGet()
+> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] apiCourseEnrollmentsGet($filter)
 
+Get course enrollments
 
+Get and filter course enrollments
 
 ### Example
 ```php
@@ -143,9 +145,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCourseEnrollmentsGet();
+    $result = $apiInstance->apiCourseEnrollmentsGet($filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->apiCourseEnrollmentsGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -153,11 +157,14 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\CourseEnrollment[]**](../Model/CourseEnrollment.md)
 
 ### Authorization
 
@@ -228,9 +235,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCourseEnrollmentsIdGet**
-> apiCourseEnrollmentsIdGet($id)
+> \Yoast\MyYoastApiClient\Model\CourseEnrollment apiCourseEnrollmentsIdGet($id, $filter)
 
+Get a course enrollment
 
+Get a single course enrollment
 
 ### Example
 ```php
@@ -249,9 +258,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
     $config
 );
 $id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCourseEnrollmentsIdGet($id);
+    $result = $apiInstance->apiCourseEnrollmentsIdGet($id, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->apiCourseEnrollmentsIdGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -263,10 +274,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\CourseEnrollment**](../Model/CourseEnrollment.md)
 
 ### Authorization
 

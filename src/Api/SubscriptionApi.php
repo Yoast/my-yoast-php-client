@@ -373,28 +373,35 @@ class SubscriptionApi
     /**
      * Operation apiSubscriptionsGet
      *
+     * Get subscriptions
+     *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Subscription[]
      */
-    public function apiSubscriptionsGet()
+    public function apiSubscriptionsGet($filter = null)
     {
-        $this->apiSubscriptionsGetWithHttpInfo();
+        list($response) = $this->apiSubscriptionsGetWithHttpInfo($filter);
+        return $response;
     }
 
     /**
      * Operation apiSubscriptionsGetWithHttpInfo
      *
+     * Get subscriptions
+     *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Subscription[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiSubscriptionsGetWithHttpInfo()
+    public function apiSubscriptionsGetWithHttpInfo($filter = null)
     {
-        $returnType = '';
-        $request = $this->apiSubscriptionsGetRequest();
+        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription[]';
+        $request = $this->apiSubscriptionsGetRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -424,10 +431,32 @@ class SubscriptionApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Subscription[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -436,15 +465,16 @@ class SubscriptionApi
     /**
      * Operation apiSubscriptionsGetAsync
      *
-     * 
+     * Get subscriptions
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSubscriptionsGetAsync()
+    public function apiSubscriptionsGetAsync($filter = null)
     {
-        return $this->apiSubscriptionsGetAsyncWithHttpInfo()
+        return $this->apiSubscriptionsGetAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -455,22 +485,37 @@ class SubscriptionApi
     /**
      * Operation apiSubscriptionsGetAsyncWithHttpInfo
      *
-     * 
+     * Get subscriptions
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSubscriptionsGetAsyncWithHttpInfo()
+    public function apiSubscriptionsGetAsyncWithHttpInfo($filter = null)
     {
-        $returnType = '';
-        $request = $this->apiSubscriptionsGetRequest();
+        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription[]';
+        $request = $this->apiSubscriptionsGetRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -492,11 +537,12 @@ class SubscriptionApi
     /**
      * Create request for operation 'apiSubscriptionsGet'
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiSubscriptionsGetRequest()
+    protected function apiSubscriptionsGetRequest($filter = null)
     {
 
         $resourcePath = '/api/Subscriptions';
@@ -506,6 +552,10 @@ class SubscriptionApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
 
         // body params
@@ -580,30 +630,37 @@ class SubscriptionApi
     /**
      * Operation apiSubscriptionsIdGet
      *
+     * Get a subscription
+     *
      * @param  string $id id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function apiSubscriptionsIdGet($id)
+    public function apiSubscriptionsIdGet($id, $filter = null)
     {
-        $this->apiSubscriptionsIdGetWithHttpInfo($id);
+        list($response) = $this->apiSubscriptionsIdGetWithHttpInfo($id, $filter);
+        return $response;
     }
 
     /**
      * Operation apiSubscriptionsIdGetWithHttpInfo
      *
+     * Get a subscription
+     *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiSubscriptionsIdGetWithHttpInfo($id)
+    public function apiSubscriptionsIdGetWithHttpInfo($id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiSubscriptionsIdGetRequest($id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription';
+        $request = $this->apiSubscriptionsIdGetRequest($id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -633,10 +690,32 @@ class SubscriptionApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Subscription',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -645,16 +724,17 @@ class SubscriptionApi
     /**
      * Operation apiSubscriptionsIdGetAsync
      *
-     * 
+     * Get a subscription
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSubscriptionsIdGetAsync($id)
+    public function apiSubscriptionsIdGetAsync($id, $filter = null)
     {
-        return $this->apiSubscriptionsIdGetAsyncWithHttpInfo($id)
+        return $this->apiSubscriptionsIdGetAsyncWithHttpInfo($id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -665,23 +745,38 @@ class SubscriptionApi
     /**
      * Operation apiSubscriptionsIdGetAsyncWithHttpInfo
      *
-     * 
+     * Get a subscription
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSubscriptionsIdGetAsyncWithHttpInfo($id)
+    public function apiSubscriptionsIdGetAsyncWithHttpInfo($id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiSubscriptionsIdGetRequest($id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription';
+        $request = $this->apiSubscriptionsIdGetRequest($id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -704,11 +799,12 @@ class SubscriptionApi
      * Create request for operation 'apiSubscriptionsIdGet'
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiSubscriptionsIdGetRequest($id)
+    protected function apiSubscriptionsIdGetRequest($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -717,13 +813,17 @@ class SubscriptionApi
             );
         }
 
-        $resourcePath = '/api/Subscriptions/id';
+        $resourcePath = '/api/Subscriptions/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($id !== null) {

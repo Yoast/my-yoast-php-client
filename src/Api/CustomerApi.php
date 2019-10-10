@@ -1110,30 +1110,37 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdComposerTokensGet
      *
+     * Get composer tokens
+     *
      * @param  string $customerId customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\ComposerToken[]
      */
-    public function apiCustomersCustomerIdComposerTokensGet($customerId)
+    public function apiCustomersCustomerIdComposerTokensGet($customerId, $filter = null)
     {
-        $this->apiCustomersCustomerIdComposerTokensGetWithHttpInfo($customerId);
+        list($response) = $this->apiCustomersCustomerIdComposerTokensGetWithHttpInfo($customerId, $filter);
+        return $response;
     }
 
     /**
      * Operation apiCustomersCustomerIdComposerTokensGetWithHttpInfo
      *
+     * Get composer tokens
+     *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ComposerToken[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersCustomerIdComposerTokensGetWithHttpInfo($customerId)
+    public function apiCustomersCustomerIdComposerTokensGetWithHttpInfo($customerId, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdComposerTokensGetRequest($customerId);
+        $returnType = '\Yoast\MyYoastApiClient\Model\ComposerToken[]';
+        $request = $this->apiCustomersCustomerIdComposerTokensGetRequest($customerId, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1163,10 +1170,32 @@ class CustomerApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\ComposerToken[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -1175,16 +1204,17 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdComposerTokensGetAsync
      *
-     * 
+     * Get composer tokens
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdComposerTokensGetAsync($customerId)
+    public function apiCustomersCustomerIdComposerTokensGetAsync($customerId, $filter = null)
     {
-        return $this->apiCustomersCustomerIdComposerTokensGetAsyncWithHttpInfo($customerId)
+        return $this->apiCustomersCustomerIdComposerTokensGetAsyncWithHttpInfo($customerId, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1195,23 +1225,38 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdComposerTokensGetAsyncWithHttpInfo
      *
-     * 
+     * Get composer tokens
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdComposerTokensGetAsyncWithHttpInfo($customerId)
+    public function apiCustomersCustomerIdComposerTokensGetAsyncWithHttpInfo($customerId, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdComposerTokensGetRequest($customerId);
+        $returnType = '\Yoast\MyYoastApiClient\Model\ComposerToken[]';
+        $request = $this->apiCustomersCustomerIdComposerTokensGetRequest($customerId, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1234,11 +1279,12 @@ class CustomerApi
      * Create request for operation 'apiCustomersCustomerIdComposerTokensGet'
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersCustomerIdComposerTokensGetRequest($customerId)
+    protected function apiCustomersCustomerIdComposerTokensGetRequest($customerId, $filter = null)
     {
         // verify the required parameter 'customerId' is set
         if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
@@ -1254,6 +1300,10 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($customerId !== null) {
@@ -1336,32 +1386,39 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdComposerTokensIdGet
      *
+     * Get a composer token
+     *
      * @param  string $customerId customerId (required)
      * @param  string $id id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\ComposerToken
      */
-    public function apiCustomersCustomerIdComposerTokensIdGet($customerId, $id)
+    public function apiCustomersCustomerIdComposerTokensIdGet($customerId, $id, $filter = null)
     {
-        $this->apiCustomersCustomerIdComposerTokensIdGetWithHttpInfo($customerId, $id);
+        list($response) = $this->apiCustomersCustomerIdComposerTokensIdGetWithHttpInfo($customerId, $id, $filter);
+        return $response;
     }
 
     /**
      * Operation apiCustomersCustomerIdComposerTokensIdGetWithHttpInfo
      *
+     * Get a composer token
+     *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ComposerToken, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersCustomerIdComposerTokensIdGetWithHttpInfo($customerId, $id)
+    public function apiCustomersCustomerIdComposerTokensIdGetWithHttpInfo($customerId, $id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdComposerTokensIdGetRequest($customerId, $id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\ComposerToken';
+        $request = $this->apiCustomersCustomerIdComposerTokensIdGetRequest($customerId, $id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1391,10 +1448,32 @@ class CustomerApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\ComposerToken',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -1403,17 +1482,18 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdComposerTokensIdGetAsync
      *
-     * 
+     * Get a composer token
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdComposerTokensIdGetAsync($customerId, $id)
+    public function apiCustomersCustomerIdComposerTokensIdGetAsync($customerId, $id, $filter = null)
     {
-        return $this->apiCustomersCustomerIdComposerTokensIdGetAsyncWithHttpInfo($customerId, $id)
+        return $this->apiCustomersCustomerIdComposerTokensIdGetAsyncWithHttpInfo($customerId, $id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1424,24 +1504,39 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdComposerTokensIdGetAsyncWithHttpInfo
      *
-     * 
+     * Get a composer token
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdComposerTokensIdGetAsyncWithHttpInfo($customerId, $id)
+    public function apiCustomersCustomerIdComposerTokensIdGetAsyncWithHttpInfo($customerId, $id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdComposerTokensIdGetRequest($customerId, $id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\ComposerToken';
+        $request = $this->apiCustomersCustomerIdComposerTokensIdGetRequest($customerId, $id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1465,11 +1560,12 @@ class CustomerApi
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersCustomerIdComposerTokensIdGetRequest($customerId, $id)
+    protected function apiCustomersCustomerIdComposerTokensIdGetRequest($customerId, $id, $filter = null)
     {
         // verify the required parameter 'customerId' is set
         if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
@@ -1491,6 +1587,10 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($customerId !== null) {
@@ -1872,30 +1972,37 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdIdentitiesGet
      *
+     * Get user identities
+     *
      * @param  string $customerId customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\UserIdentity[]
      */
-    public function apiCustomersCustomerIdIdentitiesGet($customerId)
+    public function apiCustomersCustomerIdIdentitiesGet($customerId, $filter = null)
     {
-        $this->apiCustomersCustomerIdIdentitiesGetWithHttpInfo($customerId);
+        list($response) = $this->apiCustomersCustomerIdIdentitiesGetWithHttpInfo($customerId, $filter);
+        return $response;
     }
 
     /**
      * Operation apiCustomersCustomerIdIdentitiesGetWithHttpInfo
      *
+     * Get user identities
+     *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UserIdentity[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersCustomerIdIdentitiesGetWithHttpInfo($customerId)
+    public function apiCustomersCustomerIdIdentitiesGetWithHttpInfo($customerId, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdIdentitiesGetRequest($customerId);
+        $returnType = '\Yoast\MyYoastApiClient\Model\UserIdentity[]';
+        $request = $this->apiCustomersCustomerIdIdentitiesGetRequest($customerId, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1925,10 +2032,32 @@ class CustomerApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\UserIdentity[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -1937,16 +2066,17 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdIdentitiesGetAsync
      *
-     * 
+     * Get user identities
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdIdentitiesGetAsync($customerId)
+    public function apiCustomersCustomerIdIdentitiesGetAsync($customerId, $filter = null)
     {
-        return $this->apiCustomersCustomerIdIdentitiesGetAsyncWithHttpInfo($customerId)
+        return $this->apiCustomersCustomerIdIdentitiesGetAsyncWithHttpInfo($customerId, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1957,23 +2087,38 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdIdentitiesGetAsyncWithHttpInfo
      *
-     * 
+     * Get user identities
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdIdentitiesGetAsyncWithHttpInfo($customerId)
+    public function apiCustomersCustomerIdIdentitiesGetAsyncWithHttpInfo($customerId, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdIdentitiesGetRequest($customerId);
+        $returnType = '\Yoast\MyYoastApiClient\Model\UserIdentity[]';
+        $request = $this->apiCustomersCustomerIdIdentitiesGetRequest($customerId, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -1996,11 +2141,12 @@ class CustomerApi
      * Create request for operation 'apiCustomersCustomerIdIdentitiesGet'
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersCustomerIdIdentitiesGetRequest($customerId)
+    protected function apiCustomersCustomerIdIdentitiesGetRequest($customerId, $filter = null)
     {
         // verify the required parameter 'customerId' is set
         if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
@@ -2016,6 +2162,10 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($customerId !== null) {
@@ -2899,31 +3049,37 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdOrdersGet
      *
+     * Get orders
+     *
      * @param  string $customerId customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Order[]
      */
-    public function apiCustomersCustomerIdOrdersGet($customerId)
+    public function apiCustomersCustomerIdOrdersGet($customerId, $filter = null)
     {
-        list($response) = $this->apiCustomersCustomerIdOrdersGetWithHttpInfo($customerId);
+        list($response) = $this->apiCustomersCustomerIdOrdersGetWithHttpInfo($customerId, $filter);
         return $response;
     }
 
     /**
      * Operation apiCustomersCustomerIdOrdersGetWithHttpInfo
      *
+     * Get orders
+     *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersCustomerIdOrdersGetWithHttpInfo($customerId)
+    public function apiCustomersCustomerIdOrdersGetWithHttpInfo($customerId, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->apiCustomersCustomerIdOrdersGetRequest($customerId);
+        $request = $this->apiCustomersCustomerIdOrdersGetRequest($customerId, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2987,16 +3143,17 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdOrdersGetAsync
      *
-     * 
+     * Get orders
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdOrdersGetAsync($customerId)
+    public function apiCustomersCustomerIdOrdersGetAsync($customerId, $filter = null)
     {
-        return $this->apiCustomersCustomerIdOrdersGetAsyncWithHttpInfo($customerId)
+        return $this->apiCustomersCustomerIdOrdersGetAsyncWithHttpInfo($customerId, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3007,17 +3164,18 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdOrdersGetAsyncWithHttpInfo
      *
-     * 
+     * Get orders
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdOrdersGetAsyncWithHttpInfo($customerId)
+    public function apiCustomersCustomerIdOrdersGetAsyncWithHttpInfo($customerId, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->apiCustomersCustomerIdOrdersGetRequest($customerId);
+        $request = $this->apiCustomersCustomerIdOrdersGetRequest($customerId, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3060,11 +3218,12 @@ class CustomerApi
      * Create request for operation 'apiCustomersCustomerIdOrdersGet'
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersCustomerIdOrdersGetRequest($customerId)
+    protected function apiCustomersCustomerIdOrdersGetRequest($customerId, $filter = null)
     {
         // verify the required parameter 'customerId' is set
         if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
@@ -3080,6 +3239,10 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($customerId !== null) {
@@ -3162,32 +3325,39 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdOrdersIdGet
      *
+     * Get a order
+     *
      * @param  string $customerId customerId (required)
      * @param  string $id id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function apiCustomersCustomerIdOrdersIdGet($customerId, $id)
+    public function apiCustomersCustomerIdOrdersIdGet($customerId, $id, $filter = null)
     {
-        $this->apiCustomersCustomerIdOrdersIdGetWithHttpInfo($customerId, $id);
+        list($response) = $this->apiCustomersCustomerIdOrdersIdGetWithHttpInfo($customerId, $id, $filter);
+        return $response;
     }
 
     /**
      * Operation apiCustomersCustomerIdOrdersIdGetWithHttpInfo
      *
+     * Get a order
+     *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersCustomerIdOrdersIdGetWithHttpInfo($customerId, $id)
+    public function apiCustomersCustomerIdOrdersIdGetWithHttpInfo($customerId, $id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdOrdersIdGetRequest($customerId, $id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Order';
+        $request = $this->apiCustomersCustomerIdOrdersIdGetRequest($customerId, $id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3217,10 +3387,32 @@ class CustomerApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Order',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -3229,17 +3421,18 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdOrdersIdGetAsync
      *
-     * 
+     * Get a order
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdOrdersIdGetAsync($customerId, $id)
+    public function apiCustomersCustomerIdOrdersIdGetAsync($customerId, $id, $filter = null)
     {
-        return $this->apiCustomersCustomerIdOrdersIdGetAsyncWithHttpInfo($customerId, $id)
+        return $this->apiCustomersCustomerIdOrdersIdGetAsyncWithHttpInfo($customerId, $id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3250,24 +3443,39 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdOrdersIdGetAsyncWithHttpInfo
      *
-     * 
+     * Get a order
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdOrdersIdGetAsyncWithHttpInfo($customerId, $id)
+    public function apiCustomersCustomerIdOrdersIdGetAsyncWithHttpInfo($customerId, $id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdOrdersIdGetRequest($customerId, $id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Order';
+        $request = $this->apiCustomersCustomerIdOrdersIdGetRequest($customerId, $id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3291,11 +3499,12 @@ class CustomerApi
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersCustomerIdOrdersIdGetRequest($customerId, $id)
+    protected function apiCustomersCustomerIdOrdersIdGetRequest($customerId, $id, $filter = null)
     {
         // verify the required parameter 'customerId' is set
         if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
@@ -3317,6 +3526,10 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($customerId !== null) {
@@ -3407,30 +3620,37 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdSitesGet
      *
+     * Get sites
+     *
      * @param  string $customerId customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Site[]
      */
-    public function apiCustomersCustomerIdSitesGet($customerId)
+    public function apiCustomersCustomerIdSitesGet($customerId, $filter = null)
     {
-        $this->apiCustomersCustomerIdSitesGetWithHttpInfo($customerId);
+        list($response) = $this->apiCustomersCustomerIdSitesGetWithHttpInfo($customerId, $filter);
+        return $response;
     }
 
     /**
      * Operation apiCustomersCustomerIdSitesGetWithHttpInfo
      *
+     * Get sites
+     *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Site[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersCustomerIdSitesGetWithHttpInfo($customerId)
+    public function apiCustomersCustomerIdSitesGetWithHttpInfo($customerId, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdSitesGetRequest($customerId);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Site[]';
+        $request = $this->apiCustomersCustomerIdSitesGetRequest($customerId, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3460,10 +3680,32 @@ class CustomerApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Site[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -3472,16 +3714,17 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdSitesGetAsync
      *
-     * 
+     * Get sites
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdSitesGetAsync($customerId)
+    public function apiCustomersCustomerIdSitesGetAsync($customerId, $filter = null)
     {
-        return $this->apiCustomersCustomerIdSitesGetAsyncWithHttpInfo($customerId)
+        return $this->apiCustomersCustomerIdSitesGetAsyncWithHttpInfo($customerId, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3492,23 +3735,38 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdSitesGetAsyncWithHttpInfo
      *
-     * 
+     * Get sites
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdSitesGetAsyncWithHttpInfo($customerId)
+    public function apiCustomersCustomerIdSitesGetAsyncWithHttpInfo($customerId, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdSitesGetRequest($customerId);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Site[]';
+        $request = $this->apiCustomersCustomerIdSitesGetRequest($customerId, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3531,11 +3789,12 @@ class CustomerApi
      * Create request for operation 'apiCustomersCustomerIdSitesGet'
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersCustomerIdSitesGetRequest($customerId)
+    protected function apiCustomersCustomerIdSitesGetRequest($customerId, $filter = null)
     {
         // verify the required parameter 'customerId' is set
         if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
@@ -3551,6 +3810,10 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($customerId !== null) {
@@ -3633,32 +3896,39 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdSitesIdGet
      *
+     * Get a site
+     *
      * @param  string $customerId customerId (required)
      * @param  string $id id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Site
      */
-    public function apiCustomersCustomerIdSitesIdGet($customerId, $id)
+    public function apiCustomersCustomerIdSitesIdGet($customerId, $id, $filter = null)
     {
-        $this->apiCustomersCustomerIdSitesIdGetWithHttpInfo($customerId, $id);
+        list($response) = $this->apiCustomersCustomerIdSitesIdGetWithHttpInfo($customerId, $id, $filter);
+        return $response;
     }
 
     /**
      * Operation apiCustomersCustomerIdSitesIdGetWithHttpInfo
      *
+     * Get a site
+     *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersCustomerIdSitesIdGetWithHttpInfo($customerId, $id)
+    public function apiCustomersCustomerIdSitesIdGetWithHttpInfo($customerId, $id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdSitesIdGetRequest($customerId, $id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Site';
+        $request = $this->apiCustomersCustomerIdSitesIdGetRequest($customerId, $id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3688,10 +3958,32 @@ class CustomerApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Site',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -3700,17 +3992,18 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdSitesIdGetAsync
      *
-     * 
+     * Get a site
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdSitesIdGetAsync($customerId, $id)
+    public function apiCustomersCustomerIdSitesIdGetAsync($customerId, $id, $filter = null)
     {
-        return $this->apiCustomersCustomerIdSitesIdGetAsyncWithHttpInfo($customerId, $id)
+        return $this->apiCustomersCustomerIdSitesIdGetAsyncWithHttpInfo($customerId, $id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3721,24 +4014,39 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdSitesIdGetAsyncWithHttpInfo
      *
-     * 
+     * Get a site
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdSitesIdGetAsyncWithHttpInfo($customerId, $id)
+    public function apiCustomersCustomerIdSitesIdGetAsyncWithHttpInfo($customerId, $id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdSitesIdGetRequest($customerId, $id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Site';
+        $request = $this->apiCustomersCustomerIdSitesIdGetRequest($customerId, $id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -3762,11 +4070,12 @@ class CustomerApi
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersCustomerIdSitesIdGetRequest($customerId, $id)
+    protected function apiCustomersCustomerIdSitesIdGetRequest($customerId, $id, $filter = null)
     {
         // verify the required parameter 'customerId' is set
         if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
@@ -3788,6 +4097,10 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($customerId !== null) {
@@ -4426,30 +4739,37 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdSubscriptionsGet
      *
+     * Get subscriptions
+     *
      * @param  string $customerId customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Subscription[]
      */
-    public function apiCustomersCustomerIdSubscriptionsGet($customerId)
+    public function apiCustomersCustomerIdSubscriptionsGet($customerId, $filter = null)
     {
-        $this->apiCustomersCustomerIdSubscriptionsGetWithHttpInfo($customerId);
+        list($response) = $this->apiCustomersCustomerIdSubscriptionsGetWithHttpInfo($customerId, $filter);
+        return $response;
     }
 
     /**
      * Operation apiCustomersCustomerIdSubscriptionsGetWithHttpInfo
      *
+     * Get subscriptions
+     *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Subscription[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersCustomerIdSubscriptionsGetWithHttpInfo($customerId)
+    public function apiCustomersCustomerIdSubscriptionsGetWithHttpInfo($customerId, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdSubscriptionsGetRequest($customerId);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription[]';
+        $request = $this->apiCustomersCustomerIdSubscriptionsGetRequest($customerId, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4479,10 +4799,32 @@ class CustomerApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Subscription[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -4491,16 +4833,17 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdSubscriptionsGetAsync
      *
-     * 
+     * Get subscriptions
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdSubscriptionsGetAsync($customerId)
+    public function apiCustomersCustomerIdSubscriptionsGetAsync($customerId, $filter = null)
     {
-        return $this->apiCustomersCustomerIdSubscriptionsGetAsyncWithHttpInfo($customerId)
+        return $this->apiCustomersCustomerIdSubscriptionsGetAsyncWithHttpInfo($customerId, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4511,23 +4854,38 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdSubscriptionsGetAsyncWithHttpInfo
      *
-     * 
+     * Get subscriptions
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdSubscriptionsGetAsyncWithHttpInfo($customerId)
+    public function apiCustomersCustomerIdSubscriptionsGetAsyncWithHttpInfo($customerId, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdSubscriptionsGetRequest($customerId);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription[]';
+        $request = $this->apiCustomersCustomerIdSubscriptionsGetRequest($customerId, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -4550,11 +4908,12 @@ class CustomerApi
      * Create request for operation 'apiCustomersCustomerIdSubscriptionsGet'
      *
      * @param  string $customerId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersCustomerIdSubscriptionsGetRequest($customerId)
+    protected function apiCustomersCustomerIdSubscriptionsGetRequest($customerId, $filter = null)
     {
         // verify the required parameter 'customerId' is set
         if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
@@ -4570,6 +4929,10 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($customerId !== null) {
@@ -4650,34 +5013,41 @@ class CustomerApi
     }
 
     /**
-     * Operation apiCustomersCustomerIdSubscriptionsIdGet
+     * Operation apiCustomersCustomerIdSubscriptionsIdCancelPost
      *
+     * Cancel (part of) a subscription.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto $cancelSubscriptionBodyDto cancelSubscriptionBodyDto (required)
      * @param  string $customerId customerId (required)
      * @param  string $id id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return object
      */
-    public function apiCustomersCustomerIdSubscriptionsIdGet($customerId, $id)
+    public function apiCustomersCustomerIdSubscriptionsIdCancelPost($cancelSubscriptionBodyDto, $customerId, $id)
     {
-        $this->apiCustomersCustomerIdSubscriptionsIdGetWithHttpInfo($customerId, $id);
+        list($response) = $this->apiCustomersCustomerIdSubscriptionsIdCancelPostWithHttpInfo($cancelSubscriptionBodyDto, $customerId, $id);
+        return $response;
     }
 
     /**
-     * Operation apiCustomersCustomerIdSubscriptionsIdGetWithHttpInfo
+     * Operation apiCustomersCustomerIdSubscriptionsIdCancelPostWithHttpInfo
      *
+     * Cancel (part of) a subscription.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto $cancelSubscriptionBodyDto (required)
      * @param  string $customerId (required)
      * @param  string $id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersCustomerIdSubscriptionsIdGetWithHttpInfo($customerId, $id)
+    public function apiCustomersCustomerIdSubscriptionsIdCancelPostWithHttpInfo($cancelSubscriptionBodyDto, $customerId, $id)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdSubscriptionsIdGetRequest($customerId, $id);
+        $returnType = 'object';
+        $request = $this->apiCustomersCustomerIdSubscriptionsIdCancelPostRequest($cancelSubscriptionBodyDto, $customerId, $id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4707,10 +5077,332 @@ class CustomerApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'object',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiCustomersCustomerIdSubscriptionsIdCancelPostAsync
+     *
+     * Cancel (part of) a subscription.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto $cancelSubscriptionBodyDto (required)
+     * @param  string $customerId (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiCustomersCustomerIdSubscriptionsIdCancelPostAsync($cancelSubscriptionBodyDto, $customerId, $id)
+    {
+        return $this->apiCustomersCustomerIdSubscriptionsIdCancelPostAsyncWithHttpInfo($cancelSubscriptionBodyDto, $customerId, $id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiCustomersCustomerIdSubscriptionsIdCancelPostAsyncWithHttpInfo
+     *
+     * Cancel (part of) a subscription.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto $cancelSubscriptionBodyDto (required)
+     * @param  string $customerId (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiCustomersCustomerIdSubscriptionsIdCancelPostAsyncWithHttpInfo($cancelSubscriptionBodyDto, $customerId, $id)
+    {
+        $returnType = 'object';
+        $request = $this->apiCustomersCustomerIdSubscriptionsIdCancelPostRequest($cancelSubscriptionBodyDto, $customerId, $id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiCustomersCustomerIdSubscriptionsIdCancelPost'
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto $cancelSubscriptionBodyDto (required)
+     * @param  string $customerId (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiCustomersCustomerIdSubscriptionsIdCancelPostRequest($cancelSubscriptionBodyDto, $customerId, $id)
+    {
+        // verify the required parameter 'cancelSubscriptionBodyDto' is set
+        if ($cancelSubscriptionBodyDto === null || (is_array($cancelSubscriptionBodyDto) && count($cancelSubscriptionBodyDto) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $cancelSubscriptionBodyDto when calling apiCustomersCustomerIdSubscriptionsIdCancelPost'
+            );
+        }
+        // verify the required parameter 'customerId' is set
+        if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $customerId when calling apiCustomersCustomerIdSubscriptionsIdCancelPost'
+            );
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling apiCustomersCustomerIdSubscriptionsIdCancelPost'
+            );
+        }
+
+        $resourcePath = '/api/Customers/{customerId}/subscriptions/{id}/cancel';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($customerId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'customerId' . '}',
+                ObjectSerializer::toPathValue($customerId),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($cancelSubscriptionBodyDto)) {
+            $_tempBody = $cancelSubscriptionBodyDto;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
+        if ($apiKey !== null) {
+            $queryParams['access_token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiCustomersCustomerIdSubscriptionsIdGet
+     *
+     * Get a subscriptions
+     *
+     * @param  string $customerId customerId (required)
+     * @param  string $id id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yoast\MyYoastApiClient\Model\Subscription
+     */
+    public function apiCustomersCustomerIdSubscriptionsIdGet($customerId, $id, $filter = null)
+    {
+        list($response) = $this->apiCustomersCustomerIdSubscriptionsIdGetWithHttpInfo($customerId, $id, $filter);
+        return $response;
+    }
+
+    /**
+     * Operation apiCustomersCustomerIdSubscriptionsIdGetWithHttpInfo
+     *
+     * Get a subscriptions
+     *
+     * @param  string $customerId (required)
+     * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiCustomersCustomerIdSubscriptionsIdGetWithHttpInfo($customerId, $id, $filter = null)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription';
+        $request = $this->apiCustomersCustomerIdSubscriptionsIdGetRequest($customerId, $id, $filter);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Subscription',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -4719,17 +5411,18 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdSubscriptionsIdGetAsync
      *
-     * 
+     * Get a subscriptions
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdSubscriptionsIdGetAsync($customerId, $id)
+    public function apiCustomersCustomerIdSubscriptionsIdGetAsync($customerId, $id, $filter = null)
     {
-        return $this->apiCustomersCustomerIdSubscriptionsIdGetAsyncWithHttpInfo($customerId, $id)
+        return $this->apiCustomersCustomerIdSubscriptionsIdGetAsyncWithHttpInfo($customerId, $id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -4740,24 +5433,39 @@ class CustomerApi
     /**
      * Operation apiCustomersCustomerIdSubscriptionsIdGetAsyncWithHttpInfo
      *
-     * 
+     * Get a subscriptions
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdSubscriptionsIdGetAsyncWithHttpInfo($customerId, $id)
+    public function apiCustomersCustomerIdSubscriptionsIdGetAsyncWithHttpInfo($customerId, $id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersCustomerIdSubscriptionsIdGetRequest($customerId, $id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription';
+        $request = $this->apiCustomersCustomerIdSubscriptionsIdGetRequest($customerId, $id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -4781,11 +5489,12 @@ class CustomerApi
      *
      * @param  string $customerId (required)
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersCustomerIdSubscriptionsIdGetRequest($customerId, $id)
+    protected function apiCustomersCustomerIdSubscriptionsIdGetRequest($customerId, $id, $filter = null)
     {
         // verify the required parameter 'customerId' is set
         if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
@@ -4807,6 +5516,10 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($customerId !== null) {
@@ -4895,41 +5608,37 @@ class CustomerApi
     }
 
     /**
-     * Operation apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost
+     * Operation apiCustomersGet
      *
-     * Cancel (part of) a subscription.
+     * Get customers
      *
-     * @param  \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto $cancelSubscriptionBodyDto cancelSubscriptionBodyDto (required)
-     * @param  string $customerId customerId (required)
-     * @param  string $subscriptionId subscriptionId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return object
+     * @return \Yoast\MyYoastApiClient\Model\Customer[]
      */
-    public function apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost($cancelSubscriptionBodyDto, $customerId, $subscriptionId)
+    public function apiCustomersGet($filter = null)
     {
-        list($response) = $this->apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPostWithHttpInfo($cancelSubscriptionBodyDto, $customerId, $subscriptionId);
+        list($response) = $this->apiCustomersGetWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPostWithHttpInfo
+     * Operation apiCustomersGetWithHttpInfo
      *
-     * Cancel (part of) a subscription.
+     * Get customers
      *
-     * @param  \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto $cancelSubscriptionBodyDto (required)
-     * @param  string $customerId (required)
-     * @param  string $subscriptionId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of object, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPostWithHttpInfo($cancelSubscriptionBodyDto, $customerId, $subscriptionId)
+    public function apiCustomersGetWithHttpInfo($filter = null)
     {
-        $returnType = 'object';
-        $request = $this->apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPostRequest($cancelSubscriptionBodyDto, $customerId, $subscriptionId);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Customer[]';
+        $request = $this->apiCustomersGetRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -4980,7 +5689,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\Yoast\MyYoastApiClient\Model\Customer[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4991,20 +5700,18 @@ class CustomerApi
     }
 
     /**
-     * Operation apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPostAsync
+     * Operation apiCustomersGetAsync
      *
-     * Cancel (part of) a subscription.
+     * Get customers
      *
-     * @param  \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto $cancelSubscriptionBodyDto (required)
-     * @param  string $customerId (required)
-     * @param  string $subscriptionId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPostAsync($cancelSubscriptionBodyDto, $customerId, $subscriptionId)
+    public function apiCustomersGetAsync($filter = null)
     {
-        return $this->apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPostAsyncWithHttpInfo($cancelSubscriptionBodyDto, $customerId, $subscriptionId)
+        return $this->apiCustomersGetAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5013,21 +5720,19 @@ class CustomerApi
     }
 
     /**
-     * Operation apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPostAsyncWithHttpInfo
+     * Operation apiCustomersGetAsyncWithHttpInfo
      *
-     * Cancel (part of) a subscription.
+     * Get customers
      *
-     * @param  \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto $cancelSubscriptionBodyDto (required)
-     * @param  string $customerId (required)
-     * @param  string $subscriptionId (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPostAsyncWithHttpInfo($cancelSubscriptionBodyDto, $customerId, $subscriptionId)
+    public function apiCustomersGetAsyncWithHttpInfo($filter = null)
     {
-        $returnType = 'object';
-        $request = $this->apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPostRequest($cancelSubscriptionBodyDto, $customerId, $subscriptionId);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Customer[]';
+        $request = $this->apiCustomersGetRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -5067,260 +5772,14 @@ class CustomerApi
     }
 
     /**
-     * Create request for operation 'apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost'
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto $cancelSubscriptionBodyDto (required)
-     * @param  string $customerId (required)
-     * @param  string $subscriptionId (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPostRequest($cancelSubscriptionBodyDto, $customerId, $subscriptionId)
-    {
-        // verify the required parameter 'cancelSubscriptionBodyDto' is set
-        if ($cancelSubscriptionBodyDto === null || (is_array($cancelSubscriptionBodyDto) && count($cancelSubscriptionBodyDto) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $cancelSubscriptionBodyDto when calling apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost'
-            );
-        }
-        // verify the required parameter 'customerId' is set
-        if ($customerId === null || (is_array($customerId) && count($customerId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $customerId when calling apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost'
-            );
-        }
-        // verify the required parameter 'subscriptionId' is set
-        if ($subscriptionId === null || (is_array($subscriptionId) && count($subscriptionId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $subscriptionId when calling apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost'
-            );
-        }
-
-        $resourcePath = '/api/Customers/{customerId}/subscriptions/{subscriptionId}/cancel';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($customerId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'customerId' . '}',
-                ObjectSerializer::toPathValue($customerId),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($subscriptionId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'subscriptionId' . '}',
-                ObjectSerializer::toPathValue($subscriptionId),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($cancelSubscriptionBodyDto)) {
-            $_tempBody = $cancelSubscriptionBodyDto;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
-        if ($apiKey !== null) {
-            $queryParams['access_token'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiCustomersGet
-     *
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function apiCustomersGet()
-    {
-        $this->apiCustomersGetWithHttpInfo();
-    }
-
-    /**
-     * Operation apiCustomersGetWithHttpInfo
-     *
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiCustomersGetWithHttpInfo()
-    {
-        $returnType = '';
-        $request = $this->apiCustomersGetRequest();
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiCustomersGetAsync
-     *
-     * 
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiCustomersGetAsync()
-    {
-        return $this->apiCustomersGetAsyncWithHttpInfo()
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiCustomersGetAsyncWithHttpInfo
-     *
-     * 
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiCustomersGetAsyncWithHttpInfo()
-    {
-        $returnType = '';
-        $request = $this->apiCustomersGetRequest();
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
      * Create request for operation 'apiCustomersGet'
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersGetRequest()
+    protected function apiCustomersGetRequest($filter = null)
     {
 
         $resourcePath = '/api/Customers';
@@ -5330,6 +5789,10 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
 
         // body params
@@ -6465,32 +6928,37 @@ class CustomerApi
     }
 
     /**
-     * Operation apiCustomersIdGet
+     * Operation apiCustomersIdGdprDeleteDelete
+     *
+     * Performs a \"GDPR forget me\" request.
      *
      * @param  string $id id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return string
      */
-    public function apiCustomersIdGet($id)
+    public function apiCustomersIdGdprDeleteDelete($id)
     {
-        $this->apiCustomersIdGetWithHttpInfo($id);
+        list($response) = $this->apiCustomersIdGdprDeleteDeleteWithHttpInfo($id);
+        return $response;
     }
 
     /**
-     * Operation apiCustomersIdGetWithHttpInfo
+     * Operation apiCustomersIdGdprDeleteDeleteWithHttpInfo
+     *
+     * Performs a \"GDPR forget me\" request.
      *
      * @param  string $id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersIdGetWithHttpInfo($id)
+    public function apiCustomersIdGdprDeleteDeleteWithHttpInfo($id)
     {
-        $returnType = '';
-        $request = $this->apiCustomersIdGetRequest($id);
+        $returnType = 'string';
+        $request = $this->apiCustomersIdGdprDeleteDeleteRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -6520,10 +6988,301 @@ class CustomerApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        'string',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiCustomersIdGdprDeleteDeleteAsync
+     *
+     * Performs a \"GDPR forget me\" request.
+     *
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiCustomersIdGdprDeleteDeleteAsync($id)
+    {
+        return $this->apiCustomersIdGdprDeleteDeleteAsyncWithHttpInfo($id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiCustomersIdGdprDeleteDeleteAsyncWithHttpInfo
+     *
+     * Performs a \"GDPR forget me\" request.
+     *
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiCustomersIdGdprDeleteDeleteAsyncWithHttpInfo($id)
+    {
+        $returnType = 'string';
+        $request = $this->apiCustomersIdGdprDeleteDeleteRequest($id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiCustomersIdGdprDeleteDelete'
+     *
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiCustomersIdGdprDeleteDeleteRequest($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling apiCustomersIdGdprDeleteDelete'
+            );
+        }
+
+        $resourcePath = '/api/Customers/{id}/gdpr-delete';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
+        if ($apiKey !== null) {
+            $queryParams['access_token'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiCustomersIdGet
+     *
+     * Get a customer
+     *
+     * @param  string $id id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yoast\MyYoastApiClient\Model\Customer
+     */
+    public function apiCustomersIdGet($id, $filter = null)
+    {
+        list($response) = $this->apiCustomersIdGetWithHttpInfo($id, $filter);
+        return $response;
+    }
+
+    /**
+     * Operation apiCustomersIdGetWithHttpInfo
+     *
+     * Get a customer
+     *
+     * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiCustomersIdGetWithHttpInfo($id, $filter = null)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\Customer';
+        $request = $this->apiCustomersIdGetRequest($id, $filter);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Customer',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -6532,16 +7291,17 @@ class CustomerApi
     /**
      * Operation apiCustomersIdGetAsync
      *
-     * 
+     * Get a customer
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersIdGetAsync($id)
+    public function apiCustomersIdGetAsync($id, $filter = null)
     {
-        return $this->apiCustomersIdGetAsyncWithHttpInfo($id)
+        return $this->apiCustomersIdGetAsyncWithHttpInfo($id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6552,23 +7312,38 @@ class CustomerApi
     /**
      * Operation apiCustomersIdGetAsyncWithHttpInfo
      *
-     * 
+     * Get a customer
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersIdGetAsyncWithHttpInfo($id)
+    public function apiCustomersIdGetAsyncWithHttpInfo($id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCustomersIdGetRequest($id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Customer';
+        $request = $this->apiCustomersIdGetRequest($id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -6591,11 +7366,12 @@ class CustomerApi
      * Create request for operation 'apiCustomersIdGet'
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersIdGetRequest($id)
+    protected function apiCustomersIdGetRequest($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -6611,6 +7387,10 @@ class CustomerApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($id !== null) {

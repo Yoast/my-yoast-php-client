@@ -368,28 +368,35 @@ class SiteApi
     /**
      * Operation apiSitesGet
      *
+     * Get sites
+     *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Site[]
      */
-    public function apiSitesGet()
+    public function apiSitesGet($filter = null)
     {
-        $this->apiSitesGetWithHttpInfo();
+        list($response) = $this->apiSitesGetWithHttpInfo($filter);
+        return $response;
     }
 
     /**
      * Operation apiSitesGetWithHttpInfo
      *
+     * Get sites
+     *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Site[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiSitesGetWithHttpInfo()
+    public function apiSitesGetWithHttpInfo($filter = null)
     {
-        $returnType = '';
-        $request = $this->apiSitesGetRequest();
+        $returnType = '\Yoast\MyYoastApiClient\Model\Site[]';
+        $request = $this->apiSitesGetRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -419,10 +426,32 @@ class SiteApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Site[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -431,15 +460,16 @@ class SiteApi
     /**
      * Operation apiSitesGetAsync
      *
-     * 
+     * Get sites
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSitesGetAsync()
+    public function apiSitesGetAsync($filter = null)
     {
-        return $this->apiSitesGetAsyncWithHttpInfo()
+        return $this->apiSitesGetAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -450,22 +480,37 @@ class SiteApi
     /**
      * Operation apiSitesGetAsyncWithHttpInfo
      *
-     * 
+     * Get sites
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSitesGetAsyncWithHttpInfo()
+    public function apiSitesGetAsyncWithHttpInfo($filter = null)
     {
-        $returnType = '';
-        $request = $this->apiSitesGetRequest();
+        $returnType = '\Yoast\MyYoastApiClient\Model\Site[]';
+        $request = $this->apiSitesGetRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -487,11 +532,12 @@ class SiteApi
     /**
      * Create request for operation 'apiSitesGet'
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiSitesGetRequest()
+    protected function apiSitesGetRequest($filter = null)
     {
 
         $resourcePath = '/api/Sites';
@@ -501,6 +547,10 @@ class SiteApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
 
         // body params
@@ -575,30 +625,37 @@ class SiteApi
     /**
      * Operation apiSitesIdGet
      *
+     * Get a site
+     *
      * @param  string $id id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Site
      */
-    public function apiSitesIdGet($id)
+    public function apiSitesIdGet($id, $filter = null)
     {
-        $this->apiSitesIdGetWithHttpInfo($id);
+        list($response) = $this->apiSitesIdGetWithHttpInfo($id, $filter);
+        return $response;
     }
 
     /**
      * Operation apiSitesIdGetWithHttpInfo
      *
+     * Get a site
+     *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiSitesIdGetWithHttpInfo($id)
+    public function apiSitesIdGetWithHttpInfo($id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiSitesIdGetRequest($id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Site';
+        $request = $this->apiSitesIdGetRequest($id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -628,10 +685,32 @@ class SiteApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Site',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -640,16 +719,17 @@ class SiteApi
     /**
      * Operation apiSitesIdGetAsync
      *
-     * 
+     * Get a site
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSitesIdGetAsync($id)
+    public function apiSitesIdGetAsync($id, $filter = null)
     {
-        return $this->apiSitesIdGetAsyncWithHttpInfo($id)
+        return $this->apiSitesIdGetAsyncWithHttpInfo($id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -660,23 +740,38 @@ class SiteApi
     /**
      * Operation apiSitesIdGetAsyncWithHttpInfo
      *
-     * 
+     * Get a site
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSitesIdGetAsyncWithHttpInfo($id)
+    public function apiSitesIdGetAsyncWithHttpInfo($id, $filter = null)
     {
-        $returnType = '';
-        $request = $this->apiSitesIdGetRequest($id);
+        $returnType = '\Yoast\MyYoastApiClient\Model\Site';
+        $request = $this->apiSitesIdGetRequest($id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -699,11 +794,12 @@ class SiteApi
      * Create request for operation 'apiSitesIdGet'
      *
      * @param  string $id (required)
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiSitesIdGetRequest($id)
+    protected function apiSitesIdGetRequest($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -719,6 +815,10 @@ class SiteApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
         // path params
         if ($id !== null) {

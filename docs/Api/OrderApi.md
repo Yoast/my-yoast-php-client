@@ -4,16 +4,18 @@ All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiOrdersGet**](OrderApi.md#apiOrdersGet) | **GET** /api/Orders | 
-[**apiOrdersIdGet**](OrderApi.md#apiOrdersIdGet) | **GET** /api/Orders/id | 
+[**apiOrdersGet**](OrderApi.md#apiOrdersGet) | **GET** /api/Orders | Get orders
+[**apiOrdersIdGet**](OrderApi.md#apiOrdersIdGet) | **GET** /api/Orders/{id} | Get a order
 [**apiOrdersIdInvoiceGet**](OrderApi.md#apiOrdersIdInvoiceGet) | **GET** /api/Orders/{id}/invoice | Create invoice
 [**apiOrdersIdRefundsRefundIdInvoiceGet**](OrderApi.md#apiOrdersIdRefundsRefundIdInvoiceGet) | **GET** /api/Orders/{id}/refunds/{refundId}/invoice | Creates a credit note
 
 
 # **apiOrdersGet**
-> apiOrdersGet()
+> \Yoast\MyYoastApiClient\Model\Order[] apiOrdersGet($filter)
 
+Get orders
 
+Get and filter orders
 
 ### Example
 ```php
@@ -31,9 +33,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiOrdersGet();
+    $result = $apiInstance->apiOrdersGet($filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiOrdersGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -41,11 +45,14 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Order[]**](../Model/Order.md)
 
 ### Authorization
 
@@ -59,9 +66,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiOrdersIdGet**
-> apiOrdersIdGet($id)
+> \Yoast\MyYoastApiClient\Model\Order apiOrdersIdGet($id, $filter)
 
+Get a order
 
+Get a single order
 
 ### Example
 ```php
@@ -80,9 +89,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     $config
 );
 $id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiOrdersIdGet($id);
+    $result = $apiInstance->apiOrdersIdGet($id, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiOrdersIdGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -94,10 +105,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 

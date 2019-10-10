@@ -1,18 +1,18 @@
-# Yoast\MyYoastApiClient\ProductGroupApi
+# Yoast\MyYoastApiClient\GDPRApi
 
 All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiProductGroupsGet**](ProductGroupApi.md#apiProductGroupsGet) | **GET** /api/ProductGroups | Get productgroups
+[**apiCustomersIdGdprDeleteDelete**](GDPRApi.md#apiCustomersIdGdprDeleteDelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 
 
-# **apiProductGroupsGet**
-> \Yoast\MyYoastApiClient\Model\ProductGroup[] apiProductGroupsGet($filter)
+# **apiCustomersIdGdprDeleteDelete**
+> string apiCustomersIdGdprDeleteDelete($id)
 
-Get productgroups
+Performs a \"GDPR forget me\" request.
 
-Get and filter productgroups
+Deletes and/or obfuscates all data related to a customer, except order data that we legally need to generate invoices.
 
 ### Example
 ```php
@@ -24,19 +24,19 @@ $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setAp
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\ProductGroupApi(
+$apiInstance = new Yoast\MyYoastApiClient\Api\GDPRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
+$id = "id_example"; // string | 
 
 try {
-    $result = $apiInstance->apiProductGroupsGet($filter);
+    $result = $apiInstance->apiCustomersIdGdprDeleteDelete($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductGroupApi->apiProductGroupsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GDPRApi->apiCustomersIdGdprDeleteDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -45,11 +45,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
+ **id** | [**string**](../Model/.md)|  |
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\ProductGroup[]**](../Model/ProductGroup.md)
+**string**
 
 ### Authorization
 

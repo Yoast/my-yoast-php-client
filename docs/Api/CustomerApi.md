@@ -8,28 +8,29 @@ Method | HTTP request | Description
 [**apiCustomersAllrolesGet**](CustomerApi.md#apiCustomersAllrolesGet) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
 [**apiCustomersCurrentGet**](CustomerApi.md#apiCustomersCurrentGet) | **GET** /api/Customers/current | Get the current customer
 [**apiCustomersCustomerIdBuyerCourseEnrollmentsGet**](CustomerApi.md#apiCustomersCustomerIdBuyerCourseEnrollmentsGet) | **GET** /api/Customers/{customerId}/buyerCourseEnrollments | Find Course Enrollments that a customer is buyer of
-[**apiCustomersCustomerIdComposerTokensGet**](CustomerApi.md#apiCustomersCustomerIdComposerTokensGet) | **GET** /api/Customers/{customerId}/composerTokens | 
-[**apiCustomersCustomerIdComposerTokensIdGet**](CustomerApi.md#apiCustomersCustomerIdComposerTokensIdGet) | **GET** /api/Customers/{customerId}/composerTokens/{id} | 
+[**apiCustomersCustomerIdComposerTokensGet**](CustomerApi.md#apiCustomersCustomerIdComposerTokensGet) | **GET** /api/Customers/{customerId}/composerTokens | Get composer tokens
+[**apiCustomersCustomerIdComposerTokensIdGet**](CustomerApi.md#apiCustomersCustomerIdComposerTokensIdGet) | **GET** /api/Customers/{customerId}/composerTokens/{id} | Get a composer token
 [**apiCustomersCustomerIdCourseEnrollmentsGet**](CustomerApi.md#apiCustomersCustomerIdCourseEnrollmentsGet) | **GET** /api/Customers/{customerId}/courseEnrollments | Find Course Enrollments
-[**apiCustomersCustomerIdIdentitiesGet**](CustomerApi.md#apiCustomersCustomerIdIdentitiesGet) | **GET** /api/Customers/{customerId}/identities | 
+[**apiCustomersCustomerIdIdentitiesGet**](CustomerApi.md#apiCustomersCustomerIdIdentitiesGet) | **GET** /api/Customers/{customerId}/identities | Get user identities
 [**apiCustomersCustomerIdNewsletterDelete**](CustomerApi.md#apiCustomersCustomerIdNewsletterDelete) | **DELETE** /api/Customers/{customerId}/newsletter | Unsubscribe from the newsletter
 [**apiCustomersCustomerIdNewsletterGet**](CustomerApi.md#apiCustomersCustomerIdNewsletterGet) | **GET** /api/Customers/{customerId}/newsletter | Newsletter subscription status
 [**apiCustomersCustomerIdNewsletterPost**](CustomerApi.md#apiCustomersCustomerIdNewsletterPost) | **POST** /api/Customers/{customerId}/newsletter | Subscribe to the newsletter
-[**apiCustomersCustomerIdOrdersGet**](CustomerApi.md#apiCustomersCustomerIdOrdersGet) | **GET** /api/Customers/{customerId}/orders | 
-[**apiCustomersCustomerIdOrdersIdGet**](CustomerApi.md#apiCustomersCustomerIdOrdersIdGet) | **GET** /api/Customers/{customerId}/orders/{id} | 
-[**apiCustomersCustomerIdSitesGet**](CustomerApi.md#apiCustomersCustomerIdSitesGet) | **GET** /api/Customers/{customerId}/sites | 
-[**apiCustomersCustomerIdSitesIdGet**](CustomerApi.md#apiCustomersCustomerIdSitesIdGet) | **GET** /api/Customers/{customerId}/sites/{id} | 
+[**apiCustomersCustomerIdOrdersGet**](CustomerApi.md#apiCustomersCustomerIdOrdersGet) | **GET** /api/Customers/{customerId}/orders | Get orders
+[**apiCustomersCustomerIdOrdersIdGet**](CustomerApi.md#apiCustomersCustomerIdOrdersIdGet) | **GET** /api/Customers/{customerId}/orders/{id} | Get a order
+[**apiCustomersCustomerIdSitesGet**](CustomerApi.md#apiCustomersCustomerIdSitesGet) | **GET** /api/Customers/{customerId}/sites | Get sites
+[**apiCustomersCustomerIdSitesIdGet**](CustomerApi.md#apiCustomersCustomerIdSitesIdGet) | **GET** /api/Customers/{customerId}/sites/{id} | Get a site
 [**apiCustomersCustomerIdSitesPost**](CustomerApi.md#apiCustomersCustomerIdSitesPost) | **POST** /api/Customers/{customerId}/sites | Create a site for a user
 [**apiCustomersCustomerIdStudentCourseEnrollmentsGet**](CustomerApi.md#apiCustomersCustomerIdStudentCourseEnrollmentsGet) | **GET** /api/Customers/{customerId}/studentCourseEnrollments | Find Course Enrollments that a customer is student in
-[**apiCustomersCustomerIdSubscriptionsGet**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsGet) | **GET** /api/Customers/{customerId}/subscriptions | 
-[**apiCustomersCustomerIdSubscriptionsIdGet**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsIdGet) | **GET** /api/Customers/{customerId}/subscriptions/{id} | 
-[**apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost) | **POST** /api/Customers/{customerId}/subscriptions/{subscriptionId}/cancel | Cancel (part of) a subscription.
-[**apiCustomersGet**](CustomerApi.md#apiCustomersGet) | **GET** /api/Customers | 
+[**apiCustomersCustomerIdSubscriptionsGet**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsGet) | **GET** /api/Customers/{customerId}/subscriptions | Get subscriptions
+[**apiCustomersCustomerIdSubscriptionsIdCancelPost**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsIdCancelPost) | **POST** /api/Customers/{customerId}/subscriptions/{id}/cancel | Cancel (part of) a subscription.
+[**apiCustomersCustomerIdSubscriptionsIdGet**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsIdGet) | **GET** /api/Customers/{customerId}/subscriptions/{id} | Get a subscriptions
+[**apiCustomersGet**](CustomerApi.md#apiCustomersGet) | **GET** /api/Customers | Get customers
 [**apiCustomersIdAvatarPost**](CustomerApi.md#apiCustomersIdAvatarPost) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
 [**apiCustomersIdDownloadGet**](CustomerApi.md#apiCustomersIdDownloadGet) | **GET** /api/Customers/{id}/download | Download profile.
 [**apiCustomersIdEnablePost**](CustomerApi.md#apiCustomersIdEnablePost) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
 [**apiCustomersIdFindRefundsGet**](CustomerApi.md#apiCustomersIdFindRefundsGet) | **GET** /api/Customers/{id}/findRefunds | Find refunds for user
-[**apiCustomersIdGet**](CustomerApi.md#apiCustomersIdGet) | **GET** /api/Customers/{id} | 
+[**apiCustomersIdGdprDeleteDelete**](CustomerApi.md#apiCustomersIdGdprDeleteDelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
+[**apiCustomersIdGet**](CustomerApi.md#apiCustomersIdGet) | **GET** /api/Customers/{id} | Get a customer
 [**apiCustomersIdPasswordPatch**](CustomerApi.md#apiCustomersIdPasswordPatch) | **PATCH** /api/Customers/{id}/password | Update a customer&#39;s password in WordPress
 [**apiCustomersIdPatch**](CustomerApi.md#apiCustomersIdPatch) | **PATCH** /api/Customers/{id} | 
 [**apiCustomersIdProfileGet**](CustomerApi.md#apiCustomersIdProfileGet) | **GET** /api/Customers/{id}/profile | 
@@ -246,9 +247,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersCustomerIdComposerTokensGet**
-> apiCustomersCustomerIdComposerTokensGet($customerId)
+> \Yoast\MyYoastApiClient\Model\ComposerToken[] apiCustomersCustomerIdComposerTokensGet($customerId, $filter)
 
+Get composer tokens
 
+Get and filter composer tokens of a customer
 
 ### Example
 ```php
@@ -267,9 +270,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     $config
 );
 $customerId = "customerId_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCustomersCustomerIdComposerTokensGet($customerId);
+    $result = $apiInstance->apiCustomersCustomerIdComposerTokensGet($customerId, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersCustomerIdComposerTokensGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -281,10 +286,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\ComposerToken[]**](../Model/ComposerToken.md)
 
 ### Authorization
 
@@ -298,9 +304,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersCustomerIdComposerTokensIdGet**
-> apiCustomersCustomerIdComposerTokensIdGet($customerId, $id)
+> \Yoast\MyYoastApiClient\Model\ComposerToken apiCustomersCustomerIdComposerTokensIdGet($customerId, $id, $filter)
 
+Get a composer token
 
+Get a single composer token of a customer
 
 ### Example
 ```php
@@ -320,9 +328,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
 );
 $customerId = "customerId_example"; // string | 
 $id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCustomersCustomerIdComposerTokensIdGet($customerId, $id);
+    $result = $apiInstance->apiCustomersCustomerIdComposerTokensIdGet($customerId, $id, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersCustomerIdComposerTokensIdGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -335,10 +345,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
  **id** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\ComposerToken**](../Model/ComposerToken.md)
 
 ### Authorization
 
@@ -411,9 +422,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersCustomerIdIdentitiesGet**
-> apiCustomersCustomerIdIdentitiesGet($customerId)
+> \Yoast\MyYoastApiClient\Model\UserIdentity[] apiCustomersCustomerIdIdentitiesGet($customerId, $filter)
 
+Get user identities
 
+Get and filter user identities of a customer
 
 ### Example
 ```php
@@ -432,9 +445,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     $config
 );
 $customerId = "customerId_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCustomersCustomerIdIdentitiesGet($customerId);
+    $result = $apiInstance->apiCustomersCustomerIdIdentitiesGet($customerId, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersCustomerIdIdentitiesGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -446,10 +461,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\UserIdentity[]**](../Model/UserIdentity.md)
 
 ### Authorization
 
@@ -622,9 +638,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersCustomerIdOrdersGet**
-> \Yoast\MyYoastApiClient\Model\Order[] apiCustomersCustomerIdOrdersGet($customerId)
+> \Yoast\MyYoastApiClient\Model\Order[] apiCustomersCustomerIdOrdersGet($customerId, $filter)
 
+Get orders
 
+Get and filter orders of a customer
 
 ### Example
 ```php
@@ -643,9 +661,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     $config
 );
 $customerId = "customerId_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->apiCustomersCustomerIdOrdersGet($customerId);
+    $result = $apiInstance->apiCustomersCustomerIdOrdersGet($customerId, $filter);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersCustomerIdOrdersGet: ', $e->getMessage(), PHP_EOL;
@@ -658,6 +677,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -675,9 +695,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersCustomerIdOrdersIdGet**
-> apiCustomersCustomerIdOrdersIdGet($customerId, $id)
+> \Yoast\MyYoastApiClient\Model\Order apiCustomersCustomerIdOrdersIdGet($customerId, $id, $filter)
 
+Get a order
 
+Get a single order of a customer
 
 ### Example
 ```php
@@ -697,9 +719,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
 );
 $customerId = "customerId_example"; // string | 
 $id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCustomersCustomerIdOrdersIdGet($customerId, $id);
+    $result = $apiInstance->apiCustomersCustomerIdOrdersIdGet($customerId, $id, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersCustomerIdOrdersIdGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -712,10 +736,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
  **id** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Order**](../Model/Order.md)
 
 ### Authorization
 
@@ -729,9 +754,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersCustomerIdSitesGet**
-> apiCustomersCustomerIdSitesGet($customerId)
+> \Yoast\MyYoastApiClient\Model\Site[] apiCustomersCustomerIdSitesGet($customerId, $filter)
 
+Get sites
 
+Get and filter sites of a customer
 
 ### Example
 ```php
@@ -750,9 +777,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     $config
 );
 $customerId = "customerId_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCustomersCustomerIdSitesGet($customerId);
+    $result = $apiInstance->apiCustomersCustomerIdSitesGet($customerId, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSitesGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -764,10 +793,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Site[]**](../Model/Site.md)
 
 ### Authorization
 
@@ -781,9 +811,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersCustomerIdSitesIdGet**
-> apiCustomersCustomerIdSitesIdGet($customerId, $id)
+> \Yoast\MyYoastApiClient\Model\Site apiCustomersCustomerIdSitesIdGet($customerId, $id, $filter)
 
+Get a site
 
+Get a single site of a customer
 
 ### Example
 ```php
@@ -803,9 +835,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
 );
 $customerId = "customerId_example"; // string | 
 $id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCustomersCustomerIdSitesIdGet($customerId, $id);
+    $result = $apiInstance->apiCustomersCustomerIdSitesIdGet($customerId, $id, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSitesIdGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -818,10 +852,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
  **id** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Site**](../Model/Site.md)
 
 ### Authorization
 
@@ -945,9 +980,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersCustomerIdSubscriptionsGet**
-> apiCustomersCustomerIdSubscriptionsGet($customerId)
+> \Yoast\MyYoastApiClient\Model\Subscription[] apiCustomersCustomerIdSubscriptionsGet($customerId, $filter)
 
+Get subscriptions
 
+Get and filter subscriptions of a customer
 
 ### Example
 ```php
@@ -966,9 +1003,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     $config
 );
 $customerId = "customerId_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCustomersCustomerIdSubscriptionsGet($customerId);
+    $result = $apiInstance->apiCustomersCustomerIdSubscriptionsGet($customerId, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSubscriptionsGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -980,10 +1019,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Subscription[]**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -996,62 +1036,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiCustomersCustomerIdSubscriptionsIdGet**
-> apiCustomersCustomerIdSubscriptionsIdGet($customerId, $id)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$customerId = "customerId_example"; // string | 
-$id = "id_example"; // string | 
-
-try {
-    $apiInstance->apiCustomersCustomerIdSubscriptionsIdGet($customerId, $id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSubscriptionsIdGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerId** | [**string**](../Model/.md)|  |
- **id** | [**string**](../Model/.md)|  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost**
-> object apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost($cancelSubscriptionBodyDto, $customerId, $subscriptionId)
+# **apiCustomersCustomerIdSubscriptionsIdCancelPost**
+> object apiCustomersCustomerIdSubscriptionsIdCancelPost($cancelSubscriptionBodyDto, $customerId, $id)
 
 Cancel (part of) a subscription.
 
@@ -1075,13 +1061,13 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
 );
 $cancelSubscriptionBodyDto = new \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto(); // \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto | 
 $customerId = "customerId_example"; // string | 
-$subscriptionId = "subscriptionId_example"; // string | 
+$id = "id_example"; // string | 
 
 try {
-    $result = $apiInstance->apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost($cancelSubscriptionBodyDto, $customerId, $subscriptionId);
+    $result = $apiInstance->apiCustomersCustomerIdSubscriptionsIdCancelPost($cancelSubscriptionBodyDto, $customerId, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSubscriptionsIdCancelPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1091,8 +1077,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cancelSubscriptionBodyDto** | [**\Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto**](../Model/CancelSubscriptionBodyDto.md)|  |
- **customerId** | **string**|  |
- **subscriptionId** | **string**|  |
+ **customerId** | [**string**](../Model/.md)|  |
+ **id** | [**string**](../Model/.md)|  |
 
 ### Return type
 
@@ -1109,10 +1095,71 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **apiCustomersCustomerIdSubscriptionsIdGet**
+> \Yoast\MyYoastApiClient\Model\Subscription apiCustomersCustomerIdSubscriptionsIdGet($customerId, $id, $filter)
+
+Get a subscriptions
+
+Get a single subscriptions of a customer
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "customerId_example"; // string | 
+$id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
+
+try {
+    $result = $apiInstance->apiCustomersCustomerIdSubscriptionsIdGet($customerId, $id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSubscriptionsIdGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | [**string**](../Model/.md)|  |
+ **id** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **apiCustomersGet**
-> apiCustomersGet()
+> \Yoast\MyYoastApiClient\Model\Customer[] apiCustomersGet($filter)
 
+Get customers
 
+Get and filter customers
 
 ### Example
 ```php
@@ -1124,9 +1171,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCustomersGet();
+    $result = $apiInstance->apiCustomersGet($filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -1134,11 +1183,14 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\Customer[]**](../Model/Customer.md)
 
 ### Authorization
 
@@ -1371,27 +1423,36 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiCustomersIdGet**
-> apiCustomersIdGet($id)
+# **apiCustomersIdGdprDeleteDelete**
+> string apiCustomersIdGdprDeleteDelete($id)
 
+Performs a \"GDPR forget me\" request.
 
+Deletes and/or obfuscates all data related to a customer, except order data that we legally need to generate invoices.
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "id_example"; // string | 
 
 try {
-    $apiInstance->apiCustomersIdGet($id);
+    $result = $apiInstance->apiCustomersIdGdprDeleteDelete($id);
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->apiCustomersIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->apiCustomersIdGdprDeleteDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -1404,7 +1465,58 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**string**
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersIdGet**
+> \Yoast\MyYoastApiClient\Model\Customer apiCustomersIdGet($id, $filter)
+
+Get a customer
+
+Get a single customer
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
+
+try {
+    $result = $apiInstance->apiCustomersIdGet($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersIdGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 

@@ -89,41 +89,42 @@ Class | Method | HTTP request | Description
 *ComposerTokenApi* | [**apiComposerTokensIdDeletePost**](docs/Api/ComposerTokenApi.md#apicomposertokensiddeletepost) | **POST** /api/ComposerTokens/{id}/delete | Disable a composer token
 *ComposerTokenApi* | [**apiComposerTokensIdRenamePost**](docs/Api/ComposerTokenApi.md#apicomposertokensidrenamepost) | **POST** /api/ComposerTokens/{id}/rename | Renames a Composer token
 *CourseApi* | [**apiCoursesFromAcademyPut**](docs/Api/CourseApi.md#apicoursesfromacademyput) | **PUT** /api/Courses/fromAcademy | Upserts a course
-*CourseApi* | [**apiCoursesGet**](docs/Api/CourseApi.md#apicoursesget) | **GET** /api/Courses | 
+*CourseApi* | [**apiCoursesGet**](docs/Api/CourseApi.md#apicoursesget) | **GET** /api/Courses | Get courses
 *CourseApi* | [**apiCoursesIdGet**](docs/Api/CourseApi.md#apicoursesidget) | **GET** /api/Courses/{id} | 
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsBulkInvitePost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsbulkinvitepost) | **POST** /api/CourseEnrollments/bulkInvite | Bulk invite for Course Enrollment.
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsFromAcademyPut**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsfromacademyput) | **PUT** /api/CourseEnrollments/fromAcademy | Update a CourseEnrollment
-*CourseEnrollmentApi* | [**apiCourseEnrollmentsGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsget) | **GET** /api/CourseEnrollments | 
+*CourseEnrollmentApi* | [**apiCourseEnrollmentsGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsget) | **GET** /api/CourseEnrollments | Get course enrollments
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsGetLegacyExpiringGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsgetlegacyexpiringget) | **GET** /api/CourseEnrollments/getLegacyExpiring | Get legacy course enrollments that expire between two given dates
-*CourseEnrollmentApi* | [**apiCourseEnrollmentsIdGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsidget) | **GET** /api/CourseEnrollments/{id} | 
+*CourseEnrollmentApi* | [**apiCourseEnrollmentsIdGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsidget) | **GET** /api/CourseEnrollments/{id} | Get a course enrollment
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsIdInvitePost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsidinvitepost) | **POST** /api/CourseEnrollments/{id}/invite | Invite a customer
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsTransferPost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentstransferpost) | **POST** /api/CourseEnrollments/transfer | Transfer course enrollments
 *CustomerApi* | [**apiCustomersActivatePost**](docs/Api/CustomerApi.md#apicustomersactivatepost) | **POST** /api/Customers/activate | Activate the account of a user
 *CustomerApi* | [**apiCustomersAllrolesGet**](docs/Api/CustomerApi.md#apicustomersallrolesget) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
 *CustomerApi* | [**apiCustomersCurrentGet**](docs/Api/CustomerApi.md#apicustomerscurrentget) | **GET** /api/Customers/current | Get the current customer
 *CustomerApi* | [**apiCustomersCustomerIdBuyerCourseEnrollmentsGet**](docs/Api/CustomerApi.md#apicustomerscustomeridbuyercourseenrollmentsget) | **GET** /api/Customers/{customerId}/buyerCourseEnrollments | Find Course Enrollments that a customer is buyer of
-*CustomerApi* | [**apiCustomersCustomerIdComposerTokensGet**](docs/Api/CustomerApi.md#apicustomerscustomeridcomposertokensget) | **GET** /api/Customers/{customerId}/composerTokens | 
-*CustomerApi* | [**apiCustomersCustomerIdComposerTokensIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridcomposertokensidget) | **GET** /api/Customers/{customerId}/composerTokens/{id} | 
+*CustomerApi* | [**apiCustomersCustomerIdComposerTokensGet**](docs/Api/CustomerApi.md#apicustomerscustomeridcomposertokensget) | **GET** /api/Customers/{customerId}/composerTokens | Get composer tokens
+*CustomerApi* | [**apiCustomersCustomerIdComposerTokensIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridcomposertokensidget) | **GET** /api/Customers/{customerId}/composerTokens/{id} | Get a composer token
 *CustomerApi* | [**apiCustomersCustomerIdCourseEnrollmentsGet**](docs/Api/CustomerApi.md#apicustomerscustomeridcourseenrollmentsget) | **GET** /api/Customers/{customerId}/courseEnrollments | Find Course Enrollments
-*CustomerApi* | [**apiCustomersCustomerIdIdentitiesGet**](docs/Api/CustomerApi.md#apicustomerscustomerididentitiesget) | **GET** /api/Customers/{customerId}/identities | 
+*CustomerApi* | [**apiCustomersCustomerIdIdentitiesGet**](docs/Api/CustomerApi.md#apicustomerscustomerididentitiesget) | **GET** /api/Customers/{customerId}/identities | Get user identities
 *CustomerApi* | [**apiCustomersCustomerIdNewsletterDelete**](docs/Api/CustomerApi.md#apicustomerscustomeridnewsletterdelete) | **DELETE** /api/Customers/{customerId}/newsletter | Unsubscribe from the newsletter
 *CustomerApi* | [**apiCustomersCustomerIdNewsletterGet**](docs/Api/CustomerApi.md#apicustomerscustomeridnewsletterget) | **GET** /api/Customers/{customerId}/newsletter | Newsletter subscription status
 *CustomerApi* | [**apiCustomersCustomerIdNewsletterPost**](docs/Api/CustomerApi.md#apicustomerscustomeridnewsletterpost) | **POST** /api/Customers/{customerId}/newsletter | Subscribe to the newsletter
-*CustomerApi* | [**apiCustomersCustomerIdOrdersGet**](docs/Api/CustomerApi.md#apicustomerscustomeridordersget) | **GET** /api/Customers/{customerId}/orders | 
-*CustomerApi* | [**apiCustomersCustomerIdOrdersIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridordersidget) | **GET** /api/Customers/{customerId}/orders/{id} | 
-*CustomerApi* | [**apiCustomersCustomerIdSitesGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsitesget) | **GET** /api/Customers/{customerId}/sites | 
-*CustomerApi* | [**apiCustomersCustomerIdSitesIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsitesidget) | **GET** /api/Customers/{customerId}/sites/{id} | 
+*CustomerApi* | [**apiCustomersCustomerIdOrdersGet**](docs/Api/CustomerApi.md#apicustomerscustomeridordersget) | **GET** /api/Customers/{customerId}/orders | Get orders
+*CustomerApi* | [**apiCustomersCustomerIdOrdersIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridordersidget) | **GET** /api/Customers/{customerId}/orders/{id} | Get a order
+*CustomerApi* | [**apiCustomersCustomerIdSitesGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsitesget) | **GET** /api/Customers/{customerId}/sites | Get sites
+*CustomerApi* | [**apiCustomersCustomerIdSitesIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsitesidget) | **GET** /api/Customers/{customerId}/sites/{id} | Get a site
 *CustomerApi* | [**apiCustomersCustomerIdSitesPost**](docs/Api/CustomerApi.md#apicustomerscustomeridsitespost) | **POST** /api/Customers/{customerId}/sites | Create a site for a user
 *CustomerApi* | [**apiCustomersCustomerIdStudentCourseEnrollmentsGet**](docs/Api/CustomerApi.md#apicustomerscustomeridstudentcourseenrollmentsget) | **GET** /api/Customers/{customerId}/studentCourseEnrollments | Find Course Enrollments that a customer is student in
-*CustomerApi* | [**apiCustomersCustomerIdSubscriptionsGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionsget) | **GET** /api/Customers/{customerId}/subscriptions | 
-*CustomerApi* | [**apiCustomersCustomerIdSubscriptionsIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionsidget) | **GET** /api/Customers/{customerId}/subscriptions/{id} | 
-*CustomerApi* | [**apiCustomersCustomerIdSubscriptionsSubscriptionIdCancelPost**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionssubscriptionidcancelpost) | **POST** /api/Customers/{customerId}/subscriptions/{subscriptionId}/cancel | Cancel (part of) a subscription.
-*CustomerApi* | [**apiCustomersGet**](docs/Api/CustomerApi.md#apicustomersget) | **GET** /api/Customers | 
+*CustomerApi* | [**apiCustomersCustomerIdSubscriptionsGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionsget) | **GET** /api/Customers/{customerId}/subscriptions | Get subscriptions
+*CustomerApi* | [**apiCustomersCustomerIdSubscriptionsIdCancelPost**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionsidcancelpost) | **POST** /api/Customers/{customerId}/subscriptions/{id}/cancel | Cancel (part of) a subscription.
+*CustomerApi* | [**apiCustomersCustomerIdSubscriptionsIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionsidget) | **GET** /api/Customers/{customerId}/subscriptions/{id} | Get a subscriptions
+*CustomerApi* | [**apiCustomersGet**](docs/Api/CustomerApi.md#apicustomersget) | **GET** /api/Customers | Get customers
 *CustomerApi* | [**apiCustomersIdAvatarPost**](docs/Api/CustomerApi.md#apicustomersidavatarpost) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
 *CustomerApi* | [**apiCustomersIdDownloadGet**](docs/Api/CustomerApi.md#apicustomersiddownloadget) | **GET** /api/Customers/{id}/download | Download profile.
 *CustomerApi* | [**apiCustomersIdEnablePost**](docs/Api/CustomerApi.md#apicustomersidenablepost) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
 *CustomerApi* | [**apiCustomersIdFindRefundsGet**](docs/Api/CustomerApi.md#apicustomersidfindrefundsget) | **GET** /api/Customers/{id}/findRefunds | Find refunds for user
-*CustomerApi* | [**apiCustomersIdGet**](docs/Api/CustomerApi.md#apicustomersidget) | **GET** /api/Customers/{id} | 
+*CustomerApi* | [**apiCustomersIdGdprDeleteDelete**](docs/Api/CustomerApi.md#apicustomersidgdprdeletedelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
+*CustomerApi* | [**apiCustomersIdGet**](docs/Api/CustomerApi.md#apicustomersidget) | **GET** /api/Customers/{id} | Get a customer
 *CustomerApi* | [**apiCustomersIdPasswordPatch**](docs/Api/CustomerApi.md#apicustomersidpasswordpatch) | **PATCH** /api/Customers/{id}/password | Update a customer&#39;s password in WordPress
 *CustomerApi* | [**apiCustomersIdPatch**](docs/Api/CustomerApi.md#apicustomersidpatch) | **PATCH** /api/Customers/{id} | 
 *CustomerApi* | [**apiCustomersIdProfileGet**](docs/Api/CustomerApi.md#apicustomersidprofileget) | **GET** /api/Customers/{id}/profile | 
@@ -137,9 +138,9 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**apiCustomersRolemappingIdsGet**](docs/Api/CustomerApi.md#apicustomersrolemappingidsget) | **GET** /api/Customers/rolemapping-ids | Get the ids of all customers with at least one role.
 *CustomerApi* | [**apiCustomersSendResetPasswordEmailPost**](docs/Api/CustomerApi.md#apicustomerssendresetpasswordemailpost) | **POST** /api/Customers/sendResetPasswordEmail | Send a reset password email to the user.
 *CustomerApi* | [**apiCustomersSignupPost**](docs/Api/CustomerApi.md#apicustomerssignuppost) | **POST** /api/Customers/signup | Signup a customer on yoast.com.
-*CustomerNoteApi* | [**apiCustomerNotesGet**](docs/Api/CustomerNoteApi.md#apicustomernotesget) | **GET** /api/CustomerNotes | 
+*CustomerNoteApi* | [**apiCustomerNotesGet**](docs/Api/CustomerNoteApi.md#apicustomernotesget) | **GET** /api/CustomerNotes | Get customer notes
 *CustomerNoteApi* | [**apiCustomerNotesIdDelete**](docs/Api/CustomerNoteApi.md#apicustomernotesiddelete) | **DELETE** /api/CustomerNotes/{id} | 
-*CustomerNoteApi* | [**apiCustomerNotesIdGet**](docs/Api/CustomerNoteApi.md#apicustomernotesidget) | **GET** /api/CustomerNotes/{id} | 
+*CustomerNoteApi* | [**apiCustomerNotesIdGet**](docs/Api/CustomerNoteApi.md#apicustomernotesidget) | **GET** /api/CustomerNotes/{id} | Get a customer note
 *CustomerNoteApi* | [**apiCustomerNotesPost**](docs/Api/CustomerNoteApi.md#apicustomernotespost) | **POST** /api/CustomerNotes | 
 *DownloadApi* | [**apiDownloadsFileNameGet**](docs/Api/DownloadApi.md#apidownloadsfilenameget) | **GET** /api/downloads/file/{name} | Route to download a file
 *DownloadApi* | [**apiDownloadsFileNamePost**](docs/Api/DownloadApi.md#apidownloadsfilenamepost) | **POST** /api/downloads/file/{name} | Route to update a file.
@@ -151,27 +152,28 @@ Class | Method | HTTP request | Description
 *FromWooCommerceApi* | [**apiProductGroupsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apiproductgroupsfromwoocommerceput) | **PUT** /api/ProductGroups/fromWooCommerce | Sync products to MyYoast.
 *FromWooCommerceApi* | [**apiProductsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apiproductsfromwoocommerceput) | **PUT** /api/Products/fromWooCommerce | Sync products to MyYoast.
 *FromWooCommerceApi* | [**apiSubscriptionsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apisubscriptionsfromwoocommerceput) | **PUT** /api/Subscriptions/fromWooCommerce | Sync subscriptions to MyYoast.
+*GDPRApi* | [**apiCustomersIdGdprDeleteDelete**](docs/Api/GDPRApi.md#apicustomersidgdprdeletedelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 *HelpscoutApi* | [**helpscoutPost**](docs/Api/HelpscoutApi.md#helpscoutpost) | **POST** /helpscout | Get information about a customer
-*OrderApi* | [**apiOrdersGet**](docs/Api/OrderApi.md#apiordersget) | **GET** /api/Orders | 
-*OrderApi* | [**apiOrdersIdGet**](docs/Api/OrderApi.md#apiordersidget) | **GET** /api/Orders/id | 
+*OrderApi* | [**apiOrdersGet**](docs/Api/OrderApi.md#apiordersget) | **GET** /api/Orders | Get orders
+*OrderApi* | [**apiOrdersIdGet**](docs/Api/OrderApi.md#apiordersidget) | **GET** /api/Orders/{id} | Get a order
 *OrderApi* | [**apiOrdersIdInvoiceGet**](docs/Api/OrderApi.md#apiordersidinvoiceget) | **GET** /api/Orders/{id}/invoice | Create invoice
 *OrderApi* | [**apiOrdersIdRefundsRefundIdInvoiceGet**](docs/Api/OrderApi.md#apiordersidrefundsrefundidinvoiceget) | **GET** /api/Orders/{id}/refunds/{refundId}/invoice | Creates a credit note
 *PackagesApi* | [**packagesDistOrgNameArchiveZipGet**](docs/Api/PackagesApi.md#packagesdistorgnamearchivezipget) | **GET** /packages/dist/{org}/{name}/{archive}.zip | Serves an .zip of the plugin.
 *PackagesApi* | [**packagesPOrgNameAndHashJsonGet**](docs/Api/PackagesApi.md#packagesporgnameandhashjsonget) | **GET** /packages/p/{org}/{nameAndHash}.json | Serves the requested provider.json
 *PackagesApi* | [**packagesPackagesJsonGet**](docs/Api/PackagesApi.md#packagespackagesjsonget) | **GET** /packages/packages.json | Serves the general packages.json file.
-*ProductApi* | [**apiProductsGet**](docs/Api/ProductApi.md#apiproductsget) | **GET** /api/Products | 
+*ProductApi* | [**apiProductsGet**](docs/Api/ProductApi.md#apiproductsget) | **GET** /api/Products | Get products
+*ProductApi* | [**apiProductsIdGet**](docs/Api/ProductApi.md#apiproductsidget) | **GET** /api/Products/{id} | Get a product
+*ProductApi* | [**apiProductsIdPatch**](docs/Api/ProductApi.md#apiproductsidpatch) | **PATCH** /api/Products/{id} | 
 *ProductApi* | [**apiProductsPost**](docs/Api/ProductApi.md#apiproductspost) | **POST** /api/Products | 
 *ProductApi* | [**apiProductsProductIdDelete**](docs/Api/ProductApi.md#apiproductsproductiddelete) | **DELETE** /api/Products/{productId} | 
-*ProductApi* | [**apiProductsProductIdGet**](docs/Api/ProductApi.md#apiproductsproductidget) | **GET** /api/Products/{productId} | 
-*ProductApi* | [**apiProductsProductIdPatch**](docs/Api/ProductApi.md#apiproductsproductidpatch) | **PATCH** /api/Products/{productId} | 
-*ProductGroupApi* | [**apiProductGroupsGet**](docs/Api/ProductGroupApi.md#apiproductgroupsget) | **GET** /api/ProductGroups | 
-*RefundApi* | [**apiRefundsGet**](docs/Api/RefundApi.md#apirefundsget) | **GET** /api/Refunds | 
-*RefundApi* | [**apiRefundsIdGet**](docs/Api/RefundApi.md#apirefundsidget) | **GET** /api/Refunds/{id} | 
+*ProductGroupApi* | [**apiProductGroupsGet**](docs/Api/ProductGroupApi.md#apiproductgroupsget) | **GET** /api/ProductGroups | Get productgroups
+*RefundApi* | [**apiRefundsGet**](docs/Api/RefundApi.md#apirefundsget) | **GET** /api/Refunds | Get refunds
+*RefundApi* | [**apiRefundsIdGet**](docs/Api/RefundApi.md#apirefundsidget) | **GET** /api/Refunds/{id} | Get a refund
 *RobotsApi* | [**robotsTxtGet**](docs/Api/RobotsApi.md#robotstxtget) | **GET** /robots.txt | 
 *ServerCheckApi* | [**serverCheckGet**](docs/Api/ServerCheckApi.md#servercheckget) | **GET** /server-check | Server health check
 *SiteApi* | [**apiSitesCurrentGet**](docs/Api/SiteApi.md#apisitescurrentget) | **GET** /api/Sites/current | Get the current connected site for an access token.
-*SiteApi* | [**apiSitesGet**](docs/Api/SiteApi.md#apisitesget) | **GET** /api/Sites | 
-*SiteApi* | [**apiSitesIdGet**](docs/Api/SiteApi.md#apisitesidget) | **GET** /api/Sites/{id} | 
+*SiteApi* | [**apiSitesGet**](docs/Api/SiteApi.md#apisitesget) | **GET** /api/Sites | Get sites
+*SiteApi* | [**apiSitesIdGet**](docs/Api/SiteApi.md#apisitesidget) | **GET** /api/Sites/{id} | Get a site
 *SiteApi* | [**apiSitesIdPatch**](docs/Api/SiteApi.md#apisitesidpatch) | **PATCH** /api/Sites/{id} | 
 *SiteApi* | [**apiSitesIdSubscriptionsPut**](docs/Api/SiteApi.md#apisitesidsubscriptionsput) | **PUT** /api/Sites/{id}/subscriptions | Adds a subscription to a site
 *SiteApi* | [**apiSitesIdSubscriptionsSubscriptionIdDelete**](docs/Api/SiteApi.md#apisitesidsubscriptionssubscriptioniddelete) | **DELETE** /api/Sites/{id}/subscriptions/{subscriptionId} | Removes a subscription from a site
@@ -180,8 +182,8 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**apiSitesSwitchSubscriptionPost**](docs/Api/SiteApi.md#apisitesswitchsubscriptionpost) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
 *SiteApi* | [**apiSitesTransferPost**](docs/Api/SiteApi.md#apisitestransferpost) | **POST** /api/Sites/transfer | Transfer sites.
 *SubscriptionApi* | [**apiSubscriptionsExpiringGet**](docs/Api/SubscriptionApi.md#apisubscriptionsexpiringget) | **GET** /api/Subscriptions/expiring | 
-*SubscriptionApi* | [**apiSubscriptionsGet**](docs/Api/SubscriptionApi.md#apisubscriptionsget) | **GET** /api/Subscriptions | 
-*SubscriptionApi* | [**apiSubscriptionsIdGet**](docs/Api/SubscriptionApi.md#apisubscriptionsidget) | **GET** /api/Subscriptions/id | 
+*SubscriptionApi* | [**apiSubscriptionsGet**](docs/Api/SubscriptionApi.md#apisubscriptionsget) | **GET** /api/Subscriptions | Get subscriptions
+*SubscriptionApi* | [**apiSubscriptionsIdGet**](docs/Api/SubscriptionApi.md#apisubscriptionsidget) | **GET** /api/Subscriptions/{id} | Get a subscription
 *SubscriptionApi* | [**apiSubscriptionsIdRecalculateSubscriptionCountPost**](docs/Api/SubscriptionApi.md#apisubscriptionsidrecalculatesubscriptioncountpost) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 
 
@@ -205,6 +207,7 @@ Class | Method | HTTP request | Description
  - [Customer](docs/Model/Customer.md)
  - [CustomerData](docs/Model/CustomerData.md)
  - [CustomerFromWooDto](docs/Model/CustomerFromWooDto.md)
+ - [CustomerNote](docs/Model/CustomerNote.md)
  - [EddDTO](docs/Model/EddDTO.md)
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)
@@ -261,6 +264,7 @@ Class | Method | HTTP request | Description
  - [UpdateFileDto](docs/Model/UpdateFileDto.md)
  - [UpdateUserDto](docs/Model/UpdateUserDto.md)
  - [UpdateUserToWordpressDto](docs/Model/UpdateUserToWordpressDto.md)
+ - [UserIdentity](docs/Model/UserIdentity.md)
 
 
 ## Documentation For Authorization

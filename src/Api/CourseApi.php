@@ -352,28 +352,35 @@ class CourseApi
     /**
      * Operation apiCoursesGet
      *
+     * Get courses
+     *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return void
+     * @return \Yoast\MyYoastApiClient\Model\Course[]
      */
-    public function apiCoursesGet()
+    public function apiCoursesGet($filter = null)
     {
-        $this->apiCoursesGetWithHttpInfo();
+        list($response) = $this->apiCoursesGetWithHttpInfo($filter);
+        return $response;
     }
 
     /**
      * Operation apiCoursesGetWithHttpInfo
      *
+     * Get courses
+     *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\Course[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCoursesGetWithHttpInfo()
+    public function apiCoursesGetWithHttpInfo($filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCoursesGetRequest();
+        $returnType = '\Yoast\MyYoastApiClient\Model\Course[]';
+        $request = $this->apiCoursesGetRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -403,10 +410,32 @@ class CourseApi
                 );
             }
 
-            return [null, $statusCode, $response->getHeaders()];
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Course[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
             }
             throw $e;
         }
@@ -415,15 +444,16 @@ class CourseApi
     /**
      * Operation apiCoursesGetAsync
      *
-     * 
+     * Get courses
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCoursesGetAsync()
+    public function apiCoursesGetAsync($filter = null)
     {
-        return $this->apiCoursesGetAsyncWithHttpInfo()
+        return $this->apiCoursesGetAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -434,22 +464,37 @@ class CourseApi
     /**
      * Operation apiCoursesGetAsyncWithHttpInfo
      *
-     * 
+     * Get courses
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCoursesGetAsyncWithHttpInfo()
+    public function apiCoursesGetAsyncWithHttpInfo($filter = null)
     {
-        $returnType = '';
-        $request = $this->apiCoursesGetRequest();
+        $returnType = '\Yoast\MyYoastApiClient\Model\Course[]';
+        $request = $this->apiCoursesGetRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -471,11 +516,12 @@ class CourseApi
     /**
      * Create request for operation 'apiCoursesGet'
      *
+     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCoursesGetRequest()
+    protected function apiCoursesGetRequest($filter = null)
     {
 
         $resourcePath = '/api/Courses';
@@ -485,6 +531,10 @@ class CourseApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($filter !== null) {
+            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
+        }
 
 
         // body params

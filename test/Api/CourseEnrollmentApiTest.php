@@ -94,7 +94,7 @@ class CourseEnrollmentApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiCourseEnrollmentsGet
      *
-     * .
+     * Get course enrollments.
      *
      */
     public function testApiCourseEnrollmentsGet()
@@ -114,7 +114,7 @@ class CourseEnrollmentApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiCourseEnrollmentsIdGet
      *
-     * .
+     * Get a course enrollment.
      *
      */
     public function testApiCourseEnrollmentsIdGet()

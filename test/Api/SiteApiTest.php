@@ -84,7 +84,7 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiSitesGet
      *
-     * .
+     * Get sites.
      *
      */
     public function testApiSitesGet()
@@ -94,7 +94,7 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for apiSitesIdGet
      *
-     * .
+     * Get a site.
      *
      */
     public function testApiSitesIdGet()

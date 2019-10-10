@@ -4,16 +4,18 @@ All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiCustomerNotesGet**](CustomerNoteApi.md#apiCustomerNotesGet) | **GET** /api/CustomerNotes | 
+[**apiCustomerNotesGet**](CustomerNoteApi.md#apiCustomerNotesGet) | **GET** /api/CustomerNotes | Get customer notes
 [**apiCustomerNotesIdDelete**](CustomerNoteApi.md#apiCustomerNotesIdDelete) | **DELETE** /api/CustomerNotes/{id} | 
-[**apiCustomerNotesIdGet**](CustomerNoteApi.md#apiCustomerNotesIdGet) | **GET** /api/CustomerNotes/{id} | 
+[**apiCustomerNotesIdGet**](CustomerNoteApi.md#apiCustomerNotesIdGet) | **GET** /api/CustomerNotes/{id} | Get a customer note
 [**apiCustomerNotesPost**](CustomerNoteApi.md#apiCustomerNotesPost) | **POST** /api/CustomerNotes | 
 
 
 # **apiCustomerNotesGet**
-> apiCustomerNotesGet()
+> \Yoast\MyYoastApiClient\Model\CustomerNote[] apiCustomerNotesGet($filter)
 
+Get customer notes
 
+Get and filter customer notes
 
 ### Example
 ```php
@@ -31,9 +33,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
     new GuzzleHttp\Client(),
     $config
 );
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCustomerNotesGet();
+    $result = $apiInstance->apiCustomerNotesGet($filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerNoteApi->apiCustomerNotesGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -41,11 +45,14 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\CustomerNote[]**](../Model/CustomerNote.md)
 
 ### Authorization
 
@@ -111,9 +118,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomerNotesIdGet**
-> apiCustomerNotesIdGet($id)
+> \Yoast\MyYoastApiClient\Model\CustomerNote apiCustomerNotesIdGet($id, $filter)
 
+Get a customer note
 
+Get a single customer note
 
 ### Example
 ```php
@@ -132,9 +141,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
     $config
 );
 $id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
-    $apiInstance->apiCustomerNotesIdGet($id);
+    $result = $apiInstance->apiCustomerNotesIdGet($id, $filter);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerNoteApi->apiCustomerNotesIdGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -146,10 +157,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\CustomerNote**](../Model/CustomerNote.md)
 
 ### Authorization
 
