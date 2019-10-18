@@ -282,6 +282,16 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiCustomersIdAccessTokensPost
+     *
+     * Create an access token for a user.
+     *
+     */
+    public function testApiCustomersIdAccessTokensPost()
+    {
+    }
+
+    /**
      * Test case for apiCustomersIdAvatarPost
      *
      * Upload a new UserAvatar to WordPress.

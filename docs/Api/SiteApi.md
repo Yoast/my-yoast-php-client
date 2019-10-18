@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiSitesCurrentGet**](SiteApi.md#apiSitesCurrentGet) | **GET** /api/Sites/current | Get the current connected site for an access token.
 [**apiSitesGet**](SiteApi.md#apiSitesGet) | **GET** /api/Sites | Get sites
+[**apiSitesIdDelete**](SiteApi.md#apiSitesIdDelete) | **DELETE** /api/Sites/{id} | 
 [**apiSitesIdGet**](SiteApi.md#apiSitesIdGet) | **GET** /api/Sites/{id} | Get a site
 [**apiSitesIdPatch**](SiteApi.md#apiSitesIdPatch) | **PATCH** /api/Sites/{id} | 
 [**apiSitesIdSubscriptionsPut**](SiteApi.md#apiSitesIdSubscriptionsPut) | **PUT** /api/Sites/{id}/subscriptions | Adds a subscription to a site
@@ -114,6 +115,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Site[]**](../Model/Site.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiSitesIdDelete**
+> apiSitesIdDelete($id)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+
+try {
+    $apiInstance->apiSitesIdDelete($id);
+} catch (Exception $e) {
+    echo 'Exception when calling SiteApi->apiSitesIdDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

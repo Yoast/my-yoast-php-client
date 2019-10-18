@@ -92,6 +92,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiSitesIdDelete
+     *
+     * .
+     *
+     */
+    public function testApiSitesIdDelete()
+    {
+    }
+
+    /**
      * Test case for apiSitesIdGet
      *
      * Get a site.

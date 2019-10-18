@@ -119,6 +119,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**apiCustomersCustomerIdSubscriptionsIdCancelPost**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionsidcancelpost) | **POST** /api/Customers/{customerId}/subscriptions/{id}/cancel | Cancel (part of) a subscription.
 *CustomerApi* | [**apiCustomersCustomerIdSubscriptionsIdGet**](docs/Api/CustomerApi.md#apicustomerscustomeridsubscriptionsidget) | **GET** /api/Customers/{customerId}/subscriptions/{id} | Get a subscriptions
 *CustomerApi* | [**apiCustomersGet**](docs/Api/CustomerApi.md#apicustomersget) | **GET** /api/Customers | Get customers
+*CustomerApi* | [**apiCustomersIdAccessTokensPost**](docs/Api/CustomerApi.md#apicustomersidaccesstokenspost) | **POST** /api/Customers/{id}/accessTokens | Create an access token for a user
 *CustomerApi* | [**apiCustomersIdAvatarPost**](docs/Api/CustomerApi.md#apicustomersidavatarpost) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
 *CustomerApi* | [**apiCustomersIdDownloadGet**](docs/Api/CustomerApi.md#apicustomersiddownloadget) | **GET** /api/Customers/{id}/download | Download profile.
 *CustomerApi* | [**apiCustomersIdEnablePost**](docs/Api/CustomerApi.md#apicustomersidenablepost) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
@@ -173,6 +174,7 @@ Class | Method | HTTP request | Description
 *ServerCheckApi* | [**serverCheckGet**](docs/Api/ServerCheckApi.md#servercheckget) | **GET** /server-check | Server health check
 *SiteApi* | [**apiSitesCurrentGet**](docs/Api/SiteApi.md#apisitescurrentget) | **GET** /api/Sites/current | Get the current connected site for an access token.
 *SiteApi* | [**apiSitesGet**](docs/Api/SiteApi.md#apisitesget) | **GET** /api/Sites | Get sites
+*SiteApi* | [**apiSitesIdDelete**](docs/Api/SiteApi.md#apisitesiddelete) | **DELETE** /api/Sites/{id} | 
 *SiteApi* | [**apiSitesIdGet**](docs/Api/SiteApi.md#apisitesidget) | **GET** /api/Sites/{id} | Get a site
 *SiteApi* | [**apiSitesIdPatch**](docs/Api/SiteApi.md#apisitesidpatch) | **PATCH** /api/Sites/{id} | 
 *SiteApi* | [**apiSitesIdSubscriptionsPut**](docs/Api/SiteApi.md#apisitesidsubscriptionsput) | **PUT** /api/Sites/{id}/subscriptions | Adds a subscription to a site
@@ -183,6 +185,7 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**apiSitesTransferPost**](docs/Api/SiteApi.md#apisitestransferpost) | **POST** /api/Sites/transfer | Transfer sites.
 *SubscriptionApi* | [**apiSubscriptionsExpiringGet**](docs/Api/SubscriptionApi.md#apisubscriptionsexpiringget) | **GET** /api/Subscriptions/expiring | 
 *SubscriptionApi* | [**apiSubscriptionsGet**](docs/Api/SubscriptionApi.md#apisubscriptionsget) | **GET** /api/Subscriptions | Get subscriptions
+*SubscriptionApi* | [**apiSubscriptionsIdDelete**](docs/Api/SubscriptionApi.md#apisubscriptionsiddelete) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
 *SubscriptionApi* | [**apiSubscriptionsIdGet**](docs/Api/SubscriptionApi.md#apisubscriptionsidget) | **GET** /api/Subscriptions/{id} | Get a subscription
 *SubscriptionApi* | [**apiSubscriptionsIdRecalculateSubscriptionCountPost**](docs/Api/SubscriptionApi.md#apisubscriptionsidrecalculatesubscriptioncountpost) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 

@@ -92,6 +92,16 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiSubscriptionsIdDelete
+     *
+     * Delete a subscription.
+     *
+     */
+    public function testApiSubscriptionsIdDelete()
+    {
+    }
+
+    /**
      * Test case for apiSubscriptionsIdGet
      *
      * Get a subscription.

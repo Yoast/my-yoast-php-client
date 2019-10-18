@@ -25,6 +25,7 @@ Method | HTTP request | Description
 [**apiCustomersCustomerIdSubscriptionsIdCancelPost**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsIdCancelPost) | **POST** /api/Customers/{customerId}/subscriptions/{id}/cancel | Cancel (part of) a subscription.
 [**apiCustomersCustomerIdSubscriptionsIdGet**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsIdGet) | **GET** /api/Customers/{customerId}/subscriptions/{id} | Get a subscriptions
 [**apiCustomersGet**](CustomerApi.md#apiCustomersGet) | **GET** /api/Customers | Get customers
+[**apiCustomersIdAccessTokensPost**](CustomerApi.md#apiCustomersIdAccessTokensPost) | **POST** /api/Customers/{id}/accessTokens | Create an access token for a user
 [**apiCustomersIdAvatarPost**](CustomerApi.md#apiCustomersIdAvatarPost) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
 [**apiCustomersIdDownloadGet**](CustomerApi.md#apiCustomersIdDownloadGet) | **GET** /api/Customers/{id}/download | Download profile.
 [**apiCustomersIdEnablePost**](CustomerApi.md#apiCustomersIdEnablePost) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
@@ -1191,6 +1192,52 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Customer[]**](../Model/Customer.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersIdAccessTokensPost**
+> apiCustomersIdAccessTokensPost($id)
+
+Create an access token for a user
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "id_example"; // string | 
+
+try {
+    $apiInstance->apiCustomersIdAccessTokensPost($id);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersIdAccessTokensPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
