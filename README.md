@@ -155,6 +155,7 @@ Class | Method | HTTP request | Description
 *FromWooCommerceApi* | [**apiSubscriptionsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apisubscriptionsfromwoocommerceput) | **PUT** /api/Subscriptions/fromWooCommerce | Sync subscriptions to MyYoast.
 *GDPRApi* | [**apiCustomersIdGdprDeleteDelete**](docs/Api/GDPRApi.md#apicustomersidgdprdeletedelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 *HelpscoutApi* | [**helpscoutPost**](docs/Api/HelpscoutApi.md#helpscoutpost) | **POST** /helpscout | Get information about a customer
+*OrderApi* | [**apiOrdersExportGet**](docs/Api/OrderApi.md#apiordersexportget) | **GET** /api/Orders/export | Get orders
 *OrderApi* | [**apiOrdersGet**](docs/Api/OrderApi.md#apiordersget) | **GET** /api/Orders | Get orders
 *OrderApi* | [**apiOrdersIdGet**](docs/Api/OrderApi.md#apiordersidget) | **GET** /api/Orders/{id} | Get a order
 *OrderApi* | [**apiOrdersIdInvoiceGet**](docs/Api/OrderApi.md#apiordersidinvoiceget) | **GET** /api/Orders/{id}/invoice | Create invoice
@@ -168,6 +169,7 @@ Class | Method | HTTP request | Description
 *ProductApi* | [**apiProductsPost**](docs/Api/ProductApi.md#apiproductspost) | **POST** /api/Products | 
 *ProductApi* | [**apiProductsProductIdDelete**](docs/Api/ProductApi.md#apiproductsproductiddelete) | **DELETE** /api/Products/{productId} | 
 *ProductGroupApi* | [**apiProductGroupsGet**](docs/Api/ProductGroupApi.md#apiproductgroupsget) | **GET** /api/ProductGroups | Get productgroups
+*RefundApi* | [**apiRefundsExportGet**](docs/Api/RefundApi.md#apirefundsexportget) | **GET** /api/Refunds/export | Get refunds
 *RefundApi* | [**apiRefundsGet**](docs/Api/RefundApi.md#apirefundsget) | **GET** /api/Refunds | Get refunds
 *RefundApi* | [**apiRefundsIdGet**](docs/Api/RefundApi.md#apirefundsidget) | **GET** /api/Refunds/{id} | Get a refund
 *RobotsApi* | [**robotsTxtGet**](docs/Api/RobotsApi.md#robotstxtget) | **GET** /robots.txt | 

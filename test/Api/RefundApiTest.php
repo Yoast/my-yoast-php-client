@@ -72,6 +72,16 @@ class RefundApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiRefundsExportGet
+     *
+     * Get refunds.
+     *
+     */
+    public function testApiRefundsExportGet()
+    {
+    }
+
+    /**
      * Test case for apiRefundsGet
      *
      * Get refunds.

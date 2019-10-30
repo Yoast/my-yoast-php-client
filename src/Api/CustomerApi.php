@@ -5838,6 +5838,11 @@ class CustomerApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
+        if ($apiKey !== null) {
+            $queryParams['access_token'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -7669,6 +7674,11 @@ class CustomerApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
+        if ($apiKey !== null) {
+            $queryParams['access_token'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -8185,6 +8195,11 @@ class CustomerApi
             }
         }
 
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
+        if ($apiKey !== null) {
+            $queryParams['access_token'] = $apiKey;
+        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

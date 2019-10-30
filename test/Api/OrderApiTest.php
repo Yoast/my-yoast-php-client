@@ -72,6 +72,16 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiOrdersExportGet
+     *
+     * Get orders.
+     *
+     */
+    public function testApiOrdersExportGet()
+    {
+    }
+
+    /**
      * Test case for apiOrdersGet
      *
      * Get orders.
