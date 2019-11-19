@@ -1,21 +1,20 @@
 # Yoast\MyYoastApiClient\SiteApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiSitesCurrentGet**](SiteApi.md#apiSitesCurrentGet) | **GET** /api/Sites/current | Get the current connected site for an access token.
-[**apiSitesGet**](SiteApi.md#apiSitesGet) | **GET** /api/Sites | Get sites
-[**apiSitesIdDelete**](SiteApi.md#apiSitesIdDelete) | **DELETE** /api/Sites/{id} | 
-[**apiSitesIdGet**](SiteApi.md#apiSitesIdGet) | **GET** /api/Sites/{id} | Get a site
-[**apiSitesIdPatch**](SiteApi.md#apiSitesIdPatch) | **PATCH** /api/Sites/{id} | 
-[**apiSitesIdSubscriptionsPut**](SiteApi.md#apiSitesIdSubscriptionsPut) | **PUT** /api/Sites/{id}/subscriptions | Adds a subscription to a site
-[**apiSitesIdSubscriptionsSubscriptionIdDelete**](SiteApi.md#apiSitesIdSubscriptionsSubscriptionIdDelete) | **DELETE** /api/Sites/{id}/subscriptions/{subscriptionId} | Removes a subscription from a site
-[**apiSitesIndexPost**](SiteApi.md#apiSitesIndexPost) | **POST** /api/Sites/index | 
-[**apiSitesSwitchSubscriptionNumberOfTimesPost**](SiteApi.md#apiSitesSwitchSubscriptionNumberOfTimesPost) | **POST** /api/Sites/switchSubscriptionNumberOfTimes | Switches the subscription for a number of times.
-[**apiSitesSwitchSubscriptionPost**](SiteApi.md#apiSitesSwitchSubscriptionPost) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
-[**apiSitesTransferPost**](SiteApi.md#apiSitesTransferPost) | **POST** /api/Sites/transfer | Transfer sites.
-
+[**apiSitesCurrentGet**](SiteApi.md#apisitescurrentget) | **GET** /api/Sites/current | Get the current connected site for an access token.
+[**apiSitesGet**](SiteApi.md#apisitesget) | **GET** /api/Sites | Get sites
+[**apiSitesIdDelete**](SiteApi.md#apisitesiddelete) | **DELETE** /api/Sites/{id} | 
+[**apiSitesIdGet**](SiteApi.md#apisitesidget) | **GET** /api/Sites/{id} | Get a site
+[**apiSitesIdPatch**](SiteApi.md#apisitesidpatch) | **PATCH** /api/Sites/{id} | 
+[**apiSitesIdSubscriptionsPut**](SiteApi.md#apisitesidsubscriptionsput) | **PUT** /api/Sites/{id}/subscriptions | Adds a subscription to a site
+[**apiSitesIdSubscriptionsSubscriptionIdDelete**](SiteApi.md#apisitesidsubscriptionssubscriptioniddelete) | **DELETE** /api/Sites/{id}/subscriptions/{subscriptionId} | Removes a subscription from a site
+[**apiSitesIndexPost**](SiteApi.md#apisitesindexpost) | **POST** /api/Sites/index | 
+[**apiSitesSwitchSubscriptionNumberOfTimesPost**](SiteApi.md#apisitesswitchsubscriptionnumberoftimespost) | **POST** /api/Sites/switchSubscriptionNumberOfTimes | Switches the subscription for a number of times.
+[**apiSitesSwitchSubscriptionPost**](SiteApi.md#apisitesswitchsubscriptionpost) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
+[**apiSitesTransferPost**](SiteApi.md#apisitestransferpost) | **POST** /api/Sites/transfer | Transfer sites.
 
 # **apiSitesCurrentGet**
 > object apiSitesCurrentGet($token, $url)
@@ -26,7 +25,6 @@ Get the current connected site for an access token.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -67,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -83,7 +81,6 @@ Get and filter sites
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -95,7 +92,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
+$filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiSitesGet($filter);
@@ -110,7 +107,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -122,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -136,7 +133,6 @@ Name | Type | Description  | Notes
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -148,7 +144,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
     $apiInstance->apiSitesIdDelete($id);
@@ -174,8 +170,8 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -190,7 +186,6 @@ Get a single site
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -202,8 +197,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
-$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiSitesIdGet($id, $filter);
@@ -219,7 +214,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
- **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -231,13 +226,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSitesIdPatch**
-> apiSitesIdPatch($createSiteBodyDto, $id)
+> apiSitesIdPatch($body, $id)
 
 
 
@@ -245,7 +240,6 @@ Name | Type | Description  | Notes
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -257,11 +251,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$createSiteBodyDto = new \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto(); // \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto | 
-$id = "id_example"; // string | 
+$body = new \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto(); // \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto | 
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $apiInstance->apiSitesIdPatch($createSiteBodyDto, $id);
+    $apiInstance->apiSitesIdPatch($body, $id);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->apiSitesIdPatch: ', $e->getMessage(), PHP_EOL;
 }
@@ -272,7 +266,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createSiteBodyDto** | [**\Yoast\MyYoastApiClient\Model\CreateSiteBodyDto**](../Model/CreateSiteBodyDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\CreateSiteBodyDto**](../Model/CreateSiteBodyDto.md)|  |
  **id** | [**string**](../Model/.md)|  |
 
 ### Return type
@@ -286,12 +280,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSitesIdSubscriptionsPut**
-> \Yoast\MyYoastApiClient\Model\Site apiSitesIdSubscriptionsPut($addSubscriptionDto, $id)
+> \Yoast\MyYoastApiClient\Model\Site apiSitesIdSubscriptionsPut($body, $id)
 
 Adds a subscription to a site
 
@@ -299,7 +293,6 @@ Adds a subscription to a site
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -311,11 +304,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$addSubscriptionDto = new \Yoast\MyYoastApiClient\Model\AddSubscriptionDto(); // \Yoast\MyYoastApiClient\Model\AddSubscriptionDto | 
-$id = "id_example"; // string | 
+$body = new \Yoast\MyYoastApiClient\Model\AddSubscriptionDto(); // \Yoast\MyYoastApiClient\Model\AddSubscriptionDto | 
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->apiSitesIdSubscriptionsPut($addSubscriptionDto, $id);
+    $result = $apiInstance->apiSitesIdSubscriptionsPut($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->apiSitesIdSubscriptionsPut: ', $e->getMessage(), PHP_EOL;
@@ -327,7 +320,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addSubscriptionDto** | [**\Yoast\MyYoastApiClient\Model\AddSubscriptionDto**](../Model/AddSubscriptionDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\AddSubscriptionDto**](../Model/AddSubscriptionDto.md)|  |
  **id** | [**string**](../Model/.md)|  |
 
 ### Return type
@@ -354,7 +347,6 @@ Removes a subscription from a site
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -366,8 +358,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
-$subscriptionId = "subscriptionId_example"; // string | 
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$subscriptionId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
     $result = $apiInstance->apiSitesIdSubscriptionsSubscriptionIdDelete($id, $subscriptionId);
@@ -395,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -409,7 +401,6 @@ Name | Type | Description  | Notes
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -452,13 +443,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSitesSwitchSubscriptionNumberOfTimesPost**
-> object apiSitesSwitchSubscriptionNumberOfTimesPost($switchSubscriptionNumberOfTimesDto)
+> object apiSitesSwitchSubscriptionNumberOfTimesPost($body)
 
 Switches the subscription for a number of times.
 
@@ -468,7 +459,6 @@ Switches the subscription for a number of times.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -480,10 +470,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$switchSubscriptionNumberOfTimesDto = new \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto(); // \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto | 
+$body = new \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto(); // \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto | 
 
 try {
-    $result = $apiInstance->apiSitesSwitchSubscriptionNumberOfTimesPost($switchSubscriptionNumberOfTimesDto);
+    $result = $apiInstance->apiSitesSwitchSubscriptionNumberOfTimesPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->apiSitesSwitchSubscriptionNumberOfTimesPost: ', $e->getMessage(), PHP_EOL;
@@ -495,7 +485,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **switchSubscriptionNumberOfTimesDto** | [**\Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto**](../Model/SwitchSubscriptionNumberOfTimesDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto**](../Model/SwitchSubscriptionNumberOfTimesDto.md)|  |
 
 ### Return type
 
@@ -513,7 +503,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSitesSwitchSubscriptionPost**
-> float apiSitesSwitchSubscriptionPost($transferSiteDto)
+> int apiSitesSwitchSubscriptionPost($body)
 
 Switches the subscription for a number of times.
 
@@ -523,7 +513,6 @@ Switches the subscription for a number of times.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -535,10 +524,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$transferSiteDto = new \Yoast\MyYoastApiClient\Model\TransferSiteDto(); // \Yoast\MyYoastApiClient\Model\TransferSiteDto | 
+$body = new \Yoast\MyYoastApiClient\Model\TransferSiteDto(); // \Yoast\MyYoastApiClient\Model\TransferSiteDto | 
 
 try {
-    $result = $apiInstance->apiSitesSwitchSubscriptionPost($transferSiteDto);
+    $result = $apiInstance->apiSitesSwitchSubscriptionPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->apiSitesSwitchSubscriptionPost: ', $e->getMessage(), PHP_EOL;
@@ -550,11 +539,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transferSiteDto** | [**\Yoast\MyYoastApiClient\Model\TransferSiteDto**](../Model/TransferSiteDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\TransferSiteDto**](../Model/TransferSiteDto.md)|  |
 
 ### Return type
 
-**float**
+**int**
 
 ### Authorization
 
@@ -568,7 +557,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSitesTransferPost**
-> \Yoast\MyYoastApiClient\Model\Site[] apiSitesTransferPost($transferSiteDto)
+> \Yoast\MyYoastApiClient\Model\Site[] apiSitesTransferPost($body)
 
 Transfer sites.
 
@@ -578,7 +567,6 @@ Transfers the sites from one customer to another customer.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -590,10 +578,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$transferSiteDto = new \Yoast\MyYoastApiClient\Model\TransferSiteDto(); // \Yoast\MyYoastApiClient\Model\TransferSiteDto | 
+$body = new \Yoast\MyYoastApiClient\Model\TransferSiteDto(); // \Yoast\MyYoastApiClient\Model\TransferSiteDto | 
 
 try {
-    $result = $apiInstance->apiSitesTransferPost($transferSiteDto);
+    $result = $apiInstance->apiSitesTransferPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->apiSitesTransferPost: ', $e->getMessage(), PHP_EOL;
@@ -605,7 +593,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transferSiteDto** | [**\Yoast\MyYoastApiClient\Model\TransferSiteDto**](../Model/TransferSiteDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\TransferSiteDto**](../Model/TransferSiteDto.md)|  |
 
 ### Return type
 
