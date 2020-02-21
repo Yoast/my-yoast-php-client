@@ -1,14 +1,15 @@
 # Yoast\MyYoastApiClient\ProductApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiProductsGet**](ProductApi.md#apiproductsget) | **GET** /api/Products | Get products
-[**apiProductsIdGet**](ProductApi.md#apiproductsidget) | **GET** /api/Products/{id} | Get a product
-[**apiProductsIdPatch**](ProductApi.md#apiproductsidpatch) | **PATCH** /api/Products/{id} | 
-[**apiProductsPost**](ProductApi.md#apiproductspost) | **POST** /api/Products | 
-[**apiProductsProductIdDelete**](ProductApi.md#apiproductsproductiddelete) | **DELETE** /api/Products/{productId} | 
+[**apiProductsGet**](ProductApi.md#apiProductsGet) | **GET** /api/Products | Get products
+[**apiProductsIdGet**](ProductApi.md#apiProductsIdGet) | **GET** /api/Products/{id} | Get a product
+[**apiProductsIdPatch**](ProductApi.md#apiProductsIdPatch) | **PATCH** /api/Products/{id} | 
+[**apiProductsPost**](ProductApi.md#apiProductsPost) | **POST** /api/Products | 
+[**apiProductsProductIdDelete**](ProductApi.md#apiProductsProductIdDelete) | **DELETE** /api/Products/{productId} | 
+
 
 # **apiProductsGet**
 > \Yoast\MyYoastApiClient\Model\Product[] apiProductsGet($filter)
@@ -27,7 +28,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiProductsGet($filter);
@@ -42,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -54,7 +55,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -76,8 +77,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiProductsIdGet($id, $filter);
@@ -93,7 +94,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -105,7 +106,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -125,7 +126,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "id_example"; // string | 
 
 try {
     $apiInstance->apiProductsIdPatch($id);
@@ -151,13 +152,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiProductsPost**
-> apiProductsPost($body)
+> apiProductsPost($product)
 
 
 
@@ -171,10 +172,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
+$product = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
 
 try {
-    $apiInstance->apiProductsPost($body);
+    $apiInstance->apiProductsPost($product);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->apiProductsPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -185,7 +186,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)|  |
+ **product** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)|  |
 
 ### Return type
 
@@ -198,7 +199,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -243,8 +244,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

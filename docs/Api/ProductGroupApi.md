@@ -1,10 +1,11 @@
 # Yoast\MyYoastApiClient\ProductGroupApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiProductGroupsGet**](ProductGroupApi.md#apiproductgroupsget) | **GET** /api/ProductGroups | Get productgroups
+[**apiProductGroupsGet**](ProductGroupApi.md#apiProductGroupsGet) | **GET** /api/ProductGroups | Get productgroups
+
 
 # **apiProductGroupsGet**
 > \Yoast\MyYoastApiClient\Model\ProductGroup[] apiProductGroupsGet($filter)
@@ -17,6 +18,7 @@ Get and filter productgroups
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -28,7 +30,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductGroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiProductGroupsGet($filter);
@@ -43,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -55,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

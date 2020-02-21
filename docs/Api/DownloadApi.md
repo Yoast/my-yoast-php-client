@@ -1,11 +1,12 @@
 # Yoast\MyYoastApiClient\DownloadApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiDownloadsFileNameGet**](DownloadApi.md#apidownloadsfilenameget) | **GET** /api/downloads/file/{name} | Route to download a file
-[**apiDownloadsFileNamePost**](DownloadApi.md#apidownloadsfilenamepost) | **POST** /api/downloads/file/{name} | Route to update a file.
+[**apiDownloadsFileNameGet**](DownloadApi.md#apiDownloadsFileNameGet) | **GET** /api/downloads/file/{name} | Route to download a file
+[**apiDownloadsFileNamePost**](DownloadApi.md#apiDownloadsFileNamePost) | **POST** /api/downloads/file/{name} | Route to update a file.
+
 
 # **apiDownloadsFileNameGet**
 > apiDownloadsFileNameGet($version, $pluginVersion, $site, $name)
@@ -56,13 +57,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiDownloadsFileNamePost**
-> object apiDownloadsFileNamePost($body, $name)
+> object apiDownloadsFileNamePost($updateFileDto, $name)
 
 Route to update a file.
 
@@ -78,11 +79,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\DownloadApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Yoast\MyYoastApiClient\Model\UpdateFileDto(); // \Yoast\MyYoastApiClient\Model\UpdateFileDto | 
+$updateFileDto = new \Yoast\MyYoastApiClient\Model\UpdateFileDto(); // \Yoast\MyYoastApiClient\Model\UpdateFileDto | 
 $name = "name_example"; // string | 
 
 try {
-    $result = $apiInstance->apiDownloadsFileNamePost($body, $name);
+    $result = $apiInstance->apiDownloadsFileNamePost($updateFileDto, $name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DownloadApi->apiDownloadsFileNamePost: ', $e->getMessage(), PHP_EOL;
@@ -94,7 +95,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\UpdateFileDto**](../Model/UpdateFileDto.md)|  |
+ **updateFileDto** | [**\Yoast\MyYoastApiClient\Model\UpdateFileDto**](../Model/UpdateFileDto.md)|  |
  **name** | **string**|  |
 
 ### Return type

@@ -1,53 +1,54 @@
 # Yoast\MyYoastApiClient\CustomerApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiCustomersActivatePost**](CustomerApi.md#apicustomersactivatepost) | **POST** /api/Customers/activate | Activate the account of a user
-[**apiCustomersAllrolesGet**](CustomerApi.md#apicustomersallrolesget) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
-[**apiCustomersCurrentGet**](CustomerApi.md#apicustomerscurrentget) | **GET** /api/Customers/current | Get the current customer
-[**apiCustomersCustomerIdBuyerCourseEnrollmentsGet**](CustomerApi.md#apicustomerscustomeridbuyercourseenrollmentsget) | **GET** /api/Customers/{customerId}/buyerCourseEnrollments | Find Course Enrollments that a customer is buyer of
-[**apiCustomersCustomerIdComposerTokensGet**](CustomerApi.md#apicustomerscustomeridcomposertokensget) | **GET** /api/Customers/{customerId}/composerTokens | Get composer tokens
-[**apiCustomersCustomerIdComposerTokensIdGet**](CustomerApi.md#apicustomerscustomeridcomposertokensidget) | **GET** /api/Customers/{customerId}/composerTokens/{id} | Get a composer token
-[**apiCustomersCustomerIdCourseEnrollmentsGet**](CustomerApi.md#apicustomerscustomeridcourseenrollmentsget) | **GET** /api/Customers/{customerId}/courseEnrollments | Find Course Enrollments
-[**apiCustomersCustomerIdIdentitiesGet**](CustomerApi.md#apicustomerscustomerididentitiesget) | **GET** /api/Customers/{customerId}/identities | Get user identities
-[**apiCustomersCustomerIdNewsletterDelete**](CustomerApi.md#apicustomerscustomeridnewsletterdelete) | **DELETE** /api/Customers/{customerId}/newsletter | Unsubscribe from the newsletter
-[**apiCustomersCustomerIdNewsletterGet**](CustomerApi.md#apicustomerscustomeridnewsletterget) | **GET** /api/Customers/{customerId}/newsletter | Newsletter subscription status
-[**apiCustomersCustomerIdNewsletterPost**](CustomerApi.md#apicustomerscustomeridnewsletterpost) | **POST** /api/Customers/{customerId}/newsletter | Subscribe to the newsletter
-[**apiCustomersCustomerIdOrdersGet**](CustomerApi.md#apicustomerscustomeridordersget) | **GET** /api/Customers/{customerId}/orders | Get orders
-[**apiCustomersCustomerIdOrdersIdGet**](CustomerApi.md#apicustomerscustomeridordersidget) | **GET** /api/Customers/{customerId}/orders/{id} | Get a order
-[**apiCustomersCustomerIdSitesGet**](CustomerApi.md#apicustomerscustomeridsitesget) | **GET** /api/Customers/{customerId}/sites | Get sites
-[**apiCustomersCustomerIdSitesIdGet**](CustomerApi.md#apicustomerscustomeridsitesidget) | **GET** /api/Customers/{customerId}/sites/{id} | Get a site
-[**apiCustomersCustomerIdSitesPost**](CustomerApi.md#apicustomerscustomeridsitespost) | **POST** /api/Customers/{customerId}/sites | Create a site for a user
-[**apiCustomersCustomerIdStudentCourseEnrollmentsGet**](CustomerApi.md#apicustomerscustomeridstudentcourseenrollmentsget) | **GET** /api/Customers/{customerId}/studentCourseEnrollments | Find Course Enrollments that a customer is student in
-[**apiCustomersCustomerIdSubscriptionsGet**](CustomerApi.md#apicustomerscustomeridsubscriptionsget) | **GET** /api/Customers/{customerId}/subscriptions | Get subscriptions
-[**apiCustomersCustomerIdSubscriptionsIdCancelPost**](CustomerApi.md#apicustomerscustomeridsubscriptionsidcancelpost) | **POST** /api/Customers/{customerId}/subscriptions/{id}/cancel | Cancel (part of) a subscription.
-[**apiCustomersCustomerIdSubscriptionsIdGet**](CustomerApi.md#apicustomerscustomeridsubscriptionsidget) | **GET** /api/Customers/{customerId}/subscriptions/{id} | Get a subscriptions
-[**apiCustomersGet**](CustomerApi.md#apicustomersget) | **GET** /api/Customers | Get customers
-[**apiCustomersIdAccessTokensPost**](CustomerApi.md#apicustomersidaccesstokenspost) | **POST** /api/Customers/{id}/accessTokens | Create an access token for a user
-[**apiCustomersIdAvatarPost**](CustomerApi.md#apicustomersidavatarpost) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
-[**apiCustomersIdDownloadGet**](CustomerApi.md#apicustomersiddownloadget) | **GET** /api/Customers/{id}/download | Download profile.
-[**apiCustomersIdEnablePost**](CustomerApi.md#apicustomersidenablepost) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
-[**apiCustomersIdFindRefundsGet**](CustomerApi.md#apicustomersidfindrefundsget) | **GET** /api/Customers/{id}/findRefunds | Find refunds for user
-[**apiCustomersIdGdprDeleteDelete**](CustomerApi.md#apicustomersidgdprdeletedelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
-[**apiCustomersIdGet**](CustomerApi.md#apicustomersidget) | **GET** /api/Customers/{id} | Get a customer
-[**apiCustomersIdPasswordPatch**](CustomerApi.md#apicustomersidpasswordpatch) | **PATCH** /api/Customers/{id}/password | Update a customer&#x27;s password in WordPress
-[**apiCustomersIdPatch**](CustomerApi.md#apicustomersidpatch) | **PATCH** /api/Customers/{id} | 
-[**apiCustomersIdProfileGet**](CustomerApi.md#apicustomersidprofileget) | **GET** /api/Customers/{id}/profile | 
-[**apiCustomersIdProfilePatch**](CustomerApi.md#apicustomersidprofilepatch) | **PATCH** /api/Customers/{id}/profile | Update a customer to WordPress
-[**apiCustomersIdRoleMappingDelete**](CustomerApi.md#apicustomersidrolemappingdelete) | **DELETE** /api/Customers/{id}/roleMapping | 
-[**apiCustomersIdRoleMappingPost**](CustomerApi.md#apicustomersidrolemappingpost) | **POST** /api/Customers/{id}/roleMapping | 
-[**apiCustomersIdRolesGet**](CustomerApi.md#apicustomersidrolesget) | **GET** /api/Customers/{id}/roles | 
-[**apiCustomersNewsletterListSubscribePost**](CustomerApi.md#apicustomersnewsletterlistsubscribepost) | **POST** /api/Customers/newsletter/{list}/subscribe | Subscribes a user to a newsletter
-[**apiCustomersNonceGet**](CustomerApi.md#apicustomersnonceget) | **GET** /api/Customers/nonce | Get a nonce from Yoast.com
-[**apiCustomersResetPasswordPatch**](CustomerApi.md#apicustomersresetpasswordpatch) | **PATCH** /api/Customers/resetPassword | Reset the user&#x27;s password.
-[**apiCustomersRolemappingIdsGet**](CustomerApi.md#apicustomersrolemappingidsget) | **GET** /api/Customers/rolemapping-ids | Get the ids of all customers with at least one role.
-[**apiCustomersSendResetPasswordEmailPost**](CustomerApi.md#apicustomerssendresetpasswordemailpost) | **POST** /api/Customers/sendResetPasswordEmail | Send a reset password email to the user.
-[**apiCustomersSignupPost**](CustomerApi.md#apicustomerssignuppost) | **POST** /api/Customers/signup | Signup a customer on yoast.com.
+[**apiCustomersActivatePost**](CustomerApi.md#apiCustomersActivatePost) | **POST** /api/Customers/activate | Activate the account of a user
+[**apiCustomersAllrolesGet**](CustomerApi.md#apiCustomersAllrolesGet) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
+[**apiCustomersCurrentGet**](CustomerApi.md#apiCustomersCurrentGet) | **GET** /api/Customers/current | Get the current customer
+[**apiCustomersCustomerIdBuyerCourseEnrollmentsGet**](CustomerApi.md#apiCustomersCustomerIdBuyerCourseEnrollmentsGet) | **GET** /api/Customers/{customerId}/buyerCourseEnrollments | Find Course Enrollments that a customer is buyer of
+[**apiCustomersCustomerIdComposerTokensGet**](CustomerApi.md#apiCustomersCustomerIdComposerTokensGet) | **GET** /api/Customers/{customerId}/composerTokens | Get composer tokens
+[**apiCustomersCustomerIdComposerTokensIdGet**](CustomerApi.md#apiCustomersCustomerIdComposerTokensIdGet) | **GET** /api/Customers/{customerId}/composerTokens/{id} | Get a composer token
+[**apiCustomersCustomerIdCourseEnrollmentsGet**](CustomerApi.md#apiCustomersCustomerIdCourseEnrollmentsGet) | **GET** /api/Customers/{customerId}/courseEnrollments | Find Course Enrollments
+[**apiCustomersCustomerIdIdentitiesGet**](CustomerApi.md#apiCustomersCustomerIdIdentitiesGet) | **GET** /api/Customers/{customerId}/identities | Get user identities
+[**apiCustomersCustomerIdNewsletterDelete**](CustomerApi.md#apiCustomersCustomerIdNewsletterDelete) | **DELETE** /api/Customers/{customerId}/newsletter | Unsubscribe from the newsletter
+[**apiCustomersCustomerIdNewsletterGet**](CustomerApi.md#apiCustomersCustomerIdNewsletterGet) | **GET** /api/Customers/{customerId}/newsletter | Newsletter subscription status
+[**apiCustomersCustomerIdNewsletterPost**](CustomerApi.md#apiCustomersCustomerIdNewsletterPost) | **POST** /api/Customers/{customerId}/newsletter | Subscribe to the newsletter
+[**apiCustomersCustomerIdOrdersGet**](CustomerApi.md#apiCustomersCustomerIdOrdersGet) | **GET** /api/Customers/{customerId}/orders | Get orders
+[**apiCustomersCustomerIdOrdersIdGet**](CustomerApi.md#apiCustomersCustomerIdOrdersIdGet) | **GET** /api/Customers/{customerId}/orders/{id} | Get a order
+[**apiCustomersCustomerIdSitesGet**](CustomerApi.md#apiCustomersCustomerIdSitesGet) | **GET** /api/Customers/{customerId}/sites | Get sites
+[**apiCustomersCustomerIdSitesIdGet**](CustomerApi.md#apiCustomersCustomerIdSitesIdGet) | **GET** /api/Customers/{customerId}/sites/{id} | Get a site
+[**apiCustomersCustomerIdSitesPost**](CustomerApi.md#apiCustomersCustomerIdSitesPost) | **POST** /api/Customers/{customerId}/sites | Create a site for a user
+[**apiCustomersCustomerIdStudentCourseEnrollmentsGet**](CustomerApi.md#apiCustomersCustomerIdStudentCourseEnrollmentsGet) | **GET** /api/Customers/{customerId}/studentCourseEnrollments | Find Course Enrollments that a customer is student in
+[**apiCustomersCustomerIdSubscriptionsGet**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsGet) | **GET** /api/Customers/{customerId}/subscriptions | Get subscriptions
+[**apiCustomersCustomerIdSubscriptionsIdCancelPost**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsIdCancelPost) | **POST** /api/Customers/{customerId}/subscriptions/{id}/cancel | Cancel (part of) a subscription.
+[**apiCustomersCustomerIdSubscriptionsIdGet**](CustomerApi.md#apiCustomersCustomerIdSubscriptionsIdGet) | **GET** /api/Customers/{customerId}/subscriptions/{id} | Get a subscriptions
+[**apiCustomersGet**](CustomerApi.md#apiCustomersGet) | **GET** /api/Customers | Get customers
+[**apiCustomersIdAccessTokensPost**](CustomerApi.md#apiCustomersIdAccessTokensPost) | **POST** /api/Customers/{id}/accessTokens | Create an access token for a user
+[**apiCustomersIdAvatarPost**](CustomerApi.md#apiCustomersIdAvatarPost) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
+[**apiCustomersIdDownloadGet**](CustomerApi.md#apiCustomersIdDownloadGet) | **GET** /api/Customers/{id}/download | Download profile.
+[**apiCustomersIdEnablePost**](CustomerApi.md#apiCustomersIdEnablePost) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
+[**apiCustomersIdFindRefundsGet**](CustomerApi.md#apiCustomersIdFindRefundsGet) | **GET** /api/Customers/{id}/findRefunds | Find refunds for user
+[**apiCustomersIdGdprDeleteDelete**](CustomerApi.md#apiCustomersIdGdprDeleteDelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
+[**apiCustomersIdGet**](CustomerApi.md#apiCustomersIdGet) | **GET** /api/Customers/{id} | Get a customer
+[**apiCustomersIdPasswordPatch**](CustomerApi.md#apiCustomersIdPasswordPatch) | **PATCH** /api/Customers/{id}/password | Update a customer&#39;s password in WordPress
+[**apiCustomersIdPatch**](CustomerApi.md#apiCustomersIdPatch) | **PATCH** /api/Customers/{id} | 
+[**apiCustomersIdProfileGet**](CustomerApi.md#apiCustomersIdProfileGet) | **GET** /api/Customers/{id}/profile | 
+[**apiCustomersIdProfilePatch**](CustomerApi.md#apiCustomersIdProfilePatch) | **PATCH** /api/Customers/{id}/profile | Update a customer to WordPress
+[**apiCustomersIdRoleMappingDelete**](CustomerApi.md#apiCustomersIdRoleMappingDelete) | **DELETE** /api/Customers/{id}/roleMapping | 
+[**apiCustomersIdRoleMappingPost**](CustomerApi.md#apiCustomersIdRoleMappingPost) | **POST** /api/Customers/{id}/roleMapping | 
+[**apiCustomersIdRolesGet**](CustomerApi.md#apiCustomersIdRolesGet) | **GET** /api/Customers/{id}/roles | 
+[**apiCustomersNewsletterListSubscribePost**](CustomerApi.md#apiCustomersNewsletterListSubscribePost) | **POST** /api/Customers/newsletter/{list}/subscribe | Subscribes a user to a newsletter
+[**apiCustomersNonceGet**](CustomerApi.md#apiCustomersNonceGet) | **GET** /api/Customers/nonce | Get a nonce from Yoast.com
+[**apiCustomersResetPasswordPatch**](CustomerApi.md#apiCustomersResetPasswordPatch) | **PATCH** /api/Customers/resetPassword | Reset the user&#39;s password.
+[**apiCustomersRolemappingIdsGet**](CustomerApi.md#apiCustomersRolemappingIdsGet) | **GET** /api/Customers/rolemapping-ids | Get the ids of all customers with at least one role.
+[**apiCustomersSendResetPasswordEmailPost**](CustomerApi.md#apiCustomersSendResetPasswordEmailPost) | **POST** /api/Customers/sendResetPasswordEmail | Send a reset password email to the user.
+[**apiCustomersSignupPost**](CustomerApi.md#apiCustomersSignupPost) | **POST** /api/Customers/signup | Signup a customer on yoast.com.
+
 
 # **apiCustomersActivatePost**
-> object apiCustomersActivatePost($body)
+> object apiCustomersActivatePost($activateAccountDto)
 
 Activate the account of a user
 
@@ -63,10 +64,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Yoast\MyYoastApiClient\Model\ActivateAccountDto(); // \Yoast\MyYoastApiClient\Model\ActivateAccountDto | 
+$activateAccountDto = new \Yoast\MyYoastApiClient\Model\ActivateAccountDto(); // \Yoast\MyYoastApiClient\Model\ActivateAccountDto | 
 
 try {
-    $result = $apiInstance->apiCustomersActivatePost($body);
+    $result = $apiInstance->apiCustomersActivatePost($activateAccountDto);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersActivatePost: ', $e->getMessage(), PHP_EOL;
@@ -78,7 +79,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\ActivateAccountDto**](../Model/ActivateAccountDto.md)|  |
+ **activateAccountDto** | [**\Yoast\MyYoastApiClient\Model\ActivateAccountDto**](../Model/ActivateAccountDto.md)|  |
 
 ### Return type
 
@@ -104,6 +105,7 @@ Get all existing roles with their ID.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -138,7 +140,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -152,6 +154,7 @@ Get the current customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -186,7 +189,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -200,6 +203,7 @@ Find Course Enrollments that a customer is buyer of
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -211,7 +215,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$customerId = "customerId_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdBuyerCourseEnrollmentsGet($customerId);
@@ -238,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -254,6 +258,7 @@ Get and filter composer tokens of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -265,8 +270,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$customerId = "customerId_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdComposerTokensGet($customerId, $filter);
@@ -282,7 +287,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -294,7 +299,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -310,6 +315,7 @@ Get a single composer token of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -321,9 +327,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$customerId = "customerId_example"; // string | 
+$id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdComposerTokensIdGet($customerId, $id, $filter);
@@ -340,7 +346,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
  **id** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -352,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -368,6 +374,7 @@ Find Course Enrollments and filter by course or ownership relation.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -379,9 +386,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$ownershipRelation = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$courseId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$ownershipRelation = "ownershipRelation_example"; // string | 
+$customerId = "customerId_example"; // string | 
+$courseId = "courseId_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdCourseEnrollmentsGet($ownershipRelation, $customerId, $courseId);
@@ -410,7 +417,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -426,6 +433,7 @@ Get and filter user identities of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -437,8 +445,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$customerId = "customerId_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdIdentitiesGet($customerId, $filter);
@@ -454,7 +462,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -466,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -480,6 +488,7 @@ Unsubscribe from the newsletter
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -491,7 +500,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$customerId = "customerId_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdNewsletterDelete($customerId);
@@ -518,7 +527,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -532,6 +541,7 @@ Newsletter subscription status
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -543,7 +553,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$customerId = "customerId_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdNewsletterGet($customerId);
@@ -570,7 +580,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -584,6 +594,7 @@ Subscribe to the newsletter
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -595,7 +606,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$customerId = "customerId_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdNewsletterPost($customerId);
@@ -622,7 +633,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -638,6 +649,7 @@ Get and filter orders of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -649,8 +661,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$customerId = "customerId_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdOrdersGet($customerId, $filter);
@@ -666,7 +678,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -678,7 +690,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -694,6 +706,7 @@ Get a single order of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -705,9 +718,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$customerId = "customerId_example"; // string | 
+$id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdOrdersIdGet($customerId, $id, $filter);
@@ -724,7 +737,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
  **id** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -736,7 +749,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -752,6 +765,7 @@ Get and filter sites of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -763,8 +777,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$customerId = "customerId_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdSitesGet($customerId, $filter);
@@ -780,7 +794,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -792,7 +806,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -808,6 +822,7 @@ Get a single site of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -819,9 +834,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$customerId = "customerId_example"; // string | 
+$id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdSitesIdGet($customerId, $id, $filter);
@@ -838,7 +853,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
  **id** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -850,13 +865,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersCustomerIdSitesPost**
-> \Yoast\MyYoastApiClient\Model\Site apiCustomersCustomerIdSitesPost($body, $customerId)
+> \Yoast\MyYoastApiClient\Model\Site apiCustomersCustomerIdSitesPost($createSiteBodyDto, $customerId)
 
 Create a site for a user
 
@@ -866,6 +881,7 @@ Create a site record so we can link a subscription to a site which is linked to 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -877,11 +893,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto(); // \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto | 
+$createSiteBodyDto = new \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto(); // \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto | 
 $customerId = "customerId_example"; // string | 
 
 try {
-    $result = $apiInstance->apiCustomersCustomerIdSitesPost($body, $customerId);
+    $result = $apiInstance->apiCustomersCustomerIdSitesPost($createSiteBodyDto, $customerId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSitesPost: ', $e->getMessage(), PHP_EOL;
@@ -893,7 +909,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\CreateSiteBodyDto**](../Model/CreateSiteBodyDto.md)|  |
+ **createSiteBodyDto** | [**\Yoast\MyYoastApiClient\Model\CreateSiteBodyDto**](../Model/CreateSiteBodyDto.md)|  |
  **customerId** | **string**|  |
 
 ### Return type
@@ -920,6 +936,7 @@ Find Course Enrollments that a customer is student in
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -931,7 +948,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$customerId = "customerId_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdStudentCourseEnrollmentsGet($customerId);
@@ -958,7 +975,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -974,6 +991,7 @@ Get and filter subscriptions of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -985,8 +1003,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$customerId = "customerId_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdSubscriptionsGet($customerId, $filter);
@@ -1002,7 +1020,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -1014,13 +1032,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersCustomerIdSubscriptionsIdCancelPost**
-> object apiCustomersCustomerIdSubscriptionsIdCancelPost($body, $customerId, $id)
+> object apiCustomersCustomerIdSubscriptionsIdCancelPost($cancelSubscriptionBodyDto, $customerId, $id)
 
 Cancel (part of) a subscription.
 
@@ -1030,6 +1048,7 @@ Communicates a (partial) subscription to yoast.com.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1041,12 +1060,12 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto(); // \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto | 
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$cancelSubscriptionBodyDto = new \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto(); // \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto | 
+$customerId = "customerId_example"; // string | 
+$id = "id_example"; // string | 
 
 try {
-    $result = $apiInstance->apiCustomersCustomerIdSubscriptionsIdCancelPost($body, $customerId, $id);
+    $result = $apiInstance->apiCustomersCustomerIdSubscriptionsIdCancelPost($cancelSubscriptionBodyDto, $customerId, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersCustomerIdSubscriptionsIdCancelPost: ', $e->getMessage(), PHP_EOL;
@@ -1058,7 +1077,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto**](../Model/CancelSubscriptionBodyDto.md)|  |
+ **cancelSubscriptionBodyDto** | [**\Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto**](../Model/CancelSubscriptionBodyDto.md)|  |
  **customerId** | [**string**](../Model/.md)|  |
  **id** | [**string**](../Model/.md)|  |
 
@@ -1088,6 +1107,7 @@ Get a single subscriptions of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1099,9 +1119,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$customerId = "customerId_example"; // string | 
+$id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCustomersCustomerIdSubscriptionsIdGet($customerId, $id, $filter);
@@ -1118,7 +1138,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerId** | [**string**](../Model/.md)|  |
  **id** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -1130,7 +1150,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -1146,6 +1166,7 @@ Get and filter customers
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1157,7 +1178,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCustomersGet($filter);
@@ -1172,7 +1193,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -1184,7 +1205,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -1204,7 +1225,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "id_example"; // string | 
 
 try {
     $apiInstance->apiCustomersIdAccessTokensPost($id);
@@ -1230,8 +1251,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1246,6 +1267,7 @@ This route allows the user to upload a new UserAvatar to their WordPress account
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1257,7 +1279,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "id_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersIdAvatarPost($id);
@@ -1284,7 +1306,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -1300,6 +1322,7 @@ Downloads the data of the given customer as CSV files inside a ZIP file.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1311,7 +1334,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "id_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersIdDownloadGet($id);
@@ -1338,7 +1361,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -1354,6 +1377,7 @@ Used when customers accidentally disable their own account
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1365,7 +1389,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "id_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersIdEnablePost($id);
@@ -1392,7 +1416,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -1408,6 +1432,7 @@ Find the refunds for provided user id.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1419,7 +1444,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "id_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersIdFindRefundsGet($id);
@@ -1446,7 +1471,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -1462,6 +1487,7 @@ Deletes and/or obfuscates all data related to a customer, except order data that
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1473,7 +1499,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "id_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersIdGdprDeleteDelete($id);
@@ -1500,7 +1526,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -1516,6 +1542,7 @@ Get a single customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1527,8 +1554,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCustomersIdGet($id, $filter);
@@ -1544,7 +1571,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -1556,13 +1583,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersIdPasswordPatch**
-> \Yoast\MyYoastApiClient\Model\Customer apiCustomersIdPasswordPatch($body, $id)
+> \Yoast\MyYoastApiClient\Model\Customer apiCustomersIdPasswordPatch($changePasswordDto, $id)
 
 Update a customer's password in WordPress
 
@@ -1572,6 +1599,7 @@ This route allows a customer to updates their password on WordPress.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1583,11 +1611,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Yoast\MyYoastApiClient\Model\ChangePasswordDto(); // \Yoast\MyYoastApiClient\Model\ChangePasswordDto | 
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$changePasswordDto = new \Yoast\MyYoastApiClient\Model\ChangePasswordDto(); // \Yoast\MyYoastApiClient\Model\ChangePasswordDto | 
+$id = "id_example"; // string | 
 
 try {
-    $result = $apiInstance->apiCustomersIdPasswordPatch($body, $id);
+    $result = $apiInstance->apiCustomersIdPasswordPatch($changePasswordDto, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersIdPasswordPatch: ', $e->getMessage(), PHP_EOL;
@@ -1599,7 +1627,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\ChangePasswordDto**](../Model/ChangePasswordDto.md)|  |
+ **changePasswordDto** | [**\Yoast\MyYoastApiClient\Model\ChangePasswordDto**](../Model/ChangePasswordDto.md)|  |
  **id** | [**string**](../Model/.md)|  |
 
 ### Return type
@@ -1618,7 +1646,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersIdPatch**
-> apiCustomersIdPatch($body, $id)
+> apiCustomersIdPatch($updateUserDto, $id)
 
 
 
@@ -1626,6 +1654,7 @@ Name | Type | Description  | Notes
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1637,11 +1666,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Yoast\MyYoastApiClient\Model\UpdateUserDto(); // \Yoast\MyYoastApiClient\Model\UpdateUserDto | 
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$updateUserDto = new \Yoast\MyYoastApiClient\Model\UpdateUserDto(); // \Yoast\MyYoastApiClient\Model\UpdateUserDto | 
+$id = "id_example"; // string | 
 
 try {
-    $apiInstance->apiCustomersIdPatch($body, $id);
+    $apiInstance->apiCustomersIdPatch($updateUserDto, $id);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersIdPatch: ', $e->getMessage(), PHP_EOL;
 }
@@ -1652,7 +1681,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\UpdateUserDto**](../Model/UpdateUserDto.md)|  |
+ **updateUserDto** | [**\Yoast\MyYoastApiClient\Model\UpdateUserDto**](../Model/UpdateUserDto.md)|  |
  **id** | [**string**](../Model/.md)|  |
 
 ### Return type
@@ -1666,7 +1695,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1679,6 +1708,7 @@ void (empty response body)
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1690,7 +1720,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "id_example"; // string | 
 
 try {
     $result = $apiInstance->apiCustomersIdProfileGet($id);
@@ -1717,13 +1747,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersIdProfilePatch**
-> \Yoast\MyYoastApiClient\Model\Customer apiCustomersIdProfilePatch($body, $id)
+> \Yoast\MyYoastApiClient\Model\Customer apiCustomersIdProfilePatch($id, $updateUserToWordpressDto)
 
 Update a customer to WordPress
 
@@ -1733,6 +1763,7 @@ This route allows a customer to updates their profile on WordPress.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1744,11 +1775,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \Yoast\MyYoastApiClient\Model\UpdateUserToWordpressDto(); // \Yoast\MyYoastApiClient\Model\UpdateUserToWordpressDto | 
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "id_example"; // string | 
+$updateUserToWordpressDto = new \Yoast\MyYoastApiClient\Model\UpdateUserToWordpressDto(); // \Yoast\MyYoastApiClient\Model\UpdateUserToWordpressDto | 
 
 try {
-    $result = $apiInstance->apiCustomersIdProfilePatch($body, $id);
+    $result = $apiInstance->apiCustomersIdProfilePatch($id, $updateUserToWordpressDto);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersIdProfilePatch: ', $e->getMessage(), PHP_EOL;
@@ -1760,8 +1791,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\UpdateUserToWordpressDto**](../Model/UpdateUserToWordpressDto.md)|  |
  **id** | [**string**](../Model/.md)|  |
+ **updateUserToWordpressDto** | [**\Yoast\MyYoastApiClient\Model\UpdateUserToWordpressDto**](../Model/UpdateUserToWordpressDto.md)|  |
 
 ### Return type
 
@@ -1779,7 +1810,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersIdRoleMappingDelete**
-> apiCustomersIdRoleMappingDelete($body, $id)
+> apiCustomersIdRoleMappingDelete($roleDto, $id)
 
 
 
@@ -1787,6 +1818,7 @@ Name | Type | Description  | Notes
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1798,11 +1830,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \stdClass; // object | 
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$roleDto = new \Yoast\MyYoastApiClient\Model\RoleDto(); // \Yoast\MyYoastApiClient\Model\RoleDto | 
+$id = "id_example"; // string | 
 
 try {
-    $apiInstance->apiCustomersIdRoleMappingDelete($body, $id);
+    $apiInstance->apiCustomersIdRoleMappingDelete($roleDto, $id);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersIdRoleMappingDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -1813,7 +1845,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**object**](../Model/object.md)|  |
+ **roleDto** | [**\Yoast\MyYoastApiClient\Model\RoleDto**](../Model/RoleDto.md)|  |
  **id** | [**string**](../Model/.md)|  |
 
 ### Return type
@@ -1827,12 +1859,12 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersIdRoleMappingPost**
-> apiCustomersIdRoleMappingPost($body, $id)
+> apiCustomersIdRoleMappingPost($roleDto, $id)
 
 
 
@@ -1840,6 +1872,7 @@ void (empty response body)
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1851,11 +1884,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$body = new \stdClass; // object | 
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$roleDto = new \Yoast\MyYoastApiClient\Model\RoleDto(); // \Yoast\MyYoastApiClient\Model\RoleDto | 
+$id = "id_example"; // string | 
 
 try {
-    $apiInstance->apiCustomersIdRoleMappingPost($body, $id);
+    $apiInstance->apiCustomersIdRoleMappingPost($roleDto, $id);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersIdRoleMappingPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -1866,7 +1899,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**object**](../Model/object.md)|  |
+ **roleDto** | [**\Yoast\MyYoastApiClient\Model\RoleDto**](../Model/RoleDto.md)|  |
  **id** | [**string**](../Model/.md)|  |
 
 ### Return type
@@ -1880,7 +1913,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -1893,6 +1926,7 @@ void (empty response body)
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1904,7 +1938,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "id_example"; // string | 
 
 try {
     $apiInstance->apiCustomersIdRolesGet($id);
@@ -1930,13 +1964,13 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersNewsletterListSubscribePost**
-> object apiCustomersNewsletterListSubscribePost($body, $list)
+> object apiCustomersNewsletterListSubscribePost($subscribeByEmailBodyDto, $list)
 
 Subscribes a user to a newsletter
 
@@ -1952,11 +1986,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto(); // \Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto | 
+$subscribeByEmailBodyDto = new \Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto(); // \Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto | 
 $list = "list_example"; // string | 
 
 try {
-    $result = $apiInstance->apiCustomersNewsletterListSubscribePost($body, $list);
+    $result = $apiInstance->apiCustomersNewsletterListSubscribePost($subscribeByEmailBodyDto, $list);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersNewsletterListSubscribePost: ', $e->getMessage(), PHP_EOL;
@@ -1968,7 +2002,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto**](../Model/SubscribeByEmailBodyDto.md)|  |
+ **subscribeByEmailBodyDto** | [**\Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto**](../Model/SubscribeByEmailBodyDto.md)|  |
  **list** | **string**|  |
 
 ### Return type
@@ -2026,13 +2060,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersResetPasswordPatch**
-> object apiCustomersResetPasswordPatch($body)
+> object apiCustomersResetPasswordPatch($resetPasswordDto)
 
 Reset the user's password.
 
@@ -2048,10 +2082,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Yoast\MyYoastApiClient\Model\ResetPasswordDto(); // \Yoast\MyYoastApiClient\Model\ResetPasswordDto | 
+$resetPasswordDto = new \Yoast\MyYoastApiClient\Model\ResetPasswordDto(); // \Yoast\MyYoastApiClient\Model\ResetPasswordDto | 
 
 try {
-    $result = $apiInstance->apiCustomersResetPasswordPatch($body);
+    $result = $apiInstance->apiCustomersResetPasswordPatch($resetPasswordDto);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersResetPasswordPatch: ', $e->getMessage(), PHP_EOL;
@@ -2063,7 +2097,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\ResetPasswordDto**](../Model/ResetPasswordDto.md)|  |
+ **resetPasswordDto** | [**\Yoast\MyYoastApiClient\Model\ResetPasswordDto**](../Model/ResetPasswordDto.md)|  |
 
 ### Return type
 
@@ -2091,6 +2125,7 @@ Requires the caller to have the admin role.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2125,13 +2160,13 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersSendResetPasswordEmailPost**
-> object apiCustomersSendResetPasswordEmailPost($body)
+> object apiCustomersSendResetPasswordEmailPost($sendResetPasswordEmailDto)
 
 Send a reset password email to the user.
 
@@ -2147,10 +2182,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Yoast\MyYoastApiClient\Model\SendResetPasswordEmailDto(); // \Yoast\MyYoastApiClient\Model\SendResetPasswordEmailDto | 
+$sendResetPasswordEmailDto = new \Yoast\MyYoastApiClient\Model\SendResetPasswordEmailDto(); // \Yoast\MyYoastApiClient\Model\SendResetPasswordEmailDto | 
 
 try {
-    $result = $apiInstance->apiCustomersSendResetPasswordEmailPost($body);
+    $result = $apiInstance->apiCustomersSendResetPasswordEmailPost($sendResetPasswordEmailDto);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersSendResetPasswordEmailPost: ', $e->getMessage(), PHP_EOL;
@@ -2162,7 +2197,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\SendResetPasswordEmailDto**](../Model/SendResetPasswordEmailDto.md)|  |
+ **sendResetPasswordEmailDto** | [**\Yoast\MyYoastApiClient\Model\SendResetPasswordEmailDto**](../Model/SendResetPasswordEmailDto.md)|  |
 
 ### Return type
 
@@ -2180,7 +2215,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersSignupPost**
-> object apiCustomersSignupPost($body)
+> object apiCustomersSignupPost($signupAccountDto)
 
 Signup a customer on yoast.com.
 
@@ -2196,10 +2231,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Yoast\MyYoastApiClient\Model\SignupAccountDto(); // \Yoast\MyYoastApiClient\Model\SignupAccountDto | 
+$signupAccountDto = new \Yoast\MyYoastApiClient\Model\SignupAccountDto(); // \Yoast\MyYoastApiClient\Model\SignupAccountDto | 
 
 try {
-    $result = $apiInstance->apiCustomersSignupPost($body);
+    $result = $apiInstance->apiCustomersSignupPost($signupAccountDto);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersSignupPost: ', $e->getMessage(), PHP_EOL;
@@ -2211,7 +2246,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\SignupAccountDto**](../Model/SignupAccountDto.md)|  |
+ **signupAccountDto** | [**\Yoast\MyYoastApiClient\Model\SignupAccountDto**](../Model/SignupAccountDto.md)|  |
 
 ### Return type
 

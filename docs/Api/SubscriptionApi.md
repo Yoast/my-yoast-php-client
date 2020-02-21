@@ -1,14 +1,15 @@
 # Yoast\MyYoastApiClient\SubscriptionApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiSubscriptionsExpiringGet**](SubscriptionApi.md#apisubscriptionsexpiringget) | **GET** /api/Subscriptions/expiring | 
-[**apiSubscriptionsGet**](SubscriptionApi.md#apisubscriptionsget) | **GET** /api/Subscriptions | Get subscriptions
-[**apiSubscriptionsIdDelete**](SubscriptionApi.md#apisubscriptionsiddelete) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
-[**apiSubscriptionsIdGet**](SubscriptionApi.md#apisubscriptionsidget) | **GET** /api/Subscriptions/{id} | Get a subscription
-[**apiSubscriptionsIdRecalculateSubscriptionCountPost**](SubscriptionApi.md#apisubscriptionsidrecalculatesubscriptioncountpost) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
+[**apiSubscriptionsExpiringGet**](SubscriptionApi.md#apiSubscriptionsExpiringGet) | **GET** /api/Subscriptions/expiring | 
+[**apiSubscriptionsGet**](SubscriptionApi.md#apiSubscriptionsGet) | **GET** /api/Subscriptions | Get subscriptions
+[**apiSubscriptionsIdDelete**](SubscriptionApi.md#apiSubscriptionsIdDelete) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
+[**apiSubscriptionsIdGet**](SubscriptionApi.md#apiSubscriptionsIdGet) | **GET** /api/Subscriptions/{id} | Get a subscription
+[**apiSubscriptionsIdRecalculateSubscriptionCountPost**](SubscriptionApi.md#apiSubscriptionsIdRecalculateSubscriptionCountPost) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
+
 
 # **apiSubscriptionsExpiringGet**
 > \Yoast\MyYoastApiClient\Model\Subscription[] apiSubscriptionsExpiringGet($from, $until, $requiresManualRenewal)
@@ -19,6 +20,7 @@ Method | HTTP request | Description
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -61,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -77,6 +79,7 @@ Get and filter subscriptions
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -88,7 +91,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiSubscriptionsGet($filter);
@@ -103,7 +106,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -115,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -131,6 +134,7 @@ Deletes a single subscription
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -142,7 +146,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "id_example"; // string | 
 
 try {
     $result = $apiInstance->apiSubscriptionsIdDelete($id);
@@ -169,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -185,6 +189,7 @@ Get a single subscription
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -196,8 +201,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-$filter = new \stdClass; // object | Used for filtering/joining the results.
+$id = "id_example"; // string | 
+$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiSubscriptionsIdGet($id, $filter);
@@ -213,7 +218,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
- **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -225,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -241,6 +246,7 @@ Route to recalculate the Subscription Count for a given subscription.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -279,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

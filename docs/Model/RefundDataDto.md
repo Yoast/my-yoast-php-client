@@ -8,8 +8,9 @@ Name | Type | Description | Notes
 **dateCreatedGmt** | [**\DateTime**](\DateTime.md) |  | 
 **amount** | **string** |  | 
 **reason** | **string** |  | 
-**refundedBy** | **int** |  | 
+**refundedBy** | **float** |  | 
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
 
-[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
 
