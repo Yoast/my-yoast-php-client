@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **reason** | **string** |  | 
 **refundedBy** | **float** |  | 
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
+**lineItems** | [**\Yoast\MyYoastApiClient\Model\LineItemDto[]**](LineItemDto.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

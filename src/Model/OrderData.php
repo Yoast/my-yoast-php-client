@@ -79,7 +79,7 @@ class OrderData implements ModelInterface, ArrayAccess
         'discountTotal' => 'string',
         'couponLines' => '\Yoast\MyYoastApiClient\Model\CouponLineDto[]',
         'feeLines' => 'string[]',
-        'lineItems' => '\Yoast\MyYoastApiClient\Model\LineItemData[]',
+        'lineItems' => '\Yoast\MyYoastApiClient\Model\LineItemDto[]',
         'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]',
         'number' => 'string',
         'orderKey' => 'string',
@@ -1077,7 +1077,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Gets lineItems
      *
-     * @return \Yoast\MyYoastApiClient\Model\LineItemData[]
+     * @return \Yoast\MyYoastApiClient\Model\LineItemDto[]
      */
     public function getLineItems()
     {
@@ -1087,7 +1087,7 @@ class OrderData implements ModelInterface, ArrayAccess
     /**
      * Sets lineItems
      *
-     * @param \Yoast\MyYoastApiClient\Model\LineItemData[] $lineItems lineItems
+     * @param \Yoast\MyYoastApiClient\Model\LineItemDto[] $lineItems lineItems
      *
      * @return $this
      */

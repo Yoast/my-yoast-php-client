@@ -1,6 +1,6 @@
 <?php
 /**
- * LineItemTest
+ * LineItemDtoTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * LineItemTest Class Doc Comment
+ * LineItemDtoTest Class Doc Comment
  *
  * @category    Class
- * @description LineItem
+ * @description LineItemDto
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LineItemTest extends \PHPUnit_Framework_TestCase
+class LineItemDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,16 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "LineItem"
+     * Test "LineItemDto"
      */
-    public function testLineItem()
+    public function testLineItemDto()
+    {
+    }
+
+    /**
+     * Test attribute "bundledItemTitle"
+     */
+    public function testPropertyBundledItemTitle()
     {
     }
 
@@ -84,65 +91,16 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "subtotalAmount"
+     * Test attribute "name"
      */
-    public function testPropertySubtotalAmount()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "totalAmount"
+     * Test attribute "price"
      */
-    public function testPropertyTotalAmount()
-    {
-    }
-
-    /**
-     * Test attribute "vatAmount"
-     */
-    public function testPropertyVatAmount()
-    {
-    }
-
-    /**
-     * Test attribute "productName"
-     */
-    public function testPropertyProductName()
-    {
-    }
-
-    /**
-     * Test attribute "quantity"
-     */
-    public function testPropertyQuantity()
-    {
-    }
-
-    /**
-     * Test attribute "sourceId"
-     */
-    public function testPropertySourceId()
-    {
-    }
-
-    /**
-     * Test attribute "sourceShopId"
-     */
-    public function testPropertySourceShopId()
-    {
-    }
-
-    /**
-     * Test attribute "createdAt"
-     */
-    public function testPropertyCreatedAt()
-    {
-    }
-
-    /**
-     * Test attribute "modifiedAt"
-     */
-    public function testPropertyModifiedAt()
+    public function testPropertyPrice()
     {
     }
 
@@ -154,16 +112,86 @@ class LineItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "orderId"
+     * Test attribute "quantity"
      */
-    public function testPropertyOrderId()
+    public function testPropertyQuantity()
     {
     }
 
     /**
-     * Test attribute "parentId"
+     * Test attribute "sku"
      */
-    public function testPropertyParentId()
+    public function testPropertySku()
+    {
+    }
+
+    /**
+     * Test attribute "subtotal"
+     */
+    public function testPropertySubtotal()
+    {
+    }
+
+    /**
+     * Test attribute "subtotalTax"
+     */
+    public function testPropertySubtotalTax()
+    {
+    }
+
+    /**
+     * Test attribute "taxes"
+     */
+    public function testPropertyTaxes()
+    {
+    }
+
+    /**
+     * Test attribute "taxClass"
+     */
+    public function testPropertyTaxClass()
+    {
+    }
+
+    /**
+     * Test attribute "total"
+     */
+    public function testPropertyTotal()
+    {
+    }
+
+    /**
+     * Test attribute "totalTax"
+     */
+    public function testPropertyTotalTax()
+    {
+    }
+
+    /**
+     * Test attribute "variationId"
+     */
+    public function testPropertyVariationId()
+    {
+    }
+
+    /**
+     * Test attribute "bundledBy"
+     */
+    public function testPropertyBundledBy()
+    {
+    }
+
+    /**
+     * Test attribute "bundledItems"
+     */
+    public function testPropertyBundledItems()
+    {
+    }
+
+    /**
+     * Test attribute "metaData"
+     */
+    public function testPropertyMetaData()
     {
     }
 }

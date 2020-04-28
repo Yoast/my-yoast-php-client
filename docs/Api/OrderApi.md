@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **apiOrdersExportGet**
-> \Yoast\MyYoastApiClient\Model\Order[] apiOrdersExportGet()
+> \Yoast\MyYoastApiClient\Model\Order[] apiOrdersExportGet($startDate, $endDate)
 
 Get orders
 
@@ -34,9 +34,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     new GuzzleHttp\Client(),
     $config
 );
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 
 try {
-    $result = $apiInstance->apiOrdersExportGet();
+    $result = $apiInstance->apiOrdersExportGet($startDate, $endDate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderApi->apiOrdersExportGet: ', $e->getMessage(), PHP_EOL;
@@ -45,7 +47,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **\DateTime**|  |
+ **endDate** | **\DateTime**|  |
 
 ### Return type
 
@@ -211,7 +217,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**|  |
+ **id** | [**string**](../Model/.md)|  |
 
 ### Return type
 

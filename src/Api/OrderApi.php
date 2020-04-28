@@ -92,14 +92,16 @@ class OrderApi
      *
      * Get orders
      *
+     * @param  \DateTime $startDate startDate (required)
+     * @param  \DateTime $endDate endDate (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Order[]
      */
-    public function apiOrdersExportGet()
+    public function apiOrdersExportGet($startDate, $endDate)
     {
-        list($response) = $this->apiOrdersExportGetWithHttpInfo();
+        list($response) = $this->apiOrdersExportGetWithHttpInfo($startDate, $endDate);
         return $response;
     }
 
@@ -108,15 +110,17 @@ class OrderApi
      *
      * Get orders
      *
+     * @param  \DateTime $startDate (required)
+     * @param  \DateTime $endDate (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiOrdersExportGetWithHttpInfo()
+    public function apiOrdersExportGetWithHttpInfo($startDate, $endDate)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->apiOrdersExportGetRequest();
+        $request = $this->apiOrdersExportGetRequest($startDate, $endDate);
 
         try {
             $options = $this->createHttpClientOption();
@@ -182,13 +186,15 @@ class OrderApi
      *
      * Get orders
      *
+     * @param  \DateTime $startDate (required)
+     * @param  \DateTime $endDate (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersExportGetAsync()
+    public function apiOrdersExportGetAsync($startDate, $endDate)
     {
-        return $this->apiOrdersExportGetAsyncWithHttpInfo()
+        return $this->apiOrdersExportGetAsyncWithHttpInfo($startDate, $endDate)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -201,14 +207,16 @@ class OrderApi
      *
      * Get orders
      *
+     * @param  \DateTime $startDate (required)
+     * @param  \DateTime $endDate (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersExportGetAsyncWithHttpInfo()
+    public function apiOrdersExportGetAsyncWithHttpInfo($startDate, $endDate)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->apiOrdersExportGetRequest();
+        $request = $this->apiOrdersExportGetRequest($startDate, $endDate);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -250,12 +258,26 @@ class OrderApi
     /**
      * Create request for operation 'apiOrdersExportGet'
      *
+     * @param  \DateTime $startDate (required)
+     * @param  \DateTime $endDate (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiOrdersExportGetRequest()
+    protected function apiOrdersExportGetRequest($startDate, $endDate)
     {
+        // verify the required parameter 'startDate' is set
+        if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $startDate when calling apiOrdersExportGet'
+            );
+        }
+        // verify the required parameter 'endDate' is set
+        if ($endDate === null || (is_array($endDate) && count($endDate) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $endDate when calling apiOrdersExportGet'
+            );
+        }
 
         $resourcePath = '/api/Orders/export';
         $formParams = [];
@@ -264,6 +286,14 @@ class OrderApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($startDate !== null) {
+            $queryParams['start_date'] = ObjectSerializer::toQueryValue($startDate);
+        }
+        // query params
+        if ($endDate !== null) {
+            $queryParams['end_date'] = ObjectSerializer::toQueryValue($endDate);
+        }
 
 
         // body params

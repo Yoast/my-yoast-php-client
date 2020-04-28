@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **apiWorkerGetRecurringJobsInfoNameGet**
-> apiWorkerGetRecurringJobsInfoNameGet()
+> apiWorkerGetRecurringJobsInfoNameGet($name)
 
 
 
@@ -32,9 +32,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\WorkerApi(
     new GuzzleHttp\Client(),
     $config
 );
+$name = "name_example"; // string | 
 
 try {
-    $apiInstance->apiWorkerGetRecurringJobsInfoNameGet();
+    $apiInstance->apiWorkerGetRecurringJobsInfoNameGet($name);
 } catch (Exception $e) {
     echo 'Exception when calling WorkerApi->apiWorkerGetRecurringJobsInfoNameGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -42,7 +43,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
 
 ### Return type
 
@@ -60,7 +64,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiWorkerGetScheduledJobsNameGet**
-> apiWorkerGetScheduledJobsNameGet()
+> apiWorkerGetScheduledJobsNameGet($name)
 
 
 
@@ -80,9 +84,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\WorkerApi(
     new GuzzleHttp\Client(),
     $config
 );
+$name = "name_example"; // string | 
 
 try {
-    $apiInstance->apiWorkerGetScheduledJobsNameGet();
+    $apiInstance->apiWorkerGetScheduledJobsNameGet($name);
 } catch (Exception $e) {
     echo 'Exception when calling WorkerApi->apiWorkerGetScheduledJobsNameGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -90,7 +95,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
 
 ### Return type
 

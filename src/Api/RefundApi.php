@@ -92,14 +92,16 @@ class RefundApi
      *
      * Get refunds
      *
+     * @param  \DateTime $startDate startDate (required)
+     * @param  \DateTime $endDate endDate (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Refund[]
      */
-    public function apiRefundsExportGet()
+    public function apiRefundsExportGet($startDate, $endDate)
     {
-        list($response) = $this->apiRefundsExportGetWithHttpInfo();
+        list($response) = $this->apiRefundsExportGetWithHttpInfo($startDate, $endDate);
         return $response;
     }
 
@@ -108,15 +110,17 @@ class RefundApi
      *
      * Get refunds
      *
+     * @param  \DateTime $startDate (required)
+     * @param  \DateTime $endDate (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Refund[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiRefundsExportGetWithHttpInfo()
+    public function apiRefundsExportGetWithHttpInfo($startDate, $endDate)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Refund[]';
-        $request = $this->apiRefundsExportGetRequest();
+        $request = $this->apiRefundsExportGetRequest($startDate, $endDate);
 
         try {
             $options = $this->createHttpClientOption();
@@ -182,13 +186,15 @@ class RefundApi
      *
      * Get refunds
      *
+     * @param  \DateTime $startDate (required)
+     * @param  \DateTime $endDate (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiRefundsExportGetAsync()
+    public function apiRefundsExportGetAsync($startDate, $endDate)
     {
-        return $this->apiRefundsExportGetAsyncWithHttpInfo()
+        return $this->apiRefundsExportGetAsyncWithHttpInfo($startDate, $endDate)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -201,14 +207,16 @@ class RefundApi
      *
      * Get refunds
      *
+     * @param  \DateTime $startDate (required)
+     * @param  \DateTime $endDate (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiRefundsExportGetAsyncWithHttpInfo()
+    public function apiRefundsExportGetAsyncWithHttpInfo($startDate, $endDate)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Refund[]';
-        $request = $this->apiRefundsExportGetRequest();
+        $request = $this->apiRefundsExportGetRequest($startDate, $endDate);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -250,12 +258,26 @@ class RefundApi
     /**
      * Create request for operation 'apiRefundsExportGet'
      *
+     * @param  \DateTime $startDate (required)
+     * @param  \DateTime $endDate (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiRefundsExportGetRequest()
+    protected function apiRefundsExportGetRequest($startDate, $endDate)
     {
+        // verify the required parameter 'startDate' is set
+        if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $startDate when calling apiRefundsExportGet'
+            );
+        }
+        // verify the required parameter 'endDate' is set
+        if ($endDate === null || (is_array($endDate) && count($endDate) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $endDate when calling apiRefundsExportGet'
+            );
+        }
 
         $resourcePath = '/api/Refunds/export';
         $formParams = [];
@@ -264,6 +286,14 @@ class RefundApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($startDate !== null) {
+            $queryParams['start_date'] = ObjectSerializer::toQueryValue($startDate);
+        }
+        // query params
+        if ($endDate !== null) {
+            $queryParams['end_date'] = ObjectSerializer::toQueryValue($endDate);
+        }
 
 
         // body params

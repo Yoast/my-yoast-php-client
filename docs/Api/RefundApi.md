@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **apiRefundsExportGet**
-> \Yoast\MyYoastApiClient\Model\Refund[] apiRefundsExportGet()
+> \Yoast\MyYoastApiClient\Model\Refund[] apiRefundsExportGet($startDate, $endDate)
 
 Get refunds
 
@@ -32,9 +32,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
     new GuzzleHttp\Client(),
     $config
 );
+$startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
+$endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 
 try {
-    $result = $apiInstance->apiRefundsExportGet();
+    $result = $apiInstance->apiRefundsExportGet($startDate, $endDate);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->apiRefundsExportGet: ', $e->getMessage(), PHP_EOL;
@@ -43,7 +45,11 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **startDate** | **\DateTime**|  |
+ **endDate** | **\DateTime**|  |
 
 ### Return type
 

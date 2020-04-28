@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **dateModifiedGmt** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **email** | **string** |  | 
 **firstName** | **string** |  | 
-**isPayingCustomer** | **bool** |  | 
 **lastName** | **string** |  | 
+**isPayingCustomer** | **bool** |  | 
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
 **ordersCount** | **int** |  | 
 **role** | **string** |  | 

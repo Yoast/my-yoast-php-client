@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **discountTotal** | **string** |  | 
 **couponLines** | [**\Yoast\MyYoastApiClient\Model\CouponLineDto[]**](CouponLineDto.md) |  | 
 **feeLines** | **string[]** |  | 
-**lineItems** | [**\Yoast\MyYoastApiClient\Model\LineItemData[]**](LineItemData.md) |  | 
+**lineItems** | [**\Yoast\MyYoastApiClient\Model\LineItemDto[]**](LineItemDto.md) |  | 
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
 **number** | **string** |  | 
 **orderKey** | **string** |  | 

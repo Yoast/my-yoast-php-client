@@ -59,7 +59,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     protected static $swaggerTypes = [
         'id' => 'int',
         'parentId' => 'int',
-        'lineItems' => '\Yoast\MyYoastApiClient\Model\LineItem[]',
+        'lineItems' => '\Yoast\MyYoastApiClient\Model\LineItemDto[]',
         'startDate' => '\DateTime',
         'endDate' => '\DateTime',
         'nextPaymentDate' => '\DateTime',
@@ -342,7 +342,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Gets lineItems
      *
-     * @return \Yoast\MyYoastApiClient\Model\LineItem[]
+     * @return \Yoast\MyYoastApiClient\Model\LineItemDto[]
      */
     public function getLineItems()
     {
@@ -352,7 +352,7 @@ class SubscriptionData implements ModelInterface, ArrayAccess
     /**
      * Sets lineItems
      *
-     * @param \Yoast\MyYoastApiClient\Model\LineItem[] $lineItems lineItems
+     * @param \Yoast\MyYoastApiClient\Model\LineItemDto[] $lineItems lineItems
      *
      * @return $this
      */

@@ -1,15 +1,12 @@
-# LineItemData
+# LineItemDto
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bundledBy** | **int** |  | [optional] 
-**bundledItems** | **string[]** |  | [optional] 
 **bundledItemTitle** | **string** |  | [optional] 
 **id** | **int** |  | 
-**metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
 **name** | **string** |  | 
-**price** | **int** |  | 
+**price** | **float** |  | 
 **productId** | **int** |  | 
 **quantity** | **int** |  | 
 **sku** | **string** |  | 
@@ -20,6 +17,9 @@ Name | Type | Description | Notes
 **total** | **string** |  | 
 **totalTax** | **string** |  | 
 **variationId** | **int** |  | 
+**bundledBy** | **int** |  | [optional] 
+**bundledItems** | **string[]** |  | [optional] 
+**metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

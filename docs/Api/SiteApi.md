@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSitesIdPatch**
-> apiSitesIdPatch($createSiteBodyDto, $id)
+> apiSitesIdPatch($updateSiteDto, $id)
 
 
 
@@ -258,11 +258,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$createSiteBodyDto = new \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto(); // \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto | 
+$updateSiteDto = new \Yoast\MyYoastApiClient\Model\UpdateSiteDto(); // \Yoast\MyYoastApiClient\Model\UpdateSiteDto | 
 $id = "id_example"; // string | 
 
 try {
-    $apiInstance->apiSitesIdPatch($createSiteBodyDto, $id);
+    $apiInstance->apiSitesIdPatch($updateSiteDto, $id);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->apiSitesIdPatch: ', $e->getMessage(), PHP_EOL;
 }
@@ -273,7 +273,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createSiteBodyDto** | [**\Yoast\MyYoastApiClient\Model\CreateSiteBodyDto**](../Model/CreateSiteBodyDto.md)|  |
+ **updateSiteDto** | [**\Yoast\MyYoastApiClient\Model\UpdateSiteDto**](../Model/UpdateSiteDto.md)|  |
  **id** | [**string**](../Model/.md)|  |
 
 ### Return type
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSitesIndexPost**
-> object apiSitesIndexPost($method, $url, $token)
+> object apiSitesIndexPost($token, $url, $method)
 
 
 
@@ -422,12 +422,12 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$method = "method_example"; // string | 
-$url = "url_example"; // string | 
 $token = "token_example"; // string | 
+$url = "url_example"; // string | 
+$method = "method_example"; // string | 
 
 try {
-    $result = $apiInstance->apiSitesIndexPost($method, $url, $token);
+    $result = $apiInstance->apiSitesIndexPost($token, $url, $method);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->apiSitesIndexPost: ', $e->getMessage(), PHP_EOL;
@@ -439,9 +439,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **method** | **string**|  |
- **url** | **string**|  |
  **token** | **string**|  |
+ **url** | **string**|  |
+ **method** | **string**|  |
 
 ### Return type
 

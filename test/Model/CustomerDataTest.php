@@ -140,16 +140,16 @@ class CustomerDataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "isPayingCustomer"
+     * Test attribute "lastName"
      */
-    public function testPropertyIsPayingCustomer()
+    public function testPropertyLastName()
     {
     }
 
     /**
-     * Test attribute "lastName"
+     * Test attribute "isPayingCustomer"
      */
-    public function testPropertyLastName()
+    public function testPropertyIsPayingCustomer()
     {
     }
 

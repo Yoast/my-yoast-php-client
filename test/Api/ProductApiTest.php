@@ -92,32 +92,22 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for apiProductsIdPatch
-     *
-     * .
-     *
-     */
-    public function testApiProductsIdPatch()
-    {
-    }
-
-    /**
-     * Test case for apiProductsPost
-     *
-     * .
-     *
-     */
-    public function testApiProductsPost()
-    {
-    }
-
-    /**
      * Test case for apiProductsProductIdDelete
      *
      * .
      *
      */
     public function testApiProductsProductIdDelete()
+    {
+    }
+
+    /**
+     * Test case for apiProductsWordpressPluginVersionDetailsGet
+     *
+     * .
+     *
+     */
+    public function testApiProductsWordpressPluginVersionDetailsGet()
     {
     }
 }

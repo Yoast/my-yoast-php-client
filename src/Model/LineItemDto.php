@@ -1,6 +1,6 @@
 <?php
 /**
- * LineItemData
+ * LineItemDto
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * LineItemData Class Doc Comment
+ * LineItemDto Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LineItemData implements ModelInterface, ArrayAccess
+class LineItemDto implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class LineItemData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LineItemData';
+    protected static $swaggerModelName = 'LineItemDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,13 +57,10 @@ class LineItemData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'bundledBy' => 'int',
-        'bundledItems' => 'string[]',
         'bundledItemTitle' => 'string',
         'id' => 'int',
-        'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]',
         'name' => 'string',
-        'price' => 'int',
+        'price' => 'float',
         'productId' => 'int',
         'quantity' => 'int',
         'sku' => 'string',
@@ -73,7 +70,10 @@ class LineItemData implements ModelInterface, ArrayAccess
         'taxClass' => 'string',
         'total' => 'string',
         'totalTax' => 'string',
-        'variationId' => 'int'
+        'variationId' => 'int',
+        'bundledBy' => 'int',
+        'bundledItems' => 'string[]',
+        'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]'
     ];
 
     /**
@@ -82,11 +82,8 @@ class LineItemData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'bundledBy' => null,
-        'bundledItems' => null,
         'bundledItemTitle' => null,
         'id' => null,
-        'metaData' => null,
         'name' => null,
         'price' => null,
         'productId' => null,
@@ -98,7 +95,10 @@ class LineItemData implements ModelInterface, ArrayAccess
         'taxClass' => null,
         'total' => null,
         'totalTax' => null,
-        'variationId' => null
+        'variationId' => null,
+        'bundledBy' => null,
+        'bundledItems' => null,
+        'metaData' => null
     ];
 
     /**
@@ -128,11 +128,8 @@ class LineItemData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'bundledBy' => 'bundled_by',
-        'bundledItems' => 'bundled_items',
         'bundledItemTitle' => 'bundled_item_title',
         'id' => 'id',
-        'metaData' => 'meta_data',
         'name' => 'name',
         'price' => 'price',
         'productId' => 'product_id',
@@ -144,7 +141,10 @@ class LineItemData implements ModelInterface, ArrayAccess
         'taxClass' => 'tax_class',
         'total' => 'total',
         'totalTax' => 'total_tax',
-        'variationId' => 'variation_id'
+        'variationId' => 'variation_id',
+        'bundledBy' => 'bundled_by',
+        'bundledItems' => 'bundled_items',
+        'metaData' => 'meta_data'
     ];
 
     /**
@@ -153,11 +153,8 @@ class LineItemData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'bundledBy' => 'setBundledBy',
-        'bundledItems' => 'setBundledItems',
         'bundledItemTitle' => 'setBundledItemTitle',
         'id' => 'setId',
-        'metaData' => 'setMetaData',
         'name' => 'setName',
         'price' => 'setPrice',
         'productId' => 'setProductId',
@@ -169,7 +166,10 @@ class LineItemData implements ModelInterface, ArrayAccess
         'taxClass' => 'setTaxClass',
         'total' => 'setTotal',
         'totalTax' => 'setTotalTax',
-        'variationId' => 'setVariationId'
+        'variationId' => 'setVariationId',
+        'bundledBy' => 'setBundledBy',
+        'bundledItems' => 'setBundledItems',
+        'metaData' => 'setMetaData'
     ];
 
     /**
@@ -178,11 +178,8 @@ class LineItemData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'bundledBy' => 'getBundledBy',
-        'bundledItems' => 'getBundledItems',
         'bundledItemTitle' => 'getBundledItemTitle',
         'id' => 'getId',
-        'metaData' => 'getMetaData',
         'name' => 'getName',
         'price' => 'getPrice',
         'productId' => 'getProductId',
@@ -194,7 +191,10 @@ class LineItemData implements ModelInterface, ArrayAccess
         'taxClass' => 'getTaxClass',
         'total' => 'getTotal',
         'totalTax' => 'getTotalTax',
-        'variationId' => 'getVariationId'
+        'variationId' => 'getVariationId',
+        'bundledBy' => 'getBundledBy',
+        'bundledItems' => 'getBundledItems',
+        'metaData' => 'getMetaData'
     ];
 
     /**
@@ -257,11 +257,8 @@ class LineItemData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['bundledBy'] = isset($data['bundledBy']) ? $data['bundledBy'] : null;
-        $this->container['bundledItems'] = isset($data['bundledItems']) ? $data['bundledItems'] : null;
         $this->container['bundledItemTitle'] = isset($data['bundledItemTitle']) ? $data['bundledItemTitle'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['metaData'] = isset($data['metaData']) ? $data['metaData'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
@@ -274,6 +271,9 @@ class LineItemData implements ModelInterface, ArrayAccess
         $this->container['total'] = isset($data['total']) ? $data['total'] : null;
         $this->container['totalTax'] = isset($data['totalTax']) ? $data['totalTax'] : null;
         $this->container['variationId'] = isset($data['variationId']) ? $data['variationId'] : null;
+        $this->container['bundledBy'] = isset($data['bundledBy']) ? $data['bundledBy'] : null;
+        $this->container['bundledItems'] = isset($data['bundledItems']) ? $data['bundledItems'] : null;
+        $this->container['metaData'] = isset($data['metaData']) ? $data['metaData'] : null;
     }
 
     /**
@@ -287,9 +287,6 @@ class LineItemData implements ModelInterface, ArrayAccess
 
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['metaData'] === null) {
-            $invalidProperties[] = "'metaData' can't be null";
         }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
@@ -343,54 +340,6 @@ class LineItemData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets bundledBy
-     *
-     * @return int
-     */
-    public function getBundledBy()
-    {
-        return $this->container['bundledBy'];
-    }
-
-    /**
-     * Sets bundledBy
-     *
-     * @param int $bundledBy bundledBy
-     *
-     * @return $this
-     */
-    public function setBundledBy($bundledBy)
-    {
-        $this->container['bundledBy'] = $bundledBy;
-
-        return $this;
-    }
-
-    /**
-     * Gets bundledItems
-     *
-     * @return string[]
-     */
-    public function getBundledItems()
-    {
-        return $this->container['bundledItems'];
-    }
-
-    /**
-     * Sets bundledItems
-     *
-     * @param string[] $bundledItems bundledItems
-     *
-     * @return $this
-     */
-    public function setBundledItems($bundledItems)
-    {
-        $this->container['bundledItems'] = $bundledItems;
-
-        return $this;
-    }
-
-    /**
      * Gets bundledItemTitle
      *
      * @return string
@@ -439,30 +388,6 @@ class LineItemData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets metaData
-     *
-     * @return \Yoast\MyYoastApiClient\Model\MetaDataDto[]
-     */
-    public function getMetaData()
-    {
-        return $this->container['metaData'];
-    }
-
-    /**
-     * Sets metaData
-     *
-     * @param \Yoast\MyYoastApiClient\Model\MetaDataDto[] $metaData metaData
-     *
-     * @return $this
-     */
-    public function setMetaData($metaData)
-    {
-        $this->container['metaData'] = $metaData;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string
@@ -489,7 +414,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return int
+     * @return float
      */
     public function getPrice()
     {
@@ -499,7 +424,7 @@ class LineItemData implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param int $price price
+     * @param float $price price
      *
      * @return $this
      */
@@ -746,6 +671,78 @@ class LineItemData implements ModelInterface, ArrayAccess
     public function setVariationId($variationId)
     {
         $this->container['variationId'] = $variationId;
+
+        return $this;
+    }
+
+    /**
+     * Gets bundledBy
+     *
+     * @return int
+     */
+    public function getBundledBy()
+    {
+        return $this->container['bundledBy'];
+    }
+
+    /**
+     * Sets bundledBy
+     *
+     * @param int $bundledBy bundledBy
+     *
+     * @return $this
+     */
+    public function setBundledBy($bundledBy)
+    {
+        $this->container['bundledBy'] = $bundledBy;
+
+        return $this;
+    }
+
+    /**
+     * Gets bundledItems
+     *
+     * @return string[]
+     */
+    public function getBundledItems()
+    {
+        return $this->container['bundledItems'];
+    }
+
+    /**
+     * Sets bundledItems
+     *
+     * @param string[] $bundledItems bundledItems
+     *
+     * @return $this
+     */
+    public function setBundledItems($bundledItems)
+    {
+        $this->container['bundledItems'] = $bundledItems;
+
+        return $this;
+    }
+
+    /**
+     * Gets metaData
+     *
+     * @return \Yoast\MyYoastApiClient\Model\MetaDataDto[]
+     */
+    public function getMetaData()
+    {
+        return $this->container['metaData'];
+    }
+
+    /**
+     * Sets metaData
+     *
+     * @param \Yoast\MyYoastApiClient\Model\MetaDataDto[] $metaData metaData
+     *
+     * @return $this
+     */
+    public function setMetaData($metaData)
+    {
+        $this->container['metaData'] = $metaData;
 
         return $this;
     }

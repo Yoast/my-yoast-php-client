@@ -63,7 +63,8 @@ class RefundDataDto implements ModelInterface, ArrayAccess
         'amount' => 'string',
         'reason' => 'string',
         'refundedBy' => 'float',
-        'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]'
+        'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]',
+        'lineItems' => '\Yoast\MyYoastApiClient\Model\LineItemDto[]'
     ];
 
     /**
@@ -78,7 +79,8 @@ class RefundDataDto implements ModelInterface, ArrayAccess
         'amount' => null,
         'reason' => null,
         'refundedBy' => null,
-        'metaData' => null
+        'metaData' => null,
+        'lineItems' => null
     ];
 
     /**
@@ -114,7 +116,8 @@ class RefundDataDto implements ModelInterface, ArrayAccess
         'amount' => 'amount',
         'reason' => 'reason',
         'refundedBy' => 'refunded_by',
-        'metaData' => 'meta_data'
+        'metaData' => 'meta_data',
+        'lineItems' => 'line_items'
     ];
 
     /**
@@ -129,7 +132,8 @@ class RefundDataDto implements ModelInterface, ArrayAccess
         'amount' => 'setAmount',
         'reason' => 'setReason',
         'refundedBy' => 'setRefundedBy',
-        'metaData' => 'setMetaData'
+        'metaData' => 'setMetaData',
+        'lineItems' => 'setLineItems'
     ];
 
     /**
@@ -144,7 +148,8 @@ class RefundDataDto implements ModelInterface, ArrayAccess
         'amount' => 'getAmount',
         'reason' => 'getReason',
         'refundedBy' => 'getRefundedBy',
-        'metaData' => 'getMetaData'
+        'metaData' => 'getMetaData',
+        'lineItems' => 'getLineItems'
     ];
 
     /**
@@ -214,6 +219,7 @@ class RefundDataDto implements ModelInterface, ArrayAccess
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['refundedBy'] = isset($data['refundedBy']) ? $data['refundedBy'] : null;
         $this->container['metaData'] = isset($data['metaData']) ? $data['metaData'] : null;
+        $this->container['lineItems'] = isset($data['lineItems']) ? $data['lineItems'] : null;
     }
 
     /**
@@ -245,6 +251,9 @@ class RefundDataDto implements ModelInterface, ArrayAccess
         }
         if ($this->container['metaData'] === null) {
             $invalidProperties[] = "'metaData' can't be null";
+        }
+        if ($this->container['lineItems'] === null) {
+            $invalidProperties[] = "'lineItems' can't be null";
         }
         return $invalidProperties;
     }
@@ -425,6 +434,30 @@ class RefundDataDto implements ModelInterface, ArrayAccess
     public function setMetaData($metaData)
     {
         $this->container['metaData'] = $metaData;
+
+        return $this;
+    }
+
+    /**
+     * Gets lineItems
+     *
+     * @return \Yoast\MyYoastApiClient\Model\LineItemDto[]
+     */
+    public function getLineItems()
+    {
+        return $this->container['lineItems'];
+    }
+
+    /**
+     * Sets lineItems
+     *
+     * @param \Yoast\MyYoastApiClient\Model\LineItemDto[] $lineItems lineItems
+     *
+     * @return $this
+     */
+    public function setLineItems($lineItems)
+    {
+        $this->container['lineItems'] = $lineItems;
 
         return $this;
     }

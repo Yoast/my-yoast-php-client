@@ -90,28 +90,30 @@ class WorkerApi
     /**
      * Operation apiWorkerGetRecurringJobsInfoNameGet
      *
+     * @param  string $name name (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function apiWorkerGetRecurringJobsInfoNameGet()
+    public function apiWorkerGetRecurringJobsInfoNameGet($name)
     {
-        $this->apiWorkerGetRecurringJobsInfoNameGetWithHttpInfo();
+        $this->apiWorkerGetRecurringJobsInfoNameGetWithHttpInfo($name);
     }
 
     /**
      * Operation apiWorkerGetRecurringJobsInfoNameGetWithHttpInfo
      *
+     * @param  string $name (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiWorkerGetRecurringJobsInfoNameGetWithHttpInfo()
+    public function apiWorkerGetRecurringJobsInfoNameGetWithHttpInfo($name)
     {
         $returnType = '';
-        $request = $this->apiWorkerGetRecurringJobsInfoNameGetRequest();
+        $request = $this->apiWorkerGetRecurringJobsInfoNameGetRequest($name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -155,13 +157,14 @@ class WorkerApi
      *
      * 
      *
+     * @param  string $name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiWorkerGetRecurringJobsInfoNameGetAsync()
+    public function apiWorkerGetRecurringJobsInfoNameGetAsync($name)
     {
-        return $this->apiWorkerGetRecurringJobsInfoNameGetAsyncWithHttpInfo()
+        return $this->apiWorkerGetRecurringJobsInfoNameGetAsyncWithHttpInfo($name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -174,14 +177,15 @@ class WorkerApi
      *
      * 
      *
+     * @param  string $name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiWorkerGetRecurringJobsInfoNameGetAsyncWithHttpInfo()
+    public function apiWorkerGetRecurringJobsInfoNameGetAsyncWithHttpInfo($name)
     {
         $returnType = '';
-        $request = $this->apiWorkerGetRecurringJobsInfoNameGetRequest();
+        $request = $this->apiWorkerGetRecurringJobsInfoNameGetRequest($name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -209,12 +213,19 @@ class WorkerApi
     /**
      * Create request for operation 'apiWorkerGetRecurringJobsInfoNameGet'
      *
+     * @param  string $name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiWorkerGetRecurringJobsInfoNameGetRequest()
+    protected function apiWorkerGetRecurringJobsInfoNameGetRequest($name)
     {
+        // verify the required parameter 'name' is set
+        if ($name === null || (is_array($name) && count($name) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling apiWorkerGetRecurringJobsInfoNameGet'
+            );
+        }
 
         $resourcePath = '/api/Worker/getRecurringJobsInfo/{name}';
         $formParams = [];
@@ -224,6 +235,14 @@ class WorkerApi
         $multipart = false;
 
 
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
 
         // body params
         $_tempBody = null;
@@ -304,28 +323,30 @@ class WorkerApi
     /**
      * Operation apiWorkerGetScheduledJobsNameGet
      *
+     * @param  string $name name (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function apiWorkerGetScheduledJobsNameGet()
+    public function apiWorkerGetScheduledJobsNameGet($name)
     {
-        $this->apiWorkerGetScheduledJobsNameGetWithHttpInfo();
+        $this->apiWorkerGetScheduledJobsNameGetWithHttpInfo($name);
     }
 
     /**
      * Operation apiWorkerGetScheduledJobsNameGetWithHttpInfo
      *
+     * @param  string $name (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiWorkerGetScheduledJobsNameGetWithHttpInfo()
+    public function apiWorkerGetScheduledJobsNameGetWithHttpInfo($name)
     {
         $returnType = '';
-        $request = $this->apiWorkerGetScheduledJobsNameGetRequest();
+        $request = $this->apiWorkerGetScheduledJobsNameGetRequest($name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -369,13 +390,14 @@ class WorkerApi
      *
      * 
      *
+     * @param  string $name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiWorkerGetScheduledJobsNameGetAsync()
+    public function apiWorkerGetScheduledJobsNameGetAsync($name)
     {
-        return $this->apiWorkerGetScheduledJobsNameGetAsyncWithHttpInfo()
+        return $this->apiWorkerGetScheduledJobsNameGetAsyncWithHttpInfo($name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -388,14 +410,15 @@ class WorkerApi
      *
      * 
      *
+     * @param  string $name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiWorkerGetScheduledJobsNameGetAsyncWithHttpInfo()
+    public function apiWorkerGetScheduledJobsNameGetAsyncWithHttpInfo($name)
     {
         $returnType = '';
-        $request = $this->apiWorkerGetScheduledJobsNameGetRequest();
+        $request = $this->apiWorkerGetScheduledJobsNameGetRequest($name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -423,12 +446,19 @@ class WorkerApi
     /**
      * Create request for operation 'apiWorkerGetScheduledJobsNameGet'
      *
+     * @param  string $name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiWorkerGetScheduledJobsNameGetRequest()
+    protected function apiWorkerGetScheduledJobsNameGetRequest($name)
     {
+        // verify the required parameter 'name' is set
+        if ($name === null || (is_array($name) && count($name) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $name when calling apiWorkerGetScheduledJobsNameGet'
+            );
+        }
 
         $resourcePath = '/api/Worker/getScheduledJobs/{name}';
         $formParams = [];
@@ -438,6 +468,14 @@ class WorkerApi
         $multipart = false;
 
 
+        // path params
+        if ($name !== null) {
+            $resourcePath = str_replace(
+                '{' . 'name' . '}',
+                ObjectSerializer::toPathValue($name),
+                $resourcePath
+            );
+        }
 
         // body params
         $_tempBody = null;

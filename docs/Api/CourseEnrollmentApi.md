@@ -331,7 +331,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **inviteDto** | [**\Yoast\MyYoastApiClient\Model\InviteDto**](../Model/InviteDto.md)|  |
- **id** | **string**|  |
+ **id** | [**string**](../Model/.md)|  |
 
 ### Return type
 

@@ -6,9 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiProductsGet**](ProductApi.md#apiProductsGet) | **GET** /api/Products | Get products
 [**apiProductsIdGet**](ProductApi.md#apiProductsIdGet) | **GET** /api/Products/{id} | Get a product
-[**apiProductsIdPatch**](ProductApi.md#apiProductsIdPatch) | **PATCH** /api/Products/{id} | 
-[**apiProductsPost**](ProductApi.md#apiProductsPost) | **POST** /api/Products | 
 [**apiProductsProductIdDelete**](ProductApi.md#apiProductsProductIdDelete) | **DELETE** /api/Products/{productId} | 
+[**apiProductsWordpressPluginVersionDetailsGet**](ProductApi.md#apiProductsWordpressPluginVersionDetailsGet) | **GET** /api/Products/wordpressPluginVersionDetails | 
 
 
 # **apiProductsGet**
@@ -111,8 +110,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiProductsIdPatch**
-> apiProductsIdPatch($id)
+# **apiProductsProductIdDelete**
+> apiProductsProductIdDelete($id)
 
 
 
@@ -129,9 +128,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
 $id = "id_example"; // string | 
 
 try {
-    $apiInstance->apiProductsIdPatch($id);
+    $apiInstance->apiProductsProductIdDelete($id);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->apiProductsIdPatch: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->apiProductsProductIdDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -157,8 +156,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiProductsPost**
-> apiProductsPost($product)
+# **apiProductsWordpressPluginVersionDetailsGet**
+> apiProductsWordpressPluginVersionDetailsGet()
 
 
 
@@ -172,67 +171,17 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$product = new \Yoast\MyYoastApiClient\Model\Product(); // \Yoast\MyYoastApiClient\Model\Product | 
 
 try {
-    $apiInstance->apiProductsPost($product);
+    $apiInstance->apiProductsWordpressPluginVersionDetailsGet();
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->apiProductsPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->apiProductsWordpressPluginVersionDetailsGet: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **product** | [**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)|  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **apiProductsProductIdDelete**
-> apiProductsProductIdDelete($productId)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$productId = "productId_example"; // string | 
-
-try {
-    $apiInstance->apiProductsProductIdDelete($productId);
-} catch (Exception $e) {
-    echo 'Exception when calling ProductApi->apiProductsProductIdDelete: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **string**|  |
+This endpoint does not need any parameter.
 
 ### Return type
 

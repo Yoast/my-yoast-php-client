@@ -168,9 +168,8 @@ Class | Method | HTTP request | Description
 *PackagesApi* | [**packagesPackagesJsonGet**](docs/Api/PackagesApi.md#packagespackagesjsonget) | **GET** /packages/packages.json | Serves the general packages.json file.
 *ProductApi* | [**apiProductsGet**](docs/Api/ProductApi.md#apiproductsget) | **GET** /api/Products | Get products
 *ProductApi* | [**apiProductsIdGet**](docs/Api/ProductApi.md#apiproductsidget) | **GET** /api/Products/{id} | Get a product
-*ProductApi* | [**apiProductsIdPatch**](docs/Api/ProductApi.md#apiproductsidpatch) | **PATCH** /api/Products/{id} | 
-*ProductApi* | [**apiProductsPost**](docs/Api/ProductApi.md#apiproductspost) | **POST** /api/Products | 
 *ProductApi* | [**apiProductsProductIdDelete**](docs/Api/ProductApi.md#apiproductsproductiddelete) | **DELETE** /api/Products/{productId} | 
+*ProductApi* | [**apiProductsWordpressPluginVersionDetailsGet**](docs/Api/ProductApi.md#apiproductswordpresspluginversiondetailsget) | **GET** /api/Products/wordpressPluginVersionDetails | 
 *ProductGroupApi* | [**apiProductGroupsGet**](docs/Api/ProductGroupApi.md#apiproductgroupsget) | **GET** /api/ProductGroups | Get productgroups
 *RefundApi* | [**apiRefundsExportGet**](docs/Api/RefundApi.md#apirefundsexportget) | **GET** /api/Refunds/export | Get refunds
 *RefundApi* | [**apiRefundsGet**](docs/Api/RefundApi.md#apirefundsget) | **GET** /api/Refunds | Get refunds
@@ -225,6 +224,7 @@ Class | Method | HTTP request | Description
  - [CustomerData](docs/Model/CustomerData.md)
  - [CustomerFromWooDto](docs/Model/CustomerFromWooDto.md)
  - [CustomerNote](docs/Model/CustomerNote.md)
+ - [Date](docs/Model/Date.md)
  - [EddDTO](docs/Model/EddDTO.md)
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)
@@ -237,8 +237,7 @@ Class | Method | HTTP request | Description
  - [InviteDto](docs/Model/InviteDto.md)
  - [JSZip](docs/Model/JSZip.md)
  - [JobOptions](docs/Model/JobOptions.md)
- - [LineItem](docs/Model/LineItem.md)
- - [LineItemData](docs/Model/LineItemData.md)
+ - [LineItemDto](docs/Model/LineItemDto.md)
  - [LineItemTax](docs/Model/LineItemTax.md)
  - [LoginDto](docs/Model/LoginDto.md)
  - [LoginUserDto](docs/Model/LoginUserDto.md)
@@ -264,7 +263,7 @@ Class | Method | HTTP request | Description
  - [RenameBodyDto](docs/Model/RenameBodyDto.md)
  - [RenewalAmount](docs/Model/RenewalAmount.md)
  - [ResetPasswordDto](docs/Model/ResetPasswordDto.md)
- - [RoleDto](docs/Model/RoleDto.md)
+ - [RoleIDDto](docs/Model/RoleIDDto.md)
  - [SendResetPasswordEmailDto](docs/Model/SendResetPasswordEmailDto.md)
  - [ShippingDto](docs/Model/ShippingDto.md)
  - [SignupAccountDto](docs/Model/SignupAccountDto.md)
@@ -280,6 +279,7 @@ Class | Method | HTTP request | Description
  - [TransferDto](docs/Model/TransferDto.md)
  - [TransferSiteDto](docs/Model/TransferSiteDto.md)
  - [UpdateFileDto](docs/Model/UpdateFileDto.md)
+ - [UpdateSiteDto](docs/Model/UpdateSiteDto.md)
  - [UpdateUserDto](docs/Model/UpdateUserDto.md)
  - [UpdateUserToWordpressDto](docs/Model/UpdateUserToWordpressDto.md)
  - [UserIdentity](docs/Model/UserIdentity.md)

@@ -1,6 +1,6 @@
 <?php
 /**
- * RoleDtoTest
+ * DateTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * RoleDtoTest Class Doc Comment
+ * DateTest Class Doc Comment
  *
  * @category    Class
- * @description RoleDto
+ * @description Date
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class RoleDtoTest extends \PHPUnit_Framework_TestCase
+class DateTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class RoleDtoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "RoleDto"
+     * Test "Date"
      */
-    public function testRoleDto()
+    public function testDate()
     {
     }
 }

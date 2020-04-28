@@ -66,8 +66,8 @@ class CustomerData implements ModelInterface, ArrayAccess
         'dateModifiedGmt' => '\DateTime',
         'email' => 'string',
         'firstName' => 'string',
-        'isPayingCustomer' => 'bool',
         'lastName' => 'string',
+        'isPayingCustomer' => 'bool',
         'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]',
         'ordersCount' => 'int',
         'role' => 'string',
@@ -91,8 +91,8 @@ class CustomerData implements ModelInterface, ArrayAccess
         'dateModifiedGmt' => 'date-time',
         'email' => 'email',
         'firstName' => null,
-        'isPayingCustomer' => null,
         'lastName' => null,
+        'isPayingCustomer' => null,
         'metaData' => null,
         'ordersCount' => null,
         'role' => null,
@@ -137,8 +137,8 @@ class CustomerData implements ModelInterface, ArrayAccess
         'dateModifiedGmt' => 'date_modified_gmt',
         'email' => 'email',
         'firstName' => 'first_name',
-        'isPayingCustomer' => 'is_paying_customer',
         'lastName' => 'last_name',
+        'isPayingCustomer' => 'is_paying_customer',
         'metaData' => 'meta_data',
         'ordersCount' => 'orders_count',
         'role' => 'role',
@@ -162,8 +162,8 @@ class CustomerData implements ModelInterface, ArrayAccess
         'dateModifiedGmt' => 'setDateModifiedGmt',
         'email' => 'setEmail',
         'firstName' => 'setFirstName',
-        'isPayingCustomer' => 'setIsPayingCustomer',
         'lastName' => 'setLastName',
+        'isPayingCustomer' => 'setIsPayingCustomer',
         'metaData' => 'setMetaData',
         'ordersCount' => 'setOrdersCount',
         'role' => 'setRole',
@@ -187,8 +187,8 @@ class CustomerData implements ModelInterface, ArrayAccess
         'dateModifiedGmt' => 'getDateModifiedGmt',
         'email' => 'getEmail',
         'firstName' => 'getFirstName',
-        'isPayingCustomer' => 'getIsPayingCustomer',
         'lastName' => 'getLastName',
+        'isPayingCustomer' => 'getIsPayingCustomer',
         'metaData' => 'getMetaData',
         'ordersCount' => 'getOrdersCount',
         'role' => 'getRole',
@@ -266,8 +266,8 @@ class CustomerData implements ModelInterface, ArrayAccess
         $this->container['dateModifiedGmt'] = isset($data['dateModifiedGmt']) ? $data['dateModifiedGmt'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['isPayingCustomer'] = isset($data['isPayingCustomer']) ? $data['isPayingCustomer'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
+        $this->container['isPayingCustomer'] = isset($data['isPayingCustomer']) ? $data['isPayingCustomer'] : null;
         $this->container['metaData'] = isset($data['metaData']) ? $data['metaData'] : null;
         $this->container['ordersCount'] = isset($data['ordersCount']) ? $data['ordersCount'] : null;
         $this->container['role'] = isset($data['role']) ? $data['role'] : null;
@@ -303,11 +303,11 @@ class CustomerData implements ModelInterface, ArrayAccess
         if ($this->container['firstName'] === null) {
             $invalidProperties[] = "'firstName' can't be null";
         }
-        if ($this->container['isPayingCustomer'] === null) {
-            $invalidProperties[] = "'isPayingCustomer' can't be null";
-        }
         if ($this->container['lastName'] === null) {
             $invalidProperties[] = "'lastName' can't be null";
+        }
+        if ($this->container['isPayingCustomer'] === null) {
+            $invalidProperties[] = "'isPayingCustomer' can't be null";
         }
         if ($this->container['metaData'] === null) {
             $invalidProperties[] = "'metaData' can't be null";
@@ -559,30 +559,6 @@ class CustomerData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets isPayingCustomer
-     *
-     * @return bool
-     */
-    public function getIsPayingCustomer()
-    {
-        return $this->container['isPayingCustomer'];
-    }
-
-    /**
-     * Sets isPayingCustomer
-     *
-     * @param bool $isPayingCustomer isPayingCustomer
-     *
-     * @return $this
-     */
-    public function setIsPayingCustomer($isPayingCustomer)
-    {
-        $this->container['isPayingCustomer'] = $isPayingCustomer;
-
-        return $this;
-    }
-
-    /**
      * Gets lastName
      *
      * @return string
@@ -602,6 +578,30 @@ class CustomerData implements ModelInterface, ArrayAccess
     public function setLastName($lastName)
     {
         $this->container['lastName'] = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Gets isPayingCustomer
+     *
+     * @return bool
+     */
+    public function getIsPayingCustomer()
+    {
+        return $this->container['isPayingCustomer'];
+    }
+
+    /**
+     * Sets isPayingCustomer
+     *
+     * @param bool $isPayingCustomer isPayingCustomer
+     *
+     * @return $this
+     */
+    public function setIsPayingCustomer($isPayingCustomer)
+    {
+        $this->container['isPayingCustomer'] = $isPayingCustomer;
 
         return $this;
     }

@@ -8992,32 +8992,32 @@ class CustomerApi
     /**
      * Operation apiCustomersIdRoleMappingDelete
      *
-     * @param  \Yoast\MyYoastApiClient\Model\RoleDto $roleDto roleDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\RoleIDDto $roleIDDto roleIDDto (required)
      * @param  string $id id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function apiCustomersIdRoleMappingDelete($roleDto, $id)
+    public function apiCustomersIdRoleMappingDelete($roleIDDto, $id)
     {
-        $this->apiCustomersIdRoleMappingDeleteWithHttpInfo($roleDto, $id);
+        $this->apiCustomersIdRoleMappingDeleteWithHttpInfo($roleIDDto, $id);
     }
 
     /**
      * Operation apiCustomersIdRoleMappingDeleteWithHttpInfo
      *
-     * @param  \Yoast\MyYoastApiClient\Model\RoleDto $roleDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\RoleIDDto $roleIDDto (required)
      * @param  string $id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersIdRoleMappingDeleteWithHttpInfo($roleDto, $id)
+    public function apiCustomersIdRoleMappingDeleteWithHttpInfo($roleIDDto, $id)
     {
         $returnType = '';
-        $request = $this->apiCustomersIdRoleMappingDeleteRequest($roleDto, $id);
+        $request = $this->apiCustomersIdRoleMappingDeleteRequest($roleIDDto, $id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9061,15 +9061,15 @@ class CustomerApi
      *
      * 
      *
-     * @param  \Yoast\MyYoastApiClient\Model\RoleDto $roleDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\RoleIDDto $roleIDDto (required)
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersIdRoleMappingDeleteAsync($roleDto, $id)
+    public function apiCustomersIdRoleMappingDeleteAsync($roleIDDto, $id)
     {
-        return $this->apiCustomersIdRoleMappingDeleteAsyncWithHttpInfo($roleDto, $id)
+        return $this->apiCustomersIdRoleMappingDeleteAsyncWithHttpInfo($roleIDDto, $id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9082,16 +9082,16 @@ class CustomerApi
      *
      * 
      *
-     * @param  \Yoast\MyYoastApiClient\Model\RoleDto $roleDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\RoleIDDto $roleIDDto (required)
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersIdRoleMappingDeleteAsyncWithHttpInfo($roleDto, $id)
+    public function apiCustomersIdRoleMappingDeleteAsyncWithHttpInfo($roleIDDto, $id)
     {
         $returnType = '';
-        $request = $this->apiCustomersIdRoleMappingDeleteRequest($roleDto, $id);
+        $request = $this->apiCustomersIdRoleMappingDeleteRequest($roleIDDto, $id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9119,18 +9119,18 @@ class CustomerApi
     /**
      * Create request for operation 'apiCustomersIdRoleMappingDelete'
      *
-     * @param  \Yoast\MyYoastApiClient\Model\RoleDto $roleDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\RoleIDDto $roleIDDto (required)
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersIdRoleMappingDeleteRequest($roleDto, $id)
+    protected function apiCustomersIdRoleMappingDeleteRequest($roleIDDto, $id)
     {
-        // verify the required parameter 'roleDto' is set
-        if ($roleDto === null || (is_array($roleDto) && count($roleDto) === 0)) {
+        // verify the required parameter 'roleIDDto' is set
+        if ($roleIDDto === null || (is_array($roleIDDto) && count($roleIDDto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $roleDto when calling apiCustomersIdRoleMappingDelete'
+                'Missing the required parameter $roleIDDto when calling apiCustomersIdRoleMappingDelete'
             );
         }
         // verify the required parameter 'id' is set
@@ -9159,8 +9159,8 @@ class CustomerApi
 
         // body params
         $_tempBody = null;
-        if (isset($roleDto)) {
-            $_tempBody = $roleDto;
+        if (isset($roleIDDto)) {
+            $_tempBody = $roleIDDto;
         }
 
         if ($multipart) {
@@ -9239,32 +9239,32 @@ class CustomerApi
     /**
      * Operation apiCustomersIdRoleMappingPost
      *
-     * @param  \Yoast\MyYoastApiClient\Model\RoleDto $roleDto roleDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\RoleIDDto $roleIDDto roleIDDto (required)
      * @param  string $id id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function apiCustomersIdRoleMappingPost($roleDto, $id)
+    public function apiCustomersIdRoleMappingPost($roleIDDto, $id)
     {
-        $this->apiCustomersIdRoleMappingPostWithHttpInfo($roleDto, $id);
+        $this->apiCustomersIdRoleMappingPostWithHttpInfo($roleIDDto, $id);
     }
 
     /**
      * Operation apiCustomersIdRoleMappingPostWithHttpInfo
      *
-     * @param  \Yoast\MyYoastApiClient\Model\RoleDto $roleDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\RoleIDDto $roleIDDto (required)
      * @param  string $id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiCustomersIdRoleMappingPostWithHttpInfo($roleDto, $id)
+    public function apiCustomersIdRoleMappingPostWithHttpInfo($roleIDDto, $id)
     {
         $returnType = '';
-        $request = $this->apiCustomersIdRoleMappingPostRequest($roleDto, $id);
+        $request = $this->apiCustomersIdRoleMappingPostRequest($roleIDDto, $id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -9308,15 +9308,15 @@ class CustomerApi
      *
      * 
      *
-     * @param  \Yoast\MyYoastApiClient\Model\RoleDto $roleDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\RoleIDDto $roleIDDto (required)
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersIdRoleMappingPostAsync($roleDto, $id)
+    public function apiCustomersIdRoleMappingPostAsync($roleIDDto, $id)
     {
-        return $this->apiCustomersIdRoleMappingPostAsyncWithHttpInfo($roleDto, $id)
+        return $this->apiCustomersIdRoleMappingPostAsyncWithHttpInfo($roleIDDto, $id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -9329,16 +9329,16 @@ class CustomerApi
      *
      * 
      *
-     * @param  \Yoast\MyYoastApiClient\Model\RoleDto $roleDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\RoleIDDto $roleIDDto (required)
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiCustomersIdRoleMappingPostAsyncWithHttpInfo($roleDto, $id)
+    public function apiCustomersIdRoleMappingPostAsyncWithHttpInfo($roleIDDto, $id)
     {
         $returnType = '';
-        $request = $this->apiCustomersIdRoleMappingPostRequest($roleDto, $id);
+        $request = $this->apiCustomersIdRoleMappingPostRequest($roleIDDto, $id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -9366,18 +9366,18 @@ class CustomerApi
     /**
      * Create request for operation 'apiCustomersIdRoleMappingPost'
      *
-     * @param  \Yoast\MyYoastApiClient\Model\RoleDto $roleDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\RoleIDDto $roleIDDto (required)
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiCustomersIdRoleMappingPostRequest($roleDto, $id)
+    protected function apiCustomersIdRoleMappingPostRequest($roleIDDto, $id)
     {
-        // verify the required parameter 'roleDto' is set
-        if ($roleDto === null || (is_array($roleDto) && count($roleDto) === 0)) {
+        // verify the required parameter 'roleIDDto' is set
+        if ($roleIDDto === null || (is_array($roleIDDto) && count($roleIDDto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $roleDto when calling apiCustomersIdRoleMappingPost'
+                'Missing the required parameter $roleIDDto when calling apiCustomersIdRoleMappingPost'
             );
         }
         // verify the required parameter 'id' is set
@@ -9406,8 +9406,8 @@ class CustomerApi
 
         // body params
         $_tempBody = null;
-        if (isset($roleDto)) {
-            $_tempBody = $roleDto;
+        if (isset($roleIDDto)) {
+            $_tempBody = $roleIDDto;
         }
 
         if ($multipart) {

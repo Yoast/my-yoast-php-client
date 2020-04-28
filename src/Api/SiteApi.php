@@ -1155,32 +1155,32 @@ class SiteApi
     /**
      * Operation apiSitesIdPatch
      *
-     * @param  \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto $createSiteBodyDto createSiteBodyDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $updateSiteDto updateSiteDto (required)
      * @param  string $id id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function apiSitesIdPatch($createSiteBodyDto, $id)
+    public function apiSitesIdPatch($updateSiteDto, $id)
     {
-        $this->apiSitesIdPatchWithHttpInfo($createSiteBodyDto, $id);
+        $this->apiSitesIdPatchWithHttpInfo($updateSiteDto, $id);
     }
 
     /**
      * Operation apiSitesIdPatchWithHttpInfo
      *
-     * @param  \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto $createSiteBodyDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $updateSiteDto (required)
      * @param  string $id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiSitesIdPatchWithHttpInfo($createSiteBodyDto, $id)
+    public function apiSitesIdPatchWithHttpInfo($updateSiteDto, $id)
     {
         $returnType = '';
-        $request = $this->apiSitesIdPatchRequest($createSiteBodyDto, $id);
+        $request = $this->apiSitesIdPatchRequest($updateSiteDto, $id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1224,15 +1224,15 @@ class SiteApi
      *
      * 
      *
-     * @param  \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto $createSiteBodyDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $updateSiteDto (required)
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSitesIdPatchAsync($createSiteBodyDto, $id)
+    public function apiSitesIdPatchAsync($updateSiteDto, $id)
     {
-        return $this->apiSitesIdPatchAsyncWithHttpInfo($createSiteBodyDto, $id)
+        return $this->apiSitesIdPatchAsyncWithHttpInfo($updateSiteDto, $id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1245,16 +1245,16 @@ class SiteApi
      *
      * 
      *
-     * @param  \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto $createSiteBodyDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $updateSiteDto (required)
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSitesIdPatchAsyncWithHttpInfo($createSiteBodyDto, $id)
+    public function apiSitesIdPatchAsyncWithHttpInfo($updateSiteDto, $id)
     {
         $returnType = '';
-        $request = $this->apiSitesIdPatchRequest($createSiteBodyDto, $id);
+        $request = $this->apiSitesIdPatchRequest($updateSiteDto, $id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1282,18 +1282,18 @@ class SiteApi
     /**
      * Create request for operation 'apiSitesIdPatch'
      *
-     * @param  \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto $createSiteBodyDto (required)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $updateSiteDto (required)
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiSitesIdPatchRequest($createSiteBodyDto, $id)
+    protected function apiSitesIdPatchRequest($updateSiteDto, $id)
     {
-        // verify the required parameter 'createSiteBodyDto' is set
-        if ($createSiteBodyDto === null || (is_array($createSiteBodyDto) && count($createSiteBodyDto) === 0)) {
+        // verify the required parameter 'updateSiteDto' is set
+        if ($updateSiteDto === null || (is_array($updateSiteDto) && count($updateSiteDto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $createSiteBodyDto when calling apiSitesIdPatch'
+                'Missing the required parameter $updateSiteDto when calling apiSitesIdPatch'
             );
         }
         // verify the required parameter 'id' is set
@@ -1322,8 +1322,8 @@ class SiteApi
 
         // body params
         $_tempBody = null;
-        if (isset($createSiteBodyDto)) {
-            $_tempBody = $createSiteBodyDto;
+        if (isset($updateSiteDto)) {
+            $_tempBody = $updateSiteDto;
         }
 
         if ($multipart) {
@@ -1983,35 +1983,35 @@ class SiteApi
     /**
      * Operation apiSitesIndexPost
      *
-     * @param  string $method method (required)
-     * @param  string $url url (required)
      * @param  string $token token (required)
+     * @param  string $url url (required)
+     * @param  string $method method (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function apiSitesIndexPost($method, $url, $token)
+    public function apiSitesIndexPost($token, $url, $method)
     {
-        list($response) = $this->apiSitesIndexPostWithHttpInfo($method, $url, $token);
+        list($response) = $this->apiSitesIndexPostWithHttpInfo($token, $url, $method);
         return $response;
     }
 
     /**
      * Operation apiSitesIndexPostWithHttpInfo
      *
-     * @param  string $method (required)
-     * @param  string $url (required)
      * @param  string $token (required)
+     * @param  string $url (required)
+     * @param  string $method (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiSitesIndexPostWithHttpInfo($method, $url, $token)
+    public function apiSitesIndexPostWithHttpInfo($token, $url, $method)
     {
         $returnType = 'object';
-        $request = $this->apiSitesIndexPostRequest($method, $url, $token);
+        $request = $this->apiSitesIndexPostRequest($token, $url, $method);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2077,16 +2077,16 @@ class SiteApi
      *
      * 
      *
-     * @param  string $method (required)
-     * @param  string $url (required)
      * @param  string $token (required)
+     * @param  string $url (required)
+     * @param  string $method (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSitesIndexPostAsync($method, $url, $token)
+    public function apiSitesIndexPostAsync($token, $url, $method)
     {
-        return $this->apiSitesIndexPostAsyncWithHttpInfo($method, $url, $token)
+        return $this->apiSitesIndexPostAsyncWithHttpInfo($token, $url, $method)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2099,17 +2099,17 @@ class SiteApi
      *
      * 
      *
-     * @param  string $method (required)
-     * @param  string $url (required)
      * @param  string $token (required)
+     * @param  string $url (required)
+     * @param  string $method (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiSitesIndexPostAsyncWithHttpInfo($method, $url, $token)
+    public function apiSitesIndexPostAsyncWithHttpInfo($token, $url, $method)
     {
         $returnType = 'object';
-        $request = $this->apiSitesIndexPostRequest($method, $url, $token);
+        $request = $this->apiSitesIndexPostRequest($token, $url, $method);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2151,19 +2151,19 @@ class SiteApi
     /**
      * Create request for operation 'apiSitesIndexPost'
      *
-     * @param  string $method (required)
-     * @param  string $url (required)
      * @param  string $token (required)
+     * @param  string $url (required)
+     * @param  string $method (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiSitesIndexPostRequest($method, $url, $token)
+    protected function apiSitesIndexPostRequest($token, $url, $method)
     {
-        // verify the required parameter 'method' is set
-        if ($method === null || (is_array($method) && count($method) === 0)) {
+        // verify the required parameter 'token' is set
+        if ($token === null || (is_array($token) && count($token) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $method when calling apiSitesIndexPost'
+                'Missing the required parameter $token when calling apiSitesIndexPost'
             );
         }
         // verify the required parameter 'url' is set
@@ -2172,10 +2172,10 @@ class SiteApi
                 'Missing the required parameter $url when calling apiSitesIndexPost'
             );
         }
-        // verify the required parameter 'token' is set
-        if ($token === null || (is_array($token) && count($token) === 0)) {
+        // verify the required parameter 'method' is set
+        if ($method === null || (is_array($method) && count($method) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $token when calling apiSitesIndexPost'
+                'Missing the required parameter $method when calling apiSitesIndexPost'
             );
         }
 
@@ -2188,10 +2188,10 @@ class SiteApi
 
 
         // path params
-        if ($method !== null) {
+        if ($token !== null) {
             $resourcePath = str_replace(
-                '{' . 'method' . '}',
-                ObjectSerializer::toPathValue($method),
+                '{' . 'token' . '}',
+                ObjectSerializer::toPathValue($token),
                 $resourcePath
             );
         }
@@ -2204,10 +2204,10 @@ class SiteApi
             );
         }
         // path params
-        if ($token !== null) {
+        if ($method !== null) {
             $resourcePath = str_replace(
-                '{' . 'token' . '}',
-                ObjectSerializer::toPathValue($token),
+                '{' . 'method' . '}',
+                ObjectSerializer::toPathValue($method),
                 $resourcePath
             );
         }

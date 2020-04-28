@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateCustomerNoteDto
+ * RoleIDDto
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * CreateCustomerNoteDto Class Doc Comment
+ * RoleIDDto Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
+class RoleIDDto implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CreateCustomerNoteDto';
+    protected static $swaggerModelName = 'RoleIDDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,7 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'customerId' => 'string',
-        'authorId' => 'string',
-        'content' => 'string',
-        'nextContactDate' => '\Yoast\MyYoastApiClient\Model\\DateTime'
+        'roleId' => 'float'
     ];
 
     /**
@@ -69,10 +66,7 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'customerId' => null,
-        'authorId' => null,
-        'content' => null,
-        'nextContactDate' => null
+        'roleId' => null
     ];
 
     /**
@@ -102,10 +96,7 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'customerId' => 'customerId',
-        'authorId' => 'authorId',
-        'content' => 'content',
-        'nextContactDate' => 'nextContactDate'
+        'roleId' => 'roleId'
     ];
 
     /**
@@ -114,10 +105,7 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'customerId' => 'setCustomerId',
-        'authorId' => 'setAuthorId',
-        'content' => 'setContent',
-        'nextContactDate' => 'setNextContactDate'
+        'roleId' => 'setRoleId'
     ];
 
     /**
@@ -126,10 +114,7 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'customerId' => 'getCustomerId',
-        'authorId' => 'getAuthorId',
-        'content' => 'getContent',
-        'nextContactDate' => 'getNextContactDate'
+        'roleId' => 'getRoleId'
     ];
 
     /**
@@ -192,10 +177,7 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['customerId'] = isset($data['customerId']) ? $data['customerId'] : null;
-        $this->container['authorId'] = isset($data['authorId']) ? $data['authorId'] : null;
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['nextContactDate'] = isset($data['nextContactDate']) ? $data['nextContactDate'] : null;
+        $this->container['roleId'] = isset($data['roleId']) ? $data['roleId'] : null;
     }
 
     /**
@@ -207,14 +189,8 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['customerId'] === null) {
-            $invalidProperties[] = "'customerId' can't be null";
-        }
-        if ($this->container['authorId'] === null) {
-            $invalidProperties[] = "'authorId' can't be null";
-        }
-        if ($this->container['content'] === null) {
-            $invalidProperties[] = "'content' can't be null";
+        if ($this->container['roleId'] === null) {
+            $invalidProperties[] = "'roleId' can't be null";
         }
         return $invalidProperties;
     }
@@ -232,97 +208,25 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets customerId
+     * Gets roleId
      *
-     * @return string
+     * @return float
      */
-    public function getCustomerId()
+    public function getRoleId()
     {
-        return $this->container['customerId'];
+        return $this->container['roleId'];
     }
 
     /**
-     * Sets customerId
+     * Sets roleId
      *
-     * @param string $customerId customerId
+     * @param float $roleId roleId
      *
      * @return $this
      */
-    public function setCustomerId($customerId)
+    public function setRoleId($roleId)
     {
-        $this->container['customerId'] = $customerId;
-
-        return $this;
-    }
-
-    /**
-     * Gets authorId
-     *
-     * @return string
-     */
-    public function getAuthorId()
-    {
-        return $this->container['authorId'];
-    }
-
-    /**
-     * Sets authorId
-     *
-     * @param string $authorId authorId
-     *
-     * @return $this
-     */
-    public function setAuthorId($authorId)
-    {
-        $this->container['authorId'] = $authorId;
-
-        return $this;
-    }
-
-    /**
-     * Gets content
-     *
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     *
-     * @param string $content content
-     *
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets nextContactDate
-     *
-     * @return \Yoast\MyYoastApiClient\Model\\DateTime
-     */
-    public function getNextContactDate()
-    {
-        return $this->container['nextContactDate'];
-    }
-
-    /**
-     * Sets nextContactDate
-     *
-     * @param \Yoast\MyYoastApiClient\Model\\DateTime $nextContactDate nextContactDate
-     *
-     * @return $this
-     */
-    public function setNextContactDate($nextContactDate)
-    {
-        $this->container['nextContactDate'] = $nextContactDate;
+        $this->container['roleId'] = $roleId;
 
         return $this;
     }

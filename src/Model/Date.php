@@ -1,6 +1,6 @@
 <?php
 /**
- * RoleDto
+ * Date
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * RoleDto Class Doc Comment
+ * Date Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RoleDto implements ModelInterface, ArrayAccess
+class Date implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class RoleDto implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'RoleDto';
+    protected static $swaggerModelName = 'Date';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

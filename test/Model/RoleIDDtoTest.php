@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateCustomerNoteDtoTest
+ * RoleIDDtoTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * CreateCustomerNoteDtoTest Class Doc Comment
+ * RoleIDDtoTest Class Doc Comment
  *
  * @category    Class
- * @description CreateCustomerNoteDto
+ * @description RoleIDDto
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateCustomerNoteDtoTest extends \PHPUnit_Framework_TestCase
+class RoleIDDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,37 +70,16 @@ class CreateCustomerNoteDtoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CreateCustomerNoteDto"
+     * Test "RoleIDDto"
      */
-    public function testCreateCustomerNoteDto()
+    public function testRoleIDDto()
     {
     }
 
     /**
-     * Test attribute "customerId"
+     * Test attribute "roleId"
      */
-    public function testPropertyCustomerId()
-    {
-    }
-
-    /**
-     * Test attribute "authorId"
-     */
-    public function testPropertyAuthorId()
-    {
-    }
-
-    /**
-     * Test attribute "content"
-     */
-    public function testPropertyContent()
-    {
-    }
-
-    /**
-     * Test attribute "nextContactDate"
-     */
-    public function testPropertyNextContactDate()
+    public function testPropertyRoleId()
     {
     }
 }

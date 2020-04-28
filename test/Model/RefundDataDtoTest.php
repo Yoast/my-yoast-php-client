@@ -124,4 +124,11 @@ class RefundDataDtoTest extends \PHPUnit_Framework_TestCase
     public function testPropertyMetaData()
     {
     }
+
+    /**
+     * Test attribute "lineItems"
+     */
+    public function testPropertyLineItems()
+    {
+    }
 }

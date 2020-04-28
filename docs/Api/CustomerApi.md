@@ -1810,7 +1810,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersIdRoleMappingDelete**
-> apiCustomersIdRoleMappingDelete($roleDto, $id)
+> apiCustomersIdRoleMappingDelete($roleIDDto, $id)
 
 
 
@@ -1830,11 +1830,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$roleDto = new \Yoast\MyYoastApiClient\Model\RoleDto(); // \Yoast\MyYoastApiClient\Model\RoleDto | 
+$roleIDDto = new \Yoast\MyYoastApiClient\Model\RoleIDDto(); // \Yoast\MyYoastApiClient\Model\RoleIDDto | 
 $id = "id_example"; // string | 
 
 try {
-    $apiInstance->apiCustomersIdRoleMappingDelete($roleDto, $id);
+    $apiInstance->apiCustomersIdRoleMappingDelete($roleIDDto, $id);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersIdRoleMappingDelete: ', $e->getMessage(), PHP_EOL;
 }
@@ -1845,7 +1845,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleDto** | [**\Yoast\MyYoastApiClient\Model\RoleDto**](../Model/RoleDto.md)|  |
+ **roleIDDto** | [**\Yoast\MyYoastApiClient\Model\RoleIDDto**](../Model/RoleIDDto.md)|  |
  **id** | [**string**](../Model/.md)|  |
 
 ### Return type
@@ -1864,7 +1864,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCustomersIdRoleMappingPost**
-> apiCustomersIdRoleMappingPost($roleDto, $id)
+> apiCustomersIdRoleMappingPost($roleIDDto, $id)
 
 
 
@@ -1884,11 +1884,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     new GuzzleHttp\Client(),
     $config
 );
-$roleDto = new \Yoast\MyYoastApiClient\Model\RoleDto(); // \Yoast\MyYoastApiClient\Model\RoleDto | 
+$roleIDDto = new \Yoast\MyYoastApiClient\Model\RoleIDDto(); // \Yoast\MyYoastApiClient\Model\RoleIDDto | 
 $id = "id_example"; // string | 
 
 try {
-    $apiInstance->apiCustomersIdRoleMappingPost($roleDto, $id);
+    $apiInstance->apiCustomersIdRoleMappingPost($roleIDDto, $id);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->apiCustomersIdRoleMappingPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -1899,7 +1899,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **roleDto** | [**\Yoast\MyYoastApiClient\Model\RoleDto**](../Model/RoleDto.md)|  |
+ **roleIDDto** | [**\Yoast\MyYoastApiClient\Model\RoleIDDto**](../Model/RoleIDDto.md)|  |
  **id** | [**string**](../Model/.md)|  |
 
 ### Return type
