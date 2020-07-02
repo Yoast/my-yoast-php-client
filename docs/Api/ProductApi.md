@@ -157,7 +157,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiProductsWordpressPluginVersionDetailsGet**
-> apiProductsWordpressPluginVersionDetailsGet()
+> apiProductsWordpressPluginVersionDetailsGet($password)
 
 
 
@@ -171,9 +171,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$password = "password_example"; // string | 
 
 try {
-    $apiInstance->apiProductsWordpressPluginVersionDetailsGet();
+    $apiInstance->apiProductsWordpressPluginVersionDetailsGet($password);
 } catch (Exception $e) {
     echo 'Exception when calling ProductApi->apiProductsWordpressPluginVersionDetailsGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -181,7 +182,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **password** | **string**|  | [optional]
 
 ### Return type
 

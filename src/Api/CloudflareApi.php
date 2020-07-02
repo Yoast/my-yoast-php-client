@@ -1,6 +1,6 @@
 <?php
 /**
- * RefundApi
+ * CloudflareApi
  * PHP version 5
  *
  * @category Class
@@ -40,14 +40,14 @@ use Yoast\MyYoastApiClient\HeaderSelector;
 use Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * RefundApi Class Doc Comment
+ * CloudflareApi Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class RefundApi
+class CloudflareApi
 {
     /**
      * @var ClientInterface
@@ -88,39 +88,37 @@ class RefundApi
     }
 
     /**
-     * Operation apiRefundsExportGet
+     * Operation apiCloudflareKvRegisteredDomainsPurgePost
      *
-     * Get refunds
+     * Purge kv pairs from the registered domains key value store in Cloudflare
      *
-     * @param  \DateTime $startDate startDate (required)
-     * @param  \DateTime $endDate endDate (required)
+     * @param  \Yoast\MyYoastApiClient\Model\PurgeKVRequestDto $purgeKVRequestDto purgeKVRequestDto (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\Refund[]
+     * @return object[]
      */
-    public function apiRefundsExportGet($startDate, $endDate)
+    public function apiCloudflareKvRegisteredDomainsPurgePost($purgeKVRequestDto)
     {
-        list($response) = $this->apiRefundsExportGetWithHttpInfo($startDate, $endDate);
+        list($response) = $this->apiCloudflareKvRegisteredDomainsPurgePostWithHttpInfo($purgeKVRequestDto);
         return $response;
     }
 
     /**
-     * Operation apiRefundsExportGetWithHttpInfo
+     * Operation apiCloudflareKvRegisteredDomainsPurgePostWithHttpInfo
      *
-     * Get refunds
+     * Purge kv pairs from the registered domains key value store in Cloudflare
      *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
+     * @param  \Yoast\MyYoastApiClient\Model\PurgeKVRequestDto $purgeKVRequestDto (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\Refund[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of object[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiRefundsExportGetWithHttpInfo($startDate, $endDate)
+    public function apiCloudflareKvRegisteredDomainsPurgePostWithHttpInfo($purgeKVRequestDto)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Refund[]';
-        $request = $this->apiRefundsExportGetRequest($startDate, $endDate);
+        $returnType = 'object[]';
+        $request = $this->apiCloudflareKvRegisteredDomainsPurgePostRequest($purgeKVRequestDto);
 
         try {
             $options = $this->createHttpClientOption();
@@ -171,7 +169,7 @@ class RefundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\Refund[]',
+                        'object[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -182,19 +180,18 @@ class RefundApi
     }
 
     /**
-     * Operation apiRefundsExportGetAsync
+     * Operation apiCloudflareKvRegisteredDomainsPurgePostAsync
      *
-     * Get refunds
+     * Purge kv pairs from the registered domains key value store in Cloudflare
      *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
+     * @param  \Yoast\MyYoastApiClient\Model\PurgeKVRequestDto $purgeKVRequestDto (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiRefundsExportGetAsync($startDate, $endDate)
+    public function apiCloudflareKvRegisteredDomainsPurgePostAsync($purgeKVRequestDto)
     {
-        return $this->apiRefundsExportGetAsyncWithHttpInfo($startDate, $endDate)
+        return $this->apiCloudflareKvRegisteredDomainsPurgePostAsyncWithHttpInfo($purgeKVRequestDto)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -203,20 +200,19 @@ class RefundApi
     }
 
     /**
-     * Operation apiRefundsExportGetAsyncWithHttpInfo
+     * Operation apiCloudflareKvRegisteredDomainsPurgePostAsyncWithHttpInfo
      *
-     * Get refunds
+     * Purge kv pairs from the registered domains key value store in Cloudflare
      *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
+     * @param  \Yoast\MyYoastApiClient\Model\PurgeKVRequestDto $purgeKVRequestDto (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiRefundsExportGetAsyncWithHttpInfo($startDate, $endDate)
+    public function apiCloudflareKvRegisteredDomainsPurgePostAsyncWithHttpInfo($purgeKVRequestDto)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Refund[]';
-        $request = $this->apiRefundsExportGetRequest($startDate, $endDate);
+        $returnType = 'object[]';
+        $request = $this->apiCloudflareKvRegisteredDomainsPurgePostRequest($purgeKVRequestDto);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -256,48 +252,36 @@ class RefundApi
     }
 
     /**
-     * Create request for operation 'apiRefundsExportGet'
+     * Create request for operation 'apiCloudflareKvRegisteredDomainsPurgePost'
      *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
+     * @param  \Yoast\MyYoastApiClient\Model\PurgeKVRequestDto $purgeKVRequestDto (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiRefundsExportGetRequest($startDate, $endDate)
+    protected function apiCloudflareKvRegisteredDomainsPurgePostRequest($purgeKVRequestDto)
     {
-        // verify the required parameter 'startDate' is set
-        if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
+        // verify the required parameter 'purgeKVRequestDto' is set
+        if ($purgeKVRequestDto === null || (is_array($purgeKVRequestDto) && count($purgeKVRequestDto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $startDate when calling apiRefundsExportGet'
-            );
-        }
-        // verify the required parameter 'endDate' is set
-        if ($endDate === null || (is_array($endDate) && count($endDate) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $endDate when calling apiRefundsExportGet'
+                'Missing the required parameter $purgeKVRequestDto when calling apiCloudflareKvRegisteredDomainsPurgePost'
             );
         }
 
-        $resourcePath = '/api/Refunds/export';
+        $resourcePath = '/api/cloudflare/kv/registered-domains/purge';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($startDate !== null) {
-            $queryParams['start_date'] = ObjectSerializer::toQueryValue($startDate);
-        }
-        // query params
-        if ($endDate !== null) {
-            $queryParams['end_date'] = ObjectSerializer::toQueryValue($endDate);
-        }
 
 
         // body params
         $_tempBody = null;
+        if (isset($purgeKVRequestDto)) {
+            $_tempBody = $purgeKVRequestDto;
+        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -365,7 +349,7 @@ class RefundApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'GET',
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -373,37 +357,37 @@ class RefundApi
     }
 
     /**
-     * Operation apiRefundsGet
+     * Operation apiCloudflareKvRegisteredDomainsUpdateAllPost
      *
-     * Get refunds
+     * Update sites in the registered domains key value store in Cloudflare
      *
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateAllKVRequestDto $updateAllKVRequestDto updateAllKVRequestDto (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\Refund[]
+     * @return object
      */
-    public function apiRefundsGet($filter = null)
+    public function apiCloudflareKvRegisteredDomainsUpdateAllPost($updateAllKVRequestDto)
     {
-        list($response) = $this->apiRefundsGetWithHttpInfo($filter);
+        list($response) = $this->apiCloudflareKvRegisteredDomainsUpdateAllPostWithHttpInfo($updateAllKVRequestDto);
         return $response;
     }
 
     /**
-     * Operation apiRefundsGetWithHttpInfo
+     * Operation apiCloudflareKvRegisteredDomainsUpdateAllPostWithHttpInfo
      *
-     * Get refunds
+     * Update sites in the registered domains key value store in Cloudflare
      *
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateAllKVRequestDto $updateAllKVRequestDto (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\Refund[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiRefundsGetWithHttpInfo($filter = null)
+    public function apiCloudflareKvRegisteredDomainsUpdateAllPostWithHttpInfo($updateAllKVRequestDto)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Refund[]';
-        $request = $this->apiRefundsGetRequest($filter);
+        $returnType = 'object';
+        $request = $this->apiCloudflareKvRegisteredDomainsUpdateAllPostRequest($updateAllKVRequestDto);
 
         try {
             $options = $this->createHttpClientOption();
@@ -454,7 +438,7 @@ class RefundApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\Refund[]',
+                        'object',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -465,18 +449,18 @@ class RefundApi
     }
 
     /**
-     * Operation apiRefundsGetAsync
+     * Operation apiCloudflareKvRegisteredDomainsUpdateAllPostAsync
      *
-     * Get refunds
+     * Update sites in the registered domains key value store in Cloudflare
      *
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateAllKVRequestDto $updateAllKVRequestDto (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiRefundsGetAsync($filter = null)
+    public function apiCloudflareKvRegisteredDomainsUpdateAllPostAsync($updateAllKVRequestDto)
     {
-        return $this->apiRefundsGetAsyncWithHttpInfo($filter)
+        return $this->apiCloudflareKvRegisteredDomainsUpdateAllPostAsyncWithHttpInfo($updateAllKVRequestDto)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -485,19 +469,19 @@ class RefundApi
     }
 
     /**
-     * Operation apiRefundsGetAsyncWithHttpInfo
+     * Operation apiCloudflareKvRegisteredDomainsUpdateAllPostAsyncWithHttpInfo
      *
-     * Get refunds
+     * Update sites in the registered domains key value store in Cloudflare
      *
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateAllKVRequestDto $updateAllKVRequestDto (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiRefundsGetAsyncWithHttpInfo($filter = null)
+    public function apiCloudflareKvRegisteredDomainsUpdateAllPostAsyncWithHttpInfo($updateAllKVRequestDto)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Refund[]';
-        $request = $this->apiRefundsGetRequest($filter);
+        $returnType = 'object';
+        $request = $this->apiCloudflareKvRegisteredDomainsUpdateAllPostRequest($updateAllKVRequestDto);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -537,314 +521,36 @@ class RefundApi
     }
 
     /**
-     * Create request for operation 'apiRefundsGet'
+     * Create request for operation 'apiCloudflareKvRegisteredDomainsUpdateAllPost'
      *
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function apiRefundsGetRequest($filter = null)
-    {
-
-        $resourcePath = '/api/Refunds';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($filter !== null) {
-            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
-        }
-
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            
-            if($headers['Content-Type'] === 'application/json') {
-                // \stdClass has no __toString(), so we should encode it manually
-                if ($httpBody instanceof \stdClass) {
-                    $httpBody = \GuzzleHttp\json_encode($httpBody);
-                }
-                // array has no __toString(), so we should encode it manually
-                if(is_array($httpBody)) {
-                    $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($httpBody));
-                }
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
-        if ($apiKey !== null) {
-            $queryParams['access_token'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiRefundsIdGet
-     *
-     * Get a refund
-     *
-     * @param  string $id id (required)
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\Refund
-     */
-    public function apiRefundsIdGet($id, $filter = null)
-    {
-        list($response) = $this->apiRefundsIdGetWithHttpInfo($id, $filter);
-        return $response;
-    }
-
-    /**
-     * Operation apiRefundsIdGetWithHttpInfo
-     *
-     * Get a refund
-     *
-     * @param  string $id (required)
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\Refund, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiRefundsIdGetWithHttpInfo($id, $filter = null)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Refund';
-        $request = $this->apiRefundsIdGetRequest($id, $filter);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\Refund',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiRefundsIdGetAsync
-     *
-     * Get a refund
-     *
-     * @param  string $id (required)
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiRefundsIdGetAsync($id, $filter = null)
-    {
-        return $this->apiRefundsIdGetAsyncWithHttpInfo($id, $filter)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiRefundsIdGetAsyncWithHttpInfo
-     *
-     * Get a refund
-     *
-     * @param  string $id (required)
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiRefundsIdGetAsyncWithHttpInfo($id, $filter = null)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Refund';
-        $request = $this->apiRefundsIdGetRequest($id, $filter);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiRefundsIdGet'
-     *
-     * @param  string $id (required)
-     * @param  map[string,string] $filter Used for filtering/joining the results. (optional)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateAllKVRequestDto $updateAllKVRequestDto (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiRefundsIdGetRequest($id, $filter = null)
+    protected function apiCloudflareKvRegisteredDomainsUpdateAllPostRequest($updateAllKVRequestDto)
     {
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
+        // verify the required parameter 'updateAllKVRequestDto' is set
+        if ($updateAllKVRequestDto === null || (is_array($updateAllKVRequestDto) && count($updateAllKVRequestDto) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling apiRefundsIdGet'
+                'Missing the required parameter $updateAllKVRequestDto when calling apiCloudflareKvRegisteredDomainsUpdateAllPost'
             );
         }
 
-        $resourcePath = '/api/Refunds/{id}';
+        $resourcePath = '/api/cloudflare/kv/registered-domains/update-all';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($filter !== null) {
-            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter);
-        }
 
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
 
         // body params
         $_tempBody = null;
+        if (isset($updateAllKVRequestDto)) {
+            $_tempBody = $updateAllKVRequestDto;
+        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -912,7 +618,7 @@ class RefundApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'GET',
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

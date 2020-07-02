@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **changelog** | **string** |  | 
 **productGroupSlugs** | **string[]** |  | 
 **billingType** | **string** |  | 
-**billingTerm** | **string** |  | 
+**billingTerm** | **string** |  | [optional] 
 **activationLimit** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

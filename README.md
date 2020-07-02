@@ -88,6 +88,8 @@ Class | Method | HTTP request | Description
 *BlacklistApi* | [**apiBlacklistGet**](docs/Api/BlacklistApi.md#apiblacklistget) | **GET** /api/Blacklist | Gets blacklisted sites
 *BlacklistApi* | [**apiBlacklistIdDelete**](docs/Api/BlacklistApi.md#apiblacklistiddelete) | **DELETE** /api/Blacklist/{id} | Remove a site from the blacklist
 *BlacklistApi* | [**apiBlacklistPost**](docs/Api/BlacklistApi.md#apiblacklistpost) | **POST** /api/Blacklist | Creates a blacklisted site
+*CloudflareApi* | [**apiCloudflareKvRegisteredDomainsPurgePost**](docs/Api/CloudflareApi.md#apicloudflarekvregistereddomainspurgepost) | **POST** /api/cloudflare/kv/registered-domains/purge | Purge kv pairs from the registered domains key value store in Cloudflare
+*CloudflareApi* | [**apiCloudflareKvRegisteredDomainsUpdateAllPost**](docs/Api/CloudflareApi.md#apicloudflarekvregistereddomainsupdateallpost) | **POST** /api/cloudflare/kv/registered-domains/update-all | Update sites in the registered domains key value store in Cloudflare
 *ComposerTokenApi* | [**apiComposerTokensGeneratePost**](docs/Api/ComposerTokenApi.md#apicomposertokensgeneratepost) | **POST** /api/ComposerTokens/generate | Generates a Composer token
 *ComposerTokenApi* | [**apiComposerTokensIdDeletePost**](docs/Api/ComposerTokenApi.md#apicomposertokensiddeletepost) | **POST** /api/ComposerTokens/{id}/delete | Disable a composer token
 *ComposerTokenApi* | [**apiComposerTokensIdRenamePost**](docs/Api/ComposerTokenApi.md#apicomposertokensidrenamepost) | **POST** /api/ComposerTokens/{id}/rename | Renames a Composer token
@@ -155,7 +157,6 @@ Class | Method | HTTP request | Description
 *FromWooCommerceApi* | [**apiOrdersFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apiordersfromwoocommerceput) | **PUT** /api/Orders/fromWooCommerce | Sync orders to MyYoast.
 *FromWooCommerceApi* | [**apiProductGroupsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apiproductgroupsfromwoocommerceput) | **PUT** /api/ProductGroups/fromWooCommerce | Sync products to MyYoast.
 *FromWooCommerceApi* | [**apiProductsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apiproductsfromwoocommerceput) | **PUT** /api/Products/fromWooCommerce | Sync products to MyYoast.
-*FromWooCommerceApi* | [**apiSubscriptionsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apisubscriptionsfromwoocommerceput) | **PUT** /api/Subscriptions/fromWooCommerce | Sync subscriptions to MyYoast.
 *GDPRApi* | [**apiCustomersIdGdprDeleteDelete**](docs/Api/GDPRApi.md#apicustomersidgdprdeletedelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 *HelpscoutApi* | [**helpscoutPost**](docs/Api/HelpscoutApi.md#helpscoutpost) | **POST** /helpscout | Get information about a customer
 *OrderApi* | [**apiOrdersExportGet**](docs/Api/OrderApi.md#apiordersexportget) | **GET** /api/Orders/export | Get orders
@@ -193,6 +194,8 @@ Class | Method | HTTP request | Description
 *SubscriptionApi* | [**apiSubscriptionsIdDelete**](docs/Api/SubscriptionApi.md#apisubscriptionsiddelete) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
 *SubscriptionApi* | [**apiSubscriptionsIdGet**](docs/Api/SubscriptionApi.md#apisubscriptionsidget) | **GET** /api/Subscriptions/{id} | Get a subscription
 *SubscriptionApi* | [**apiSubscriptionsIdRecalculateSubscriptionCountPost**](docs/Api/SubscriptionApi.md#apisubscriptionsidrecalculatesubscriptioncountpost) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
+*SubscriptionApi* | [**apiSubscriptionsRenewSubscriptionNumberSecretKeyGet**](docs/Api/SubscriptionApi.md#apisubscriptionsrenewsubscriptionnumbersecretkeyget) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
+*SubscriptionApi* | [**apiSubscriptionsTransferPost**](docs/Api/SubscriptionApi.md#apisubscriptionstransferpost) | **POST** /api/Subscriptions/transfer | Transfer subscription ownership
 *WorkerApi* | [**apiWorkerGetRecurringJobsInfoNameGet**](docs/Api/WorkerApi.md#apiworkergetrecurringjobsinfonameget) | **GET** /api/Worker/getRecurringJobsInfo/{name} | 
 *WorkerApi* | [**apiWorkerGetScheduledJobsNameGet**](docs/Api/WorkerApi.md#apiworkergetscheduledjobsnameget) | **GET** /api/Worker/getScheduledJobs/{name} | 
 *WorkerApi* | [**apiWorkerIdDelete**](docs/Api/WorkerApi.md#apiworkeriddelete) | **DELETE** /api/Worker/{id} | 
@@ -229,14 +232,13 @@ Class | Method | HTTP request | Description
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)
  - [ExtraProductData](docs/Model/ExtraProductData.md)
- - [ExtraSubscriptionData](docs/Model/ExtraSubscriptionData.md)
  - [FromAcademyDto](docs/Model/FromAcademyDto.md)
  - [GenerateDto](docs/Model/GenerateDto.md)
  - [HelpScoutCustomerData](docs/Model/HelpScoutCustomerData.md)
  - [HelpScoutDto](docs/Model/HelpScoutDto.md)
  - [InviteDto](docs/Model/InviteDto.md)
  - [JSZip](docs/Model/JSZip.md)
- - [JobOptions](docs/Model/JobOptions.md)
+ - [JobOptionsDto](docs/Model/JobOptionsDto.md)
  - [LineItemDto](docs/Model/LineItemDto.md)
  - [LineItemTax](docs/Model/LineItemTax.md)
  - [LoginDto](docs/Model/LoginDto.md)
@@ -258,10 +260,10 @@ Class | Method | HTTP request | Description
  - [ProductGroupTerm](docs/Model/ProductGroupTerm.md)
  - [ProductImage](docs/Model/ProductImage.md)
  - [ProgressData](docs/Model/ProgressData.md)
+ - [PurgeKVRequestDto](docs/Model/PurgeKVRequestDto.md)
  - [Refund](docs/Model/Refund.md)
  - [RefundDataDto](docs/Model/RefundDataDto.md)
  - [RenameBodyDto](docs/Model/RenameBodyDto.md)
- - [RenewalAmount](docs/Model/RenewalAmount.md)
  - [ResetPasswordDto](docs/Model/ResetPasswordDto.md)
  - [RoleIDDto](docs/Model/RoleIDDto.md)
  - [SendResetPasswordEmailDto](docs/Model/SendResetPasswordEmailDto.md)
@@ -270,14 +272,14 @@ Class | Method | HTTP request | Description
  - [Site](docs/Model/Site.md)
  - [SubscribeByEmailBodyDto](docs/Model/SubscribeByEmailBodyDto.md)
  - [Subscription](docs/Model/Subscription.md)
- - [SubscriptionData](docs/Model/SubscriptionData.md)
- - [SubscriptionFromWooDto](docs/Model/SubscriptionFromWooDto.md)
  - [SwitchSubscriptionNumberOfTimesDto](docs/Model/SwitchSubscriptionNumberOfTimesDto.md)
  - [TaxLineItem](docs/Model/TaxLineItem.md)
  - [Transaction](docs/Model/Transaction.md)
  - [TransactionDataDto](docs/Model/TransactionDataDto.md)
  - [TransferDto](docs/Model/TransferDto.md)
+ - [TransferOwnershipDto](docs/Model/TransferOwnershipDto.md)
  - [TransferSiteDto](docs/Model/TransferSiteDto.md)
+ - [UpdateAllKVRequestDto](docs/Model/UpdateAllKVRequestDto.md)
  - [UpdateFileDto](docs/Model/UpdateFileDto.md)
  - [UpdateSiteDto](docs/Model/UpdateSiteDto.md)
  - [UpdateUserDto](docs/Model/UpdateUserDto.md)

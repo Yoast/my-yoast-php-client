@@ -1,6 +1,6 @@
 <?php
 /**
- * ShippingDtoTest
+ * TransferOwnershipDtoTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * ShippingDtoTest Class Doc Comment
+ * TransferOwnershipDtoTest Class Doc Comment
  *
  * @category    Class
- * @description ShippingDto
+ * @description TransferOwnershipDto
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ShippingDtoTest extends \PHPUnit_Framework_TestCase
+class TransferOwnershipDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,72 +70,23 @@ class ShippingDtoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ShippingDto"
+     * Test "TransferOwnershipDto"
      */
-    public function testShippingDto()
+    public function testTransferOwnershipDto()
     {
     }
 
     /**
-     * Test attribute "address1"
+     * Test attribute "fromCustomerId"
      */
-    public function testPropertyAddress1()
+    public function testPropertyFromCustomerId()
     {
     }
 
     /**
-     * Test attribute "address2"
+     * Test attribute "toCustomerId"
      */
-    public function testPropertyAddress2()
-    {
-    }
-
-    /**
-     * Test attribute "city"
-     */
-    public function testPropertyCity()
-    {
-    }
-
-    /**
-     * Test attribute "company"
-     */
-    public function testPropertyCompany()
-    {
-    }
-
-    /**
-     * Test attribute "country"
-     */
-    public function testPropertyCountry()
-    {
-    }
-
-    /**
-     * Test attribute "firstName"
-     */
-    public function testPropertyFirstName()
-    {
-    }
-
-    /**
-     * Test attribute "lastName"
-     */
-    public function testPropertyLastName()
-    {
-    }
-
-    /**
-     * Test attribute "postcode"
-     */
-    public function testPropertyPostcode()
-    {
-    }
-
-    /**
-     * Test attribute "state"
-     */
-    public function testPropertyState()
+    public function testPropertyToCustomerId()
     {
     }
 }

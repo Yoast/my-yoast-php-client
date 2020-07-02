@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **enabled** | **bool** |  | 
 **realm** | **string** |  | 
 **username** | **string** |  | 
-**password** | **string** |  | 
 **email** | **string** |  | 
 **emailVerified** | **bool** |  | 
 **verificationToken** | **string** |  | 

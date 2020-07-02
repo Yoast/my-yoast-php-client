@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **exportOrdersYearMonthTypeGet**
-> \SplFileObject exportOrdersYearMonthTypeGet($year, $month, $type)
+> \SplFileObject exportOrdersYearMonthTypeGet($year, $month, $type, $password)
 
 
 
@@ -25,9 +25,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ExportOrdersApi(
 $year = "year_example"; // string | 
 $month = "month_example"; // string | 
 $type = "type_example"; // string | 
+$password = "password_example"; // string | 
 
 try {
-    $result = $apiInstance->exportOrdersYearMonthTypeGet($year, $month, $type);
+    $result = $apiInstance->exportOrdersYearMonthTypeGet($year, $month, $type, $password);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ExportOrdersApi->exportOrdersYearMonthTypeGet: ', $e->getMessage(), PHP_EOL;
@@ -42,6 +43,7 @@ Name | Type | Description  | Notes
  **year** | **string**|  |
  **month** | **string**|  |
  **type** | **string**|  |
+ **password** | **string**|  | [optional]
 
 ### Return type
 

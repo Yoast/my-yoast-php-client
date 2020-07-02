@@ -55,8 +55,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token** | **string**|  |
- **url** | **string**|  |
+ **token** | **string**|  | [optional]
+ **url** | **string**|  | [optional]
 
 ### Return type
 
@@ -495,8 +495,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token** | **string**|  |
- **url** | **string**|  |
+ **token** | **string**|  | [optional]
+ **url** | **string**|  | [optional]
 
 ### Return type
 

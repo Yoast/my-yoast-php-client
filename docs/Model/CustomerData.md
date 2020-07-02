@@ -15,10 +15,8 @@ Name | Type | Description | Notes
 **lastName** | **string** |  | 
 **isPayingCustomer** | **bool** |  | 
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
-**ordersCount** | **int** |  | 
 **role** | **string** |  | 
 **shipping** | [**\Yoast\MyYoastApiClient\Model\ShippingDto**](ShippingDto.md) |  | 
-**totalSpent** | **string** |  | 
 **username** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
