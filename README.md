@@ -230,7 +230,6 @@ Class | Method | HTTP request | Description
  - [CustomerDto](docs/Model/CustomerDto.md)
  - [CustomerFromWooDto](docs/Model/CustomerFromWooDto.md)
  - [CustomerNote](docs/Model/CustomerNote.md)
- - [Date](docs/Model/Date.md)
  - [EddDTO](docs/Model/EddDTO.md)
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)

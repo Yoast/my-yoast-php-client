@@ -60,7 +60,7 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
         'customerId' => 'string',
         'authorId' => 'string',
         'content' => 'string',
-        'nextContactDate' => '\Yoast\MyYoastApiClient\Model\\DateTime'
+        'nextContactDate' => '\DateTime'
     ];
 
     /**
@@ -72,7 +72,7 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
         'customerId' => null,
         'authorId' => null,
         'content' => null,
-        'nextContactDate' => null
+        'nextContactDate' => 'date-time'
     ];
 
     /**
@@ -216,6 +216,9 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
         if ($this->container['content'] === null) {
             $invalidProperties[] = "'content' can't be null";
         }
+        if ($this->container['nextContactDate'] === null) {
+            $invalidProperties[] = "'nextContactDate' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -306,7 +309,7 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
     /**
      * Gets nextContactDate
      *
-     * @return \Yoast\MyYoastApiClient\Model\\DateTime
+     * @return \DateTime
      */
     public function getNextContactDate()
     {
@@ -316,7 +319,7 @@ class CreateCustomerNoteDto implements ModelInterface, ArrayAccess
     /**
      * Sets nextContactDate
      *
-     * @param \Yoast\MyYoastApiClient\Model\\DateTime $nextContactDate nextContactDate
+     * @param \DateTime $nextContactDate nextContactDate
      *
      * @return $this
      */

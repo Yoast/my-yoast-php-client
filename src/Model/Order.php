@@ -93,7 +93,7 @@ class Order implements ModelInterface, ArrayAccess
         'billingType' => 'string',
         'ipAddress' => 'string',
         'customerId' => 'string',
-        'processedCompletionAt' => '\Yoast\MyYoastApiClient\Model\\DateTime',
+        'processedCompletionAt' => '\DateTime',
         'renewalKey' => 'string'
     ];
 
@@ -139,7 +139,7 @@ class Order implements ModelInterface, ArrayAccess
         'billingType' => null,
         'ipAddress' => null,
         'customerId' => 'uuid',
-        'processedCompletionAt' => null,
+        'processedCompletionAt' => 'date-time',
         'renewalKey' => null
     ];
 
@@ -1407,7 +1407,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Gets processedCompletionAt
      *
-     * @return \Yoast\MyYoastApiClient\Model\\DateTime
+     * @return \DateTime
      */
     public function getProcessedCompletionAt()
     {
@@ -1417,7 +1417,7 @@ class Order implements ModelInterface, ArrayAccess
     /**
      * Sets processedCompletionAt
      *
-     * @param \Yoast\MyYoastApiClient\Model\\DateTime $processedCompletionAt processedCompletionAt
+     * @param \DateTime $processedCompletionAt processedCompletionAt
      *
      * @return $this
      */

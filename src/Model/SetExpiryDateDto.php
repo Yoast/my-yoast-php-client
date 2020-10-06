@@ -58,7 +58,7 @@ class SetExpiryDateDto implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'subscriptionId' => 'string',
-        'expiryDate' => '\Yoast\MyYoastApiClient\Model\\DateTime'
+        'expiryDate' => '\DateTime'
     ];
 
     /**
@@ -68,7 +68,7 @@ class SetExpiryDateDto implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'subscriptionId' => null,
-        'expiryDate' => null
+        'expiryDate' => 'date-time'
     ];
 
     /**
@@ -243,7 +243,7 @@ class SetExpiryDateDto implements ModelInterface, ArrayAccess
     /**
      * Gets expiryDate
      *
-     * @return \Yoast\MyYoastApiClient\Model\\DateTime
+     * @return \DateTime
      */
     public function getExpiryDate()
     {
@@ -253,7 +253,7 @@ class SetExpiryDateDto implements ModelInterface, ArrayAccess
     /**
      * Sets expiryDate
      *
-     * @param \Yoast\MyYoastApiClient\Model\\DateTime $expiryDate expiryDate
+     * @param \DateTime $expiryDate expiryDate
      *
      * @return $this
      */
