@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**apiSubscriptionsIdGet**](SubscriptionApi.md#apiSubscriptionsIdGet) | **GET** /api/Subscriptions/{id} | Get a subscription
 [**apiSubscriptionsIdRecalculateSubscriptionCountPost**](SubscriptionApi.md#apiSubscriptionsIdRecalculateSubscriptionCountPost) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 [**apiSubscriptionsRenewSubscriptionNumberSecretKeyGet**](SubscriptionApi.md#apiSubscriptionsRenewSubscriptionNumberSecretKeyGet) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
+[**apiSubscriptionsSetExpiryDatePost**](SubscriptionApi.md#apiSubscriptionsSetExpiryDatePost) | **POST** /api/Subscriptions/setExpiryDate | Set Date.
 [**apiSubscriptionsTransferPost**](SubscriptionApi.md#apiSubscriptionsTransferPost) | **POST** /api/Subscriptions/transfer | Transfer subscription ownership
 
 
@@ -333,6 +334,61 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscriptionNumber** | **string**|  |
  **secretKey** | **string**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiSubscriptionsSetExpiryDatePost**
+> \Yoast\MyYoastApiClient\Model\Subscription apiSubscriptionsSetExpiryDatePost($setExpiryDateDto)
+
+Set Date.
+
+Sets either the end date or next payment date, based on which one the subscription already has.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$setExpiryDateDto = new \Yoast\MyYoastApiClient\Model\SetExpiryDateDto(); // \Yoast\MyYoastApiClient\Model\SetExpiryDateDto | 
+
+try {
+    $result = $apiInstance->apiSubscriptionsSetExpiryDatePost($setExpiryDateDto);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->apiSubscriptionsSetExpiryDatePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **setExpiryDateDto** | [**\Yoast\MyYoastApiClient\Model\SetExpiryDateDto**](../Model/SetExpiryDateDto.md)|  |
 
 ### Return type
 

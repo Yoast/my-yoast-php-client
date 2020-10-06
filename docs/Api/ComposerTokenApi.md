@@ -102,7 +102,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | [**string**](../Model/.md)|  |
+ **id** | **string**|  |
 
 ### Return type
 
@@ -159,7 +159,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **renameBodyDto** | [**\Yoast\MyYoastApiClient\Model\RenameBodyDto**](../Model/RenameBodyDto.md)|  |
- **id** | [**string**](../Model/.md)|  |
+ **id** | **string**|  |
 
 ### Return type
 

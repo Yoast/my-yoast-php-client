@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **amount** | **string** |  | 
 **reason** | **string** |  | 
 **refundedBy** | **float** |  | 
+**refundedPayment** | **bool** |  | 
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
 **lineItems** | [**\Yoast\MyYoastApiClient\Model\LineItemDto[]**](LineItemDto.md) |  | 
 

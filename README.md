@@ -129,7 +129,6 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**apiCustomersIdDownloadGet**](docs/Api/CustomerApi.md#apicustomersiddownloadget) | **GET** /api/Customers/{id}/download | Download profile.
 *CustomerApi* | [**apiCustomersIdEnablePost**](docs/Api/CustomerApi.md#apicustomersidenablepost) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
 *CustomerApi* | [**apiCustomersIdFindRefundsGet**](docs/Api/CustomerApi.md#apicustomersidfindrefundsget) | **GET** /api/Customers/{id}/findRefunds | Find refunds for user
-*CustomerApi* | [**apiCustomersIdGdprDeleteDelete**](docs/Api/CustomerApi.md#apicustomersidgdprdeletedelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 *CustomerApi* | [**apiCustomersIdGet**](docs/Api/CustomerApi.md#apicustomersidget) | **GET** /api/Customers/{id} | Get a customer
 *CustomerApi* | [**apiCustomersIdPasswordPatch**](docs/Api/CustomerApi.md#apicustomersidpasswordpatch) | **PATCH** /api/Customers/{id}/password | Update a customer&#39;s password in WordPress
 *CustomerApi* | [**apiCustomersIdPatch**](docs/Api/CustomerApi.md#apicustomersidpatch) | **PATCH** /api/Customers/{id} | 
@@ -152,13 +151,14 @@ Class | Method | HTTP request | Description
 *DownloadApi* | [**apiDownloadsFileNamePost**](docs/Api/DownloadApi.md#apidownloadsfilenamepost) | **POST** /api/downloads/file/{name} | Route to update a file.
 *EDDApi* | [**eddSlApiGet**](docs/Api/EDDApi.md#eddslapiget) | **GET** /edd-sl-api | Activate or deactivate a site license
 *EDDApi* | [**eddSlApiPost**](docs/Api/EDDApi.md#eddslapipost) | **POST** /edd-sl-api | 
-*ExportOrdersApi* | [**exportOrdersYearMonthTypeGet**](docs/Api/ExportOrdersApi.md#exportordersyearmonthtypeget) | **GET** /export-orders/{year}/{month}/{type} | 
+*ExportOrdersApi* | [**exportOrdersV2FromToTypeGet**](docs/Api/ExportOrdersApi.md#exportordersv2fromtotypeget) | **GET** /export-orders/v2/{from}/{to}/{type} | Creates an export for orders
+*ExportOrdersApi* | [**exportOrdersYearMonthTypeGet**](docs/Api/ExportOrdersApi.md#exportordersyearmonthtypeget) | **GET** /export-orders/{year}/{month}/{type} | Creates an export for orders
 *FromWooCommerceApi* | [**apiCustomersFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apicustomersfromwoocommerceput) | **PUT** /api/Customers/fromWooCommerce | Update or create a customer
 *FromWooCommerceApi* | [**apiOrdersFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apiordersfromwoocommerceput) | **PUT** /api/Orders/fromWooCommerce | Sync orders to MyYoast.
 *FromWooCommerceApi* | [**apiProductGroupsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apiproductgroupsfromwoocommerceput) | **PUT** /api/ProductGroups/fromWooCommerce | Sync products to MyYoast.
 *FromWooCommerceApi* | [**apiProductsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apiproductsfromwoocommerceput) | **PUT** /api/Products/fromWooCommerce | Sync products to MyYoast.
-*GDPRApi* | [**apiCustomersIdGdprDeleteDelete**](docs/Api/GDPRApi.md#apicustomersidgdprdeletedelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 *HelpscoutApi* | [**helpscoutPost**](docs/Api/HelpscoutApi.md#helpscoutpost) | **POST** /helpscout | Get information about a customer
+*OrderApi* | [**apiOrdersAutoRenewalCountGet**](docs/Api/OrderApi.md#apiordersautorenewalcountget) | **GET** /api/Orders/auto-renewal-count | 
 *OrderApi* | [**apiOrdersExportGet**](docs/Api/OrderApi.md#apiordersexportget) | **GET** /api/Orders/export | Get orders
 *OrderApi* | [**apiOrdersGet**](docs/Api/OrderApi.md#apiordersget) | **GET** /api/Orders | Get orders
 *OrderApi* | [**apiOrdersIdGet**](docs/Api/OrderApi.md#apiordersidget) | **GET** /api/Orders/{id} | Get a order
@@ -195,6 +195,7 @@ Class | Method | HTTP request | Description
 *SubscriptionApi* | [**apiSubscriptionsIdGet**](docs/Api/SubscriptionApi.md#apisubscriptionsidget) | **GET** /api/Subscriptions/{id} | Get a subscription
 *SubscriptionApi* | [**apiSubscriptionsIdRecalculateSubscriptionCountPost**](docs/Api/SubscriptionApi.md#apisubscriptionsidrecalculatesubscriptioncountpost) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 *SubscriptionApi* | [**apiSubscriptionsRenewSubscriptionNumberSecretKeyGet**](docs/Api/SubscriptionApi.md#apisubscriptionsrenewsubscriptionnumbersecretkeyget) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
+*SubscriptionApi* | [**apiSubscriptionsSetExpiryDatePost**](docs/Api/SubscriptionApi.md#apisubscriptionssetexpirydatepost) | **POST** /api/Subscriptions/setExpiryDate | Set Date.
 *SubscriptionApi* | [**apiSubscriptionsTransferPost**](docs/Api/SubscriptionApi.md#apisubscriptionstransferpost) | **POST** /api/Subscriptions/transfer | Transfer subscription ownership
 *WorkerApi* | [**apiWorkerGetRecurringJobsInfoNameGet**](docs/Api/WorkerApi.md#apiworkergetrecurringjobsinfonameget) | **GET** /api/Worker/getRecurringJobsInfo/{name} | 
 *WorkerApi* | [**apiWorkerGetScheduledJobsNameGet**](docs/Api/WorkerApi.md#apiworkergetscheduledjobsnameget) | **GET** /api/Worker/getScheduledJobs/{name} | 
@@ -209,6 +210,7 @@ Class | Method | HTTP request | Description
  - [ActivateAccountDto](docs/Model/ActivateAccountDto.md)
  - [AddJobDto](docs/Model/AddJobDto.md)
  - [AddSubscriptionDto](docs/Model/AddSubscriptionDto.md)
+ - [AutoRenewalCountResponseDto](docs/Model/AutoRenewalCountResponseDto.md)
  - [BillingDto](docs/Model/BillingDto.md)
  - [Blacklist](docs/Model/Blacklist.md)
  - [BulkInviteDto](docs/Model/BulkInviteDto.md)
@@ -225,6 +227,7 @@ Class | Method | HTTP request | Description
  - [CreateSiteBodyDto](docs/Model/CreateSiteBodyDto.md)
  - [Customer](docs/Model/Customer.md)
  - [CustomerData](docs/Model/CustomerData.md)
+ - [CustomerDto](docs/Model/CustomerDto.md)
  - [CustomerFromWooDto](docs/Model/CustomerFromWooDto.md)
  - [CustomerNote](docs/Model/CustomerNote.md)
  - [Date](docs/Model/Date.md)
@@ -234,7 +237,6 @@ Class | Method | HTTP request | Description
  - [ExtraProductData](docs/Model/ExtraProductData.md)
  - [FromAcademyDto](docs/Model/FromAcademyDto.md)
  - [GenerateDto](docs/Model/GenerateDto.md)
- - [HelpScoutCustomerData](docs/Model/HelpScoutCustomerData.md)
  - [HelpScoutDto](docs/Model/HelpScoutDto.md)
  - [InviteDto](docs/Model/InviteDto.md)
  - [JSZip](docs/Model/JSZip.md)
@@ -244,6 +246,7 @@ Class | Method | HTTP request | Description
  - [LoginDto](docs/Model/LoginDto.md)
  - [LoginUserDto](docs/Model/LoginUserDto.md)
  - [LogoutUserBodyDto](docs/Model/LogoutUserBodyDto.md)
+ - [MailboxDto](docs/Model/MailboxDto.md)
  - [MetaDataDto](docs/Model/MetaDataDto.md)
  - [Order](docs/Model/Order.md)
  - [OrderData](docs/Model/OrderData.md)
@@ -267,6 +270,7 @@ Class | Method | HTTP request | Description
  - [ResetPasswordDto](docs/Model/ResetPasswordDto.md)
  - [RoleIDDto](docs/Model/RoleIDDto.md)
  - [SendResetPasswordEmailDto](docs/Model/SendResetPasswordEmailDto.md)
+ - [SetExpiryDateDto](docs/Model/SetExpiryDateDto.md)
  - [ShippingDto](docs/Model/ShippingDto.md)
  - [SignupAccountDto](docs/Model/SignupAccountDto.md)
  - [Site](docs/Model/Site.md)
@@ -274,6 +278,7 @@ Class | Method | HTTP request | Description
  - [Subscription](docs/Model/Subscription.md)
  - [SwitchSubscriptionNumberOfTimesDto](docs/Model/SwitchSubscriptionNumberOfTimesDto.md)
  - [TaxLineItem](docs/Model/TaxLineItem.md)
+ - [TicketDTO](docs/Model/TicketDTO.md)
  - [Transaction](docs/Model/Transaction.md)
  - [TransactionDataDto](docs/Model/TransactionDataDto.md)
  - [TransferDto](docs/Model/TransferDto.md)
@@ -284,6 +289,7 @@ Class | Method | HTTP request | Description
  - [UpdateSiteDto](docs/Model/UpdateSiteDto.md)
  - [UpdateUserDto](docs/Model/UpdateUserDto.md)
  - [UpdateUserToWordpressDto](docs/Model/UpdateUserToWordpressDto.md)
+ - [UserDto](docs/Model/UserDto.md)
  - [UserIdentity](docs/Model/UserIdentity.md)
 
 
