@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **paymentReference** | **string** |  | 
 **automatic** | **bool** |  | 
 **billingType** | **string** |  | 
+**vatNumber** | **string** |  | [optional] 
 **renewalKey** | **string** |  | [optional] 
 **transactions** | [**\Yoast\MyYoastApiClient\Model\TransactionDataDto[]**](TransactionDataDto.md) |  | 
 **wooRefunds** | [**\Yoast\MyYoastApiClient\Model\RefundDataDto[]**](RefundDataDto.md) |  | 

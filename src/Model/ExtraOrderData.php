@@ -62,6 +62,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         'paymentReference' => 'string',
         'automatic' => 'bool',
         'billingType' => 'string',
+        'vatNumber' => 'string',
         'renewalKey' => 'string',
         'transactions' => '\Yoast\MyYoastApiClient\Model\TransactionDataDto[]',
         'wooRefunds' => '\Yoast\MyYoastApiClient\Model\RefundDataDto[]'
@@ -78,6 +79,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         'paymentReference' => null,
         'automatic' => null,
         'billingType' => null,
+        'vatNumber' => null,
         'renewalKey' => null,
         'transactions' => null,
         'wooRefunds' => null
@@ -115,6 +117,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         'paymentReference' => 'payment_reference',
         'automatic' => 'automatic',
         'billingType' => 'billingType',
+        'vatNumber' => 'vat_number',
         'renewalKey' => 'renewal_key',
         'transactions' => 'transactions',
         'wooRefunds' => 'woo_refunds'
@@ -131,6 +134,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         'paymentReference' => 'setPaymentReference',
         'automatic' => 'setAutomatic',
         'billingType' => 'setBillingType',
+        'vatNumber' => 'setVatNumber',
         'renewalKey' => 'setRenewalKey',
         'transactions' => 'setTransactions',
         'wooRefunds' => 'setWooRefunds'
@@ -147,6 +151,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         'paymentReference' => 'getPaymentReference',
         'automatic' => 'getAutomatic',
         'billingType' => 'getBillingType',
+        'vatNumber' => 'getVatNumber',
         'renewalKey' => 'getRenewalKey',
         'transactions' => 'getTransactions',
         'wooRefunds' => 'getWooRefunds'
@@ -217,6 +222,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         $this->container['paymentReference'] = isset($data['paymentReference']) ? $data['paymentReference'] : null;
         $this->container['automatic'] = isset($data['automatic']) ? $data['automatic'] : null;
         $this->container['billingType'] = isset($data['billingType']) ? $data['billingType'] : null;
+        $this->container['vatNumber'] = isset($data['vatNumber']) ? $data['vatNumber'] : null;
         $this->container['renewalKey'] = isset($data['renewalKey']) ? $data['renewalKey'] : null;
         $this->container['transactions'] = isset($data['transactions']) ? $data['transactions'] : null;
         $this->container['wooRefunds'] = isset($data['wooRefunds']) ? $data['wooRefunds'] : null;
@@ -383,6 +389,30 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
     public function setBillingType($billingType)
     {
         $this->container['billingType'] = $billingType;
+
+        return $this;
+    }
+
+    /**
+     * Gets vatNumber
+     *
+     * @return string
+     */
+    public function getVatNumber()
+    {
+        return $this->container['vatNumber'];
+    }
+
+    /**
+     * Sets vatNumber
+     *
+     * @param string $vatNumber vatNumber
+     *
+     * @return $this
+     */
+    public function setVatNumber($vatNumber)
+    {
+        $this->container['vatNumber'] = $vatNumber;
 
         return $this;
     }

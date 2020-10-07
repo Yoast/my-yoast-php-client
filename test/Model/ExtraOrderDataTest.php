@@ -112,6 +112,13 @@ class ExtraOrderDataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "vatNumber"
+     */
+    public function testPropertyVatNumber()
+    {
+    }
+
+    /**
      * Test attribute "renewalKey"
      */
     public function testPropertyRenewalKey()
