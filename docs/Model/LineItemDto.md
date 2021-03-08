@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **bundledItemTitle** | **string** |  | [optional] 
 **id** | **int** |  | 
 **name** | **string** |  | 
-**price** | **float** |  | 
+**price** | **int** |  | 
 **productId** | **int** |  | 
 **quantity** | **int** |  | 
 **sku** | **string** |  | 
@@ -21,6 +21,5 @@ Name | Type | Description | Notes
 **bundledItems** | **string[]** |  | [optional] 
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

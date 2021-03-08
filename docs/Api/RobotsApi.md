@@ -1,14 +1,13 @@
 # Yoast\MyYoastApiClient\RobotsApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**robotsTxtGet**](RobotsApi.md#robotsTxtGet) | **GET** /robots.txt | 
+[**robotsControllerServeRobots**](RobotsApi.md#robotscontrollerserverobots) | **GET** /robots.txt | 
 
-
-# **robotsTxtGet**
-> \SplFileObject robotsTxtGet()
+# **robotsControllerServeRobots**
+> string robotsControllerServeRobots()
 
 
 
@@ -24,10 +23,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\RobotsApi(
 );
 
 try {
-    $result = $apiInstance->robotsTxtGet();
+    $result = $apiInstance->robotsControllerServeRobots();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RobotsApi->robotsTxtGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RobotsApi->robotsControllerServeRobots: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -37,7 +36,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+**string**
 
 ### Authorization
 
@@ -45,7 +44,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

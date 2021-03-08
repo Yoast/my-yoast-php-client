@@ -1,14 +1,13 @@
 # Yoast\MyYoastApiClient\ServerCheckApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serverCheckGet**](ServerCheckApi.md#serverCheckGet) | **GET** /server-check | Server health check
+[**serverHealthControllerCheckHealth**](ServerCheckApi.md#serverhealthcontrollercheckhealth) | **GET** /server-check | Server health check
 
-
-# **serverCheckGet**
-> string serverCheckGet()
+# **serverHealthControllerCheckHealth**
+> string serverHealthControllerCheckHealth()
 
 Server health check
 
@@ -26,10 +25,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ServerCheckApi(
 );
 
 try {
-    $result = $apiInstance->serverCheckGet();
+    $result = $apiInstance->serverHealthControllerCheckHealth();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ServerCheckApi->serverCheckGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ServerCheckApi->serverHealthControllerCheckHealth: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -47,7 +46,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

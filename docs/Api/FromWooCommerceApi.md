@@ -1,17 +1,16 @@
 # Yoast\MyYoastApiClient\FromWooCommerceApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiCustomersFromWooCommercePut**](FromWooCommerceApi.md#apiCustomersFromWooCommercePut) | **PUT** /api/Customers/fromWooCommerce | Update or create a customer
-[**apiOrdersFromWooCommercePut**](FromWooCommerceApi.md#apiOrdersFromWooCommercePut) | **PUT** /api/Orders/fromWooCommerce | Sync orders to MyYoast.
-[**apiProductGroupsFromWooCommercePut**](FromWooCommerceApi.md#apiProductGroupsFromWooCommercePut) | **PUT** /api/ProductGroups/fromWooCommerce | Sync products to MyYoast.
-[**apiProductsFromWooCommercePut**](FromWooCommerceApi.md#apiProductsFromWooCommercePut) | **PUT** /api/Products/fromWooCommerce | Sync products to MyYoast.
+[**fromWooCommerceControllerCustomerFromWooCommerce**](FromWooCommerceApi.md#fromwoocommercecontrollercustomerfromwoocommerce) | **PUT** /api/Customers/fromWooCommerce | Update or create a customer
+[**fromWooCommerceControllerOrderFromWooCommerce**](FromWooCommerceApi.md#fromwoocommercecontrollerorderfromwoocommerce) | **PUT** /api/Orders/fromWooCommerce | Sync orders to MyYoast.
+[**fromWooCommerceControllerProductFromWooCommerce**](FromWooCommerceApi.md#fromwoocommercecontrollerproductfromwoocommerce) | **PUT** /api/Products/fromWooCommerce | Sync products to MyYoast.
+[**fromWooCommerceControllerProductGroupFromWooCommerce**](FromWooCommerceApi.md#fromwoocommercecontrollerproductgroupfromwoocommerce) | **PUT** /api/ProductGroups/fromWooCommerce | Sync products to MyYoast.
 
-
-# **apiCustomersFromWooCommercePut**
-> \Yoast\MyYoastApiClient\Model\Customer apiCustomersFromWooCommercePut($customerFromWooDto)
+# **fromWooCommerceControllerCustomerFromWooCommerce**
+> \Yoast\MyYoastApiClient\Model\Customer fromWooCommerceControllerCustomerFromWooCommerce($body)
 
 Update or create a customer
 
@@ -21,11 +20,10 @@ This endpoint can be used by WooCommerce to update or create a customer in the M
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -33,13 +31,13 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$customerFromWooDto = new \Yoast\MyYoastApiClient\Model\CustomerFromWooDto(); // \Yoast\MyYoastApiClient\Model\CustomerFromWooDto | 
+$body = new \Yoast\MyYoastApiClient\Model\CustomerFromWooDto(); // \Yoast\MyYoastApiClient\Model\CustomerFromWooDto | 
 
 try {
-    $result = $apiInstance->apiCustomersFromWooCommercePut($customerFromWooDto);
+    $result = $apiInstance->fromWooCommerceControllerCustomerFromWooCommerce($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FromWooCommerceApi->apiCustomersFromWooCommercePut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FromWooCommerceApi->fromWooCommerceControllerCustomerFromWooCommerce: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -48,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerFromWooDto** | [**\Yoast\MyYoastApiClient\Model\CustomerFromWooDto**](../Model/CustomerFromWooDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\CustomerFromWooDto**](../Model/CustomerFromWooDto.md)|  |
 
 ### Return type
 
@@ -65,8 +63,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiOrdersFromWooCommercePut**
-> \Yoast\MyYoastApiClient\Model\Order apiOrdersFromWooCommercePut($orderFromWooDto)
+# **fromWooCommerceControllerOrderFromWooCommerce**
+> \Yoast\MyYoastApiClient\Model\Order fromWooCommerceControllerOrderFromWooCommerce($body)
 
 Sync orders to MyYoast.
 
@@ -76,11 +74,10 @@ This route allows WooCommerce to sync order data to MyYoast.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -88,13 +85,13 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$orderFromWooDto = new \Yoast\MyYoastApiClient\Model\OrderFromWooDto(); // \Yoast\MyYoastApiClient\Model\OrderFromWooDto | 
+$body = new \Yoast\MyYoastApiClient\Model\OrderFromWooDto(); // \Yoast\MyYoastApiClient\Model\OrderFromWooDto | 
 
 try {
-    $result = $apiInstance->apiOrdersFromWooCommercePut($orderFromWooDto);
+    $result = $apiInstance->fromWooCommerceControllerOrderFromWooCommerce($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FromWooCommerceApi->apiOrdersFromWooCommercePut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FromWooCommerceApi->fromWooCommerceControllerOrderFromWooCommerce: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -103,7 +100,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderFromWooDto** | [**\Yoast\MyYoastApiClient\Model\OrderFromWooDto**](../Model/OrderFromWooDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\OrderFromWooDto**](../Model/OrderFromWooDto.md)|  |
 
 ### Return type
 
@@ -120,8 +117,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiProductGroupsFromWooCommercePut**
-> \Yoast\MyYoastApiClient\Model\ProductGroup apiProductGroupsFromWooCommercePut($productGroupFromWooDto)
+# **fromWooCommerceControllerProductFromWooCommerce**
+> \Yoast\MyYoastApiClient\Model\Product fromWooCommerceControllerProductFromWooCommerce($body)
 
 Sync products to MyYoast.
 
@@ -131,11 +128,10 @@ This route allows WooCommerce to sync product data to MyYoast.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -143,13 +139,13 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$productGroupFromWooDto = new \Yoast\MyYoastApiClient\Model\ProductGroupFromWooDto(); // \Yoast\MyYoastApiClient\Model\ProductGroupFromWooDto | 
+$body = new \Yoast\MyYoastApiClient\Model\ProductFromWooDto(); // \Yoast\MyYoastApiClient\Model\ProductFromWooDto | 
 
 try {
-    $result = $apiInstance->apiProductGroupsFromWooCommercePut($productGroupFromWooDto);
+    $result = $apiInstance->fromWooCommerceControllerProductFromWooCommerce($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FromWooCommerceApi->apiProductGroupsFromWooCommercePut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FromWooCommerceApi->fromWooCommerceControllerProductFromWooCommerce: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -158,11 +154,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productGroupFromWooDto** | [**\Yoast\MyYoastApiClient\Model\ProductGroupFromWooDto**](../Model/ProductGroupFromWooDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\ProductFromWooDto**](../Model/ProductFromWooDto.md)|  |
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
+[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
 
 ### Authorization
 
@@ -175,8 +171,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiProductsFromWooCommercePut**
-> \Yoast\MyYoastApiClient\Model\Product apiProductsFromWooCommercePut($productFromWooDto)
+# **fromWooCommerceControllerProductGroupFromWooCommerce**
+> \Yoast\MyYoastApiClient\Model\ProductGroup fromWooCommerceControllerProductGroupFromWooCommerce($body)
 
 Sync products to MyYoast.
 
@@ -186,11 +182,10 @@ This route allows WooCommerce to sync product data to MyYoast.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -198,13 +193,13 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     new GuzzleHttp\Client(),
     $config
 );
-$productFromWooDto = new \Yoast\MyYoastApiClient\Model\ProductFromWooDto(); // \Yoast\MyYoastApiClient\Model\ProductFromWooDto | 
+$body = new \Yoast\MyYoastApiClient\Model\ProductGroupFromWooDto(); // \Yoast\MyYoastApiClient\Model\ProductGroupFromWooDto | 
 
 try {
-    $result = $apiInstance->apiProductsFromWooCommercePut($productFromWooDto);
+    $result = $apiInstance->fromWooCommerceControllerProductGroupFromWooCommerce($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling FromWooCommerceApi->apiProductsFromWooCommercePut: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FromWooCommerceApi->fromWooCommerceControllerProductGroupFromWooCommerce: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -213,11 +208,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productFromWooDto** | [**\Yoast\MyYoastApiClient\Model\ProductFromWooDto**](../Model/ProductFromWooDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\ProductGroupFromWooDto**](../Model/ProductGroupFromWooDto.md)|  |
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
 
 ### Authorization
 
