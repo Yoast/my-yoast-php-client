@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **discountTax** | **string** |  | 
 **discountTotal** | **string** |  | 
 **couponLines** | [**\Yoast\MyYoastApiClient\Model\CouponLineDto[]**](CouponLineDto.md) |  | 
-**feeLines** | **string[]** |  | 
+**feeLines** | [**\Yoast\MyYoastApiClient\Model\FeeLineDto[]**](FeeLineDto.md) |  | 
 **lineItems** | [**\Yoast\MyYoastApiClient\Model\LineItemDto[]**](LineItemDto.md) |  | 
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
 **number** | **string** |  | 
@@ -45,6 +45,5 @@ Name | Type | Description | Notes
 **transactionId** | **string** |  | 
 **version** | **string** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

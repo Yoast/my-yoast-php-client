@@ -1,15 +1,14 @@
 # Yoast\MyYoastApiClient\DownloadApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiDownloadsFileNameGet**](DownloadApi.md#apiDownloadsFileNameGet) | **GET** /api/downloads/file/{name} | Route to download a file
-[**apiDownloadsFileNamePost**](DownloadApi.md#apiDownloadsFileNamePost) | **POST** /api/downloads/file/{name} | Route to update a file.
+[**downloadControllerDownloadFile**](DownloadApi.md#downloadcontrollerdownloadfile) | **GET** /api/downloads/file/{name} | Route to download a file
+[**downloadControllerUploadFile**](DownloadApi.md#downloadcontrolleruploadfile) | **POST** /api/downloads/file/{name} | Route to update a file.
 
-
-# **apiDownloadsFileNameGet**
-> apiDownloadsFileNameGet($version, $pluginVersion, $site, $name)
+# **downloadControllerDownloadFile**
+> object downloadControllerDownloadFile($name, $version, $pluginVersion, $site)
 
 Route to download a file
 
@@ -25,15 +24,16 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\DownloadApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+$name = "name_example"; // string | 
 $version = "version_example"; // string | 
 $pluginVersion = "pluginVersion_example"; // string | 
 $site = "site_example"; // string | 
-$name = "name_example"; // string | 
 
 try {
-    $apiInstance->apiDownloadsFileNameGet($version, $pluginVersion, $site, $name);
+    $result = $apiInstance->downloadControllerDownloadFile($name, $version, $pluginVersion, $site);
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DownloadApi->apiDownloadsFileNameGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DownloadApi->downloadControllerDownloadFile: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -42,14 +42,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **name** | **string**|  |
  **version** | **string**|  |
  **pluginVersion** | **string**|  |
  **site** | **string**|  |
- **name** | **string**|  |
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -57,13 +57,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiDownloadsFileNamePost**
-> object apiDownloadsFileNamePost($updateFileDto, $name)
+# **downloadControllerUploadFile**
+> object downloadControllerUploadFile($body, $name)
 
 Route to update a file.
 
@@ -79,14 +79,14 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\DownloadApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$updateFileDto = new \Yoast\MyYoastApiClient\Model\UpdateFileDto(); // \Yoast\MyYoastApiClient\Model\UpdateFileDto | 
+$body = new \Yoast\MyYoastApiClient\Model\UpdateFileDto(); // \Yoast\MyYoastApiClient\Model\UpdateFileDto | 
 $name = "name_example"; // string | 
 
 try {
-    $result = $apiInstance->apiDownloadsFileNamePost($updateFileDto, $name);
+    $result = $apiInstance->downloadControllerUploadFile($body, $name);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DownloadApi->apiDownloadsFileNamePost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DownloadApi->downloadControllerUploadFile: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -95,7 +95,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **updateFileDto** | [**\Yoast\MyYoastApiClient\Model\UpdateFileDto**](../Model/UpdateFileDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\UpdateFileDto**](../Model/UpdateFileDto.md)|  |
  **name** | **string**|  |
 
 ### Return type

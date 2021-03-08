@@ -1,19 +1,18 @@
 # Yoast\MyYoastApiClient\AuthApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to */*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiCustomersLoginPost**](AuthApi.md#apiCustomersLoginPost) | **POST** /api/Customers/login | Log in a user on MyYoast.
-[**apiCustomersLoginUserPost**](AuthApi.md#apiCustomersLoginUserPost) | **POST** /api/Customers/login-user | 
-[**apiCustomersLogoutUserPost**](AuthApi.md#apiCustomersLogoutUserPost) | **POST** /api/Customers/logout-user | Logout the user on Yoast.com.
-[**authYoastCallbackGet**](AuthApi.md#authYoastCallbackGet) | **GET** /auth/yoast/callback | 
-[**authYoastGet**](AuthApi.md#authYoastGet) | **GET** /auth/yoast | 
-[**logoutGet**](AuthApi.md#logoutGet) | **GET** /logout | 
+[**loginControllerGenerateAccessToken**](AuthApi.md#logincontrollergenerateaccesstoken) | **POST** /api/Customers/login | Log in a user on MyYoast.
+[**loginControllerLoginUser**](AuthApi.md#logincontrollerloginuser) | **POST** /api/Customers/login-user | 
+[**loginControllerLogoutUser**](AuthApi.md#logincontrollerlogoutuser) | **POST** /api/Customers/logout-user | Logout the user on Yoast.com.
+[**loginControllerRemoveAccessToken**](AuthApi.md#logincontrollerremoveaccesstoken) | **GET** /logout | 
+[**yoastComOpenIdControllerYoastComCallback**](AuthApi.md#yoastcomopenidcontrolleryoastcomcallback) | **GET** /auth/yoast/callback | 
+[**yoastComOpenIdControllerYoastComLogin**](AuthApi.md#yoastcomopenidcontrolleryoastcomlogin) | **GET** /auth/yoast | 
 
-
-# **apiCustomersLoginPost**
-> \Yoast\MyYoastApiClient\Model\AccessToken apiCustomersLoginPost($loginDto)
+# **loginControllerGenerateAccessToken**
+> \Yoast\MyYoastApiClient\Model\AccessToken loginControllerGenerateAccessToken($body)
 
 Log in a user on MyYoast.
 
@@ -29,13 +28,13 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$loginDto = new \Yoast\MyYoastApiClient\Model\LoginDto(); // \Yoast\MyYoastApiClient\Model\LoginDto | 
+$body = new \Yoast\MyYoastApiClient\Model\LoginDto(); // \Yoast\MyYoastApiClient\Model\LoginDto | 
 
 try {
-    $result = $apiInstance->apiCustomersLoginPost($loginDto);
+    $result = $apiInstance->loginControllerGenerateAccessToken($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthApi->apiCustomersLoginPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthApi->loginControllerGenerateAccessToken: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -44,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loginDto** | [**\Yoast\MyYoastApiClient\Model\LoginDto**](../Model/LoginDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\LoginDto**](../Model/LoginDto.md)|  |
 
 ### Return type
 
@@ -61,8 +60,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiCustomersLoginUserPost**
-> object apiCustomersLoginUserPost($loginUserDto)
+# **loginControllerLoginUser**
+> object loginControllerLoginUser($body)
 
 
 
@@ -76,13 +75,13 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$loginUserDto = new \Yoast\MyYoastApiClient\Model\LoginUserDto(); // \Yoast\MyYoastApiClient\Model\LoginUserDto | 
+$body = new \Yoast\MyYoastApiClient\Model\LoginUserDto(); // \Yoast\MyYoastApiClient\Model\LoginUserDto | 
 
 try {
-    $result = $apiInstance->apiCustomersLoginUserPost($loginUserDto);
+    $result = $apiInstance->loginControllerLoginUser($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthApi->apiCustomersLoginUserPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthApi->loginControllerLoginUser: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -91,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loginUserDto** | [**\Yoast\MyYoastApiClient\Model\LoginUserDto**](../Model/LoginUserDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\LoginUserDto**](../Model/LoginUserDto.md)|  |
 
 ### Return type
 
@@ -108,8 +107,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiCustomersLogoutUserPost**
-> object apiCustomersLogoutUserPost($logoutUserBodyDto)
+# **loginControllerLogoutUser**
+> object loginControllerLogoutUser($body)
 
 Logout the user on Yoast.com.
 
@@ -123,13 +122,13 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$logoutUserBodyDto = new \Yoast\MyYoastApiClient\Model\LogoutUserBodyDto(); // \Yoast\MyYoastApiClient\Model\LogoutUserBodyDto | 
+$body = new \Yoast\MyYoastApiClient\Model\LogoutUserBodyDto(); // \Yoast\MyYoastApiClient\Model\LogoutUserBodyDto | 
 
 try {
-    $result = $apiInstance->apiCustomersLogoutUserPost($logoutUserBodyDto);
+    $result = $apiInstance->loginControllerLogoutUser($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthApi->apiCustomersLogoutUserPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthApi->loginControllerLogoutUser: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -138,7 +137,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **logoutUserBodyDto** | [**\Yoast\MyYoastApiClient\Model\LogoutUserBodyDto**](../Model/LogoutUserBodyDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\LogoutUserBodyDto**](../Model/LogoutUserBodyDto.md)|  |
 
 ### Return type
 
@@ -155,8 +154,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **authYoastCallbackGet**
-> authYoastCallbackGet()
+# **loginControllerRemoveAccessToken**
+> object loginControllerRemoveAccessToken()
 
 
 
@@ -164,95 +163,10 @@ No authorization required
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-
-try {
-    $apiInstance->authYoastCallbackGet();
-} catch (Exception $e) {
-    echo 'Exception when calling AuthApi->authYoastCallbackGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **authYoastGet**
-> authYoastGet()
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-
-try {
-    $apiInstance->authYoastGet();
-} catch (Exception $e) {
-    echo 'Exception when calling AuthApi->authYoastGet: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **logoutGet**
-> logoutGet()
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -262,9 +176,52 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
 );
 
 try {
-    $apiInstance->logoutGet();
+    $result = $apiInstance->loginControllerRemoveAccessToken();
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthApi->logoutGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthApi->loginControllerRemoveAccessToken: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**object**
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **yoastComOpenIdControllerYoastComCallback**
+> yoastComOpenIdControllerYoastComCallback()
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $apiInstance->yoastComOpenIdControllerYoastComCallback();
+} catch (Exception $e) {
+    echo 'Exception when calling AuthApi->yoastComOpenIdControllerYoastComCallback: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -278,12 +235,54 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **yoastComOpenIdControllerYoastComLogin**
+> yoastComOpenIdControllerYoastComLogin()
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $apiInstance->yoastComOpenIdControllerYoastComLogin();
+} catch (Exception $e) {
+    echo 'Exception when calling AuthApi->yoastComOpenIdControllerYoastComLogin: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
