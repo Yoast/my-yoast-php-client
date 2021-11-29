@@ -1,15 +1,14 @@
 # Yoast\MyYoastApiClient\ExportOrdersApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**exportOrdersV2FromToTypeGet**](ExportOrdersApi.md#exportOrdersV2FromToTypeGet) | **GET** /export-orders/v2/{from}/{to}/{type} | Creates an export for orders
-[**exportOrdersYearMonthTypeGet**](ExportOrdersApi.md#exportOrdersYearMonthTypeGet) | **GET** /export-orders/{year}/{month}/{type} | Creates an export for orders
-
+[**exportOrdersV2FromToTypeGet**](ExportOrdersApi.md#exportordersv2fromtotypeget) | **GET** /export-orders/v2/{from}/{to}/{type} | Creates an export for orders
+[**exportOrdersYearMonthTypeGet**](ExportOrdersApi.md#exportordersyearmonthtypeget) | **GET** /export-orders/{year}/{month}/{type} | Creates an export for orders
 
 # **exportOrdersV2FromToTypeGet**
-> \SplFileObject exportOrdersV2FromToTypeGet($from, $to, $type, $password)
+> string exportOrdersV2FromToTypeGet($from, $to, $type, $password)
 
 Creates an export for orders
 
@@ -50,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+**string**
 
 ### Authorization
 
@@ -58,13 +57,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **exportOrdersYearMonthTypeGet**
-> \SplFileObject exportOrdersYearMonthTypeGet($year, $month, $type, $password)
+> string exportOrdersYearMonthTypeGet($year, $month, $type, $password)
 
 Creates an export for orders
 
@@ -105,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\SplFileObject**](../Model/\SplFileObject.md)
+**string**
 
 ### Authorization
 
@@ -113,7 +112,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

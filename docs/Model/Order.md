@@ -41,7 +41,11 @@ Name | Type | Description | Notes
 **customerId** | **string** |  | 
 **processedCompletionAt** | [**\DateTime**](\DateTime.md) |  | 
 **renewalKey** | **string** |  | 
+**vatNumberValid** | **bool** |  | 
+**mailblueSyncAttemptedDate** | [**\DateTime**](\DateTime.md) |  | 
+**mailblueSyncSecondAttemptDate** | [**\DateTime**](\DateTime.md) |  | 
+**mailblueSyncCompletedDate** | [**\DateTime**](\DateTime.md) |  | 
+**mailblueSyncSecondCompletedDate** | [**\DateTime**](\DateTime.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
