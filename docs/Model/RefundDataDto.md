@@ -8,11 +8,13 @@ Name | Type | Description | Notes
 **dateCreatedGmt** | [**\DateTime**](\DateTime.md) |  | 
 **amount** | **string** |  | 
 **reason** | **string** |  | 
-**refundedBy** | **float** |  | 
+**refundedBy** | **int** |  | 
 **refundedPayment** | **bool** |  | 
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
 **lineItems** | [**\Yoast\MyYoastApiClient\Model\LineItemDto[]**](LineItemDto.md) |  | 
+**shippingLines** | **string[]** |  | 
+**taxLines** | [**array[]**](array.md) |  | 
+**feeLines** | **string[]** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

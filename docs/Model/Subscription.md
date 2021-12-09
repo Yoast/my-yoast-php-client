@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **renewalSecret** | **string** |  | 
 **subscriptionNumber** | **string** |  | 
 **lastBillingTerm** | **string** |  | 
+**subscriberId** | **string** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

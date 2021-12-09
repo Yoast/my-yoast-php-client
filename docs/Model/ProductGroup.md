@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **svgIcon** | **string** |  | 
 **changelog** | **string** |  | 
 **version** | **string** |  | 
+**downloadUrl** | **string** |  | 
 **courseId** | **string** |  | 
 **parentId** | **string** |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

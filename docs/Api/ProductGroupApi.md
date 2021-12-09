@@ -1,11 +1,11 @@
 # Yoast\MyYoastApiClient\ProductGroupApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiProductGroupsGet**](ProductGroupApi.md#apiProductGroupsGet) | **GET** /api/ProductGroups | Get productgroups
-
+[**apiProductGroupsGet**](ProductGroupApi.md#apiproductgroupsget) | **GET** /api/ProductGroups | Get productgroups
+[**apiProductGroupsUpdateDownloadPatch**](ProductGroupApi.md#apiproductgroupsupdatedownloadpatch) | **PATCH** /api/ProductGroups/updateDownload | Update the download
 
 # **apiProductGroupsGet**
 > \Yoast\MyYoastApiClient\Model\ProductGroup[] apiProductGroupsGet($filter)
@@ -18,7 +18,6 @@ Get and filter productgroups
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -30,7 +29,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductGroupApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
+$filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiProductGroupsGet($filter);
@@ -45,11 +44,65 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\ProductGroup[]**](../Model/ProductGroup.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiProductGroupsUpdateDownloadPatch**
+> \Yoast\MyYoastApiClient\Model\ProductGroup apiProductGroupsUpdateDownloadPatch($body)
+
+Update the download
+
+Set the passed downloadUrl and version to the passed product group.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ProductGroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Yoast\MyYoastApiClient\Model\UpdateDownloadDto(); // \Yoast\MyYoastApiClient\Model\UpdateDownloadDto | 
+
+try {
+    $result = $apiInstance->apiProductGroupsUpdateDownloadPatch($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductGroupApi->apiProductGroupsUpdateDownloadPatch: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Yoast\MyYoastApiClient\Model\UpdateDownloadDto**](../Model/UpdateDownloadDto.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ProductGroup**](../Model/ProductGroup.md)
 
 ### Authorization
 
