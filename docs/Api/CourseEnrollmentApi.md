@@ -1,20 +1,20 @@
 # Yoast\MyYoastApiClient\CourseEnrollmentApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiCourseEnrollmentsBulkInvitePost**](CourseEnrollmentApi.md#apiCourseEnrollmentsBulkInvitePost) | **POST** /api/CourseEnrollments/bulkInvite | Bulk invite for Course Enrollment.
-[**apiCourseEnrollmentsFromAcademyPut**](CourseEnrollmentApi.md#apiCourseEnrollmentsFromAcademyPut) | **PUT** /api/CourseEnrollments/fromAcademy | Update a CourseEnrollment
-[**apiCourseEnrollmentsGet**](CourseEnrollmentApi.md#apiCourseEnrollmentsGet) | **GET** /api/CourseEnrollments | Get course enrollments
-[**apiCourseEnrollmentsGetLegacyExpiringGet**](CourseEnrollmentApi.md#apiCourseEnrollmentsGetLegacyExpiringGet) | **GET** /api/CourseEnrollments/getLegacyExpiring | Get legacy course enrollments that expire between two given dates
-[**apiCourseEnrollmentsIdGet**](CourseEnrollmentApi.md#apiCourseEnrollmentsIdGet) | **GET** /api/CourseEnrollments/{id} | Get a course enrollment
-[**apiCourseEnrollmentsIdInvitePost**](CourseEnrollmentApi.md#apiCourseEnrollmentsIdInvitePost) | **POST** /api/CourseEnrollments/{id}/invite | Invite a customer
-[**apiCourseEnrollmentsTransferPost**](CourseEnrollmentApi.md#apiCourseEnrollmentsTransferPost) | **POST** /api/CourseEnrollments/transfer | Transfer course enrollments
-
+[**apiCourseEnrollmentsBulkInvitePost**](CourseEnrollmentApi.md#apicourseenrollmentsbulkinvitepost) | **POST** /api/CourseEnrollments/bulkInvite | Bulk invite for Course Enrollment.
+[**apiCourseEnrollmentsFromAcademyPut**](CourseEnrollmentApi.md#apicourseenrollmentsfromacademyput) | **PUT** /api/CourseEnrollments/fromAcademy | Update a CourseEnrollment
+[**apiCourseEnrollmentsGet**](CourseEnrollmentApi.md#apicourseenrollmentsget) | **GET** /api/CourseEnrollments | Get course enrollments
+[**apiCourseEnrollmentsGetLegacyExpiringGet**](CourseEnrollmentApi.md#apicourseenrollmentsgetlegacyexpiringget) | **GET** /api/CourseEnrollments/getLegacyExpiring | Get legacy course enrollments that expire between two given dates
+[**apiCourseEnrollmentsIdGet**](CourseEnrollmentApi.md#apicourseenrollmentsidget) | **GET** /api/CourseEnrollments/{id} | Get a course enrollment
+[**apiCourseEnrollmentsIdInvitePost**](CourseEnrollmentApi.md#apicourseenrollmentsidinvitepost) | **POST** /api/CourseEnrollments/{id}/invite | Invite a customer
+[**apiCourseEnrollmentsPagedGet**](CourseEnrollmentApi.md#apicourseenrollmentspagedget) | **GET** /api/CourseEnrollments/paged | Get customers
+[**apiCourseEnrollmentsTransferPost**](CourseEnrollmentApi.md#apicourseenrollmentstransferpost) | **POST** /api/CourseEnrollments/transfer | Transfer course enrollments
 
 # **apiCourseEnrollmentsBulkInvitePost**
-> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] apiCourseEnrollmentsBulkInvitePost($bulkInviteDto)
+> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] apiCourseEnrollmentsBulkInvitePost($body)
 
 Bulk invite for Course Enrollment.
 
@@ -24,7 +24,6 @@ Bulk invites another Customer by email to use this Course Enrollment.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -36,10 +35,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$bulkInviteDto = new \Yoast\MyYoastApiClient\Model\BulkInviteDto(); // \Yoast\MyYoastApiClient\Model\BulkInviteDto | 
+$body = new \Yoast\MyYoastApiClient\Model\BulkInviteDto(); // \Yoast\MyYoastApiClient\Model\BulkInviteDto | 
 
 try {
-    $result = $apiInstance->apiCourseEnrollmentsBulkInvitePost($bulkInviteDto);
+    $result = $apiInstance->apiCourseEnrollmentsBulkInvitePost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->apiCourseEnrollmentsBulkInvitePost: ', $e->getMessage(), PHP_EOL;
@@ -51,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bulkInviteDto** | [**\Yoast\MyYoastApiClient\Model\BulkInviteDto**](../Model/BulkInviteDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\BulkInviteDto**](../Model/BulkInviteDto.md)|  |
 
 ### Return type
 
@@ -69,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCourseEnrollmentsFromAcademyPut**
-> apiCourseEnrollmentsFromAcademyPut($courseEnrollmentFromAcademyDto)
+> apiCourseEnrollmentsFromAcademyPut($body)
 
 Update a CourseEnrollment
 
@@ -79,7 +78,6 @@ Updates the progress for a certain course and student with data from academy.yoa
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -91,10 +89,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$courseEnrollmentFromAcademyDto = new \Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto(); // \Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto | 
+$body = new \Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto(); // \Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto | 
 
 try {
-    $apiInstance->apiCourseEnrollmentsFromAcademyPut($courseEnrollmentFromAcademyDto);
+    $apiInstance->apiCourseEnrollmentsFromAcademyPut($body);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->apiCourseEnrollmentsFromAcademyPut: ', $e->getMessage(), PHP_EOL;
 }
@@ -105,7 +103,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **courseEnrollmentFromAcademyDto** | [**\Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto**](../Model/CourseEnrollmentFromAcademyDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\CourseEnrollmentFromAcademyDto**](../Model/CourseEnrollmentFromAcademyDto.md)|  |
 
 ### Return type
 
@@ -118,7 +116,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -133,7 +131,6 @@ Get and filter course enrollments
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -145,7 +142,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
+$filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCourseEnrollmentsGet($filter);
@@ -160,7 +157,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -172,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -188,7 +185,6 @@ Gets a list of legacy course enrollments that expire between two dates. A legacy
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -229,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -245,7 +241,6 @@ Get a single course enrollment
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -257,8 +252,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
-$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiCourseEnrollmentsIdGet($id, $filter);
@@ -274,7 +269,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
- **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -286,13 +281,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiCourseEnrollmentsIdInvitePost**
-> \Yoast\MyYoastApiClient\Model\CourseEnrollment apiCourseEnrollmentsIdInvitePost($inviteDto, $id)
+> \Yoast\MyYoastApiClient\Model\CourseEnrollment apiCourseEnrollmentsIdInvitePost($body, $id)
 
 Invite a customer
 
@@ -302,7 +297,6 @@ Invites another Customer by email to use this Course Enrollment
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -314,11 +308,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$inviteDto = new \Yoast\MyYoastApiClient\Model\InviteDto(); // \Yoast\MyYoastApiClient\Model\InviteDto | 
-$id = "id_example"; // string | 
+$body = new \Yoast\MyYoastApiClient\Model\InviteDto(); // \Yoast\MyYoastApiClient\Model\InviteDto | 
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->apiCourseEnrollmentsIdInvitePost($inviteDto, $id);
+    $result = $apiInstance->apiCourseEnrollmentsIdInvitePost($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->apiCourseEnrollmentsIdInvitePost: ', $e->getMessage(), PHP_EOL;
@@ -330,7 +324,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inviteDto** | [**\Yoast\MyYoastApiClient\Model\InviteDto**](../Model/InviteDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\InviteDto**](../Model/InviteDto.md)|  |
  **id** | [**string**](../Model/.md)|  |
 
 ### Return type
@@ -348,18 +342,17 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiCourseEnrollmentsTransferPost**
-> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] apiCourseEnrollmentsTransferPost($transferDto)
+# **apiCourseEnrollmentsPagedGet**
+> apiCourseEnrollmentsPagedGet($filter)
 
-Transfer course enrollments
+Get customers
 
-Transfers all Course Enrollments from one Customer to another.
+Get and filter customer
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -371,10 +364,63 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
     new GuzzleHttp\Client(),
     $config
 );
-$transferDto = new \Yoast\MyYoastApiClient\Model\TransferDto(); // \Yoast\MyYoastApiClient\Model\TransferDto | 
+$filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->apiCourseEnrollmentsTransferPost($transferDto);
+    $apiInstance->apiCourseEnrollmentsPagedGet($filter);
+} catch (Exception $e) {
+    echo 'Exception when calling CourseEnrollmentApi->apiCourseEnrollmentsPagedGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCourseEnrollmentsTransferPost**
+> \Yoast\MyYoastApiClient\Model\CourseEnrollment[] apiCourseEnrollmentsTransferPost($body)
+
+Transfer course enrollments
+
+Transfers all Course Enrollments from one Customer to another.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CourseEnrollmentApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Yoast\MyYoastApiClient\Model\TransferDto(); // \Yoast\MyYoastApiClient\Model\TransferDto | 
+
+try {
+    $result = $apiInstance->apiCourseEnrollmentsTransferPost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CourseEnrollmentApi->apiCourseEnrollmentsTransferPost: ', $e->getMessage(), PHP_EOL;
@@ -386,7 +432,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transferDto** | [**\Yoast\MyYoastApiClient\Model\TransferDto**](../Model/TransferDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\TransferDto**](../Model/TransferDto.md)|  |
 
 ### Return type
 

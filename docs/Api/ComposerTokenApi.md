@@ -1,16 +1,15 @@
 # Yoast\MyYoastApiClient\ComposerTokenApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiComposerTokensGeneratePost**](ComposerTokenApi.md#apiComposerTokensGeneratePost) | **POST** /api/ComposerTokens/generate | Generates a Composer token
-[**apiComposerTokensIdDeletePost**](ComposerTokenApi.md#apiComposerTokensIdDeletePost) | **POST** /api/ComposerTokens/{id}/delete | Disable a composer token
-[**apiComposerTokensIdRenamePost**](ComposerTokenApi.md#apiComposerTokensIdRenamePost) | **POST** /api/ComposerTokens/{id}/rename | Renames a Composer token
-
+[**apiComposerTokensGeneratePost**](ComposerTokenApi.md#apicomposertokensgeneratepost) | **POST** /api/ComposerTokens/generate | Generates a Composer token
+[**apiComposerTokensIdDeletePost**](ComposerTokenApi.md#apicomposertokensiddeletepost) | **POST** /api/ComposerTokens/{id}/delete | Disable a composer token
+[**apiComposerTokensIdRenamePost**](ComposerTokenApi.md#apicomposertokensidrenamepost) | **POST** /api/ComposerTokens/{id}/rename | Renames a Composer token
 
 # **apiComposerTokensGeneratePost**
-> \Yoast\MyYoastApiClient\Model\ComposerToken apiComposerTokensGeneratePost($generateDto)
+> \Yoast\MyYoastApiClient\Model\ComposerToken apiComposerTokensGeneratePost($body)
 
 Generates a Composer token
 
@@ -20,7 +19,6 @@ Generates a personal token for the logged in customer that can be used to downlo
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -32,10 +30,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
     new GuzzleHttp\Client(),
     $config
 );
-$generateDto = new \Yoast\MyYoastApiClient\Model\GenerateDto(); // \Yoast\MyYoastApiClient\Model\GenerateDto | 
+$body = new \Yoast\MyYoastApiClient\Model\GenerateDto(); // \Yoast\MyYoastApiClient\Model\GenerateDto | 
 
 try {
-    $result = $apiInstance->apiComposerTokensGeneratePost($generateDto);
+    $result = $apiInstance->apiComposerTokensGeneratePost($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->apiComposerTokensGeneratePost: ', $e->getMessage(), PHP_EOL;
@@ -47,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generateDto** | [**\Yoast\MyYoastApiClient\Model\GenerateDto**](../Model/GenerateDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\GenerateDto**](../Model/GenerateDto.md)|  |
 
 ### Return type
 
@@ -75,7 +73,6 @@ Renders a single composer token unusable
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -114,13 +111,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiComposerTokensIdRenamePost**
-> \Yoast\MyYoastApiClient\Model\ComposerToken apiComposerTokensIdRenamePost($renameBodyDto, $id)
+> \Yoast\MyYoastApiClient\Model\ComposerToken apiComposerTokensIdRenamePost($body, $id)
 
 Renames a Composer token
 
@@ -130,7 +127,6 @@ Changes the name of a Composer token
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -142,11 +138,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
     new GuzzleHttp\Client(),
     $config
 );
-$renameBodyDto = new \Yoast\MyYoastApiClient\Model\RenameBodyDto(); // \Yoast\MyYoastApiClient\Model\RenameBodyDto | 
+$body = new \Yoast\MyYoastApiClient\Model\RenameBodyDto(); // \Yoast\MyYoastApiClient\Model\RenameBodyDto | 
 $id = "id_example"; // string | 
 
 try {
-    $result = $apiInstance->apiComposerTokensIdRenamePost($renameBodyDto, $id);
+    $result = $apiInstance->apiComposerTokensIdRenamePost($body, $id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ComposerTokenApi->apiComposerTokensIdRenamePost: ', $e->getMessage(), PHP_EOL;
@@ -158,7 +154,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **renameBodyDto** | [**\Yoast\MyYoastApiClient\Model\RenameBodyDto**](../Model/RenameBodyDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\RenameBodyDto**](../Model/RenameBodyDto.md)|  |
  **id** | **string**|  |
 
 ### Return type

@@ -1,13 +1,12 @@
 # Yoast\MyYoastApiClient\RefundApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiRefundsExportGet**](RefundApi.md#apiRefundsExportGet) | **GET** /api/Refunds/export | Get refunds
-[**apiRefundsGet**](RefundApi.md#apiRefundsGet) | **GET** /api/Refunds | Get refunds
-[**apiRefundsIdGet**](RefundApi.md#apiRefundsIdGet) | **GET** /api/Refunds/{id} | Get a refund
-
+[**apiRefundsExportGet**](RefundApi.md#apirefundsexportget) | **GET** /api/Refunds/export | Get refunds
+[**apiRefundsGet**](RefundApi.md#apirefundsget) | **GET** /api/Refunds | Get refunds
+[**apiRefundsIdGet**](RefundApi.md#apirefundsidget) | **GET** /api/Refunds/{id} | Get a refund
 
 # **apiRefundsExportGet**
 > \Yoast\MyYoastApiClient\Model\Refund[] apiRefundsExportGet($startDate, $endDate)
@@ -20,7 +19,6 @@ A large export of refunds between dates
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -61,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -77,7 +75,6 @@ Get and filter refunds
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -89,7 +86,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
     new GuzzleHttp\Client(),
     $config
 );
-$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
+$filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiRefundsGet($filter);
@@ -104,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -116,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -132,7 +129,6 @@ Get a single refund
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
 // Configure API key authorization: bearer
 $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -144,8 +140,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
     new GuzzleHttp\Client(),
     $config
 );
-$id = "id_example"; // string | 
-$filter = array('key' => "filter_example"); // map[string,string] | Used for filtering/joining the results.
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
     $result = $apiInstance->apiRefundsIdGet($id, $filter);
@@ -161,7 +157,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
- **filter** | [**map[string,string]**](../Model/string.md)| Used for filtering/joining the results. | [optional]
+ **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
 
 ### Return type
 
@@ -173,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

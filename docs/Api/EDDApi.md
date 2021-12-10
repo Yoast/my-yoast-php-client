@@ -1,12 +1,11 @@
 # Yoast\MyYoastApiClient\EDDApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eddSlApiGet**](EDDApi.md#eddSlApiGet) | **GET** /edd-sl-api | Activate or deactivate a site license
-[**eddSlApiPost**](EDDApi.md#eddSlApiPost) | **POST** /edd-sl-api | 
-
+[**eddSlApiGet**](EDDApi.md#eddslapiget) | **GET** /edd-sl-api | Activate or deactivate a site license
+[**eddSlApiPost**](EDDApi.md#eddslapipost) | **POST** /edd-sl-api | 
 
 # **eddSlApiGet**
 > eddSlApiGet($eddAction, $url, $itemName)
@@ -55,13 +54,13 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **eddSlApiPost**
-> eddSlApiPost($eddDTO, $eddAction)
+> eddSlApiPost($body, $eddAction)
 
 
 
@@ -75,11 +74,11 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\EDDApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$eddDTO = new \Yoast\MyYoastApiClient\Model\EddDTO(); // \Yoast\MyYoastApiClient\Model\EddDTO | 
+$body = new \Yoast\MyYoastApiClient\Model\EddDTO(); // \Yoast\MyYoastApiClient\Model\EddDTO | 
 $eddAction = "eddAction_example"; // string | 
 
 try {
-    $apiInstance->eddSlApiPost($eddDTO, $eddAction);
+    $apiInstance->eddSlApiPost($body, $eddAction);
 } catch (Exception $e) {
     echo 'Exception when calling EDDApi->eddSlApiPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -90,7 +89,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eddDTO** | [**\Yoast\MyYoastApiClient\Model\EddDTO**](../Model/EddDTO.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\EddDTO**](../Model/EddDTO.md)|  |
  **eddAction** | **string**|  |
 
 ### Return type
@@ -104,7 +103,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
