@@ -91,6 +91,36 @@ class MailingListApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet
+     *
+     * .
+     *
+     */
+    public function testApiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet()
+    {
+    }
+
+    /**
+     * Test case for apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost
+     *
+     * Entry point for the mailchimp webhooks.
+     *
+     */
+    public function testApiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost()
+    {
+    }
+
+    /**
+     * Test case for apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost
+     *
+     * Entry point for the mailblue webhooks.
+     *
+     */
+    public function testApiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost()
+    {
+    }
+
+    /**
      * Test case for apiMailingListStatusGet
      *
      * Get the subscription status..

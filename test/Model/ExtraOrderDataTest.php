@@ -125,6 +125,13 @@ class ExtraOrderDataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "acceptsMarketing"
+     */
+    public function testPropertyAcceptsMarketing()
+    {
+    }
+
+    /**
      * Test attribute "transactions"
      */
     public function testPropertyTransactions()

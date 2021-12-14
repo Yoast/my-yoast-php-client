@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **billingType** | **string** |  | 
 **vatNumber** | **string** |  | [optional] 
 **renewalKey** | **string** |  | [optional] 
+**acceptsMarketing** | **bool** |  | [optional] 
 **transactions** | [**\Yoast\MyYoastApiClient\Model\TransactionDataDto[]**](TransactionDataDto.md) |  | 
 **wooRefunds** | [**\Yoast\MyYoastApiClient\Model\RefundDataDto[]**](RefundDataDto.md) |  | 
 
