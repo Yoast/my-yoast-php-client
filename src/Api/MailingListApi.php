@@ -87,212 +87,6 @@ class MailingListApi
     }
 
     /**
-     * Operation apiMailingListGet
-     *
-     * Get mailingLists Names.
-     *
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function apiMailingListGet()
-    {
-        $this->apiMailingListGetWithHttpInfo();
-    }
-
-    /**
-     * Operation apiMailingListGetWithHttpInfo
-     *
-     * Get mailingLists Names.
-     *
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiMailingListGetWithHttpInfo()
-    {
-        $returnType = '';
-        $request = $this->apiMailingListGetRequest();
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiMailingListGetAsync
-     *
-     * Get mailingLists Names.
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiMailingListGetAsync()
-    {
-        return $this->apiMailingListGetAsyncWithHttpInfo()
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiMailingListGetAsyncWithHttpInfo
-     *
-     * Get mailingLists Names.
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiMailingListGetAsyncWithHttpInfo()
-    {
-        $returnType = '';
-        $request = $this->apiMailingListGetRequest();
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiMailingListGet'
-     *
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function apiMailingListGetRequest()
-    {
-
-        $resourcePath = '/api/Mailing-list';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                [],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
      * Operation apiMailingListIsSubscribedToNewsletterGet
      *
      * Get the subscription status.
@@ -507,6 +301,620 @@ class MailingListApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet()
+    {
+        $this->apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGetWithHttpInfo();
+    }
+
+    /**
+     * Operation apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGetWithHttpInfo
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGetWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGetRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGetAsync
+     *
+     * 
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGetAsync()
+    {
+        return $this->apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGetAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGetAsyncWithHttpInfo
+     *
+     * 
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGetAsyncWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGetRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGetRequest()
+    {
+
+        $resourcePath = '/api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost
+     *
+     * Entry point for the mailchimp webhooks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost()
+    {
+        $this->apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPostWithHttpInfo();
+    }
+
+    /**
+     * Operation apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPostWithHttpInfo
+     *
+     * Entry point for the mailchimp webhooks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPostWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPostRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPostAsync
+     *
+     * Entry point for the mailchimp webhooks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPostAsync()
+    {
+        return $this->apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPostAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPostAsyncWithHttpInfo
+     *
+     * Entry point for the mailchimp webhooks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPostAsyncWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPostRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPostRequest()
+    {
+
+        $resourcePath = '/api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost
+     *
+     * Entry point for the mailblue webhooks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost()
+    {
+        $this->apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPostWithHttpInfo();
+    }
+
+    /**
+     * Operation apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPostWithHttpInfo
+     *
+     * Entry point for the mailblue webhooks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPostWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPostRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPostAsync
+     *
+     * Entry point for the mailblue webhooks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPostAsync()
+    {
+        return $this->apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPostAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPostAsyncWithHttpInfo
+     *
+     * Entry point for the mailblue webhooks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPostAsyncWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPostRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPostRequest()
+    {
+
+        $resourcePath = '/api/Mailing-list/newsletter/wALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJV';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -970,19 +1378,224 @@ class MailingListApi
     }
 
     /**
-     * Operation apiMailingListUnsubscribeFromNewsletterPost
+     * Operation apiMailingListSubscribeToNewsletterPost
      *
-     * Unsubscribe to a mailing list.
+     * Subscribe contact to the newsletter.
      *
-     * @param  \Yoast\MyYoastApiClient\Model\UnsubscribeFromNewsletterDto $body body (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function apiMailingListUnsubscribeFromNewsletterPost($body)
+    public function apiMailingListSubscribeToNewsletterPost()
     {
-        $this->apiMailingListUnsubscribeFromNewsletterPostWithHttpInfo($body);
+        $this->apiMailingListSubscribeToNewsletterPostWithHttpInfo();
+    }
+
+    /**
+     * Operation apiMailingListSubscribeToNewsletterPostWithHttpInfo
+     *
+     * Subscribe contact to the newsletter.
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiMailingListSubscribeToNewsletterPostWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->apiMailingListSubscribeToNewsletterPostRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiMailingListSubscribeToNewsletterPostAsync
+     *
+     * Subscribe contact to the newsletter.
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMailingListSubscribeToNewsletterPostAsync()
+    {
+        return $this->apiMailingListSubscribeToNewsletterPostAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiMailingListSubscribeToNewsletterPostAsyncWithHttpInfo
+     *
+     * Subscribe contact to the newsletter.
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiMailingListSubscribeToNewsletterPostAsyncWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->apiMailingListSubscribeToNewsletterPostRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiMailingListSubscribeToNewsletterPost'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiMailingListSubscribeToNewsletterPostRequest()
+    {
+
+        $resourcePath = '/api/Mailing-list/subscribeToNewsletter';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiMailingListUnsubscribeFromNewsletterPost
+     *
+     * Unsubscribe to a mailing list.
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function apiMailingListUnsubscribeFromNewsletterPost()
+    {
+        $this->apiMailingListUnsubscribeFromNewsletterPostWithHttpInfo();
     }
 
     /**
@@ -990,16 +1603,15 @@ class MailingListApi
      *
      * Unsubscribe to a mailing list.
      *
-     * @param  \Yoast\MyYoastApiClient\Model\UnsubscribeFromNewsletterDto $body (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiMailingListUnsubscribeFromNewsletterPostWithHttpInfo($body)
+    public function apiMailingListUnsubscribeFromNewsletterPostWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->apiMailingListUnsubscribeFromNewsletterPostRequest($body);
+        $request = $this->apiMailingListUnsubscribeFromNewsletterPostRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1043,14 +1655,13 @@ class MailingListApi
      *
      * Unsubscribe to a mailing list.
      *
-     * @param  \Yoast\MyYoastApiClient\Model\UnsubscribeFromNewsletterDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMailingListUnsubscribeFromNewsletterPostAsync($body)
+    public function apiMailingListUnsubscribeFromNewsletterPostAsync()
     {
-        return $this->apiMailingListUnsubscribeFromNewsletterPostAsyncWithHttpInfo($body)
+        return $this->apiMailingListUnsubscribeFromNewsletterPostAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1063,15 +1674,14 @@ class MailingListApi
      *
      * Unsubscribe to a mailing list.
      *
-     * @param  \Yoast\MyYoastApiClient\Model\UnsubscribeFromNewsletterDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiMailingListUnsubscribeFromNewsletterPostAsyncWithHttpInfo($body)
+    public function apiMailingListUnsubscribeFromNewsletterPostAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->apiMailingListUnsubscribeFromNewsletterPostRequest($body);
+        $request = $this->apiMailingListUnsubscribeFromNewsletterPostRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1099,19 +1709,12 @@ class MailingListApi
     /**
      * Create request for operation 'apiMailingListUnsubscribeFromNewsletterPost'
      *
-     * @param  \Yoast\MyYoastApiClient\Model\UnsubscribeFromNewsletterDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiMailingListUnsubscribeFromNewsletterPostRequest($body)
+    protected function apiMailingListUnsubscribeFromNewsletterPostRequest()
     {
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling apiMailingListUnsubscribeFromNewsletterPost'
-            );
-        }
 
         $resourcePath = '/api/Mailing-list/unsubscribeFromNewsletter';
         $formParams = [];
@@ -1124,9 +1727,6 @@ class MailingListApi
 
         // body params
         $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1135,7 +1735,7 @@ class MailingListApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 [],
-                ['application/json']
+                []
             );
         }
 

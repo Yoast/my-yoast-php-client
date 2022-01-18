@@ -179,4 +179,11 @@ class CustomerDataTest extends \PHPUnit_Framework_TestCase
     public function testPropertyUsername()
     {
     }
+
+    /**
+     * Test attribute "acceptsMarketing"
+     */
+    public function testPropertyAcceptsMarketing()
+    {
+    }
 }
