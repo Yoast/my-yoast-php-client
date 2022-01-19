@@ -451,6 +451,36 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet
+     *
+     * .
+     *
+     */
+    public function testApiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet()
+    {
+    }
+
+    /**
+     * Test case for apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost
+     *
+     * Entry point for the mailchimp webhooks.
+     *
+     */
+    public function testApiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost()
+    {
+    }
+
+    /**
+     * Test case for apiCustomersNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost
+     *
+     * Entry point for the mailblue webhooks.
+     *
+     */
+    public function testApiCustomersNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost()
+    {
+    }
+
+    /**
      * Test case for apiCustomersPagedGet
      *
      * Get customers.

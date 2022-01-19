@@ -70,8 +70,7 @@ class CustomerData implements ModelInterface, ArrayAccess
 'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]',
 'role' => 'string',
 'shipping' => '\Yoast\MyYoastApiClient\Model\ShippingDto',
-'username' => 'string',
-'acceptsMarketing' => 'bool'    ];
+'username' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -93,8 +92,7 @@ class CustomerData implements ModelInterface, ArrayAccess
 'metaData' => null,
 'role' => null,
 'shipping' => null,
-'username' => null,
-'acceptsMarketing' => null    ];
+'username' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -137,8 +135,7 @@ class CustomerData implements ModelInterface, ArrayAccess
 'metaData' => 'meta_data',
 'role' => 'role',
 'shipping' => 'shipping',
-'username' => 'username',
-'acceptsMarketing' => 'acceptsMarketing'    ];
+'username' => 'username'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -160,8 +157,7 @@ class CustomerData implements ModelInterface, ArrayAccess
 'metaData' => 'setMetaData',
 'role' => 'setRole',
 'shipping' => 'setShipping',
-'username' => 'setUsername',
-'acceptsMarketing' => 'setAcceptsMarketing'    ];
+'username' => 'setUsername'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -183,8 +179,7 @@ class CustomerData implements ModelInterface, ArrayAccess
 'metaData' => 'getMetaData',
 'role' => 'getRole',
 'shipping' => 'getShipping',
-'username' => 'getUsername',
-'acceptsMarketing' => 'getAcceptsMarketing'    ];
+'username' => 'getUsername'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -259,7 +254,6 @@ class CustomerData implements ModelInterface, ArrayAccess
         $this->container['role'] = isset($data['role']) ? $data['role'] : null;
         $this->container['shipping'] = isset($data['shipping']) ? $data['shipping'] : null;
         $this->container['username'] = isset($data['username']) ? $data['username'] : null;
-        $this->container['acceptsMarketing'] = isset($data['acceptsMarketing']) ? $data['acceptsMarketing'] : null;
     }
 
     /**
@@ -678,30 +672,6 @@ class CustomerData implements ModelInterface, ArrayAccess
     public function setUsername($username)
     {
         $this->container['username'] = $username;
-
-        return $this;
-    }
-
-    /**
-     * Gets acceptsMarketing
-     *
-     * @return bool
-     */
-    public function getAcceptsMarketing()
-    {
-        return $this->container['acceptsMarketing'];
-    }
-
-    /**
-     * Sets acceptsMarketing
-     *
-     * @param bool $acceptsMarketing acceptsMarketing
-     *
-     * @return $this
-     */
-    public function setAcceptsMarketing($acceptsMarketing)
-    {
-        $this->container['acceptsMarketing'] = $acceptsMarketing;
 
         return $this;
     }
