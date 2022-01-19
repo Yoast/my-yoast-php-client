@@ -42,6 +42,9 @@ Method | HTTP request | Description
 [**apiCustomersIdRoleMappingPost**](CustomerApi.md#apicustomersidrolemappingpost) | **POST** /api/Customers/{id}/roleMapping | 
 [**apiCustomersIdRolesGet**](CustomerApi.md#apicustomersidrolesget) | **GET** /api/Customers/{id}/roles | 
 [**apiCustomersNewsletterListSubscribePost**](CustomerApi.md#apicustomersnewsletterlistsubscribepost) | **POST** /api/Customers/newsletter/{list}/subscribe | Subscribes a user to a newsletter
+[**apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet**](CustomerApi.md#apicustomersnewslettertzhjyjwsyfumpznnhjavadzzirixrsbxofgptzjyykget) | **GET** /api/Customers/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | 
+[**apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost**](CustomerApi.md#apicustomersnewslettertzhjyjwsyfumpznnhjavadzzirixrsbxofgptzjyykpost) | **POST** /api/Customers/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | Entry point for the mailchimp webhooks
+[**apiCustomersNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost**](CustomerApi.md#apicustomersnewsletterwalaznyubfqzieudiqyzetbldbkodetcjkokmkcbjvpost) | **POST** /api/Customers/newsletter/wALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJV | Entry point for the mailblue webhooks
 [**apiCustomersPagedGet**](CustomerApi.md#apicustomerspagedget) | **GET** /api/Customers/paged | Get customers
 [**apiCustomersResetPasswordPatch**](CustomerApi.md#apicustomersresetpasswordpatch) | **PATCH** /api/Customers/resetPassword | Reset the user&#x27;s password.
 [**apiCustomersRolemappingIdsGet**](CustomerApi.md#apicustomersrolemappingidsget) | **GET** /api/Customers/rolemapping-ids | Get the ids of all customers with at least one role.
@@ -2088,6 +2091,136 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet**
+> apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet()
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $apiInstance->apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet();
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost**
+> apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost()
+
+Entry point for the mailchimp webhooks
+
+Digests the mailchimp subscribe webhook response to subscribe a customer(contact) to a mailblue list
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $apiInstance->apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost();
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiCustomersNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost**
+> apiCustomersNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost()
+
+Entry point for the mailblue webhooks
+
+Digests the mailblue webhook
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $apiInstance->apiCustomersNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost();
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

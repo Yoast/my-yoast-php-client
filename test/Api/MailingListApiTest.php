@@ -71,42 +71,22 @@ class MailingListApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiMailingListGet
+     *
+     * Get mailingLists Names..
+     *
+     */
+    public function testApiMailingListGet()
+    {
+    }
+
+    /**
      * Test case for apiMailingListIsSubscribedToNewsletterGet
      *
      * Get the subscription status..
      *
      */
     public function testApiMailingListIsSubscribedToNewsletterGet()
-    {
-    }
-
-    /**
-     * Test case for apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet
-     *
-     * .
-     *
-     */
-    public function testApiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet()
-    {
-    }
-
-    /**
-     * Test case for apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost
-     *
-     * Entry point for the mailchimp webhooks.
-     *
-     */
-    public function testApiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost()
-    {
-    }
-
-    /**
-     * Test case for apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost
-     *
-     * Entry point for the mailblue webhooks.
-     *
-     */
-    public function testApiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost()
     {
     }
 
@@ -127,16 +107,6 @@ class MailingListApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testApiMailingListSubscribePost()
-    {
-    }
-
-    /**
-     * Test case for apiMailingListSubscribeToNewsletterPost
-     *
-     * Subscribe contact to the newsletter..
-     *
-     */
-    public function testApiMailingListSubscribeToNewsletterPost()
     {
     }
 

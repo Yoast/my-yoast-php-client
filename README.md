@@ -255,6 +255,9 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**apiCustomersIdRoleMappingPost**](docs/Api/CustomerApi.md#apicustomersidrolemappingpost) | **POST** /api/Customers/{id}/roleMapping | 
 *CustomerApi* | [**apiCustomersIdRolesGet**](docs/Api/CustomerApi.md#apicustomersidrolesget) | **GET** /api/Customers/{id}/roles | 
 *CustomerApi* | [**apiCustomersNewsletterListSubscribePost**](docs/Api/CustomerApi.md#apicustomersnewsletterlistsubscribepost) | **POST** /api/Customers/newsletter/{list}/subscribe | Subscribes a user to a newsletter
+*CustomerApi* | [**apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet**](docs/Api/CustomerApi.md#apicustomersnewslettertzhjyjwsyfumpznnhjavadzzirixrsbxofgptzjyykget) | **GET** /api/Customers/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | 
+*CustomerApi* | [**apiCustomersNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost**](docs/Api/CustomerApi.md#apicustomersnewslettertzhjyjwsyfumpznnhjavadzzirixrsbxofgptzjyykpost) | **POST** /api/Customers/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | Entry point for the mailchimp webhooks
+*CustomerApi* | [**apiCustomersNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost**](docs/Api/CustomerApi.md#apicustomersnewsletterwalaznyubfqzieudiqyzetbldbkodetcjkokmkcbjvpost) | **POST** /api/Customers/newsletter/wALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJV | Entry point for the mailblue webhooks
 *CustomerApi* | [**apiCustomersPagedGet**](docs/Api/CustomerApi.md#apicustomerspagedget) | **GET** /api/Customers/paged | Get customers
 *CustomerApi* | [**apiCustomersResetPasswordPatch**](docs/Api/CustomerApi.md#apicustomersresetpasswordpatch) | **PATCH** /api/Customers/resetPassword | Reset the user&#x27;s password.
 *CustomerApi* | [**apiCustomersRolemappingIdsGet**](docs/Api/CustomerApi.md#apicustomersrolemappingidsget) | **GET** /api/Customers/rolemapping-ids | Get the ids of all customers with at least one role.
@@ -277,13 +280,10 @@ Class | Method | HTTP request | Description
 *FromWooCommerceApi* | [**apiProductsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apiproductsfromwoocommerceput) | **PUT** /api/Products/fromWooCommerce | Sync products to MyYoast.
 *GDPRApi* | [**apiCustomersIdGdprDeleteDelete**](docs/Api/GDPRApi.md#apicustomersidgdprdeletedelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 *HelpscoutApi* | [**helpscoutPost**](docs/Api/HelpscoutApi.md#helpscoutpost) | **POST** /helpscout | Get information about a customer
+*MailingListApi* | [**apiMailingListGet**](docs/Api/MailingListApi.md#apimailinglistget) | **GET** /api/Mailing-list | Get mailingLists Names.
 *MailingListApi* | [**apiMailingListIsSubscribedToNewsletterGet**](docs/Api/MailingListApi.md#apimailinglistissubscribedtonewsletterget) | **GET** /api/Mailing-list/isSubscribedToNewsletter | Get the subscription status.
-*MailingListApi* | [**apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet**](docs/Api/MailingListApi.md#apimailinglistnewslettertzhjyjwsyfumpznnhjavadzzirixrsbxofgptzjyykget) | **GET** /api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | 
-*MailingListApi* | [**apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost**](docs/Api/MailingListApi.md#apimailinglistnewslettertzhjyjwsyfumpznnhjavadzzirixrsbxofgptzjyykpost) | **POST** /api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | Entry point for the mailchimp webhooks
-*MailingListApi* | [**apiMailingListNewsletterWALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJVPost**](docs/Api/MailingListApi.md#apimailinglistnewsletterwalaznyubfqzieudiqyzetbldbkodetcjkokmkcbjvpost) | **POST** /api/Mailing-list/newsletter/wALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJV | Entry point for the mailblue webhooks
 *MailingListApi* | [**apiMailingListStatusGet**](docs/Api/MailingListApi.md#apimailingliststatusget) | **GET** /api/Mailing-list/status | Get the subscription status.
 *MailingListApi* | [**apiMailingListSubscribePost**](docs/Api/MailingListApi.md#apimailinglistsubscribepost) | **POST** /api/Mailing-list/subscribe | Subscribe contact to a mailing list.
-*MailingListApi* | [**apiMailingListSubscribeToNewsletterPost**](docs/Api/MailingListApi.md#apimailinglistsubscribetonewsletterpost) | **POST** /api/Mailing-list/subscribeToNewsletter | Subscribe contact to the newsletter.
 *MailingListApi* | [**apiMailingListUnsubscribeFromNewsletterPost**](docs/Api/MailingListApi.md#apimailinglistunsubscribefromnewsletterpost) | **POST** /api/Mailing-list/unsubscribeFromNewsletter | Unsubscribe to a mailing list.
 *MailingListApi* | [**apiMailingListUnsubscribePost**](docs/Api/MailingListApi.md#apimailinglistunsubscribepost) | **POST** /api/Mailing-list/unsubscribe | Unsubscribe to a mailing list.
 *OrderApi* | [**apiOrdersAutoRenewalCountGet**](docs/Api/OrderApi.md#apiordersautorenewalcountget) | **GET** /api/Orders/auto-renewal-count | 
@@ -448,6 +448,7 @@ Class | Method | HTTP request | Description
  - [TransferOwnershipDto](docs/Model/TransferOwnershipDto.md)
  - [TransferSiteDto](docs/Model/TransferSiteDto.md)
  - [UnsubscribeDto](docs/Model/UnsubscribeDto.md)
+ - [UnsubscribeFromNewsletterDto](docs/Model/UnsubscribeFromNewsletterDto.md)
  - [UpdateAllKVRequestDto](docs/Model/UpdateAllKVRequestDto.md)
  - [UpdateDownloadDto](docs/Model/UpdateDownloadDto.md)
  - [UpdateDto](docs/Model/UpdateDto.md)

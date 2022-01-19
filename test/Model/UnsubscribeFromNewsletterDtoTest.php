@@ -1,6 +1,6 @@
 <?php
 /**
- * ExtraOrderDataTest
+ * UnsubscribeFromNewsletterDtoTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * ExtraOrderDataTest Class Doc Comment
+ * UnsubscribeFromNewsletterDtoTest Class Doc Comment
  *
  * @category    Class
- * @description ExtraOrderData
+ * @description UnsubscribeFromNewsletterDto
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ExtraOrderDataTest extends \PHPUnit_Framework_TestCase
+class UnsubscribeFromNewsletterDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,72 +69,16 @@ class ExtraOrderDataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ExtraOrderData"
+     * Test "UnsubscribeFromNewsletterDto"
      */
-    public function testExtraOrderData()
+    public function testUnsubscribeFromNewsletterDto()
     {
     }
 
     /**
-     * Test attribute "customer"
+     * Test attribute "email"
      */
-    public function testPropertyCustomer()
-    {
-    }
-
-    /**
-     * Test attribute "shopId"
-     */
-    public function testPropertyShopId()
-    {
-    }
-
-    /**
-     * Test attribute "paymentReference"
-     */
-    public function testPropertyPaymentReference()
-    {
-    }
-
-    /**
-     * Test attribute "automatic"
-     */
-    public function testPropertyAutomatic()
-    {
-    }
-
-    /**
-     * Test attribute "billingType"
-     */
-    public function testPropertyBillingType()
-    {
-    }
-
-    /**
-     * Test attribute "vatNumber"
-     */
-    public function testPropertyVatNumber()
-    {
-    }
-
-    /**
-     * Test attribute "renewalKey"
-     */
-    public function testPropertyRenewalKey()
-    {
-    }
-
-    /**
-     * Test attribute "transactions"
-     */
-    public function testPropertyTransactions()
-    {
-    }
-
-    /**
-     * Test attribute "wooRefunds"
-     */
-    public function testPropertyWooRefunds()
+    public function testPropertyEmail()
     {
     }
 }
