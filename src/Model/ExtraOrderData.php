@@ -63,6 +63,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
 'billingType' => 'string',
 'vatNumber' => 'string',
 'renewalKey' => 'string',
+'acceptsMarketing' => 'bool',
 'transactions' => '\Yoast\MyYoastApiClient\Model\TransactionDataDto[]',
 'wooRefunds' => '\Yoast\MyYoastApiClient\Model\RefundDataDto[]'    ];
 
@@ -79,6 +80,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
 'billingType' => null,
 'vatNumber' => null,
 'renewalKey' => null,
+'acceptsMarketing' => null,
 'transactions' => null,
 'wooRefunds' => null    ];
 
@@ -116,6 +118,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
 'billingType' => 'billingType',
 'vatNumber' => 'vat_number',
 'renewalKey' => 'renewal_key',
+'acceptsMarketing' => 'accepts_marketing',
 'transactions' => 'transactions',
 'wooRefunds' => 'woo_refunds'    ];
 
@@ -132,6 +135,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
 'billingType' => 'setBillingType',
 'vatNumber' => 'setVatNumber',
 'renewalKey' => 'setRenewalKey',
+'acceptsMarketing' => 'setAcceptsMarketing',
 'transactions' => 'setTransactions',
 'wooRefunds' => 'setWooRefunds'    ];
 
@@ -148,6 +152,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
 'billingType' => 'getBillingType',
 'vatNumber' => 'getVatNumber',
 'renewalKey' => 'getRenewalKey',
+'acceptsMarketing' => 'getAcceptsMarketing',
 'transactions' => 'getTransactions',
 'wooRefunds' => 'getWooRefunds'    ];
 
@@ -216,6 +221,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         $this->container['billingType'] = isset($data['billingType']) ? $data['billingType'] : null;
         $this->container['vatNumber'] = isset($data['vatNumber']) ? $data['vatNumber'] : null;
         $this->container['renewalKey'] = isset($data['renewalKey']) ? $data['renewalKey'] : null;
+        $this->container['acceptsMarketing'] = isset($data['acceptsMarketing']) ? $data['acceptsMarketing'] : null;
         $this->container['transactions'] = isset($data['transactions']) ? $data['transactions'] : null;
         $this->container['wooRefunds'] = isset($data['wooRefunds']) ? $data['wooRefunds'] : null;
     }
@@ -429,6 +435,30 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
     public function setRenewalKey($renewalKey)
     {
         $this->container['renewalKey'] = $renewalKey;
+
+        return $this;
+    }
+
+    /**
+     * Gets acceptsMarketing
+     *
+     * @return bool
+     */
+    public function getAcceptsMarketing()
+    {
+        return $this->container['acceptsMarketing'];
+    }
+
+    /**
+     * Sets acceptsMarketing
+     *
+     * @param bool $acceptsMarketing acceptsMarketing
+     *
+     * @return $this
+     */
+    public function setAcceptsMarketing($acceptsMarketing)
+    {
+        $this->container['acceptsMarketing'] = $acceptsMarketing;
 
         return $this;
     }
