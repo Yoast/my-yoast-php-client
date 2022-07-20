@@ -66,7 +66,8 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
 'acceptsMarketing' => 'bool',
 'transactions' => '\Yoast\MyYoastApiClient\Model\TransactionDataDto[]',
 'wooRefunds' => '\Yoast\MyYoastApiClient\Model\RefundDataDto[]',
-'orderIntent' => 'string'    ];
+'orderIntent' => 'string',
+'relatedSubscriptionNumber' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -84,7 +85,8 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
 'acceptsMarketing' => null,
 'transactions' => null,
 'wooRefunds' => null,
-'orderIntent' => null    ];
+'orderIntent' => null,
+'relatedSubscriptionNumber' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -123,7 +125,8 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
 'acceptsMarketing' => 'accepts_marketing',
 'transactions' => 'transactions',
 'wooRefunds' => 'woo_refunds',
-'orderIntent' => 'order_intent'    ];
+'orderIntent' => 'order_intent',
+'relatedSubscriptionNumber' => 'related_subscription_number'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -141,7 +144,8 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
 'acceptsMarketing' => 'setAcceptsMarketing',
 'transactions' => 'setTransactions',
 'wooRefunds' => 'setWooRefunds',
-'orderIntent' => 'setOrderIntent'    ];
+'orderIntent' => 'setOrderIntent',
+'relatedSubscriptionNumber' => 'setRelatedSubscriptionNumber'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -159,7 +163,8 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
 'acceptsMarketing' => 'getAcceptsMarketing',
 'transactions' => 'getTransactions',
 'wooRefunds' => 'getWooRefunds',
-'orderIntent' => 'getOrderIntent'    ];
+'orderIntent' => 'getOrderIntent',
+'relatedSubscriptionNumber' => 'getRelatedSubscriptionNumber'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -247,6 +252,7 @@ self::ORDER_INTENT_SWITCH_PAYMENT_METHOD,        ];
         $this->container['transactions'] = isset($data['transactions']) ? $data['transactions'] : null;
         $this->container['wooRefunds'] = isset($data['wooRefunds']) ? $data['wooRefunds'] : null;
         $this->container['orderIntent'] = isset($data['orderIntent']) ? $data['orderIntent'] : null;
+        $this->container['relatedSubscriptionNumber'] = isset($data['relatedSubscriptionNumber']) ? $data['relatedSubscriptionNumber'] : null;
     }
 
     /**
@@ -571,6 +577,30 @@ self::ORDER_INTENT_SWITCH_PAYMENT_METHOD,        ];
             );
         }
         $this->container['orderIntent'] = $orderIntent;
+
+        return $this;
+    }
+
+    /**
+     * Gets relatedSubscriptionNumber
+     *
+     * @return string
+     */
+    public function getRelatedSubscriptionNumber()
+    {
+        return $this->container['relatedSubscriptionNumber'];
+    }
+
+    /**
+     * Sets relatedSubscriptionNumber
+     *
+     * @param string $relatedSubscriptionNumber relatedSubscriptionNumber
+     *
+     * @return $this
+     */
+    public function setRelatedSubscriptionNumber($relatedSubscriptionNumber)
+    {
+        $this->container['relatedSubscriptionNumber'] = $relatedSubscriptionNumber;
 
         return $this;
     }

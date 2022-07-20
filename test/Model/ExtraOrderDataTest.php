@@ -151,4 +151,11 @@ class ExtraOrderDataTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOrderIntent()
     {
     }
+
+    /**
+     * Test attribute "relatedSubscriptionNumber"
+     */
+    public function testPropertyRelatedSubscriptionNumber()
+    {
+    }
 }
