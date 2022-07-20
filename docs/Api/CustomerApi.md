@@ -4,6 +4,7 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**apiCustomersAcademyCourseAccessListByCustomerIdCustomerIdGet**](CustomerApi.md#apicustomersacademycourseaccesslistbycustomeridcustomeridget) | **GET** /api/Customers/academyCourseAccessListByCustomerId/{customerId} | Academy Course access
 [**apiCustomersAcademyCourseAccessListSourceIdGet**](CustomerApi.md#apicustomersacademycourseaccesslistsourceidget) | **GET** /api/Customers/academyCourseAccessList/{sourceId} | Academy Course access
 [**apiCustomersActivatePost**](CustomerApi.md#apicustomersactivatepost) | **POST** /api/Customers/activate | Activate the account of a user
 [**apiCustomersAllrolesGet**](CustomerApi.md#apicustomersallrolesget) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
@@ -48,12 +49,66 @@ Method | HTTP request | Description
 [**apiCustomersSendResetPasswordEmailPost**](CustomerApi.md#apicustomerssendresetpasswordemailpost) | **POST** /api/Customers/sendResetPasswordEmail | Send a reset password email to the user.
 [**apiCustomersSignupPost**](CustomerApi.md#apicustomerssignuppost) | **POST** /api/Customers/signup | Signup a customer on yoast.com following the normal signup flow.
 
+# **apiCustomersAcademyCourseAccessListByCustomerIdCustomerIdGet**
+> \Yoast\MyYoastApiClient\Model\AcademyCourseAccessListDto apiCustomersAcademyCourseAccessListByCustomerIdCustomerIdGet($customerId)
+
+Academy Course access
+
+A list of Course IDs the customer has access to. Alongside some data in the case of shopify.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $result = $apiInstance->apiCustomersAcademyCourseAccessListByCustomerIdCustomerIdGet($customerId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->apiCustomersAcademyCourseAccessListByCustomerIdCustomerIdGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\AcademyCourseAccessListDto**](../Model/AcademyCourseAccessListDto.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **apiCustomersAcademyCourseAccessListSourceIdGet**
 > \Yoast\MyYoastApiClient\Model\AcademyCourseAccessListDto apiCustomersAcademyCourseAccessListSourceIdGet($sourceId)
 
 Academy Course access
 
-A list of Course IDs the customer has access to.
+A list of Course IDs the customer has access to. Alongside some data in the case of shopify.
 
 ### Example
 ```php

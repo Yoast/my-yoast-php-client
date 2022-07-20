@@ -20,7 +20,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "http://github.com/yoast/my-yoast-php-client.git"
+      "url": "https://github.com/yoast/my-yoast-php-client.git"
     }
   ],
   "require": {
@@ -217,6 +217,7 @@ Class | Method | HTTP request | Description
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsIdInvitePost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentsidinvitepost) | **POST** /api/CourseEnrollments/{id}/invite | Invite a customer
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsPagedGet**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentspagedget) | **GET** /api/CourseEnrollments/paged | Get customers
 *CourseEnrollmentApi* | [**apiCourseEnrollmentsTransferPost**](docs/Api/CourseEnrollmentApi.md#apicourseenrollmentstransferpost) | **POST** /api/CourseEnrollments/transfer | Transfer course enrollments
+*CustomerApi* | [**apiCustomersAcademyCourseAccessListByCustomerIdCustomerIdGet**](docs/Api/CustomerApi.md#apicustomersacademycourseaccesslistbycustomeridcustomeridget) | **GET** /api/Customers/academyCourseAccessListByCustomerId/{customerId} | Academy Course access
 *CustomerApi* | [**apiCustomersAcademyCourseAccessListSourceIdGet**](docs/Api/CustomerApi.md#apicustomersacademycourseaccesslistsourceidget) | **GET** /api/Customers/academyCourseAccessList/{sourceId} | Academy Course access
 *CustomerApi* | [**apiCustomersActivatePost**](docs/Api/CustomerApi.md#apicustomersactivatepost) | **POST** /api/Customers/activate | Activate the account of a user
 *CustomerApi* | [**apiCustomersAllrolesGet**](docs/Api/CustomerApi.md#apicustomersallrolesget) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
@@ -277,6 +278,9 @@ Class | Method | HTTP request | Description
 *FromWooCommerceApi* | [**apiProductsFromWooCommercePut**](docs/Api/FromWooCommerceApi.md#apiproductsfromwoocommerceput) | **PUT** /api/Products/fromWooCommerce | Sync products to MyYoast.
 *GDPRApi* | [**apiCustomersIdGdprDeleteDelete**](docs/Api/GDPRApi.md#apicustomersidgdprdeletedelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 *HelpscoutApi* | [**helpscoutPost**](docs/Api/HelpscoutApi.md#helpscoutpost) | **POST** /helpscout | Get information about a customer
+*MailingListApi* | [**apiMailingListContactTagPost**](docs/Api/MailingListApi.md#apimailinglistcontacttagpost) | **POST** /api/Mailing-list/contactTag | Update contact tags and/or fields.
+*MailingListApi* | [**apiMailingListFieldValueDelete**](docs/Api/MailingListApi.md#apimailinglistfieldvaluedelete) | **DELETE** /api/Mailing-list/fieldValue | Delete contact tags and/or fields.
+*MailingListApi* | [**apiMailingListFieldValuePost**](docs/Api/MailingListApi.md#apimailinglistfieldvaluepost) | **POST** /api/Mailing-list/fieldValue | Update contact tags and/or fields.
 *MailingListApi* | [**apiMailingListIsSubscribedToNewsletterGet**](docs/Api/MailingListApi.md#apimailinglistissubscribedtonewsletterget) | **GET** /api/Mailing-list/isSubscribedToNewsletter | Get the subscription status.
 *MailingListApi* | [**apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet**](docs/Api/MailingListApi.md#apimailinglistnewslettertzhjyjwsyfumpznnhjavadzzirixrsbxofgptzjyykget) | **GET** /api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | 
 *MailingListApi* | [**apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost**](docs/Api/MailingListApi.md#apimailinglistnewslettertzhjyjwsyfumpznnhjavadzzirixrsbxofgptzjyykpost) | **POST** /api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | Entry point for the mailchimp webhooks
@@ -330,6 +334,8 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**apiSitesSwitchSubscriptionNumberOfTimesPost**](docs/Api/SiteApi.md#apisitesswitchsubscriptionnumberoftimespost) | **POST** /api/Sites/switchSubscriptionNumberOfTimes | Switches the subscription for a number of times.
 *SiteApi* | [**apiSitesSwitchSubscriptionPost**](docs/Api/SiteApi.md#apisitesswitchsubscriptionpost) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
 *SiteApi* | [**apiSitesTransferPost**](docs/Api/SiteApi.md#apisitestransferpost) | **POST** /api/Sites/transfer | Transfer sites.
+*SubscriptionApi* | [**apiSubscriptionsCalculateExpansionPriceIdSubscriptionNumberGet**](docs/Api/SubscriptionApi.md#apisubscriptionscalculateexpansionpriceidsubscriptionnumberget) | **GET** /api/Subscriptions/calculateExpansionPrice/{id}/{subscriptionNumber} | Calculate expansion price
+*SubscriptionApi* | [**apiSubscriptionsExpandIdSubscriptionNumberGet**](docs/Api/SubscriptionApi.md#apisubscriptionsexpandidsubscriptionnumberget) | **GET** /api/Subscriptions/expand/{id}/{subscriptionNumber} | Expand subscriptions
 *SubscriptionApi* | [**apiSubscriptionsExpiringGet**](docs/Api/SubscriptionApi.md#apisubscriptionsexpiringget) | **GET** /api/Subscriptions/expiring | 
 *SubscriptionApi* | [**apiSubscriptionsGet**](docs/Api/SubscriptionApi.md#apisubscriptionsget) | **GET** /api/Subscriptions | Get subscriptions
 *SubscriptionApi* | [**apiSubscriptionsIdDelete**](docs/Api/SubscriptionApi.md#apisubscriptionsiddelete) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
@@ -340,10 +346,13 @@ Class | Method | HTTP request | Description
 *SubscriptionApi* | [**apiSubscriptionsPagedGet**](docs/Api/SubscriptionApi.md#apisubscriptionspagedget) | **GET** /api/Subscriptions/paged | Get subscriptions
 *SubscriptionApi* | [**apiSubscriptionsRenewSubscriptionNumberSecretKeyGet**](docs/Api/SubscriptionApi.md#apisubscriptionsrenewsubscriptionnumbersecretkeyget) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
 *SubscriptionApi* | [**apiSubscriptionsSetExpiryDatePost**](docs/Api/SubscriptionApi.md#apisubscriptionssetexpirydatepost) | **POST** /api/Subscriptions/setExpiryDate | Set Date.
+*SubscriptionApi* | [**apiSubscriptionsSwitchPaymentMethodIdSubscriptionNumberGet**](docs/Api/SubscriptionApi.md#apisubscriptionsswitchpaymentmethodidsubscriptionnumberget) | **GET** /api/Subscriptions/switchPaymentMethod/{id}/{subscriptionNumber} | 
 *SubscriptionApi* | [**apiSubscriptionsTransferPost**](docs/Api/SubscriptionApi.md#apisubscriptionstransferpost) | **POST** /api/Subscriptions/transfer | Transfer subscription ownership
+*SubscriptionApi* | [**apiSubscriptionsUpgradeSubscriptionNumberSecretKeyGet**](docs/Api/SubscriptionApi.md#apisubscriptionsupgradesubscriptionnumbersecretkeyget) | **GET** /api/Subscriptions/upgrade/{subscriptionNumber}/{secretKey} | Upgrade subscriptions
 *SubscriptionProvisioningApi* | [**apiProvisioningSubscriptionsCreatePost**](docs/Api/SubscriptionProvisioningApi.md#apiprovisioningsubscriptionscreatepost) | **POST** /api/provisioning/subscriptions/create | Create a subscription
 *SubscriptionProvisioningApi* | [**apiProvisioningSubscriptionsIdCancelPost**](docs/Api/SubscriptionProvisioningApi.md#apiprovisioningsubscriptionsidcancelpost) | **POST** /api/provisioning/subscriptions/{id}/cancel | Cancel a single subscription
 *SubscriptionProvisioningApi* | [**apiProvisioningSubscriptionsIdGet**](docs/Api/SubscriptionProvisioningApi.md#apiprovisioningsubscriptionsidget) | **GET** /api/provisioning/subscriptions/{id} | Get a subscription
+*SubscriptionProvisioningApi* | [**apiProvisioningSubscriptionsIdRefundPost**](docs/Api/SubscriptionProvisioningApi.md#apiprovisioningsubscriptionsidrefundpost) | **POST** /api/provisioning/subscriptions/{id}/refund | Refund a single subscription
 *SubscriptionProvisioningApi* | [**apiProvisioningSubscriptionsIdRenewPost**](docs/Api/SubscriptionProvisioningApi.md#apiprovisioningsubscriptionsidrenewpost) | **POST** /api/provisioning/subscriptions/{id}/renew | Renew a subscription
 *SubscriptionProvisioningApi* | [**apiProvisioningSubscriptionsIdSetSitePost**](docs/Api/SubscriptionProvisioningApi.md#apiprovisioningsubscriptionsidsetsitepost) | **POST** /api/provisioning/subscriptions/{id}/set-site | Link a subscription to a site
 *WorkerApi* | [**apiWorkerGetRecurringJobsGet**](docs/Api/WorkerApi.md#apiworkergetrecurringjobsget) | **GET** /api/Worker/getRecurringJobs | 
@@ -392,6 +401,7 @@ Class | Method | HTTP request | Description
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)
  - [ExtraProductData](docs/Model/ExtraProductData.md)
  - [FeeLineDto](docs/Model/FeeLineDto.md)
+ - [FieldValueDto](docs/Model/FieldValueDto.md)
  - [FromAcademyDto](docs/Model/FromAcademyDto.md)
  - [GenerateDto](docs/Model/GenerateDto.md)
  - [HelpScoutDto](docs/Model/HelpScoutDto.md)
@@ -440,6 +450,7 @@ Class | Method | HTTP request | Description
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionProvisioningResponseDto](docs/Model/SubscriptionProvisioningResponseDto.md)
  - [SwitchSubscriptionNumberOfTimesDto](docs/Model/SwitchSubscriptionNumberOfTimesDto.md)
+ - [TagDto](docs/Model/TagDto.md)
  - [TaxLineItem](docs/Model/TaxLineItem.md)
  - [Transaction](docs/Model/Transaction.md)
  - [TransactionDataDto](docs/Model/TransactionDataDto.md)

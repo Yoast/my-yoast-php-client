@@ -4,6 +4,8 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**apiSubscriptionsCalculateExpansionPriceIdSubscriptionNumberGet**](SubscriptionApi.md#apisubscriptionscalculateexpansionpriceidsubscriptionnumberget) | **GET** /api/Subscriptions/calculateExpansionPrice/{id}/{subscriptionNumber} | Calculate expansion price
+[**apiSubscriptionsExpandIdSubscriptionNumberGet**](SubscriptionApi.md#apisubscriptionsexpandidsubscriptionnumberget) | **GET** /api/Subscriptions/expand/{id}/{subscriptionNumber} | Expand subscriptions
 [**apiSubscriptionsExpiringGet**](SubscriptionApi.md#apisubscriptionsexpiringget) | **GET** /api/Subscriptions/expiring | 
 [**apiSubscriptionsGet**](SubscriptionApi.md#apisubscriptionsget) | **GET** /api/Subscriptions | Get subscriptions
 [**apiSubscriptionsIdDelete**](SubscriptionApi.md#apisubscriptionsiddelete) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
@@ -14,7 +16,121 @@ Method | HTTP request | Description
 [**apiSubscriptionsPagedGet**](SubscriptionApi.md#apisubscriptionspagedget) | **GET** /api/Subscriptions/paged | Get subscriptions
 [**apiSubscriptionsRenewSubscriptionNumberSecretKeyGet**](SubscriptionApi.md#apisubscriptionsrenewsubscriptionnumbersecretkeyget) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
 [**apiSubscriptionsSetExpiryDatePost**](SubscriptionApi.md#apisubscriptionssetexpirydatepost) | **POST** /api/Subscriptions/setExpiryDate | Set Date.
+[**apiSubscriptionsSwitchPaymentMethodIdSubscriptionNumberGet**](SubscriptionApi.md#apisubscriptionsswitchpaymentmethodidsubscriptionnumberget) | **GET** /api/Subscriptions/switchPaymentMethod/{id}/{subscriptionNumber} | 
 [**apiSubscriptionsTransferPost**](SubscriptionApi.md#apisubscriptionstransferpost) | **POST** /api/Subscriptions/transfer | Transfer subscription ownership
+[**apiSubscriptionsUpgradeSubscriptionNumberSecretKeyGet**](SubscriptionApi.md#apisubscriptionsupgradesubscriptionnumbersecretkeyget) | **GET** /api/Subscriptions/upgrade/{subscriptionNumber}/{secretKey} | Upgrade subscriptions
+
+# **apiSubscriptionsCalculateExpansionPriceIdSubscriptionNumberGet**
+> string apiSubscriptionsCalculateExpansionPriceIdSubscriptionNumberGet($id, $subscriptionNumber)
+
+Calculate expansion price
+
+Route for calculating the subscription expansion price.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$subscriptionNumber = "subscriptionNumber_example"; // string | 
+
+try {
+    $result = $apiInstance->apiSubscriptionsCalculateExpansionPriceIdSubscriptionNumberGet($id, $subscriptionNumber);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->apiSubscriptionsCalculateExpansionPriceIdSubscriptionNumberGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **subscriptionNumber** | **string**|  |
+
+### Return type
+
+**string**
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiSubscriptionsExpandIdSubscriptionNumberGet**
+> \Yoast\MyYoastApiClient\Model\Subscription apiSubscriptionsExpandIdSubscriptionNumberGet($id, $subscriptionNumber)
+
+Expand subscriptions
+
+Route for expanding subscriptions
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$subscriptionNumber = "subscriptionNumber_example"; // string | 
+
+try {
+    $result = $apiInstance->apiSubscriptionsExpandIdSubscriptionNumberGet($id, $subscriptionNumber);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->apiSubscriptionsExpandIdSubscriptionNumberGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **subscriptionNumber** | **string**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiSubscriptionsExpiringGet**
 > \Yoast\MyYoastApiClient\Model\Subscription[] apiSubscriptionsExpiringGet($from, $until, $requiresManualRenewal)
@@ -560,6 +676,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **apiSubscriptionsSwitchPaymentMethodIdSubscriptionNumberGet**
+> apiSubscriptionsSwitchPaymentMethodIdSubscriptionNumberGet($id, $subscriptionNumber)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$subscriptionNumber = "subscriptionNumber_example"; // string | 
+
+try {
+    $apiInstance->apiSubscriptionsSwitchPaymentMethodIdSubscriptionNumberGet($id, $subscriptionNumber);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->apiSubscriptionsSwitchPaymentMethodIdSubscriptionNumberGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **subscriptionNumber** | **string**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **apiSubscriptionsTransferPost**
 > \Yoast\MyYoastApiClient\Model\Subscription[] apiSubscriptionsTransferPost($body)
 
@@ -610,6 +779,62 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiSubscriptionsUpgradeSubscriptionNumberSecretKeyGet**
+> \Yoast\MyYoastApiClient\Model\Subscription apiSubscriptionsUpgradeSubscriptionNumberSecretKeyGet($subscriptionNumber, $secretKey)
+
+Upgrade subscriptions
+
+Route for upgrading subscriptions
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure API key authorization: bearer
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$subscriptionNumber = "subscriptionNumber_example"; // string | 
+$secretKey = "secretKey_example"; // string | 
+
+try {
+    $result = $apiInstance->apiSubscriptionsUpgradeSubscriptionNumberSecretKeyGet($subscriptionNumber, $secretKey);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->apiSubscriptionsUpgradeSubscriptionNumberSecretKeyGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionNumber** | **string**|  |
+ **secretKey** | **string**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

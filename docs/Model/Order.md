@@ -35,6 +35,7 @@ Name | Type | Description | Notes
 **createdAt** | [**\DateTime**](\DateTime.md) |  | 
 **modifiedAt** | [**\DateTime**](\DateTime.md) |  | 
 **renewal** | **bool** |  | 
+**intent** | **string** |  | 
 **automatic** | **bool** |  | 
 **billingType** | **string** |  | 
 **ipAddress** | **string** |  | 
@@ -42,6 +43,7 @@ Name | Type | Description | Notes
 **processedCompletionAt** | [**\DateTime**](\DateTime.md) |  | 
 **renewalKey** | **string** |  | 
 **vatNumberValid** | **bool** |  | 
+**upgradesSubscription** | **string** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

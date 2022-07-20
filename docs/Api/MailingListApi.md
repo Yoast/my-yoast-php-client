@@ -4,6 +4,9 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**apiMailingListContactTagPost**](MailingListApi.md#apimailinglistcontacttagpost) | **POST** /api/Mailing-list/contactTag | Update contact tags and/or fields.
+[**apiMailingListFieldValueDelete**](MailingListApi.md#apimailinglistfieldvaluedelete) | **DELETE** /api/Mailing-list/fieldValue | Delete contact tags and/or fields.
+[**apiMailingListFieldValuePost**](MailingListApi.md#apimailinglistfieldvaluepost) | **POST** /api/Mailing-list/fieldValue | Update contact tags and/or fields.
 [**apiMailingListIsSubscribedToNewsletterGet**](MailingListApi.md#apimailinglistissubscribedtonewsletterget) | **GET** /api/Mailing-list/isSubscribedToNewsletter | Get the subscription status.
 [**apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKGet**](MailingListApi.md#apimailinglistnewslettertzhjyjwsyfumpznnhjavadzzirixrsbxofgptzjyykget) | **GET** /api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | 
 [**apiMailingListNewsletterTZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyKPost**](MailingListApi.md#apimailinglistnewslettertzhjyjwsyfumpznnhjavadzzirixrsbxofgptzjyykpost) | **POST** /api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | Entry point for the mailchimp webhooks
@@ -13,6 +16,150 @@ Method | HTTP request | Description
 [**apiMailingListSubscribeToNewsletterPost**](MailingListApi.md#apimailinglistsubscribetonewsletterpost) | **POST** /api/Mailing-list/subscribeToNewsletter | Subscribe contact to the newsletter.
 [**apiMailingListUnsubscribeFromNewsletterPost**](MailingListApi.md#apimailinglistunsubscribefromnewsletterpost) | **POST** /api/Mailing-list/unsubscribeFromNewsletter | Unsubscribe to a mailing list.
 [**apiMailingListUnsubscribePost**](MailingListApi.md#apimailinglistunsubscribepost) | **POST** /api/Mailing-list/unsubscribe | Unsubscribe to a mailing list.
+
+# **apiMailingListContactTagPost**
+> apiMailingListContactTagPost($body)
+
+Update contact tags and/or fields.
+
+Update contact tags and/or fields.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Yoast\MyYoastApiClient\Model\TagDto(); // \Yoast\MyYoastApiClient\Model\TagDto | 
+
+try {
+    $apiInstance->apiMailingListContactTagPost($body);
+} catch (Exception $e) {
+    echo 'Exception when calling MailingListApi->apiMailingListContactTagPost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Yoast\MyYoastApiClient\Model\TagDto**](../Model/TagDto.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiMailingListFieldValueDelete**
+> apiMailingListFieldValueDelete($body)
+
+Delete contact tags and/or fields.
+
+Update contact tags and/or fields.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Yoast\MyYoastApiClient\Model\FieldValueDto(); // \Yoast\MyYoastApiClient\Model\FieldValueDto | 
+
+try {
+    $apiInstance->apiMailingListFieldValueDelete($body);
+} catch (Exception $e) {
+    echo 'Exception when calling MailingListApi->apiMailingListFieldValueDelete: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Yoast\MyYoastApiClient\Model\FieldValueDto**](../Model/FieldValueDto.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiMailingListFieldValuePost**
+> apiMailingListFieldValuePost($body)
+
+Update contact tags and/or fields.
+
+Update contact tags and/or fields.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Yoast\MyYoastApiClient\Model\FieldValueDto(); // \Yoast\MyYoastApiClient\Model\FieldValueDto | 
+
+try {
+    $apiInstance->apiMailingListFieldValuePost($body);
+} catch (Exception $e) {
+    echo 'Exception when calling MailingListApi->apiMailingListFieldValuePost: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Yoast\MyYoastApiClient\Model\FieldValueDto**](../Model/FieldValueDto.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiMailingListIsSubscribedToNewsletterGet**
 > apiMailingListIsSubscribedToNewsletterGet($email)

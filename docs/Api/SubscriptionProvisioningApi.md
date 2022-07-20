@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**apiProvisioningSubscriptionsCreatePost**](SubscriptionProvisioningApi.md#apiprovisioningsubscriptionscreatepost) | **POST** /api/provisioning/subscriptions/create | Create a subscription
 [**apiProvisioningSubscriptionsIdCancelPost**](SubscriptionProvisioningApi.md#apiprovisioningsubscriptionsidcancelpost) | **POST** /api/provisioning/subscriptions/{id}/cancel | Cancel a single subscription
 [**apiProvisioningSubscriptionsIdGet**](SubscriptionProvisioningApi.md#apiprovisioningsubscriptionsidget) | **GET** /api/provisioning/subscriptions/{id} | Get a subscription
+[**apiProvisioningSubscriptionsIdRefundPost**](SubscriptionProvisioningApi.md#apiprovisioningsubscriptionsidrefundpost) | **POST** /api/provisioning/subscriptions/{id}/refund | Refund a single subscription
 [**apiProvisioningSubscriptionsIdRenewPost**](SubscriptionProvisioningApi.md#apiprovisioningsubscriptionsidrenewpost) | **POST** /api/provisioning/subscriptions/{id}/renew | Renew a subscription
 [**apiProvisioningSubscriptionsIdSetSitePost**](SubscriptionProvisioningApi.md#apiprovisioningsubscriptionsidsetsitepost) | **POST** /api/provisioning/subscriptions/{id}/set-site | Link a subscription to a site
 
@@ -64,7 +65,7 @@ No authorization required
 
 Cancel a single subscription
 
-Cancel the subscription when the period ends or immediately.
+Cancel the subscription when the period ends, or immediately if that is requested, or the subscription is not valid
 
 ### Example
 ```php
@@ -134,6 +135,55 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionProvisioningApi->apiProvisioningSubscriptionsIdGet: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto**](../Model/SubscriptionProvisioningResponseDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **apiProvisioningSubscriptionsIdRefundPost**
+> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto apiProvisioningSubscriptionsIdRefundPost($id)
+
+Refund a single subscription
+
+Refund the subscription.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionProvisioningApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $result = $apiInstance->apiProvisioningSubscriptionsIdRefundPost($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionProvisioningApi->apiProvisioningSubscriptionsIdRefundPost: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
