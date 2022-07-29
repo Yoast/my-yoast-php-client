@@ -67,6 +67,7 @@ class Order implements ModelInterface, ArrayAccess
 'paymentReference' => 'string',
 'vatTotal' => 'int',
 'discountTotal' => 'int',
+'feeTotal' => 'int',
 'glNumber' => 'string',
 'status' => 'string',
 'sourceId' => 'int',
@@ -115,6 +116,7 @@ class Order implements ModelInterface, ArrayAccess
 'paymentReference' => null,
 'vatTotal' => null,
 'discountTotal' => null,
+'feeTotal' => null,
 'glNumber' => null,
 'status' => null,
 'sourceId' => null,
@@ -184,6 +186,7 @@ class Order implements ModelInterface, ArrayAccess
 'paymentReference' => 'paymentReference',
 'vatTotal' => 'vatTotal',
 'discountTotal' => 'discountTotal',
+'feeTotal' => 'feeTotal',
 'glNumber' => 'glNumber',
 'status' => 'status',
 'sourceId' => 'sourceId',
@@ -232,6 +235,7 @@ class Order implements ModelInterface, ArrayAccess
 'paymentReference' => 'setPaymentReference',
 'vatTotal' => 'setVatTotal',
 'discountTotal' => 'setDiscountTotal',
+'feeTotal' => 'setFeeTotal',
 'glNumber' => 'setGlNumber',
 'status' => 'setStatus',
 'sourceId' => 'setSourceId',
@@ -280,6 +284,7 @@ class Order implements ModelInterface, ArrayAccess
 'paymentReference' => 'getPaymentReference',
 'vatTotal' => 'getVatTotal',
 'discountTotal' => 'getDiscountTotal',
+'feeTotal' => 'getFeeTotal',
 'glNumber' => 'getGlNumber',
 'status' => 'getStatus',
 'sourceId' => 'getSourceId',
@@ -380,6 +385,7 @@ class Order implements ModelInterface, ArrayAccess
         $this->container['paymentReference'] = isset($data['paymentReference']) ? $data['paymentReference'] : null;
         $this->container['vatTotal'] = isset($data['vatTotal']) ? $data['vatTotal'] : null;
         $this->container['discountTotal'] = isset($data['discountTotal']) ? $data['discountTotal'] : null;
+        $this->container['feeTotal'] = isset($data['feeTotal']) ? $data['feeTotal'] : null;
         $this->container['glNumber'] = isset($data['glNumber']) ? $data['glNumber'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['sourceId'] = isset($data['sourceId']) ? $data['sourceId'] : null;
@@ -453,6 +459,9 @@ class Order implements ModelInterface, ArrayAccess
         }
         if ($this->container['discountTotal'] === null) {
             $invalidProperties[] = "'discountTotal' can't be null";
+        }
+        if ($this->container['feeTotal'] === null) {
+            $invalidProperties[] = "'feeTotal' can't be null";
         }
         if ($this->container['glNumber'] === null) {
             $invalidProperties[] = "'glNumber' can't be null";
@@ -819,6 +828,30 @@ class Order implements ModelInterface, ArrayAccess
     public function setDiscountTotal($discountTotal)
     {
         $this->container['discountTotal'] = $discountTotal;
+
+        return $this;
+    }
+
+    /**
+     * Gets feeTotal
+     *
+     * @return int
+     */
+    public function getFeeTotal()
+    {
+        return $this->container['feeTotal'];
+    }
+
+    /**
+     * Sets feeTotal
+     *
+     * @param int $feeTotal feeTotal
+     *
+     * @return $this
+     */
+    public function setFeeTotal($feeTotal)
+    {
+        $this->container['feeTotal'] = $feeTotal;
 
         return $this;
     }

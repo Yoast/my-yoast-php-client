@@ -57,6 +57,7 @@ class CustomerData implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'int',
+'passwordHash' => 'string',
 'avatarUrl' => 'string',
 'billing' => '\Yoast\MyYoastApiClient\Model\BillingDto',
 'dateCreated' => '\DateTime',
@@ -80,6 +81,7 @@ class CustomerData implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'id' => null,
+'passwordHash' => 'password',
 'avatarUrl' => null,
 'billing' => null,
 'dateCreated' => 'date-time',
@@ -124,6 +126,7 @@ class CustomerData implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
+'passwordHash' => 'passwordHash',
 'avatarUrl' => 'avatar_url',
 'billing' => 'billing',
 'dateCreated' => 'date_created',
@@ -147,6 +150,7 @@ class CustomerData implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
+'passwordHash' => 'setPasswordHash',
 'avatarUrl' => 'setAvatarUrl',
 'billing' => 'setBilling',
 'dateCreated' => 'setDateCreated',
@@ -170,6 +174,7 @@ class CustomerData implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
+'passwordHash' => 'getPasswordHash',
 'avatarUrl' => 'getAvatarUrl',
 'billing' => 'getBilling',
 'dateCreated' => 'getDateCreated',
@@ -245,6 +250,7 @@ class CustomerData implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['passwordHash'] = isset($data['passwordHash']) ? $data['passwordHash'] : null;
         $this->container['avatarUrl'] = isset($data['avatarUrl']) ? $data['avatarUrl'] : null;
         $this->container['billing'] = isset($data['billing']) ? $data['billing'] : null;
         $this->container['dateCreated'] = isset($data['dateCreated']) ? $data['dateCreated'] : null;
@@ -273,6 +279,9 @@ class CustomerData implements ModelInterface, ArrayAccess
 
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
+        }
+        if ($this->container['passwordHash'] === null) {
+            $invalidProperties[] = "'passwordHash' can't be null";
         }
         if ($this->container['billing'] === null) {
             $invalidProperties[] = "'billing' can't be null";
@@ -342,6 +351,30 @@ class CustomerData implements ModelInterface, ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets passwordHash
+     *
+     * @return string
+     */
+    public function getPasswordHash()
+    {
+        return $this->container['passwordHash'];
+    }
+
+    /**
+     * Sets passwordHash
+     *
+     * @param string $passwordHash passwordHash
+     *
+     * @return $this
+     */
+    public function setPasswordHash($passwordHash)
+    {
+        $this->container['passwordHash'] = $passwordHash;
 
         return $this;
     }

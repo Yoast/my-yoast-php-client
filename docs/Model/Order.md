@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **paymentReference** | **string** |  | 
 **vatTotal** | **int** |  | 
 **discountTotal** | **int** |  | 
+**feeTotal** | **int** |  | 
 **glNumber** | **string** |  | 
 **status** | **string** |  | 
 **sourceId** | **int** |  | 

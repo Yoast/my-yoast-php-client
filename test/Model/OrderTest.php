@@ -153,6 +153,13 @@ class OrderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "feeTotal"
+     */
+    public function testPropertyFeeTotal()
+    {
+    }
+
+    /**
      * Test attribute "glNumber"
      */
     public function testPropertyGlNumber()

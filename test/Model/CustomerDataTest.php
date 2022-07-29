@@ -83,6 +83,13 @@ class CustomerDataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "passwordHash"
+     */
+    public function testPropertyPasswordHash()
+    {
+    }
+
+    /**
      * Test attribute "avatarUrl"
      */
     public function testPropertyAvatarUrl()

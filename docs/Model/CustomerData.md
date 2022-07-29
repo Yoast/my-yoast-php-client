@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
+**passwordHash** | **string** |  | 
 **avatarUrl** | **string** |  | [optional] 
 **billing** | [**\Yoast\MyYoastApiClient\Model\BillingDto**](BillingDto.md) |  | 
 **dateCreated** | [**\DateTime**](\DateTime.md) |  | 
