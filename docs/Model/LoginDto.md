@@ -3,8 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**username** | **string** |  | 
-**password** | **string** | The password of the MyYoast user to login. | 
+**usernameOrEmail** | **string** |  | 
+**password** | **string** | The password of the Yoast user to login. | 
+**totpCode** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

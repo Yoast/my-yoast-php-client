@@ -196,6 +196,8 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**authYoastCallbackGet**](docs/Api/AuthApi.md#authyoastcallbackget) | **GET** /auth/yoast/callback | 
 *AuthApi* | [**authYoastGet**](docs/Api/AuthApi.md#authyoastget) | **GET** /auth/yoast | 
 *AuthApi* | [**logoutGet**](docs/Api/AuthApi.md#logoutget) | **GET** /logout | 
+*AuthenticationApi* | [**apiAuthLoginPost**](docs/Api/AuthenticationApi.md#apiauthloginpost) | **POST** /api/auth/login | 
+*AuthenticationApi* | [**apiProfileGet**](docs/Api/AuthenticationApi.md#apiprofileget) | **GET** /api/profile | 
 *BlacklistApi* | [**apiBlacklistGet**](docs/Api/BlacklistApi.md#apiblacklistget) | **GET** /api/Blacklist | Gets blacklisted sites
 *BlacklistApi* | [**apiBlacklistIdDelete**](docs/Api/BlacklistApi.md#apiblacklistiddelete) | **DELETE** /api/Blacklist/{id} | Remove a site from the blacklist
 *BlacklistApi* | [**apiBlacklistPagedGet**](docs/Api/BlacklistApi.md#apiblacklistpagedget) | **GET** /api/Blacklist/paged | Gets blacklisted sites
@@ -328,6 +330,7 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**apiSitesIdPatch**](docs/Api/SiteApi.md#apisitesidpatch) | **PATCH** /api/Sites/{id} | 
 *SiteApi* | [**apiSitesIdSubscriptionsPut**](docs/Api/SiteApi.md#apisitesidsubscriptionsput) | **PUT** /api/Sites/{id}/subscriptions | Adds a subscription to a site
 *SiteApi* | [**apiSitesIdSubscriptionsSubscriptionIdDelete**](docs/Api/SiteApi.md#apisitesidsubscriptionssubscriptioniddelete) | **DELETE** /api/Sites/{id}/subscriptions/{subscriptionId} | Removes a subscription from a site
+*SiteApi* | [**apiSitesIdUrlPatch**](docs/Api/SiteApi.md#apisitesidurlpatch) | **PATCH** /api/Sites/{id}/url | 
 *SiteApi* | [**apiSitesIndexPost**](docs/Api/SiteApi.md#apisitesindexpost) | **POST** /api/Sites/index | 
 *SiteApi* | [**apiSitesInfoGet**](docs/Api/SiteApi.md#apisitesinfoget) | **GET** /api/Sites/info | Get the current connected site for an access token.
 *SiteApi* | [**apiSitesPagedGet**](docs/Api/SiteApi.md#apisitespagedget) | **GET** /api/Sites/paged | Get sites
@@ -458,12 +461,14 @@ Class | Method | HTTP request | Description
  - [TransferDto](docs/Model/TransferDto.md)
  - [TransferOwnershipDto](docs/Model/TransferOwnershipDto.md)
  - [TransferSiteDto](docs/Model/TransferSiteDto.md)
+ - [TwoFactorConfigDto](docs/Model/TwoFactorConfigDto.md)
  - [UnsubscribeDto](docs/Model/UnsubscribeDto.md)
  - [UpdateAllKVRequestDto](docs/Model/UpdateAllKVRequestDto.md)
  - [UpdateDownloadDto](docs/Model/UpdateDownloadDto.md)
  - [UpdateDto](docs/Model/UpdateDto.md)
  - [UpdateFileDto](docs/Model/UpdateFileDto.md)
  - [UpdateSiteDto](docs/Model/UpdateSiteDto.md)
+ - [UpdateSiteUrlDto](docs/Model/UpdateSiteUrlDto.md)
  - [UpdateUserDto](docs/Model/UpdateUserDto.md)
  - [UpdateUserToWordpressDto](docs/Model/UpdateUserToWordpressDto.md)
  - [UpsertChangelogDto](docs/Model/UpsertChangelogDto.md)

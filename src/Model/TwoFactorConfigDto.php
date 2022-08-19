@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginDto
+ * TwoFactorConfigDto
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * LoginDto Class Doc Comment
+ * TwoFactorConfigDto Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LoginDto implements ModelInterface, ArrayAccess
+class TwoFactorConfigDto implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class LoginDto implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LoginDto';
+    protected static $swaggerModelName = 'TwoFactorConfigDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,9 @@ class LoginDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'usernameOrEmail' => 'string',
-'password' => 'string',
-'totpCode' => 'string'    ];
+        'isEnabled' => 'bool',
+'key' => 'string',
+'description' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +66,9 @@ class LoginDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'usernameOrEmail' => null,
-'password' => null,
-'totpCode' => null    ];
+        'isEnabled' => null,
+'key' => null,
+'description' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +97,9 @@ class LoginDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'usernameOrEmail' => 'usernameOrEmail',
-'password' => 'password',
-'totpCode' => 'totpCode'    ];
+        'isEnabled' => 'isEnabled',
+'key' => 'key',
+'description' => 'description'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +107,9 @@ class LoginDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'usernameOrEmail' => 'setUsernameOrEmail',
-'password' => 'setPassword',
-'totpCode' => 'setTotpCode'    ];
+        'isEnabled' => 'setIsEnabled',
+'key' => 'setKey',
+'description' => 'setDescription'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +117,9 @@ class LoginDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'usernameOrEmail' => 'getUsernameOrEmail',
-'password' => 'getPassword',
-'totpCode' => 'getTotpCode'    ];
+        'isEnabled' => 'getIsEnabled',
+'key' => 'getKey',
+'description' => 'getDescription'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +179,9 @@ class LoginDto implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['usernameOrEmail'] = isset($data['usernameOrEmail']) ? $data['usernameOrEmail'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['totpCode'] = isset($data['totpCode']) ? $data['totpCode'] : null;
+        $this->container['isEnabled'] = isset($data['isEnabled']) ? $data['isEnabled'] : null;
+        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
     }
 
     /**
@@ -193,11 +193,14 @@ class LoginDto implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['usernameOrEmail'] === null) {
-            $invalidProperties[] = "'usernameOrEmail' can't be null";
+        if ($this->container['isEnabled'] === null) {
+            $invalidProperties[] = "'isEnabled' can't be null";
         }
-        if ($this->container['password'] === null) {
-            $invalidProperties[] = "'password' can't be null";
+        if ($this->container['key'] === null) {
+            $invalidProperties[] = "'key' can't be null";
+        }
+        if ($this->container['description'] === null) {
+            $invalidProperties[] = "'description' can't be null";
         }
         return $invalidProperties;
     }
@@ -215,73 +218,73 @@ class LoginDto implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets usernameOrEmail
+     * Gets isEnabled
      *
-     * @return string
+     * @return bool
      */
-    public function getUsernameOrEmail()
+    public function getIsEnabled()
     {
-        return $this->container['usernameOrEmail'];
+        return $this->container['isEnabled'];
     }
 
     /**
-     * Sets usernameOrEmail
+     * Sets isEnabled
      *
-     * @param string $usernameOrEmail usernameOrEmail
+     * @param bool $isEnabled isEnabled
      *
      * @return $this
      */
-    public function setUsernameOrEmail($usernameOrEmail)
+    public function setIsEnabled($isEnabled)
     {
-        $this->container['usernameOrEmail'] = $usernameOrEmail;
+        $this->container['isEnabled'] = $isEnabled;
 
         return $this;
     }
 
     /**
-     * Gets password
+     * Gets key
      *
      * @return string
      */
-    public function getPassword()
+    public function getKey()
     {
-        return $this->container['password'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets password
+     * Sets key
      *
-     * @param string $password The password of the Yoast user to login.
+     * @param string $key key
      *
      * @return $this
      */
-    public function setPassword($password)
+    public function setKey($key)
     {
-        $this->container['password'] = $password;
+        $this->container['key'] = $key;
 
         return $this;
     }
 
     /**
-     * Gets totpCode
+     * Gets description
      *
      * @return string
      */
-    public function getTotpCode()
+    public function getDescription()
     {
-        return $this->container['totpCode'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets totpCode
+     * Sets description
      *
-     * @param string $totpCode totpCode
+     * @param string $description description
      *
      * @return $this
      */
-    public function setTotpCode($totpCode)
+    public function setDescription($description)
     {
-        $this->container['totpCode'] = $totpCode;
+        $this->container['description'] = $description;
 
         return $this;
     }

@@ -56,7 +56,8 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'customerData' => '\Yoast\MyYoastApiClient\Model\CustomerData'    ];
+        'customerData' => '\Yoast\MyYoastApiClient\Model\CustomerData',
+'twoFactorData' => '\Yoast\MyYoastApiClient\Model\TwoFactorConfigDto'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -64,7 +65,8 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'customerData' => null    ];
+        'customerData' => null,
+'twoFactorData' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -93,7 +95,8 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'customerData' => 'customerData'    ];
+        'customerData' => 'customerData',
+'twoFactorData' => 'twoFactorData'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -101,7 +104,8 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'customerData' => 'setCustomerData'    ];
+        'customerData' => 'setCustomerData',
+'twoFactorData' => 'setTwoFactorData'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -109,7 +113,8 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'customerData' => 'getCustomerData'    ];
+        'customerData' => 'getCustomerData',
+'twoFactorData' => 'getTwoFactorData'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -170,6 +175,7 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['customerData'] = isset($data['customerData']) ? $data['customerData'] : null;
+        $this->container['twoFactorData'] = isset($data['twoFactorData']) ? $data['twoFactorData'] : null;
     }
 
     /**
@@ -183,6 +189,9 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
 
         if ($this->container['customerData'] === null) {
             $invalidProperties[] = "'customerData' can't be null";
+        }
+        if ($this->container['twoFactorData'] === null) {
+            $invalidProperties[] = "'twoFactorData' can't be null";
         }
         return $invalidProperties;
     }
@@ -219,6 +228,30 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
     public function setCustomerData($customerData)
     {
         $this->container['customerData'] = $customerData;
+
+        return $this;
+    }
+
+    /**
+     * Gets twoFactorData
+     *
+     * @return \Yoast\MyYoastApiClient\Model\TwoFactorConfigDto
+     */
+    public function getTwoFactorData()
+    {
+        return $this->container['twoFactorData'];
+    }
+
+    /**
+     * Sets twoFactorData
+     *
+     * @param \Yoast\MyYoastApiClient\Model\TwoFactorConfigDto $twoFactorData twoFactorData
+     *
+     * @return $this
+     */
+    public function setTwoFactorData($twoFactorData)
+    {
+        $this->container['twoFactorData'] = $twoFactorData;
 
         return $this;
     }

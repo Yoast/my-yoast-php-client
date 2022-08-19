@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginDto
+ * UpdateSiteUrlDto
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * LoginDto Class Doc Comment
+ * UpdateSiteUrlDto Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class LoginDto implements ModelInterface, ArrayAccess
+class UpdateSiteUrlDto implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class LoginDto implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'LoginDto';
+    protected static $swaggerModelName = 'UpdateSiteUrlDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,7 @@ class LoginDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'usernameOrEmail' => 'string',
-'password' => 'string',
-'totpCode' => 'string'    ];
+        'url' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -66,9 +64,7 @@ class LoginDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'usernameOrEmail' => null,
-'password' => null,
-'totpCode' => null    ];
+        'url' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -97,9 +93,7 @@ class LoginDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'usernameOrEmail' => 'usernameOrEmail',
-'password' => 'password',
-'totpCode' => 'totpCode'    ];
+        'url' => 'url'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -107,9 +101,7 @@ class LoginDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'usernameOrEmail' => 'setUsernameOrEmail',
-'password' => 'setPassword',
-'totpCode' => 'setTotpCode'    ];
+        'url' => 'setUrl'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -117,9 +109,7 @@ class LoginDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'usernameOrEmail' => 'getUsernameOrEmail',
-'password' => 'getPassword',
-'totpCode' => 'getTotpCode'    ];
+        'url' => 'getUrl'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -179,9 +169,7 @@ class LoginDto implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['usernameOrEmail'] = isset($data['usernameOrEmail']) ? $data['usernameOrEmail'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['totpCode'] = isset($data['totpCode']) ? $data['totpCode'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
     }
 
     /**
@@ -193,11 +181,8 @@ class LoginDto implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['usernameOrEmail'] === null) {
-            $invalidProperties[] = "'usernameOrEmail' can't be null";
-        }
-        if ($this->container['password'] === null) {
-            $invalidProperties[] = "'password' can't be null";
+        if ($this->container['url'] === null) {
+            $invalidProperties[] = "'url' can't be null";
         }
         return $invalidProperties;
     }
@@ -215,73 +200,25 @@ class LoginDto implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets usernameOrEmail
+     * Gets url
      *
      * @return string
      */
-    public function getUsernameOrEmail()
+    public function getUrl()
     {
-        return $this->container['usernameOrEmail'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets usernameOrEmail
+     * Sets url
      *
-     * @param string $usernameOrEmail usernameOrEmail
+     * @param string $url url
      *
      * @return $this
      */
-    public function setUsernameOrEmail($usernameOrEmail)
+    public function setUrl($url)
     {
-        $this->container['usernameOrEmail'] = $usernameOrEmail;
-
-        return $this;
-    }
-
-    /**
-     * Gets password
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->container['password'];
-    }
-
-    /**
-     * Sets password
-     *
-     * @param string $password The password of the Yoast user to login.
-     *
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->container['password'] = $password;
-
-        return $this;
-    }
-
-    /**
-     * Gets totpCode
-     *
-     * @return string
-     */
-    public function getTotpCode()
-    {
-        return $this->container['totpCode'];
-    }
-
-    /**
-     * Sets totpCode
-     *
-     * @param string $totpCode totpCode
-     *
-     * @return $this
-     */
-    public function setTotpCode($totpCode)
-    {
-        $this->container['totpCode'] = $totpCode;
+        $this->container['url'] = $url;
 
         return $this;
     }

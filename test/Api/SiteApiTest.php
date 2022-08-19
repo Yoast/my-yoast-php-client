@@ -151,6 +151,16 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for apiSitesIdUrlPatch
+     *
+     * .
+     *
+     */
+    public function testApiSitesIdUrlPatch()
+    {
+    }
+
+    /**
      * Test case for apiSitesIndexPost
      *
      * .

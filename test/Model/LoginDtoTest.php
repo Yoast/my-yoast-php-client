@@ -76,9 +76,9 @@ class LoginDtoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "username"
+     * Test attribute "usernameOrEmail"
      */
-    public function testPropertyUsername()
+    public function testPropertyUsernameOrEmail()
     {
     }
 
@@ -86,6 +86,13 @@ class LoginDtoTest extends \PHPUnit_Framework_TestCase
      * Test attribute "password"
      */
     public function testPropertyPassword()
+    {
+    }
+
+    /**
+     * Test attribute "totpCode"
+     */
+    public function testPropertyTotpCode()
     {
     }
 }

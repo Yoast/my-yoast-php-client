@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerFromWooDtoTest
+ * UpdateSiteUrlDtoTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * CustomerFromWooDtoTest Class Doc Comment
+ * UpdateSiteUrlDtoTest Class Doc Comment
  *
  * @category    Class
- * @description CustomerFromWooDto
+ * @description UpdateSiteUrlDto
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CustomerFromWooDtoTest extends \PHPUnit_Framework_TestCase
+class UpdateSiteUrlDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,23 +69,16 @@ class CustomerFromWooDtoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CustomerFromWooDto"
+     * Test "UpdateSiteUrlDto"
      */
-    public function testCustomerFromWooDto()
+    public function testUpdateSiteUrlDto()
     {
     }
 
     /**
-     * Test attribute "customerData"
+     * Test attribute "url"
      */
-    public function testPropertyCustomerData()
-    {
-    }
-
-    /**
-     * Test attribute "twoFactorData"
-     */
-    public function testPropertyTwoFactorData()
+    public function testPropertyUrl()
     {
     }
 }

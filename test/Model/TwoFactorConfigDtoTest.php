@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerFromWooDtoTest
+ * TwoFactorConfigDtoTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * CustomerFromWooDtoTest Class Doc Comment
+ * TwoFactorConfigDtoTest Class Doc Comment
  *
  * @category    Class
- * @description CustomerFromWooDto
+ * @description TwoFactorConfigDto
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CustomerFromWooDtoTest extends \PHPUnit_Framework_TestCase
+class TwoFactorConfigDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,23 +69,30 @@ class CustomerFromWooDtoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CustomerFromWooDto"
+     * Test "TwoFactorConfigDto"
      */
-    public function testCustomerFromWooDto()
+    public function testTwoFactorConfigDto()
     {
     }
 
     /**
-     * Test attribute "customerData"
+     * Test attribute "isEnabled"
      */
-    public function testPropertyCustomerData()
+    public function testPropertyIsEnabled()
     {
     }
 
     /**
-     * Test attribute "twoFactorData"
+     * Test attribute "key"
      */
-    public function testPropertyTwoFactorData()
+    public function testPropertyKey()
+    {
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
     {
     }
 }
