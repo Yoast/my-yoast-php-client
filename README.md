@@ -414,6 +414,7 @@ Class | Method | HTTP request | Description
  - [LineItemDto](docs/Model/LineItemDto.md)
  - [LineItemTax](docs/Model/LineItemTax.md)
  - [LinkSiteDto](docs/Model/LinkSiteDto.md)
+ - [LoginAccountDto](docs/Model/LoginAccountDto.md)
  - [LoginDto](docs/Model/LoginDto.md)
  - [LoginUserDto](docs/Model/LoginUserDto.md)
  - [MetaDataDto](docs/Model/MetaDataDto.md)

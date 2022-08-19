@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerFromWooDto
+ * LoginAccountDto
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * CustomerFromWooDto Class Doc Comment
+ * LoginAccountDto Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CustomerFromWooDto implements ModelInterface, ArrayAccess
+class LoginAccountDto implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'CustomerFromWooDto';
+    protected static $swaggerModelName = 'LoginAccountDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,8 +56,9 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'customerData' => '\Yoast\MyYoastApiClient\Model\CustomerData',
-'twoFactorData' => '\Yoast\MyYoastApiClient\Model\TwoFactorConfigDto'    ];
+        'usernameOrEmail' => 'string',
+'password' => 'string',
+'totpCode' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -65,8 +66,9 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'customerData' => null,
-'twoFactorData' => null    ];
+        'usernameOrEmail' => null,
+'password' => null,
+'totpCode' => null    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -95,8 +97,9 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'customerData' => 'customerData',
-'twoFactorData' => 'twoFactorData'    ];
+        'usernameOrEmail' => 'usernameOrEmail',
+'password' => 'password',
+'totpCode' => 'totpCode'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -104,8 +107,9 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'customerData' => 'setCustomerData',
-'twoFactorData' => 'setTwoFactorData'    ];
+        'usernameOrEmail' => 'setUsernameOrEmail',
+'password' => 'setPassword',
+'totpCode' => 'setTotpCode'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -113,8 +117,9 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'customerData' => 'getCustomerData',
-'twoFactorData' => 'getTwoFactorData'    ];
+        'usernameOrEmail' => 'getUsernameOrEmail',
+'password' => 'getPassword',
+'totpCode' => 'getTotpCode'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -174,8 +179,9 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['customerData'] = isset($data['customerData']) ? $data['customerData'] : null;
-        $this->container['twoFactorData'] = isset($data['twoFactorData']) ? $data['twoFactorData'] : null;
+        $this->container['usernameOrEmail'] = isset($data['usernameOrEmail']) ? $data['usernameOrEmail'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['totpCode'] = isset($data['totpCode']) ? $data['totpCode'] : null;
     }
 
     /**
@@ -187,8 +193,11 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['customerData'] === null) {
-            $invalidProperties[] = "'customerData' can't be null";
+        if ($this->container['usernameOrEmail'] === null) {
+            $invalidProperties[] = "'usernameOrEmail' can't be null";
+        }
+        if ($this->container['password'] === null) {
+            $invalidProperties[] = "'password' can't be null";
         }
         return $invalidProperties;
     }
@@ -206,49 +215,73 @@ class CustomerFromWooDto implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets customerData
+     * Gets usernameOrEmail
      *
-     * @return \Yoast\MyYoastApiClient\Model\CustomerData
+     * @return string
      */
-    public function getCustomerData()
+    public function getUsernameOrEmail()
     {
-        return $this->container['customerData'];
+        return $this->container['usernameOrEmail'];
     }
 
     /**
-     * Sets customerData
+     * Sets usernameOrEmail
      *
-     * @param \Yoast\MyYoastApiClient\Model\CustomerData $customerData customerData
+     * @param string $usernameOrEmail usernameOrEmail
      *
      * @return $this
      */
-    public function setCustomerData($customerData)
+    public function setUsernameOrEmail($usernameOrEmail)
     {
-        $this->container['customerData'] = $customerData;
+        $this->container['usernameOrEmail'] = $usernameOrEmail;
 
         return $this;
     }
 
     /**
-     * Gets twoFactorData
+     * Gets password
      *
-     * @return \Yoast\MyYoastApiClient\Model\TwoFactorConfigDto
+     * @return string
      */
-    public function getTwoFactorData()
+    public function getPassword()
     {
-        return $this->container['twoFactorData'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets twoFactorData
+     * Sets password
      *
-     * @param \Yoast\MyYoastApiClient\Model\TwoFactorConfigDto $twoFactorData twoFactorData
+     * @param string $password The password of the Yoast user to login.
      *
      * @return $this
      */
-    public function setTwoFactorData($twoFactorData)
+    public function setPassword($password)
     {
-        $this->container['twoFactorData'] = $twoFactorData;
+        $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * Gets totpCode
+     *
+     * @return string
+     */
+    public function getTotpCode()
+    {
+        return $this->container['totpCode'];
+    }
+
+    /**
+     * Sets totpCode
+     *
+     * @param string $totpCode totpCode
+     *
+     * @return $this
+     */
+    public function setTotpCode($totpCode)
+    {
+        $this->container['totpCode'] = $totpCode;
 
         return $this;
     }

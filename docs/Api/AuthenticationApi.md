@@ -22,7 +22,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthenticationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \Yoast\MyYoastApiClient\Model\LoginDto(); // \Yoast\MyYoastApiClient\Model\LoginDto | 
+$body = new \Yoast\MyYoastApiClient\Model\LoginAccountDto(); // \Yoast\MyYoastApiClient\Model\LoginAccountDto | 
 
 try {
     $apiInstance->apiAuthLoginPost($body);
@@ -36,7 +36,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\LoginDto**](../Model/LoginDto.md)|  |
+ **body** | [**\Yoast\MyYoastApiClient\Model\LoginAccountDto**](../Model/LoginAccountDto.md)|  |
 
 ### Return type
 

@@ -89,7 +89,7 @@ class AuthenticationApi
     /**
      * Operation apiAuthLoginPost
      *
-     * @param  \Yoast\MyYoastApiClient\Model\LoginDto $body body (required)
+     * @param  \Yoast\MyYoastApiClient\Model\LoginAccountDto $body body (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -103,7 +103,7 @@ class AuthenticationApi
     /**
      * Operation apiAuthLoginPostWithHttpInfo
      *
-     * @param  \Yoast\MyYoastApiClient\Model\LoginDto $body (required)
+     * @param  \Yoast\MyYoastApiClient\Model\LoginAccountDto $body (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -156,7 +156,7 @@ class AuthenticationApi
      *
      * 
      *
-     * @param  \Yoast\MyYoastApiClient\Model\LoginDto $body (required)
+     * @param  \Yoast\MyYoastApiClient\Model\LoginAccountDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -176,7 +176,7 @@ class AuthenticationApi
      *
      * 
      *
-     * @param  \Yoast\MyYoastApiClient\Model\LoginDto $body (required)
+     * @param  \Yoast\MyYoastApiClient\Model\LoginAccountDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -212,7 +212,7 @@ class AuthenticationApi
     /**
      * Create request for operation 'apiAuthLoginPost'
      *
-     * @param  \Yoast\MyYoastApiClient\Model\LoginDto $body (required)
+     * @param  \Yoast\MyYoastApiClient\Model\LoginAccountDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

@@ -1,6 +1,6 @@
 <?php
 /**
- * LoginDtoTest
+ * LoginAccountDtoTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * LoginDtoTest Class Doc Comment
+ * LoginAccountDtoTest Class Doc Comment
  *
  * @category    Class
- * @description LoginDto
+ * @description LoginAccountDto
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class LoginDtoTest extends \PHPUnit_Framework_TestCase
+class LoginAccountDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,16 +69,16 @@ class LoginDtoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "LoginDto"
+     * Test "LoginAccountDto"
      */
-    public function testLoginDto()
+    public function testLoginAccountDto()
     {
     }
 
     /**
-     * Test attribute "username"
+     * Test attribute "usernameOrEmail"
      */
-    public function testPropertyUsername()
+    public function testPropertyUsernameOrEmail()
     {
     }
 
@@ -86,6 +86,13 @@ class LoginDtoTest extends \PHPUnit_Framework_TestCase
      * Test attribute "password"
      */
     public function testPropertyPassword()
+    {
+    }
+
+    /**
+     * Test attribute "totpCode"
+     */
+    public function testPropertyTotpCode()
     {
     }
 }
