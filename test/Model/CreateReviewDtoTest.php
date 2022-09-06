@@ -1,6 +1,6 @@
 <?php
 /**
- * AccessTokenTest
+ * CreateReviewDtoTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * AccessTokenTest Class Doc Comment
+ * CreateReviewDtoTest Class Doc Comment
  *
  * @category    Class
- * @description AccessToken
+ * @description CreateReviewDto
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class AccessTokenTest extends \PHPUnit_Framework_TestCase
+class CreateReviewDtoTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,51 +69,16 @@ class AccessTokenTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "AccessToken"
+     * Test "CreateReviewDto"
      */
-    public function testAccessToken()
+    public function testCreateReviewDto()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "clientId"
      */
-    public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "ttl"
-     */
-    public function testPropertyTtl()
-    {
-    }
-
-    /**
-     * Test attribute "created"
-     */
-    public function testPropertyCreated()
-    {
-    }
-
-    /**
-     * Test attribute "createdAt"
-     */
-    public function testPropertyCreatedAt()
-    {
-    }
-
-    /**
-     * Test attribute "modifiedAt"
-     */
-    public function testPropertyModifiedAt()
-    {
-    }
-
-    /**
-     * Test attribute "userId"
-     */
-    public function testPropertyUserId()
+    public function testPropertyClientId()
     {
     }
 }

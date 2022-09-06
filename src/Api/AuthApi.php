@@ -95,7 +95,7 @@ class AuthApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\AccessToken
+     * @return string
      */
     public function apiCustomersLoginPost($body)
     {
@@ -112,11 +112,11 @@ class AuthApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\AccessToken, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiCustomersLoginPostWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\AccessToken';
+        $returnType = 'string';
         $request = $this->apiCustomersLoginPostRequest($body);
 
         try {
@@ -168,7 +168,7 @@ class AuthApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\AccessToken',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -210,7 +210,7 @@ class AuthApi
      */
     public function apiCustomersLoginPostAsyncWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\AccessToken';
+        $returnType = 'string';
         $request = $this->apiCustomersLoginPostRequest($body);
 
         return $this->client
@@ -1425,9 +1425,9 @@ class AuthApi
         }
 
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
         if ($apiKey !== null) {
-            $queryParams['access_token'] = $apiKey;
+            $headers['Authorization'] = $apiKey;
         }
 
         $defaultHeaders = [];

@@ -1,6 +1,6 @@
 <?php
 /**
- * AccessToken
+ * CreateReviewDto
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * AccessToken Class Doc Comment
+ * CreateReviewDto Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AccessToken implements ModelInterface, ArrayAccess
+class CreateReviewDto implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class AccessToken implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AccessToken';
+    protected static $swaggerModelName = 'CreateReviewDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,12 +56,7 @@ class AccessToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-'ttl' => 'int',
-'created' => '\DateTime',
-'createdAt' => '\DateTime',
-'modifiedAt' => '\DateTime',
-'userId' => 'string'    ];
+        'clientId' => 'string'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,12 +64,7 @@ class AccessToken implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'id' => null,
-'ttl' => null,
-'created' => 'date-time',
-'createdAt' => 'date-time',
-'modifiedAt' => 'date-time',
-'userId' => 'uuid'    ];
+        'clientId' => 'uuid'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -103,12 +93,7 @@ class AccessToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-'ttl' => 'ttl',
-'created' => 'created',
-'createdAt' => 'createdAt',
-'modifiedAt' => 'modifiedAt',
-'userId' => 'userId'    ];
+        'clientId' => 'clientId'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -116,12 +101,7 @@ class AccessToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-'ttl' => 'setTtl',
-'created' => 'setCreated',
-'createdAt' => 'setCreatedAt',
-'modifiedAt' => 'setModifiedAt',
-'userId' => 'setUserId'    ];
+        'clientId' => 'setClientId'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -129,12 +109,7 @@ class AccessToken implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-'ttl' => 'getTtl',
-'created' => 'getCreated',
-'createdAt' => 'getCreatedAt',
-'modifiedAt' => 'getModifiedAt',
-'userId' => 'getUserId'    ];
+        'clientId' => 'getClientId'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -194,12 +169,7 @@ class AccessToken implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['ttl'] = isset($data['ttl']) ? $data['ttl'] : null;
-        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
-        $this->container['modifiedAt'] = isset($data['modifiedAt']) ? $data['modifiedAt'] : null;
-        $this->container['userId'] = isset($data['userId']) ? $data['userId'] : null;
+        $this->container['clientId'] = isset($data['clientId']) ? $data['clientId'] : null;
     }
 
     /**
@@ -211,23 +181,8 @@ class AccessToken implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['ttl'] === null) {
-            $invalidProperties[] = "'ttl' can't be null";
-        }
-        if ($this->container['created'] === null) {
-            $invalidProperties[] = "'created' can't be null";
-        }
-        if ($this->container['createdAt'] === null) {
-            $invalidProperties[] = "'createdAt' can't be null";
-        }
-        if ($this->container['modifiedAt'] === null) {
-            $invalidProperties[] = "'modifiedAt' can't be null";
-        }
-        if ($this->container['userId'] === null) {
-            $invalidProperties[] = "'userId' can't be null";
+        if ($this->container['clientId'] === null) {
+            $invalidProperties[] = "'clientId' can't be null";
         }
         return $invalidProperties;
     }
@@ -245,145 +200,25 @@ class AccessToken implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets clientId
      *
      * @return string
      */
-    public function getId()
+    public function getClientId()
     {
-        return $this->container['id'];
+        return $this->container['clientId'];
     }
 
     /**
-     * Sets id
+     * Sets clientId
      *
-     * @param string $id id
+     * @param string $clientId clientId
      *
      * @return $this
      */
-    public function setId($id)
+    public function setClientId($clientId)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets ttl
-     *
-     * @return int
-     */
-    public function getTtl()
-    {
-        return $this->container['ttl'];
-    }
-
-    /**
-     * Sets ttl
-     *
-     * @param int $ttl ttl
-     *
-     * @return $this
-     */
-    public function setTtl($ttl)
-    {
-        $this->container['ttl'] = $ttl;
-
-        return $this;
-    }
-
-    /**
-     * Gets created
-     *
-     * @return \DateTime
-     */
-    public function getCreated()
-    {
-        return $this->container['created'];
-    }
-
-    /**
-     * Sets created
-     *
-     * @param \DateTime $created created
-     *
-     * @return $this
-     */
-    public function setCreated($created)
-    {
-        $this->container['created'] = $created;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdAt
-     *
-     * @return \DateTime
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['createdAt'];
-    }
-
-    /**
-     * Sets createdAt
-     *
-     * @param \DateTime $createdAt createdAt
-     *
-     * @return $this
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->container['createdAt'] = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets modifiedAt
-     *
-     * @return \DateTime
-     */
-    public function getModifiedAt()
-    {
-        return $this->container['modifiedAt'];
-    }
-
-    /**
-     * Sets modifiedAt
-     *
-     * @param \DateTime $modifiedAt modifiedAt
-     *
-     * @return $this
-     */
-    public function setModifiedAt($modifiedAt)
-    {
-        $this->container['modifiedAt'] = $modifiedAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets userId
-     *
-     * @return string
-     */
-    public function getUserId()
-    {
-        return $this->container['userId'];
-    }
-
-    /**
-     * Sets userId
-     *
-     * @param string $userId userId
-     *
-     * @return $this
-     */
-    public function setUserId($userId)
-    {
-        $this->container['userId'] = $userId;
+        $this->container['clientId'] = $clientId;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * OrderApi
+ * DefaultApi
  * PHP version 5
  *
  * @category Class
@@ -39,14 +39,14 @@ use Yoast\MyYoastApiClient\HeaderSelector;
 use Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * OrderApi Class Doc Comment
+ * DefaultApi Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class OrderApi
+class DefaultApi
 {
     /**
      * @var ClientInterface
@@ -87,37 +87,34 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersAutoRenewalCountGet
+     * Operation apiAccountsIdTOTPTwoFactorConfigPost
      *
-     * @param  \DateTime $startDate startDate (required)
-     * @param  \DateTime $endDate endDate (required)
-     * @param  string $secret secret (required)
+     * @param  \Yoast\MyYoastApiClient\Model\TOTPTwoFactorConfigDto $body body (required)
+     * @param  string $id id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto
+     * @return void
      */
-    public function apiOrdersAutoRenewalCountGet($startDate, $endDate, $secret)
+    public function apiAccountsIdTOTPTwoFactorConfigPost($body, $id)
     {
-        list($response) = $this->apiOrdersAutoRenewalCountGetWithHttpInfo($startDate, $endDate, $secret);
-        return $response;
+        $this->apiAccountsIdTOTPTwoFactorConfigPostWithHttpInfo($body, $id);
     }
 
     /**
-     * Operation apiOrdersAutoRenewalCountGetWithHttpInfo
+     * Operation apiAccountsIdTOTPTwoFactorConfigPostWithHttpInfo
      *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
-     * @param  string $secret (required)
+     * @param  \Yoast\MyYoastApiClient\Model\TOTPTwoFactorConfigDto $body (required)
+     * @param  string $id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiOrdersAutoRenewalCountGetWithHttpInfo($startDate, $endDate, $secret)
+    public function apiAccountsIdTOTPTwoFactorConfigPostWithHttpInfo($body, $id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto';
-        $request = $this->apiOrdersAutoRenewalCountGetRequest($startDate, $endDate, $secret);
+        $returnType = '';
+        $request = $this->apiAccountsIdTOTPTwoFactorConfigPostRequest($body, $id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -147,52 +144,29 @@ class OrderApi
                 );
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
             }
             throw $e;
         }
     }
 
     /**
-     * Operation apiOrdersAutoRenewalCountGetAsync
+     * Operation apiAccountsIdTOTPTwoFactorConfigPostAsync
      *
      * 
      *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
-     * @param  string $secret (required)
+     * @param  \Yoast\MyYoastApiClient\Model\TOTPTwoFactorConfigDto $body (required)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersAutoRenewalCountGetAsync($startDate, $endDate, $secret)
+    public function apiAccountsIdTOTPTwoFactorConfigPostAsync($body, $id)
     {
-        return $this->apiOrdersAutoRenewalCountGetAsyncWithHttpInfo($startDate, $endDate, $secret)
+        return $this->apiAccountsIdTOTPTwoFactorConfigPostAsyncWithHttpInfo($body, $id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -201,41 +175,26 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersAutoRenewalCountGetAsyncWithHttpInfo
+     * Operation apiAccountsIdTOTPTwoFactorConfigPostAsyncWithHttpInfo
      *
      * 
      *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
-     * @param  string $secret (required)
+     * @param  \Yoast\MyYoastApiClient\Model\TOTPTwoFactorConfigDto $body (required)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersAutoRenewalCountGetAsyncWithHttpInfo($startDate, $endDate, $secret)
+    public function apiAccountsIdTOTPTwoFactorConfigPostAsyncWithHttpInfo($body, $id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto';
-        $request = $this->apiOrdersAutoRenewalCountGetRequest($startDate, $endDate, $secret);
+        $returnType = '';
+        $request = $this->apiAccountsIdTOTPTwoFactorConfigPostRequest($body, $id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -255,858 +214,36 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'apiOrdersAutoRenewalCountGet'
+     * Create request for operation 'apiAccountsIdTOTPTwoFactorConfigPost'
      *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
-     * @param  string $secret (required)
+     * @param  \Yoast\MyYoastApiClient\Model\TOTPTwoFactorConfigDto $body (required)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiOrdersAutoRenewalCountGetRequest($startDate, $endDate, $secret)
+    protected function apiAccountsIdTOTPTwoFactorConfigPostRequest($body, $id)
     {
-        // verify the required parameter 'startDate' is set
-        if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $startDate when calling apiOrdersAutoRenewalCountGet'
+                'Missing the required parameter $body when calling apiAccountsIdTOTPTwoFactorConfigPost'
             );
         }
-        // verify the required parameter 'endDate' is set
-        if ($endDate === null || (is_array($endDate) && count($endDate) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $endDate when calling apiOrdersAutoRenewalCountGet'
-            );
-        }
-        // verify the required parameter 'secret' is set
-        if ($secret === null || (is_array($secret) && count($secret) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $secret when calling apiOrdersAutoRenewalCountGet'
-            );
-        }
-
-        $resourcePath = '/api/Orders/auto-renewal-count';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($startDate !== null) {
-            $queryParams['start_date'] = ObjectSerializer::toQueryValue($startDate, 'date-time');
-        }
-        // query params
-        if ($endDate !== null) {
-            $queryParams['end_date'] = ObjectSerializer::toQueryValue($endDate, 'date-time');
-        }
-        // query params
-        if ($secret !== null) {
-            $queryParams['secret'] = ObjectSerializer::toQueryValue($secret, null);
-        }
-
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiOrdersExportGet
-     *
-     * Get orders
-     *
-     * @param  \DateTime $startDate startDate (required)
-     * @param  \DateTime $endDate endDate (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\Order[]
-     */
-    public function apiOrdersExportGet($startDate, $endDate)
-    {
-        list($response) = $this->apiOrdersExportGetWithHttpInfo($startDate, $endDate);
-        return $response;
-    }
-
-    /**
-     * Operation apiOrdersExportGetWithHttpInfo
-     *
-     * Get orders
-     *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiOrdersExportGetWithHttpInfo($startDate, $endDate)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->apiOrdersExportGetRequest($startDate, $endDate);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\Order[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiOrdersExportGetAsync
-     *
-     * Get orders
-     *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiOrdersExportGetAsync($startDate, $endDate)
-    {
-        return $this->apiOrdersExportGetAsyncWithHttpInfo($startDate, $endDate)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiOrdersExportGetAsyncWithHttpInfo
-     *
-     * Get orders
-     *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiOrdersExportGetAsyncWithHttpInfo($startDate, $endDate)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->apiOrdersExportGetRequest($startDate, $endDate);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiOrdersExportGet'
-     *
-     * @param  \DateTime $startDate (required)
-     * @param  \DateTime $endDate (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function apiOrdersExportGetRequest($startDate, $endDate)
-    {
-        // verify the required parameter 'startDate' is set
-        if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $startDate when calling apiOrdersExportGet'
-            );
-        }
-        // verify the required parameter 'endDate' is set
-        if ($endDate === null || (is_array($endDate) && count($endDate) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $endDate when calling apiOrdersExportGet'
-            );
-        }
-
-        $resourcePath = '/api/Orders/export';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($startDate !== null) {
-            $queryParams['start_date'] = ObjectSerializer::toQueryValue($startDate, 'date-time');
-        }
-        // query params
-        if ($endDate !== null) {
-            $queryParams['end_date'] = ObjectSerializer::toQueryValue($endDate, 'date-time');
-        }
-
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiOrdersGet
-     *
-     * Get orders
-     *
-     * @param  object $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\Order[]
-     */
-    public function apiOrdersGet($filter = null)
-    {
-        list($response) = $this->apiOrdersGetWithHttpInfo($filter);
-        return $response;
-    }
-
-    /**
-     * Operation apiOrdersGetWithHttpInfo
-     *
-     * Get orders
-     *
-     * @param  object $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiOrdersGetWithHttpInfo($filter = null)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->apiOrdersGetRequest($filter);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\Order[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiOrdersGetAsync
-     *
-     * Get orders
-     *
-     * @param  object $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiOrdersGetAsync($filter = null)
-    {
-        return $this->apiOrdersGetAsyncWithHttpInfo($filter)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiOrdersGetAsyncWithHttpInfo
-     *
-     * Get orders
-     *
-     * @param  object $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiOrdersGetAsyncWithHttpInfo($filter = null)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->apiOrdersGetRequest($filter);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiOrdersGet'
-     *
-     * @param  object $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function apiOrdersGetRequest($filter = null)
-    {
-
-        $resourcePath = '/api/Orders';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        if ($filter !== null) {
-            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter, null);
-        }
-
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiOrdersIdGet
-     *
-     * Get a order
-     *
-     * @param  string $id id (required)
-     * @param  object $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\Order
-     */
-    public function apiOrdersIdGet($id, $filter = null)
-    {
-        list($response) = $this->apiOrdersIdGetWithHttpInfo($id, $filter);
-        return $response;
-    }
-
-    /**
-     * Operation apiOrdersIdGetWithHttpInfo
-     *
-     * Get a order
-     *
-     * @param  string $id (required)
-     * @param  object $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiOrdersIdGetWithHttpInfo($id, $filter = null)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Order';
-        $request = $this->apiOrdersIdGetRequest($id, $filter);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\Order',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiOrdersIdGetAsync
-     *
-     * Get a order
-     *
-     * @param  string $id (required)
-     * @param  object $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiOrdersIdGetAsync($id, $filter = null)
-    {
-        return $this->apiOrdersIdGetAsyncWithHttpInfo($id, $filter)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiOrdersIdGetAsyncWithHttpInfo
-     *
-     * Get a order
-     *
-     * @param  string $id (required)
-     * @param  object $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiOrdersIdGetAsyncWithHttpInfo($id, $filter = null)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Order';
-        $request = $this->apiOrdersIdGetRequest($id, $filter);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiOrdersIdGet'
-     *
-     * @param  string $id (required)
-     * @param  object $filter Used for filtering/joining the results. (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function apiOrdersIdGetRequest($id, $filter = null)
-    {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling apiOrdersIdGet'
+                'Missing the required parameter $id when calling apiAccountsIdTOTPTwoFactorConfigPost'
             );
         }
 
-        $resourcePath = '/api/Orders/{id}';
+        $resourcePath = '/api/accounts/{id}/TOTPTwoFactorConfig';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($filter !== null) {
-            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter, null);
-        }
 
         // path params
         if ($id !== null) {
@@ -1119,15 +256,18 @@ class OrderApi
 
         // body params
         $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                []
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
+                [],
+                ['application/json']
             );
         }
 
@@ -1160,11 +300,6 @@ class OrderApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1179,7 +314,7 @@ class OrderApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'GET',
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1187,9 +322,7 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersIdInvoiceGet
-     *
-     * Create invoice
+     * Operation apiSiteReviewAgencyAgencyIdGet
      *
      * @param  string $id id (required)
      *
@@ -1197,15 +330,13 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function apiOrdersIdInvoiceGet($id)
+    public function apiSiteReviewAgencyAgencyIdGet($id)
     {
-        $this->apiOrdersIdInvoiceGetWithHttpInfo($id);
+        $this->apiSiteReviewAgencyAgencyIdGetWithHttpInfo($id);
     }
 
     /**
-     * Operation apiOrdersIdInvoiceGetWithHttpInfo
-     *
-     * Create invoice
+     * Operation apiSiteReviewAgencyAgencyIdGetWithHttpInfo
      *
      * @param  string $id (required)
      *
@@ -1213,10 +344,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiOrdersIdInvoiceGetWithHttpInfo($id)
+    public function apiSiteReviewAgencyAgencyIdGetWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->apiOrdersIdInvoiceGetRequest($id);
+        $request = $this->apiSiteReviewAgencyAgencyIdGetRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1256,18 +387,18 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersIdInvoiceGetAsync
+     * Operation apiSiteReviewAgencyAgencyIdGetAsync
      *
-     * Create invoice
+     * 
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersIdInvoiceGetAsync($id)
+    public function apiSiteReviewAgencyAgencyIdGetAsync($id)
     {
-        return $this->apiOrdersIdInvoiceGetAsyncWithHttpInfo($id)
+        return $this->apiSiteReviewAgencyAgencyIdGetAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1276,19 +407,19 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersIdInvoiceGetAsyncWithHttpInfo
+     * Operation apiSiteReviewAgencyAgencyIdGetAsyncWithHttpInfo
      *
-     * Create invoice
+     * 
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersIdInvoiceGetAsyncWithHttpInfo($id)
+    public function apiSiteReviewAgencyAgencyIdGetAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->apiOrdersIdInvoiceGetRequest($id);
+        $request = $this->apiSiteReviewAgencyAgencyIdGetRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1314,23 +445,23 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'apiOrdersIdInvoiceGet'
+     * Create request for operation 'apiSiteReviewAgencyAgencyIdGet'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiOrdersIdInvoiceGetRequest($id)
+    protected function apiSiteReviewAgencyAgencyIdGetRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling apiOrdersIdInvoiceGet'
+                'Missing the required parameter $id when calling apiSiteReviewAgencyAgencyIdGet'
             );
         }
 
-        $resourcePath = '/api/Orders/{id}/invoice';
+        $resourcePath = '/api/SiteReview/Agency/{agencyId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1390,11 +521,6 @@ class OrderApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1417,38 +543,30 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersIdRefundsRefundIdInvoiceGet
+     * Operation apiSiteReviewAgencyGet
      *
-     * Creates a credit note
-     *
-     * @param  string $id id (required)
-     * @param  string $refundId refundId (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function apiOrdersIdRefundsRefundIdInvoiceGet($id, $refundId)
+    public function apiSiteReviewAgencyGet()
     {
-        $this->apiOrdersIdRefundsRefundIdInvoiceGetWithHttpInfo($id, $refundId);
+        $this->apiSiteReviewAgencyGetWithHttpInfo();
     }
 
     /**
-     * Operation apiOrdersIdRefundsRefundIdInvoiceGetWithHttpInfo
+     * Operation apiSiteReviewAgencyGetWithHttpInfo
      *
-     * Creates a credit note
-     *
-     * @param  string $id (required)
-     * @param  string $refundId (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiOrdersIdRefundsRefundIdInvoiceGetWithHttpInfo($id, $refundId)
+    public function apiSiteReviewAgencyGetWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->apiOrdersIdRefundsRefundIdInvoiceGetRequest($id, $refundId);
+        $request = $this->apiSiteReviewAgencyGetRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1488,19 +606,17 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersIdRefundsRefundIdInvoiceGetAsync
+     * Operation apiSiteReviewAgencyGetAsync
      *
-     * Creates a credit note
+     * 
      *
-     * @param  string $id (required)
-     * @param  string $refundId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersIdRefundsRefundIdInvoiceGetAsync($id, $refundId)
+    public function apiSiteReviewAgencyGetAsync()
     {
-        return $this->apiOrdersIdRefundsRefundIdInvoiceGetAsyncWithHttpInfo($id, $refundId)
+        return $this->apiSiteReviewAgencyGetAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1509,20 +625,18 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersIdRefundsRefundIdInvoiceGetAsyncWithHttpInfo
+     * Operation apiSiteReviewAgencyGetAsyncWithHttpInfo
      *
-     * Creates a credit note
+     * 
      *
-     * @param  string $id (required)
-     * @param  string $refundId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersIdRefundsRefundIdInvoiceGetAsyncWithHttpInfo($id, $refundId)
+    public function apiSiteReviewAgencyGetAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->apiOrdersIdRefundsRefundIdInvoiceGetRequest($id, $refundId);
+        $request = $this->apiSiteReviewAgencyGetRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1548,30 +662,229 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'apiOrdersIdRefundsRefundIdInvoiceGet'
+     * Create request for operation 'apiSiteReviewAgencyGet'
      *
-     * @param  string $id (required)
-     * @param  string $refundId (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiOrdersIdRefundsRefundIdInvoiceGetRequest($id, $refundId)
+    protected function apiSiteReviewAgencyGetRequest()
+    {
+
+        $resourcePath = '/api/SiteReview/Agency';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiSiteReviewClientAgencyIdGet
+     *
+     * @param  string $id id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function apiSiteReviewClientAgencyIdGet($id)
+    {
+        $this->apiSiteReviewClientAgencyIdGetWithHttpInfo($id);
+    }
+
+    /**
+     * Operation apiSiteReviewClientAgencyIdGetWithHttpInfo
+     *
+     * @param  string $id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiSiteReviewClientAgencyIdGetWithHttpInfo($id)
+    {
+        $returnType = '';
+        $request = $this->apiSiteReviewClientAgencyIdGetRequest($id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiSiteReviewClientAgencyIdGetAsync
+     *
+     * 
+     *
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiSiteReviewClientAgencyIdGetAsync($id)
+    {
+        return $this->apiSiteReviewClientAgencyIdGetAsyncWithHttpInfo($id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiSiteReviewClientAgencyIdGetAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiSiteReviewClientAgencyIdGetAsyncWithHttpInfo($id)
+    {
+        $returnType = '';
+        $request = $this->apiSiteReviewClientAgencyIdGetRequest($id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiSiteReviewClientAgencyIdGet'
+     *
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiSiteReviewClientAgencyIdGetRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling apiOrdersIdRefundsRefundIdInvoiceGet'
-            );
-        }
-        // verify the required parameter 'refundId' is set
-        if ($refundId === null || (is_array($refundId) && count($refundId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $refundId when calling apiOrdersIdRefundsRefundIdInvoiceGet'
+                'Missing the required parameter $id when calling apiSiteReviewClientAgencyIdGet'
             );
         }
 
-        $resourcePath = '/api/Orders/{id}/refunds/{refundId}/invoice';
+        $resourcePath = '/api/SiteReview/Client/Agency/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1587,14 +900,6 @@ class OrderApi
                 $resourcePath
             );
         }
-        // path params
-        if ($refundId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'refundId' . '}',
-                ObjectSerializer::toPathValue($refundId),
-                $resourcePath
-            );
-        }
 
         // body params
         $_tempBody = null;
@@ -1639,11 +944,6 @@ class OrderApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1666,303 +966,32 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersInvoiceNumberInvoiceNumberGet
+     * Operation apiSiteReviewClientIdGet
      *
-     * Get a order by invoiceNumber
-     *
-     * @param  string $invoiceNumber invoiceNumber (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\Order
-     */
-    public function apiOrdersInvoiceNumberInvoiceNumberGet($invoiceNumber)
-    {
-        list($response) = $this->apiOrdersInvoiceNumberInvoiceNumberGetWithHttpInfo($invoiceNumber);
-        return $response;
-    }
-
-    /**
-     * Operation apiOrdersInvoiceNumberInvoiceNumberGetWithHttpInfo
-     *
-     * Get a order by invoiceNumber
-     *
-     * @param  string $invoiceNumber (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function apiOrdersInvoiceNumberInvoiceNumberGetWithHttpInfo($invoiceNumber)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Order';
-        $request = $this->apiOrdersInvoiceNumberInvoiceNumberGetRequest($invoiceNumber);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\Order',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation apiOrdersInvoiceNumberInvoiceNumberGetAsync
-     *
-     * Get a order by invoiceNumber
-     *
-     * @param  string $invoiceNumber (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiOrdersInvoiceNumberInvoiceNumberGetAsync($invoiceNumber)
-    {
-        return $this->apiOrdersInvoiceNumberInvoiceNumberGetAsyncWithHttpInfo($invoiceNumber)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation apiOrdersInvoiceNumberInvoiceNumberGetAsyncWithHttpInfo
-     *
-     * Get a order by invoiceNumber
-     *
-     * @param  string $invoiceNumber (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function apiOrdersInvoiceNumberInvoiceNumberGetAsyncWithHttpInfo($invoiceNumber)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Order';
-        $request = $this->apiOrdersInvoiceNumberInvoiceNumberGetRequest($invoiceNumber);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'apiOrdersInvoiceNumberInvoiceNumberGet'
-     *
-     * @param  string $invoiceNumber (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function apiOrdersInvoiceNumberInvoiceNumberGetRequest($invoiceNumber)
-    {
-        // verify the required parameter 'invoiceNumber' is set
-        if ($invoiceNumber === null || (is_array($invoiceNumber) && count($invoiceNumber) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $invoiceNumber when calling apiOrdersInvoiceNumberInvoiceNumberGet'
-            );
-        }
-
-        $resourcePath = '/api/Orders/InvoiceNumber/{invoiceNumber}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($invoiceNumber !== null) {
-            $resourcePath = str_replace(
-                '{' . 'invoiceNumber' . '}',
-                ObjectSerializer::toPathValue($invoiceNumber),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation apiOrdersPagedGet
-     *
-     * Get orders
-     *
-     * @param  object $filter Used for filtering/joining the results. (optional)
+     * @param  string $id id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function apiOrdersPagedGet($filter = null)
+    public function apiSiteReviewClientIdGet($id)
     {
-        $this->apiOrdersPagedGetWithHttpInfo($filter);
+        $this->apiSiteReviewClientIdGetWithHttpInfo($id);
     }
 
     /**
-     * Operation apiOrdersPagedGetWithHttpInfo
+     * Operation apiSiteReviewClientIdGetWithHttpInfo
      *
-     * Get orders
-     *
-     * @param  object $filter Used for filtering/joining the results. (optional)
+     * @param  string $id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiOrdersPagedGetWithHttpInfo($filter = null)
+    public function apiSiteReviewClientIdGetWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->apiOrdersPagedGetRequest($filter);
+        $request = $this->apiSiteReviewClientIdGetRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2002,18 +1031,18 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersPagedGetAsync
+     * Operation apiSiteReviewClientIdGetAsync
      *
-     * Get orders
+     * 
      *
-     * @param  object $filter Used for filtering/joining the results. (optional)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersPagedGetAsync($filter = null)
+    public function apiSiteReviewClientIdGetAsync($id)
     {
-        return $this->apiOrdersPagedGetAsyncWithHttpInfo($filter)
+        return $this->apiSiteReviewClientIdGetAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2022,19 +1051,19 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersPagedGetAsyncWithHttpInfo
+     * Operation apiSiteReviewClientIdGetAsyncWithHttpInfo
      *
-     * Get orders
+     * 
      *
-     * @param  object $filter Used for filtering/joining the results. (optional)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersPagedGetAsyncWithHttpInfo($filter = null)
+    public function apiSiteReviewClientIdGetAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->apiOrdersPagedGetRequest($filter);
+        $request = $this->apiSiteReviewClientIdGetRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2060,28 +1089,38 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'apiOrdersPagedGet'
+     * Create request for operation 'apiSiteReviewClientIdGet'
      *
-     * @param  object $filter Used for filtering/joining the results. (optional)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiOrdersPagedGetRequest($filter = null)
+    protected function apiSiteReviewClientIdGetRequest($id)
     {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling apiSiteReviewClientIdGet'
+            );
+        }
 
-        $resourcePath = '/api/Orders/paged';
+        $resourcePath = '/api/SiteReview/Client/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($filter !== null) {
-            $queryParams['filter'] = ObjectSerializer::toQueryValue($filter, null);
-        }
 
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
 
         // body params
         $_tempBody = null;
@@ -2126,11 +1165,6 @@ class OrderApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2153,37 +1187,34 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersProductGroupsInvoiceNumberGet
+     * Operation apiSiteReviewClientIdPatch
      *
-     * Get productGroups by invoiceNumber
-     *
-     * @param  string $invoiceNumber invoiceNumber (required)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateClientDto $body body (required)
+     * @param  string $id id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\ProductGroup[]
+     * @return void
      */
-    public function apiOrdersProductGroupsInvoiceNumberGet($invoiceNumber)
+    public function apiSiteReviewClientIdPatch($body, $id)
     {
-        list($response) = $this->apiOrdersProductGroupsInvoiceNumberGetWithHttpInfo($invoiceNumber);
-        return $response;
+        $this->apiSiteReviewClientIdPatchWithHttpInfo($body, $id);
     }
 
     /**
-     * Operation apiOrdersProductGroupsInvoiceNumberGetWithHttpInfo
+     * Operation apiSiteReviewClientIdPatchWithHttpInfo
      *
-     * Get productGroups by invoiceNumber
-     *
-     * @param  string $invoiceNumber (required)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateClientDto $body (required)
+     * @param  string $id (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function apiOrdersProductGroupsInvoiceNumberGetWithHttpInfo($invoiceNumber)
+    public function apiSiteReviewClientIdPatchWithHttpInfo($body, $id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup[]';
-        $request = $this->apiOrdersProductGroupsInvoiceNumberGetRequest($invoiceNumber);
+        $returnType = '';
+        $request = $this->apiSiteReviewClientIdPatchRequest($body, $id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2213,50 +1244,29 @@ class OrderApi
                 );
             }
 
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\ProductGroup[]',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
             }
             throw $e;
         }
     }
 
     /**
-     * Operation apiOrdersProductGroupsInvoiceNumberGetAsync
+     * Operation apiSiteReviewClientIdPatchAsync
      *
-     * Get productGroups by invoiceNumber
+     * 
      *
-     * @param  string $invoiceNumber (required)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateClientDto $body (required)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersProductGroupsInvoiceNumberGetAsync($invoiceNumber)
+    public function apiSiteReviewClientIdPatchAsync($body, $id)
     {
-        return $this->apiOrdersProductGroupsInvoiceNumberGetAsyncWithHttpInfo($invoiceNumber)
+        return $this->apiSiteReviewClientIdPatchAsyncWithHttpInfo($body, $id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2265,39 +1275,26 @@ class OrderApi
     }
 
     /**
-     * Operation apiOrdersProductGroupsInvoiceNumberGetAsyncWithHttpInfo
+     * Operation apiSiteReviewClientIdPatchAsyncWithHttpInfo
      *
-     * Get productGroups by invoiceNumber
+     * 
      *
-     * @param  string $invoiceNumber (required)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateClientDto $body (required)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function apiOrdersProductGroupsInvoiceNumberGetAsyncWithHttpInfo($invoiceNumber)
+    public function apiSiteReviewClientIdPatchAsyncWithHttpInfo($body, $id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup[]';
-        $request = $this->apiOrdersProductGroupsInvoiceNumberGetRequest($invoiceNumber);
+        $returnType = '';
+        $request = $this->apiSiteReviewClientIdPatchRequest($body, $id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -2317,23 +1314,30 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'apiOrdersProductGroupsInvoiceNumberGet'
+     * Create request for operation 'apiSiteReviewClientIdPatch'
      *
-     * @param  string $invoiceNumber (required)
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateClientDto $body (required)
+     * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function apiOrdersProductGroupsInvoiceNumberGetRequest($invoiceNumber)
+    protected function apiSiteReviewClientIdPatchRequest($body, $id)
     {
-        // verify the required parameter 'invoiceNumber' is set
-        if ($invoiceNumber === null || (is_array($invoiceNumber) && count($invoiceNumber) === 0)) {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $invoiceNumber when calling apiOrdersProductGroupsInvoiceNumberGet'
+                'Missing the required parameter $body when calling apiSiteReviewClientIdPatch'
+            );
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling apiSiteReviewClientIdPatch'
             );
         }
 
-        $resourcePath = '/api/Orders/productGroups/{invoiceNumber}';
+        $resourcePath = '/api/SiteReview/Client/{id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -2342,10 +1346,450 @@ class OrderApi
 
 
         // path params
-        if ($invoiceNumber !== null) {
+        if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'invoiceNumber' . '}',
-                ObjectSerializer::toPathValue($invoiceNumber),
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PATCH',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiSiteReviewClientPost
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CreateClientDto $body body (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function apiSiteReviewClientPost($body)
+    {
+        $this->apiSiteReviewClientPostWithHttpInfo($body);
+    }
+
+    /**
+     * Operation apiSiteReviewClientPostWithHttpInfo
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CreateClientDto $body (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiSiteReviewClientPostWithHttpInfo($body)
+    {
+        $returnType = '';
+        $request = $this->apiSiteReviewClientPostRequest($body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiSiteReviewClientPostAsync
+     *
+     * 
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CreateClientDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiSiteReviewClientPostAsync($body)
+    {
+        return $this->apiSiteReviewClientPostAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiSiteReviewClientPostAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CreateClientDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiSiteReviewClientPostAsyncWithHttpInfo($body)
+    {
+        $returnType = '';
+        $request = $this->apiSiteReviewClientPostRequest($body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiSiteReviewClientPost'
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CreateClientDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiSiteReviewClientPostRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling apiSiteReviewClientPost'
+            );
+        }
+
+        $resourcePath = '/api/SiteReview/Client';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiSiteReviewReviewAgencyIdGet
+     *
+     * @param  string $id id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function apiSiteReviewReviewAgencyIdGet($id)
+    {
+        $this->apiSiteReviewReviewAgencyIdGetWithHttpInfo($id);
+    }
+
+    /**
+     * Operation apiSiteReviewReviewAgencyIdGetWithHttpInfo
+     *
+     * @param  string $id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiSiteReviewReviewAgencyIdGetWithHttpInfo($id)
+    {
+        $returnType = '';
+        $request = $this->apiSiteReviewReviewAgencyIdGetRequest($id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiSiteReviewReviewAgencyIdGetAsync
+     *
+     * 
+     *
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiSiteReviewReviewAgencyIdGetAsync($id)
+    {
+        return $this->apiSiteReviewReviewAgencyIdGetAsyncWithHttpInfo($id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiSiteReviewReviewAgencyIdGetAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiSiteReviewReviewAgencyIdGetAsyncWithHttpInfo($id)
+    {
+        $returnType = '';
+        $request = $this->apiSiteReviewReviewAgencyIdGetRequest($id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiSiteReviewReviewAgencyIdGet'
+     *
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiSiteReviewReviewAgencyIdGetRequest($id)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling apiSiteReviewReviewAgencyIdGet'
+            );
+        }
+
+        $resourcePath = '/api/SiteReview/Review/Agency/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
         }
@@ -2355,11 +1799,11 @@ class OrderApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
+                []
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
+                [],
                 []
             );
         }
@@ -2393,11 +1837,6 @@ class OrderApi
             }
         }
 
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
-        if ($apiKey !== null) {
-            $headers['Authorization'] = $apiKey;
-        }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2413,6 +1852,222 @@ class OrderApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation apiSiteReviewReviewPost
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CreateReviewDto $body body (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function apiSiteReviewReviewPost($body)
+    {
+        $this->apiSiteReviewReviewPostWithHttpInfo($body);
+    }
+
+    /**
+     * Operation apiSiteReviewReviewPostWithHttpInfo
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CreateReviewDto $body (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function apiSiteReviewReviewPostWithHttpInfo($body)
+    {
+        $returnType = '';
+        $request = $this->apiSiteReviewReviewPostRequest($body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation apiSiteReviewReviewPostAsync
+     *
+     * 
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CreateReviewDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiSiteReviewReviewPostAsync($body)
+    {
+        return $this->apiSiteReviewReviewPostAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation apiSiteReviewReviewPostAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CreateReviewDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function apiSiteReviewReviewPostAsyncWithHttpInfo($body)
+    {
+        $returnType = '';
+        $request = $this->apiSiteReviewReviewPostRequest($body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'apiSiteReviewReviewPost'
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\CreateReviewDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function apiSiteReviewReviewPostRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling apiSiteReviewReviewPost'
+            );
+        }
+
+        $resourcePath = '/api/SiteReview/Review';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

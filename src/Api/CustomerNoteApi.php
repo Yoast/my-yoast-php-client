@@ -318,9 +318,9 @@ class CustomerNoteApi
         }
 
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
         if ($apiKey !== null) {
-            $queryParams['access_token'] = $apiKey;
+            $headers['Authorization'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -544,9 +544,9 @@ class CustomerNoteApi
         }
 
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
         if ($apiKey !== null) {
-            $queryParams['access_token'] = $apiKey;
+            $headers['Authorization'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -820,9 +820,9 @@ class CustomerNoteApi
         }
 
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
         if ($apiKey !== null) {
-            $queryParams['access_token'] = $apiKey;
+            $headers['Authorization'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1041,9 +1041,9 @@ class CustomerNoteApi
         }
 
         // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('access_token');
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
         if ($apiKey !== null) {
-            $queryParams['access_token'] = $apiKey;
+            $headers['Authorization'] = $apiKey;
         }
 
         $defaultHeaders = [];

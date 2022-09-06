@@ -1,6 +1,6 @@
 <?php
 /**
- * AuthenticationApiTest
+ * DefaultApiTest
  * PHP version 5
  *
  * @category Class
@@ -32,14 +32,14 @@ use Yoast\MyYoastApiClient\ApiException;
 use Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * AuthenticationApiTest Class Doc Comment
+ * DefaultApiTest Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AuthenticationApiTest extends \PHPUnit_Framework_TestCase
+class DefaultApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,32 +71,92 @@ class AuthenticationApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for apiAuthIdGetAccessTokenGet
+     * Test case for apiAccountsIdTOTPTwoFactorConfigPost
      *
      * .
      *
      */
-    public function testApiAuthIdGetAccessTokenGet()
+    public function testApiAccountsIdTOTPTwoFactorConfigPost()
     {
     }
 
     /**
-     * Test case for apiAuthLoginPost
+     * Test case for apiSiteReviewAgencyAgencyIdGet
      *
      * .
      *
      */
-    public function testApiAuthLoginPost()
+    public function testApiSiteReviewAgencyAgencyIdGet()
     {
     }
 
     /**
-     * Test case for apiProfileGet
+     * Test case for apiSiteReviewAgencyGet
      *
      * .
      *
      */
-    public function testApiProfileGet()
+    public function testApiSiteReviewAgencyGet()
+    {
+    }
+
+    /**
+     * Test case for apiSiteReviewClientAgencyIdGet
+     *
+     * .
+     *
+     */
+    public function testApiSiteReviewClientAgencyIdGet()
+    {
+    }
+
+    /**
+     * Test case for apiSiteReviewClientIdGet
+     *
+     * .
+     *
+     */
+    public function testApiSiteReviewClientIdGet()
+    {
+    }
+
+    /**
+     * Test case for apiSiteReviewClientIdPatch
+     *
+     * .
+     *
+     */
+    public function testApiSiteReviewClientIdPatch()
+    {
+    }
+
+    /**
+     * Test case for apiSiteReviewClientPost
+     *
+     * .
+     *
+     */
+    public function testApiSiteReviewClientPost()
+    {
+    }
+
+    /**
+     * Test case for apiSiteReviewReviewAgencyIdGet
+     *
+     * .
+     *
+     */
+    public function testApiSiteReviewReviewAgencyIdGet()
+    {
+    }
+
+    /**
+     * Test case for apiSiteReviewReviewPost
+     *
+     * .
+     *
+     */
+    public function testApiSiteReviewReviewPost()
     {
     }
 }

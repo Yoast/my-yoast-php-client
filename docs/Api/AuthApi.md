@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**logoutGet**](AuthApi.md#logoutget) | **GET** /logout | 
 
 # **apiCustomersLoginPost**
-> \Yoast\MyYoastApiClient\Model\AccessToken apiCustomersLoginPost($body)
+> string apiCustomersLoginPost($body)
 
 Log in a user on MyYoast.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\AccessToken**](../Model/AccessToken.md)
+**string**
 
 ### Authorization
 
@@ -244,9 +244,9 @@ No authorization required
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 // Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.

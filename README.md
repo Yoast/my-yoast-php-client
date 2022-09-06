@@ -57,9 +57,9 @@ Please follow the [installation procedure](#installation--usage) and then run th
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -77,9 +77,9 @@ try {
 }
 
 // Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -97,9 +97,9 @@ try {
 }
 
 // Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -118,9 +118,9 @@ try {
 }
 
 // Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -137,9 +137,9 @@ try {
 }
 
 // Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -157,9 +157,9 @@ try {
 }
 
 // Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('access_token', 'YOUR_API_KEY');
+$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('access_token', 'Bearer');
+// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -196,6 +196,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**authYoastCallbackGet**](docs/Api/AuthApi.md#authyoastcallbackget) | **GET** /auth/yoast/callback | 
 *AuthApi* | [**authYoastGet**](docs/Api/AuthApi.md#authyoastget) | **GET** /auth/yoast | 
 *AuthApi* | [**logoutGet**](docs/Api/AuthApi.md#logoutget) | **GET** /logout | 
+*AuthenticationApi* | [**apiAuthIdGetAccessTokenGet**](docs/Api/AuthenticationApi.md#apiauthidgetaccesstokenget) | **GET** /api/auth/{id}/getAccessToken | 
 *AuthenticationApi* | [**apiAuthLoginPost**](docs/Api/AuthenticationApi.md#apiauthloginpost) | **POST** /api/auth/login | 
 *AuthenticationApi* | [**apiProfileGet**](docs/Api/AuthenticationApi.md#apiprofileget) | **GET** /api/profile | 
 *BlacklistApi* | [**apiBlacklistGet**](docs/Api/BlacklistApi.md#apiblacklistget) | **GET** /api/Blacklist | Gets blacklisted sites
@@ -267,6 +268,15 @@ Class | Method | HTTP request | Description
 *CustomerNoteApi* | [**apiCustomerNotesIdDelete**](docs/Api/CustomerNoteApi.md#apicustomernotesiddelete) | **DELETE** /api/CustomerNotes/{id} | 
 *CustomerNoteApi* | [**apiCustomerNotesIdGet**](docs/Api/CustomerNoteApi.md#apicustomernotesidget) | **GET** /api/CustomerNotes/{id} | Get a customer note
 *CustomerNoteApi* | [**apiCustomerNotesPost**](docs/Api/CustomerNoteApi.md#apicustomernotespost) | **POST** /api/CustomerNotes | 
+*DefaultApi* | [**apiAccountsIdTOTPTwoFactorConfigPost**](docs/Api/DefaultApi.md#apiaccountsidtotptwofactorconfigpost) | **POST** /api/accounts/{id}/TOTPTwoFactorConfig | 
+*DefaultApi* | [**apiSiteReviewAgencyAgencyIdGet**](docs/Api/DefaultApi.md#apisitereviewagencyagencyidget) | **GET** /api/SiteReview/Agency/{agencyId} | 
+*DefaultApi* | [**apiSiteReviewAgencyGet**](docs/Api/DefaultApi.md#apisitereviewagencyget) | **GET** /api/SiteReview/Agency | 
+*DefaultApi* | [**apiSiteReviewClientAgencyIdGet**](docs/Api/DefaultApi.md#apisitereviewclientagencyidget) | **GET** /api/SiteReview/Client/Agency/{id} | 
+*DefaultApi* | [**apiSiteReviewClientIdGet**](docs/Api/DefaultApi.md#apisitereviewclientidget) | **GET** /api/SiteReview/Client/{id} | 
+*DefaultApi* | [**apiSiteReviewClientIdPatch**](docs/Api/DefaultApi.md#apisitereviewclientidpatch) | **PATCH** /api/SiteReview/Client/{id} | 
+*DefaultApi* | [**apiSiteReviewClientPost**](docs/Api/DefaultApi.md#apisitereviewclientpost) | **POST** /api/SiteReview/Client | 
+*DefaultApi* | [**apiSiteReviewReviewAgencyIdGet**](docs/Api/DefaultApi.md#apisitereviewreviewagencyidget) | **GET** /api/SiteReview/Review/Agency/{id} | 
+*DefaultApi* | [**apiSiteReviewReviewPost**](docs/Api/DefaultApi.md#apisitereviewreviewpost) | **POST** /api/SiteReview/Review | 
 *DownloadApi* | [**apiDownloadsFileNameGet**](docs/Api/DownloadApi.md#apidownloadsfilenameget) | **GET** /api/downloads/file/{name} | Route to download a file
 *DownloadApi* | [**apiDownloadsFileNamePost**](docs/Api/DownloadApi.md#apidownloadsfilenamepost) | **POST** /api/downloads/file/{name} | Route to update a file.
 *EDDApi* | [**eddSlApiGet**](docs/Api/EDDApi.md#eddslapiget) | **GET** /edd-sl-api | Activate or deactivate a site license
@@ -368,7 +378,6 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AcademyCourseAccessListDto](docs/Model/AcademyCourseAccessListDto.md)
- - [AccessToken](docs/Model/AccessToken.md)
  - [ActivateAccountDto](docs/Model/ActivateAccountDto.md)
  - [AddJobDto](docs/Model/AddJobDto.md)
  - [AddSubscriptionDto](docs/Model/AddSubscriptionDto.md)
@@ -390,9 +399,11 @@ Class | Method | HTTP request | Description
  - [CourseEnrollmentFromAcademyDto](docs/Model/CourseEnrollmentFromAcademyDto.md)
  - [CreateAccountDto](docs/Model/CreateAccountDto.md)
  - [CreateBlacklistSiteDto](docs/Model/CreateBlacklistSiteDto.md)
+ - [CreateClientDto](docs/Model/CreateClientDto.md)
  - [CreateCustomerNoteDto](docs/Model/CreateCustomerNoteDto.md)
  - [CreateDto](docs/Model/CreateDto.md)
  - [CreateProvisionedSubscriptionDto](docs/Model/CreateProvisionedSubscriptionDto.md)
+ - [CreateReviewDto](docs/Model/CreateReviewDto.md)
  - [CreateSiteBodyDto](docs/Model/CreateSiteBodyDto.md)
  - [Customer](docs/Model/Customer.md)
  - [CustomerData](docs/Model/CustomerData.md)
@@ -454,6 +465,7 @@ Class | Method | HTTP request | Description
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionProvisioningResponseDto](docs/Model/SubscriptionProvisioningResponseDto.md)
  - [SwitchSubscriptionNumberOfTimesDto](docs/Model/SwitchSubscriptionNumberOfTimesDto.md)
+ - [TOTPTwoFactorConfigDto](docs/Model/TOTPTwoFactorConfigDto.md)
  - [TagDto](docs/Model/TagDto.md)
  - [TaxLineItem](docs/Model/TaxLineItem.md)
  - [Transaction](docs/Model/Transaction.md)
@@ -465,6 +477,7 @@ Class | Method | HTTP request | Description
  - [TwoFactorConfigDto](docs/Model/TwoFactorConfigDto.md)
  - [UnsubscribeDto](docs/Model/UnsubscribeDto.md)
  - [UpdateAllKVRequestDto](docs/Model/UpdateAllKVRequestDto.md)
+ - [UpdateClientDto](docs/Model/UpdateClientDto.md)
  - [UpdateDownloadDto](docs/Model/UpdateDownloadDto.md)
  - [UpdateDto](docs/Model/UpdateDto.md)
  - [UpdateFileDto](docs/Model/UpdateFileDto.md)
@@ -481,8 +494,8 @@ Class | Method | HTTP request | Description
 ## bearer
 
 - **Type**: API key
-- **API key parameter name**: access_token
-- **Location**: URL query string
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
 
 
 ## Author
