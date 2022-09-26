@@ -68,7 +68,6 @@ class CustomerData implements ModelInterface, ArrayAccess
 'firstName' => 'string',
 'lastName' => 'string',
 'isPayingCustomer' => 'bool',
-'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]',
 'role' => 'string',
 'shipping' => '\Yoast\MyYoastApiClient\Model\ShippingDto',
 'username' => 'string',
@@ -92,7 +91,6 @@ class CustomerData implements ModelInterface, ArrayAccess
 'firstName' => null,
 'lastName' => null,
 'isPayingCustomer' => null,
-'metaData' => null,
 'role' => null,
 'shipping' => null,
 'username' => null,
@@ -137,7 +135,6 @@ class CustomerData implements ModelInterface, ArrayAccess
 'firstName' => 'first_name',
 'lastName' => 'last_name',
 'isPayingCustomer' => 'is_paying_customer',
-'metaData' => 'meta_data',
 'role' => 'role',
 'shipping' => 'shipping',
 'username' => 'username',
@@ -161,7 +158,6 @@ class CustomerData implements ModelInterface, ArrayAccess
 'firstName' => 'setFirstName',
 'lastName' => 'setLastName',
 'isPayingCustomer' => 'setIsPayingCustomer',
-'metaData' => 'setMetaData',
 'role' => 'setRole',
 'shipping' => 'setShipping',
 'username' => 'setUsername',
@@ -185,7 +181,6 @@ class CustomerData implements ModelInterface, ArrayAccess
 'firstName' => 'getFirstName',
 'lastName' => 'getLastName',
 'isPayingCustomer' => 'getIsPayingCustomer',
-'metaData' => 'getMetaData',
 'role' => 'getRole',
 'shipping' => 'getShipping',
 'username' => 'getUsername',
@@ -261,7 +256,6 @@ class CustomerData implements ModelInterface, ArrayAccess
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
         $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['isPayingCustomer'] = isset($data['isPayingCustomer']) ? $data['isPayingCustomer'] : null;
-        $this->container['metaData'] = isset($data['metaData']) ? $data['metaData'] : null;
         $this->container['role'] = isset($data['role']) ? $data['role'] : null;
         $this->container['shipping'] = isset($data['shipping']) ? $data['shipping'] : null;
         $this->container['username'] = isset($data['username']) ? $data['username'] : null;
@@ -303,9 +297,6 @@ class CustomerData implements ModelInterface, ArrayAccess
         }
         if ($this->container['isPayingCustomer'] === null) {
             $invalidProperties[] = "'isPayingCustomer' can't be null";
-        }
-        if ($this->container['metaData'] === null) {
-            $invalidProperties[] = "'metaData' can't be null";
         }
         if ($this->container['role'] === null) {
             $invalidProperties[] = "'role' can't be null";
@@ -615,30 +606,6 @@ class CustomerData implements ModelInterface, ArrayAccess
     public function setIsPayingCustomer($isPayingCustomer)
     {
         $this->container['isPayingCustomer'] = $isPayingCustomer;
-
-        return $this;
-    }
-
-    /**
-     * Gets metaData
-     *
-     * @return \Yoast\MyYoastApiClient\Model\MetaDataDto[]
-     */
-    public function getMetaData()
-    {
-        return $this->container['metaData'];
-    }
-
-    /**
-     * Sets metaData
-     *
-     * @param \Yoast\MyYoastApiClient\Model\MetaDataDto[] $metaData metaData
-     *
-     * @return $this
-     */
-    public function setMetaData($metaData)
-    {
-        $this->container['metaData'] = $metaData;
 
         return $this;
     }

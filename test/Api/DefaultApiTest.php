@@ -81,12 +81,32 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for apiSiteReviewAgencyAgencyIdGet
+     * Test case for apiSiteReviewAgencyAddOwnerPost
      *
      * .
      *
      */
-    public function testApiSiteReviewAgencyAgencyIdGet()
+    public function testApiSiteReviewAgencyAddOwnerPost()
+    {
+    }
+
+    /**
+     * Test case for apiSiteReviewAgencyAllGet
+     *
+     * .
+     *
+     */
+    public function testApiSiteReviewAgencyAllGet()
+    {
+    }
+
+    /**
+     * Test case for apiSiteReviewAgencyDisconnectOwnerPost
+     *
+     * .
+     *
+     */
+    public function testApiSiteReviewAgencyDisconnectOwnerPost()
     {
     }
 
@@ -97,6 +117,36 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testApiSiteReviewAgencyGet()
+    {
+    }
+
+    /**
+     * Test case for apiSiteReviewAgencyIdGet
+     *
+     * .
+     *
+     */
+    public function testApiSiteReviewAgencyIdGet()
+    {
+    }
+
+    /**
+     * Test case for apiSiteReviewAgencyIdPut
+     *
+     * .
+     *
+     */
+    public function testApiSiteReviewAgencyIdPut()
+    {
+    }
+
+    /**
+     * Test case for apiSiteReviewAgencyPost
+     *
+     * .
+     *
+     */
+    public function testApiSiteReviewAgencyPost()
     {
     }
 

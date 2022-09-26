@@ -81,16 +81,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for apiSubscriptionsExpandIdSubscriptionNumberGet
-     *
-     * Expand subscriptions.
-     *
-     */
-    public function testApiSubscriptionsExpandIdSubscriptionNumberGet()
-    {
-    }
-
-    /**
      * Test case for apiSubscriptionsExpiringGet
      *
      * .

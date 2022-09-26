@@ -160,13 +160,6 @@ class CustomerDataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "metaData"
-     */
-    public function testPropertyMetaData()
-    {
-    }
-
-    /**
      * Test attribute "role"
      */
     public function testPropertyRole()

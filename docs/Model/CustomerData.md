@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **firstName** | **string** |  | 
 **lastName** | **string** |  | 
 **isPayingCustomer** | **bool** |  | 
-**metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
 **role** | **string** |  | 
 **shipping** | [**\Yoast\MyYoastApiClient\Model\ShippingDto**](ShippingDto.md) |  | 
 **username** | **string** |  | 

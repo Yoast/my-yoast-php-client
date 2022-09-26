@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**apiProfileGet**](AuthenticationApi.md#apiprofileget) | **GET** /api/profile | 
 
 # **apiAuthIdGetAccessTokenGet**
-> apiAuthIdGetAccessTokenGet($id)
+> \Yoast\MyYoastApiClient\Model\AccessTokenResponse apiAuthIdGetAccessTokenGet($id)
 
 
 
@@ -26,7 +26,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthenticationApi(
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $apiInstance->apiAuthIdGetAccessTokenGet($id);
+    $result = $apiInstance->apiAuthIdGetAccessTokenGet($id);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AuthenticationApi->apiAuthIdGetAccessTokenGet: ', $e->getMessage(), PHP_EOL;
 }
@@ -41,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\AccessTokenResponse**](../Model/AccessTokenResponse.md)
 
 ### Authorization
 
@@ -50,12 +51,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **apiAuthLoginPost**
-> apiAuthLoginPost($body)
+> \Yoast\MyYoastApiClient\Model\AccessTokenResponse apiAuthLoginPost($body)
 
 
 
@@ -72,7 +73,8 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthenticationApi(
 $body = new \Yoast\MyYoastApiClient\Model\LoginAccountDto(); // \Yoast\MyYoastApiClient\Model\LoginAccountDto | 
 
 try {
-    $apiInstance->apiAuthLoginPost($body);
+    $result = $apiInstance->apiAuthLoginPost($body);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AuthenticationApi->apiAuthLoginPost: ', $e->getMessage(), PHP_EOL;
 }
@@ -87,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\Yoast\MyYoastApiClient\Model\AccessTokenResponse**](../Model/AccessTokenResponse.md)
 
 ### Authorization
 
@@ -96,7 +98,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

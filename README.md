@@ -269,8 +269,13 @@ Class | Method | HTTP request | Description
 *CustomerNoteApi* | [**apiCustomerNotesIdGet**](docs/Api/CustomerNoteApi.md#apicustomernotesidget) | **GET** /api/CustomerNotes/{id} | Get a customer note
 *CustomerNoteApi* | [**apiCustomerNotesPost**](docs/Api/CustomerNoteApi.md#apicustomernotespost) | **POST** /api/CustomerNotes | 
 *DefaultApi* | [**apiAccountsIdTOTPTwoFactorConfigPost**](docs/Api/DefaultApi.md#apiaccountsidtotptwofactorconfigpost) | **POST** /api/accounts/{id}/TOTPTwoFactorConfig | 
-*DefaultApi* | [**apiSiteReviewAgencyAgencyIdGet**](docs/Api/DefaultApi.md#apisitereviewagencyagencyidget) | **GET** /api/SiteReview/Agency/{agencyId} | 
+*DefaultApi* | [**apiSiteReviewAgencyAddOwnerPost**](docs/Api/DefaultApi.md#apisitereviewagencyaddownerpost) | **POST** /api/SiteReview/Agency/add-owner | 
+*DefaultApi* | [**apiSiteReviewAgencyAllGet**](docs/Api/DefaultApi.md#apisitereviewagencyallget) | **GET** /api/SiteReview/Agency/all | 
+*DefaultApi* | [**apiSiteReviewAgencyDisconnectOwnerPost**](docs/Api/DefaultApi.md#apisitereviewagencydisconnectownerpost) | **POST** /api/SiteReview/Agency/disconnect-owner | 
 *DefaultApi* | [**apiSiteReviewAgencyGet**](docs/Api/DefaultApi.md#apisitereviewagencyget) | **GET** /api/SiteReview/Agency | 
+*DefaultApi* | [**apiSiteReviewAgencyIdGet**](docs/Api/DefaultApi.md#apisitereviewagencyidget) | **GET** /api/SiteReview/Agency/{id} | 
+*DefaultApi* | [**apiSiteReviewAgencyIdPut**](docs/Api/DefaultApi.md#apisitereviewagencyidput) | **PUT** /api/SiteReview/Agency/{id} | 
+*DefaultApi* | [**apiSiteReviewAgencyPost**](docs/Api/DefaultApi.md#apisitereviewagencypost) | **POST** /api/SiteReview/Agency | 
 *DefaultApi* | [**apiSiteReviewClientAgencyIdGet**](docs/Api/DefaultApi.md#apisitereviewclientagencyidget) | **GET** /api/SiteReview/Client/Agency/{id} | 
 *DefaultApi* | [**apiSiteReviewClientIdGet**](docs/Api/DefaultApi.md#apisitereviewclientidget) | **GET** /api/SiteReview/Client/{id} | 
 *DefaultApi* | [**apiSiteReviewClientIdPatch**](docs/Api/DefaultApi.md#apisitereviewclientidpatch) | **PATCH** /api/SiteReview/Client/{id} | 
@@ -348,7 +353,6 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**apiSitesSwitchSubscriptionPost**](docs/Api/SiteApi.md#apisitesswitchsubscriptionpost) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
 *SiteApi* | [**apiSitesTransferPost**](docs/Api/SiteApi.md#apisitestransferpost) | **POST** /api/Sites/transfer | Transfer sites.
 *SubscriptionApi* | [**apiSubscriptionsCalculateExpansionPriceIdSubscriptionNumberGet**](docs/Api/SubscriptionApi.md#apisubscriptionscalculateexpansionpriceidsubscriptionnumberget) | **GET** /api/Subscriptions/calculateExpansionPrice/{id}/{subscriptionNumber} | Calculate expansion price
-*SubscriptionApi* | [**apiSubscriptionsExpandIdSubscriptionNumberGet**](docs/Api/SubscriptionApi.md#apisubscriptionsexpandidsubscriptionnumberget) | **GET** /api/Subscriptions/expand/{id}/{subscriptionNumber} | Expand subscriptions
 *SubscriptionApi* | [**apiSubscriptionsExpiringGet**](docs/Api/SubscriptionApi.md#apisubscriptionsexpiringget) | **GET** /api/Subscriptions/expiring | 
 *SubscriptionApi* | [**apiSubscriptionsGet**](docs/Api/SubscriptionApi.md#apisubscriptionsget) | **GET** /api/Subscriptions | Get subscriptions
 *SubscriptionApi* | [**apiSubscriptionsIdDelete**](docs/Api/SubscriptionApi.md#apisubscriptionsiddelete) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
@@ -378,8 +382,11 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AcademyCourseAccessListDto](docs/Model/AcademyCourseAccessListDto.md)
+ - [AccessTokenResponse](docs/Model/AccessTokenResponse.md)
  - [ActivateAccountDto](docs/Model/ActivateAccountDto.md)
+ - [AddAgencyDto](docs/Model/AddAgencyDto.md)
  - [AddJobDto](docs/Model/AddJobDto.md)
+ - [AddOwnerToAgencyDto](docs/Model/AddOwnerToAgencyDto.md)
  - [AddSubscriptionDto](docs/Model/AddSubscriptionDto.md)
  - [Admission](docs/Model/Admission.md)
  - [AutoRenewalCountResponseDto](docs/Model/AutoRenewalCountResponseDto.md)
@@ -410,6 +417,7 @@ Class | Method | HTTP request | Description
  - [CustomerDetails](docs/Model/CustomerDetails.md)
  - [CustomerFromWooDto](docs/Model/CustomerFromWooDto.md)
  - [CustomerNote](docs/Model/CustomerNote.md)
+ - [DisconnectOwnerFromAgencyDto](docs/Model/DisconnectOwnerFromAgencyDto.md)
  - [EddDTO](docs/Model/EddDTO.md)
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)
@@ -476,6 +484,7 @@ Class | Method | HTTP request | Description
  - [TransferSiteDto](docs/Model/TransferSiteDto.md)
  - [TwoFactorConfigDto](docs/Model/TwoFactorConfigDto.md)
  - [UnsubscribeDto](docs/Model/UnsubscribeDto.md)
+ - [UpdateAgencyDto](docs/Model/UpdateAgencyDto.md)
  - [UpdateAllKVRequestDto](docs/Model/UpdateAllKVRequestDto.md)
  - [UpdateClientDto](docs/Model/UpdateClientDto.md)
  - [UpdateDownloadDto](docs/Model/UpdateDownloadDto.md)
