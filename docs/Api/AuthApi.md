@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**logoutGet**](AuthApi.md#logoutget) | **GET** /logout | 
 
 # **apiCustomersLoginPost**
-> string apiCustomersLoginPost($body)
+> \Yoast\MyYoastApiClient\Model\AccessTokenResponse apiCustomersLoginPost($body)
 
 Log in a user on MyYoast.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**\Yoast\MyYoastApiClient\Model\AccessTokenResponse**](../Model/AccessTokenResponse.md)
 
 ### Authorization
 

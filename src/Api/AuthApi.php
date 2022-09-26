@@ -95,7 +95,7 @@ class AuthApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return string
+     * @return \Yoast\MyYoastApiClient\Model\AccessTokenResponse
      */
     public function apiCustomersLoginPost($body)
     {
@@ -112,11 +112,11 @@ class AuthApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of string, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\AccessTokenResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiCustomersLoginPostWithHttpInfo($body)
     {
-        $returnType = 'string';
+        $returnType = '\Yoast\MyYoastApiClient\Model\AccessTokenResponse';
         $request = $this->apiCustomersLoginPostRequest($body);
 
         try {
@@ -168,7 +168,7 @@ class AuthApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'string',
+                        '\Yoast\MyYoastApiClient\Model\AccessTokenResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -210,7 +210,7 @@ class AuthApi
      */
     public function apiCustomersLoginPostAsyncWithHttpInfo($body)
     {
-        $returnType = 'string';
+        $returnType = '\Yoast\MyYoastApiClient\Model\AccessTokenResponse';
         $request = $this->apiCustomersLoginPostRequest($body);
 
         return $this->client
