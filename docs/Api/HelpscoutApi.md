@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**helpscout**](HelpscoutApi.md#helpscout) | **POST** /helpscout | Get information about a customer
 
 # **helpscout**
-> \Yoast\MyYoastApiClient\Model\ helpscout($body, $xHelpScoutSignature)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto helpscout($body, $xHelpScoutSignature)
 
 Get information about a customer
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 

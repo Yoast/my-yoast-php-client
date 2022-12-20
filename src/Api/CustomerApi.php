@@ -95,7 +95,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\ActivateAccountResponseDto
      */
     public function activate($body)
     {
@@ -112,11 +112,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\ActivateAccountResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function activateWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\ActivateAccountResponseDto';
         $request = $this->activateRequest($body);
 
         try {
@@ -168,7 +168,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\ActivateAccountResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -210,7 +210,7 @@ class CustomerApi
      */
     public function activateAsyncWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\ActivateAccountResponseDto';
         $request = $this->activateRequest($body);
 
         return $this->client
@@ -589,7 +589,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function cancelSubscription($body, $customerId, $id)
     {
@@ -608,11 +608,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelSubscriptionWithHttpInfo($body, $customerId, $id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->cancelSubscriptionRequest($body, $customerId, $id);
 
         try {
@@ -664,7 +664,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -710,7 +710,7 @@ class CustomerApi
      */
     public function cancelSubscriptionAsyncWithHttpInfo($body, $customerId, $id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->cancelSubscriptionRequest($body, $customerId, $id);
 
         return $this->client
@@ -1383,7 +1383,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function createAccount($body)
     {
@@ -1400,11 +1400,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->createAccountRequest($body);
 
         try {
@@ -1456,7 +1456,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1498,7 +1498,7 @@ class CustomerApi
      */
     public function createAccountAsyncWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->createAccountRequest($body);
 
         return $this->client
@@ -2918,7 +2918,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function enable($id)
     {
@@ -2935,11 +2935,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function enableWithHttpInfo($id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->enableRequest($id);
 
         try {
@@ -2991,7 +2991,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3033,7 +3033,7 @@ class CustomerApi
      */
     public function enableAsyncWithHttpInfo($id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->enableRequest($id);
 
         return $this->client
@@ -3441,7 +3441,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function getAllRoles()
     {
@@ -3457,11 +3457,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllRolesWithHttpInfo()
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->getAllRolesRequest();
 
         try {
@@ -3513,7 +3513,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3553,7 +3553,7 @@ class CustomerApi
      */
     public function getAllRolesAsyncWithHttpInfo()
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->getAllRolesRequest();
 
         return $this->client
@@ -9010,7 +9010,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function profile($id)
     {
@@ -9025,11 +9025,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function profileWithHttpInfo($id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->profileRequest($id);
 
         try {
@@ -9081,7 +9081,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9123,7 +9123,7 @@ class CustomerApi
      */
     public function profileAsyncWithHttpInfo($id)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->profileRequest($id);
 
         return $this->client
@@ -9270,7 +9270,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function resetPassword($body)
     {
@@ -9287,11 +9287,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function resetPasswordWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->resetPasswordRequest($body);
 
         try {
@@ -9343,7 +9343,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9385,7 +9385,7 @@ class CustomerApi
      */
     public function resetPasswordAsyncWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->resetPasswordRequest($body);
 
         return $this->client
@@ -9527,7 +9527,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function sendResetPasswordEmail($body)
     {
@@ -9544,11 +9544,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function sendResetPasswordEmailWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->sendResetPasswordEmailRequest($body);
 
         try {
@@ -9600,7 +9600,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9642,7 +9642,7 @@ class CustomerApi
      */
     public function sendResetPasswordEmailAsyncWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->sendResetPasswordEmailRequest($body);
 
         return $this->client
@@ -9784,7 +9784,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function signup($body)
     {
@@ -9801,11 +9801,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function signupWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->signupRequest($body);
 
         try {
@@ -9857,7 +9857,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9899,7 +9899,7 @@ class CustomerApi
      */
     public function signupAsyncWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->signupRequest($body);
 
         return $this->client
@@ -10041,7 +10041,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto
      */
     public function status($customerId)
     {
@@ -10058,11 +10058,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function statusWithHttpInfo($customerId)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto';
         $request = $this->statusRequest($customerId);
 
         try {
@@ -10114,7 +10114,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10156,7 +10156,7 @@ class CustomerApi
      */
     public function statusAsyncWithHttpInfo($customerId)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto';
         $request = $this->statusRequest($customerId);
 
         return $this->client
@@ -10303,7 +10303,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto
      */
     public function subscribe($customerId)
     {
@@ -10320,11 +10320,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function subscribeWithHttpInfo($customerId)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto';
         $request = $this->subscribeRequest($customerId);
 
         try {
@@ -10376,7 +10376,7 @@ class CustomerApi
                 case 201:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10418,7 +10418,7 @@ class CustomerApi
      */
     public function subscribeAsyncWithHttpInfo($customerId)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto';
         $request = $this->subscribeRequest($customerId);
 
         return $this->client
@@ -10566,7 +10566,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function subscribeByEmail($body, $list)
     {
@@ -10584,11 +10584,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function subscribeByEmailWithHttpInfo($body, $list)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->subscribeByEmailRequest($body, $list);
 
         try {
@@ -10640,7 +10640,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10684,7 +10684,7 @@ class CustomerApi
      */
     public function subscribeByEmailAsyncWithHttpInfo($body, $list)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->subscribeByEmailRequest($body, $list);
 
         return $this->client
@@ -10841,7 +10841,7 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto
      */
     public function unsubscribe($customerId)
     {
@@ -10858,11 +10858,11 @@ class CustomerApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function unsubscribeWithHttpInfo($customerId)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto';
         $request = $this->unsubscribeRequest($customerId);
 
         try {
@@ -10914,7 +10914,7 @@ class CustomerApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10956,7 +10956,7 @@ class CustomerApi
      */
     public function unsubscribeAsyncWithHttpInfo($customerId)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto';
         $request = $this->unsubscribeRequest($customerId);
 
         return $this->client

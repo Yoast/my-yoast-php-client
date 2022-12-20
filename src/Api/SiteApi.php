@@ -372,7 +372,7 @@ class SiteApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function current($token = null, $url = null)
     {
@@ -390,11 +390,11 @@ class SiteApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function currentWithHttpInfo($token = null, $url = null)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->currentRequest($token, $url);
 
         try {
@@ -446,7 +446,7 @@ class SiteApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -490,7 +490,7 @@ class SiteApi
      */
     public function currentAsyncWithHttpInfo($token = null, $url = null)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->currentRequest($token, $url);
 
         return $this->client
@@ -633,7 +633,7 @@ class SiteApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function currentClone($token = null, $url = null)
     {
@@ -651,11 +651,11 @@ class SiteApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function currentCloneWithHttpInfo($token = null, $url = null)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->currentCloneRequest($token, $url);
 
         try {
@@ -707,7 +707,7 @@ class SiteApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -751,7 +751,7 @@ class SiteApi
      */
     public function currentCloneAsyncWithHttpInfo($token = null, $url = null)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->currentCloneRequest($token, $url);
 
         return $this->client
@@ -2110,7 +2110,7 @@ class SiteApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function index($token, $url, $method)
     {
@@ -2127,11 +2127,11 @@ class SiteApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function indexWithHttpInfo($token, $url, $method)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->indexRequest($token, $url, $method);
 
         try {
@@ -2183,7 +2183,7 @@ class SiteApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2229,7 +2229,7 @@ class SiteApi
      */
     public function indexAsyncWithHttpInfo($token, $url, $method)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->indexRequest($token, $url, $method);
 
         return $this->client
@@ -2944,7 +2944,7 @@ class SiteApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function switchSubscriptionNumberOfTimes($body)
     {
@@ -2961,11 +2961,11 @@ class SiteApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function switchSubscriptionNumberOfTimesWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->switchSubscriptionNumberOfTimesRequest($body);
 
         try {
@@ -3017,7 +3017,7 @@ class SiteApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3059,7 +3059,7 @@ class SiteApi
      */
     public function switchSubscriptionNumberOfTimesAsyncWithHttpInfo($body)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->switchSubscriptionNumberOfTimesRequest($body);
 
         return $this->client

@@ -69,7 +69,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **current**
-> \Yoast\MyYoastApiClient\Model\ current($token, $url)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto current($token, $url)
 
 Get the current connected site for an access token.
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **currentClone**
-> \Yoast\MyYoastApiClient\Model\ currentClone($token, $url)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto currentClone($token, $url)
 
 Get the current connected site for an access token.
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -410,7 +410,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **index**
-> \Yoast\MyYoastApiClient\Model\ index($token, $url, $method)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto index($token, $url, $method)
 
 
 
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -559,7 +559,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **switchSubscriptionNumberOfTimes**
-> \Yoast\MyYoastApiClient\Model\ switchSubscriptionNumberOfTimes($body)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto switchSubscriptionNumberOfTimes($body)
 
 Switches the subscription for a number of times.
 
@@ -594,7 +594,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 

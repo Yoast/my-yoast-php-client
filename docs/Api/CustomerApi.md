@@ -50,7 +50,7 @@ Method | HTTP request | Description
 [**uploadAvatar**](CustomerApi.md#uploadavatar) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
 
 # **activate**
-> \Yoast\MyYoastApiClient\Model\ activate($body)
+> \Yoast\MyYoastApiClient\Model\ActivateAccountResponseDto activate($body)
 
 Activate the account of a user
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\ActivateAccountResponseDto**](../Model/ActivateAccountResponseDto.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelSubscription**
-> \Yoast\MyYoastApiClient\Model\ cancelSubscription($body, $customerId, $id)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto cancelSubscription($body, $customerId, $id)
 
 Cancel (part of) a subscription.
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -297,7 +297,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAccount**
-> \Yoast\MyYoastApiClient\Model\ createAccount($body)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto createAccount($body)
 
 Creates an account for a customer on yoast.com without the signup flow.
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -586,7 +586,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **enable**
-> \Yoast\MyYoastApiClient\Model\ enable($id)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto enable($id)
 
 Enables the customer with the given ID
 
@@ -621,7 +621,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -684,7 +684,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllRoles**
-> \Yoast\MyYoastApiClient\Model\ getAllRoles()
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto getAllRoles()
 
 Get all existing roles with their ID.
 
@@ -713,7 +713,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -1729,7 +1729,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **profile**
-> \Yoast\MyYoastApiClient\Model\ profile($id)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto profile($id)
 
 
 
@@ -1762,7 +1762,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -1776,7 +1776,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **resetPassword**
-> \Yoast\MyYoastApiClient\Model\ resetPassword($body)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto resetPassword($body)
 
 Reset the user's password.
 
@@ -1811,7 +1811,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -1825,7 +1825,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendResetPasswordEmail**
-> \Yoast\MyYoastApiClient\Model\ sendResetPasswordEmail($body)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto sendResetPasswordEmail($body)
 
 Send a reset password email to the user.
 
@@ -1860,7 +1860,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -1874,7 +1874,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **signup**
-> \Yoast\MyYoastApiClient\Model\ signup($body)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto signup($body)
 
 Signup a customer on yoast.com following the normal signup flow.
 
@@ -1909,7 +1909,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -1923,7 +1923,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **status**
-> \Yoast\MyYoastApiClient\Model\ status($customerId)
+> \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto status($customerId)
 
 Newsletter subscription status
 
@@ -1956,7 +1956,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto**](../Model/SubscriptionStatusDto.md)
 
 ### Authorization
 
@@ -1970,7 +1970,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscribe**
-> \Yoast\MyYoastApiClient\Model\ subscribe($customerId)
+> \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto subscribe($customerId)
 
 Subscribe to the newsletter
 
@@ -2003,7 +2003,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto**](../Model/SubscriptionStatusDto.md)
 
 ### Authorization
 
@@ -2017,7 +2017,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **subscribeByEmail**
-> \Yoast\MyYoastApiClient\Model\ subscribeByEmail($body, $list)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto subscribeByEmail($body, $list)
 
 Subscribes a user to a newsletter
 
@@ -2054,7 +2054,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
 
 ### Authorization
 
@@ -2068,7 +2068,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **unsubscribe**
-> \Yoast\MyYoastApiClient\Model\ unsubscribe($customerId)
+> \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto unsubscribe($customerId)
 
 Unsubscribe from the newsletter
 
@@ -2101,7 +2101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+[**\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto**](../Model/SubscriptionStatusDto.md)
 
 ### Authorization
 

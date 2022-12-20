@@ -96,7 +96,7 @@ class HelpscoutApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
+     * @return \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto
      */
     public function helpscout($body, $xHelpScoutSignature)
     {
@@ -114,11 +114,11 @@ class HelpscoutApi
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
     public function helpscoutWithHttpInfo($body, $xHelpScoutSignature)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->helpscoutRequest($body, $xHelpScoutSignature);
 
         try {
@@ -170,7 +170,7 @@ class HelpscoutApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
+                        '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -214,7 +214,7 @@ class HelpscoutApi
      */
     public function helpscoutAsyncWithHttpInfo($body, $xHelpScoutSignature)
     {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $returnType = '\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto';
         $request = $this->helpscoutRequest($body, $xHelpScoutSignature);
 
         return $this->client
