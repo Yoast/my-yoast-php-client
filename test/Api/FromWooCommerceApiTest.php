@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,42 +71,42 @@ class FromWooCommerceApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for fromWooCommerceControllerCustomerFromWooCommerce
+     * Test case for customerFromWooCommerce
      *
      * Update or create a customer.
      *
      */
-    public function testFromWooCommerceControllerCustomerFromWooCommerce()
+    public function testCustomerFromWooCommerce()
     {
     }
 
     /**
-     * Test case for fromWooCommerceControllerOrderFromWooCommerce
+     * Test case for orderFromWooCommerce
      *
      * Sync orders to MyYoast..
      *
      */
-    public function testFromWooCommerceControllerOrderFromWooCommerce()
+    public function testOrderFromWooCommerce()
     {
     }
 
     /**
-     * Test case for fromWooCommerceControllerProductFromWooCommerce
+     * Test case for productFromWooCommerce
      *
      * Sync products to MyYoast..
      *
      */
-    public function testFromWooCommerceControllerProductFromWooCommerce()
+    public function testProductFromWooCommerce()
     {
     }
 
     /**
-     * Test case for fromWooCommerceControllerProductGroupFromWooCommerce
+     * Test case for productGroupFromWooCommerce
      *
      * Sync products to MyYoast..
      *
      */
-    public function testFromWooCommerceControllerProductGroupFromWooCommerce()
+    public function testProductGroupFromWooCommerce()
     {
     }
 }

@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class ExportOrdersApi
     }
 
     /**
-     * Operation exportOrdersControllerExportOrders
+     * Operation exportOrders
      *
      * Creates an export for orders
      *
@@ -100,14 +100,14 @@ class ExportOrdersApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function exportOrdersControllerExportOrders($year, $month, $type, $password = null)
+    public function exportOrders($year, $month, $type, $password = null)
     {
-        list($response) = $this->exportOrdersControllerExportOrdersWithHttpInfo($year, $month, $type, $password);
+        list($response) = $this->exportOrdersWithHttpInfo($year, $month, $type, $password);
         return $response;
     }
 
     /**
-     * Operation exportOrdersControllerExportOrdersWithHttpInfo
+     * Operation exportOrdersWithHttpInfo
      *
      * Creates an export for orders
      *
@@ -120,10 +120,10 @@ class ExportOrdersApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function exportOrdersControllerExportOrdersWithHttpInfo($year, $month, $type, $password = null)
+    public function exportOrdersWithHttpInfo($year, $month, $type, $password = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->exportOrdersControllerExportOrdersRequest($year, $month, $type, $password);
+        $request = $this->exportOrdersRequest($year, $month, $type, $password);
 
         try {
             $options = $this->createHttpClientOption();
@@ -185,7 +185,7 @@ class ExportOrdersApi
     }
 
     /**
-     * Operation exportOrdersControllerExportOrdersAsync
+     * Operation exportOrdersAsync
      *
      * Creates an export for orders
      *
@@ -197,9 +197,9 @@ class ExportOrdersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportOrdersControllerExportOrdersAsync($year, $month, $type, $password = null)
+    public function exportOrdersAsync($year, $month, $type, $password = null)
     {
-        return $this->exportOrdersControllerExportOrdersAsyncWithHttpInfo($year, $month, $type, $password)
+        return $this->exportOrdersAsyncWithHttpInfo($year, $month, $type, $password)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -208,7 +208,7 @@ class ExportOrdersApi
     }
 
     /**
-     * Operation exportOrdersControllerExportOrdersAsyncWithHttpInfo
+     * Operation exportOrdersAsyncWithHttpInfo
      *
      * Creates an export for orders
      *
@@ -220,10 +220,10 @@ class ExportOrdersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportOrdersControllerExportOrdersAsyncWithHttpInfo($year, $month, $type, $password = null)
+    public function exportOrdersAsyncWithHttpInfo($year, $month, $type, $password = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->exportOrdersControllerExportOrdersRequest($year, $month, $type, $password);
+        $request = $this->exportOrdersRequest($year, $month, $type, $password);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -263,7 +263,7 @@ class ExportOrdersApi
     }
 
     /**
-     * Create request for operation 'exportOrdersControllerExportOrders'
+     * Create request for operation 'exportOrders'
      *
      * @param  string $year (required)
      * @param  string $month (required)
@@ -273,24 +273,24 @@ class ExportOrdersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function exportOrdersControllerExportOrdersRequest($year, $month, $type, $password = null)
+    protected function exportOrdersRequest($year, $month, $type, $password = null)
     {
         // verify the required parameter 'year' is set
         if ($year === null || (is_array($year) && count($year) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $year when calling exportOrdersControllerExportOrders'
+                'Missing the required parameter $year when calling exportOrders'
             );
         }
         // verify the required parameter 'month' is set
         if ($month === null || (is_array($month) && count($month) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $month when calling exportOrdersControllerExportOrders'
+                'Missing the required parameter $month when calling exportOrders'
             );
         }
         // verify the required parameter 'type' is set
         if ($type === null || (is_array($type) && count($type) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $type when calling exportOrdersControllerExportOrders'
+                'Missing the required parameter $type when calling exportOrders'
             );
         }
 
@@ -396,7 +396,7 @@ class ExportOrdersApi
     }
 
     /**
-     * Operation exportOrdersControllerExportOrdersV2
+     * Operation exportOrdersV2
      *
      * Creates an export for orders
      *
@@ -409,14 +409,14 @@ class ExportOrdersApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function exportOrdersControllerExportOrdersV2($from, $to, $type, $password = null)
+    public function exportOrdersV2($from, $to, $type, $password = null)
     {
-        list($response) = $this->exportOrdersControllerExportOrdersV2WithHttpInfo($from, $to, $type, $password);
+        list($response) = $this->exportOrdersV2WithHttpInfo($from, $to, $type, $password);
         return $response;
     }
 
     /**
-     * Operation exportOrdersControllerExportOrdersV2WithHttpInfo
+     * Operation exportOrdersV2WithHttpInfo
      *
      * Creates an export for orders
      *
@@ -429,10 +429,10 @@ class ExportOrdersApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function exportOrdersControllerExportOrdersV2WithHttpInfo($from, $to, $type, $password = null)
+    public function exportOrdersV2WithHttpInfo($from, $to, $type, $password = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->exportOrdersControllerExportOrdersV2Request($from, $to, $type, $password);
+        $request = $this->exportOrdersV2Request($from, $to, $type, $password);
 
         try {
             $options = $this->createHttpClientOption();
@@ -494,7 +494,7 @@ class ExportOrdersApi
     }
 
     /**
-     * Operation exportOrdersControllerExportOrdersV2Async
+     * Operation exportOrdersV2Async
      *
      * Creates an export for orders
      *
@@ -506,9 +506,9 @@ class ExportOrdersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportOrdersControllerExportOrdersV2Async($from, $to, $type, $password = null)
+    public function exportOrdersV2Async($from, $to, $type, $password = null)
     {
-        return $this->exportOrdersControllerExportOrdersV2AsyncWithHttpInfo($from, $to, $type, $password)
+        return $this->exportOrdersV2AsyncWithHttpInfo($from, $to, $type, $password)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -517,7 +517,7 @@ class ExportOrdersApi
     }
 
     /**
-     * Operation exportOrdersControllerExportOrdersV2AsyncWithHttpInfo
+     * Operation exportOrdersV2AsyncWithHttpInfo
      *
      * Creates an export for orders
      *
@@ -529,10 +529,10 @@ class ExportOrdersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function exportOrdersControllerExportOrdersV2AsyncWithHttpInfo($from, $to, $type, $password = null)
+    public function exportOrdersV2AsyncWithHttpInfo($from, $to, $type, $password = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->exportOrdersControllerExportOrdersV2Request($from, $to, $type, $password);
+        $request = $this->exportOrdersV2Request($from, $to, $type, $password);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -572,7 +572,7 @@ class ExportOrdersApi
     }
 
     /**
-     * Create request for operation 'exportOrdersControllerExportOrdersV2'
+     * Create request for operation 'exportOrdersV2'
      *
      * @param  string $from (required)
      * @param  string $to (required)
@@ -582,24 +582,24 @@ class ExportOrdersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function exportOrdersControllerExportOrdersV2Request($from, $to, $type, $password = null)
+    protected function exportOrdersV2Request($from, $to, $type, $password = null)
     {
         // verify the required parameter 'from' is set
         if ($from === null || (is_array($from) && count($from) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $from when calling exportOrdersControllerExportOrdersV2'
+                'Missing the required parameter $from when calling exportOrdersV2'
             );
         }
         // verify the required parameter 'to' is set
         if ($to === null || (is_array($to) && count($to) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $to when calling exportOrdersControllerExportOrdersV2'
+                'Missing the required parameter $to when calling exportOrdersV2'
             );
         }
         // verify the required parameter 'type' is set
         if ($type === null || (is_array($type) && count($type) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $type when calling exportOrdersControllerExportOrdersV2'
+                'Missing the required parameter $type when calling exportOrdersV2'
             );
         }
 

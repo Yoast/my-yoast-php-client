@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerCreateOne
+     * Operation createOne
      *
      * Creates a blacklisted site
      *
@@ -97,14 +97,14 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function blacklistControllerCreateOne($body)
+    public function createOne($body)
     {
-        list($response) = $this->blacklistControllerCreateOneWithHttpInfo($body);
+        list($response) = $this->createOneWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation blacklistControllerCreateOneWithHttpInfo
+     * Operation createOneWithHttpInfo
      *
      * Creates a blacklisted site
      *
@@ -114,10 +114,10 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function blacklistControllerCreateOneWithHttpInfo($body)
+    public function createOneWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->blacklistControllerCreateOneRequest($body);
+        $request = $this->createOneRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -179,7 +179,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerCreateOneAsync
+     * Operation createOneAsync
      *
      * Creates a blacklisted site
      *
@@ -188,9 +188,9 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blacklistControllerCreateOneAsync($body)
+    public function createOneAsync($body)
     {
-        return $this->blacklistControllerCreateOneAsyncWithHttpInfo($body)
+        return $this->createOneAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,7 +199,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerCreateOneAsyncWithHttpInfo
+     * Operation createOneAsyncWithHttpInfo
      *
      * Creates a blacklisted site
      *
@@ -208,10 +208,10 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blacklistControllerCreateOneAsyncWithHttpInfo($body)
+    public function createOneAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->blacklistControllerCreateOneRequest($body);
+        $request = $this->createOneRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,19 +251,19 @@ class BlacklistApi
     }
 
     /**
-     * Create request for operation 'blacklistControllerCreateOne'
+     * Create request for operation 'createOne'
      *
      * @param  \Yoast\MyYoastApiClient\Model\CreateBlacklistSiteDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function blacklistControllerCreateOneRequest($body)
+    protected function createOneRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling blacklistControllerCreateOne'
+                'Missing the required parameter $body when calling createOne'
             );
         }
 
@@ -322,10 +322,6 @@ class BlacklistApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -348,7 +344,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerDeleteOne
+     * Operation deleteOne
      *
      * Remove a site from the blacklist
      *
@@ -358,14 +354,14 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function blacklistControllerDeleteOne($id)
+    public function deleteOne($id)
     {
-        list($response) = $this->blacklistControllerDeleteOneWithHttpInfo($id);
+        list($response) = $this->deleteOneWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation blacklistControllerDeleteOneWithHttpInfo
+     * Operation deleteOneWithHttpInfo
      *
      * Remove a site from the blacklist
      *
@@ -375,10 +371,10 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function blacklistControllerDeleteOneWithHttpInfo($id)
+    public function deleteOneWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->blacklistControllerDeleteOneRequest($id);
+        $request = $this->deleteOneRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -440,7 +436,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerDeleteOneAsync
+     * Operation deleteOneAsync
      *
      * Remove a site from the blacklist
      *
@@ -449,9 +445,9 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blacklistControllerDeleteOneAsync($id)
+    public function deleteOneAsync($id)
     {
-        return $this->blacklistControllerDeleteOneAsyncWithHttpInfo($id)
+        return $this->deleteOneAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -460,7 +456,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerDeleteOneAsyncWithHttpInfo
+     * Operation deleteOneAsyncWithHttpInfo
      *
      * Remove a site from the blacklist
      *
@@ -469,10 +465,10 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blacklistControllerDeleteOneAsyncWithHttpInfo($id)
+    public function deleteOneAsyncWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->blacklistControllerDeleteOneRequest($id);
+        $request = $this->deleteOneRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -512,19 +508,19 @@ class BlacklistApi
     }
 
     /**
-     * Create request for operation 'blacklistControllerDeleteOne'
+     * Create request for operation 'deleteOne'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function blacklistControllerDeleteOneRequest($id)
+    protected function deleteOneRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling blacklistControllerDeleteOne'
+                'Missing the required parameter $id when calling deleteOne'
             );
         }
 
@@ -588,10 +584,6 @@ class BlacklistApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -614,7 +606,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerGetMany
+     * Operation getMany
      *
      * Gets blacklisted sites
      *
@@ -624,14 +616,14 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Blacklist[]
      */
-    public function blacklistControllerGetMany($filter = null)
+    public function getMany($filter = null)
     {
-        list($response) = $this->blacklistControllerGetManyWithHttpInfo($filter);
+        list($response) = $this->getManyWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation blacklistControllerGetManyWithHttpInfo
+     * Operation getManyWithHttpInfo
      *
      * Gets blacklisted sites
      *
@@ -641,10 +633,10 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Blacklist[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function blacklistControllerGetManyWithHttpInfo($filter = null)
+    public function getManyWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Blacklist[]';
-        $request = $this->blacklistControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -706,7 +698,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerGetManyAsync
+     * Operation getManyAsync
      *
      * Gets blacklisted sites
      *
@@ -715,9 +707,9 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blacklistControllerGetManyAsync($filter = null)
+    public function getManyAsync($filter = null)
     {
-        return $this->blacklistControllerGetManyAsyncWithHttpInfo($filter)
+        return $this->getManyAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -726,7 +718,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerGetManyAsyncWithHttpInfo
+     * Operation getManyAsyncWithHttpInfo
      *
      * Gets blacklisted sites
      *
@@ -735,10 +727,10 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blacklistControllerGetManyAsyncWithHttpInfo($filter = null)
+    public function getManyAsyncWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Blacklist[]';
-        $request = $this->blacklistControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -778,14 +770,14 @@ class BlacklistApi
     }
 
     /**
-     * Create request for operation 'blacklistControllerGetMany'
+     * Create request for operation 'getMany'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function blacklistControllerGetManyRequest($filter = null)
+    protected function getManyRequest($filter = null)
     {
 
         $resourcePath = '/api/Blacklist';
@@ -844,10 +836,6 @@ class BlacklistApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -870,7 +858,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerGetManyPaged
+     * Operation getManyPaged
      *
      * Gets blacklisted sites
      *
@@ -880,14 +868,14 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Blacklist[]
      */
-    public function blacklistControllerGetManyPaged($filter = null)
+    public function getManyPaged($filter = null)
     {
-        list($response) = $this->blacklistControllerGetManyPagedWithHttpInfo($filter);
+        list($response) = $this->getManyPagedWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation blacklistControllerGetManyPagedWithHttpInfo
+     * Operation getManyPagedWithHttpInfo
      *
      * Gets blacklisted sites
      *
@@ -897,10 +885,10 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Blacklist[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function blacklistControllerGetManyPagedWithHttpInfo($filter = null)
+    public function getManyPagedWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Blacklist[]';
-        $request = $this->blacklistControllerGetManyPagedRequest($filter);
+        $request = $this->getManyPagedRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -962,7 +950,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerGetManyPagedAsync
+     * Operation getManyPagedAsync
      *
      * Gets blacklisted sites
      *
@@ -971,9 +959,9 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blacklistControllerGetManyPagedAsync($filter = null)
+    public function getManyPagedAsync($filter = null)
     {
-        return $this->blacklistControllerGetManyPagedAsyncWithHttpInfo($filter)
+        return $this->getManyPagedAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -982,7 +970,7 @@ class BlacklistApi
     }
 
     /**
-     * Operation blacklistControllerGetManyPagedAsyncWithHttpInfo
+     * Operation getManyPagedAsyncWithHttpInfo
      *
      * Gets blacklisted sites
      *
@@ -991,10 +979,10 @@ class BlacklistApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function blacklistControllerGetManyPagedAsyncWithHttpInfo($filter = null)
+    public function getManyPagedAsyncWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Blacklist[]';
-        $request = $this->blacklistControllerGetManyPagedRequest($filter);
+        $request = $this->getManyPagedRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1034,14 +1022,14 @@ class BlacklistApi
     }
 
     /**
-     * Create request for operation 'blacklistControllerGetManyPaged'
+     * Create request for operation 'getManyPaged'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function blacklistControllerGetManyPagedRequest($filter = null)
+    protected function getManyPagedRequest($filter = null)
     {
 
         $resourcePath = '/api/Blacklist/paged';
@@ -1100,10 +1088,6 @@ class BlacklistApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class ProvisioningAccountApi
     }
 
     /**
-     * Operation provisioningAccountControllerSetSiteForSubscription
+     * Operation setSiteForSubscription
      *
      * Generate a new auth token
      *
@@ -96,14 +96,14 @@ class ProvisioningAccountApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\RegenerateTokenResponseDto
      */
-    public function provisioningAccountControllerSetSiteForSubscription()
+    public function setSiteForSubscription()
     {
-        list($response) = $this->provisioningAccountControllerSetSiteForSubscriptionWithHttpInfo();
+        list($response) = $this->setSiteForSubscriptionWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation provisioningAccountControllerSetSiteForSubscriptionWithHttpInfo
+     * Operation setSiteForSubscriptionWithHttpInfo
      *
      * Generate a new auth token
      *
@@ -112,10 +112,10 @@ class ProvisioningAccountApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\RegenerateTokenResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function provisioningAccountControllerSetSiteForSubscriptionWithHttpInfo()
+    public function setSiteForSubscriptionWithHttpInfo()
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\RegenerateTokenResponseDto';
-        $request = $this->provisioningAccountControllerSetSiteForSubscriptionRequest();
+        $request = $this->setSiteForSubscriptionRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -177,7 +177,7 @@ class ProvisioningAccountApi
     }
 
     /**
-     * Operation provisioningAccountControllerSetSiteForSubscriptionAsync
+     * Operation setSiteForSubscriptionAsync
      *
      * Generate a new auth token
      *
@@ -185,9 +185,9 @@ class ProvisioningAccountApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisioningAccountControllerSetSiteForSubscriptionAsync()
+    public function setSiteForSubscriptionAsync()
     {
-        return $this->provisioningAccountControllerSetSiteForSubscriptionAsyncWithHttpInfo()
+        return $this->setSiteForSubscriptionAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -196,7 +196,7 @@ class ProvisioningAccountApi
     }
 
     /**
-     * Operation provisioningAccountControllerSetSiteForSubscriptionAsyncWithHttpInfo
+     * Operation setSiteForSubscriptionAsyncWithHttpInfo
      *
      * Generate a new auth token
      *
@@ -204,10 +204,10 @@ class ProvisioningAccountApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisioningAccountControllerSetSiteForSubscriptionAsyncWithHttpInfo()
+    public function setSiteForSubscriptionAsyncWithHttpInfo()
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\RegenerateTokenResponseDto';
-        $request = $this->provisioningAccountControllerSetSiteForSubscriptionRequest();
+        $request = $this->setSiteForSubscriptionRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -247,13 +247,13 @@ class ProvisioningAccountApi
     }
 
     /**
-     * Create request for operation 'provisioningAccountControllerSetSiteForSubscription'
+     * Create request for operation 'setSiteForSubscription'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function provisioningAccountControllerSetSiteForSubscriptionRequest()
+    protected function setSiteForSubscriptionRequest()
     {
 
         $resourcePath = '/api/provisioning/account/regenerate-token';

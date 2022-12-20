@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,92 +71,92 @@ class OrderApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for orderControllerExport
+     * Test case for export
      *
      * Get orders.
      *
      */
-    public function testOrderControllerExport()
+    public function testExport()
     {
     }
 
     /**
-     * Test case for orderControllerGetAutoRenewalCount
+     * Test case for getAutoRenewalCount
      *
      * .
      *
      */
-    public function testOrderControllerGetAutoRenewalCount()
+    public function testGetAutoRenewalCount()
     {
     }
 
     /**
-     * Test case for orderControllerGetMany
+     * Test case for getMany
      *
      * Get orders.
      *
      */
-    public function testOrderControllerGetMany()
+    public function testGetMany()
     {
     }
 
     /**
-     * Test case for orderControllerGetManyPaged
+     * Test case for getManyPaged
      *
      * Get orders.
      *
      */
-    public function testOrderControllerGetManyPaged()
+    public function testGetManyPaged()
     {
     }
 
     /**
-     * Test case for orderControllerGetOne
+     * Test case for getOne
      *
      * Get a order.
      *
      */
-    public function testOrderControllerGetOne()
+    public function testGetOne()
     {
     }
 
     /**
-     * Test case for orderControllerGetOneByInvoice
+     * Test case for getOneByInvoice
      *
      * Get a order by invoiceNumber.
      *
      */
-    public function testOrderControllerGetOneByInvoice()
+    public function testGetOneByInvoice()
     {
     }
 
     /**
-     * Test case for orderControllerGetProductGroupsByInvoice
+     * Test case for getProductGroupsByInvoice
      *
      * Get productGroups by invoiceNumber.
      *
      */
-    public function testOrderControllerGetProductGroupsByInvoice()
+    public function testGetProductGroupsByInvoice()
     {
     }
 
     /**
-     * Test case for orderControllerInvoice
+     * Test case for invoice
      *
      * Create invoice.
      *
      */
-    public function testOrderControllerInvoice()
+    public function testInvoice()
     {
     }
 
     /**
-     * Test case for orderControllerRefundInvoice
+     * Test case for refundInvoice
      *
      * Creates a credit note.
      *
      */
-    public function testOrderControllerRefundInvoice()
+    public function testRefundInvoice()
     {
     }
 }

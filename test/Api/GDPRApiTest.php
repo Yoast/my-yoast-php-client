@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,12 +71,12 @@ class GDPRApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for customerGDPRControllerDeleteCustomer
+     * Test case for deleteCustomer
      *
      * Performs a \"GDPR forget me\" request..
      *
      */
-    public function testCustomerGDPRControllerDeleteCustomer()
+    public function testDeleteCustomer()
     {
     }
 }

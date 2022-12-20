@@ -1,16 +1,16 @@
 # Yoast\MyYoastApiClient\PackagesApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**packagesControllerServeArchiveZIP**](PackagesApi.md#packagescontrollerservearchivezip) | **GET** /packages/dist/{org}/{name}/{archive}.zip | Serves an .zip of the plugin.
-[**packagesControllerServePackagesJSON**](PackagesApi.md#packagescontrollerservepackagesjson) | **GET** /packages/packages.json | Serves the general packages.json file.
-[**packagesControllerServeProvider2JSON**](PackagesApi.md#packagescontrollerserveprovider2json) | **GET** /packages/p2/{org}/{name}.json | Serves the requested provider.json
-[**packagesControllerServeProviderJSON**](PackagesApi.md#packagescontrollerserveproviderjson) | **GET** /packages/p/{org}/{nameAndHash}.json | Serves the requested provider.json
+[**serveArchiveZIP**](PackagesApi.md#servearchivezip) | **GET** /packages/dist/{org}/{name}/{archive}.zip | Serves an .zip of the plugin.
+[**servePackagesJSON**](PackagesApi.md#servepackagesjson) | **GET** /packages/packages.json | Serves the general packages.json file.
+[**serveProvider2JSON**](PackagesApi.md#serveprovider2json) | **GET** /packages/p2/{org}/{name}.json | Serves the requested provider.json
+[**serveProviderJSON**](PackagesApi.md#serveproviderjson) | **GET** /packages/p/{org}/{nameAndHash}.json | Serves the requested provider.json
 
-# **packagesControllerServeArchiveZIP**
-> \Yoast\MyYoastApiClient\Model\ packagesControllerServeArchiveZIP($org, $archive, $name)
+# **serveArchiveZIP**
+> \Yoast\MyYoastApiClient\Model\ serveArchiveZIP($org, $archive, $name)
 
 Serves an .zip of the plugin.
 
@@ -31,10 +31,10 @@ $archive = "archive_example"; // string |
 $name = "name_example"; // string | 
 
 try {
-    $result = $apiInstance->packagesControllerServeArchiveZIP($org, $archive, $name);
+    $result = $apiInstance->serveArchiveZIP($org, $archive, $name);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PackagesApi->packagesControllerServeArchiveZIP: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PackagesApi->serveArchiveZIP: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -62,8 +62,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **packagesControllerServePackagesJSON**
-> \Yoast\MyYoastApiClient\Model\ packagesControllerServePackagesJSON()
+# **servePackagesJSON**
+> \Yoast\MyYoastApiClient\Model\ servePackagesJSON()
 
 Serves the general packages.json file.
 
@@ -81,10 +81,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\PackagesApi(
 );
 
 try {
-    $result = $apiInstance->packagesControllerServePackagesJSON();
+    $result = $apiInstance->servePackagesJSON();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PackagesApi->packagesControllerServePackagesJSON: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PackagesApi->servePackagesJSON: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -107,8 +107,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **packagesControllerServeProvider2JSON**
-> \Yoast\MyYoastApiClient\Model\ packagesControllerServeProvider2JSON($org, $name)
+# **serveProvider2JSON**
+> \Yoast\MyYoastApiClient\Model\ serveProvider2JSON($org, $name)
 
 Serves the requested provider.json
 
@@ -128,10 +128,10 @@ $org = "org_example"; // string |
 $name = "name_example"; // string | The package name, optionally suffixed with -dev
 
 try {
-    $result = $apiInstance->packagesControllerServeProvider2JSON($org, $name);
+    $result = $apiInstance->serveProvider2JSON($org, $name);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PackagesApi->packagesControllerServeProvider2JSON: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PackagesApi->serveProvider2JSON: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -158,8 +158,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **packagesControllerServeProviderJSON**
-> \Yoast\MyYoastApiClient\Model\ packagesControllerServeProviderJSON($org, $nameAndHash)
+# **serveProviderJSON**
+> \Yoast\MyYoastApiClient\Model\ serveProviderJSON($org, $nameAndHash)
 
 Serves the requested provider.json
 
@@ -179,10 +179,10 @@ $org = "org_example"; // string |
 $nameAndHash = "nameAndHash_example"; // string | The package name and package hash separated by a $ character
 
 try {
-    $result = $apiInstance->packagesControllerServeProviderJSON($org, $nameAndHash);
+    $result = $apiInstance->serveProviderJSON($org, $nameAndHash);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling PackagesApi->packagesControllerServeProviderJSON: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling PackagesApi->serveProviderJSON: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

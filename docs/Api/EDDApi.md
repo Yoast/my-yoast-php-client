@@ -1,14 +1,14 @@
 # Yoast\MyYoastApiClient\EDDApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**eddControllerHandleGetRequest**](EDDApi.md#eddcontrollerhandlegetrequest) | **GET** /edd-sl-api | Activate or deactivate a site license
-[**eddControllerHandlePostRequest**](EDDApi.md#eddcontrollerhandlepostrequest) | **POST** /edd-sl-api | 
+[**handleGetRequest**](EDDApi.md#handlegetrequest) | **GET** /edd-sl-api | Activate or deactivate a site license
+[**handlePostRequest**](EDDApi.md#handlepostrequest) | **POST** /edd-sl-api | 
 
-# **eddControllerHandleGetRequest**
-> eddControllerHandleGetRequest($eddAction, $url, $itemName)
+# **handleGetRequest**
+> handleGetRequest($eddAction, $url, $itemName)
 
 Activate or deactivate a site license
 
@@ -29,9 +29,9 @@ $url = "url_example"; // string |
 $itemName = "itemName_example"; // string | 
 
 try {
-    $apiInstance->eddControllerHandleGetRequest($eddAction, $url, $itemName);
+    $apiInstance->handleGetRequest($eddAction, $url, $itemName);
 } catch (Exception $e) {
-    echo 'Exception when calling EDDApi->eddControllerHandleGetRequest: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EDDApi->handleGetRequest: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -59,8 +59,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **eddControllerHandlePostRequest**
-> eddControllerHandlePostRequest($body, $eddAction)
+# **handlePostRequest**
+> handlePostRequest($body, $eddAction)
 
 
 
@@ -78,9 +78,9 @@ $body = new \Yoast\MyYoastApiClient\Model\EddDTO(); // \Yoast\MyYoastApiClient\M
 $eddAction = "eddAction_example"; // string | 
 
 try {
-    $apiInstance->eddControllerHandlePostRequest($body, $eddAction);
+    $apiInstance->handlePostRequest($body, $eddAction);
 } catch (Exception $e) {
-    echo 'Exception when calling EDDApi->eddControllerHandlePostRequest: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EDDApi->handlePostRequest: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

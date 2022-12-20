@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class ComposerTokenApi
     }
 
     /**
-     * Operation composerTokenControllerDisable
+     * Operation disable
      *
      * Disable a composer token
      *
@@ -97,14 +97,14 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\ComposerToken
      */
-    public function composerTokenControllerDisable($id)
+    public function disable($id)
     {
-        list($response) = $this->composerTokenControllerDisableWithHttpInfo($id);
+        list($response) = $this->disableWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation composerTokenControllerDisableWithHttpInfo
+     * Operation disableWithHttpInfo
      *
      * Disable a composer token
      *
@@ -114,10 +114,10 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\ComposerToken, HTTP status code, HTTP response headers (array of strings)
      */
-    public function composerTokenControllerDisableWithHttpInfo($id)
+    public function disableWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ComposerToken';
-        $request = $this->composerTokenControllerDisableRequest($id);
+        $request = $this->disableRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -179,7 +179,7 @@ class ComposerTokenApi
     }
 
     /**
-     * Operation composerTokenControllerDisableAsync
+     * Operation disableAsync
      *
      * Disable a composer token
      *
@@ -188,9 +188,9 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function composerTokenControllerDisableAsync($id)
+    public function disableAsync($id)
     {
-        return $this->composerTokenControllerDisableAsyncWithHttpInfo($id)
+        return $this->disableAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,7 +199,7 @@ class ComposerTokenApi
     }
 
     /**
-     * Operation composerTokenControllerDisableAsyncWithHttpInfo
+     * Operation disableAsyncWithHttpInfo
      *
      * Disable a composer token
      *
@@ -208,10 +208,10 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function composerTokenControllerDisableAsyncWithHttpInfo($id)
+    public function disableAsyncWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ComposerToken';
-        $request = $this->composerTokenControllerDisableRequest($id);
+        $request = $this->disableRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,19 +251,19 @@ class ComposerTokenApi
     }
 
     /**
-     * Create request for operation 'composerTokenControllerDisable'
+     * Create request for operation 'disable'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function composerTokenControllerDisableRequest($id)
+    protected function disableRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling composerTokenControllerDisable'
+                'Missing the required parameter $id when calling disable'
             );
         }
 
@@ -327,10 +327,6 @@ class ComposerTokenApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -353,7 +349,7 @@ class ComposerTokenApi
     }
 
     /**
-     * Operation composerTokenControllerGenerate
+     * Operation generate
      *
      * Generates a Composer token
      *
@@ -363,14 +359,14 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\ComposerToken
      */
-    public function composerTokenControllerGenerate($body)
+    public function generate($body)
     {
-        list($response) = $this->composerTokenControllerGenerateWithHttpInfo($body);
+        list($response) = $this->generateWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation composerTokenControllerGenerateWithHttpInfo
+     * Operation generateWithHttpInfo
      *
      * Generates a Composer token
      *
@@ -380,10 +376,10 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\ComposerToken, HTTP status code, HTTP response headers (array of strings)
      */
-    public function composerTokenControllerGenerateWithHttpInfo($body)
+    public function generateWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ComposerToken';
-        $request = $this->composerTokenControllerGenerateRequest($body);
+        $request = $this->generateRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -445,7 +441,7 @@ class ComposerTokenApi
     }
 
     /**
-     * Operation composerTokenControllerGenerateAsync
+     * Operation generateAsync
      *
      * Generates a Composer token
      *
@@ -454,9 +450,9 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function composerTokenControllerGenerateAsync($body)
+    public function generateAsync($body)
     {
-        return $this->composerTokenControllerGenerateAsyncWithHttpInfo($body)
+        return $this->generateAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -465,7 +461,7 @@ class ComposerTokenApi
     }
 
     /**
-     * Operation composerTokenControllerGenerateAsyncWithHttpInfo
+     * Operation generateAsyncWithHttpInfo
      *
      * Generates a Composer token
      *
@@ -474,10 +470,10 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function composerTokenControllerGenerateAsyncWithHttpInfo($body)
+    public function generateAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ComposerToken';
-        $request = $this->composerTokenControllerGenerateRequest($body);
+        $request = $this->generateRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -517,19 +513,19 @@ class ComposerTokenApi
     }
 
     /**
-     * Create request for operation 'composerTokenControllerGenerate'
+     * Create request for operation 'generate'
      *
      * @param  \Yoast\MyYoastApiClient\Model\GenerateDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function composerTokenControllerGenerateRequest($body)
+    protected function generateRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling composerTokenControllerGenerate'
+                'Missing the required parameter $body when calling generate'
             );
         }
 
@@ -588,10 +584,6 @@ class ComposerTokenApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -614,7 +606,7 @@ class ComposerTokenApi
     }
 
     /**
-     * Operation composerTokenControllerRename
+     * Operation rename
      *
      * Renames a Composer token
      *
@@ -625,14 +617,14 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\ComposerToken
      */
-    public function composerTokenControllerRename($body, $id)
+    public function rename($body, $id)
     {
-        list($response) = $this->composerTokenControllerRenameWithHttpInfo($body, $id);
+        list($response) = $this->renameWithHttpInfo($body, $id);
         return $response;
     }
 
     /**
-     * Operation composerTokenControllerRenameWithHttpInfo
+     * Operation renameWithHttpInfo
      *
      * Renames a Composer token
      *
@@ -643,10 +635,10 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\ComposerToken, HTTP status code, HTTP response headers (array of strings)
      */
-    public function composerTokenControllerRenameWithHttpInfo($body, $id)
+    public function renameWithHttpInfo($body, $id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ComposerToken';
-        $request = $this->composerTokenControllerRenameRequest($body, $id);
+        $request = $this->renameRequest($body, $id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -708,7 +700,7 @@ class ComposerTokenApi
     }
 
     /**
-     * Operation composerTokenControllerRenameAsync
+     * Operation renameAsync
      *
      * Renames a Composer token
      *
@@ -718,9 +710,9 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function composerTokenControllerRenameAsync($body, $id)
+    public function renameAsync($body, $id)
     {
-        return $this->composerTokenControllerRenameAsyncWithHttpInfo($body, $id)
+        return $this->renameAsyncWithHttpInfo($body, $id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -729,7 +721,7 @@ class ComposerTokenApi
     }
 
     /**
-     * Operation composerTokenControllerRenameAsyncWithHttpInfo
+     * Operation renameAsyncWithHttpInfo
      *
      * Renames a Composer token
      *
@@ -739,10 +731,10 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function composerTokenControllerRenameAsyncWithHttpInfo($body, $id)
+    public function renameAsyncWithHttpInfo($body, $id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ComposerToken';
-        $request = $this->composerTokenControllerRenameRequest($body, $id);
+        $request = $this->renameRequest($body, $id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -782,7 +774,7 @@ class ComposerTokenApi
     }
 
     /**
-     * Create request for operation 'composerTokenControllerRename'
+     * Create request for operation 'rename'
      *
      * @param  \Yoast\MyYoastApiClient\Model\RenameBodyDto $body (required)
      * @param  string $id (required)
@@ -790,18 +782,18 @@ class ComposerTokenApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function composerTokenControllerRenameRequest($body, $id)
+    protected function renameRequest($body, $id)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling composerTokenControllerRename'
+                'Missing the required parameter $body when calling rename'
             );
         }
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling composerTokenControllerRename'
+                'Missing the required parameter $id when calling rename'
             );
         }
 
@@ -868,10 +860,6 @@ class ComposerTokenApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerAddJob
+     * Operation addJob
      *
      * @param  \Yoast\MyYoastApiClient\Model\AddJobDto $body body (required)
      *
@@ -95,13 +95,13 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function queueControllerAddJob($body)
+    public function addJob($body)
     {
-        $this->queueControllerAddJobWithHttpInfo($body);
+        $this->addJobWithHttpInfo($body);
     }
 
     /**
-     * Operation queueControllerAddJobWithHttpInfo
+     * Operation addJobWithHttpInfo
      *
      * @param  \Yoast\MyYoastApiClient\Model\AddJobDto $body (required)
      *
@@ -109,10 +109,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function queueControllerAddJobWithHttpInfo($body)
+    public function addJobWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->queueControllerAddJobRequest($body);
+        $request = $this->addJobRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -152,7 +152,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerAddJobAsync
+     * Operation addJobAsync
      *
      * 
      *
@@ -161,9 +161,9 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerAddJobAsync($body)
+    public function addJobAsync($body)
     {
-        return $this->queueControllerAddJobAsyncWithHttpInfo($body)
+        return $this->addJobAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -172,7 +172,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerAddJobAsyncWithHttpInfo
+     * Operation addJobAsyncWithHttpInfo
      *
      * 
      *
@@ -181,10 +181,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerAddJobAsyncWithHttpInfo($body)
+    public function addJobAsyncWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->queueControllerAddJobRequest($body);
+        $request = $this->addJobRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -210,19 +210,19 @@ class WorkerApi
     }
 
     /**
-     * Create request for operation 'queueControllerAddJob'
+     * Create request for operation 'addJob'
      *
      * @param  \Yoast\MyYoastApiClient\Model\AddJobDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function queueControllerAddJobRequest($body)
+    protected function addJobRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling queueControllerAddJob'
+                'Missing the required parameter $body when calling addJob'
             );
         }
 
@@ -281,10 +281,6 @@ class WorkerApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -307,7 +303,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetJob
+     * Operation getJob
      *
      * @param  string $id id (required)
      *
@@ -315,13 +311,13 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function queueControllerGetJob($id)
+    public function getJob($id)
     {
-        $this->queueControllerGetJobWithHttpInfo($id);
+        $this->getJobWithHttpInfo($id);
     }
 
     /**
-     * Operation queueControllerGetJobWithHttpInfo
+     * Operation getJobWithHttpInfo
      *
      * @param  string $id (required)
      *
@@ -329,10 +325,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function queueControllerGetJobWithHttpInfo($id)
+    public function getJobWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->queueControllerGetJobRequest($id);
+        $request = $this->getJobRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -372,7 +368,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetJobAsync
+     * Operation getJobAsync
      *
      * 
      *
@@ -381,9 +377,9 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerGetJobAsync($id)
+    public function getJobAsync($id)
     {
-        return $this->queueControllerGetJobAsyncWithHttpInfo($id)
+        return $this->getJobAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -392,7 +388,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetJobAsyncWithHttpInfo
+     * Operation getJobAsyncWithHttpInfo
      *
      * 
      *
@@ -401,10 +397,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerGetJobAsyncWithHttpInfo($id)
+    public function getJobAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->queueControllerGetJobRequest($id);
+        $request = $this->getJobRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -430,19 +426,19 @@ class WorkerApi
     }
 
     /**
-     * Create request for operation 'queueControllerGetJob'
+     * Create request for operation 'getJob'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function queueControllerGetJobRequest($id)
+    protected function getJobRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling queueControllerGetJob'
+                'Missing the required parameter $id when calling getJob'
             );
         }
 
@@ -506,10 +502,6 @@ class WorkerApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -532,30 +524,30 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetRecurringJobs
+     * Operation getRecurringJobs
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function queueControllerGetRecurringJobs()
+    public function getRecurringJobs()
     {
-        $this->queueControllerGetRecurringJobsWithHttpInfo();
+        $this->getRecurringJobsWithHttpInfo();
     }
 
     /**
-     * Operation queueControllerGetRecurringJobsWithHttpInfo
+     * Operation getRecurringJobsWithHttpInfo
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function queueControllerGetRecurringJobsWithHttpInfo()
+    public function getRecurringJobsWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->queueControllerGetRecurringJobsRequest();
+        $request = $this->getRecurringJobsRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -595,7 +587,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetRecurringJobsAsync
+     * Operation getRecurringJobsAsync
      *
      * 
      *
@@ -603,9 +595,9 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerGetRecurringJobsAsync()
+    public function getRecurringJobsAsync()
     {
-        return $this->queueControllerGetRecurringJobsAsyncWithHttpInfo()
+        return $this->getRecurringJobsAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -614,7 +606,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetRecurringJobsAsyncWithHttpInfo
+     * Operation getRecurringJobsAsyncWithHttpInfo
      *
      * 
      *
@@ -622,10 +614,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerGetRecurringJobsAsyncWithHttpInfo()
+    public function getRecurringJobsAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->queueControllerGetRecurringJobsRequest();
+        $request = $this->getRecurringJobsRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -651,13 +643,13 @@ class WorkerApi
     }
 
     /**
-     * Create request for operation 'queueControllerGetRecurringJobs'
+     * Create request for operation 'getRecurringJobs'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function queueControllerGetRecurringJobsRequest()
+    protected function getRecurringJobsRequest()
     {
 
         $resourcePath = '/api/Worker/getRecurringJobs';
@@ -712,10 +704,6 @@ class WorkerApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -738,7 +726,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetRecurringJobsInfo
+     * Operation getRecurringJobsInfo
      *
      * @param  string $name name (required)
      *
@@ -746,13 +734,13 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function queueControllerGetRecurringJobsInfo($name)
+    public function getRecurringJobsInfo($name)
     {
-        $this->queueControllerGetRecurringJobsInfoWithHttpInfo($name);
+        $this->getRecurringJobsInfoWithHttpInfo($name);
     }
 
     /**
-     * Operation queueControllerGetRecurringJobsInfoWithHttpInfo
+     * Operation getRecurringJobsInfoWithHttpInfo
      *
      * @param  string $name (required)
      *
@@ -760,10 +748,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function queueControllerGetRecurringJobsInfoWithHttpInfo($name)
+    public function getRecurringJobsInfoWithHttpInfo($name)
     {
         $returnType = '';
-        $request = $this->queueControllerGetRecurringJobsInfoRequest($name);
+        $request = $this->getRecurringJobsInfoRequest($name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -803,7 +791,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetRecurringJobsInfoAsync
+     * Operation getRecurringJobsInfoAsync
      *
      * 
      *
@@ -812,9 +800,9 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerGetRecurringJobsInfoAsync($name)
+    public function getRecurringJobsInfoAsync($name)
     {
-        return $this->queueControllerGetRecurringJobsInfoAsyncWithHttpInfo($name)
+        return $this->getRecurringJobsInfoAsyncWithHttpInfo($name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -823,7 +811,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetRecurringJobsInfoAsyncWithHttpInfo
+     * Operation getRecurringJobsInfoAsyncWithHttpInfo
      *
      * 
      *
@@ -832,10 +820,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerGetRecurringJobsInfoAsyncWithHttpInfo($name)
+    public function getRecurringJobsInfoAsyncWithHttpInfo($name)
     {
         $returnType = '';
-        $request = $this->queueControllerGetRecurringJobsInfoRequest($name);
+        $request = $this->getRecurringJobsInfoRequest($name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -861,19 +849,19 @@ class WorkerApi
     }
 
     /**
-     * Create request for operation 'queueControllerGetRecurringJobsInfo'
+     * Create request for operation 'getRecurringJobsInfo'
      *
      * @param  string $name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function queueControllerGetRecurringJobsInfoRequest($name)
+    protected function getRecurringJobsInfoRequest($name)
     {
         // verify the required parameter 'name' is set
         if ($name === null || (is_array($name) && count($name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling queueControllerGetRecurringJobsInfo'
+                'Missing the required parameter $name when calling getRecurringJobsInfo'
             );
         }
 
@@ -937,10 +925,6 @@ class WorkerApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -963,7 +947,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetScheduledJobs
+     * Operation getScheduledJobs
      *
      * @param  string $name name (required)
      *
@@ -971,13 +955,13 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function queueControllerGetScheduledJobs($name)
+    public function getScheduledJobs($name)
     {
-        $this->queueControllerGetScheduledJobsWithHttpInfo($name);
+        $this->getScheduledJobsWithHttpInfo($name);
     }
 
     /**
-     * Operation queueControllerGetScheduledJobsWithHttpInfo
+     * Operation getScheduledJobsWithHttpInfo
      *
      * @param  string $name (required)
      *
@@ -985,10 +969,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function queueControllerGetScheduledJobsWithHttpInfo($name)
+    public function getScheduledJobsWithHttpInfo($name)
     {
         $returnType = '';
-        $request = $this->queueControllerGetScheduledJobsRequest($name);
+        $request = $this->getScheduledJobsRequest($name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1028,7 +1012,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetScheduledJobsAsync
+     * Operation getScheduledJobsAsync
      *
      * 
      *
@@ -1037,9 +1021,9 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerGetScheduledJobsAsync($name)
+    public function getScheduledJobsAsync($name)
     {
-        return $this->queueControllerGetScheduledJobsAsyncWithHttpInfo($name)
+        return $this->getScheduledJobsAsyncWithHttpInfo($name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1048,7 +1032,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerGetScheduledJobsAsyncWithHttpInfo
+     * Operation getScheduledJobsAsyncWithHttpInfo
      *
      * 
      *
@@ -1057,10 +1041,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerGetScheduledJobsAsyncWithHttpInfo($name)
+    public function getScheduledJobsAsyncWithHttpInfo($name)
     {
         $returnType = '';
-        $request = $this->queueControllerGetScheduledJobsRequest($name);
+        $request = $this->getScheduledJobsRequest($name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1086,19 +1070,19 @@ class WorkerApi
     }
 
     /**
-     * Create request for operation 'queueControllerGetScheduledJobs'
+     * Create request for operation 'getScheduledJobs'
      *
      * @param  string $name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function queueControllerGetScheduledJobsRequest($name)
+    protected function getScheduledJobsRequest($name)
     {
         // verify the required parameter 'name' is set
         if ($name === null || (is_array($name) && count($name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling queueControllerGetScheduledJobs'
+                'Missing the required parameter $name when calling getScheduledJobs'
             );
         }
 
@@ -1162,10 +1146,6 @@ class WorkerApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1188,7 +1168,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerRemoveAllJobsWithName
+     * Operation removeAllJobsWithName
      *
      * @param  string $name name (required)
      *
@@ -1196,13 +1176,13 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function queueControllerRemoveAllJobsWithName($name)
+    public function removeAllJobsWithName($name)
     {
-        $this->queueControllerRemoveAllJobsWithNameWithHttpInfo($name);
+        $this->removeAllJobsWithNameWithHttpInfo($name);
     }
 
     /**
-     * Operation queueControllerRemoveAllJobsWithNameWithHttpInfo
+     * Operation removeAllJobsWithNameWithHttpInfo
      *
      * @param  string $name (required)
      *
@@ -1210,10 +1190,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function queueControllerRemoveAllJobsWithNameWithHttpInfo($name)
+    public function removeAllJobsWithNameWithHttpInfo($name)
     {
         $returnType = '';
-        $request = $this->queueControllerRemoveAllJobsWithNameRequest($name);
+        $request = $this->removeAllJobsWithNameRequest($name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1253,7 +1233,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerRemoveAllJobsWithNameAsync
+     * Operation removeAllJobsWithNameAsync
      *
      * 
      *
@@ -1262,9 +1242,9 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerRemoveAllJobsWithNameAsync($name)
+    public function removeAllJobsWithNameAsync($name)
     {
-        return $this->queueControllerRemoveAllJobsWithNameAsyncWithHttpInfo($name)
+        return $this->removeAllJobsWithNameAsyncWithHttpInfo($name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1273,7 +1253,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerRemoveAllJobsWithNameAsyncWithHttpInfo
+     * Operation removeAllJobsWithNameAsyncWithHttpInfo
      *
      * 
      *
@@ -1282,10 +1262,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerRemoveAllJobsWithNameAsyncWithHttpInfo($name)
+    public function removeAllJobsWithNameAsyncWithHttpInfo($name)
     {
         $returnType = '';
-        $request = $this->queueControllerRemoveAllJobsWithNameRequest($name);
+        $request = $this->removeAllJobsWithNameRequest($name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1311,19 +1291,19 @@ class WorkerApi
     }
 
     /**
-     * Create request for operation 'queueControllerRemoveAllJobsWithName'
+     * Create request for operation 'removeAllJobsWithName'
      *
      * @param  string $name (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function queueControllerRemoveAllJobsWithNameRequest($name)
+    protected function removeAllJobsWithNameRequest($name)
     {
         // verify the required parameter 'name' is set
         if ($name === null || (is_array($name) && count($name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling queueControllerRemoveAllJobsWithName'
+                'Missing the required parameter $name when calling removeAllJobsWithName'
             );
         }
 
@@ -1387,10 +1367,6 @@ class WorkerApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1413,7 +1389,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerRemoveJob
+     * Operation removeJob
      *
      * @param  string $id id (required)
      *
@@ -1421,13 +1397,13 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function queueControllerRemoveJob($id)
+    public function removeJob($id)
     {
-        $this->queueControllerRemoveJobWithHttpInfo($id);
+        $this->removeJobWithHttpInfo($id);
     }
 
     /**
-     * Operation queueControllerRemoveJobWithHttpInfo
+     * Operation removeJobWithHttpInfo
      *
      * @param  string $id (required)
      *
@@ -1435,10 +1411,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function queueControllerRemoveJobWithHttpInfo($id)
+    public function removeJobWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->queueControllerRemoveJobRequest($id);
+        $request = $this->removeJobRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1478,7 +1454,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerRemoveJobAsync
+     * Operation removeJobAsync
      *
      * 
      *
@@ -1487,9 +1463,9 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerRemoveJobAsync($id)
+    public function removeJobAsync($id)
     {
-        return $this->queueControllerRemoveJobAsyncWithHttpInfo($id)
+        return $this->removeJobAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1498,7 +1474,7 @@ class WorkerApi
     }
 
     /**
-     * Operation queueControllerRemoveJobAsyncWithHttpInfo
+     * Operation removeJobAsyncWithHttpInfo
      *
      * 
      *
@@ -1507,10 +1483,10 @@ class WorkerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function queueControllerRemoveJobAsyncWithHttpInfo($id)
+    public function removeJobAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->queueControllerRemoveJobRequest($id);
+        $request = $this->removeJobRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1536,19 +1512,19 @@ class WorkerApi
     }
 
     /**
-     * Create request for operation 'queueControllerRemoveJob'
+     * Create request for operation 'removeJob'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function queueControllerRemoveJobRequest($id)
+    protected function removeJobRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling queueControllerRemoveJob'
+                'Missing the required parameter $id when calling removeJob'
             );
         }
 
@@ -1612,10 +1588,6 @@ class WorkerApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

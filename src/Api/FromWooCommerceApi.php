@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerCustomerFromWooCommerce
+     * Operation customerFromWooCommerce
      *
      * Update or create a customer
      *
@@ -97,14 +97,14 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Customer
      */
-    public function fromWooCommerceControllerCustomerFromWooCommerce($body)
+    public function customerFromWooCommerce($body)
     {
-        list($response) = $this->fromWooCommerceControllerCustomerFromWooCommerceWithHttpInfo($body);
+        list($response) = $this->customerFromWooCommerceWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation fromWooCommerceControllerCustomerFromWooCommerceWithHttpInfo
+     * Operation customerFromWooCommerceWithHttpInfo
      *
      * Update or create a customer
      *
@@ -114,10 +114,10 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fromWooCommerceControllerCustomerFromWooCommerceWithHttpInfo($body)
+    public function customerFromWooCommerceWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Customer';
-        $request = $this->fromWooCommerceControllerCustomerFromWooCommerceRequest($body);
+        $request = $this->customerFromWooCommerceRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -179,7 +179,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerCustomerFromWooCommerceAsync
+     * Operation customerFromWooCommerceAsync
      *
      * Update or create a customer
      *
@@ -188,9 +188,9 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fromWooCommerceControllerCustomerFromWooCommerceAsync($body)
+    public function customerFromWooCommerceAsync($body)
     {
-        return $this->fromWooCommerceControllerCustomerFromWooCommerceAsyncWithHttpInfo($body)
+        return $this->customerFromWooCommerceAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,7 +199,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerCustomerFromWooCommerceAsyncWithHttpInfo
+     * Operation customerFromWooCommerceAsyncWithHttpInfo
      *
      * Update or create a customer
      *
@@ -208,10 +208,10 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fromWooCommerceControllerCustomerFromWooCommerceAsyncWithHttpInfo($body)
+    public function customerFromWooCommerceAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Customer';
-        $request = $this->fromWooCommerceControllerCustomerFromWooCommerceRequest($body);
+        $request = $this->customerFromWooCommerceRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,19 +251,19 @@ class FromWooCommerceApi
     }
 
     /**
-     * Create request for operation 'fromWooCommerceControllerCustomerFromWooCommerce'
+     * Create request for operation 'customerFromWooCommerce'
      *
      * @param  \Yoast\MyYoastApiClient\Model\CustomerFromWooDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function fromWooCommerceControllerCustomerFromWooCommerceRequest($body)
+    protected function customerFromWooCommerceRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling fromWooCommerceControllerCustomerFromWooCommerce'
+                'Missing the required parameter $body when calling customerFromWooCommerce'
             );
         }
 
@@ -322,10 +322,6 @@ class FromWooCommerceApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -348,7 +344,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerOrderFromWooCommerce
+     * Operation orderFromWooCommerce
      *
      * Sync orders to MyYoast.
      *
@@ -358,14 +354,14 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function fromWooCommerceControllerOrderFromWooCommerce($body)
+    public function orderFromWooCommerce($body)
     {
-        list($response) = $this->fromWooCommerceControllerOrderFromWooCommerceWithHttpInfo($body);
+        list($response) = $this->orderFromWooCommerceWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation fromWooCommerceControllerOrderFromWooCommerceWithHttpInfo
+     * Operation orderFromWooCommerceWithHttpInfo
      *
      * Sync orders to MyYoast.
      *
@@ -375,10 +371,10 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fromWooCommerceControllerOrderFromWooCommerceWithHttpInfo($body)
+    public function orderFromWooCommerceWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order';
-        $request = $this->fromWooCommerceControllerOrderFromWooCommerceRequest($body);
+        $request = $this->orderFromWooCommerceRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -440,7 +436,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerOrderFromWooCommerceAsync
+     * Operation orderFromWooCommerceAsync
      *
      * Sync orders to MyYoast.
      *
@@ -449,9 +445,9 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fromWooCommerceControllerOrderFromWooCommerceAsync($body)
+    public function orderFromWooCommerceAsync($body)
     {
-        return $this->fromWooCommerceControllerOrderFromWooCommerceAsyncWithHttpInfo($body)
+        return $this->orderFromWooCommerceAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -460,7 +456,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerOrderFromWooCommerceAsyncWithHttpInfo
+     * Operation orderFromWooCommerceAsyncWithHttpInfo
      *
      * Sync orders to MyYoast.
      *
@@ -469,10 +465,10 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fromWooCommerceControllerOrderFromWooCommerceAsyncWithHttpInfo($body)
+    public function orderFromWooCommerceAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order';
-        $request = $this->fromWooCommerceControllerOrderFromWooCommerceRequest($body);
+        $request = $this->orderFromWooCommerceRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -512,19 +508,19 @@ class FromWooCommerceApi
     }
 
     /**
-     * Create request for operation 'fromWooCommerceControllerOrderFromWooCommerce'
+     * Create request for operation 'orderFromWooCommerce'
      *
      * @param  \Yoast\MyYoastApiClient\Model\OrderFromWooDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function fromWooCommerceControllerOrderFromWooCommerceRequest($body)
+    protected function orderFromWooCommerceRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling fromWooCommerceControllerOrderFromWooCommerce'
+                'Missing the required parameter $body when calling orderFromWooCommerce'
             );
         }
 
@@ -583,10 +579,6 @@ class FromWooCommerceApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -609,7 +601,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerProductFromWooCommerce
+     * Operation productFromWooCommerce
      *
      * Sync products to MyYoast.
      *
@@ -619,14 +611,14 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function fromWooCommerceControllerProductFromWooCommerce($body)
+    public function productFromWooCommerce($body)
     {
-        list($response) = $this->fromWooCommerceControllerProductFromWooCommerceWithHttpInfo($body);
+        list($response) = $this->productFromWooCommerceWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation fromWooCommerceControllerProductFromWooCommerceWithHttpInfo
+     * Operation productFromWooCommerceWithHttpInfo
      *
      * Sync products to MyYoast.
      *
@@ -636,10 +628,10 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fromWooCommerceControllerProductFromWooCommerceWithHttpInfo($body)
+    public function productFromWooCommerceWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Product';
-        $request = $this->fromWooCommerceControllerProductFromWooCommerceRequest($body);
+        $request = $this->productFromWooCommerceRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -701,7 +693,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerProductFromWooCommerceAsync
+     * Operation productFromWooCommerceAsync
      *
      * Sync products to MyYoast.
      *
@@ -710,9 +702,9 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fromWooCommerceControllerProductFromWooCommerceAsync($body)
+    public function productFromWooCommerceAsync($body)
     {
-        return $this->fromWooCommerceControllerProductFromWooCommerceAsyncWithHttpInfo($body)
+        return $this->productFromWooCommerceAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -721,7 +713,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerProductFromWooCommerceAsyncWithHttpInfo
+     * Operation productFromWooCommerceAsyncWithHttpInfo
      *
      * Sync products to MyYoast.
      *
@@ -730,10 +722,10 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fromWooCommerceControllerProductFromWooCommerceAsyncWithHttpInfo($body)
+    public function productFromWooCommerceAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Product';
-        $request = $this->fromWooCommerceControllerProductFromWooCommerceRequest($body);
+        $request = $this->productFromWooCommerceRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -773,19 +765,19 @@ class FromWooCommerceApi
     }
 
     /**
-     * Create request for operation 'fromWooCommerceControllerProductFromWooCommerce'
+     * Create request for operation 'productFromWooCommerce'
      *
      * @param  \Yoast\MyYoastApiClient\Model\ProductFromWooDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function fromWooCommerceControllerProductFromWooCommerceRequest($body)
+    protected function productFromWooCommerceRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling fromWooCommerceControllerProductFromWooCommerce'
+                'Missing the required parameter $body when calling productFromWooCommerce'
             );
         }
 
@@ -844,10 +836,6 @@ class FromWooCommerceApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -870,7 +858,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerProductGroupFromWooCommerce
+     * Operation productGroupFromWooCommerce
      *
      * Sync products to MyYoast.
      *
@@ -880,14 +868,14 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function fromWooCommerceControllerProductGroupFromWooCommerce($body)
+    public function productGroupFromWooCommerce($body)
     {
-        list($response) = $this->fromWooCommerceControllerProductGroupFromWooCommerceWithHttpInfo($body);
+        list($response) = $this->productGroupFromWooCommerceWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation fromWooCommerceControllerProductGroupFromWooCommerceWithHttpInfo
+     * Operation productGroupFromWooCommerceWithHttpInfo
      *
      * Sync products to MyYoast.
      *
@@ -897,10 +885,10 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fromWooCommerceControllerProductGroupFromWooCommerceWithHttpInfo($body)
+    public function productGroupFromWooCommerceWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup';
-        $request = $this->fromWooCommerceControllerProductGroupFromWooCommerceRequest($body);
+        $request = $this->productGroupFromWooCommerceRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -962,7 +950,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerProductGroupFromWooCommerceAsync
+     * Operation productGroupFromWooCommerceAsync
      *
      * Sync products to MyYoast.
      *
@@ -971,9 +959,9 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fromWooCommerceControllerProductGroupFromWooCommerceAsync($body)
+    public function productGroupFromWooCommerceAsync($body)
     {
-        return $this->fromWooCommerceControllerProductGroupFromWooCommerceAsyncWithHttpInfo($body)
+        return $this->productGroupFromWooCommerceAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -982,7 +970,7 @@ class FromWooCommerceApi
     }
 
     /**
-     * Operation fromWooCommerceControllerProductGroupFromWooCommerceAsyncWithHttpInfo
+     * Operation productGroupFromWooCommerceAsyncWithHttpInfo
      *
      * Sync products to MyYoast.
      *
@@ -991,10 +979,10 @@ class FromWooCommerceApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fromWooCommerceControllerProductGroupFromWooCommerceAsyncWithHttpInfo($body)
+    public function productGroupFromWooCommerceAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup';
-        $request = $this->fromWooCommerceControllerProductGroupFromWooCommerceRequest($body);
+        $request = $this->productGroupFromWooCommerceRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1034,19 +1022,19 @@ class FromWooCommerceApi
     }
 
     /**
-     * Create request for operation 'fromWooCommerceControllerProductGroupFromWooCommerce'
+     * Create request for operation 'productGroupFromWooCommerce'
      *
      * @param  \Yoast\MyYoastApiClient\Model\ProductGroupFromWooDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function fromWooCommerceControllerProductGroupFromWooCommerceRequest($body)
+    protected function productGroupFromWooCommerceRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling fromWooCommerceControllerProductGroupFromWooCommerce'
+                'Missing the required parameter $body when calling productGroupFromWooCommerce'
             );
         }
 
@@ -1105,10 +1093,6 @@ class FromWooCommerceApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

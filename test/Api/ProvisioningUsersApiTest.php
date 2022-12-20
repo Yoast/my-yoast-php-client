@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,12 +71,12 @@ class ProvisioningUsersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for provisioningUsersControllerScheduleDelete
+     * Test case for scheduleDelete
      *
      * Schedule a delete for a subscription.
      *
      */
-    public function testProvisioningUsersControllerScheduleDelete()
+    public function testScheduleDelete()
     {
     }
 }

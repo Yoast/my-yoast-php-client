@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,122 +71,122 @@ class MailingListApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for mailingListControllerCheckGetRoute
+     * Test case for checkGetRoute
      *
      * .
      *
      */
-    public function testMailingListControllerCheckGetRoute()
+    public function testCheckGetRoute()
     {
     }
 
     /**
-     * Test case for mailingListControllerGetStatus
+     * Test case for getStatus
      *
      * Get the subscription status..
      *
      */
-    public function testMailingListControllerGetStatus()
+    public function testGetStatus()
     {
     }
 
     /**
-     * Test case for mailingListControllerIsSubscribedToNewsletter
+     * Test case for isSubscribedToNewsletter
      *
      * Get the subscription status..
      *
      */
-    public function testMailingListControllerIsSubscribedToNewsletter()
+    public function testIsSubscribedToNewsletter()
     {
     }
 
     /**
-     * Test case for mailingListControllerMailChimpWebhook
+     * Test case for mailChimpWebhook
      *
      * Entry point for the mailchimp webhooks.
      *
      */
-    public function testMailingListControllerMailChimpWebhook()
+    public function testMailChimpWebhook()
     {
     }
 
     /**
-     * Test case for mailingListControllerMailblueWebhook
+     * Test case for mailblueWebhook
      *
      * Entry point for the mailblue webhooks.
      *
      */
-    public function testMailingListControllerMailblueWebhook()
+    public function testMailblueWebhook()
     {
     }
 
     /**
-     * Test case for mailingListControllerRemoveContactCustomField
+     * Test case for removeContactCustomField
      *
      * Delete contact tags and/or fields..
      *
      */
-    public function testMailingListControllerRemoveContactCustomField()
+    public function testRemoveContactCustomField()
     {
     }
 
     /**
-     * Test case for mailingListControllerSetContactCustomField
+     * Test case for setContactCustomField
      *
      * Update contact tags and/or fields..
      *
      */
-    public function testMailingListControllerSetContactCustomField()
+    public function testSetContactCustomField()
     {
     }
 
     /**
-     * Test case for mailingListControllerSetContactTag
+     * Test case for setContactTag
      *
      * Update contact tags and/or fields..
      *
      */
-    public function testMailingListControllerSetContactTag()
+    public function testSetContactTag()
     {
     }
 
     /**
-     * Test case for mailingListControllerSubscribe
+     * Test case for subscribe
      *
      * Subscribe contact to a mailing list..
      *
      */
-    public function testMailingListControllerSubscribe()
+    public function testSubscribe()
     {
     }
 
     /**
-     * Test case for mailingListControllerSubscribeToNewsletter
+     * Test case for subscribeToNewsletter
      *
      * Subscribe contact to the newsletter..
      *
      */
-    public function testMailingListControllerSubscribeToNewsletter()
+    public function testSubscribeToNewsletter()
     {
     }
 
     /**
-     * Test case for mailingListControllerUnsubscribe
+     * Test case for unsubscribe
      *
      * Unsubscribe to a mailing list..
      *
      */
-    public function testMailingListControllerUnsubscribe()
+    public function testUnsubscribe()
     {
     }
 
     /**
-     * Test case for mailingListControllerUnsubscribeFromNewsletter
+     * Test case for unsubscribeFromNewsletter
      *
      * Unsubscribe to a mailing list..
      *
      */
-    public function testMailingListControllerUnsubscribeFromNewsletter()
+    public function testUnsubscribeFromNewsletter()
     {
     }
 }

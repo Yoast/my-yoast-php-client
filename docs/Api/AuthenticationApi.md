@@ -1,15 +1,15 @@
 # Yoast\MyYoastApiClient\AuthenticationApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**authControllerGetAccessToken**](AuthenticationApi.md#authcontrollergetaccesstoken) | **GET** /api/auth/{id}/getAccessToken | 
-[**authControllerGetProfile**](AuthenticationApi.md#authcontrollergetprofile) | **GET** /api/profile | 
-[**authControllerLogin**](AuthenticationApi.md#authcontrollerlogin) | **POST** /api/auth/login | 
+[**getAccessToken**](AuthenticationApi.md#getaccesstoken) | **GET** /api/auth/{id}/getAccessToken | 
+[**getProfile**](AuthenticationApi.md#getprofile) | **GET** /api/profile | 
+[**login**](AuthenticationApi.md#login) | **POST** /api/auth/login | 
 
-# **authControllerGetAccessToken**
-> \Yoast\MyYoastApiClient\Model\AccessTokenResponse authControllerGetAccessToken($id)
+# **getAccessToken**
+> \Yoast\MyYoastApiClient\Model\AccessTokenResponse getAccessToken($id)
 
 
 
@@ -26,10 +26,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthenticationApi(
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->authControllerGetAccessToken($id);
+    $result = $apiInstance->getAccessToken($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthenticationApi->authControllerGetAccessToken: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthenticationApi->getAccessToken: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -55,8 +55,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **authControllerGetProfile**
-> authControllerGetProfile()
+# **getProfile**
+> getProfile()
 
 
 
@@ -72,9 +72,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthenticationApi(
 );
 
 try {
-    $apiInstance->authControllerGetProfile();
+    $apiInstance->getProfile();
 } catch (Exception $e) {
-    echo 'Exception when calling AuthenticationApi->authControllerGetProfile: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthenticationApi->getProfile: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -97,8 +97,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **authControllerLogin**
-> \Yoast\MyYoastApiClient\Model\AccessTokenResponse authControllerLogin($body)
+# **login**
+> \Yoast\MyYoastApiClient\Model\AccessTokenResponse login($body)
 
 
 
@@ -115,10 +115,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthenticationApi(
 $body = new \Yoast\MyYoastApiClient\Model\LoginAccountDto(); // \Yoast\MyYoastApiClient\Model\LoginAccountDto | 
 
 try {
-    $result = $apiInstance->authControllerLogin($body);
+    $result = $apiInstance->login($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthenticationApi->authControllerLogin: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthenticationApi->login: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServeArchiveZIP
+     * Operation serveArchiveZIP
      *
      * Serves an .zip of the plugin.
      *
@@ -99,14 +99,14 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function packagesControllerServeArchiveZIP($org, $archive, $name)
+    public function serveArchiveZIP($org, $archive, $name)
     {
-        list($response) = $this->packagesControllerServeArchiveZIPWithHttpInfo($org, $archive, $name);
+        list($response) = $this->serveArchiveZIPWithHttpInfo($org, $archive, $name);
         return $response;
     }
 
     /**
-     * Operation packagesControllerServeArchiveZIPWithHttpInfo
+     * Operation serveArchiveZIPWithHttpInfo
      *
      * Serves an .zip of the plugin.
      *
@@ -118,10 +118,10 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function packagesControllerServeArchiveZIPWithHttpInfo($org, $archive, $name)
+    public function serveArchiveZIPWithHttpInfo($org, $archive, $name)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->packagesControllerServeArchiveZIPRequest($org, $archive, $name);
+        $request = $this->serveArchiveZIPRequest($org, $archive, $name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -183,7 +183,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServeArchiveZIPAsync
+     * Operation serveArchiveZIPAsync
      *
      * Serves an .zip of the plugin.
      *
@@ -194,9 +194,9 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function packagesControllerServeArchiveZIPAsync($org, $archive, $name)
+    public function serveArchiveZIPAsync($org, $archive, $name)
     {
-        return $this->packagesControllerServeArchiveZIPAsyncWithHttpInfo($org, $archive, $name)
+        return $this->serveArchiveZIPAsyncWithHttpInfo($org, $archive, $name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -205,7 +205,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServeArchiveZIPAsyncWithHttpInfo
+     * Operation serveArchiveZIPAsyncWithHttpInfo
      *
      * Serves an .zip of the plugin.
      *
@@ -216,10 +216,10 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function packagesControllerServeArchiveZIPAsyncWithHttpInfo($org, $archive, $name)
+    public function serveArchiveZIPAsyncWithHttpInfo($org, $archive, $name)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->packagesControllerServeArchiveZIPRequest($org, $archive, $name);
+        $request = $this->serveArchiveZIPRequest($org, $archive, $name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -259,7 +259,7 @@ class PackagesApi
     }
 
     /**
-     * Create request for operation 'packagesControllerServeArchiveZIP'
+     * Create request for operation 'serveArchiveZIP'
      *
      * @param  string $org (required)
      * @param  string $archive (required)
@@ -268,24 +268,24 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function packagesControllerServeArchiveZIPRequest($org, $archive, $name)
+    protected function serveArchiveZIPRequest($org, $archive, $name)
     {
         // verify the required parameter 'org' is set
         if ($org === null || (is_array($org) && count($org) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $org when calling packagesControllerServeArchiveZIP'
+                'Missing the required parameter $org when calling serveArchiveZIP'
             );
         }
         // verify the required parameter 'archive' is set
         if ($archive === null || (is_array($archive) && count($archive) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $archive when calling packagesControllerServeArchiveZIP'
+                'Missing the required parameter $archive when calling serveArchiveZIP'
             );
         }
         // verify the required parameter 'name' is set
         if ($name === null || (is_array($name) && count($name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling packagesControllerServeArchiveZIP'
+                'Missing the required parameter $name when calling serveArchiveZIP'
             );
         }
 
@@ -387,7 +387,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServePackagesJSON
+     * Operation servePackagesJSON
      *
      * Serves the general packages.json file.
      *
@@ -396,14 +396,14 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function packagesControllerServePackagesJSON()
+    public function servePackagesJSON()
     {
-        list($response) = $this->packagesControllerServePackagesJSONWithHttpInfo();
+        list($response) = $this->servePackagesJSONWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation packagesControllerServePackagesJSONWithHttpInfo
+     * Operation servePackagesJSONWithHttpInfo
      *
      * Serves the general packages.json file.
      *
@@ -412,10 +412,10 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function packagesControllerServePackagesJSONWithHttpInfo()
+    public function servePackagesJSONWithHttpInfo()
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->packagesControllerServePackagesJSONRequest();
+        $request = $this->servePackagesJSONRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -477,7 +477,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServePackagesJSONAsync
+     * Operation servePackagesJSONAsync
      *
      * Serves the general packages.json file.
      *
@@ -485,9 +485,9 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function packagesControllerServePackagesJSONAsync()
+    public function servePackagesJSONAsync()
     {
-        return $this->packagesControllerServePackagesJSONAsyncWithHttpInfo()
+        return $this->servePackagesJSONAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -496,7 +496,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServePackagesJSONAsyncWithHttpInfo
+     * Operation servePackagesJSONAsyncWithHttpInfo
      *
      * Serves the general packages.json file.
      *
@@ -504,10 +504,10 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function packagesControllerServePackagesJSONAsyncWithHttpInfo()
+    public function servePackagesJSONAsyncWithHttpInfo()
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->packagesControllerServePackagesJSONRequest();
+        $request = $this->servePackagesJSONRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -547,13 +547,13 @@ class PackagesApi
     }
 
     /**
-     * Create request for operation 'packagesControllerServePackagesJSON'
+     * Create request for operation 'servePackagesJSON'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function packagesControllerServePackagesJSONRequest()
+    protected function servePackagesJSONRequest()
     {
 
         $resourcePath = '/packages/packages.json';
@@ -630,7 +630,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServeProvider2JSON
+     * Operation serveProvider2JSON
      *
      * Serves the requested provider.json
      *
@@ -641,14 +641,14 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function packagesControllerServeProvider2JSON($org, $name)
+    public function serveProvider2JSON($org, $name)
     {
-        list($response) = $this->packagesControllerServeProvider2JSONWithHttpInfo($org, $name);
+        list($response) = $this->serveProvider2JSONWithHttpInfo($org, $name);
         return $response;
     }
 
     /**
-     * Operation packagesControllerServeProvider2JSONWithHttpInfo
+     * Operation serveProvider2JSONWithHttpInfo
      *
      * Serves the requested provider.json
      *
@@ -659,10 +659,10 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function packagesControllerServeProvider2JSONWithHttpInfo($org, $name)
+    public function serveProvider2JSONWithHttpInfo($org, $name)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->packagesControllerServeProvider2JSONRequest($org, $name);
+        $request = $this->serveProvider2JSONRequest($org, $name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -724,7 +724,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServeProvider2JSONAsync
+     * Operation serveProvider2JSONAsync
      *
      * Serves the requested provider.json
      *
@@ -734,9 +734,9 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function packagesControllerServeProvider2JSONAsync($org, $name)
+    public function serveProvider2JSONAsync($org, $name)
     {
-        return $this->packagesControllerServeProvider2JSONAsyncWithHttpInfo($org, $name)
+        return $this->serveProvider2JSONAsyncWithHttpInfo($org, $name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -745,7 +745,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServeProvider2JSONAsyncWithHttpInfo
+     * Operation serveProvider2JSONAsyncWithHttpInfo
      *
      * Serves the requested provider.json
      *
@@ -755,10 +755,10 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function packagesControllerServeProvider2JSONAsyncWithHttpInfo($org, $name)
+    public function serveProvider2JSONAsyncWithHttpInfo($org, $name)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->packagesControllerServeProvider2JSONRequest($org, $name);
+        $request = $this->serveProvider2JSONRequest($org, $name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -798,7 +798,7 @@ class PackagesApi
     }
 
     /**
-     * Create request for operation 'packagesControllerServeProvider2JSON'
+     * Create request for operation 'serveProvider2JSON'
      *
      * @param  string $org (required)
      * @param  string $name The package name, optionally suffixed with -dev (required)
@@ -806,18 +806,18 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function packagesControllerServeProvider2JSONRequest($org, $name)
+    protected function serveProvider2JSONRequest($org, $name)
     {
         // verify the required parameter 'org' is set
         if ($org === null || (is_array($org) && count($org) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $org when calling packagesControllerServeProvider2JSON'
+                'Missing the required parameter $org when calling serveProvider2JSON'
             );
         }
         // verify the required parameter 'name' is set
         if ($name === null || (is_array($name) && count($name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling packagesControllerServeProvider2JSON'
+                'Missing the required parameter $name when calling serveProvider2JSON'
             );
         }
 
@@ -911,7 +911,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServeProviderJSON
+     * Operation serveProviderJSON
      *
      * Serves the requested provider.json
      *
@@ -922,14 +922,14 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function packagesControllerServeProviderJSON($org, $nameAndHash)
+    public function serveProviderJSON($org, $nameAndHash)
     {
-        list($response) = $this->packagesControllerServeProviderJSONWithHttpInfo($org, $nameAndHash);
+        list($response) = $this->serveProviderJSONWithHttpInfo($org, $nameAndHash);
         return $response;
     }
 
     /**
-     * Operation packagesControllerServeProviderJSONWithHttpInfo
+     * Operation serveProviderJSONWithHttpInfo
      *
      * Serves the requested provider.json
      *
@@ -940,10 +940,10 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function packagesControllerServeProviderJSONWithHttpInfo($org, $nameAndHash)
+    public function serveProviderJSONWithHttpInfo($org, $nameAndHash)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->packagesControllerServeProviderJSONRequest($org, $nameAndHash);
+        $request = $this->serveProviderJSONRequest($org, $nameAndHash);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1005,7 +1005,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServeProviderJSONAsync
+     * Operation serveProviderJSONAsync
      *
      * Serves the requested provider.json
      *
@@ -1015,9 +1015,9 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function packagesControllerServeProviderJSONAsync($org, $nameAndHash)
+    public function serveProviderJSONAsync($org, $nameAndHash)
     {
-        return $this->packagesControllerServeProviderJSONAsyncWithHttpInfo($org, $nameAndHash)
+        return $this->serveProviderJSONAsyncWithHttpInfo($org, $nameAndHash)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1026,7 +1026,7 @@ class PackagesApi
     }
 
     /**
-     * Operation packagesControllerServeProviderJSONAsyncWithHttpInfo
+     * Operation serveProviderJSONAsyncWithHttpInfo
      *
      * Serves the requested provider.json
      *
@@ -1036,10 +1036,10 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function packagesControllerServeProviderJSONAsyncWithHttpInfo($org, $nameAndHash)
+    public function serveProviderJSONAsyncWithHttpInfo($org, $nameAndHash)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->packagesControllerServeProviderJSONRequest($org, $nameAndHash);
+        $request = $this->serveProviderJSONRequest($org, $nameAndHash);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1079,7 +1079,7 @@ class PackagesApi
     }
 
     /**
-     * Create request for operation 'packagesControllerServeProviderJSON'
+     * Create request for operation 'serveProviderJSON'
      *
      * @param  string $org (required)
      * @param  string $nameAndHash The package name and package hash separated by a $ character (required)
@@ -1087,18 +1087,18 @@ class PackagesApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function packagesControllerServeProviderJSONRequest($org, $nameAndHash)
+    protected function serveProviderJSONRequest($org, $nameAndHash)
     {
         // verify the required parameter 'org' is set
         if ($org === null || (is_array($org) && count($org) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $org when calling packagesControllerServeProviderJSON'
+                'Missing the required parameter $org when calling serveProviderJSON'
             );
         }
         // verify the required parameter 'nameAndHash' is set
         if ($nameAndHash === null || (is_array($nameAndHash) && count($nameAndHash) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $nameAndHash when calling packagesControllerServeProviderJSON'
+                'Missing the required parameter $nameAndHash when calling serveProviderJSON'
             );
         }
 

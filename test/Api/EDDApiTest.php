@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,22 +71,22 @@ class EDDApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for eddControllerHandleGetRequest
+     * Test case for handleGetRequest
      *
      * Activate or deactivate a site license.
      *
      */
-    public function testEddControllerHandleGetRequest()
+    public function testHandleGetRequest()
     {
     }
 
     /**
-     * Test case for eddControllerHandlePostRequest
+     * Test case for handlePostRequest
      *
      * .
      *
      */
-    public function testEddControllerHandlePostRequest()
+    public function testHandlePostRequest()
     {
     }
 }

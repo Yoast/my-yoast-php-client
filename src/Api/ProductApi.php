@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerDeleteOne
+     * Operation deleteOne
      *
      * @param  string $id id (required)
      *
@@ -95,13 +95,13 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function productControllerDeleteOne($id)
+    public function deleteOne($id)
     {
-        $this->productControllerDeleteOneWithHttpInfo($id);
+        $this->deleteOneWithHttpInfo($id);
     }
 
     /**
-     * Operation productControllerDeleteOneWithHttpInfo
+     * Operation deleteOneWithHttpInfo
      *
      * @param  string $id (required)
      *
@@ -109,10 +109,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productControllerDeleteOneWithHttpInfo($id)
+    public function deleteOneWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->productControllerDeleteOneRequest($id);
+        $request = $this->deleteOneRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -152,7 +152,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerDeleteOneAsync
+     * Operation deleteOneAsync
      *
      * 
      *
@@ -161,9 +161,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productControllerDeleteOneAsync($id)
+    public function deleteOneAsync($id)
     {
-        return $this->productControllerDeleteOneAsyncWithHttpInfo($id)
+        return $this->deleteOneAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -172,7 +172,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerDeleteOneAsyncWithHttpInfo
+     * Operation deleteOneAsyncWithHttpInfo
      *
      * 
      *
@@ -181,10 +181,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productControllerDeleteOneAsyncWithHttpInfo($id)
+    public function deleteOneAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->productControllerDeleteOneRequest($id);
+        $request = $this->deleteOneRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -210,19 +210,19 @@ class ProductApi
     }
 
     /**
-     * Create request for operation 'productControllerDeleteOne'
+     * Create request for operation 'deleteOne'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productControllerDeleteOneRequest($id)
+    protected function deleteOneRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling productControllerDeleteOne'
+                'Missing the required parameter $id when calling deleteOne'
             );
         }
 
@@ -308,7 +308,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerGetMany
+     * Operation getMany
      *
      * Get products
      *
@@ -318,14 +318,14 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Product[]
      */
-    public function productControllerGetMany($filter = null)
+    public function getMany($filter = null)
     {
-        list($response) = $this->productControllerGetManyWithHttpInfo($filter);
+        list($response) = $this->getManyWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation productControllerGetManyWithHttpInfo
+     * Operation getManyWithHttpInfo
      *
      * Get products
      *
@@ -335,10 +335,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Product[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function productControllerGetManyWithHttpInfo($filter = null)
+    public function getManyWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Product[]';
-        $request = $this->productControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -400,7 +400,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerGetManyAsync
+     * Operation getManyAsync
      *
      * Get products
      *
@@ -409,9 +409,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productControllerGetManyAsync($filter = null)
+    public function getManyAsync($filter = null)
     {
-        return $this->productControllerGetManyAsyncWithHttpInfo($filter)
+        return $this->getManyAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -420,7 +420,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerGetManyAsyncWithHttpInfo
+     * Operation getManyAsyncWithHttpInfo
      *
      * Get products
      *
@@ -429,10 +429,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productControllerGetManyAsyncWithHttpInfo($filter = null)
+    public function getManyAsyncWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Product[]';
-        $request = $this->productControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -472,14 +472,14 @@ class ProductApi
     }
 
     /**
-     * Create request for operation 'productControllerGetMany'
+     * Create request for operation 'getMany'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productControllerGetManyRequest($filter = null)
+    protected function getManyRequest($filter = null)
     {
 
         $resourcePath = '/api/Products';
@@ -560,7 +560,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerGetOne
+     * Operation getOne
      *
      * Get a product
      *
@@ -571,14 +571,14 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Product
      */
-    public function productControllerGetOne($id, $filter = null)
+    public function getOne($id, $filter = null)
     {
-        list($response) = $this->productControllerGetOneWithHttpInfo($id, $filter);
+        list($response) = $this->getOneWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation productControllerGetOneWithHttpInfo
+     * Operation getOneWithHttpInfo
      *
      * Get a product
      *
@@ -589,10 +589,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Product, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productControllerGetOneWithHttpInfo($id, $filter = null)
+    public function getOneWithHttpInfo($id, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Product';
-        $request = $this->productControllerGetOneRequest($id, $filter);
+        $request = $this->getOneRequest($id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -654,7 +654,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerGetOneAsync
+     * Operation getOneAsync
      *
      * Get a product
      *
@@ -664,9 +664,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productControllerGetOneAsync($id, $filter = null)
+    public function getOneAsync($id, $filter = null)
     {
-        return $this->productControllerGetOneAsyncWithHttpInfo($id, $filter)
+        return $this->getOneAsyncWithHttpInfo($id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -675,7 +675,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerGetOneAsyncWithHttpInfo
+     * Operation getOneAsyncWithHttpInfo
      *
      * Get a product
      *
@@ -685,10 +685,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productControllerGetOneAsyncWithHttpInfo($id, $filter = null)
+    public function getOneAsyncWithHttpInfo($id, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Product';
-        $request = $this->productControllerGetOneRequest($id, $filter);
+        $request = $this->getOneRequest($id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -728,7 +728,7 @@ class ProductApi
     }
 
     /**
-     * Create request for operation 'productControllerGetOne'
+     * Create request for operation 'getOne'
      *
      * @param  string $id (required)
      * @param  object $filter Used for filtering/joining the results. (optional)
@@ -736,12 +736,12 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productControllerGetOneRequest($id, $filter = null)
+    protected function getOneRequest($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling productControllerGetOne'
+                'Missing the required parameter $id when calling getOne'
             );
         }
 
@@ -831,7 +831,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerPluginVersionDetails
+     * Operation pluginVersionDetails
      *
      * @param  string $password password (optional)
      *
@@ -839,13 +839,13 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function productControllerPluginVersionDetails($password = null)
+    public function pluginVersionDetails($password = null)
     {
-        $this->productControllerPluginVersionDetailsWithHttpInfo($password);
+        $this->pluginVersionDetailsWithHttpInfo($password);
     }
 
     /**
-     * Operation productControllerPluginVersionDetailsWithHttpInfo
+     * Operation pluginVersionDetailsWithHttpInfo
      *
      * @param  string $password (optional)
      *
@@ -853,10 +853,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productControllerPluginVersionDetailsWithHttpInfo($password = null)
+    public function pluginVersionDetailsWithHttpInfo($password = null)
     {
         $returnType = '';
-        $request = $this->productControllerPluginVersionDetailsRequest($password);
+        $request = $this->pluginVersionDetailsRequest($password);
 
         try {
             $options = $this->createHttpClientOption();
@@ -896,7 +896,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerPluginVersionDetailsAsync
+     * Operation pluginVersionDetailsAsync
      *
      * 
      *
@@ -905,9 +905,9 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productControllerPluginVersionDetailsAsync($password = null)
+    public function pluginVersionDetailsAsync($password = null)
     {
-        return $this->productControllerPluginVersionDetailsAsyncWithHttpInfo($password)
+        return $this->pluginVersionDetailsAsyncWithHttpInfo($password)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -916,7 +916,7 @@ class ProductApi
     }
 
     /**
-     * Operation productControllerPluginVersionDetailsAsyncWithHttpInfo
+     * Operation pluginVersionDetailsAsyncWithHttpInfo
      *
      * 
      *
@@ -925,10 +925,10 @@ class ProductApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productControllerPluginVersionDetailsAsyncWithHttpInfo($password = null)
+    public function pluginVersionDetailsAsyncWithHttpInfo($password = null)
     {
         $returnType = '';
-        $request = $this->productControllerPluginVersionDetailsRequest($password);
+        $request = $this->pluginVersionDetailsRequest($password);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -954,14 +954,14 @@ class ProductApi
     }
 
     /**
-     * Create request for operation 'productControllerPluginVersionDetails'
+     * Create request for operation 'pluginVersionDetails'
      *
      * @param  string $password (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productControllerPluginVersionDetailsRequest($password = null)
+    protected function pluginVersionDetailsRequest($password = null)
     {
 
         $resourcePath = '/api/Products/wordpressPluginVersionDetails';

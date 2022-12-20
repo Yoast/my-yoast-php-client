@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class DownloadApi
     }
 
     /**
-     * Operation downloadControllerDownloadFile
+     * Operation downloadFile
      *
      * Route to download a file
      *
@@ -100,13 +100,13 @@ class DownloadApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function downloadControllerDownloadFile($name, $version, $pluginVersion, $site)
+    public function downloadFile($name, $version, $pluginVersion, $site)
     {
-        $this->downloadControllerDownloadFileWithHttpInfo($name, $version, $pluginVersion, $site);
+        $this->downloadFileWithHttpInfo($name, $version, $pluginVersion, $site);
     }
 
     /**
-     * Operation downloadControllerDownloadFileWithHttpInfo
+     * Operation downloadFileWithHttpInfo
      *
      * Route to download a file
      *
@@ -119,10 +119,10 @@ class DownloadApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function downloadControllerDownloadFileWithHttpInfo($name, $version, $pluginVersion, $site)
+    public function downloadFileWithHttpInfo($name, $version, $pluginVersion, $site)
     {
         $returnType = '';
-        $request = $this->downloadControllerDownloadFileRequest($name, $version, $pluginVersion, $site);
+        $request = $this->downloadFileRequest($name, $version, $pluginVersion, $site);
 
         try {
             $options = $this->createHttpClientOption();
@@ -162,7 +162,7 @@ class DownloadApi
     }
 
     /**
-     * Operation downloadControllerDownloadFileAsync
+     * Operation downloadFileAsync
      *
      * Route to download a file
      *
@@ -174,9 +174,9 @@ class DownloadApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadControllerDownloadFileAsync($name, $version, $pluginVersion, $site)
+    public function downloadFileAsync($name, $version, $pluginVersion, $site)
     {
-        return $this->downloadControllerDownloadFileAsyncWithHttpInfo($name, $version, $pluginVersion, $site)
+        return $this->downloadFileAsyncWithHttpInfo($name, $version, $pluginVersion, $site)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -185,7 +185,7 @@ class DownloadApi
     }
 
     /**
-     * Operation downloadControllerDownloadFileAsyncWithHttpInfo
+     * Operation downloadFileAsyncWithHttpInfo
      *
      * Route to download a file
      *
@@ -197,10 +197,10 @@ class DownloadApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadControllerDownloadFileAsyncWithHttpInfo($name, $version, $pluginVersion, $site)
+    public function downloadFileAsyncWithHttpInfo($name, $version, $pluginVersion, $site)
     {
         $returnType = '';
-        $request = $this->downloadControllerDownloadFileRequest($name, $version, $pluginVersion, $site);
+        $request = $this->downloadFileRequest($name, $version, $pluginVersion, $site);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -226,7 +226,7 @@ class DownloadApi
     }
 
     /**
-     * Create request for operation 'downloadControllerDownloadFile'
+     * Create request for operation 'downloadFile'
      *
      * @param  string $name (required)
      * @param  string $version (required)
@@ -236,30 +236,30 @@ class DownloadApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function downloadControllerDownloadFileRequest($name, $version, $pluginVersion, $site)
+    protected function downloadFileRequest($name, $version, $pluginVersion, $site)
     {
         // verify the required parameter 'name' is set
         if ($name === null || (is_array($name) && count($name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling downloadControllerDownloadFile'
+                'Missing the required parameter $name when calling downloadFile'
             );
         }
         // verify the required parameter 'version' is set
         if ($version === null || (is_array($version) && count($version) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $version when calling downloadControllerDownloadFile'
+                'Missing the required parameter $version when calling downloadFile'
             );
         }
         // verify the required parameter 'pluginVersion' is set
         if ($pluginVersion === null || (is_array($pluginVersion) && count($pluginVersion) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $pluginVersion when calling downloadControllerDownloadFile'
+                'Missing the required parameter $pluginVersion when calling downloadFile'
             );
         }
         // verify the required parameter 'site' is set
         if ($site === null || (is_array($site) && count($site) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $site when calling downloadControllerDownloadFile'
+                'Missing the required parameter $site when calling downloadFile'
             );
         }
 
@@ -357,7 +357,7 @@ class DownloadApi
     }
 
     /**
-     * Operation downloadControllerUploadFile
+     * Operation uploadFile
      *
      * Route to update a file.
      *
@@ -368,14 +368,14 @@ class DownloadApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function downloadControllerUploadFile($body, $name)
+    public function uploadFile($body, $name)
     {
-        list($response) = $this->downloadControllerUploadFileWithHttpInfo($body, $name);
+        list($response) = $this->uploadFileWithHttpInfo($body, $name);
         return $response;
     }
 
     /**
-     * Operation downloadControllerUploadFileWithHttpInfo
+     * Operation uploadFileWithHttpInfo
      *
      * Route to update a file.
      *
@@ -386,10 +386,10 @@ class DownloadApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function downloadControllerUploadFileWithHttpInfo($body, $name)
+    public function uploadFileWithHttpInfo($body, $name)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->downloadControllerUploadFileRequest($body, $name);
+        $request = $this->uploadFileRequest($body, $name);
 
         try {
             $options = $this->createHttpClientOption();
@@ -451,7 +451,7 @@ class DownloadApi
     }
 
     /**
-     * Operation downloadControllerUploadFileAsync
+     * Operation uploadFileAsync
      *
      * Route to update a file.
      *
@@ -461,9 +461,9 @@ class DownloadApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadControllerUploadFileAsync($body, $name)
+    public function uploadFileAsync($body, $name)
     {
-        return $this->downloadControllerUploadFileAsyncWithHttpInfo($body, $name)
+        return $this->uploadFileAsyncWithHttpInfo($body, $name)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -472,7 +472,7 @@ class DownloadApi
     }
 
     /**
-     * Operation downloadControllerUploadFileAsyncWithHttpInfo
+     * Operation uploadFileAsyncWithHttpInfo
      *
      * Route to update a file.
      *
@@ -482,10 +482,10 @@ class DownloadApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadControllerUploadFileAsyncWithHttpInfo($body, $name)
+    public function uploadFileAsyncWithHttpInfo($body, $name)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->downloadControllerUploadFileRequest($body, $name);
+        $request = $this->uploadFileRequest($body, $name);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -525,7 +525,7 @@ class DownloadApi
     }
 
     /**
-     * Create request for operation 'downloadControllerUploadFile'
+     * Create request for operation 'uploadFile'
      *
      * @param  \Yoast\MyYoastApiClient\Model\UpdateFileDto $body (required)
      * @param  string $name (required)
@@ -533,18 +533,18 @@ class DownloadApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function downloadControllerUploadFileRequest($body, $name)
+    protected function uploadFileRequest($body, $name)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling downloadControllerUploadFile'
+                'Missing the required parameter $body when calling uploadFile'
             );
         }
         // verify the required parameter 'name' is set
         if ($name === null || (is_array($name) && count($name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $name when calling downloadControllerUploadFile'
+                'Missing the required parameter $name when calling uploadFile'
             );
         }
 

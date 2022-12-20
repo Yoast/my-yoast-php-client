@@ -1,15 +1,15 @@
 # Yoast\MyYoastApiClient\ComposerTokenApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**composerTokenControllerDisable**](ComposerTokenApi.md#composertokencontrollerdisable) | **POST** /api/ComposerTokens/{id}/delete | Disable a composer token
-[**composerTokenControllerGenerate**](ComposerTokenApi.md#composertokencontrollergenerate) | **POST** /api/ComposerTokens/generate | Generates a Composer token
-[**composerTokenControllerRename**](ComposerTokenApi.md#composertokencontrollerrename) | **POST** /api/ComposerTokens/{id}/rename | Renames a Composer token
+[**disable**](ComposerTokenApi.md#disable) | **POST** /api/ComposerTokens/{id}/delete | Disable a composer token
+[**generate**](ComposerTokenApi.md#generate) | **POST** /api/ComposerTokens/generate | Generates a Composer token
+[**rename**](ComposerTokenApi.md#rename) | **POST** /api/ComposerTokens/{id}/rename | Renames a Composer token
 
-# **composerTokenControllerDisable**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenControllerDisable($id)
+# **disable**
+> \Yoast\MyYoastApiClient\Model\ComposerToken disable($id)
 
 Disable a composer token
 
@@ -19,24 +19,19 @@ Renders a single composer token unusable
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | 
 
 try {
-    $result = $apiInstance->composerTokenControllerDisable($id);
+    $result = $apiInstance->disable($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenControllerDisable: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->disable: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -53,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -62,8 +57,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **composerTokenControllerGenerate**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenControllerGenerate($body)
+# **generate**
+> \Yoast\MyYoastApiClient\Model\ComposerToken generate($body)
 
 Generates a Composer token
 
@@ -73,24 +68,19 @@ Generates a personal token for the logged in customer that can be used to downlo
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $body = new \Yoast\MyYoastApiClient\Model\GenerateDto(); // \Yoast\MyYoastApiClient\Model\GenerateDto | 
 
 try {
-    $result = $apiInstance->composerTokenControllerGenerate($body);
+    $result = $apiInstance->generate($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenControllerGenerate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->generate: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -107,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -116,8 +106,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **composerTokenControllerRename**
-> \Yoast\MyYoastApiClient\Model\ComposerToken composerTokenControllerRename($body, $id)
+# **rename**
+> \Yoast\MyYoastApiClient\Model\ComposerToken rename($body, $id)
 
 Renames a Composer token
 
@@ -127,25 +117,20 @@ Changes the name of a Composer token
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\ComposerTokenApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $body = new \Yoast\MyYoastApiClient\Model\RenameBodyDto(); // \Yoast\MyYoastApiClient\Model\RenameBodyDto | 
 $id = "id_example"; // string | 
 
 try {
-    $result = $apiInstance->composerTokenControllerRename($body, $id);
+    $result = $apiInstance->rename($body, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ComposerTokenApi->composerTokenControllerRename: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ComposerTokenApi->rename: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -163,7 +148,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 

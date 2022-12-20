@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,283 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerCurrent
+     * Operation addSubscription
+     *
+     * Adds a subscription to a site
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\AddSubscriptionDto $body body (required)
+     * @param  string $id id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yoast\MyYoastApiClient\Model\Site
+     */
+    public function addSubscription($body, $id)
+    {
+        list($response) = $this->addSubscriptionWithHttpInfo($body, $id);
+        return $response;
+    }
+
+    /**
+     * Operation addSubscriptionWithHttpInfo
+     *
+     * Adds a subscription to a site
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\AddSubscriptionDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function addSubscriptionWithHttpInfo($body, $id)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\Site';
+        $request = $this->addSubscriptionRequest($body, $id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Site',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation addSubscriptionAsync
+     *
+     * Adds a subscription to a site
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\AddSubscriptionDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addSubscriptionAsync($body, $id)
+    {
+        return $this->addSubscriptionAsyncWithHttpInfo($body, $id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation addSubscriptionAsyncWithHttpInfo
+     *
+     * Adds a subscription to a site
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\AddSubscriptionDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function addSubscriptionAsyncWithHttpInfo($body, $id)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\Site';
+        $request = $this->addSubscriptionRequest($body, $id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'addSubscription'
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\AddSubscriptionDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function addSubscriptionRequest($body, $id)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling addSubscription'
+            );
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling addSubscription'
+            );
+        }
+
+        $resourcePath = '/api/Sites/{id}/subscriptions';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation current
      *
      * Get the current connected site for an access token.
      *
@@ -98,14 +374,14 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function siteControllerCurrent($token = null, $url = null)
+    public function current($token = null, $url = null)
     {
-        list($response) = $this->siteControllerCurrentWithHttpInfo($token, $url);
+        list($response) = $this->currentWithHttpInfo($token, $url);
         return $response;
     }
 
     /**
-     * Operation siteControllerCurrentWithHttpInfo
+     * Operation currentWithHttpInfo
      *
      * Get the current connected site for an access token.
      *
@@ -116,10 +392,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function siteControllerCurrentWithHttpInfo($token = null, $url = null)
+    public function currentWithHttpInfo($token = null, $url = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->siteControllerCurrentRequest($token, $url);
+        $request = $this->currentRequest($token, $url);
 
         try {
             $options = $this->createHttpClientOption();
@@ -181,7 +457,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerCurrentAsync
+     * Operation currentAsync
      *
      * Get the current connected site for an access token.
      *
@@ -191,9 +467,9 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerCurrentAsync($token = null, $url = null)
+    public function currentAsync($token = null, $url = null)
     {
-        return $this->siteControllerCurrentAsyncWithHttpInfo($token, $url)
+        return $this->currentAsyncWithHttpInfo($token, $url)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -202,7 +478,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerCurrentAsyncWithHttpInfo
+     * Operation currentAsyncWithHttpInfo
      *
      * Get the current connected site for an access token.
      *
@@ -212,10 +488,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerCurrentAsyncWithHttpInfo($token = null, $url = null)
+    public function currentAsyncWithHttpInfo($token = null, $url = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->siteControllerCurrentRequest($token, $url);
+        $request = $this->currentRequest($token, $url);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,7 +531,7 @@ class SiteApi
     }
 
     /**
-     * Create request for operation 'siteControllerCurrent'
+     * Create request for operation 'current'
      *
      * @param  string $token (optional)
      * @param  string $url (optional)
@@ -263,7 +539,7 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function siteControllerCurrentRequest($token = null, $url = null)
+    protected function currentRequest($token = null, $url = null)
     {
 
         $resourcePath = '/api/Sites/current';
@@ -326,10 +602,6 @@ class SiteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -352,7 +624,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerCurrentClone
+     * Operation currentClone
      *
      * Get the current connected site for an access token.
      *
@@ -363,14 +635,14 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function siteControllerCurrentClone($token = null, $url = null)
+    public function currentClone($token = null, $url = null)
     {
-        list($response) = $this->siteControllerCurrentCloneWithHttpInfo($token, $url);
+        list($response) = $this->currentCloneWithHttpInfo($token, $url);
         return $response;
     }
 
     /**
-     * Operation siteControllerCurrentCloneWithHttpInfo
+     * Operation currentCloneWithHttpInfo
      *
      * Get the current connected site for an access token.
      *
@@ -381,10 +653,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function siteControllerCurrentCloneWithHttpInfo($token = null, $url = null)
+    public function currentCloneWithHttpInfo($token = null, $url = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->siteControllerCurrentCloneRequest($token, $url);
+        $request = $this->currentCloneRequest($token, $url);
 
         try {
             $options = $this->createHttpClientOption();
@@ -446,7 +718,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerCurrentCloneAsync
+     * Operation currentCloneAsync
      *
      * Get the current connected site for an access token.
      *
@@ -456,9 +728,9 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerCurrentCloneAsync($token = null, $url = null)
+    public function currentCloneAsync($token = null, $url = null)
     {
-        return $this->siteControllerCurrentCloneAsyncWithHttpInfo($token, $url)
+        return $this->currentCloneAsyncWithHttpInfo($token, $url)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -467,7 +739,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerCurrentCloneAsyncWithHttpInfo
+     * Operation currentCloneAsyncWithHttpInfo
      *
      * Get the current connected site for an access token.
      *
@@ -477,10 +749,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerCurrentCloneAsyncWithHttpInfo($token = null, $url = null)
+    public function currentCloneAsyncWithHttpInfo($token = null, $url = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->siteControllerCurrentCloneRequest($token, $url);
+        $request = $this->currentCloneRequest($token, $url);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -520,7 +792,7 @@ class SiteApi
     }
 
     /**
-     * Create request for operation 'siteControllerCurrentClone'
+     * Create request for operation 'currentClone'
      *
      * @param  string $token (optional)
      * @param  string $url (optional)
@@ -528,7 +800,7 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function siteControllerCurrentCloneRequest($token = null, $url = null)
+    protected function currentCloneRequest($token = null, $url = null)
     {
 
         $resourcePath = '/api/Sites/info';
@@ -591,10 +863,6 @@ class SiteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -617,7 +885,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerDeleteOne
+     * Operation deleteOne
      *
      * @param  string $id id (required)
      *
@@ -625,13 +893,13 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function siteControllerDeleteOne($id)
+    public function deleteOne($id)
     {
-        $this->siteControllerDeleteOneWithHttpInfo($id);
+        $this->deleteOneWithHttpInfo($id);
     }
 
     /**
-     * Operation siteControllerDeleteOneWithHttpInfo
+     * Operation deleteOneWithHttpInfo
      *
      * @param  string $id (required)
      *
@@ -639,10 +907,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function siteControllerDeleteOneWithHttpInfo($id)
+    public function deleteOneWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->siteControllerDeleteOneRequest($id);
+        $request = $this->deleteOneRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -682,7 +950,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerDeleteOneAsync
+     * Operation deleteOneAsync
      *
      * 
      *
@@ -691,9 +959,9 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerDeleteOneAsync($id)
+    public function deleteOneAsync($id)
     {
-        return $this->siteControllerDeleteOneAsyncWithHttpInfo($id)
+        return $this->deleteOneAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -702,7 +970,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerDeleteOneAsyncWithHttpInfo
+     * Operation deleteOneAsyncWithHttpInfo
      *
      * 
      *
@@ -711,10 +979,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerDeleteOneAsyncWithHttpInfo($id)
+    public function deleteOneAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->siteControllerDeleteOneRequest($id);
+        $request = $this->deleteOneRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -740,19 +1008,19 @@ class SiteApi
     }
 
     /**
-     * Create request for operation 'siteControllerDeleteOne'
+     * Create request for operation 'deleteOne'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function siteControllerDeleteOneRequest($id)
+    protected function deleteOneRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling siteControllerDeleteOne'
+                'Missing the required parameter $id when calling deleteOne'
             );
         }
 
@@ -816,10 +1084,6 @@ class SiteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -842,7 +1106,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetMany
+     * Operation getMany
      *
      * Get sites
      *
@@ -852,14 +1116,14 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Site[]
      */
-    public function siteControllerGetMany($filter = null)
+    public function getMany($filter = null)
     {
-        list($response) = $this->siteControllerGetManyWithHttpInfo($filter);
+        list($response) = $this->getManyWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation siteControllerGetManyWithHttpInfo
+     * Operation getManyWithHttpInfo
      *
      * Get sites
      *
@@ -869,10 +1133,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Site[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function siteControllerGetManyWithHttpInfo($filter = null)
+    public function getManyWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Site[]';
-        $request = $this->siteControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -934,7 +1198,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetManyAsync
+     * Operation getManyAsync
      *
      * Get sites
      *
@@ -943,9 +1207,9 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerGetManyAsync($filter = null)
+    public function getManyAsync($filter = null)
     {
-        return $this->siteControllerGetManyAsyncWithHttpInfo($filter)
+        return $this->getManyAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -954,7 +1218,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetManyAsyncWithHttpInfo
+     * Operation getManyAsyncWithHttpInfo
      *
      * Get sites
      *
@@ -963,10 +1227,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerGetManyAsyncWithHttpInfo($filter = null)
+    public function getManyAsyncWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Site[]';
-        $request = $this->siteControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1006,14 +1270,14 @@ class SiteApi
     }
 
     /**
-     * Create request for operation 'siteControllerGetMany'
+     * Create request for operation 'getMany'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function siteControllerGetManyRequest($filter = null)
+    protected function getManyRequest($filter = null)
     {
 
         $resourcePath = '/api/Sites';
@@ -1072,10 +1336,6 @@ class SiteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1098,7 +1358,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetManyPaged
+     * Operation getManyPaged
      *
      * Get sites
      *
@@ -1108,13 +1368,13 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function siteControllerGetManyPaged($filter = null)
+    public function getManyPaged($filter = null)
     {
-        $this->siteControllerGetManyPagedWithHttpInfo($filter);
+        $this->getManyPagedWithHttpInfo($filter);
     }
 
     /**
-     * Operation siteControllerGetManyPagedWithHttpInfo
+     * Operation getManyPagedWithHttpInfo
      *
      * Get sites
      *
@@ -1124,10 +1384,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function siteControllerGetManyPagedWithHttpInfo($filter = null)
+    public function getManyPagedWithHttpInfo($filter = null)
     {
         $returnType = '';
-        $request = $this->siteControllerGetManyPagedRequest($filter);
+        $request = $this->getManyPagedRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1167,7 +1427,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetManyPagedAsync
+     * Operation getManyPagedAsync
      *
      * Get sites
      *
@@ -1176,9 +1436,9 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerGetManyPagedAsync($filter = null)
+    public function getManyPagedAsync($filter = null)
     {
-        return $this->siteControllerGetManyPagedAsyncWithHttpInfo($filter)
+        return $this->getManyPagedAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1187,7 +1447,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetManyPagedAsyncWithHttpInfo
+     * Operation getManyPagedAsyncWithHttpInfo
      *
      * Get sites
      *
@@ -1196,10 +1456,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerGetManyPagedAsyncWithHttpInfo($filter = null)
+    public function getManyPagedAsyncWithHttpInfo($filter = null)
     {
         $returnType = '';
-        $request = $this->siteControllerGetManyPagedRequest($filter);
+        $request = $this->getManyPagedRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1225,14 +1485,14 @@ class SiteApi
     }
 
     /**
-     * Create request for operation 'siteControllerGetManyPaged'
+     * Create request for operation 'getManyPaged'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function siteControllerGetManyPagedRequest($filter = null)
+    protected function getManyPagedRequest($filter = null)
     {
 
         $resourcePath = '/api/Sites/paged';
@@ -1291,10 +1551,6 @@ class SiteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1317,7 +1573,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetOne
+     * Operation getOne
      *
      * Get a site
      *
@@ -1328,14 +1584,14 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Site
      */
-    public function siteControllerGetOne($id, $filter = null)
+    public function getOne($id, $filter = null)
     {
-        list($response) = $this->siteControllerGetOneWithHttpInfo($id, $filter);
+        list($response) = $this->getOneWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation siteControllerGetOneWithHttpInfo
+     * Operation getOneWithHttpInfo
      *
      * Get a site
      *
@@ -1346,10 +1602,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
-    public function siteControllerGetOneWithHttpInfo($id, $filter = null)
+    public function getOneWithHttpInfo($id, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Site';
-        $request = $this->siteControllerGetOneRequest($id, $filter);
+        $request = $this->getOneRequest($id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1411,7 +1667,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetOneAsync
+     * Operation getOneAsync
      *
      * Get a site
      *
@@ -1421,9 +1677,9 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerGetOneAsync($id, $filter = null)
+    public function getOneAsync($id, $filter = null)
     {
-        return $this->siteControllerGetOneAsyncWithHttpInfo($id, $filter)
+        return $this->getOneAsyncWithHttpInfo($id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1432,7 +1688,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetOneAsyncWithHttpInfo
+     * Operation getOneAsyncWithHttpInfo
      *
      * Get a site
      *
@@ -1442,10 +1698,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerGetOneAsyncWithHttpInfo($id, $filter = null)
+    public function getOneAsyncWithHttpInfo($id, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Site';
-        $request = $this->siteControllerGetOneRequest($id, $filter);
+        $request = $this->getOneRequest($id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1485,7 +1741,7 @@ class SiteApi
     }
 
     /**
-     * Create request for operation 'siteControllerGetOne'
+     * Create request for operation 'getOne'
      *
      * @param  string $id (required)
      * @param  object $filter Used for filtering/joining the results. (optional)
@@ -1493,12 +1749,12 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function siteControllerGetOneRequest($id, $filter = null)
+    protected function getOneRequest($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling siteControllerGetOne'
+                'Missing the required parameter $id when calling getOne'
             );
         }
 
@@ -1566,10 +1822,6 @@ class SiteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1592,7 +1844,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetSiteStatus
+     * Operation getSiteStatus
      *
      * Get a url's HTTP status
      *
@@ -1602,14 +1854,14 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return int
      */
-    public function siteControllerGetSiteStatus($url)
+    public function getSiteStatus($url)
     {
-        list($response) = $this->siteControllerGetSiteStatusWithHttpInfo($url);
+        list($response) = $this->getSiteStatusWithHttpInfo($url);
         return $response;
     }
 
     /**
-     * Operation siteControllerGetSiteStatusWithHttpInfo
+     * Operation getSiteStatusWithHttpInfo
      *
      * Get a url's HTTP status
      *
@@ -1619,10 +1871,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return array of int, HTTP status code, HTTP response headers (array of strings)
      */
-    public function siteControllerGetSiteStatusWithHttpInfo($url)
+    public function getSiteStatusWithHttpInfo($url)
     {
         $returnType = 'int';
-        $request = $this->siteControllerGetSiteStatusRequest($url);
+        $request = $this->getSiteStatusRequest($url);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1684,7 +1936,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetSiteStatusAsync
+     * Operation getSiteStatusAsync
      *
      * Get a url's HTTP status
      *
@@ -1693,9 +1945,9 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerGetSiteStatusAsync($url)
+    public function getSiteStatusAsync($url)
     {
-        return $this->siteControllerGetSiteStatusAsyncWithHttpInfo($url)
+        return $this->getSiteStatusAsyncWithHttpInfo($url)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1704,7 +1956,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerGetSiteStatusAsyncWithHttpInfo
+     * Operation getSiteStatusAsyncWithHttpInfo
      *
      * Get a url's HTTP status
      *
@@ -1713,10 +1965,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerGetSiteStatusAsyncWithHttpInfo($url)
+    public function getSiteStatusAsyncWithHttpInfo($url)
     {
         $returnType = 'int';
-        $request = $this->siteControllerGetSiteStatusRequest($url);
+        $request = $this->getSiteStatusRequest($url);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1756,19 +2008,19 @@ class SiteApi
     }
 
     /**
-     * Create request for operation 'siteControllerGetSiteStatus'
+     * Create request for operation 'getSiteStatus'
      *
      * @param  string $url (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function siteControllerGetSiteStatusRequest($url)
+    protected function getSiteStatusRequest($url)
     {
         // verify the required parameter 'url' is set
         if ($url === null || (is_array($url) && count($url) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $url when calling siteControllerGetSiteStatus'
+                'Missing the required parameter $url when calling getSiteStatus'
             );
         }
 
@@ -1828,10 +2080,6 @@ class SiteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1854,7 +2102,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerIndex
+     * Operation index
      *
      * @param  string $token token (required)
      * @param  string $url url (required)
@@ -1864,14 +2112,14 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function siteControllerIndex($token, $url, $method)
+    public function index($token, $url, $method)
     {
-        list($response) = $this->siteControllerIndexWithHttpInfo($token, $url, $method);
+        list($response) = $this->indexWithHttpInfo($token, $url, $method);
         return $response;
     }
 
     /**
-     * Operation siteControllerIndexWithHttpInfo
+     * Operation indexWithHttpInfo
      *
      * @param  string $token (required)
      * @param  string $url (required)
@@ -1881,10 +2129,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function siteControllerIndexWithHttpInfo($token, $url, $method)
+    public function indexWithHttpInfo($token, $url, $method)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->siteControllerIndexRequest($token, $url, $method);
+        $request = $this->indexRequest($token, $url, $method);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1946,7 +2194,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerIndexAsync
+     * Operation indexAsync
      *
      * 
      *
@@ -1957,9 +2205,9 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerIndexAsync($token, $url, $method)
+    public function indexAsync($token, $url, $method)
     {
-        return $this->siteControllerIndexAsyncWithHttpInfo($token, $url, $method)
+        return $this->indexAsyncWithHttpInfo($token, $url, $method)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1968,7 +2216,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerIndexAsyncWithHttpInfo
+     * Operation indexAsyncWithHttpInfo
      *
      * 
      *
@@ -1979,10 +2227,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteControllerIndexAsyncWithHttpInfo($token, $url, $method)
+    public function indexAsyncWithHttpInfo($token, $url, $method)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->siteControllerIndexRequest($token, $url, $method);
+        $request = $this->indexRequest($token, $url, $method);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2022,7 +2270,7 @@ class SiteApi
     }
 
     /**
-     * Create request for operation 'siteControllerIndex'
+     * Create request for operation 'index'
      *
      * @param  string $token (required)
      * @param  string $url (required)
@@ -2031,24 +2279,24 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function siteControllerIndexRequest($token, $url, $method)
+    protected function indexRequest($token, $url, $method)
     {
         // verify the required parameter 'token' is set
         if ($token === null || (is_array($token) && count($token) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $token when calling siteControllerIndex'
+                'Missing the required parameter $token when calling index'
             );
         }
         // verify the required parameter 'url' is set
         if ($url === null || (is_array($url) && count($url) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $url when calling siteControllerIndex'
+                'Missing the required parameter $url when calling index'
             );
         }
         // verify the required parameter 'method' is set
         if ($method === null || (is_array($method) && count($method) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $method when calling siteControllerIndex'
+                'Missing the required parameter $method when calling index'
             );
         }
 
@@ -2128,10 +2376,6 @@ class SiteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2154,1287 +2398,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteControllerSwitchSubscription
-     *
-     * Switches the subscription for a number of times.
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\TransferSiteDto $body body (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
-     */
-    public function siteControllerSwitchSubscription($body)
-    {
-        list($response) = $this->siteControllerSwitchSubscriptionWithHttpInfo($body);
-        return $response;
-    }
-
-    /**
-     * Operation siteControllerSwitchSubscriptionWithHttpInfo
-     *
-     * Switches the subscription for a number of times.
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\TransferSiteDto $body (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function siteControllerSwitchSubscriptionWithHttpInfo($body)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->siteControllerSwitchSubscriptionRequest($body);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation siteControllerSwitchSubscriptionAsync
-     *
-     * Switches the subscription for a number of times.
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\TransferSiteDto $body (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function siteControllerSwitchSubscriptionAsync($body)
-    {
-        return $this->siteControllerSwitchSubscriptionAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation siteControllerSwitchSubscriptionAsyncWithHttpInfo
-     *
-     * Switches the subscription for a number of times.
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\TransferSiteDto $body (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function siteControllerSwitchSubscriptionAsyncWithHttpInfo($body)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->siteControllerSwitchSubscriptionRequest($body);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'siteControllerSwitchSubscription'
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\TransferSiteDto $body (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function siteControllerSwitchSubscriptionRequest($body)
-    {
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling siteControllerSwitchSubscription'
-            );
-        }
-
-        $resourcePath = '/api/Sites/switchSubscription';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation siteControllerSwitchSubscriptionNumberOfTimes
-     *
-     * Switches the subscription for a number of times.
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto $body body (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\
-     */
-    public function siteControllerSwitchSubscriptionNumberOfTimes($body)
-    {
-        list($response) = $this->siteControllerSwitchSubscriptionNumberOfTimesWithHttpInfo($body);
-        return $response;
-    }
-
-    /**
-     * Operation siteControllerSwitchSubscriptionNumberOfTimesWithHttpInfo
-     *
-     * Switches the subscription for a number of times.
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto $body (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function siteControllerSwitchSubscriptionNumberOfTimesWithHttpInfo($body)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->siteControllerSwitchSubscriptionNumberOfTimesRequest($body);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation siteControllerSwitchSubscriptionNumberOfTimesAsync
-     *
-     * Switches the subscription for a number of times.
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto $body (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function siteControllerSwitchSubscriptionNumberOfTimesAsync($body)
-    {
-        return $this->siteControllerSwitchSubscriptionNumberOfTimesAsyncWithHttpInfo($body)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation siteControllerSwitchSubscriptionNumberOfTimesAsyncWithHttpInfo
-     *
-     * Switches the subscription for a number of times.
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto $body (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function siteControllerSwitchSubscriptionNumberOfTimesAsyncWithHttpInfo($body)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->siteControllerSwitchSubscriptionNumberOfTimesRequest($body);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'siteControllerSwitchSubscriptionNumberOfTimes'
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto $body (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function siteControllerSwitchSubscriptionNumberOfTimesRequest($body)
-    {
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling siteControllerSwitchSubscriptionNumberOfTimes'
-            );
-        }
-
-        $resourcePath = '/api/Sites/switchSubscriptionNumberOfTimes';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation siteControllerUpdateOne
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $body body (required)
-     * @param  string $id id (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function siteControllerUpdateOne($body, $id)
-    {
-        $this->siteControllerUpdateOneWithHttpInfo($body, $id);
-    }
-
-    /**
-     * Operation siteControllerUpdateOneWithHttpInfo
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function siteControllerUpdateOneWithHttpInfo($body, $id)
-    {
-        $returnType = '';
-        $request = $this->siteControllerUpdateOneRequest($body, $id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation siteControllerUpdateOneAsync
-     *
-     * 
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function siteControllerUpdateOneAsync($body, $id)
-    {
-        return $this->siteControllerUpdateOneAsyncWithHttpInfo($body, $id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation siteControllerUpdateOneAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function siteControllerUpdateOneAsyncWithHttpInfo($body, $id)
-    {
-        $returnType = '';
-        $request = $this->siteControllerUpdateOneRequest($body, $id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'siteControllerUpdateOne'
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function siteControllerUpdateOneRequest($body, $id)
-    {
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling siteControllerUpdateOne'
-            );
-        }
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling siteControllerUpdateOne'
-            );
-        }
-
-        $resourcePath = '/api/Sites/{id}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                [],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation siteControllerUpdateSiteUrl
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteUrlDto $body body (required)
-     * @param  string $id id (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return void
-     */
-    public function siteControllerUpdateSiteUrl($body, $id)
-    {
-        $this->siteControllerUpdateSiteUrlWithHttpInfo($body, $id);
-    }
-
-    /**
-     * Operation siteControllerUpdateSiteUrlWithHttpInfo
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteUrlDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of null, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function siteControllerUpdateSiteUrlWithHttpInfo($body, $id)
-    {
-        $returnType = '';
-        $request = $this->siteControllerUpdateSiteUrlRequest($body, $id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            return [null, $statusCode, $response->getHeaders()];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation siteControllerUpdateSiteUrlAsync
-     *
-     * 
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteUrlDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function siteControllerUpdateSiteUrlAsync($body, $id)
-    {
-        return $this->siteControllerUpdateSiteUrlAsyncWithHttpInfo($body, $id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation siteControllerUpdateSiteUrlAsyncWithHttpInfo
-     *
-     * 
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteUrlDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function siteControllerUpdateSiteUrlAsyncWithHttpInfo($body, $id)
-    {
-        $returnType = '';
-        $request = $this->siteControllerUpdateSiteUrlRequest($body, $id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    return [null, $response->getStatusCode(), $response->getHeaders()];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'siteControllerUpdateSiteUrl'
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteUrlDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function siteControllerUpdateSiteUrlRequest($body, $id)
-    {
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling siteControllerUpdateSiteUrl'
-            );
-        }
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling siteControllerUpdateSiteUrl'
-            );
-        }
-
-        $resourcePath = '/api/Sites/{id}/url';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                []
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                [],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'PATCH',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation siteSubscriptionControllerAddSubscription
-     *
-     * Adds a subscription to a site
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\AddSubscriptionDto $body body (required)
-     * @param  string $id id (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\Site
-     */
-    public function siteSubscriptionControllerAddSubscription($body, $id)
-    {
-        list($response) = $this->siteSubscriptionControllerAddSubscriptionWithHttpInfo($body, $id);
-        return $response;
-    }
-
-    /**
-     * Operation siteSubscriptionControllerAddSubscriptionWithHttpInfo
-     *
-     * Adds a subscription to a site
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\AddSubscriptionDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function siteSubscriptionControllerAddSubscriptionWithHttpInfo($body, $id)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Site';
-        $request = $this->siteSubscriptionControllerAddSubscriptionRequest($body, $id);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\Site',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation siteSubscriptionControllerAddSubscriptionAsync
-     *
-     * Adds a subscription to a site
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\AddSubscriptionDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function siteSubscriptionControllerAddSubscriptionAsync($body, $id)
-    {
-        return $this->siteSubscriptionControllerAddSubscriptionAsyncWithHttpInfo($body, $id)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation siteSubscriptionControllerAddSubscriptionAsyncWithHttpInfo
-     *
-     * Adds a subscription to a site
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\AddSubscriptionDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function siteSubscriptionControllerAddSubscriptionAsyncWithHttpInfo($body, $id)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Site';
-        $request = $this->siteSubscriptionControllerAddSubscriptionRequest($body, $id);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'siteSubscriptionControllerAddSubscription'
-     *
-     * @param  \Yoast\MyYoastApiClient\Model\AddSubscriptionDto $body (required)
-     * @param  string $id (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function siteSubscriptionControllerAddSubscriptionRequest($body, $id)
-    {
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling siteSubscriptionControllerAddSubscription'
-            );
-        }
-        // verify the required parameter 'id' is set
-        if ($id === null || (is_array($id) && count($id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling siteSubscriptionControllerAddSubscription'
-            );
-        }
-
-        $resourcePath = '/api/Sites/{id}/subscriptions';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'id' . '}',
-                ObjectSerializer::toPathValue($id),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
-            }
-        }
-
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
-        return new Request(
-            'PUT',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation siteSubscriptionControllerRemoveSubscription
+     * Operation removeSubscription
      *
      * Removes a subscription from a site
      *
@@ -3445,14 +2409,14 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Site
      */
-    public function siteSubscriptionControllerRemoveSubscription($id, $subscriptionId)
+    public function removeSubscription($id, $subscriptionId)
     {
-        list($response) = $this->siteSubscriptionControllerRemoveSubscriptionWithHttpInfo($id, $subscriptionId);
+        list($response) = $this->removeSubscriptionWithHttpInfo($id, $subscriptionId);
         return $response;
     }
 
     /**
-     * Operation siteSubscriptionControllerRemoveSubscriptionWithHttpInfo
+     * Operation removeSubscriptionWithHttpInfo
      *
      * Removes a subscription from a site
      *
@@ -3463,10 +2427,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Site, HTTP status code, HTTP response headers (array of strings)
      */
-    public function siteSubscriptionControllerRemoveSubscriptionWithHttpInfo($id, $subscriptionId)
+    public function removeSubscriptionWithHttpInfo($id, $subscriptionId)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Site';
-        $request = $this->siteSubscriptionControllerRemoveSubscriptionRequest($id, $subscriptionId);
+        $request = $this->removeSubscriptionRequest($id, $subscriptionId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3528,7 +2492,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteSubscriptionControllerRemoveSubscriptionAsync
+     * Operation removeSubscriptionAsync
      *
      * Removes a subscription from a site
      *
@@ -3538,9 +2502,9 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteSubscriptionControllerRemoveSubscriptionAsync($id, $subscriptionId)
+    public function removeSubscriptionAsync($id, $subscriptionId)
     {
-        return $this->siteSubscriptionControllerRemoveSubscriptionAsyncWithHttpInfo($id, $subscriptionId)
+        return $this->removeSubscriptionAsyncWithHttpInfo($id, $subscriptionId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3549,7 +2513,7 @@ class SiteApi
     }
 
     /**
-     * Operation siteSubscriptionControllerRemoveSubscriptionAsyncWithHttpInfo
+     * Operation removeSubscriptionAsyncWithHttpInfo
      *
      * Removes a subscription from a site
      *
@@ -3559,10 +2523,10 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function siteSubscriptionControllerRemoveSubscriptionAsyncWithHttpInfo($id, $subscriptionId)
+    public function removeSubscriptionAsyncWithHttpInfo($id, $subscriptionId)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Site';
-        $request = $this->siteSubscriptionControllerRemoveSubscriptionRequest($id, $subscriptionId);
+        $request = $this->removeSubscriptionRequest($id, $subscriptionId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3602,7 +2566,7 @@ class SiteApi
     }
 
     /**
-     * Create request for operation 'siteSubscriptionControllerRemoveSubscription'
+     * Create request for operation 'removeSubscription'
      *
      * @param  string $id (required)
      * @param  string $subscriptionId (required)
@@ -3610,18 +2574,18 @@ class SiteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function siteSubscriptionControllerRemoveSubscriptionRequest($id, $subscriptionId)
+    protected function removeSubscriptionRequest($id, $subscriptionId)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling siteSubscriptionControllerRemoveSubscription'
+                'Missing the required parameter $id when calling removeSubscription'
             );
         }
         // verify the required parameter 'subscriptionId' is set
         if ($subscriptionId === null || (is_array($subscriptionId) && count($subscriptionId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $subscriptionId when calling siteSubscriptionControllerRemoveSubscription'
+                'Missing the required parameter $subscriptionId when calling removeSubscription'
             );
         }
 
@@ -3693,10 +2657,6 @@ class SiteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -3712,6 +2672,990 @@ class SiteApi
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
             'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation switchSubscription
+     *
+     * Switches the subscription for a number of times.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\TransferSiteDto $body body (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yoast\MyYoastApiClient\Model\
+     */
+    public function switchSubscription($body)
+    {
+        list($response) = $this->switchSubscriptionWithHttpInfo($body);
+        return $response;
+    }
+
+    /**
+     * Operation switchSubscriptionWithHttpInfo
+     *
+     * Switches the subscription for a number of times.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\TransferSiteDto $body (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function switchSubscriptionWithHttpInfo($body)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $request = $this->switchSubscriptionRequest($body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation switchSubscriptionAsync
+     *
+     * Switches the subscription for a number of times.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\TransferSiteDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function switchSubscriptionAsync($body)
+    {
+        return $this->switchSubscriptionAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation switchSubscriptionAsyncWithHttpInfo
+     *
+     * Switches the subscription for a number of times.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\TransferSiteDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function switchSubscriptionAsyncWithHttpInfo($body)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $request = $this->switchSubscriptionRequest($body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'switchSubscription'
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\TransferSiteDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function switchSubscriptionRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling switchSubscription'
+            );
+        }
+
+        $resourcePath = '/api/Sites/switchSubscription';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation switchSubscriptionNumberOfTimes
+     *
+     * Switches the subscription for a number of times.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto $body body (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yoast\MyYoastApiClient\Model\
+     */
+    public function switchSubscriptionNumberOfTimes($body)
+    {
+        list($response) = $this->switchSubscriptionNumberOfTimesWithHttpInfo($body);
+        return $response;
+    }
+
+    /**
+     * Operation switchSubscriptionNumberOfTimesWithHttpInfo
+     *
+     * Switches the subscription for a number of times.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto $body (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function switchSubscriptionNumberOfTimesWithHttpInfo($body)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $request = $this->switchSubscriptionNumberOfTimesRequest($body);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation switchSubscriptionNumberOfTimesAsync
+     *
+     * Switches the subscription for a number of times.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function switchSubscriptionNumberOfTimesAsync($body)
+    {
+        return $this->switchSubscriptionNumberOfTimesAsyncWithHttpInfo($body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation switchSubscriptionNumberOfTimesAsyncWithHttpInfo
+     *
+     * Switches the subscription for a number of times.
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function switchSubscriptionNumberOfTimesAsyncWithHttpInfo($body)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\';
+        $request = $this->switchSubscriptionNumberOfTimesRequest($body);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'switchSubscriptionNumberOfTimes'
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\SwitchSubscriptionNumberOfTimesDto $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function switchSubscriptionNumberOfTimesRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling switchSubscriptionNumberOfTimes'
+            );
+        }
+
+        $resourcePath = '/api/Sites/switchSubscriptionNumberOfTimes';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateOne
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $body body (required)
+     * @param  string $id id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function updateOne($body, $id)
+    {
+        $this->updateOneWithHttpInfo($body, $id);
+    }
+
+    /**
+     * Operation updateOneWithHttpInfo
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateOneWithHttpInfo($body, $id)
+    {
+        $returnType = '';
+        $request = $this->updateOneRequest($body, $id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateOneAsync
+     *
+     * 
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateOneAsync($body, $id)
+    {
+        return $this->updateOneAsyncWithHttpInfo($body, $id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateOneAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateOneAsyncWithHttpInfo($body, $id)
+    {
+        $returnType = '';
+        $request = $this->updateOneRequest($body, $id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateOne'
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function updateOneRequest($body, $id)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling updateOne'
+            );
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling updateOne'
+            );
+        }
+
+        $resourcePath = '/api/Sites/{id}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PATCH',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateSiteUrl
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteUrlDto $body body (required)
+     * @param  string $id id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function updateSiteUrl($body, $id)
+    {
+        $this->updateSiteUrlWithHttpInfo($body, $id);
+    }
+
+    /**
+     * Operation updateSiteUrlWithHttpInfo
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteUrlDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function updateSiteUrlWithHttpInfo($body, $id)
+    {
+        $returnType = '';
+        $request = $this->updateSiteUrlRequest($body, $id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateSiteUrlAsync
+     *
+     * 
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteUrlDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateSiteUrlAsync($body, $id)
+    {
+        return $this->updateSiteUrlAsyncWithHttpInfo($body, $id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateSiteUrlAsyncWithHttpInfo
+     *
+     * 
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteUrlDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateSiteUrlAsyncWithHttpInfo($body, $id)
+    {
+        $returnType = '';
+        $request = $this->updateSiteUrlRequest($body, $id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateSiteUrl'
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\UpdateSiteUrlDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function updateSiteUrlRequest($body, $id)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling updateSiteUrl'
+            );
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling updateSiteUrl'
+            );
+        }
+
+        $resourcePath = '/api/Sites/{id}/url';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PATCH',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,62 +71,62 @@ class SubscriptionProvisioningApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for subscriptionProvisioningControllerCancelSubscription
+     * Test case for cancelSubscription
      *
      * Cancel a single subscription.
      *
      */
-    public function testSubscriptionProvisioningControllerCancelSubscription()
+    public function testCancelSubscription()
     {
     }
 
     /**
-     * Test case for subscriptionProvisioningControllerCreate
+     * Test case for create
      *
      * Create a subscription.
      *
      */
-    public function testSubscriptionProvisioningControllerCreate()
+    public function testCreate()
     {
     }
 
     /**
-     * Test case for subscriptionProvisioningControllerGetOne
+     * Test case for getOne
      *
      * Get a subscription.
      *
      */
-    public function testSubscriptionProvisioningControllerGetOne()
+    public function testGetOne()
     {
     }
 
     /**
-     * Test case for subscriptionProvisioningControllerRefundSubscription
+     * Test case for refundSubscription
      *
      * Refund a single subscription.
      *
      */
-    public function testSubscriptionProvisioningControllerRefundSubscription()
+    public function testRefundSubscription()
     {
     }
 
     /**
-     * Test case for subscriptionProvisioningControllerRenewSubscription
+     * Test case for renewSubscription
      *
      * Renew a subscription.
      *
      */
-    public function testSubscriptionProvisioningControllerRenewSubscription()
+    public function testRenewSubscription()
     {
     }
 
     /**
-     * Test case for subscriptionProvisioningControllerSetSiteForSubscription
+     * Test case for setSiteForSubscription
      *
      * Link a subscription to a site.
      *
      */
-    public function testSubscriptionProvisioningControllerSetSiteForSubscription()
+    public function testSetSiteForSubscription()
     {
     }
 }

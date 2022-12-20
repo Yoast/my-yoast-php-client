@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class AuthenticationApi
     }
 
     /**
-     * Operation authControllerGetAccessToken
+     * Operation getAccessToken
      *
      * @param  string $id id (required)
      *
@@ -95,14 +95,14 @@ class AuthenticationApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\AccessTokenResponse
      */
-    public function authControllerGetAccessToken($id)
+    public function getAccessToken($id)
     {
-        list($response) = $this->authControllerGetAccessTokenWithHttpInfo($id);
+        list($response) = $this->getAccessTokenWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation authControllerGetAccessTokenWithHttpInfo
+     * Operation getAccessTokenWithHttpInfo
      *
      * @param  string $id (required)
      *
@@ -110,10 +110,10 @@ class AuthenticationApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\AccessTokenResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function authControllerGetAccessTokenWithHttpInfo($id)
+    public function getAccessTokenWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\AccessTokenResponse';
-        $request = $this->authControllerGetAccessTokenRequest($id);
+        $request = $this->getAccessTokenRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -175,7 +175,7 @@ class AuthenticationApi
     }
 
     /**
-     * Operation authControllerGetAccessTokenAsync
+     * Operation getAccessTokenAsync
      *
      * 
      *
@@ -184,9 +184,9 @@ class AuthenticationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authControllerGetAccessTokenAsync($id)
+    public function getAccessTokenAsync($id)
     {
-        return $this->authControllerGetAccessTokenAsyncWithHttpInfo($id)
+        return $this->getAccessTokenAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -195,7 +195,7 @@ class AuthenticationApi
     }
 
     /**
-     * Operation authControllerGetAccessTokenAsyncWithHttpInfo
+     * Operation getAccessTokenAsyncWithHttpInfo
      *
      * 
      *
@@ -204,10 +204,10 @@ class AuthenticationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authControllerGetAccessTokenAsyncWithHttpInfo($id)
+    public function getAccessTokenAsyncWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\AccessTokenResponse';
-        $request = $this->authControllerGetAccessTokenRequest($id);
+        $request = $this->getAccessTokenRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -247,19 +247,19 @@ class AuthenticationApi
     }
 
     /**
-     * Create request for operation 'authControllerGetAccessToken'
+     * Create request for operation 'getAccessToken'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function authControllerGetAccessTokenRequest($id)
+    protected function getAccessTokenRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling authControllerGetAccessToken'
+                'Missing the required parameter $id when calling getAccessToken'
             );
         }
 
@@ -345,30 +345,30 @@ class AuthenticationApi
     }
 
     /**
-     * Operation authControllerGetProfile
+     * Operation getProfile
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function authControllerGetProfile()
+    public function getProfile()
     {
-        $this->authControllerGetProfileWithHttpInfo();
+        $this->getProfileWithHttpInfo();
     }
 
     /**
-     * Operation authControllerGetProfileWithHttpInfo
+     * Operation getProfileWithHttpInfo
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function authControllerGetProfileWithHttpInfo()
+    public function getProfileWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->authControllerGetProfileRequest();
+        $request = $this->getProfileRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -408,7 +408,7 @@ class AuthenticationApi
     }
 
     /**
-     * Operation authControllerGetProfileAsync
+     * Operation getProfileAsync
      *
      * 
      *
@@ -416,9 +416,9 @@ class AuthenticationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authControllerGetProfileAsync()
+    public function getProfileAsync()
     {
-        return $this->authControllerGetProfileAsyncWithHttpInfo()
+        return $this->getProfileAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -427,7 +427,7 @@ class AuthenticationApi
     }
 
     /**
-     * Operation authControllerGetProfileAsyncWithHttpInfo
+     * Operation getProfileAsyncWithHttpInfo
      *
      * 
      *
@@ -435,10 +435,10 @@ class AuthenticationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authControllerGetProfileAsyncWithHttpInfo()
+    public function getProfileAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->authControllerGetProfileRequest();
+        $request = $this->getProfileRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -464,13 +464,13 @@ class AuthenticationApi
     }
 
     /**
-     * Create request for operation 'authControllerGetProfile'
+     * Create request for operation 'getProfile'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function authControllerGetProfileRequest()
+    protected function getProfileRequest()
     {
 
         $resourcePath = '/api/profile';
@@ -547,7 +547,7 @@ class AuthenticationApi
     }
 
     /**
-     * Operation authControllerLogin
+     * Operation login
      *
      * @param  \Yoast\MyYoastApiClient\Model\LoginAccountDto $body body (required)
      *
@@ -555,14 +555,14 @@ class AuthenticationApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\AccessTokenResponse
      */
-    public function authControllerLogin($body)
+    public function login($body)
     {
-        list($response) = $this->authControllerLoginWithHttpInfo($body);
+        list($response) = $this->loginWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation authControllerLoginWithHttpInfo
+     * Operation loginWithHttpInfo
      *
      * @param  \Yoast\MyYoastApiClient\Model\LoginAccountDto $body (required)
      *
@@ -570,10 +570,10 @@ class AuthenticationApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\AccessTokenResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function authControllerLoginWithHttpInfo($body)
+    public function loginWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\AccessTokenResponse';
-        $request = $this->authControllerLoginRequest($body);
+        $request = $this->loginRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -635,7 +635,7 @@ class AuthenticationApi
     }
 
     /**
-     * Operation authControllerLoginAsync
+     * Operation loginAsync
      *
      * 
      *
@@ -644,9 +644,9 @@ class AuthenticationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authControllerLoginAsync($body)
+    public function loginAsync($body)
     {
-        return $this->authControllerLoginAsyncWithHttpInfo($body)
+        return $this->loginAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -655,7 +655,7 @@ class AuthenticationApi
     }
 
     /**
-     * Operation authControllerLoginAsyncWithHttpInfo
+     * Operation loginAsyncWithHttpInfo
      *
      * 
      *
@@ -664,10 +664,10 @@ class AuthenticationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function authControllerLoginAsyncWithHttpInfo($body)
+    public function loginAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\AccessTokenResponse';
-        $request = $this->authControllerLoginRequest($body);
+        $request = $this->loginRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -707,19 +707,19 @@ class AuthenticationApi
     }
 
     /**
-     * Create request for operation 'authControllerLogin'
+     * Create request for operation 'login'
      *
      * @param  \Yoast\MyYoastApiClient\Model\LoginAccountDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function authControllerLoginRequest($body)
+    protected function loginRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling authControllerLogin'
+                'Missing the required parameter $body when calling login'
             );
         }
 

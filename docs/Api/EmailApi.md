@@ -1,13 +1,13 @@
 # Yoast\MyYoastApiClient\EmailApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**emailControllerSendEmails**](EmailApi.md#emailcontrollersendemails) | **POST** /api/Emails/bulk-send | 
+[**sendEmails**](EmailApi.md#sendemails) | **POST** /api/Emails/bulk-send | 
 
-# **emailControllerSendEmails**
-> \Yoast\MyYoastApiClient\Model\ emailControllerSendEmails($body)
+# **sendEmails**
+> \Yoast\MyYoastApiClient\Model\ sendEmails($body)
 
 
 
@@ -15,24 +15,19 @@ Method | HTTP request | Description
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\EmailApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $body = new \Yoast\MyYoastApiClient\Model\BulkSendEmailDto(); // \Yoast\MyYoastApiClient\Model\BulkSendEmailDto | 
 
 try {
-    $result = $apiInstance->emailControllerSendEmails($body);
+    $result = $apiInstance->sendEmails($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EmailApi->emailControllerSendEmails: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EmailApi->sendEmails: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -49,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 

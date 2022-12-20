@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class EDDApi
     }
 
     /**
-     * Operation eddControllerHandleGetRequest
+     * Operation handleGetRequest
      *
      * Activate or deactivate a site license
      *
@@ -99,13 +99,13 @@ class EDDApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function eddControllerHandleGetRequest($eddAction, $url, $itemName)
+    public function handleGetRequest($eddAction, $url, $itemName)
     {
-        $this->eddControllerHandleGetRequestWithHttpInfo($eddAction, $url, $itemName);
+        $this->handleGetRequestWithHttpInfo($eddAction, $url, $itemName);
     }
 
     /**
-     * Operation eddControllerHandleGetRequestWithHttpInfo
+     * Operation handleGetRequestWithHttpInfo
      *
      * Activate or deactivate a site license
      *
@@ -117,10 +117,10 @@ class EDDApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function eddControllerHandleGetRequestWithHttpInfo($eddAction, $url, $itemName)
+    public function handleGetRequestWithHttpInfo($eddAction, $url, $itemName)
     {
         $returnType = '';
-        $request = $this->eddControllerHandleGetRequestRequest($eddAction, $url, $itemName);
+        $request = $this->handleGetRequestRequest($eddAction, $url, $itemName);
 
         try {
             $options = $this->createHttpClientOption();
@@ -160,7 +160,7 @@ class EDDApi
     }
 
     /**
-     * Operation eddControllerHandleGetRequestAsync
+     * Operation handleGetRequestAsync
      *
      * Activate or deactivate a site license
      *
@@ -171,9 +171,9 @@ class EDDApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eddControllerHandleGetRequestAsync($eddAction, $url, $itemName)
+    public function handleGetRequestAsync($eddAction, $url, $itemName)
     {
-        return $this->eddControllerHandleGetRequestAsyncWithHttpInfo($eddAction, $url, $itemName)
+        return $this->handleGetRequestAsyncWithHttpInfo($eddAction, $url, $itemName)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -182,7 +182,7 @@ class EDDApi
     }
 
     /**
-     * Operation eddControllerHandleGetRequestAsyncWithHttpInfo
+     * Operation handleGetRequestAsyncWithHttpInfo
      *
      * Activate or deactivate a site license
      *
@@ -193,10 +193,10 @@ class EDDApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eddControllerHandleGetRequestAsyncWithHttpInfo($eddAction, $url, $itemName)
+    public function handleGetRequestAsyncWithHttpInfo($eddAction, $url, $itemName)
     {
         $returnType = '';
-        $request = $this->eddControllerHandleGetRequestRequest($eddAction, $url, $itemName);
+        $request = $this->handleGetRequestRequest($eddAction, $url, $itemName);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -222,7 +222,7 @@ class EDDApi
     }
 
     /**
-     * Create request for operation 'eddControllerHandleGetRequest'
+     * Create request for operation 'handleGetRequest'
      *
      * @param  string $eddAction (required)
      * @param  string $url (required)
@@ -231,24 +231,24 @@ class EDDApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function eddControllerHandleGetRequestRequest($eddAction, $url, $itemName)
+    protected function handleGetRequestRequest($eddAction, $url, $itemName)
     {
         // verify the required parameter 'eddAction' is set
         if ($eddAction === null || (is_array($eddAction) && count($eddAction) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $eddAction when calling eddControllerHandleGetRequest'
+                'Missing the required parameter $eddAction when calling handleGetRequest'
             );
         }
         // verify the required parameter 'url' is set
         if ($url === null || (is_array($url) && count($url) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $url when calling eddControllerHandleGetRequest'
+                'Missing the required parameter $url when calling handleGetRequest'
             );
         }
         // verify the required parameter 'itemName' is set
         if ($itemName === null || (is_array($itemName) && count($itemName) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $itemName when calling eddControllerHandleGetRequest'
+                'Missing the required parameter $itemName when calling handleGetRequest'
             );
         }
 
@@ -338,7 +338,7 @@ class EDDApi
     }
 
     /**
-     * Operation eddControllerHandlePostRequest
+     * Operation handlePostRequest
      *
      * @param  \Yoast\MyYoastApiClient\Model\EddDTO $body body (required)
      * @param  string $eddAction eddAction (required)
@@ -347,13 +347,13 @@ class EDDApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function eddControllerHandlePostRequest($body, $eddAction)
+    public function handlePostRequest($body, $eddAction)
     {
-        $this->eddControllerHandlePostRequestWithHttpInfo($body, $eddAction);
+        $this->handlePostRequestWithHttpInfo($body, $eddAction);
     }
 
     /**
-     * Operation eddControllerHandlePostRequestWithHttpInfo
+     * Operation handlePostRequestWithHttpInfo
      *
      * @param  \Yoast\MyYoastApiClient\Model\EddDTO $body (required)
      * @param  string $eddAction (required)
@@ -362,10 +362,10 @@ class EDDApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function eddControllerHandlePostRequestWithHttpInfo($body, $eddAction)
+    public function handlePostRequestWithHttpInfo($body, $eddAction)
     {
         $returnType = '';
-        $request = $this->eddControllerHandlePostRequestRequest($body, $eddAction);
+        $request = $this->handlePostRequestRequest($body, $eddAction);
 
         try {
             $options = $this->createHttpClientOption();
@@ -405,7 +405,7 @@ class EDDApi
     }
 
     /**
-     * Operation eddControllerHandlePostRequestAsync
+     * Operation handlePostRequestAsync
      *
      * 
      *
@@ -415,9 +415,9 @@ class EDDApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eddControllerHandlePostRequestAsync($body, $eddAction)
+    public function handlePostRequestAsync($body, $eddAction)
     {
-        return $this->eddControllerHandlePostRequestAsyncWithHttpInfo($body, $eddAction)
+        return $this->handlePostRequestAsyncWithHttpInfo($body, $eddAction)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -426,7 +426,7 @@ class EDDApi
     }
 
     /**
-     * Operation eddControllerHandlePostRequestAsyncWithHttpInfo
+     * Operation handlePostRequestAsyncWithHttpInfo
      *
      * 
      *
@@ -436,10 +436,10 @@ class EDDApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function eddControllerHandlePostRequestAsyncWithHttpInfo($body, $eddAction)
+    public function handlePostRequestAsyncWithHttpInfo($body, $eddAction)
     {
         $returnType = '';
-        $request = $this->eddControllerHandlePostRequestRequest($body, $eddAction);
+        $request = $this->handlePostRequestRequest($body, $eddAction);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -465,7 +465,7 @@ class EDDApi
     }
 
     /**
-     * Create request for operation 'eddControllerHandlePostRequest'
+     * Create request for operation 'handlePostRequest'
      *
      * @param  \Yoast\MyYoastApiClient\Model\EddDTO $body (required)
      * @param  string $eddAction (required)
@@ -473,18 +473,18 @@ class EDDApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function eddControllerHandlePostRequestRequest($body, $eddAction)
+    protected function handlePostRequestRequest($body, $eddAction)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling eddControllerHandlePostRequest'
+                'Missing the required parameter $body when calling handlePostRequest'
             );
         }
         // verify the required parameter 'eddAction' is set
         if ($eddAction === null || (is_array($eddAction) && count($eddAction) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $eddAction when calling eddControllerHandlePostRequest'
+                'Missing the required parameter $eddAction when calling handlePostRequest'
             );
         }
 

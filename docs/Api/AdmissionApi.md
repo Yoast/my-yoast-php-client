@@ -1,18 +1,18 @@
 # Yoast\MyYoastApiClient\AdmissionApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**admissionControllerChangeStudent**](AdmissionApi.md#admissioncontrollerchangestudent) | **PUT** /api/Admissions/{id} | Update an admission
-[**admissionControllerGetMany**](AdmissionApi.md#admissioncontrollergetmany) | **GET** /api/Admissions | Get admissions
-[**admissionControllerGetManyPaged**](AdmissionApi.md#admissioncontrollergetmanypaged) | **GET** /api/Admissions/paged | Get admissions
-[**admissionControllerGetOne**](AdmissionApi.md#admissioncontrollergetone) | **GET** /api/Admissions/{id} | Get an admission
-[**admissionControllerInvite**](AdmissionApi.md#admissioncontrollerinvite) | **POST** /api/Admissions | Invite a customer
-[**admissionControllerTransferAdmissions**](AdmissionApi.md#admissioncontrollertransferadmissions) | **POST** /api/Admissions/transfer | Transfer admissions between customers
+[**changeStudent**](AdmissionApi.md#changestudent) | **PUT** /api/Admissions/{id} | Update an admission
+[**getMany**](AdmissionApi.md#getmany) | **GET** /api/Admissions | Get admissions
+[**getManyPaged**](AdmissionApi.md#getmanypaged) | **GET** /api/Admissions/paged | Get admissions
+[**getOne**](AdmissionApi.md#getone) | **GET** /api/Admissions/{id} | Get an admission
+[**invite**](AdmissionApi.md#invite) | **POST** /api/Admissions | Invite a customer
+[**transferAdmissions**](AdmissionApi.md#transferadmissions) | **POST** /api/Admissions/transfer | Transfer admissions between customers
 
-# **admissionControllerChangeStudent**
-> \Yoast\MyYoastApiClient\Model\Admission admissionControllerChangeStudent($body, $id)
+# **changeStudent**
+> \Yoast\MyYoastApiClient\Model\Admission changeStudent($body, $id)
 
 Update an admission
 
@@ -22,25 +22,20 @@ Changes the student for a certain admission
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $body = new \Yoast\MyYoastApiClient\Model\UpdateDto(); // \Yoast\MyYoastApiClient\Model\UpdateDto | 
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->admissionControllerChangeStudent($body, $id);
+    $result = $apiInstance->changeStudent($body, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->admissionControllerChangeStudent: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdmissionApi->changeStudent: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -58,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -67,8 +62,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **admissionControllerGetMany**
-> \Yoast\MyYoastApiClient\Model\Admission[] admissionControllerGetMany($filter)
+# **getMany**
+> \Yoast\MyYoastApiClient\Model\Admission[] getMany($filter)
 
 Get admissions
 
@@ -78,24 +73,19 @@ Get and filter admissions
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->admissionControllerGetMany($filter);
+    $result = $apiInstance->getMany($filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->admissionControllerGetMany: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdmissionApi->getMany: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -112,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -121,8 +111,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **admissionControllerGetManyPaged**
-> admissionControllerGetManyPaged($filter)
+# **getManyPaged**
+> getManyPaged($filter)
 
 Get admissions
 
@@ -132,23 +122,18 @@ Get and filter admissions
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $apiInstance->admissionControllerGetManyPaged($filter);
+    $apiInstance->getManyPaged($filter);
 } catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->admissionControllerGetManyPaged: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdmissionApi->getManyPaged: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -165,7 +150,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -174,8 +159,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **admissionControllerGetOne**
-> \Yoast\MyYoastApiClient\Model\Admission admissionControllerGetOne($id)
+# **getOne**
+> \Yoast\MyYoastApiClient\Model\Admission getOne($id)
 
 Get an admission
 
@@ -185,24 +170,19 @@ Get a single admission
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->admissionControllerGetOne($id);
+    $result = $apiInstance->getOne($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->admissionControllerGetOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdmissionApi->getOne: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -219,7 +199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -228,8 +208,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **admissionControllerInvite**
-> \Yoast\MyYoastApiClient\Model\Admission admissionControllerInvite($body)
+# **invite**
+> \Yoast\MyYoastApiClient\Model\Admission invite($body)
 
 Invite a customer
 
@@ -239,24 +219,19 @@ Invites another customer by email to use this admission
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $body = new \Yoast\MyYoastApiClient\Model\CreateDto(); // \Yoast\MyYoastApiClient\Model\CreateDto | 
 
 try {
-    $result = $apiInstance->admissionControllerInvite($body);
+    $result = $apiInstance->invite($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->admissionControllerInvite: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdmissionApi->invite: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -273,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -282,8 +257,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **admissionControllerTransferAdmissions**
-> \Yoast\MyYoastApiClient\Model\Admission[] admissionControllerTransferAdmissions($body)
+# **transferAdmissions**
+> \Yoast\MyYoastApiClient\Model\Admission[] transferAdmissions($body)
 
 Transfer admissions between customers
 
@@ -293,24 +268,19 @@ Transfers all admission from one customer to another
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $body = new \Yoast\MyYoastApiClient\Model\TransferAdmissionDto(); // \Yoast\MyYoastApiClient\Model\TransferAdmissionDto | 
 
 try {
-    $result = $apiInstance->admissionControllerTransferAdmissions($body);
+    $result = $apiInstance->transferAdmissions($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->admissionControllerTransferAdmissions: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AdmissionApi->transferAdmissions: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -327,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 

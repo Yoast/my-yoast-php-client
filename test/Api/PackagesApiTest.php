@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,42 +71,42 @@ class PackagesApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for packagesControllerServeArchiveZIP
+     * Test case for serveArchiveZIP
      *
      * Serves an .zip of the plugin..
      *
      */
-    public function testPackagesControllerServeArchiveZIP()
+    public function testServeArchiveZIP()
     {
     }
 
     /**
-     * Test case for packagesControllerServePackagesJSON
+     * Test case for servePackagesJSON
      *
      * Serves the general packages.json file..
      *
      */
-    public function testPackagesControllerServePackagesJSON()
+    public function testServePackagesJSON()
     {
     }
 
     /**
-     * Test case for packagesControllerServeProvider2JSON
+     * Test case for serveProvider2JSON
      *
      * Serves the requested provider.json.
      *
      */
-    public function testPackagesControllerServeProvider2JSON()
+    public function testServeProvider2JSON()
     {
     }
 
     /**
-     * Test case for packagesControllerServeProviderJSON
+     * Test case for serveProviderJSON
      *
      * Serves the requested provider.json.
      *
      */
-    public function testPackagesControllerServeProviderJSON()
+    public function testServeProviderJSON()
     {
     }
 }

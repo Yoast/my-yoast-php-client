@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,142 +71,142 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for subscriptionControllerCalculateExpansionPrice
+     * Test case for calculateExpansionPrice
      *
      * Calculate expansion price.
      *
      */
-    public function testSubscriptionControllerCalculateExpansionPrice()
+    public function testCalculateExpansionPrice()
     {
     }
 
     /**
-     * Test case for subscriptionControllerDeleteOne
+     * Test case for deleteOne
      *
      * Delete a subscription.
      *
      */
-    public function testSubscriptionControllerDeleteOne()
+    public function testDeleteOne()
     {
     }
 
     /**
-     * Test case for subscriptionControllerForceCancel
+     * Test case for forceCancel
      *
      * Forcefully cancel a subscription.
      *
      */
-    public function testSubscriptionControllerForceCancel()
+    public function testForceCancel()
     {
     }
 
     /**
-     * Test case for subscriptionControllerGetExpiringSubscriptions
+     * Test case for getExpiringSubscriptions
      *
      * .
      *
      */
-    public function testSubscriptionControllerGetExpiringSubscriptions()
+    public function testGetExpiringSubscriptions()
     {
     }
 
     /**
-     * Test case for subscriptionControllerGetMany
+     * Test case for getMany
      *
      * Get subscriptions.
      *
      */
-    public function testSubscriptionControllerGetMany()
+    public function testGetMany()
     {
     }
 
     /**
-     * Test case for subscriptionControllerGetManyPaged
+     * Test case for getManyPaged
      *
      * Get subscriptions.
      *
      */
-    public function testSubscriptionControllerGetManyPaged()
+    public function testGetManyPaged()
     {
     }
 
     /**
-     * Test case for subscriptionControllerGetOne
+     * Test case for getOne
      *
      * Get a subscription.
      *
      */
-    public function testSubscriptionControllerGetOne()
+    public function testGetOne()
     {
     }
 
     /**
-     * Test case for subscriptionControllerLinkSite
+     * Test case for linkSite
      *
      * Link a subscription to provided site URL.
      *
      */
-    public function testSubscriptionControllerLinkSite()
+    public function testLinkSite()
     {
     }
 
     /**
-     * Test case for subscriptionControllerRecalculateSubscriptionCount
+     * Test case for recalculateSubscriptionCount
      *
      * Recalculate SubscriptionCount..
      *
      */
-    public function testSubscriptionControllerRecalculateSubscriptionCount()
+    public function testRecalculateSubscriptionCount()
     {
     }
 
     /**
-     * Test case for subscriptionControllerRenew
+     * Test case for renew
      *
      * Renew subscriptions.
      *
      */
-    public function testSubscriptionControllerRenew()
+    public function testRenew()
     {
     }
 
     /**
-     * Test case for subscriptionControllerSetExpiryDate
+     * Test case for setExpiryDate
      *
      * Set Date..
      *
      */
-    public function testSubscriptionControllerSetExpiryDate()
+    public function testSetExpiryDate()
     {
     }
 
     /**
-     * Test case for subscriptionControllerSwitchPaymentMethod
+     * Test case for switchPaymentMethod
      *
      * .
      *
      */
-    public function testSubscriptionControllerSwitchPaymentMethod()
+    public function testSwitchPaymentMethod()
     {
     }
 
     /**
-     * Test case for subscriptionControllerTransferOwnership
+     * Test case for transferOwnership
      *
      * Transfer subscription ownership.
      *
      */
-    public function testSubscriptionControllerTransferOwnership()
+    public function testTransferOwnership()
     {
     }
 
     /**
-     * Test case for subscriptionControllerUpgrade
+     * Test case for upgrade
      *
      * Upgrade subscriptions.
      *
      */
-    public function testSubscriptionControllerUpgrade()
+    public function testUpgrade()
     {
     }
 }

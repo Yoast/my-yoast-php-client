@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,82 +71,82 @@ class CourseEnrollmentApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for courseEnrollmentControllerBulkInvite
+     * Test case for bulkInvite
      *
      * Bulk invite for Course Enrollment..
      *
      */
-    public function testCourseEnrollmentControllerBulkInvite()
+    public function testBulkInvite()
     {
     }
 
     /**
-     * Test case for courseEnrollmentControllerFromAcademy
+     * Test case for fromAcademy
      *
      * Update a CourseEnrollment.
      *
      */
-    public function testCourseEnrollmentControllerFromAcademy()
+    public function testFromAcademy()
     {
     }
 
     /**
-     * Test case for courseEnrollmentControllerGetLegacyExpiring
+     * Test case for getLegacyExpiring
      *
      * Get legacy course enrollments that expire between two given dates.
      *
      */
-    public function testCourseEnrollmentControllerGetLegacyExpiring()
+    public function testGetLegacyExpiring()
     {
     }
 
     /**
-     * Test case for courseEnrollmentControllerGetMany
+     * Test case for getMany
      *
      * Get course enrollments.
      *
      */
-    public function testCourseEnrollmentControllerGetMany()
+    public function testGetMany()
     {
     }
 
     /**
-     * Test case for courseEnrollmentControllerGetManyPaged
+     * Test case for getManyPaged
      *
      * Get customers.
      *
      */
-    public function testCourseEnrollmentControllerGetManyPaged()
+    public function testGetManyPaged()
     {
     }
 
     /**
-     * Test case for courseEnrollmentControllerGetOne
+     * Test case for getOne
      *
      * Get a course enrollment.
      *
      */
-    public function testCourseEnrollmentControllerGetOne()
+    public function testGetOne()
     {
     }
 
     /**
-     * Test case for courseEnrollmentControllerInvite
+     * Test case for invite
      *
      * Invite a customer.
      *
      */
-    public function testCourseEnrollmentControllerInvite()
+    public function testInvite()
     {
     }
 
     /**
-     * Test case for courseEnrollmentControllerTransfer
+     * Test case for transfer
      *
      * Transfer course enrollments.
      *
      */
-    public function testCourseEnrollmentControllerTransfer()
+    public function testTransfer()
     {
     }
 }

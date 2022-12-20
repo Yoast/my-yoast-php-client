@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerGetAccessTokenWithoutWordPress
+     * Operation getAccessTokenWithoutWordPress
      *
      * Log in a user on MyYoast.
      *
@@ -97,14 +97,14 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\AccessTokenResponse
      */
-    public function loginControllerGetAccessTokenWithoutWordPress($body)
+    public function getAccessTokenWithoutWordPress($body)
     {
-        list($response) = $this->loginControllerGetAccessTokenWithoutWordPressWithHttpInfo($body);
+        list($response) = $this->getAccessTokenWithoutWordPressWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation loginControllerGetAccessTokenWithoutWordPressWithHttpInfo
+     * Operation getAccessTokenWithoutWordPressWithHttpInfo
      *
      * Log in a user on MyYoast.
      *
@@ -114,10 +114,10 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\AccessTokenResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginControllerGetAccessTokenWithoutWordPressWithHttpInfo($body)
+    public function getAccessTokenWithoutWordPressWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\AccessTokenResponse';
-        $request = $this->loginControllerGetAccessTokenWithoutWordPressRequest($body);
+        $request = $this->getAccessTokenWithoutWordPressRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -179,7 +179,7 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerGetAccessTokenWithoutWordPressAsync
+     * Operation getAccessTokenWithoutWordPressAsync
      *
      * Log in a user on MyYoast.
      *
@@ -188,9 +188,9 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginControllerGetAccessTokenWithoutWordPressAsync($body)
+    public function getAccessTokenWithoutWordPressAsync($body)
     {
-        return $this->loginControllerGetAccessTokenWithoutWordPressAsyncWithHttpInfo($body)
+        return $this->getAccessTokenWithoutWordPressAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,7 +199,7 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerGetAccessTokenWithoutWordPressAsyncWithHttpInfo
+     * Operation getAccessTokenWithoutWordPressAsyncWithHttpInfo
      *
      * Log in a user on MyYoast.
      *
@@ -208,10 +208,10 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginControllerGetAccessTokenWithoutWordPressAsyncWithHttpInfo($body)
+    public function getAccessTokenWithoutWordPressAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\AccessTokenResponse';
-        $request = $this->loginControllerGetAccessTokenWithoutWordPressRequest($body);
+        $request = $this->getAccessTokenWithoutWordPressRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,19 +251,19 @@ class AuthApi
     }
 
     /**
-     * Create request for operation 'loginControllerGetAccessTokenWithoutWordPress'
+     * Create request for operation 'getAccessTokenWithoutWordPress'
      *
      * @param  \Yoast\MyYoastApiClient\Model\LoginDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginControllerGetAccessTokenWithoutWordPressRequest($body)
+    protected function getAccessTokenWithoutWordPressRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling loginControllerGetAccessTokenWithoutWordPress'
+                'Missing the required parameter $body when calling getAccessTokenWithoutWordPress'
             );
         }
 
@@ -344,7 +344,7 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerLoginUser
+     * Operation loginUser
      *
      * @param  \Yoast\MyYoastApiClient\Model\LoginUserDto $body body (required)
      *
@@ -352,13 +352,13 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function loginControllerLoginUser($body)
+    public function loginUser($body)
     {
-        $this->loginControllerLoginUserWithHttpInfo($body);
+        $this->loginUserWithHttpInfo($body);
     }
 
     /**
-     * Operation loginControllerLoginUserWithHttpInfo
+     * Operation loginUserWithHttpInfo
      *
      * @param  \Yoast\MyYoastApiClient\Model\LoginUserDto $body (required)
      *
@@ -366,10 +366,10 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginControllerLoginUserWithHttpInfo($body)
+    public function loginUserWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->loginControllerLoginUserRequest($body);
+        $request = $this->loginUserRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -409,7 +409,7 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerLoginUserAsync
+     * Operation loginUserAsync
      *
      * 
      *
@@ -418,9 +418,9 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginControllerLoginUserAsync($body)
+    public function loginUserAsync($body)
     {
-        return $this->loginControllerLoginUserAsyncWithHttpInfo($body)
+        return $this->loginUserAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -429,7 +429,7 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerLoginUserAsyncWithHttpInfo
+     * Operation loginUserAsyncWithHttpInfo
      *
      * 
      *
@@ -438,10 +438,10 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginControllerLoginUserAsyncWithHttpInfo($body)
+    public function loginUserAsyncWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->loginControllerLoginUserRequest($body);
+        $request = $this->loginUserRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -467,19 +467,19 @@ class AuthApi
     }
 
     /**
-     * Create request for operation 'loginControllerLoginUser'
+     * Create request for operation 'loginUser'
      *
      * @param  \Yoast\MyYoastApiClient\Model\LoginUserDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginControllerLoginUserRequest($body)
+    protected function loginUserRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling loginControllerLoginUser'
+                'Missing the required parameter $body when calling loginUser'
             );
         }
 
@@ -560,7 +560,7 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerLogoutUser
+     * Operation logoutUser
      *
      * Logout the user on Yoast.com.
      *
@@ -569,13 +569,13 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function loginControllerLogoutUser()
+    public function logoutUser()
     {
-        $this->loginControllerLogoutUserWithHttpInfo();
+        $this->logoutUserWithHttpInfo();
     }
 
     /**
-     * Operation loginControllerLogoutUserWithHttpInfo
+     * Operation logoutUserWithHttpInfo
      *
      * Logout the user on Yoast.com.
      *
@@ -584,10 +584,10 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginControllerLogoutUserWithHttpInfo()
+    public function logoutUserWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->loginControllerLogoutUserRequest();
+        $request = $this->logoutUserRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -627,7 +627,7 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerLogoutUserAsync
+     * Operation logoutUserAsync
      *
      * Logout the user on Yoast.com.
      *
@@ -635,9 +635,9 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginControllerLogoutUserAsync()
+    public function logoutUserAsync()
     {
-        return $this->loginControllerLogoutUserAsyncWithHttpInfo()
+        return $this->logoutUserAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -646,7 +646,7 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerLogoutUserAsyncWithHttpInfo
+     * Operation logoutUserAsyncWithHttpInfo
      *
      * Logout the user on Yoast.com.
      *
@@ -654,10 +654,10 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginControllerLogoutUserAsyncWithHttpInfo()
+    public function logoutUserAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->loginControllerLogoutUserRequest();
+        $request = $this->logoutUserRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -683,13 +683,13 @@ class AuthApi
     }
 
     /**
-     * Create request for operation 'loginControllerLogoutUser'
+     * Create request for operation 'logoutUser'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginControllerLogoutUserRequest()
+    protected function logoutUserRequest()
     {
 
         $resourcePath = '/api/Customers/logout-user';
@@ -766,30 +766,30 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerLogoutWithoutWordPress
+     * Operation logoutWithoutWordPress
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function loginControllerLogoutWithoutWordPress()
+    public function logoutWithoutWordPress()
     {
-        $this->loginControllerLogoutWithoutWordPressWithHttpInfo();
+        $this->logoutWithoutWordPressWithHttpInfo();
     }
 
     /**
-     * Operation loginControllerLogoutWithoutWordPressWithHttpInfo
+     * Operation logoutWithoutWordPressWithHttpInfo
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function loginControllerLogoutWithoutWordPressWithHttpInfo()
+    public function logoutWithoutWordPressWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->loginControllerLogoutWithoutWordPressRequest();
+        $request = $this->logoutWithoutWordPressRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -829,7 +829,7 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerLogoutWithoutWordPressAsync
+     * Operation logoutWithoutWordPressAsync
      *
      * 
      *
@@ -837,9 +837,9 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginControllerLogoutWithoutWordPressAsync()
+    public function logoutWithoutWordPressAsync()
     {
-        return $this->loginControllerLogoutWithoutWordPressAsyncWithHttpInfo()
+        return $this->logoutWithoutWordPressAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -848,7 +848,7 @@ class AuthApi
     }
 
     /**
-     * Operation loginControllerLogoutWithoutWordPressAsyncWithHttpInfo
+     * Operation logoutWithoutWordPressAsyncWithHttpInfo
      *
      * 
      *
@@ -856,10 +856,10 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function loginControllerLogoutWithoutWordPressAsyncWithHttpInfo()
+    public function logoutWithoutWordPressAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->loginControllerLogoutWithoutWordPressRequest();
+        $request = $this->logoutWithoutWordPressRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -885,13 +885,13 @@ class AuthApi
     }
 
     /**
-     * Create request for operation 'loginControllerLogoutWithoutWordPress'
+     * Create request for operation 'logoutWithoutWordPress'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function loginControllerLogoutWithoutWordPressRequest()
+    protected function logoutWithoutWordPressRequest()
     {
 
         $resourcePath = '/logout';
@@ -946,10 +946,6 @@ class AuthApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -972,30 +968,30 @@ class AuthApi
     }
 
     /**
-     * Operation yoastComOpenIdControllerYoastComCallback
+     * Operation yoastComCallback
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function yoastComOpenIdControllerYoastComCallback()
+    public function yoastComCallback()
     {
-        $this->yoastComOpenIdControllerYoastComCallbackWithHttpInfo();
+        $this->yoastComCallbackWithHttpInfo();
     }
 
     /**
-     * Operation yoastComOpenIdControllerYoastComCallbackWithHttpInfo
+     * Operation yoastComCallbackWithHttpInfo
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function yoastComOpenIdControllerYoastComCallbackWithHttpInfo()
+    public function yoastComCallbackWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->yoastComOpenIdControllerYoastComCallbackRequest();
+        $request = $this->yoastComCallbackRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1035,7 +1031,7 @@ class AuthApi
     }
 
     /**
-     * Operation yoastComOpenIdControllerYoastComCallbackAsync
+     * Operation yoastComCallbackAsync
      *
      * 
      *
@@ -1043,9 +1039,9 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function yoastComOpenIdControllerYoastComCallbackAsync()
+    public function yoastComCallbackAsync()
     {
-        return $this->yoastComOpenIdControllerYoastComCallbackAsyncWithHttpInfo()
+        return $this->yoastComCallbackAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1054,7 +1050,7 @@ class AuthApi
     }
 
     /**
-     * Operation yoastComOpenIdControllerYoastComCallbackAsyncWithHttpInfo
+     * Operation yoastComCallbackAsyncWithHttpInfo
      *
      * 
      *
@@ -1062,10 +1058,10 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function yoastComOpenIdControllerYoastComCallbackAsyncWithHttpInfo()
+    public function yoastComCallbackAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->yoastComOpenIdControllerYoastComCallbackRequest();
+        $request = $this->yoastComCallbackRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1091,13 +1087,13 @@ class AuthApi
     }
 
     /**
-     * Create request for operation 'yoastComOpenIdControllerYoastComCallback'
+     * Create request for operation 'yoastComCallback'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function yoastComOpenIdControllerYoastComCallbackRequest()
+    protected function yoastComCallbackRequest()
     {
 
         $resourcePath = '/auth/yoast/callback';
@@ -1174,30 +1170,30 @@ class AuthApi
     }
 
     /**
-     * Operation yoastComOpenIdControllerYoastComLogin
+     * Operation yoastComLogin
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function yoastComOpenIdControllerYoastComLogin()
+    public function yoastComLogin()
     {
-        $this->yoastComOpenIdControllerYoastComLoginWithHttpInfo();
+        $this->yoastComLoginWithHttpInfo();
     }
 
     /**
-     * Operation yoastComOpenIdControllerYoastComLoginWithHttpInfo
+     * Operation yoastComLoginWithHttpInfo
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function yoastComOpenIdControllerYoastComLoginWithHttpInfo()
+    public function yoastComLoginWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->yoastComOpenIdControllerYoastComLoginRequest();
+        $request = $this->yoastComLoginRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1237,7 +1233,7 @@ class AuthApi
     }
 
     /**
-     * Operation yoastComOpenIdControllerYoastComLoginAsync
+     * Operation yoastComLoginAsync
      *
      * 
      *
@@ -1245,9 +1241,9 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function yoastComOpenIdControllerYoastComLoginAsync()
+    public function yoastComLoginAsync()
     {
-        return $this->yoastComOpenIdControllerYoastComLoginAsyncWithHttpInfo()
+        return $this->yoastComLoginAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1256,7 +1252,7 @@ class AuthApi
     }
 
     /**
-     * Operation yoastComOpenIdControllerYoastComLoginAsyncWithHttpInfo
+     * Operation yoastComLoginAsyncWithHttpInfo
      *
      * 
      *
@@ -1264,10 +1260,10 @@ class AuthApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function yoastComOpenIdControllerYoastComLoginAsyncWithHttpInfo()
+    public function yoastComLoginAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->yoastComOpenIdControllerYoastComLoginRequest();
+        $request = $this->yoastComLoginRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1293,13 +1289,13 @@ class AuthApi
     }
 
     /**
-     * Create request for operation 'yoastComOpenIdControllerYoastComLogin'
+     * Create request for operation 'yoastComLogin'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function yoastComOpenIdControllerYoastComLoginRequest()
+    protected function yoastComLoginRequest()
     {
 
         $resourcePath = '/auth/yoast';

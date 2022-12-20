@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,12 +71,12 @@ class RobotsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for robotsControllerServeRobots
+     * Test case for serveRobots
      *
      * .
      *
      */
-    public function testRobotsControllerServeRobots()
+    public function testServeRobots()
     {
     }
 }

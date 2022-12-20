@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,62 +71,62 @@ class AuthApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for loginControllerGetAccessTokenWithoutWordPress
+     * Test case for getAccessTokenWithoutWordPress
      *
      * Log in a user on MyYoast..
      *
      */
-    public function testLoginControllerGetAccessTokenWithoutWordPress()
+    public function testGetAccessTokenWithoutWordPress()
     {
     }
 
     /**
-     * Test case for loginControllerLoginUser
+     * Test case for loginUser
      *
      * .
      *
      */
-    public function testLoginControllerLoginUser()
+    public function testLoginUser()
     {
     }
 
     /**
-     * Test case for loginControllerLogoutUser
+     * Test case for logoutUser
      *
      * Logout the user on Yoast.com..
      *
      */
-    public function testLoginControllerLogoutUser()
+    public function testLogoutUser()
     {
     }
 
     /**
-     * Test case for loginControllerLogoutWithoutWordPress
+     * Test case for logoutWithoutWordPress
      *
      * .
      *
      */
-    public function testLoginControllerLogoutWithoutWordPress()
+    public function testLogoutWithoutWordPress()
     {
     }
 
     /**
-     * Test case for yoastComOpenIdControllerYoastComCallback
+     * Test case for yoastComCallback
      *
      * .
      *
      */
-    public function testYoastComOpenIdControllerYoastComCallback()
+    public function testYoastComCallback()
     {
     }
 
     /**
-     * Test case for yoastComOpenIdControllerYoastComLogin
+     * Test case for yoastComLogin
      *
      * .
      *
      */
-    public function testYoastComOpenIdControllerYoastComLogin()
+    public function testYoastComLogin()
     {
     }
 }

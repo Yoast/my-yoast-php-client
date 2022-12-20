@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerCancelSubscription
+     * Operation cancelSubscription
      *
      * Cancel a single subscription
      *
@@ -98,14 +98,14 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto
      */
-    public function subscriptionProvisioningControllerCancelSubscription($body, $id)
+    public function cancelSubscription($body, $id)
     {
-        list($response) = $this->subscriptionProvisioningControllerCancelSubscriptionWithHttpInfo($body, $id);
+        list($response) = $this->cancelSubscriptionWithHttpInfo($body, $id);
         return $response;
     }
 
     /**
-     * Operation subscriptionProvisioningControllerCancelSubscriptionWithHttpInfo
+     * Operation cancelSubscriptionWithHttpInfo
      *
      * Cancel a single subscription
      *
@@ -116,10 +116,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionProvisioningControllerCancelSubscriptionWithHttpInfo($body, $id)
+    public function cancelSubscriptionWithHttpInfo($body, $id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerCancelSubscriptionRequest($body, $id);
+        $request = $this->cancelSubscriptionRequest($body, $id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -181,7 +181,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerCancelSubscriptionAsync
+     * Operation cancelSubscriptionAsync
      *
      * Cancel a single subscription
      *
@@ -191,9 +191,9 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerCancelSubscriptionAsync($body, $id)
+    public function cancelSubscriptionAsync($body, $id)
     {
-        return $this->subscriptionProvisioningControllerCancelSubscriptionAsyncWithHttpInfo($body, $id)
+        return $this->cancelSubscriptionAsyncWithHttpInfo($body, $id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -202,7 +202,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerCancelSubscriptionAsyncWithHttpInfo
+     * Operation cancelSubscriptionAsyncWithHttpInfo
      *
      * Cancel a single subscription
      *
@@ -212,10 +212,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerCancelSubscriptionAsyncWithHttpInfo($body, $id)
+    public function cancelSubscriptionAsyncWithHttpInfo($body, $id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerCancelSubscriptionRequest($body, $id);
+        $request = $this->cancelSubscriptionRequest($body, $id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,7 +255,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Create request for operation 'subscriptionProvisioningControllerCancelSubscription'
+     * Create request for operation 'cancelSubscription'
      *
      * @param  \Yoast\MyYoastApiClient\Model\CancelProvisionedSubscriptionDto $body (required)
      * @param  string $id (required)
@@ -263,18 +263,18 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function subscriptionProvisioningControllerCancelSubscriptionRequest($body, $id)
+    protected function cancelSubscriptionRequest($body, $id)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling subscriptionProvisioningControllerCancelSubscription'
+                'Missing the required parameter $body when calling cancelSubscription'
             );
         }
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling subscriptionProvisioningControllerCancelSubscription'
+                'Missing the required parameter $id when calling cancelSubscription'
             );
         }
 
@@ -363,7 +363,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerCreate
+     * Operation create
      *
      * Create a subscription
      *
@@ -373,14 +373,14 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto
      */
-    public function subscriptionProvisioningControllerCreate($body)
+    public function create($body)
     {
-        list($response) = $this->subscriptionProvisioningControllerCreateWithHttpInfo($body);
+        list($response) = $this->createWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation subscriptionProvisioningControllerCreateWithHttpInfo
+     * Operation createWithHttpInfo
      *
      * Create a subscription
      *
@@ -390,10 +390,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionProvisioningControllerCreateWithHttpInfo($body)
+    public function createWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerCreateRequest($body);
+        $request = $this->createRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -455,7 +455,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerCreateAsync
+     * Operation createAsync
      *
      * Create a subscription
      *
@@ -464,9 +464,9 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerCreateAsync($body)
+    public function createAsync($body)
     {
-        return $this->subscriptionProvisioningControllerCreateAsyncWithHttpInfo($body)
+        return $this->createAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -475,7 +475,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerCreateAsyncWithHttpInfo
+     * Operation createAsyncWithHttpInfo
      *
      * Create a subscription
      *
@@ -484,10 +484,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerCreateAsyncWithHttpInfo($body)
+    public function createAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerCreateRequest($body);
+        $request = $this->createRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -527,19 +527,19 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Create request for operation 'subscriptionProvisioningControllerCreate'
+     * Create request for operation 'create'
      *
      * @param  \Yoast\MyYoastApiClient\Model\CreateProvisionedSubscriptionDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function subscriptionProvisioningControllerCreateRequest($body)
+    protected function createRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling subscriptionProvisioningControllerCreate'
+                'Missing the required parameter $body when calling create'
             );
         }
 
@@ -620,7 +620,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerGetOne
+     * Operation getOne
      *
      * Get a subscription
      *
@@ -630,14 +630,14 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto
      */
-    public function subscriptionProvisioningControllerGetOne($id)
+    public function getOne($id)
     {
-        list($response) = $this->subscriptionProvisioningControllerGetOneWithHttpInfo($id);
+        list($response) = $this->getOneWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation subscriptionProvisioningControllerGetOneWithHttpInfo
+     * Operation getOneWithHttpInfo
      *
      * Get a subscription
      *
@@ -647,10 +647,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionProvisioningControllerGetOneWithHttpInfo($id)
+    public function getOneWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerGetOneRequest($id);
+        $request = $this->getOneRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -712,7 +712,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerGetOneAsync
+     * Operation getOneAsync
      *
      * Get a subscription
      *
@@ -721,9 +721,9 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerGetOneAsync($id)
+    public function getOneAsync($id)
     {
-        return $this->subscriptionProvisioningControllerGetOneAsyncWithHttpInfo($id)
+        return $this->getOneAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -732,7 +732,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerGetOneAsyncWithHttpInfo
+     * Operation getOneAsyncWithHttpInfo
      *
      * Get a subscription
      *
@@ -741,10 +741,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerGetOneAsyncWithHttpInfo($id)
+    public function getOneAsyncWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerGetOneRequest($id);
+        $request = $this->getOneRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -784,19 +784,19 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Create request for operation 'subscriptionProvisioningControllerGetOne'
+     * Create request for operation 'getOne'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function subscriptionProvisioningControllerGetOneRequest($id)
+    protected function getOneRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling subscriptionProvisioningControllerGetOne'
+                'Missing the required parameter $id when calling getOne'
             );
         }
 
@@ -882,7 +882,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerRefundSubscription
+     * Operation refundSubscription
      *
      * Refund a single subscription
      *
@@ -892,14 +892,14 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto
      */
-    public function subscriptionProvisioningControllerRefundSubscription($id)
+    public function refundSubscription($id)
     {
-        list($response) = $this->subscriptionProvisioningControllerRefundSubscriptionWithHttpInfo($id);
+        list($response) = $this->refundSubscriptionWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation subscriptionProvisioningControllerRefundSubscriptionWithHttpInfo
+     * Operation refundSubscriptionWithHttpInfo
      *
      * Refund a single subscription
      *
@@ -909,10 +909,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionProvisioningControllerRefundSubscriptionWithHttpInfo($id)
+    public function refundSubscriptionWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerRefundSubscriptionRequest($id);
+        $request = $this->refundSubscriptionRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -974,7 +974,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerRefundSubscriptionAsync
+     * Operation refundSubscriptionAsync
      *
      * Refund a single subscription
      *
@@ -983,9 +983,9 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerRefundSubscriptionAsync($id)
+    public function refundSubscriptionAsync($id)
     {
-        return $this->subscriptionProvisioningControllerRefundSubscriptionAsyncWithHttpInfo($id)
+        return $this->refundSubscriptionAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -994,7 +994,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerRefundSubscriptionAsyncWithHttpInfo
+     * Operation refundSubscriptionAsyncWithHttpInfo
      *
      * Refund a single subscription
      *
@@ -1003,10 +1003,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerRefundSubscriptionAsyncWithHttpInfo($id)
+    public function refundSubscriptionAsyncWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerRefundSubscriptionRequest($id);
+        $request = $this->refundSubscriptionRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1046,19 +1046,19 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Create request for operation 'subscriptionProvisioningControllerRefundSubscription'
+     * Create request for operation 'refundSubscription'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function subscriptionProvisioningControllerRefundSubscriptionRequest($id)
+    protected function refundSubscriptionRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling subscriptionProvisioningControllerRefundSubscription'
+                'Missing the required parameter $id when calling refundSubscription'
             );
         }
 
@@ -1144,7 +1144,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerRenewSubscription
+     * Operation renewSubscription
      *
      * Renew a subscription
      *
@@ -1154,14 +1154,14 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto
      */
-    public function subscriptionProvisioningControllerRenewSubscription($id)
+    public function renewSubscription($id)
     {
-        list($response) = $this->subscriptionProvisioningControllerRenewSubscriptionWithHttpInfo($id);
+        list($response) = $this->renewSubscriptionWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation subscriptionProvisioningControllerRenewSubscriptionWithHttpInfo
+     * Operation renewSubscriptionWithHttpInfo
      *
      * Renew a subscription
      *
@@ -1171,10 +1171,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionProvisioningControllerRenewSubscriptionWithHttpInfo($id)
+    public function renewSubscriptionWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerRenewSubscriptionRequest($id);
+        $request = $this->renewSubscriptionRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1236,7 +1236,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerRenewSubscriptionAsync
+     * Operation renewSubscriptionAsync
      *
      * Renew a subscription
      *
@@ -1245,9 +1245,9 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerRenewSubscriptionAsync($id)
+    public function renewSubscriptionAsync($id)
     {
-        return $this->subscriptionProvisioningControllerRenewSubscriptionAsyncWithHttpInfo($id)
+        return $this->renewSubscriptionAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1256,7 +1256,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerRenewSubscriptionAsyncWithHttpInfo
+     * Operation renewSubscriptionAsyncWithHttpInfo
      *
      * Renew a subscription
      *
@@ -1265,10 +1265,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerRenewSubscriptionAsyncWithHttpInfo($id)
+    public function renewSubscriptionAsyncWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerRenewSubscriptionRequest($id);
+        $request = $this->renewSubscriptionRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1308,19 +1308,19 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Create request for operation 'subscriptionProvisioningControllerRenewSubscription'
+     * Create request for operation 'renewSubscription'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function subscriptionProvisioningControllerRenewSubscriptionRequest($id)
+    protected function renewSubscriptionRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling subscriptionProvisioningControllerRenewSubscription'
+                'Missing the required parameter $id when calling renewSubscription'
             );
         }
 
@@ -1406,7 +1406,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerSetSiteForSubscription
+     * Operation setSiteForSubscription
      *
      * Link a subscription to a site
      *
@@ -1417,14 +1417,14 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto
      */
-    public function subscriptionProvisioningControllerSetSiteForSubscription($body, $id)
+    public function setSiteForSubscription($body, $id)
     {
-        list($response) = $this->subscriptionProvisioningControllerSetSiteForSubscriptionWithHttpInfo($body, $id);
+        list($response) = $this->setSiteForSubscriptionWithHttpInfo($body, $id);
         return $response;
     }
 
     /**
-     * Operation subscriptionProvisioningControllerSetSiteForSubscriptionWithHttpInfo
+     * Operation setSiteForSubscriptionWithHttpInfo
      *
      * Link a subscription to a site
      *
@@ -1435,10 +1435,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function subscriptionProvisioningControllerSetSiteForSubscriptionWithHttpInfo($body, $id)
+    public function setSiteForSubscriptionWithHttpInfo($body, $id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerSetSiteForSubscriptionRequest($body, $id);
+        $request = $this->setSiteForSubscriptionRequest($body, $id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1500,7 +1500,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerSetSiteForSubscriptionAsync
+     * Operation setSiteForSubscriptionAsync
      *
      * Link a subscription to a site
      *
@@ -1510,9 +1510,9 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerSetSiteForSubscriptionAsync($body, $id)
+    public function setSiteForSubscriptionAsync($body, $id)
     {
-        return $this->subscriptionProvisioningControllerSetSiteForSubscriptionAsyncWithHttpInfo($body, $id)
+        return $this->setSiteForSubscriptionAsyncWithHttpInfo($body, $id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1521,7 +1521,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Operation subscriptionProvisioningControllerSetSiteForSubscriptionAsyncWithHttpInfo
+     * Operation setSiteForSubscriptionAsyncWithHttpInfo
      *
      * Link a subscription to a site
      *
@@ -1531,10 +1531,10 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function subscriptionProvisioningControllerSetSiteForSubscriptionAsyncWithHttpInfo($body, $id)
+    public function setSiteForSubscriptionAsyncWithHttpInfo($body, $id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->subscriptionProvisioningControllerSetSiteForSubscriptionRequest($body, $id);
+        $request = $this->setSiteForSubscriptionRequest($body, $id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1574,7 +1574,7 @@ class SubscriptionProvisioningApi
     }
 
     /**
-     * Create request for operation 'subscriptionProvisioningControllerSetSiteForSubscription'
+     * Create request for operation 'setSiteForSubscription'
      *
      * @param  \Yoast\MyYoastApiClient\Model\SetProvisionedSiteDto $body (required)
      * @param  string $id (required)
@@ -1582,18 +1582,18 @@ class SubscriptionProvisioningApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function subscriptionProvisioningControllerSetSiteForSubscriptionRequest($body, $id)
+    protected function setSiteForSubscriptionRequest($body, $id)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling subscriptionProvisioningControllerSetSiteForSubscription'
+                'Missing the required parameter $body when calling setSiteForSubscription'
             );
         }
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling subscriptionProvisioningControllerSetSiteForSubscription'
+                'Missing the required parameter $id when calling setSiteForSubscription'
             );
         }
 

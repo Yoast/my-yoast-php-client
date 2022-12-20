@@ -1,14 +1,14 @@
 # Yoast\MyYoastApiClient\DownloadApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**downloadControllerDownloadFile**](DownloadApi.md#downloadcontrollerdownloadfile) | **GET** /api/downloads/file/{name} | Route to download a file
-[**downloadControllerUploadFile**](DownloadApi.md#downloadcontrolleruploadfile) | **POST** /api/downloads/file/{name} | Route to update a file.
+[**downloadFile**](DownloadApi.md#downloadfile) | **GET** /api/downloads/file/{name} | Route to download a file
+[**uploadFile**](DownloadApi.md#uploadfile) | **POST** /api/downloads/file/{name} | Route to update a file.
 
-# **downloadControllerDownloadFile**
-> downloadControllerDownloadFile($name, $version, $pluginVersion, $site)
+# **downloadFile**
+> downloadFile($name, $version, $pluginVersion, $site)
 
 Route to download a file
 
@@ -30,9 +30,9 @@ $pluginVersion = "pluginVersion_example"; // string |
 $site = "site_example"; // string | 
 
 try {
-    $apiInstance->downloadControllerDownloadFile($name, $version, $pluginVersion, $site);
+    $apiInstance->downloadFile($name, $version, $pluginVersion, $site);
 } catch (Exception $e) {
-    echo 'Exception when calling DownloadApi->downloadControllerDownloadFile: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DownloadApi->downloadFile: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -61,8 +61,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **downloadControllerUploadFile**
-> \Yoast\MyYoastApiClient\Model\ downloadControllerUploadFile($body, $name)
+# **uploadFile**
+> \Yoast\MyYoastApiClient\Model\ uploadFile($body, $name)
 
 Route to update a file.
 
@@ -82,10 +82,10 @@ $body = new \Yoast\MyYoastApiClient\Model\UpdateFileDto(); // \Yoast\MyYoastApiC
 $name = "name_example"; // string | 
 
 try {
-    $result = $apiInstance->downloadControllerUploadFile($body, $name);
+    $result = $apiInstance->uploadFile($body, $name);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DownloadApi->downloadControllerUploadFile: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DownloadApi->uploadFile: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

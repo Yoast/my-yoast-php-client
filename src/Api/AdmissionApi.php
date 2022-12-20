@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerChangeStudent
+     * Operation changeStudent
      *
      * Update an admission
      *
@@ -98,14 +98,14 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Admission
      */
-    public function admissionControllerChangeStudent($body, $id)
+    public function changeStudent($body, $id)
     {
-        list($response) = $this->admissionControllerChangeStudentWithHttpInfo($body, $id);
+        list($response) = $this->changeStudentWithHttpInfo($body, $id);
         return $response;
     }
 
     /**
-     * Operation admissionControllerChangeStudentWithHttpInfo
+     * Operation changeStudentWithHttpInfo
      *
      * Update an admission
      *
@@ -116,10 +116,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Admission, HTTP status code, HTTP response headers (array of strings)
      */
-    public function admissionControllerChangeStudentWithHttpInfo($body, $id)
+    public function changeStudentWithHttpInfo($body, $id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Admission';
-        $request = $this->admissionControllerChangeStudentRequest($body, $id);
+        $request = $this->changeStudentRequest($body, $id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -181,7 +181,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerChangeStudentAsync
+     * Operation changeStudentAsync
      *
      * Update an admission
      *
@@ -191,9 +191,9 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerChangeStudentAsync($body, $id)
+    public function changeStudentAsync($body, $id)
     {
-        return $this->admissionControllerChangeStudentAsyncWithHttpInfo($body, $id)
+        return $this->changeStudentAsyncWithHttpInfo($body, $id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -202,7 +202,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerChangeStudentAsyncWithHttpInfo
+     * Operation changeStudentAsyncWithHttpInfo
      *
      * Update an admission
      *
@@ -212,10 +212,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerChangeStudentAsyncWithHttpInfo($body, $id)
+    public function changeStudentAsyncWithHttpInfo($body, $id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Admission';
-        $request = $this->admissionControllerChangeStudentRequest($body, $id);
+        $request = $this->changeStudentRequest($body, $id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,7 +255,7 @@ class AdmissionApi
     }
 
     /**
-     * Create request for operation 'admissionControllerChangeStudent'
+     * Create request for operation 'changeStudent'
      *
      * @param  \Yoast\MyYoastApiClient\Model\UpdateDto $body (required)
      * @param  string $id (required)
@@ -263,18 +263,18 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function admissionControllerChangeStudentRequest($body, $id)
+    protected function changeStudentRequest($body, $id)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling admissionControllerChangeStudent'
+                'Missing the required parameter $body when calling changeStudent'
             );
         }
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling admissionControllerChangeStudent'
+                'Missing the required parameter $id when calling changeStudent'
             );
         }
 
@@ -341,10 +341,6 @@ class AdmissionApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -367,7 +363,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerGetMany
+     * Operation getMany
      *
      * Get admissions
      *
@@ -377,14 +373,14 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Admission[]
      */
-    public function admissionControllerGetMany($filter = null)
+    public function getMany($filter = null)
     {
-        list($response) = $this->admissionControllerGetManyWithHttpInfo($filter);
+        list($response) = $this->getManyWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation admissionControllerGetManyWithHttpInfo
+     * Operation getManyWithHttpInfo
      *
      * Get admissions
      *
@@ -394,10 +390,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Admission[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function admissionControllerGetManyWithHttpInfo($filter = null)
+    public function getManyWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Admission[]';
-        $request = $this->admissionControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -459,7 +455,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerGetManyAsync
+     * Operation getManyAsync
      *
      * Get admissions
      *
@@ -468,9 +464,9 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerGetManyAsync($filter = null)
+    public function getManyAsync($filter = null)
     {
-        return $this->admissionControllerGetManyAsyncWithHttpInfo($filter)
+        return $this->getManyAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -479,7 +475,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerGetManyAsyncWithHttpInfo
+     * Operation getManyAsyncWithHttpInfo
      *
      * Get admissions
      *
@@ -488,10 +484,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerGetManyAsyncWithHttpInfo($filter = null)
+    public function getManyAsyncWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Admission[]';
-        $request = $this->admissionControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -531,14 +527,14 @@ class AdmissionApi
     }
 
     /**
-     * Create request for operation 'admissionControllerGetMany'
+     * Create request for operation 'getMany'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function admissionControllerGetManyRequest($filter = null)
+    protected function getManyRequest($filter = null)
     {
 
         $resourcePath = '/api/Admissions';
@@ -597,10 +593,6 @@ class AdmissionApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -623,7 +615,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerGetManyPaged
+     * Operation getManyPaged
      *
      * Get admissions
      *
@@ -633,13 +625,13 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function admissionControllerGetManyPaged($filter = null)
+    public function getManyPaged($filter = null)
     {
-        $this->admissionControllerGetManyPagedWithHttpInfo($filter);
+        $this->getManyPagedWithHttpInfo($filter);
     }
 
     /**
-     * Operation admissionControllerGetManyPagedWithHttpInfo
+     * Operation getManyPagedWithHttpInfo
      *
      * Get admissions
      *
@@ -649,10 +641,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function admissionControllerGetManyPagedWithHttpInfo($filter = null)
+    public function getManyPagedWithHttpInfo($filter = null)
     {
         $returnType = '';
-        $request = $this->admissionControllerGetManyPagedRequest($filter);
+        $request = $this->getManyPagedRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -692,7 +684,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerGetManyPagedAsync
+     * Operation getManyPagedAsync
      *
      * Get admissions
      *
@@ -701,9 +693,9 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerGetManyPagedAsync($filter = null)
+    public function getManyPagedAsync($filter = null)
     {
-        return $this->admissionControllerGetManyPagedAsyncWithHttpInfo($filter)
+        return $this->getManyPagedAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -712,7 +704,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerGetManyPagedAsyncWithHttpInfo
+     * Operation getManyPagedAsyncWithHttpInfo
      *
      * Get admissions
      *
@@ -721,10 +713,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerGetManyPagedAsyncWithHttpInfo($filter = null)
+    public function getManyPagedAsyncWithHttpInfo($filter = null)
     {
         $returnType = '';
-        $request = $this->admissionControllerGetManyPagedRequest($filter);
+        $request = $this->getManyPagedRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -750,14 +742,14 @@ class AdmissionApi
     }
 
     /**
-     * Create request for operation 'admissionControllerGetManyPaged'
+     * Create request for operation 'getManyPaged'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function admissionControllerGetManyPagedRequest($filter = null)
+    protected function getManyPagedRequest($filter = null)
     {
 
         $resourcePath = '/api/Admissions/paged';
@@ -816,10 +808,6 @@ class AdmissionApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -842,7 +830,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerGetOne
+     * Operation getOne
      *
      * Get an admission
      *
@@ -852,14 +840,14 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Admission
      */
-    public function admissionControllerGetOne($id)
+    public function getOne($id)
     {
-        list($response) = $this->admissionControllerGetOneWithHttpInfo($id);
+        list($response) = $this->getOneWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation admissionControllerGetOneWithHttpInfo
+     * Operation getOneWithHttpInfo
      *
      * Get an admission
      *
@@ -869,10 +857,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Admission, HTTP status code, HTTP response headers (array of strings)
      */
-    public function admissionControllerGetOneWithHttpInfo($id)
+    public function getOneWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Admission';
-        $request = $this->admissionControllerGetOneRequest($id);
+        $request = $this->getOneRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -934,7 +922,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerGetOneAsync
+     * Operation getOneAsync
      *
      * Get an admission
      *
@@ -943,9 +931,9 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerGetOneAsync($id)
+    public function getOneAsync($id)
     {
-        return $this->admissionControllerGetOneAsyncWithHttpInfo($id)
+        return $this->getOneAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -954,7 +942,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerGetOneAsyncWithHttpInfo
+     * Operation getOneAsyncWithHttpInfo
      *
      * Get an admission
      *
@@ -963,10 +951,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerGetOneAsyncWithHttpInfo($id)
+    public function getOneAsyncWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Admission';
-        $request = $this->admissionControllerGetOneRequest($id);
+        $request = $this->getOneRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1006,19 +994,19 @@ class AdmissionApi
     }
 
     /**
-     * Create request for operation 'admissionControllerGetOne'
+     * Create request for operation 'getOne'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function admissionControllerGetOneRequest($id)
+    protected function getOneRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling admissionControllerGetOne'
+                'Missing the required parameter $id when calling getOne'
             );
         }
 
@@ -1082,10 +1070,6 @@ class AdmissionApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1108,7 +1092,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerInvite
+     * Operation invite
      *
      * Invite a customer
      *
@@ -1118,14 +1102,14 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Admission
      */
-    public function admissionControllerInvite($body)
+    public function invite($body)
     {
-        list($response) = $this->admissionControllerInviteWithHttpInfo($body);
+        list($response) = $this->inviteWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation admissionControllerInviteWithHttpInfo
+     * Operation inviteWithHttpInfo
      *
      * Invite a customer
      *
@@ -1135,10 +1119,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Admission, HTTP status code, HTTP response headers (array of strings)
      */
-    public function admissionControllerInviteWithHttpInfo($body)
+    public function inviteWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Admission';
-        $request = $this->admissionControllerInviteRequest($body);
+        $request = $this->inviteRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1200,7 +1184,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerInviteAsync
+     * Operation inviteAsync
      *
      * Invite a customer
      *
@@ -1209,9 +1193,9 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerInviteAsync($body)
+    public function inviteAsync($body)
     {
-        return $this->admissionControllerInviteAsyncWithHttpInfo($body)
+        return $this->inviteAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1220,7 +1204,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerInviteAsyncWithHttpInfo
+     * Operation inviteAsyncWithHttpInfo
      *
      * Invite a customer
      *
@@ -1229,10 +1213,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerInviteAsyncWithHttpInfo($body)
+    public function inviteAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Admission';
-        $request = $this->admissionControllerInviteRequest($body);
+        $request = $this->inviteRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1272,19 +1256,19 @@ class AdmissionApi
     }
 
     /**
-     * Create request for operation 'admissionControllerInvite'
+     * Create request for operation 'invite'
      *
      * @param  \Yoast\MyYoastApiClient\Model\CreateDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function admissionControllerInviteRequest($body)
+    protected function inviteRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling admissionControllerInvite'
+                'Missing the required parameter $body when calling invite'
             );
         }
 
@@ -1343,10 +1327,6 @@ class AdmissionApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1369,7 +1349,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerTransferAdmissions
+     * Operation transferAdmissions
      *
      * Transfer admissions between customers
      *
@@ -1379,14 +1359,14 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Admission[]
      */
-    public function admissionControllerTransferAdmissions($body)
+    public function transferAdmissions($body)
     {
-        list($response) = $this->admissionControllerTransferAdmissionsWithHttpInfo($body);
+        list($response) = $this->transferAdmissionsWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation admissionControllerTransferAdmissionsWithHttpInfo
+     * Operation transferAdmissionsWithHttpInfo
      *
      * Transfer admissions between customers
      *
@@ -1396,10 +1376,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Admission[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function admissionControllerTransferAdmissionsWithHttpInfo($body)
+    public function transferAdmissionsWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Admission[]';
-        $request = $this->admissionControllerTransferAdmissionsRequest($body);
+        $request = $this->transferAdmissionsRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1461,7 +1441,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerTransferAdmissionsAsync
+     * Operation transferAdmissionsAsync
      *
      * Transfer admissions between customers
      *
@@ -1470,9 +1450,9 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerTransferAdmissionsAsync($body)
+    public function transferAdmissionsAsync($body)
     {
-        return $this->admissionControllerTransferAdmissionsAsyncWithHttpInfo($body)
+        return $this->transferAdmissionsAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1481,7 +1461,7 @@ class AdmissionApi
     }
 
     /**
-     * Operation admissionControllerTransferAdmissionsAsyncWithHttpInfo
+     * Operation transferAdmissionsAsyncWithHttpInfo
      *
      * Transfer admissions between customers
      *
@@ -1490,10 +1470,10 @@ class AdmissionApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function admissionControllerTransferAdmissionsAsyncWithHttpInfo($body)
+    public function transferAdmissionsAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Admission[]';
-        $request = $this->admissionControllerTransferAdmissionsRequest($body);
+        $request = $this->transferAdmissionsRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1533,19 +1513,19 @@ class AdmissionApi
     }
 
     /**
-     * Create request for operation 'admissionControllerTransferAdmissions'
+     * Create request for operation 'transferAdmissions'
      *
      * @param  \Yoast\MyYoastApiClient\Model\TransferAdmissionDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function admissionControllerTransferAdmissionsRequest($body)
+    protected function transferAdmissionsRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling admissionControllerTransferAdmissions'
+                'Missing the required parameter $body when calling transferAdmissions'
             );
         }
 
@@ -1604,10 +1584,6 @@ class AdmissionApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

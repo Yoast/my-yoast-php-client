@@ -1,13 +1,13 @@
 # Yoast\MyYoastApiClient\RobotsApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**robotsControllerServeRobots**](RobotsApi.md#robotscontrollerserverobots) | **GET** /robots.txt | 
+[**serveRobots**](RobotsApi.md#serverobots) | **GET** /robots.txt | 
 
-# **robotsControllerServeRobots**
-> \Yoast\MyYoastApiClient\Model\ robotsControllerServeRobots()
+# **serveRobots**
+> \Yoast\MyYoastApiClient\Model\ serveRobots()
 
 
 
@@ -23,10 +23,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\RobotsApi(
 );
 
 try {
-    $result = $apiInstance->robotsControllerServeRobots();
+    $result = $apiInstance->serveRobots();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RobotsApi->robotsControllerServeRobots: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RobotsApi->serveRobots: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

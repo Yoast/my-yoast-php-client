@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class HelpscoutApi
     }
 
     /**
-     * Operation helpScoutControllerHelpscout
+     * Operation helpscout
      *
      * Get information about a customer
      *
@@ -98,14 +98,14 @@ class HelpscoutApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function helpScoutControllerHelpscout($body, $xHelpScoutSignature)
+    public function helpscout($body, $xHelpScoutSignature)
     {
-        list($response) = $this->helpScoutControllerHelpscoutWithHttpInfo($body, $xHelpScoutSignature);
+        list($response) = $this->helpscoutWithHttpInfo($body, $xHelpScoutSignature);
         return $response;
     }
 
     /**
-     * Operation helpScoutControllerHelpscoutWithHttpInfo
+     * Operation helpscoutWithHttpInfo
      *
      * Get information about a customer
      *
@@ -116,10 +116,10 @@ class HelpscoutApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function helpScoutControllerHelpscoutWithHttpInfo($body, $xHelpScoutSignature)
+    public function helpscoutWithHttpInfo($body, $xHelpScoutSignature)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->helpScoutControllerHelpscoutRequest($body, $xHelpScoutSignature);
+        $request = $this->helpscoutRequest($body, $xHelpScoutSignature);
 
         try {
             $options = $this->createHttpClientOption();
@@ -181,7 +181,7 @@ class HelpscoutApi
     }
 
     /**
-     * Operation helpScoutControllerHelpscoutAsync
+     * Operation helpscoutAsync
      *
      * Get information about a customer
      *
@@ -191,9 +191,9 @@ class HelpscoutApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function helpScoutControllerHelpscoutAsync($body, $xHelpScoutSignature)
+    public function helpscoutAsync($body, $xHelpScoutSignature)
     {
-        return $this->helpScoutControllerHelpscoutAsyncWithHttpInfo($body, $xHelpScoutSignature)
+        return $this->helpscoutAsyncWithHttpInfo($body, $xHelpScoutSignature)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -202,7 +202,7 @@ class HelpscoutApi
     }
 
     /**
-     * Operation helpScoutControllerHelpscoutAsyncWithHttpInfo
+     * Operation helpscoutAsyncWithHttpInfo
      *
      * Get information about a customer
      *
@@ -212,10 +212,10 @@ class HelpscoutApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function helpScoutControllerHelpscoutAsyncWithHttpInfo($body, $xHelpScoutSignature)
+    public function helpscoutAsyncWithHttpInfo($body, $xHelpScoutSignature)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->helpScoutControllerHelpscoutRequest($body, $xHelpScoutSignature);
+        $request = $this->helpscoutRequest($body, $xHelpScoutSignature);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,7 +255,7 @@ class HelpscoutApi
     }
 
     /**
-     * Create request for operation 'helpScoutControllerHelpscout'
+     * Create request for operation 'helpscout'
      *
      * @param  \Yoast\MyYoastApiClient\Model\HelpScoutDto $body (required)
      * @param  string $xHelpScoutSignature The Helpscout signature (required)
@@ -263,18 +263,18 @@ class HelpscoutApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function helpScoutControllerHelpscoutRequest($body, $xHelpScoutSignature)
+    protected function helpscoutRequest($body, $xHelpScoutSignature)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling helpScoutControllerHelpscout'
+                'Missing the required parameter $body when calling helpscout'
             );
         }
         // verify the required parameter 'xHelpScoutSignature' is set
         if ($xHelpScoutSignature === null || (is_array($xHelpScoutSignature) && count($xHelpScoutSignature) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $xHelpScoutSignature when calling helpScoutControllerHelpscout'
+                'Missing the required parameter $xHelpScoutSignature when calling helpscout'
             );
         }
 

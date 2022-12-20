@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class ProductGroupApi
     }
 
     /**
-     * Operation productGroupControllerGetMany
+     * Operation getMany
      *
      * Get productgroups
      *
@@ -97,14 +97,14 @@ class ProductGroupApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup[]
      */
-    public function productGroupControllerGetMany($filter = null)
+    public function getMany($filter = null)
     {
-        list($response) = $this->productGroupControllerGetManyWithHttpInfo($filter);
+        list($response) = $this->getManyWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation productGroupControllerGetManyWithHttpInfo
+     * Operation getManyWithHttpInfo
      *
      * Get productgroups
      *
@@ -114,10 +114,10 @@ class ProductGroupApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function productGroupControllerGetManyWithHttpInfo($filter = null)
+    public function getManyWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup[]';
-        $request = $this->productGroupControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -179,7 +179,7 @@ class ProductGroupApi
     }
 
     /**
-     * Operation productGroupControllerGetManyAsync
+     * Operation getManyAsync
      *
      * Get productgroups
      *
@@ -188,9 +188,9 @@ class ProductGroupApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productGroupControllerGetManyAsync($filter = null)
+    public function getManyAsync($filter = null)
     {
-        return $this->productGroupControllerGetManyAsyncWithHttpInfo($filter)
+        return $this->getManyAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,7 +199,7 @@ class ProductGroupApi
     }
 
     /**
-     * Operation productGroupControllerGetManyAsyncWithHttpInfo
+     * Operation getManyAsyncWithHttpInfo
      *
      * Get productgroups
      *
@@ -208,10 +208,10 @@ class ProductGroupApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productGroupControllerGetManyAsyncWithHttpInfo($filter = null)
+    public function getManyAsyncWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup[]';
-        $request = $this->productGroupControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,14 +251,14 @@ class ProductGroupApi
     }
 
     /**
-     * Create request for operation 'productGroupControllerGetMany'
+     * Create request for operation 'getMany'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productGroupControllerGetManyRequest($filter = null)
+    protected function getManyRequest($filter = null)
     {
 
         $resourcePath = '/api/ProductGroups';
@@ -317,10 +317,6 @@ class ProductGroupApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -343,7 +339,7 @@ class ProductGroupApi
     }
 
     /**
-     * Operation productGroupControllerUpdateDownload
+     * Operation updateDownload
      *
      * Update the download
      *
@@ -353,14 +349,14 @@ class ProductGroupApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup
      */
-    public function productGroupControllerUpdateDownload($body)
+    public function updateDownload($body)
     {
-        list($response) = $this->productGroupControllerUpdateDownloadWithHttpInfo($body);
+        list($response) = $this->updateDownloadWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation productGroupControllerUpdateDownloadWithHttpInfo
+     * Operation updateDownloadWithHttpInfo
      *
      * Update the download
      *
@@ -370,10 +366,10 @@ class ProductGroupApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup, HTTP status code, HTTP response headers (array of strings)
      */
-    public function productGroupControllerUpdateDownloadWithHttpInfo($body)
+    public function updateDownloadWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup';
-        $request = $this->productGroupControllerUpdateDownloadRequest($body);
+        $request = $this->updateDownloadRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -435,7 +431,7 @@ class ProductGroupApi
     }
 
     /**
-     * Operation productGroupControllerUpdateDownloadAsync
+     * Operation updateDownloadAsync
      *
      * Update the download
      *
@@ -444,9 +440,9 @@ class ProductGroupApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productGroupControllerUpdateDownloadAsync($body)
+    public function updateDownloadAsync($body)
     {
-        return $this->productGroupControllerUpdateDownloadAsyncWithHttpInfo($body)
+        return $this->updateDownloadAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -455,7 +451,7 @@ class ProductGroupApi
     }
 
     /**
-     * Operation productGroupControllerUpdateDownloadAsyncWithHttpInfo
+     * Operation updateDownloadAsyncWithHttpInfo
      *
      * Update the download
      *
@@ -464,10 +460,10 @@ class ProductGroupApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function productGroupControllerUpdateDownloadAsyncWithHttpInfo($body)
+    public function updateDownloadAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup';
-        $request = $this->productGroupControllerUpdateDownloadRequest($body);
+        $request = $this->updateDownloadRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -507,19 +503,19 @@ class ProductGroupApi
     }
 
     /**
-     * Create request for operation 'productGroupControllerUpdateDownload'
+     * Create request for operation 'updateDownload'
      *
      * @param  \Yoast\MyYoastApiClient\Model\UpdateDownloadDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function productGroupControllerUpdateDownloadRequest($body)
+    protected function updateDownloadRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling productGroupControllerUpdateDownload'
+                'Missing the required parameter $body when calling updateDownload'
             );
         }
 
@@ -578,10 +574,6 @@ class ProductGroupApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class ProvisionerApi
     }
 
     /**
-     * Operation provisionerDataControllerGetMany
+     * Operation getMany
      *
      * Get provisioner data
      *
@@ -96,14 +96,14 @@ class ProvisionerApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\ProvisionerData[]
      */
-    public function provisionerDataControllerGetMany()
+    public function getMany()
     {
-        list($response) = $this->provisionerDataControllerGetManyWithHttpInfo();
+        list($response) = $this->getManyWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation provisionerDataControllerGetManyWithHttpInfo
+     * Operation getManyWithHttpInfo
      *
      * Get provisioner data
      *
@@ -112,10 +112,10 @@ class ProvisionerApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\ProvisionerData[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function provisionerDataControllerGetManyWithHttpInfo()
+    public function getManyWithHttpInfo()
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProvisionerData[]';
-        $request = $this->provisionerDataControllerGetManyRequest();
+        $request = $this->getManyRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -177,7 +177,7 @@ class ProvisionerApi
     }
 
     /**
-     * Operation provisionerDataControllerGetManyAsync
+     * Operation getManyAsync
      *
      * Get provisioner data
      *
@@ -185,9 +185,9 @@ class ProvisionerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisionerDataControllerGetManyAsync()
+    public function getManyAsync()
     {
-        return $this->provisionerDataControllerGetManyAsyncWithHttpInfo()
+        return $this->getManyAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -196,7 +196,7 @@ class ProvisionerApi
     }
 
     /**
-     * Operation provisionerDataControllerGetManyAsyncWithHttpInfo
+     * Operation getManyAsyncWithHttpInfo
      *
      * Get provisioner data
      *
@@ -204,10 +204,10 @@ class ProvisionerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisionerDataControllerGetManyAsyncWithHttpInfo()
+    public function getManyAsyncWithHttpInfo()
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProvisionerData[]';
-        $request = $this->provisionerDataControllerGetManyRequest();
+        $request = $this->getManyRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -247,13 +247,13 @@ class ProvisionerApi
     }
 
     /**
-     * Create request for operation 'provisionerDataControllerGetMany'
+     * Create request for operation 'getMany'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function provisionerDataControllerGetManyRequest()
+    protected function getManyRequest()
     {
 
         $resourcePath = '/api/ProvisionerData';
@@ -308,10 +308,6 @@ class ProvisionerApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -334,7 +330,7 @@ class ProvisionerApi
     }
 
     /**
-     * Operation provisionerDataControllerGetOne
+     * Operation getOne
      *
      * Get provisioner data
      *
@@ -344,14 +340,14 @@ class ProvisionerApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Subscription
      */
-    public function provisionerDataControllerGetOne($id)
+    public function getOne($id)
     {
-        list($response) = $this->provisionerDataControllerGetOneWithHttpInfo($id);
+        list($response) = $this->getOneWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation provisionerDataControllerGetOneWithHttpInfo
+     * Operation getOneWithHttpInfo
      *
      * Get provisioner data
      *
@@ -361,10 +357,10 @@ class ProvisionerApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
      */
-    public function provisionerDataControllerGetOneWithHttpInfo($id)
+    public function getOneWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Subscription';
-        $request = $this->provisionerDataControllerGetOneRequest($id);
+        $request = $this->getOneRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -426,7 +422,7 @@ class ProvisionerApi
     }
 
     /**
-     * Operation provisionerDataControllerGetOneAsync
+     * Operation getOneAsync
      *
      * Get provisioner data
      *
@@ -435,9 +431,9 @@ class ProvisionerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisionerDataControllerGetOneAsync($id)
+    public function getOneAsync($id)
     {
-        return $this->provisionerDataControllerGetOneAsyncWithHttpInfo($id)
+        return $this->getOneAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -446,7 +442,7 @@ class ProvisionerApi
     }
 
     /**
-     * Operation provisionerDataControllerGetOneAsyncWithHttpInfo
+     * Operation getOneAsyncWithHttpInfo
      *
      * Get provisioner data
      *
@@ -455,10 +451,10 @@ class ProvisionerApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisionerDataControllerGetOneAsyncWithHttpInfo($id)
+    public function getOneAsyncWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Subscription';
-        $request = $this->provisionerDataControllerGetOneRequest($id);
+        $request = $this->getOneRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -498,19 +494,19 @@ class ProvisionerApi
     }
 
     /**
-     * Create request for operation 'provisionerDataControllerGetOne'
+     * Create request for operation 'getOne'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function provisionerDataControllerGetOneRequest($id)
+    protected function getOneRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling provisionerDataControllerGetOne'
+                'Missing the required parameter $id when calling getOne'
             );
         }
 
@@ -574,10 +570,6 @@ class ProvisionerApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

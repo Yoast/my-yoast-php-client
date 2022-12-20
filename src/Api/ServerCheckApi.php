@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class ServerCheckApi
     }
 
     /**
-     * Operation serverHealthControllerCheckHealth
+     * Operation checkHealth
      *
      * Server health check
      *
@@ -96,14 +96,14 @@ class ServerCheckApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function serverHealthControllerCheckHealth()
+    public function checkHealth()
     {
-        list($response) = $this->serverHealthControllerCheckHealthWithHttpInfo();
+        list($response) = $this->checkHealthWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation serverHealthControllerCheckHealthWithHttpInfo
+     * Operation checkHealthWithHttpInfo
      *
      * Server health check
      *
@@ -112,10 +112,10 @@ class ServerCheckApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function serverHealthControllerCheckHealthWithHttpInfo()
+    public function checkHealthWithHttpInfo()
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->serverHealthControllerCheckHealthRequest();
+        $request = $this->checkHealthRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -177,7 +177,7 @@ class ServerCheckApi
     }
 
     /**
-     * Operation serverHealthControllerCheckHealthAsync
+     * Operation checkHealthAsync
      *
      * Server health check
      *
@@ -185,9 +185,9 @@ class ServerCheckApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function serverHealthControllerCheckHealthAsync()
+    public function checkHealthAsync()
     {
-        return $this->serverHealthControllerCheckHealthAsyncWithHttpInfo()
+        return $this->checkHealthAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -196,7 +196,7 @@ class ServerCheckApi
     }
 
     /**
-     * Operation serverHealthControllerCheckHealthAsyncWithHttpInfo
+     * Operation checkHealthAsyncWithHttpInfo
      *
      * Server health check
      *
@@ -204,10 +204,10 @@ class ServerCheckApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function serverHealthControllerCheckHealthAsyncWithHttpInfo()
+    public function checkHealthAsyncWithHttpInfo()
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->serverHealthControllerCheckHealthRequest();
+        $request = $this->checkHealthRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -247,13 +247,13 @@ class ServerCheckApi
     }
 
     /**
-     * Create request for operation 'serverHealthControllerCheckHealth'
+     * Create request for operation 'checkHealth'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function serverHealthControllerCheckHealthRequest()
+    protected function checkHealthRequest()
     {
 
         $resourcePath = '/server-check';

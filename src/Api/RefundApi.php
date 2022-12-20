@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class RefundApi
     }
 
     /**
-     * Operation refundControllerExport
+     * Operation export
      *
      * Get refunds
      *
@@ -98,14 +98,14 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Refund[]
      */
-    public function refundControllerExport($startDate, $endDate)
+    public function export($startDate, $endDate)
     {
-        list($response) = $this->refundControllerExportWithHttpInfo($startDate, $endDate);
+        list($response) = $this->exportWithHttpInfo($startDate, $endDate);
         return $response;
     }
 
     /**
-     * Operation refundControllerExportWithHttpInfo
+     * Operation exportWithHttpInfo
      *
      * Get refunds
      *
@@ -116,10 +116,10 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Refund[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function refundControllerExportWithHttpInfo($startDate, $endDate)
+    public function exportWithHttpInfo($startDate, $endDate)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Refund[]';
-        $request = $this->refundControllerExportRequest($startDate, $endDate);
+        $request = $this->exportRequest($startDate, $endDate);
 
         try {
             $options = $this->createHttpClientOption();
@@ -181,7 +181,7 @@ class RefundApi
     }
 
     /**
-     * Operation refundControllerExportAsync
+     * Operation exportAsync
      *
      * Get refunds
      *
@@ -191,9 +191,9 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundControllerExportAsync($startDate, $endDate)
+    public function exportAsync($startDate, $endDate)
     {
-        return $this->refundControllerExportAsyncWithHttpInfo($startDate, $endDate)
+        return $this->exportAsyncWithHttpInfo($startDate, $endDate)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -202,7 +202,7 @@ class RefundApi
     }
 
     /**
-     * Operation refundControllerExportAsyncWithHttpInfo
+     * Operation exportAsyncWithHttpInfo
      *
      * Get refunds
      *
@@ -212,10 +212,10 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundControllerExportAsyncWithHttpInfo($startDate, $endDate)
+    public function exportAsyncWithHttpInfo($startDate, $endDate)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Refund[]';
-        $request = $this->refundControllerExportRequest($startDate, $endDate);
+        $request = $this->exportRequest($startDate, $endDate);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,7 +255,7 @@ class RefundApi
     }
 
     /**
-     * Create request for operation 'refundControllerExport'
+     * Create request for operation 'export'
      *
      * @param  \DateTime $startDate (required)
      * @param  \DateTime $endDate (required)
@@ -263,18 +263,18 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function refundControllerExportRequest($startDate, $endDate)
+    protected function exportRequest($startDate, $endDate)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $startDate when calling refundControllerExport'
+                'Missing the required parameter $startDate when calling export'
             );
         }
         // verify the required parameter 'endDate' is set
         if ($endDate === null || (is_array($endDate) && count($endDate) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $endDate when calling refundControllerExport'
+                'Missing the required parameter $endDate when calling export'
             );
         }
 
@@ -338,10 +338,6 @@ class RefundApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -364,7 +360,7 @@ class RefundApi
     }
 
     /**
-     * Operation refundControllerGetMany
+     * Operation getMany
      *
      * Get refunds
      *
@@ -374,14 +370,14 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Refund[]
      */
-    public function refundControllerGetMany($filter = null)
+    public function getMany($filter = null)
     {
-        list($response) = $this->refundControllerGetManyWithHttpInfo($filter);
+        list($response) = $this->getManyWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation refundControllerGetManyWithHttpInfo
+     * Operation getManyWithHttpInfo
      *
      * Get refunds
      *
@@ -391,10 +387,10 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Refund[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function refundControllerGetManyWithHttpInfo($filter = null)
+    public function getManyWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Refund[]';
-        $request = $this->refundControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -456,7 +452,7 @@ class RefundApi
     }
 
     /**
-     * Operation refundControllerGetManyAsync
+     * Operation getManyAsync
      *
      * Get refunds
      *
@@ -465,9 +461,9 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundControllerGetManyAsync($filter = null)
+    public function getManyAsync($filter = null)
     {
-        return $this->refundControllerGetManyAsyncWithHttpInfo($filter)
+        return $this->getManyAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -476,7 +472,7 @@ class RefundApi
     }
 
     /**
-     * Operation refundControllerGetManyAsyncWithHttpInfo
+     * Operation getManyAsyncWithHttpInfo
      *
      * Get refunds
      *
@@ -485,10 +481,10 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundControllerGetManyAsyncWithHttpInfo($filter = null)
+    public function getManyAsyncWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Refund[]';
-        $request = $this->refundControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -528,14 +524,14 @@ class RefundApi
     }
 
     /**
-     * Create request for operation 'refundControllerGetMany'
+     * Create request for operation 'getMany'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function refundControllerGetManyRequest($filter = null)
+    protected function getManyRequest($filter = null)
     {
 
         $resourcePath = '/api/Refunds';
@@ -594,10 +590,6 @@ class RefundApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -620,7 +612,7 @@ class RefundApi
     }
 
     /**
-     * Operation refundControllerGetOne
+     * Operation getOne
      *
      * Get a refund
      *
@@ -631,14 +623,14 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Refund
      */
-    public function refundControllerGetOne($id, $filter = null)
+    public function getOne($id, $filter = null)
     {
-        list($response) = $this->refundControllerGetOneWithHttpInfo($id, $filter);
+        list($response) = $this->getOneWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation refundControllerGetOneWithHttpInfo
+     * Operation getOneWithHttpInfo
      *
      * Get a refund
      *
@@ -649,10 +641,10 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Refund, HTTP status code, HTTP response headers (array of strings)
      */
-    public function refundControllerGetOneWithHttpInfo($id, $filter = null)
+    public function getOneWithHttpInfo($id, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Refund';
-        $request = $this->refundControllerGetOneRequest($id, $filter);
+        $request = $this->getOneRequest($id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -714,7 +706,7 @@ class RefundApi
     }
 
     /**
-     * Operation refundControllerGetOneAsync
+     * Operation getOneAsync
      *
      * Get a refund
      *
@@ -724,9 +716,9 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundControllerGetOneAsync($id, $filter = null)
+    public function getOneAsync($id, $filter = null)
     {
-        return $this->refundControllerGetOneAsyncWithHttpInfo($id, $filter)
+        return $this->getOneAsyncWithHttpInfo($id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -735,7 +727,7 @@ class RefundApi
     }
 
     /**
-     * Operation refundControllerGetOneAsyncWithHttpInfo
+     * Operation getOneAsyncWithHttpInfo
      *
      * Get a refund
      *
@@ -745,10 +737,10 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function refundControllerGetOneAsyncWithHttpInfo($id, $filter = null)
+    public function getOneAsyncWithHttpInfo($id, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Refund';
-        $request = $this->refundControllerGetOneRequest($id, $filter);
+        $request = $this->getOneRequest($id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -788,7 +780,7 @@ class RefundApi
     }
 
     /**
-     * Create request for operation 'refundControllerGetOne'
+     * Create request for operation 'getOne'
      *
      * @param  string $id (required)
      * @param  object $filter Used for filtering/joining the results. (optional)
@@ -796,12 +788,12 @@ class RefundApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function refundControllerGetOneRequest($id, $filter = null)
+    protected function getOneRequest($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling refundControllerGetOne'
+                'Missing the required parameter $id when calling getOne'
             );
         }
 
@@ -869,10 +861,6 @@ class RefundApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

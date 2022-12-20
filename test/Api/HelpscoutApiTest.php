@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,12 +71,12 @@ class HelpscoutApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for helpScoutControllerHelpscout
+     * Test case for helpscout
      *
      * Get information about a customer.
      *
      */
-    public function testHelpScoutControllerHelpscout()
+    public function testHelpscout()
     {
     }
 }

@@ -1,13 +1,13 @@
 # Yoast\MyYoastApiClient\GDPRApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**customerGDPRControllerDeleteCustomer**](GDPRApi.md#customergdprcontrollerdeletecustomer) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
+[**deleteCustomer**](GDPRApi.md#deletecustomer) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 
-# **customerGDPRControllerDeleteCustomer**
-> \Yoast\MyYoastApiClient\Model\ customerGDPRControllerDeleteCustomer($id)
+# **deleteCustomer**
+> \Yoast\MyYoastApiClient\Model\ deleteCustomer($id)
 
 Performs a \"GDPR forget me\" request.
 
@@ -17,24 +17,19 @@ Deletes and/or obfuscates all data related to a customer, except order data that
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\GDPRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->customerGDPRControllerDeleteCustomer($id);
+    $result = $apiInstance->deleteCustomer($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GDPRApi->customerGDPRControllerDeleteCustomer: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GDPRApi->deleteCustomer: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -51,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 

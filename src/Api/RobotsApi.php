@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,31 +87,31 @@ class RobotsApi
     }
 
     /**
-     * Operation robotsControllerServeRobots
+     * Operation serveRobots
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function robotsControllerServeRobots()
+    public function serveRobots()
     {
-        list($response) = $this->robotsControllerServeRobotsWithHttpInfo();
+        list($response) = $this->serveRobotsWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation robotsControllerServeRobotsWithHttpInfo
+     * Operation serveRobotsWithHttpInfo
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function robotsControllerServeRobotsWithHttpInfo()
+    public function serveRobotsWithHttpInfo()
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->robotsControllerServeRobotsRequest();
+        $request = $this->serveRobotsRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -173,7 +173,7 @@ class RobotsApi
     }
 
     /**
-     * Operation robotsControllerServeRobotsAsync
+     * Operation serveRobotsAsync
      *
      * 
      *
@@ -181,9 +181,9 @@ class RobotsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function robotsControllerServeRobotsAsync()
+    public function serveRobotsAsync()
     {
-        return $this->robotsControllerServeRobotsAsyncWithHttpInfo()
+        return $this->serveRobotsAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -192,7 +192,7 @@ class RobotsApi
     }
 
     /**
-     * Operation robotsControllerServeRobotsAsyncWithHttpInfo
+     * Operation serveRobotsAsyncWithHttpInfo
      *
      * 
      *
@@ -200,10 +200,10 @@ class RobotsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function robotsControllerServeRobotsAsyncWithHttpInfo()
+    public function serveRobotsAsyncWithHttpInfo()
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->robotsControllerServeRobotsRequest();
+        $request = $this->serveRobotsRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -243,13 +243,13 @@ class RobotsApi
     }
 
     /**
-     * Create request for operation 'robotsControllerServeRobots'
+     * Create request for operation 'serveRobots'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function robotsControllerServeRobotsRequest()
+    protected function serveRobotsRequest()
     {
 
         $resourcePath = '/robots.txt';

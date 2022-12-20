@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,22 +71,22 @@ class ProvisioningDownloadsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for provisioningDownloadsControllerCurrentVersion
+     * Test case for currentVersion
      *
      * Retrieve the current version for the productCode for the provisioner..
      *
      */
-    public function testProvisioningDownloadsControllerCurrentVersion()
+    public function testCurrentVersion()
     {
     }
 
     /**
-     * Test case for provisioningDownloadsControllerCurrentZip
+     * Test case for currentZip
      *
      * Redirect to the current zip for the productCode..
      *
      */
-    public function testProvisioningDownloadsControllerCurrentZip()
+    public function testCurrentZip()
     {
     }
 }

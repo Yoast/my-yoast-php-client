@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,32 +71,32 @@ class CourseApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for courseControllerFromAcademy
+     * Test case for fromAcademy
      *
      * Upserts a course.
      *
      */
-    public function testCourseControllerFromAcademy()
+    public function testFromAcademy()
     {
     }
 
     /**
-     * Test case for courseControllerGetMany
+     * Test case for getMany
      *
      * Get courses.
      *
      */
-    public function testCourseControllerGetMany()
+    public function testGetMany()
     {
     }
 
     /**
-     * Test case for courseControllerGetOne
+     * Test case for getOne
      *
      * .
      *
      */
-    public function testCourseControllerGetOne()
+    public function testGetOne()
     {
     }
 }

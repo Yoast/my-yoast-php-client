@@ -1,18 +1,18 @@
 # Yoast\MyYoastApiClient\SubscriptionProvisioningApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**subscriptionProvisioningControllerCancelSubscription**](SubscriptionProvisioningApi.md#subscriptionprovisioningcontrollercancelsubscription) | **POST** /api/provisioning/subscriptions/{id}/cancel | Cancel a single subscription
-[**subscriptionProvisioningControllerCreate**](SubscriptionProvisioningApi.md#subscriptionprovisioningcontrollercreate) | **POST** /api/provisioning/subscriptions/create | Create a subscription
-[**subscriptionProvisioningControllerGetOne**](SubscriptionProvisioningApi.md#subscriptionprovisioningcontrollergetone) | **GET** /api/provisioning/subscriptions/{id} | Get a subscription
-[**subscriptionProvisioningControllerRefundSubscription**](SubscriptionProvisioningApi.md#subscriptionprovisioningcontrollerrefundsubscription) | **POST** /api/provisioning/subscriptions/{id}/refund | Refund a single subscription
-[**subscriptionProvisioningControllerRenewSubscription**](SubscriptionProvisioningApi.md#subscriptionprovisioningcontrollerrenewsubscription) | **POST** /api/provisioning/subscriptions/{id}/renew | Renew a subscription
-[**subscriptionProvisioningControllerSetSiteForSubscription**](SubscriptionProvisioningApi.md#subscriptionprovisioningcontrollersetsiteforsubscription) | **POST** /api/provisioning/subscriptions/{id}/set-site | Link a subscription to a site
+[**cancelSubscription**](SubscriptionProvisioningApi.md#cancelsubscription) | **POST** /api/provisioning/subscriptions/{id}/cancel | Cancel a single subscription
+[**create**](SubscriptionProvisioningApi.md#create) | **POST** /api/provisioning/subscriptions/create | Create a subscription
+[**getOne**](SubscriptionProvisioningApi.md#getone) | **GET** /api/provisioning/subscriptions/{id} | Get a subscription
+[**refundSubscription**](SubscriptionProvisioningApi.md#refundsubscription) | **POST** /api/provisioning/subscriptions/{id}/refund | Refund a single subscription
+[**renewSubscription**](SubscriptionProvisioningApi.md#renewsubscription) | **POST** /api/provisioning/subscriptions/{id}/renew | Renew a subscription
+[**setSiteForSubscription**](SubscriptionProvisioningApi.md#setsiteforsubscription) | **POST** /api/provisioning/subscriptions/{id}/set-site | Link a subscription to a site
 
-# **subscriptionProvisioningControllerCancelSubscription**
-> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto subscriptionProvisioningControllerCancelSubscription($body, $id)
+# **cancelSubscription**
+> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto cancelSubscription($body, $id)
 
 Cancel a single subscription
 
@@ -32,10 +32,10 @@ $body = new \Yoast\MyYoastApiClient\Model\CancelProvisionedSubscriptionDto(); //
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->subscriptionProvisioningControllerCancelSubscription($body, $id);
+    $result = $apiInstance->cancelSubscription($body, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SubscriptionProvisioningApi->subscriptionProvisioningControllerCancelSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SubscriptionProvisioningApi->cancelSubscription: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -62,8 +62,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **subscriptionProvisioningControllerCreate**
-> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto subscriptionProvisioningControllerCreate($body)
+# **create**
+> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto create($body)
 
 Create a subscription
 
@@ -82,10 +82,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionProvisioningApi(
 $body = new \Yoast\MyYoastApiClient\Model\CreateProvisionedSubscriptionDto(); // \Yoast\MyYoastApiClient\Model\CreateProvisionedSubscriptionDto | 
 
 try {
-    $result = $apiInstance->subscriptionProvisioningControllerCreate($body);
+    $result = $apiInstance->create($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SubscriptionProvisioningApi->subscriptionProvisioningControllerCreate: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SubscriptionProvisioningApi->create: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -111,8 +111,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **subscriptionProvisioningControllerGetOne**
-> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto subscriptionProvisioningControllerGetOne($id)
+# **getOne**
+> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto getOne($id)
 
 Get a subscription
 
@@ -131,10 +131,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionProvisioningApi(
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->subscriptionProvisioningControllerGetOne($id);
+    $result = $apiInstance->getOne($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SubscriptionProvisioningApi->subscriptionProvisioningControllerGetOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SubscriptionProvisioningApi->getOne: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -160,8 +160,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **subscriptionProvisioningControllerRefundSubscription**
-> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto subscriptionProvisioningControllerRefundSubscription($id)
+# **refundSubscription**
+> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto refundSubscription($id)
 
 Refund a single subscription
 
@@ -180,10 +180,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionProvisioningApi(
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->subscriptionProvisioningControllerRefundSubscription($id);
+    $result = $apiInstance->refundSubscription($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SubscriptionProvisioningApi->subscriptionProvisioningControllerRefundSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SubscriptionProvisioningApi->refundSubscription: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -209,8 +209,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **subscriptionProvisioningControllerRenewSubscription**
-> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto subscriptionProvisioningControllerRenewSubscription($id)
+# **renewSubscription**
+> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto renewSubscription($id)
 
 Renew a subscription
 
@@ -229,10 +229,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionProvisioningApi(
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->subscriptionProvisioningControllerRenewSubscription($id);
+    $result = $apiInstance->renewSubscription($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SubscriptionProvisioningApi->subscriptionProvisioningControllerRenewSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SubscriptionProvisioningApi->renewSubscription: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -258,8 +258,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **subscriptionProvisioningControllerSetSiteForSubscription**
-> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto subscriptionProvisioningControllerSetSiteForSubscription($body, $id)
+# **setSiteForSubscription**
+> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto setSiteForSubscription($body, $id)
 
 Link a subscription to a site
 
@@ -279,10 +279,10 @@ $body = new \Yoast\MyYoastApiClient\Model\SetProvisionedSiteDto(); // \Yoast\MyY
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->subscriptionProvisioningControllerSetSiteForSubscription($body, $id);
+    $result = $apiInstance->setSiteForSubscription($body, $id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SubscriptionProvisioningApi->subscriptionProvisioningControllerSetSiteForSubscription: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SubscriptionProvisioningApi->setSiteForSubscription: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

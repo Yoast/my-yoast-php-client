@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class GDPRApi
     }
 
     /**
-     * Operation customerGDPRControllerDeleteCustomer
+     * Operation deleteCustomer
      *
      * Performs a \"GDPR forget me\" request.
      *
@@ -97,14 +97,14 @@ class GDPRApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function customerGDPRControllerDeleteCustomer($id)
+    public function deleteCustomer($id)
     {
-        list($response) = $this->customerGDPRControllerDeleteCustomerWithHttpInfo($id);
+        list($response) = $this->deleteCustomerWithHttpInfo($id);
         return $response;
     }
 
     /**
-     * Operation customerGDPRControllerDeleteCustomerWithHttpInfo
+     * Operation deleteCustomerWithHttpInfo
      *
      * Performs a \"GDPR forget me\" request.
      *
@@ -114,10 +114,10 @@ class GDPRApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerGDPRControllerDeleteCustomerWithHttpInfo($id)
+    public function deleteCustomerWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->customerGDPRControllerDeleteCustomerRequest($id);
+        $request = $this->deleteCustomerRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -179,7 +179,7 @@ class GDPRApi
     }
 
     /**
-     * Operation customerGDPRControllerDeleteCustomerAsync
+     * Operation deleteCustomerAsync
      *
      * Performs a \"GDPR forget me\" request.
      *
@@ -188,9 +188,9 @@ class GDPRApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerGDPRControllerDeleteCustomerAsync($id)
+    public function deleteCustomerAsync($id)
     {
-        return $this->customerGDPRControllerDeleteCustomerAsyncWithHttpInfo($id)
+        return $this->deleteCustomerAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,7 +199,7 @@ class GDPRApi
     }
 
     /**
-     * Operation customerGDPRControllerDeleteCustomerAsyncWithHttpInfo
+     * Operation deleteCustomerAsyncWithHttpInfo
      *
      * Performs a \"GDPR forget me\" request.
      *
@@ -208,10 +208,10 @@ class GDPRApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerGDPRControllerDeleteCustomerAsyncWithHttpInfo($id)
+    public function deleteCustomerAsyncWithHttpInfo($id)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->customerGDPRControllerDeleteCustomerRequest($id);
+        $request = $this->deleteCustomerRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,19 +251,19 @@ class GDPRApi
     }
 
     /**
-     * Create request for operation 'customerGDPRControllerDeleteCustomer'
+     * Create request for operation 'deleteCustomer'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function customerGDPRControllerDeleteCustomerRequest($id)
+    protected function deleteCustomerRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling customerGDPRControllerDeleteCustomer'
+                'Missing the required parameter $id when calling deleteCustomer'
             );
         }
 
@@ -327,10 +327,6 @@ class GDPRApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

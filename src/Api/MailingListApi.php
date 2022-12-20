@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,30 +87,30 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerCheckGetRoute
+     * Operation checkGetRoute
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerCheckGetRoute()
+    public function checkGetRoute()
     {
-        $this->mailingListControllerCheckGetRouteWithHttpInfo();
+        $this->checkGetRouteWithHttpInfo();
     }
 
     /**
-     * Operation mailingListControllerCheckGetRouteWithHttpInfo
+     * Operation checkGetRouteWithHttpInfo
      *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerCheckGetRouteWithHttpInfo()
+    public function checkGetRouteWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->mailingListControllerCheckGetRouteRequest();
+        $request = $this->checkGetRouteRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -150,7 +150,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerCheckGetRouteAsync
+     * Operation checkGetRouteAsync
      *
      * 
      *
@@ -158,9 +158,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerCheckGetRouteAsync()
+    public function checkGetRouteAsync()
     {
-        return $this->mailingListControllerCheckGetRouteAsyncWithHttpInfo()
+        return $this->checkGetRouteAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -169,7 +169,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerCheckGetRouteAsyncWithHttpInfo
+     * Operation checkGetRouteAsyncWithHttpInfo
      *
      * 
      *
@@ -177,10 +177,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerCheckGetRouteAsyncWithHttpInfo()
+    public function checkGetRouteAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->mailingListControllerCheckGetRouteRequest();
+        $request = $this->checkGetRouteRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -206,13 +206,13 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerCheckGetRoute'
+     * Create request for operation 'checkGetRoute'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerCheckGetRouteRequest()
+    protected function checkGetRouteRequest()
     {
 
         $resourcePath = '/api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK';
@@ -289,7 +289,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerGetStatus
+     * Operation getStatus
      *
      * Get the subscription status.
      *
@@ -300,13 +300,13 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerGetStatus($email, $list)
+    public function getStatus($email, $list)
     {
-        $this->mailingListControllerGetStatusWithHttpInfo($email, $list);
+        $this->getStatusWithHttpInfo($email, $list);
     }
 
     /**
-     * Operation mailingListControllerGetStatusWithHttpInfo
+     * Operation getStatusWithHttpInfo
      *
      * Get the subscription status.
      *
@@ -317,10 +317,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerGetStatusWithHttpInfo($email, $list)
+    public function getStatusWithHttpInfo($email, $list)
     {
         $returnType = '';
-        $request = $this->mailingListControllerGetStatusRequest($email, $list);
+        $request = $this->getStatusRequest($email, $list);
 
         try {
             $options = $this->createHttpClientOption();
@@ -360,7 +360,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerGetStatusAsync
+     * Operation getStatusAsync
      *
      * Get the subscription status.
      *
@@ -370,9 +370,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerGetStatusAsync($email, $list)
+    public function getStatusAsync($email, $list)
     {
-        return $this->mailingListControllerGetStatusAsyncWithHttpInfo($email, $list)
+        return $this->getStatusAsyncWithHttpInfo($email, $list)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -381,7 +381,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerGetStatusAsyncWithHttpInfo
+     * Operation getStatusAsyncWithHttpInfo
      *
      * Get the subscription status.
      *
@@ -391,10 +391,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerGetStatusAsyncWithHttpInfo($email, $list)
+    public function getStatusAsyncWithHttpInfo($email, $list)
     {
         $returnType = '';
-        $request = $this->mailingListControllerGetStatusRequest($email, $list);
+        $request = $this->getStatusRequest($email, $list);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -420,7 +420,7 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerGetStatus'
+     * Create request for operation 'getStatus'
      *
      * @param  string $email (required)
      * @param  string $list (required)
@@ -428,18 +428,18 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerGetStatusRequest($email, $list)
+    protected function getStatusRequest($email, $list)
     {
         // verify the required parameter 'email' is set
         if ($email === null || (is_array($email) && count($email) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $email when calling mailingListControllerGetStatus'
+                'Missing the required parameter $email when calling getStatus'
             );
         }
         // verify the required parameter 'list' is set
         if ($list === null || (is_array($list) && count($list) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $list when calling mailingListControllerGetStatus'
+                'Missing the required parameter $list when calling getStatus'
             );
         }
 
@@ -525,7 +525,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerIsSubscribedToNewsletter
+     * Operation isSubscribedToNewsletter
      *
      * Get the subscription status.
      *
@@ -535,13 +535,13 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerIsSubscribedToNewsletter($email)
+    public function isSubscribedToNewsletter($email)
     {
-        $this->mailingListControllerIsSubscribedToNewsletterWithHttpInfo($email);
+        $this->isSubscribedToNewsletterWithHttpInfo($email);
     }
 
     /**
-     * Operation mailingListControllerIsSubscribedToNewsletterWithHttpInfo
+     * Operation isSubscribedToNewsletterWithHttpInfo
      *
      * Get the subscription status.
      *
@@ -551,10 +551,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerIsSubscribedToNewsletterWithHttpInfo($email)
+    public function isSubscribedToNewsletterWithHttpInfo($email)
     {
         $returnType = '';
-        $request = $this->mailingListControllerIsSubscribedToNewsletterRequest($email);
+        $request = $this->isSubscribedToNewsletterRequest($email);
 
         try {
             $options = $this->createHttpClientOption();
@@ -594,7 +594,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerIsSubscribedToNewsletterAsync
+     * Operation isSubscribedToNewsletterAsync
      *
      * Get the subscription status.
      *
@@ -603,9 +603,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerIsSubscribedToNewsletterAsync($email)
+    public function isSubscribedToNewsletterAsync($email)
     {
-        return $this->mailingListControllerIsSubscribedToNewsletterAsyncWithHttpInfo($email)
+        return $this->isSubscribedToNewsletterAsyncWithHttpInfo($email)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -614,7 +614,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerIsSubscribedToNewsletterAsyncWithHttpInfo
+     * Operation isSubscribedToNewsletterAsyncWithHttpInfo
      *
      * Get the subscription status.
      *
@@ -623,10 +623,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerIsSubscribedToNewsletterAsyncWithHttpInfo($email)
+    public function isSubscribedToNewsletterAsyncWithHttpInfo($email)
     {
         $returnType = '';
-        $request = $this->mailingListControllerIsSubscribedToNewsletterRequest($email);
+        $request = $this->isSubscribedToNewsletterRequest($email);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -652,19 +652,19 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerIsSubscribedToNewsletter'
+     * Create request for operation 'isSubscribedToNewsletter'
      *
      * @param  string $email (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerIsSubscribedToNewsletterRequest($email)
+    protected function isSubscribedToNewsletterRequest($email)
     {
         // verify the required parameter 'email' is set
         if ($email === null || (is_array($email) && count($email) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $email when calling mailingListControllerIsSubscribedToNewsletter'
+                'Missing the required parameter $email when calling isSubscribedToNewsletter'
             );
         }
 
@@ -746,7 +746,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerMailChimpWebhook
+     * Operation mailChimpWebhook
      *
      * Entry point for the mailchimp webhooks
      *
@@ -755,13 +755,13 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerMailChimpWebhook()
+    public function mailChimpWebhook()
     {
-        $this->mailingListControllerMailChimpWebhookWithHttpInfo();
+        $this->mailChimpWebhookWithHttpInfo();
     }
 
     /**
-     * Operation mailingListControllerMailChimpWebhookWithHttpInfo
+     * Operation mailChimpWebhookWithHttpInfo
      *
      * Entry point for the mailchimp webhooks
      *
@@ -770,10 +770,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerMailChimpWebhookWithHttpInfo()
+    public function mailChimpWebhookWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->mailingListControllerMailChimpWebhookRequest();
+        $request = $this->mailChimpWebhookRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -813,7 +813,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerMailChimpWebhookAsync
+     * Operation mailChimpWebhookAsync
      *
      * Entry point for the mailchimp webhooks
      *
@@ -821,9 +821,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerMailChimpWebhookAsync()
+    public function mailChimpWebhookAsync()
     {
-        return $this->mailingListControllerMailChimpWebhookAsyncWithHttpInfo()
+        return $this->mailChimpWebhookAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -832,7 +832,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerMailChimpWebhookAsyncWithHttpInfo
+     * Operation mailChimpWebhookAsyncWithHttpInfo
      *
      * Entry point for the mailchimp webhooks
      *
@@ -840,10 +840,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerMailChimpWebhookAsyncWithHttpInfo()
+    public function mailChimpWebhookAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->mailingListControllerMailChimpWebhookRequest();
+        $request = $this->mailChimpWebhookRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -869,13 +869,13 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerMailChimpWebhook'
+     * Create request for operation 'mailChimpWebhook'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerMailChimpWebhookRequest()
+    protected function mailChimpWebhookRequest()
     {
 
         $resourcePath = '/api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK';
@@ -952,7 +952,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerMailblueWebhook
+     * Operation mailblueWebhook
      *
      * Entry point for the mailblue webhooks
      *
@@ -961,13 +961,13 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerMailblueWebhook()
+    public function mailblueWebhook()
     {
-        $this->mailingListControllerMailblueWebhookWithHttpInfo();
+        $this->mailblueWebhookWithHttpInfo();
     }
 
     /**
-     * Operation mailingListControllerMailblueWebhookWithHttpInfo
+     * Operation mailblueWebhookWithHttpInfo
      *
      * Entry point for the mailblue webhooks
      *
@@ -976,10 +976,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerMailblueWebhookWithHttpInfo()
+    public function mailblueWebhookWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->mailingListControllerMailblueWebhookRequest();
+        $request = $this->mailblueWebhookRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -1019,7 +1019,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerMailblueWebhookAsync
+     * Operation mailblueWebhookAsync
      *
      * Entry point for the mailblue webhooks
      *
@@ -1027,9 +1027,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerMailblueWebhookAsync()
+    public function mailblueWebhookAsync()
     {
-        return $this->mailingListControllerMailblueWebhookAsyncWithHttpInfo()
+        return $this->mailblueWebhookAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1038,7 +1038,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerMailblueWebhookAsyncWithHttpInfo
+     * Operation mailblueWebhookAsyncWithHttpInfo
      *
      * Entry point for the mailblue webhooks
      *
@@ -1046,10 +1046,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerMailblueWebhookAsyncWithHttpInfo()
+    public function mailblueWebhookAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->mailingListControllerMailblueWebhookRequest();
+        $request = $this->mailblueWebhookRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1075,13 +1075,13 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerMailblueWebhook'
+     * Create request for operation 'mailblueWebhook'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerMailblueWebhookRequest()
+    protected function mailblueWebhookRequest()
     {
 
         $resourcePath = '/api/Mailing-list/newsletter/wALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJV';
@@ -1158,7 +1158,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerRemoveContactCustomField
+     * Operation removeContactCustomField
      *
      * Delete contact tags and/or fields.
      *
@@ -1168,13 +1168,13 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerRemoveContactCustomField($body)
+    public function removeContactCustomField($body)
     {
-        $this->mailingListControllerRemoveContactCustomFieldWithHttpInfo($body);
+        $this->removeContactCustomFieldWithHttpInfo($body);
     }
 
     /**
-     * Operation mailingListControllerRemoveContactCustomFieldWithHttpInfo
+     * Operation removeContactCustomFieldWithHttpInfo
      *
      * Delete contact tags and/or fields.
      *
@@ -1184,10 +1184,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerRemoveContactCustomFieldWithHttpInfo($body)
+    public function removeContactCustomFieldWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->mailingListControllerRemoveContactCustomFieldRequest($body);
+        $request = $this->removeContactCustomFieldRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1227,7 +1227,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerRemoveContactCustomFieldAsync
+     * Operation removeContactCustomFieldAsync
      *
      * Delete contact tags and/or fields.
      *
@@ -1236,9 +1236,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerRemoveContactCustomFieldAsync($body)
+    public function removeContactCustomFieldAsync($body)
     {
-        return $this->mailingListControllerRemoveContactCustomFieldAsyncWithHttpInfo($body)
+        return $this->removeContactCustomFieldAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1247,7 +1247,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerRemoveContactCustomFieldAsyncWithHttpInfo
+     * Operation removeContactCustomFieldAsyncWithHttpInfo
      *
      * Delete contact tags and/or fields.
      *
@@ -1256,10 +1256,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerRemoveContactCustomFieldAsyncWithHttpInfo($body)
+    public function removeContactCustomFieldAsyncWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->mailingListControllerRemoveContactCustomFieldRequest($body);
+        $request = $this->removeContactCustomFieldRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1285,19 +1285,19 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerRemoveContactCustomField'
+     * Create request for operation 'removeContactCustomField'
      *
      * @param  \Yoast\MyYoastApiClient\Model\FieldValueDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerRemoveContactCustomFieldRequest($body)
+    protected function removeContactCustomFieldRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling mailingListControllerRemoveContactCustomField'
+                'Missing the required parameter $body when calling removeContactCustomField'
             );
         }
 
@@ -1378,7 +1378,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSetContactCustomField
+     * Operation setContactCustomField
      *
      * Update contact tags and/or fields.
      *
@@ -1388,13 +1388,13 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerSetContactCustomField($body)
+    public function setContactCustomField($body)
     {
-        $this->mailingListControllerSetContactCustomFieldWithHttpInfo($body);
+        $this->setContactCustomFieldWithHttpInfo($body);
     }
 
     /**
-     * Operation mailingListControllerSetContactCustomFieldWithHttpInfo
+     * Operation setContactCustomFieldWithHttpInfo
      *
      * Update contact tags and/or fields.
      *
@@ -1404,10 +1404,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerSetContactCustomFieldWithHttpInfo($body)
+    public function setContactCustomFieldWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->mailingListControllerSetContactCustomFieldRequest($body);
+        $request = $this->setContactCustomFieldRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1447,7 +1447,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSetContactCustomFieldAsync
+     * Operation setContactCustomFieldAsync
      *
      * Update contact tags and/or fields.
      *
@@ -1456,9 +1456,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerSetContactCustomFieldAsync($body)
+    public function setContactCustomFieldAsync($body)
     {
-        return $this->mailingListControllerSetContactCustomFieldAsyncWithHttpInfo($body)
+        return $this->setContactCustomFieldAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1467,7 +1467,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSetContactCustomFieldAsyncWithHttpInfo
+     * Operation setContactCustomFieldAsyncWithHttpInfo
      *
      * Update contact tags and/or fields.
      *
@@ -1476,10 +1476,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerSetContactCustomFieldAsyncWithHttpInfo($body)
+    public function setContactCustomFieldAsyncWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->mailingListControllerSetContactCustomFieldRequest($body);
+        $request = $this->setContactCustomFieldRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1505,19 +1505,19 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerSetContactCustomField'
+     * Create request for operation 'setContactCustomField'
      *
      * @param  \Yoast\MyYoastApiClient\Model\FieldValueDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerSetContactCustomFieldRequest($body)
+    protected function setContactCustomFieldRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling mailingListControllerSetContactCustomField'
+                'Missing the required parameter $body when calling setContactCustomField'
             );
         }
 
@@ -1598,7 +1598,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSetContactTag
+     * Operation setContactTag
      *
      * Update contact tags and/or fields.
      *
@@ -1608,13 +1608,13 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerSetContactTag($body)
+    public function setContactTag($body)
     {
-        $this->mailingListControllerSetContactTagWithHttpInfo($body);
+        $this->setContactTagWithHttpInfo($body);
     }
 
     /**
-     * Operation mailingListControllerSetContactTagWithHttpInfo
+     * Operation setContactTagWithHttpInfo
      *
      * Update contact tags and/or fields.
      *
@@ -1624,10 +1624,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerSetContactTagWithHttpInfo($body)
+    public function setContactTagWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->mailingListControllerSetContactTagRequest($body);
+        $request = $this->setContactTagRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1667,7 +1667,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSetContactTagAsync
+     * Operation setContactTagAsync
      *
      * Update contact tags and/or fields.
      *
@@ -1676,9 +1676,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerSetContactTagAsync($body)
+    public function setContactTagAsync($body)
     {
-        return $this->mailingListControllerSetContactTagAsyncWithHttpInfo($body)
+        return $this->setContactTagAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1687,7 +1687,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSetContactTagAsyncWithHttpInfo
+     * Operation setContactTagAsyncWithHttpInfo
      *
      * Update contact tags and/or fields.
      *
@@ -1696,10 +1696,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerSetContactTagAsyncWithHttpInfo($body)
+    public function setContactTagAsyncWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->mailingListControllerSetContactTagRequest($body);
+        $request = $this->setContactTagRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1725,19 +1725,19 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerSetContactTag'
+     * Create request for operation 'setContactTag'
      *
      * @param  \Yoast\MyYoastApiClient\Model\TagDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerSetContactTagRequest($body)
+    protected function setContactTagRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling mailingListControllerSetContactTag'
+                'Missing the required parameter $body when calling setContactTag'
             );
         }
 
@@ -1818,7 +1818,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSubscribe
+     * Operation subscribe
      *
      * Subscribe contact to a mailing list.
      *
@@ -1828,13 +1828,13 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerSubscribe($body)
+    public function subscribe($body)
     {
-        $this->mailingListControllerSubscribeWithHttpInfo($body);
+        $this->subscribeWithHttpInfo($body);
     }
 
     /**
-     * Operation mailingListControllerSubscribeWithHttpInfo
+     * Operation subscribeWithHttpInfo
      *
      * Subscribe contact to a mailing list.
      *
@@ -1844,10 +1844,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerSubscribeWithHttpInfo($body)
+    public function subscribeWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->mailingListControllerSubscribeRequest($body);
+        $request = $this->subscribeRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1887,7 +1887,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSubscribeAsync
+     * Operation subscribeAsync
      *
      * Subscribe contact to a mailing list.
      *
@@ -1896,9 +1896,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerSubscribeAsync($body)
+    public function subscribeAsync($body)
     {
-        return $this->mailingListControllerSubscribeAsyncWithHttpInfo($body)
+        return $this->subscribeAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1907,7 +1907,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSubscribeAsyncWithHttpInfo
+     * Operation subscribeAsyncWithHttpInfo
      *
      * Subscribe contact to a mailing list.
      *
@@ -1916,10 +1916,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerSubscribeAsyncWithHttpInfo($body)
+    public function subscribeAsyncWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->mailingListControllerSubscribeRequest($body);
+        $request = $this->subscribeRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1945,19 +1945,19 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerSubscribe'
+     * Create request for operation 'subscribe'
      *
      * @param  \Yoast\MyYoastApiClient\Model\SubscribeDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerSubscribeRequest($body)
+    protected function subscribeRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling mailingListControllerSubscribe'
+                'Missing the required parameter $body when calling subscribe'
             );
         }
 
@@ -2038,7 +2038,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSubscribeToNewsletter
+     * Operation subscribeToNewsletter
      *
      * Subscribe contact to the newsletter.
      *
@@ -2047,13 +2047,13 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerSubscribeToNewsletter()
+    public function subscribeToNewsletter()
     {
-        $this->mailingListControllerSubscribeToNewsletterWithHttpInfo();
+        $this->subscribeToNewsletterWithHttpInfo();
     }
 
     /**
-     * Operation mailingListControllerSubscribeToNewsletterWithHttpInfo
+     * Operation subscribeToNewsletterWithHttpInfo
      *
      * Subscribe contact to the newsletter.
      *
@@ -2062,10 +2062,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerSubscribeToNewsletterWithHttpInfo()
+    public function subscribeToNewsletterWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->mailingListControllerSubscribeToNewsletterRequest();
+        $request = $this->subscribeToNewsletterRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2105,7 +2105,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSubscribeToNewsletterAsync
+     * Operation subscribeToNewsletterAsync
      *
      * Subscribe contact to the newsletter.
      *
@@ -2113,9 +2113,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerSubscribeToNewsletterAsync()
+    public function subscribeToNewsletterAsync()
     {
-        return $this->mailingListControllerSubscribeToNewsletterAsyncWithHttpInfo()
+        return $this->subscribeToNewsletterAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2124,7 +2124,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerSubscribeToNewsletterAsyncWithHttpInfo
+     * Operation subscribeToNewsletterAsyncWithHttpInfo
      *
      * Subscribe contact to the newsletter.
      *
@@ -2132,10 +2132,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerSubscribeToNewsletterAsyncWithHttpInfo()
+    public function subscribeToNewsletterAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->mailingListControllerSubscribeToNewsletterRequest();
+        $request = $this->subscribeToNewsletterRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2161,13 +2161,13 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerSubscribeToNewsletter'
+     * Create request for operation 'subscribeToNewsletter'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerSubscribeToNewsletterRequest()
+    protected function subscribeToNewsletterRequest()
     {
 
         $resourcePath = '/api/Mailing-list/subscribeToNewsletter';
@@ -2244,7 +2244,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerUnsubscribe
+     * Operation unsubscribe
      *
      * Unsubscribe to a mailing list.
      *
@@ -2254,13 +2254,13 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerUnsubscribe($body)
+    public function unsubscribe($body)
     {
-        $this->mailingListControllerUnsubscribeWithHttpInfo($body);
+        $this->unsubscribeWithHttpInfo($body);
     }
 
     /**
-     * Operation mailingListControllerUnsubscribeWithHttpInfo
+     * Operation unsubscribeWithHttpInfo
      *
      * Unsubscribe to a mailing list.
      *
@@ -2270,10 +2270,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerUnsubscribeWithHttpInfo($body)
+    public function unsubscribeWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->mailingListControllerUnsubscribeRequest($body);
+        $request = $this->unsubscribeRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2313,7 +2313,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerUnsubscribeAsync
+     * Operation unsubscribeAsync
      *
      * Unsubscribe to a mailing list.
      *
@@ -2322,9 +2322,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerUnsubscribeAsync($body)
+    public function unsubscribeAsync($body)
     {
-        return $this->mailingListControllerUnsubscribeAsyncWithHttpInfo($body)
+        return $this->unsubscribeAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2333,7 +2333,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerUnsubscribeAsyncWithHttpInfo
+     * Operation unsubscribeAsyncWithHttpInfo
      *
      * Unsubscribe to a mailing list.
      *
@@ -2342,10 +2342,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerUnsubscribeAsyncWithHttpInfo($body)
+    public function unsubscribeAsyncWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->mailingListControllerUnsubscribeRequest($body);
+        $request = $this->unsubscribeRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2371,19 +2371,19 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerUnsubscribe'
+     * Create request for operation 'unsubscribe'
      *
      * @param  \Yoast\MyYoastApiClient\Model\UnsubscribeDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerUnsubscribeRequest($body)
+    protected function unsubscribeRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling mailingListControllerUnsubscribe'
+                'Missing the required parameter $body when calling unsubscribe'
             );
         }
 
@@ -2464,7 +2464,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerUnsubscribeFromNewsletter
+     * Operation unsubscribeFromNewsletter
      *
      * Unsubscribe to a mailing list.
      *
@@ -2473,13 +2473,13 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function mailingListControllerUnsubscribeFromNewsletter()
+    public function unsubscribeFromNewsletter()
     {
-        $this->mailingListControllerUnsubscribeFromNewsletterWithHttpInfo();
+        $this->unsubscribeFromNewsletterWithHttpInfo();
     }
 
     /**
-     * Operation mailingListControllerUnsubscribeFromNewsletterWithHttpInfo
+     * Operation unsubscribeFromNewsletterWithHttpInfo
      *
      * Unsubscribe to a mailing list.
      *
@@ -2488,10 +2488,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function mailingListControllerUnsubscribeFromNewsletterWithHttpInfo()
+    public function unsubscribeFromNewsletterWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->mailingListControllerUnsubscribeFromNewsletterRequest();
+        $request = $this->unsubscribeFromNewsletterRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -2531,7 +2531,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerUnsubscribeFromNewsletterAsync
+     * Operation unsubscribeFromNewsletterAsync
      *
      * Unsubscribe to a mailing list.
      *
@@ -2539,9 +2539,9 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerUnsubscribeFromNewsletterAsync()
+    public function unsubscribeFromNewsletterAsync()
     {
-        return $this->mailingListControllerUnsubscribeFromNewsletterAsyncWithHttpInfo()
+        return $this->unsubscribeFromNewsletterAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2550,7 +2550,7 @@ class MailingListApi
     }
 
     /**
-     * Operation mailingListControllerUnsubscribeFromNewsletterAsyncWithHttpInfo
+     * Operation unsubscribeFromNewsletterAsyncWithHttpInfo
      *
      * Unsubscribe to a mailing list.
      *
@@ -2558,10 +2558,10 @@ class MailingListApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function mailingListControllerUnsubscribeFromNewsletterAsyncWithHttpInfo()
+    public function unsubscribeFromNewsletterAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->mailingListControllerUnsubscribeFromNewsletterRequest();
+        $request = $this->unsubscribeFromNewsletterRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2587,13 +2587,13 @@ class MailingListApi
     }
 
     /**
-     * Create request for operation 'mailingListControllerUnsubscribeFromNewsletter'
+     * Create request for operation 'unsubscribeFromNewsletter'
      *
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function mailingListControllerUnsubscribeFromNewsletterRequest()
+    protected function unsubscribeFromNewsletterRequest()
     {
 
         $resourcePath = '/api/Mailing-list/unsubscribeFromNewsletter';

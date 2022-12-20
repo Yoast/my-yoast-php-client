@@ -1,13 +1,13 @@
 # Yoast\MyYoastApiClient\ServerCheckApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serverHealthControllerCheckHealth**](ServerCheckApi.md#serverhealthcontrollercheckhealth) | **GET** /server-check | Server health check
+[**checkHealth**](ServerCheckApi.md#checkhealth) | **GET** /server-check | Server health check
 
-# **serverHealthControllerCheckHealth**
-> \Yoast\MyYoastApiClient\Model\ serverHealthControllerCheckHealth()
+# **checkHealth**
+> \Yoast\MyYoastApiClient\Model\ checkHealth()
 
 Server health check
 
@@ -25,10 +25,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ServerCheckApi(
 );
 
 try {
-    $result = $apiInstance->serverHealthControllerCheckHealth();
+    $result = $apiInstance->checkHealth();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ServerCheckApi->serverHealthControllerCheckHealth: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ServerCheckApi->checkHealth: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

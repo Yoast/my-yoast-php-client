@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,42 +71,42 @@ class ProductApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productControllerDeleteOne
+     * Test case for deleteOne
      *
      * .
      *
      */
-    public function testProductControllerDeleteOne()
+    public function testDeleteOne()
     {
     }
 
     /**
-     * Test case for productControllerGetMany
+     * Test case for getMany
      *
      * Get products.
      *
      */
-    public function testProductControllerGetMany()
+    public function testGetMany()
     {
     }
 
     /**
-     * Test case for productControllerGetOne
+     * Test case for getOne
      *
      * Get a product.
      *
      */
-    public function testProductControllerGetOne()
+    public function testGetOne()
     {
     }
 
     /**
-     * Test case for productControllerPluginVersionDetails
+     * Test case for pluginVersionDetails
      *
      * .
      *
      */
-    public function testProductControllerPluginVersionDetails()
+    public function testPluginVersionDetails()
     {
     }
 }

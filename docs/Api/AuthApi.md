@@ -1,18 +1,18 @@
 # Yoast\MyYoastApiClient\AuthApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**loginControllerGetAccessTokenWithoutWordPress**](AuthApi.md#logincontrollergetaccesstokenwithoutwordpress) | **POST** /api/Customers/login | Log in a user on MyYoast.
-[**loginControllerLoginUser**](AuthApi.md#logincontrollerloginuser) | **POST** /api/Customers/login-user | 
-[**loginControllerLogoutUser**](AuthApi.md#logincontrollerlogoutuser) | **POST** /api/Customers/logout-user | Logout the user on Yoast.com.
-[**loginControllerLogoutWithoutWordPress**](AuthApi.md#logincontrollerlogoutwithoutwordpress) | **GET** /logout | 
-[**yoastComOpenIdControllerYoastComCallback**](AuthApi.md#yoastcomopenidcontrolleryoastcomcallback) | **GET** /auth/yoast/callback | 
-[**yoastComOpenIdControllerYoastComLogin**](AuthApi.md#yoastcomopenidcontrolleryoastcomlogin) | **GET** /auth/yoast | 
+[**getAccessTokenWithoutWordPress**](AuthApi.md#getaccesstokenwithoutwordpress) | **POST** /api/Customers/login | Log in a user on MyYoast.
+[**loginUser**](AuthApi.md#loginuser) | **POST** /api/Customers/login-user | 
+[**logoutUser**](AuthApi.md#logoutuser) | **POST** /api/Customers/logout-user | Logout the user on Yoast.com.
+[**logoutWithoutWordPress**](AuthApi.md#logoutwithoutwordpress) | **GET** /logout | 
+[**yoastComCallback**](AuthApi.md#yoastcomcallback) | **GET** /auth/yoast/callback | 
+[**yoastComLogin**](AuthApi.md#yoastcomlogin) | **GET** /auth/yoast | 
 
-# **loginControllerGetAccessTokenWithoutWordPress**
-> \Yoast\MyYoastApiClient\Model\AccessTokenResponse loginControllerGetAccessTokenWithoutWordPress($body)
+# **getAccessTokenWithoutWordPress**
+> \Yoast\MyYoastApiClient\Model\AccessTokenResponse getAccessTokenWithoutWordPress($body)
 
 Log in a user on MyYoast.
 
@@ -31,10 +31,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
 $body = new \Yoast\MyYoastApiClient\Model\LoginDto(); // \Yoast\MyYoastApiClient\Model\LoginDto | 
 
 try {
-    $result = $apiInstance->loginControllerGetAccessTokenWithoutWordPress($body);
+    $result = $apiInstance->getAccessTokenWithoutWordPress($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthApi->loginControllerGetAccessTokenWithoutWordPress: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthApi->getAccessTokenWithoutWordPress: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -60,8 +60,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **loginControllerLoginUser**
-> loginControllerLoginUser($body)
+# **loginUser**
+> loginUser($body)
 
 
 
@@ -78,9 +78,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
 $body = new \Yoast\MyYoastApiClient\Model\LoginUserDto(); // \Yoast\MyYoastApiClient\Model\LoginUserDto | 
 
 try {
-    $apiInstance->loginControllerLoginUser($body);
+    $apiInstance->loginUser($body);
 } catch (Exception $e) {
-    echo 'Exception when calling AuthApi->loginControllerLoginUser: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthApi->loginUser: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -106,8 +106,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **loginControllerLogoutUser**
-> loginControllerLogoutUser()
+# **logoutUser**
+> logoutUser()
 
 Logout the user on Yoast.com.
 
@@ -123,9 +123,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
 );
 
 try {
-    $apiInstance->loginControllerLogoutUser();
+    $apiInstance->logoutUser();
 } catch (Exception $e) {
-    echo 'Exception when calling AuthApi->loginControllerLogoutUser: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthApi->logoutUser: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -148,55 +148,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **loginControllerLogoutWithoutWordPress**
-> loginControllerLogoutWithoutWordPress()
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $apiInstance->loginControllerLogoutWithoutWordPress();
-} catch (Exception $e) {
-    echo 'Exception when calling AuthApi->loginControllerLogoutWithoutWordPress: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **yoastComOpenIdControllerYoastComCallback**
-> yoastComOpenIdControllerYoastComCallback()
+# **logoutWithoutWordPress**
+> logoutWithoutWordPress()
 
 
 
@@ -212,9 +165,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
 );
 
 try {
-    $apiInstance->yoastComOpenIdControllerYoastComCallback();
+    $apiInstance->logoutWithoutWordPress();
 } catch (Exception $e) {
-    echo 'Exception when calling AuthApi->yoastComOpenIdControllerYoastComCallback: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthApi->logoutWithoutWordPress: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -237,8 +190,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **yoastComOpenIdControllerYoastComLogin**
-> yoastComOpenIdControllerYoastComLogin()
+# **yoastComCallback**
+> yoastComCallback()
 
 
 
@@ -254,9 +207,51 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
 );
 
 try {
-    $apiInstance->yoastComOpenIdControllerYoastComLogin();
+    $apiInstance->yoastComCallback();
 } catch (Exception $e) {
-    echo 'Exception when calling AuthApi->yoastComOpenIdControllerYoastComLogin: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AuthApi->yoastComCallback: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **yoastComLogin**
+> yoastComLogin()
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $apiInstance->yoastComLogin();
+} catch (Exception $e) {
+    echo 'Exception when calling AuthApi->yoastComLogin: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

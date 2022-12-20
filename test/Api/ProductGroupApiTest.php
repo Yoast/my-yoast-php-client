@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,22 +71,22 @@ class ProductGroupApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for productGroupControllerGetMany
+     * Test case for getMany
      *
      * Get productgroups.
      *
      */
-    public function testProductGroupControllerGetMany()
+    public function testGetMany()
     {
     }
 
     /**
-     * Test case for productGroupControllerUpdateDownload
+     * Test case for updateDownload
      *
      * Update the download.
      *
      */
-    public function testProductGroupControllerUpdateDownload()
+    public function testUpdateDownload()
     {
     }
 }

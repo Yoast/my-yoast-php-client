@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerCreateOne
+     * Operation createOne
      *
      * @param  \Yoast\MyYoastApiClient\Model\CreateCustomerNoteDto $body body (required)
      *
@@ -95,13 +95,13 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function customerNoteControllerCreateOne($body)
+    public function createOne($body)
     {
-        $this->customerNoteControllerCreateOneWithHttpInfo($body);
+        $this->createOneWithHttpInfo($body);
     }
 
     /**
-     * Operation customerNoteControllerCreateOneWithHttpInfo
+     * Operation createOneWithHttpInfo
      *
      * @param  \Yoast\MyYoastApiClient\Model\CreateCustomerNoteDto $body (required)
      *
@@ -109,10 +109,10 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerNoteControllerCreateOneWithHttpInfo($body)
+    public function createOneWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->customerNoteControllerCreateOneRequest($body);
+        $request = $this->createOneRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -152,7 +152,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerCreateOneAsync
+     * Operation createOneAsync
      *
      * 
      *
@@ -161,9 +161,9 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerNoteControllerCreateOneAsync($body)
+    public function createOneAsync($body)
     {
-        return $this->customerNoteControllerCreateOneAsyncWithHttpInfo($body)
+        return $this->createOneAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -172,7 +172,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerCreateOneAsyncWithHttpInfo
+     * Operation createOneAsyncWithHttpInfo
      *
      * 
      *
@@ -181,10 +181,10 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerNoteControllerCreateOneAsyncWithHttpInfo($body)
+    public function createOneAsyncWithHttpInfo($body)
     {
         $returnType = '';
-        $request = $this->customerNoteControllerCreateOneRequest($body);
+        $request = $this->createOneRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -210,19 +210,19 @@ class CustomerNoteApi
     }
 
     /**
-     * Create request for operation 'customerNoteControllerCreateOne'
+     * Create request for operation 'createOne'
      *
      * @param  \Yoast\MyYoastApiClient\Model\CreateCustomerNoteDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function customerNoteControllerCreateOneRequest($body)
+    protected function createOneRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling customerNoteControllerCreateOne'
+                'Missing the required parameter $body when calling createOne'
             );
         }
 
@@ -281,10 +281,6 @@ class CustomerNoteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -307,7 +303,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerDeleteOne
+     * Operation deleteOne
      *
      * @param  string $id id (required)
      *
@@ -315,13 +311,13 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function customerNoteControllerDeleteOne($id)
+    public function deleteOne($id)
     {
-        $this->customerNoteControllerDeleteOneWithHttpInfo($id);
+        $this->deleteOneWithHttpInfo($id);
     }
 
     /**
-     * Operation customerNoteControllerDeleteOneWithHttpInfo
+     * Operation deleteOneWithHttpInfo
      *
      * @param  string $id (required)
      *
@@ -329,10 +325,10 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerNoteControllerDeleteOneWithHttpInfo($id)
+    public function deleteOneWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->customerNoteControllerDeleteOneRequest($id);
+        $request = $this->deleteOneRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -372,7 +368,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerDeleteOneAsync
+     * Operation deleteOneAsync
      *
      * 
      *
@@ -381,9 +377,9 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerNoteControllerDeleteOneAsync($id)
+    public function deleteOneAsync($id)
     {
-        return $this->customerNoteControllerDeleteOneAsyncWithHttpInfo($id)
+        return $this->deleteOneAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -392,7 +388,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerDeleteOneAsyncWithHttpInfo
+     * Operation deleteOneAsyncWithHttpInfo
      *
      * 
      *
@@ -401,10 +397,10 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerNoteControllerDeleteOneAsyncWithHttpInfo($id)
+    public function deleteOneAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->customerNoteControllerDeleteOneRequest($id);
+        $request = $this->deleteOneRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -430,19 +426,19 @@ class CustomerNoteApi
     }
 
     /**
-     * Create request for operation 'customerNoteControllerDeleteOne'
+     * Create request for operation 'deleteOne'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function customerNoteControllerDeleteOneRequest($id)
+    protected function deleteOneRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling customerNoteControllerDeleteOne'
+                'Missing the required parameter $id when calling deleteOne'
             );
         }
 
@@ -506,10 +502,6 @@ class CustomerNoteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -532,7 +524,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerGetMany
+     * Operation getMany
      *
      * Get customer notes
      *
@@ -542,14 +534,14 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\CustomerNote[]
      */
-    public function customerNoteControllerGetMany($filter = null)
+    public function getMany($filter = null)
     {
-        list($response) = $this->customerNoteControllerGetManyWithHttpInfo($filter);
+        list($response) = $this->getManyWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation customerNoteControllerGetManyWithHttpInfo
+     * Operation getManyWithHttpInfo
      *
      * Get customer notes
      *
@@ -559,10 +551,10 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerNoteControllerGetManyWithHttpInfo($filter = null)
+    public function getManyWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\CustomerNote[]';
-        $request = $this->customerNoteControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -624,7 +616,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerGetManyAsync
+     * Operation getManyAsync
      *
      * Get customer notes
      *
@@ -633,9 +625,9 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerNoteControllerGetManyAsync($filter = null)
+    public function getManyAsync($filter = null)
     {
-        return $this->customerNoteControllerGetManyAsyncWithHttpInfo($filter)
+        return $this->getManyAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -644,7 +636,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerGetManyAsyncWithHttpInfo
+     * Operation getManyAsyncWithHttpInfo
      *
      * Get customer notes
      *
@@ -653,10 +645,10 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerNoteControllerGetManyAsyncWithHttpInfo($filter = null)
+    public function getManyAsyncWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\CustomerNote[]';
-        $request = $this->customerNoteControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -696,14 +688,14 @@ class CustomerNoteApi
     }
 
     /**
-     * Create request for operation 'customerNoteControllerGetMany'
+     * Create request for operation 'getMany'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function customerNoteControllerGetManyRequest($filter = null)
+    protected function getManyRequest($filter = null)
     {
 
         $resourcePath = '/api/CustomerNotes';
@@ -762,10 +754,6 @@ class CustomerNoteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -788,7 +776,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerGetOne
+     * Operation getOne
      *
      * Get a customer note
      *
@@ -799,14 +787,14 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\CustomerNote
      */
-    public function customerNoteControllerGetOne($id, $filter = null)
+    public function getOne($id, $filter = null)
     {
-        list($response) = $this->customerNoteControllerGetOneWithHttpInfo($id, $filter);
+        list($response) = $this->getOneWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation customerNoteControllerGetOneWithHttpInfo
+     * Operation getOneWithHttpInfo
      *
      * Get a customer note
      *
@@ -817,10 +805,10 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\CustomerNote, HTTP status code, HTTP response headers (array of strings)
      */
-    public function customerNoteControllerGetOneWithHttpInfo($id, $filter = null)
+    public function getOneWithHttpInfo($id, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\CustomerNote';
-        $request = $this->customerNoteControllerGetOneRequest($id, $filter);
+        $request = $this->getOneRequest($id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -882,7 +870,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerGetOneAsync
+     * Operation getOneAsync
      *
      * Get a customer note
      *
@@ -892,9 +880,9 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerNoteControllerGetOneAsync($id, $filter = null)
+    public function getOneAsync($id, $filter = null)
     {
-        return $this->customerNoteControllerGetOneAsyncWithHttpInfo($id, $filter)
+        return $this->getOneAsyncWithHttpInfo($id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -903,7 +891,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Operation customerNoteControllerGetOneAsyncWithHttpInfo
+     * Operation getOneAsyncWithHttpInfo
      *
      * Get a customer note
      *
@@ -913,10 +901,10 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function customerNoteControllerGetOneAsyncWithHttpInfo($id, $filter = null)
+    public function getOneAsyncWithHttpInfo($id, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\CustomerNote';
-        $request = $this->customerNoteControllerGetOneRequest($id, $filter);
+        $request = $this->getOneRequest($id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -956,7 +944,7 @@ class CustomerNoteApi
     }
 
     /**
-     * Create request for operation 'customerNoteControllerGetOne'
+     * Create request for operation 'getOne'
      *
      * @param  string $id (required)
      * @param  object $filter Used for filtering/joining the results. (optional)
@@ -964,12 +952,12 @@ class CustomerNoteApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function customerNoteControllerGetOneRequest($id, $filter = null)
+    protected function getOneRequest($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling customerNoteControllerGetOne'
+                'Missing the required parameter $id when calling getOne'
             );
         }
 
@@ -1037,10 +1025,6 @@ class CustomerNoteApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

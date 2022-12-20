@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,72 +71,72 @@ class WorkerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for queueControllerAddJob
+     * Test case for addJob
      *
      * .
      *
      */
-    public function testQueueControllerAddJob()
+    public function testAddJob()
     {
     }
 
     /**
-     * Test case for queueControllerGetJob
+     * Test case for getJob
      *
      * .
      *
      */
-    public function testQueueControllerGetJob()
+    public function testGetJob()
     {
     }
 
     /**
-     * Test case for queueControllerGetRecurringJobs
+     * Test case for getRecurringJobs
      *
      * .
      *
      */
-    public function testQueueControllerGetRecurringJobs()
+    public function testGetRecurringJobs()
     {
     }
 
     /**
-     * Test case for queueControllerGetRecurringJobsInfo
+     * Test case for getRecurringJobsInfo
      *
      * .
      *
      */
-    public function testQueueControllerGetRecurringJobsInfo()
+    public function testGetRecurringJobsInfo()
     {
     }
 
     /**
-     * Test case for queueControllerGetScheduledJobs
+     * Test case for getScheduledJobs
      *
      * .
      *
      */
-    public function testQueueControllerGetScheduledJobs()
+    public function testGetScheduledJobs()
     {
     }
 
     /**
-     * Test case for queueControllerRemoveAllJobsWithName
+     * Test case for removeAllJobsWithName
      *
      * .
      *
      */
-    public function testQueueControllerRemoveAllJobsWithName()
+    public function testRemoveAllJobsWithName()
     {
     }
 
     /**
-     * Test case for queueControllerRemoveJob
+     * Test case for removeJob
      *
      * .
      *
      */
-    public function testQueueControllerRemoveJob()
+    public function testRemoveJob()
     {
     }
 }

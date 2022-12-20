@@ -1,15 +1,15 @@
 # Yoast\MyYoastApiClient\CourseApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**courseControllerFromAcademy**](CourseApi.md#coursecontrollerfromacademy) | **PUT** /api/Courses/fromAcademy | Upserts a course
-[**courseControllerGetMany**](CourseApi.md#coursecontrollergetmany) | **GET** /api/Courses | Get courses
-[**courseControllerGetOne**](CourseApi.md#coursecontrollergetone) | **GET** /api/Courses/{id} | 
+[**fromAcademy**](CourseApi.md#fromacademy) | **PUT** /api/Courses/fromAcademy | Upserts a course
+[**getMany**](CourseApi.md#getmany) | **GET** /api/Courses | Get courses
+[**getOne**](CourseApi.md#getone) | **GET** /api/Courses/{id} | 
 
-# **courseControllerFromAcademy**
-> \Yoast\MyYoastApiClient\Model\Course courseControllerFromAcademy($body)
+# **fromAcademy**
+> \Yoast\MyYoastApiClient\Model\Course fromAcademy($body)
 
 Upserts a course
 
@@ -19,24 +19,19 @@ Updates a course, or creates it if it doesn't exist
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CourseApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $body = new \Yoast\MyYoastApiClient\Model\FromAcademyDto(); // \Yoast\MyYoastApiClient\Model\FromAcademyDto | 
 
 try {
-    $result = $apiInstance->courseControllerFromAcademy($body);
+    $result = $apiInstance->fromAcademy($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->courseControllerFromAcademy: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->fromAcademy: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -53,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -62,8 +57,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **courseControllerGetMany**
-> \Yoast\MyYoastApiClient\Model\Course[] courseControllerGetMany($filter)
+# **getMany**
+> \Yoast\MyYoastApiClient\Model\Course[] getMany($filter)
 
 Get courses
 
@@ -73,24 +68,19 @@ Get and filter courses
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CourseApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->courseControllerGetMany($filter);
+    $result = $apiInstance->getMany($filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->courseControllerGetMany: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->getMany: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -107,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -116,8 +106,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **courseControllerGetOne**
-> courseControllerGetOne($id)
+# **getOne**
+> getOne($id)
 
 
 
@@ -125,23 +115,18 @@ Name | Type | Description  | Notes
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CourseApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $apiInstance->courseControllerGetOne($id);
+    $apiInstance->getOne($id);
 } catch (Exception $e) {
-    echo 'Exception when calling CourseApi->courseControllerGetOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CourseApi->getOne: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -158,7 +143,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 

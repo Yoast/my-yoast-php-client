@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerExport
+     * Operation export
      *
      * Get orders
      *
@@ -98,14 +98,14 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Order[]
      */
-    public function orderControllerExport($startDate, $endDate)
+    public function export($startDate, $endDate)
     {
-        list($response) = $this->orderControllerExportWithHttpInfo($startDate, $endDate);
+        list($response) = $this->exportWithHttpInfo($startDate, $endDate);
         return $response;
     }
 
     /**
-     * Operation orderControllerExportWithHttpInfo
+     * Operation exportWithHttpInfo
      *
      * Get orders
      *
@@ -116,10 +116,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderControllerExportWithHttpInfo($startDate, $endDate)
+    public function exportWithHttpInfo($startDate, $endDate)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->orderControllerExportRequest($startDate, $endDate);
+        $request = $this->exportRequest($startDate, $endDate);
 
         try {
             $options = $this->createHttpClientOption();
@@ -181,7 +181,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerExportAsync
+     * Operation exportAsync
      *
      * Get orders
      *
@@ -191,9 +191,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerExportAsync($startDate, $endDate)
+    public function exportAsync($startDate, $endDate)
     {
-        return $this->orderControllerExportAsyncWithHttpInfo($startDate, $endDate)
+        return $this->exportAsyncWithHttpInfo($startDate, $endDate)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -202,7 +202,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerExportAsyncWithHttpInfo
+     * Operation exportAsyncWithHttpInfo
      *
      * Get orders
      *
@@ -212,10 +212,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerExportAsyncWithHttpInfo($startDate, $endDate)
+    public function exportAsyncWithHttpInfo($startDate, $endDate)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->orderControllerExportRequest($startDate, $endDate);
+        $request = $this->exportRequest($startDate, $endDate);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -255,7 +255,7 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'orderControllerExport'
+     * Create request for operation 'export'
      *
      * @param  \DateTime $startDate (required)
      * @param  \DateTime $endDate (required)
@@ -263,18 +263,18 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderControllerExportRequest($startDate, $endDate)
+    protected function exportRequest($startDate, $endDate)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $startDate when calling orderControllerExport'
+                'Missing the required parameter $startDate when calling export'
             );
         }
         // verify the required parameter 'endDate' is set
         if ($endDate === null || (is_array($endDate) && count($endDate) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $endDate when calling orderControllerExport'
+                'Missing the required parameter $endDate when calling export'
             );
         }
 
@@ -338,10 +338,6 @@ class OrderApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -364,7 +360,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetAutoRenewalCount
+     * Operation getAutoRenewalCount
      *
      * @param  \DateTime $startDate startDate (required)
      * @param  \DateTime $endDate endDate (required)
@@ -374,14 +370,14 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto
      */
-    public function orderControllerGetAutoRenewalCount($startDate, $endDate, $secret)
+    public function getAutoRenewalCount($startDate, $endDate, $secret)
     {
-        list($response) = $this->orderControllerGetAutoRenewalCountWithHttpInfo($startDate, $endDate, $secret);
+        list($response) = $this->getAutoRenewalCountWithHttpInfo($startDate, $endDate, $secret);
         return $response;
     }
 
     /**
-     * Operation orderControllerGetAutoRenewalCountWithHttpInfo
+     * Operation getAutoRenewalCountWithHttpInfo
      *
      * @param  \DateTime $startDate (required)
      * @param  \DateTime $endDate (required)
@@ -391,10 +387,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderControllerGetAutoRenewalCountWithHttpInfo($startDate, $endDate, $secret)
+    public function getAutoRenewalCountWithHttpInfo($startDate, $endDate, $secret)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto';
-        $request = $this->orderControllerGetAutoRenewalCountRequest($startDate, $endDate, $secret);
+        $request = $this->getAutoRenewalCountRequest($startDate, $endDate, $secret);
 
         try {
             $options = $this->createHttpClientOption();
@@ -456,7 +452,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetAutoRenewalCountAsync
+     * Operation getAutoRenewalCountAsync
      *
      * 
      *
@@ -467,9 +463,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetAutoRenewalCountAsync($startDate, $endDate, $secret)
+    public function getAutoRenewalCountAsync($startDate, $endDate, $secret)
     {
-        return $this->orderControllerGetAutoRenewalCountAsyncWithHttpInfo($startDate, $endDate, $secret)
+        return $this->getAutoRenewalCountAsyncWithHttpInfo($startDate, $endDate, $secret)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -478,7 +474,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetAutoRenewalCountAsyncWithHttpInfo
+     * Operation getAutoRenewalCountAsyncWithHttpInfo
      *
      * 
      *
@@ -489,10 +485,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetAutoRenewalCountAsyncWithHttpInfo($startDate, $endDate, $secret)
+    public function getAutoRenewalCountAsyncWithHttpInfo($startDate, $endDate, $secret)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto';
-        $request = $this->orderControllerGetAutoRenewalCountRequest($startDate, $endDate, $secret);
+        $request = $this->getAutoRenewalCountRequest($startDate, $endDate, $secret);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -532,7 +528,7 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'orderControllerGetAutoRenewalCount'
+     * Create request for operation 'getAutoRenewalCount'
      *
      * @param  \DateTime $startDate (required)
      * @param  \DateTime $endDate (required)
@@ -541,24 +537,24 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderControllerGetAutoRenewalCountRequest($startDate, $endDate, $secret)
+    protected function getAutoRenewalCountRequest($startDate, $endDate, $secret)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null || (is_array($startDate) && count($startDate) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $startDate when calling orderControllerGetAutoRenewalCount'
+                'Missing the required parameter $startDate when calling getAutoRenewalCount'
             );
         }
         // verify the required parameter 'endDate' is set
         if ($endDate === null || (is_array($endDate) && count($endDate) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $endDate when calling orderControllerGetAutoRenewalCount'
+                'Missing the required parameter $endDate when calling getAutoRenewalCount'
             );
         }
         // verify the required parameter 'secret' is set
         if ($secret === null || (is_array($secret) && count($secret) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $secret when calling orderControllerGetAutoRenewalCount'
+                'Missing the required parameter $secret when calling getAutoRenewalCount'
             );
         }
 
@@ -626,10 +622,6 @@ class OrderApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -652,7 +644,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetMany
+     * Operation getMany
      *
      * Get orders
      *
@@ -662,14 +654,14 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Order[]
      */
-    public function orderControllerGetMany($filter = null)
+    public function getMany($filter = null)
     {
-        list($response) = $this->orderControllerGetManyWithHttpInfo($filter);
+        list($response) = $this->getManyWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation orderControllerGetManyWithHttpInfo
+     * Operation getManyWithHttpInfo
      *
      * Get orders
      *
@@ -679,10 +671,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Order[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderControllerGetManyWithHttpInfo($filter = null)
+    public function getManyWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->orderControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -744,7 +736,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetManyAsync
+     * Operation getManyAsync
      *
      * Get orders
      *
@@ -753,9 +745,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetManyAsync($filter = null)
+    public function getManyAsync($filter = null)
     {
-        return $this->orderControllerGetManyAsyncWithHttpInfo($filter)
+        return $this->getManyAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -764,7 +756,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetManyAsyncWithHttpInfo
+     * Operation getManyAsyncWithHttpInfo
      *
      * Get orders
      *
@@ -773,10 +765,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetManyAsyncWithHttpInfo($filter = null)
+    public function getManyAsyncWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order[]';
-        $request = $this->orderControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -816,14 +808,14 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'orderControllerGetMany'
+     * Create request for operation 'getMany'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderControllerGetManyRequest($filter = null)
+    protected function getManyRequest($filter = null)
     {
 
         $resourcePath = '/api/Orders';
@@ -882,10 +874,6 @@ class OrderApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -908,7 +896,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetManyPaged
+     * Operation getManyPaged
      *
      * Get orders
      *
@@ -918,13 +906,13 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function orderControllerGetManyPaged($filter = null)
+    public function getManyPaged($filter = null)
     {
-        $this->orderControllerGetManyPagedWithHttpInfo($filter);
+        $this->getManyPagedWithHttpInfo($filter);
     }
 
     /**
-     * Operation orderControllerGetManyPagedWithHttpInfo
+     * Operation getManyPagedWithHttpInfo
      *
      * Get orders
      *
@@ -934,10 +922,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderControllerGetManyPagedWithHttpInfo($filter = null)
+    public function getManyPagedWithHttpInfo($filter = null)
     {
         $returnType = '';
-        $request = $this->orderControllerGetManyPagedRequest($filter);
+        $request = $this->getManyPagedRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -977,7 +965,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetManyPagedAsync
+     * Operation getManyPagedAsync
      *
      * Get orders
      *
@@ -986,9 +974,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetManyPagedAsync($filter = null)
+    public function getManyPagedAsync($filter = null)
     {
-        return $this->orderControllerGetManyPagedAsyncWithHttpInfo($filter)
+        return $this->getManyPagedAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -997,7 +985,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetManyPagedAsyncWithHttpInfo
+     * Operation getManyPagedAsyncWithHttpInfo
      *
      * Get orders
      *
@@ -1006,10 +994,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetManyPagedAsyncWithHttpInfo($filter = null)
+    public function getManyPagedAsyncWithHttpInfo($filter = null)
     {
         $returnType = '';
-        $request = $this->orderControllerGetManyPagedRequest($filter);
+        $request = $this->getManyPagedRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1035,14 +1023,14 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'orderControllerGetManyPaged'
+     * Create request for operation 'getManyPaged'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderControllerGetManyPagedRequest($filter = null)
+    protected function getManyPagedRequest($filter = null)
     {
 
         $resourcePath = '/api/Orders/paged';
@@ -1101,10 +1089,6 @@ class OrderApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1127,7 +1111,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetOne
+     * Operation getOne
      *
      * Get a order
      *
@@ -1138,14 +1122,14 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function orderControllerGetOne($id, $filter = null)
+    public function getOne($id, $filter = null)
     {
-        list($response) = $this->orderControllerGetOneWithHttpInfo($id, $filter);
+        list($response) = $this->getOneWithHttpInfo($id, $filter);
         return $response;
     }
 
     /**
-     * Operation orderControllerGetOneWithHttpInfo
+     * Operation getOneWithHttpInfo
      *
      * Get a order
      *
@@ -1156,10 +1140,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderControllerGetOneWithHttpInfo($id, $filter = null)
+    public function getOneWithHttpInfo($id, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order';
-        $request = $this->orderControllerGetOneRequest($id, $filter);
+        $request = $this->getOneRequest($id, $filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1221,7 +1205,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetOneAsync
+     * Operation getOneAsync
      *
      * Get a order
      *
@@ -1231,9 +1215,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetOneAsync($id, $filter = null)
+    public function getOneAsync($id, $filter = null)
     {
-        return $this->orderControllerGetOneAsyncWithHttpInfo($id, $filter)
+        return $this->getOneAsyncWithHttpInfo($id, $filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1242,7 +1226,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetOneAsyncWithHttpInfo
+     * Operation getOneAsyncWithHttpInfo
      *
      * Get a order
      *
@@ -1252,10 +1236,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetOneAsyncWithHttpInfo($id, $filter = null)
+    public function getOneAsyncWithHttpInfo($id, $filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order';
-        $request = $this->orderControllerGetOneRequest($id, $filter);
+        $request = $this->getOneRequest($id, $filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1295,7 +1279,7 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'orderControllerGetOne'
+     * Create request for operation 'getOne'
      *
      * @param  string $id (required)
      * @param  object $filter Used for filtering/joining the results. (optional)
@@ -1303,12 +1287,12 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderControllerGetOneRequest($id, $filter = null)
+    protected function getOneRequest($id, $filter = null)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling orderControllerGetOne'
+                'Missing the required parameter $id when calling getOne'
             );
         }
 
@@ -1376,10 +1360,6 @@ class OrderApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1402,7 +1382,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetOneByInvoice
+     * Operation getOneByInvoice
      *
      * Get a order by invoiceNumber
      *
@@ -1412,14 +1392,14 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Order
      */
-    public function orderControllerGetOneByInvoice($invoiceNumber)
+    public function getOneByInvoice($invoiceNumber)
     {
-        list($response) = $this->orderControllerGetOneByInvoiceWithHttpInfo($invoiceNumber);
+        list($response) = $this->getOneByInvoiceWithHttpInfo($invoiceNumber);
         return $response;
     }
 
     /**
-     * Operation orderControllerGetOneByInvoiceWithHttpInfo
+     * Operation getOneByInvoiceWithHttpInfo
      *
      * Get a order by invoiceNumber
      *
@@ -1429,10 +1409,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderControllerGetOneByInvoiceWithHttpInfo($invoiceNumber)
+    public function getOneByInvoiceWithHttpInfo($invoiceNumber)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order';
-        $request = $this->orderControllerGetOneByInvoiceRequest($invoiceNumber);
+        $request = $this->getOneByInvoiceRequest($invoiceNumber);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1494,7 +1474,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetOneByInvoiceAsync
+     * Operation getOneByInvoiceAsync
      *
      * Get a order by invoiceNumber
      *
@@ -1503,9 +1483,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetOneByInvoiceAsync($invoiceNumber)
+    public function getOneByInvoiceAsync($invoiceNumber)
     {
-        return $this->orderControllerGetOneByInvoiceAsyncWithHttpInfo($invoiceNumber)
+        return $this->getOneByInvoiceAsyncWithHttpInfo($invoiceNumber)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1514,7 +1494,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetOneByInvoiceAsyncWithHttpInfo
+     * Operation getOneByInvoiceAsyncWithHttpInfo
      *
      * Get a order by invoiceNumber
      *
@@ -1523,10 +1503,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetOneByInvoiceAsyncWithHttpInfo($invoiceNumber)
+    public function getOneByInvoiceAsyncWithHttpInfo($invoiceNumber)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Order';
-        $request = $this->orderControllerGetOneByInvoiceRequest($invoiceNumber);
+        $request = $this->getOneByInvoiceRequest($invoiceNumber);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1566,19 +1546,19 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'orderControllerGetOneByInvoice'
+     * Create request for operation 'getOneByInvoice'
      *
      * @param  string $invoiceNumber (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderControllerGetOneByInvoiceRequest($invoiceNumber)
+    protected function getOneByInvoiceRequest($invoiceNumber)
     {
         // verify the required parameter 'invoiceNumber' is set
         if ($invoiceNumber === null || (is_array($invoiceNumber) && count($invoiceNumber) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $invoiceNumber when calling orderControllerGetOneByInvoice'
+                'Missing the required parameter $invoiceNumber when calling getOneByInvoice'
             );
         }
 
@@ -1642,10 +1622,6 @@ class OrderApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1668,7 +1644,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetProductGroupsByInvoice
+     * Operation getProductGroupsByInvoice
      *
      * Get productGroups by invoiceNumber
      *
@@ -1678,14 +1654,14 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\ProductGroup[]
      */
-    public function orderControllerGetProductGroupsByInvoice($invoiceNumber)
+    public function getProductGroupsByInvoice($invoiceNumber)
     {
-        list($response) = $this->orderControllerGetProductGroupsByInvoiceWithHttpInfo($invoiceNumber);
+        list($response) = $this->getProductGroupsByInvoiceWithHttpInfo($invoiceNumber);
         return $response;
     }
 
     /**
-     * Operation orderControllerGetProductGroupsByInvoiceWithHttpInfo
+     * Operation getProductGroupsByInvoiceWithHttpInfo
      *
      * Get productGroups by invoiceNumber
      *
@@ -1695,10 +1671,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\ProductGroup[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderControllerGetProductGroupsByInvoiceWithHttpInfo($invoiceNumber)
+    public function getProductGroupsByInvoiceWithHttpInfo($invoiceNumber)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup[]';
-        $request = $this->orderControllerGetProductGroupsByInvoiceRequest($invoiceNumber);
+        $request = $this->getProductGroupsByInvoiceRequest($invoiceNumber);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1760,7 +1736,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetProductGroupsByInvoiceAsync
+     * Operation getProductGroupsByInvoiceAsync
      *
      * Get productGroups by invoiceNumber
      *
@@ -1769,9 +1745,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetProductGroupsByInvoiceAsync($invoiceNumber)
+    public function getProductGroupsByInvoiceAsync($invoiceNumber)
     {
-        return $this->orderControllerGetProductGroupsByInvoiceAsyncWithHttpInfo($invoiceNumber)
+        return $this->getProductGroupsByInvoiceAsyncWithHttpInfo($invoiceNumber)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1780,7 +1756,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerGetProductGroupsByInvoiceAsyncWithHttpInfo
+     * Operation getProductGroupsByInvoiceAsyncWithHttpInfo
      *
      * Get productGroups by invoiceNumber
      *
@@ -1789,10 +1765,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerGetProductGroupsByInvoiceAsyncWithHttpInfo($invoiceNumber)
+    public function getProductGroupsByInvoiceAsyncWithHttpInfo($invoiceNumber)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProductGroup[]';
-        $request = $this->orderControllerGetProductGroupsByInvoiceRequest($invoiceNumber);
+        $request = $this->getProductGroupsByInvoiceRequest($invoiceNumber);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1832,19 +1808,19 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'orderControllerGetProductGroupsByInvoice'
+     * Create request for operation 'getProductGroupsByInvoice'
      *
      * @param  string $invoiceNumber (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderControllerGetProductGroupsByInvoiceRequest($invoiceNumber)
+    protected function getProductGroupsByInvoiceRequest($invoiceNumber)
     {
         // verify the required parameter 'invoiceNumber' is set
         if ($invoiceNumber === null || (is_array($invoiceNumber) && count($invoiceNumber) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $invoiceNumber when calling orderControllerGetProductGroupsByInvoice'
+                'Missing the required parameter $invoiceNumber when calling getProductGroupsByInvoice'
             );
         }
 
@@ -1908,10 +1884,6 @@ class OrderApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -1934,7 +1906,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerInvoice
+     * Operation invoice
      *
      * Create invoice
      *
@@ -1944,13 +1916,13 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function orderControllerInvoice($id)
+    public function invoice($id)
     {
-        $this->orderControllerInvoiceWithHttpInfo($id);
+        $this->invoiceWithHttpInfo($id);
     }
 
     /**
-     * Operation orderControllerInvoiceWithHttpInfo
+     * Operation invoiceWithHttpInfo
      *
      * Create invoice
      *
@@ -1960,10 +1932,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderControllerInvoiceWithHttpInfo($id)
+    public function invoiceWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->orderControllerInvoiceRequest($id);
+        $request = $this->invoiceRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2003,7 +1975,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerInvoiceAsync
+     * Operation invoiceAsync
      *
      * Create invoice
      *
@@ -2012,9 +1984,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerInvoiceAsync($id)
+    public function invoiceAsync($id)
     {
-        return $this->orderControllerInvoiceAsyncWithHttpInfo($id)
+        return $this->invoiceAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2023,7 +1995,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerInvoiceAsyncWithHttpInfo
+     * Operation invoiceAsyncWithHttpInfo
      *
      * Create invoice
      *
@@ -2032,10 +2004,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerInvoiceAsyncWithHttpInfo($id)
+    public function invoiceAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->orderControllerInvoiceRequest($id);
+        $request = $this->invoiceRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2061,19 +2033,19 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'orderControllerInvoice'
+     * Create request for operation 'invoice'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderControllerInvoiceRequest($id)
+    protected function invoiceRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling orderControllerInvoice'
+                'Missing the required parameter $id when calling invoice'
             );
         }
 
@@ -2137,10 +2109,6 @@ class OrderApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -2163,7 +2131,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerRefundInvoice
+     * Operation refundInvoice
      *
      * Creates a credit note
      *
@@ -2174,13 +2142,13 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function orderControllerRefundInvoice($id, $refundId)
+    public function refundInvoice($id, $refundId)
     {
-        $this->orderControllerRefundInvoiceWithHttpInfo($id, $refundId);
+        $this->refundInvoiceWithHttpInfo($id, $refundId);
     }
 
     /**
-     * Operation orderControllerRefundInvoiceWithHttpInfo
+     * Operation refundInvoiceWithHttpInfo
      *
      * Creates a credit note
      *
@@ -2191,10 +2159,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function orderControllerRefundInvoiceWithHttpInfo($id, $refundId)
+    public function refundInvoiceWithHttpInfo($id, $refundId)
     {
         $returnType = '';
-        $request = $this->orderControllerRefundInvoiceRequest($id, $refundId);
+        $request = $this->refundInvoiceRequest($id, $refundId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2234,7 +2202,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerRefundInvoiceAsync
+     * Operation refundInvoiceAsync
      *
      * Creates a credit note
      *
@@ -2244,9 +2212,9 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerRefundInvoiceAsync($id, $refundId)
+    public function refundInvoiceAsync($id, $refundId)
     {
-        return $this->orderControllerRefundInvoiceAsyncWithHttpInfo($id, $refundId)
+        return $this->refundInvoiceAsyncWithHttpInfo($id, $refundId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2255,7 +2223,7 @@ class OrderApi
     }
 
     /**
-     * Operation orderControllerRefundInvoiceAsyncWithHttpInfo
+     * Operation refundInvoiceAsyncWithHttpInfo
      *
      * Creates a credit note
      *
@@ -2265,10 +2233,10 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function orderControllerRefundInvoiceAsyncWithHttpInfo($id, $refundId)
+    public function refundInvoiceAsyncWithHttpInfo($id, $refundId)
     {
         $returnType = '';
-        $request = $this->orderControllerRefundInvoiceRequest($id, $refundId);
+        $request = $this->refundInvoiceRequest($id, $refundId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2294,7 +2262,7 @@ class OrderApi
     }
 
     /**
-     * Create request for operation 'orderControllerRefundInvoice'
+     * Create request for operation 'refundInvoice'
      *
      * @param  string $id (required)
      * @param  string $refundId (required)
@@ -2302,18 +2270,18 @@ class OrderApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function orderControllerRefundInvoiceRequest($id, $refundId)
+    protected function refundInvoiceRequest($id, $refundId)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling orderControllerRefundInvoice'
+                'Missing the required parameter $id when calling refundInvoice'
             );
         }
         // verify the required parameter 'refundId' is set
         if ($refundId === null || (is_array($refundId) && count($refundId) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $refundId when calling orderControllerRefundInvoice'
+                'Missing the required parameter $refundId when calling refundInvoice'
             );
         }
 
@@ -2385,10 +2353,6 @@ class OrderApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

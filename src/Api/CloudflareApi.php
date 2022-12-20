@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class CloudflareApi
     }
 
     /**
-     * Operation cloudflareControllerPurgeKVStore
+     * Operation purgeKVStore
      *
      * Purge kv pairs from the registered domains key value store in Cloudflare
      *
@@ -97,14 +97,14 @@ class CloudflareApi
      * @throws \InvalidArgumentException
      * @return object[]
      */
-    public function cloudflareControllerPurgeKVStore($body)
+    public function purgeKVStore($body)
     {
-        list($response) = $this->cloudflareControllerPurgeKVStoreWithHttpInfo($body);
+        list($response) = $this->purgeKVStoreWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation cloudflareControllerPurgeKVStoreWithHttpInfo
+     * Operation purgeKVStoreWithHttpInfo
      *
      * Purge kv pairs from the registered domains key value store in Cloudflare
      *
@@ -114,10 +114,10 @@ class CloudflareApi
      * @throws \InvalidArgumentException
      * @return array of object[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function cloudflareControllerPurgeKVStoreWithHttpInfo($body)
+    public function purgeKVStoreWithHttpInfo($body)
     {
         $returnType = 'object[]';
-        $request = $this->cloudflareControllerPurgeKVStoreRequest($body);
+        $request = $this->purgeKVStoreRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -179,7 +179,7 @@ class CloudflareApi
     }
 
     /**
-     * Operation cloudflareControllerPurgeKVStoreAsync
+     * Operation purgeKVStoreAsync
      *
      * Purge kv pairs from the registered domains key value store in Cloudflare
      *
@@ -188,9 +188,9 @@ class CloudflareApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cloudflareControllerPurgeKVStoreAsync($body)
+    public function purgeKVStoreAsync($body)
     {
-        return $this->cloudflareControllerPurgeKVStoreAsyncWithHttpInfo($body)
+        return $this->purgeKVStoreAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,7 +199,7 @@ class CloudflareApi
     }
 
     /**
-     * Operation cloudflareControllerPurgeKVStoreAsyncWithHttpInfo
+     * Operation purgeKVStoreAsyncWithHttpInfo
      *
      * Purge kv pairs from the registered domains key value store in Cloudflare
      *
@@ -208,10 +208,10 @@ class CloudflareApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cloudflareControllerPurgeKVStoreAsyncWithHttpInfo($body)
+    public function purgeKVStoreAsyncWithHttpInfo($body)
     {
         $returnType = 'object[]';
-        $request = $this->cloudflareControllerPurgeKVStoreRequest($body);
+        $request = $this->purgeKVStoreRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,19 +251,19 @@ class CloudflareApi
     }
 
     /**
-     * Create request for operation 'cloudflareControllerPurgeKVStore'
+     * Create request for operation 'purgeKVStore'
      *
      * @param  \Yoast\MyYoastApiClient\Model\PurgeKVRequestDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cloudflareControllerPurgeKVStoreRequest($body)
+    protected function purgeKVStoreRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling cloudflareControllerPurgeKVStore'
+                'Missing the required parameter $body when calling purgeKVStore'
             );
         }
 
@@ -322,10 +322,6 @@ class CloudflareApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -348,7 +344,7 @@ class CloudflareApi
     }
 
     /**
-     * Operation cloudflareControllerUpdateAll
+     * Operation updateAll
      *
      * Update sites in the registered domains key value store in Cloudflare
      *
@@ -358,14 +354,14 @@ class CloudflareApi
      * @throws \InvalidArgumentException
      * @return object
      */
-    public function cloudflareControllerUpdateAll($body)
+    public function updateAll($body)
     {
-        list($response) = $this->cloudflareControllerUpdateAllWithHttpInfo($body);
+        list($response) = $this->updateAllWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation cloudflareControllerUpdateAllWithHttpInfo
+     * Operation updateAllWithHttpInfo
      *
      * Update sites in the registered domains key value store in Cloudflare
      *
@@ -375,10 +371,10 @@ class CloudflareApi
      * @throws \InvalidArgumentException
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cloudflareControllerUpdateAllWithHttpInfo($body)
+    public function updateAllWithHttpInfo($body)
     {
         $returnType = 'object';
-        $request = $this->cloudflareControllerUpdateAllRequest($body);
+        $request = $this->updateAllRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -440,7 +436,7 @@ class CloudflareApi
     }
 
     /**
-     * Operation cloudflareControllerUpdateAllAsync
+     * Operation updateAllAsync
      *
      * Update sites in the registered domains key value store in Cloudflare
      *
@@ -449,9 +445,9 @@ class CloudflareApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cloudflareControllerUpdateAllAsync($body)
+    public function updateAllAsync($body)
     {
-        return $this->cloudflareControllerUpdateAllAsyncWithHttpInfo($body)
+        return $this->updateAllAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -460,7 +456,7 @@ class CloudflareApi
     }
 
     /**
-     * Operation cloudflareControllerUpdateAllAsyncWithHttpInfo
+     * Operation updateAllAsyncWithHttpInfo
      *
      * Update sites in the registered domains key value store in Cloudflare
      *
@@ -469,10 +465,10 @@ class CloudflareApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cloudflareControllerUpdateAllAsyncWithHttpInfo($body)
+    public function updateAllAsyncWithHttpInfo($body)
     {
         $returnType = 'object';
-        $request = $this->cloudflareControllerUpdateAllRequest($body);
+        $request = $this->updateAllRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -512,19 +508,19 @@ class CloudflareApi
     }
 
     /**
-     * Create request for operation 'cloudflareControllerUpdateAll'
+     * Create request for operation 'updateAll'
      *
      * @param  \Yoast\MyYoastApiClient\Model\UpdateAllKVRequestDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function cloudflareControllerUpdateAllRequest($body)
+    protected function updateAllRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling cloudflareControllerUpdateAll'
+                'Missing the required parameter $body when calling updateAll'
             );
         }
 
@@ -583,10 +579,6 @@ class CloudflareApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

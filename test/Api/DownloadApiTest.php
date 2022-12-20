@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,22 +71,22 @@ class DownloadApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for downloadControllerDownloadFile
+     * Test case for downloadFile
      *
      * Route to download a file.
      *
      */
-    public function testDownloadControllerDownloadFile()
+    public function testDownloadFile()
     {
     }
 
     /**
-     * Test case for downloadControllerUploadFile
+     * Test case for uploadFile
      *
      * Route to update a file..
      *
      */
-    public function testDownloadControllerUploadFile()
+    public function testUploadFile()
     {
     }
 }

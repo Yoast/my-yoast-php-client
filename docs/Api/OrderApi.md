@@ -1,21 +1,21 @@
 # Yoast\MyYoastApiClient\OrderApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**orderControllerExport**](OrderApi.md#ordercontrollerexport) | **GET** /api/Orders/export | Get orders
-[**orderControllerGetAutoRenewalCount**](OrderApi.md#ordercontrollergetautorenewalcount) | **GET** /api/Orders/auto-renewal-count | 
-[**orderControllerGetMany**](OrderApi.md#ordercontrollergetmany) | **GET** /api/Orders | Get orders
-[**orderControllerGetManyPaged**](OrderApi.md#ordercontrollergetmanypaged) | **GET** /api/Orders/paged | Get orders
-[**orderControllerGetOne**](OrderApi.md#ordercontrollergetone) | **GET** /api/Orders/{id} | Get a order
-[**orderControllerGetOneByInvoice**](OrderApi.md#ordercontrollergetonebyinvoice) | **GET** /api/Orders/InvoiceNumber/{invoiceNumber} | Get a order by invoiceNumber
-[**orderControllerGetProductGroupsByInvoice**](OrderApi.md#ordercontrollergetproductgroupsbyinvoice) | **GET** /api/Orders/productGroups/{invoiceNumber} | Get productGroups by invoiceNumber
-[**orderControllerInvoice**](OrderApi.md#ordercontrollerinvoice) | **GET** /api/Orders/{id}/invoice | Create invoice
-[**orderControllerRefundInvoice**](OrderApi.md#ordercontrollerrefundinvoice) | **GET** /api/Orders/{id}/refunds/{refundId}/invoice | Creates a credit note
+[**export**](OrderApi.md#export) | **GET** /api/Orders/export | Get orders
+[**getAutoRenewalCount**](OrderApi.md#getautorenewalcount) | **GET** /api/Orders/auto-renewal-count | 
+[**getMany**](OrderApi.md#getmany) | **GET** /api/Orders | Get orders
+[**getManyPaged**](OrderApi.md#getmanypaged) | **GET** /api/Orders/paged | Get orders
+[**getOne**](OrderApi.md#getone) | **GET** /api/Orders/{id} | Get a order
+[**getOneByInvoice**](OrderApi.md#getonebyinvoice) | **GET** /api/Orders/InvoiceNumber/{invoiceNumber} | Get a order by invoiceNumber
+[**getProductGroupsByInvoice**](OrderApi.md#getproductgroupsbyinvoice) | **GET** /api/Orders/productGroups/{invoiceNumber} | Get productGroups by invoiceNumber
+[**invoice**](OrderApi.md#invoice) | **GET** /api/Orders/{id}/invoice | Create invoice
+[**refundInvoice**](OrderApi.md#refundinvoice) | **GET** /api/Orders/{id}/refunds/{refundId}/invoice | Creates a credit note
 
-# **orderControllerExport**
-> \Yoast\MyYoastApiClient\Model\Order[] orderControllerExport($startDate, $endDate)
+# **export**
+> \Yoast\MyYoastApiClient\Model\Order[] export($startDate, $endDate)
 
 Get orders
 
@@ -25,25 +25,20 @@ A large export of orders between dates
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 
 try {
-    $result = $apiInstance->orderControllerExport($startDate, $endDate);
+    $result = $apiInstance->export($startDate, $endDate);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderControllerExport: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->export: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -61,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -70,8 +65,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderControllerGetAutoRenewalCount**
-> \Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto orderControllerGetAutoRenewalCount($startDate, $endDate, $secret)
+# **getAutoRenewalCount**
+> \Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto getAutoRenewalCount($startDate, $endDate, $secret)
 
 
 
@@ -79,26 +74,21 @@ Name | Type | Description  | Notes
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 $secret = "secret_example"; // string | 
 
 try {
-    $result = $apiInstance->orderControllerGetAutoRenewalCount($startDate, $endDate, $secret);
+    $result = $apiInstance->getAutoRenewalCount($startDate, $endDate, $secret);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderControllerGetAutoRenewalCount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->getAutoRenewalCount: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -117,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -126,8 +116,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderControllerGetMany**
-> \Yoast\MyYoastApiClient\Model\Order[] orderControllerGetMany($filter)
+# **getMany**
+> \Yoast\MyYoastApiClient\Model\Order[] getMany($filter)
 
 Get orders
 
@@ -137,24 +127,19 @@ Get and filter orders
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->orderControllerGetMany($filter);
+    $result = $apiInstance->getMany($filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderControllerGetMany: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->getMany: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -171,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -180,8 +165,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderControllerGetManyPaged**
-> orderControllerGetManyPaged($filter)
+# **getManyPaged**
+> getManyPaged($filter)
 
 Get orders
 
@@ -191,23 +176,18 @@ Get and filter orders
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $apiInstance->orderControllerGetManyPaged($filter);
+    $apiInstance->getManyPaged($filter);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderControllerGetManyPaged: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->getManyPaged: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -224,7 +204,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -233,8 +213,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderControllerGetOne**
-> \Yoast\MyYoastApiClient\Model\Order orderControllerGetOne($id, $filter)
+# **getOne**
+> \Yoast\MyYoastApiClient\Model\Order getOne($id, $filter)
 
 Get a order
 
@@ -244,25 +224,20 @@ Get a single order
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->orderControllerGetOne($id, $filter);
+    $result = $apiInstance->getOne($id, $filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderControllerGetOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->getOne: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -280,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -289,8 +264,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderControllerGetOneByInvoice**
-> \Yoast\MyYoastApiClient\Model\Order orderControllerGetOneByInvoice($invoiceNumber)
+# **getOneByInvoice**
+> \Yoast\MyYoastApiClient\Model\Order getOneByInvoice($invoiceNumber)
 
 Get a order by invoiceNumber
 
@@ -300,24 +275,19 @@ Get a single order by invoiceNumber
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $invoiceNumber = "invoiceNumber_example"; // string | 
 
 try {
-    $result = $apiInstance->orderControllerGetOneByInvoice($invoiceNumber);
+    $result = $apiInstance->getOneByInvoice($invoiceNumber);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderControllerGetOneByInvoice: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->getOneByInvoice: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -334,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -343,8 +313,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderControllerGetProductGroupsByInvoice**
-> \Yoast\MyYoastApiClient\Model\ProductGroup[] orderControllerGetProductGroupsByInvoice($invoiceNumber)
+# **getProductGroupsByInvoice**
+> \Yoast\MyYoastApiClient\Model\ProductGroup[] getProductGroupsByInvoice($invoiceNumber)
 
 Get productGroups by invoiceNumber
 
@@ -354,24 +324,19 @@ Get productGroups by invoiceNumber
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $invoiceNumber = "invoiceNumber_example"; // string | 
 
 try {
-    $result = $apiInstance->orderControllerGetProductGroupsByInvoice($invoiceNumber);
+    $result = $apiInstance->getProductGroupsByInvoice($invoiceNumber);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderControllerGetProductGroupsByInvoice: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->getProductGroupsByInvoice: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -388,7 +353,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -397,8 +362,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderControllerInvoice**
-> orderControllerInvoice($id)
+# **invoice**
+> invoice($id)
 
 Create invoice
 
@@ -408,23 +373,18 @@ Creates a PDF for an invoice
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $apiInstance->orderControllerInvoice($id);
+    $apiInstance->invoice($id);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderControllerInvoice: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->invoice: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -441,7 +401,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -450,8 +410,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **orderControllerRefundInvoice**
-> orderControllerRefundInvoice($id, $refundId)
+# **refundInvoice**
+> refundInvoice($id, $refundId)
 
 Creates a credit note
 
@@ -461,24 +421,19 @@ Creates a PDF for a credit note
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | 
 $refundId = "refundId_example"; // string | 
 
 try {
-    $apiInstance->orderControllerRefundInvoice($id, $refundId);
+    $apiInstance->refundInvoice($id, $refundId);
 } catch (Exception $e) {
-    echo 'Exception when calling OrderApi->orderControllerRefundInvoice: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling OrderApi->refundInvoice: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -496,7 +451,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 

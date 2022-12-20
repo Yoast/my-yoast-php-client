@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,22 +71,22 @@ class ExportOrdersApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for exportOrdersControllerExportOrders
+     * Test case for exportOrders
      *
      * Creates an export for orders.
      *
      */
-    public function testExportOrdersControllerExportOrders()
+    public function testExportOrders()
     {
     }
 
     /**
-     * Test case for exportOrdersControllerExportOrdersV2
+     * Test case for exportOrdersV2
      *
      * Creates an export for orders.
      *
      */
-    public function testExportOrdersControllerExportOrdersV2()
+    public function testExportOrdersV2()
     {
     }
 }

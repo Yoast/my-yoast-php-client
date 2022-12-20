@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,32 +71,32 @@ class RefundApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for refundControllerExport
+     * Test case for export
      *
      * Get refunds.
      *
      */
-    public function testRefundControllerExport()
+    public function testExport()
     {
     }
 
     /**
-     * Test case for refundControllerGetMany
+     * Test case for getMany
      *
      * Get refunds.
      *
      */
-    public function testRefundControllerGetMany()
+    public function testGetMany()
     {
     }
 
     /**
-     * Test case for refundControllerGetOne
+     * Test case for getOne
      *
      * Get a refund.
      *
      */
-    public function testRefundControllerGetOne()
+    public function testGetOne()
     {
     }
 }

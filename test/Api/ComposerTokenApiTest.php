@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,32 +71,32 @@ class ComposerTokenApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for composerTokenControllerDisable
+     * Test case for disable
      *
      * Disable a composer token.
      *
      */
-    public function testComposerTokenControllerDisable()
+    public function testDisable()
     {
     }
 
     /**
-     * Test case for composerTokenControllerGenerate
+     * Test case for generate
      *
      * Generates a Composer token.
      *
      */
-    public function testComposerTokenControllerGenerate()
+    public function testGenerate()
     {
     }
 
     /**
-     * Test case for composerTokenControllerRename
+     * Test case for rename
      *
      * Renames a Composer token.
      *
      */
-    public function testComposerTokenControllerRename()
+    public function testRename()
     {
     }
 }

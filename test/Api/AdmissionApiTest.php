@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,62 +71,62 @@ class AdmissionApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for admissionControllerChangeStudent
+     * Test case for changeStudent
      *
      * Update an admission.
      *
      */
-    public function testAdmissionControllerChangeStudent()
+    public function testChangeStudent()
     {
     }
 
     /**
-     * Test case for admissionControllerGetMany
+     * Test case for getMany
      *
      * Get admissions.
      *
      */
-    public function testAdmissionControllerGetMany()
+    public function testGetMany()
     {
     }
 
     /**
-     * Test case for admissionControllerGetManyPaged
+     * Test case for getManyPaged
      *
      * Get admissions.
      *
      */
-    public function testAdmissionControllerGetManyPaged()
+    public function testGetManyPaged()
     {
     }
 
     /**
-     * Test case for admissionControllerGetOne
+     * Test case for getOne
      *
      * Get an admission.
      *
      */
-    public function testAdmissionControllerGetOne()
+    public function testGetOne()
     {
     }
 
     /**
-     * Test case for admissionControllerInvite
+     * Test case for invite
      *
      * Invite a customer.
      *
      */
-    public function testAdmissionControllerInvite()
+    public function testInvite()
     {
     }
 
     /**
-     * Test case for admissionControllerTransferAdmissions
+     * Test case for transferAdmissions
      *
      * Transfer admissions between customers.
      *
      */
-    public function testAdmissionControllerTransferAdmissions()
+    public function testTransferAdmissions()
     {
     }
 }

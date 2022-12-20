@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class ProvisioningUsersApi
     }
 
     /**
-     * Operation provisioningUsersControllerScheduleDelete
+     * Operation scheduleDelete
      *
      * Schedule a delete for a subscription
      *
@@ -97,14 +97,14 @@ class ProvisioningUsersApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto
      */
-    public function provisioningUsersControllerScheduleDelete($body)
+    public function scheduleDelete($body)
     {
-        list($response) = $this->provisioningUsersControllerScheduleDeleteWithHttpInfo($body);
+        list($response) = $this->scheduleDeleteWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation provisioningUsersControllerScheduleDeleteWithHttpInfo
+     * Operation scheduleDeleteWithHttpInfo
      *
      * Schedule a delete for a subscription
      *
@@ -114,10 +114,10 @@ class ProvisioningUsersApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto, HTTP status code, HTTP response headers (array of strings)
      */
-    public function provisioningUsersControllerScheduleDeleteWithHttpInfo($body)
+    public function scheduleDeleteWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->provisioningUsersControllerScheduleDeleteRequest($body);
+        $request = $this->scheduleDeleteRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -179,7 +179,7 @@ class ProvisioningUsersApi
     }
 
     /**
-     * Operation provisioningUsersControllerScheduleDeleteAsync
+     * Operation scheduleDeleteAsync
      *
      * Schedule a delete for a subscription
      *
@@ -188,9 +188,9 @@ class ProvisioningUsersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisioningUsersControllerScheduleDeleteAsync($body)
+    public function scheduleDeleteAsync($body)
     {
-        return $this->provisioningUsersControllerScheduleDeleteAsyncWithHttpInfo($body)
+        return $this->scheduleDeleteAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,7 +199,7 @@ class ProvisioningUsersApi
     }
 
     /**
-     * Operation provisioningUsersControllerScheduleDeleteAsyncWithHttpInfo
+     * Operation scheduleDeleteAsyncWithHttpInfo
      *
      * Schedule a delete for a subscription
      *
@@ -208,10 +208,10 @@ class ProvisioningUsersApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisioningUsersControllerScheduleDeleteAsyncWithHttpInfo($body)
+    public function scheduleDeleteAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto';
-        $request = $this->provisioningUsersControllerScheduleDeleteRequest($body);
+        $request = $this->scheduleDeleteRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,19 +251,19 @@ class ProvisioningUsersApi
     }
 
     /**
-     * Create request for operation 'provisioningUsersControllerScheduleDelete'
+     * Create request for operation 'scheduleDelete'
      *
      * @param  \Yoast\MyYoastApiClient\Model\ScheduleDeleteUserDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function provisioningUsersControllerScheduleDeleteRequest($body)
+    protected function scheduleDeleteRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling provisioningUsersControllerScheduleDelete'
+                'Missing the required parameter $body when calling scheduleDelete'
             );
         }
 

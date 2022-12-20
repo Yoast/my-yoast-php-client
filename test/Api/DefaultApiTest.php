@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,142 +71,142 @@ class DefaultApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for accountsControllerSetTOTPTwoFactorConfig
+     * Test case for addAgency
      *
      * .
      *
      */
-    public function testAccountsControllerSetTOTPTwoFactorConfig()
+    public function testAddAgency()
     {
     }
 
     /**
-     * Test case for agencyControllerAddAgency
+     * Test case for addOwnerToAgency
      *
      * .
      *
      */
-    public function testAgencyControllerAddAgency()
+    public function testAddOwnerToAgency()
     {
     }
 
     /**
-     * Test case for agencyControllerAddOwnerToAgency
+     * Test case for createClient
      *
      * .
      *
      */
-    public function testAgencyControllerAddOwnerToAgency()
+    public function testCreateClient()
     {
     }
 
     /**
-     * Test case for agencyControllerDisconnectOwnerFromAgency
+     * Test case for createReview
      *
      * .
      *
      */
-    public function testAgencyControllerDisconnectOwnerFromAgency()
+    public function testCreateReview()
     {
     }
 
     /**
-     * Test case for agencyControllerGetAllAgenciesWithUsers
+     * Test case for disconnectOwnerFromAgency
      *
      * .
      *
      */
-    public function testAgencyControllerGetAllAgenciesWithUsers()
+    public function testDisconnectOwnerFromAgency()
     {
     }
 
     /**
-     * Test case for agencyControllerGetAllForCustomer
+     * Test case for getAllAgenciesWithUsers
      *
      * .
      *
      */
-    public function testAgencyControllerGetAllForCustomer()
+    public function testGetAllAgenciesWithUsers()
     {
     }
 
     /**
-     * Test case for agencyControllerGetById
+     * Test case for getAllForAgency
      *
      * .
      *
      */
-    public function testAgencyControllerGetById()
+    public function testGetAllForAgency()
     {
     }
 
     /**
-     * Test case for agencyControllerUpdateClientById
+     * Test case for getAllForCustomer
      *
      * .
      *
      */
-    public function testAgencyControllerUpdateClientById()
+    public function testGetAllForCustomer()
     {
     }
 
     /**
-     * Test case for clientControllerCreateClient
+     * Test case for getAllReviews
      *
      * .
      *
      */
-    public function testClientControllerCreateClient()
+    public function testGetAllReviews()
     {
     }
 
     /**
-     * Test case for clientControllerGetAllForAgency
+     * Test case for getById
      *
      * .
      *
      */
-    public function testClientControllerGetAllForAgency()
+    public function testGetById()
     {
     }
 
     /**
-     * Test case for clientControllerGetClientById
+     * Test case for getClientById
      *
      * .
      *
      */
-    public function testClientControllerGetClientById()
+    public function testGetClientById()
     {
     }
 
     /**
-     * Test case for clientControllerUpdateClientById
+     * Test case for setTOTPTwoFactorConfig
      *
      * .
      *
      */
-    public function testClientControllerUpdateClientById()
+    public function testSetTOTPTwoFactorConfig()
     {
     }
 
     /**
-     * Test case for reviewControllerCreateReview
+     * Test case for updateClientById
      *
      * .
      *
      */
-    public function testReviewControllerCreateReview()
+    public function testUpdateClientById()
     {
     }
 
     /**
-     * Test case for reviewControllerGetAllReviews
+     * Test case for updateClientById_0
      *
      * .
      *
      */
-    public function testReviewControllerGetAllReviews()
+    public function testUpdateClientById0()
     {
     }
 }

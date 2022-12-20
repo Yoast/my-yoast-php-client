@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -80,7 +80,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'http://my.yoast.test:3000/';
+    protected $host = 'http://my.yoast.test:3000';
 
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default

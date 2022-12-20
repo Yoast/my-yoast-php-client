@@ -1,14 +1,14 @@
 # Yoast\MyYoastApiClient\ExportOrdersApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**exportOrdersControllerExportOrders**](ExportOrdersApi.md#exportorderscontrollerexportorders) | **GET** /export-orders/{year}/{month}/{type} | Creates an export for orders
-[**exportOrdersControllerExportOrdersV2**](ExportOrdersApi.md#exportorderscontrollerexportordersv2) | **GET** /export-orders/v2/{from}/{to}/{type} | Creates an export for orders
+[**exportOrders**](ExportOrdersApi.md#exportorders) | **GET** /export-orders/{year}/{month}/{type} | Creates an export for orders
+[**exportOrdersV2**](ExportOrdersApi.md#exportordersv2) | **GET** /export-orders/v2/{from}/{to}/{type} | Creates an export for orders
 
-# **exportOrdersControllerExportOrders**
-> \Yoast\MyYoastApiClient\Model\ exportOrdersControllerExportOrders($year, $month, $type, $password)
+# **exportOrders**
+> \Yoast\MyYoastApiClient\Model\ exportOrders($year, $month, $type, $password)
 
 Creates an export for orders
 
@@ -30,10 +30,10 @@ $type = "type_example"; // string |
 $password = "password_example"; // string | 
 
 try {
-    $result = $apiInstance->exportOrdersControllerExportOrders($year, $month, $type, $password);
+    $result = $apiInstance->exportOrders($year, $month, $type, $password);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ExportOrdersApi->exportOrdersControllerExportOrders: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ExportOrdersApi->exportOrders: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -62,8 +62,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **exportOrdersControllerExportOrdersV2**
-> \Yoast\MyYoastApiClient\Model\ exportOrdersControllerExportOrdersV2($from, $to, $type, $password)
+# **exportOrdersV2**
+> \Yoast\MyYoastApiClient\Model\ exportOrdersV2($from, $to, $type, $password)
 
 Creates an export for orders
 
@@ -85,10 +85,10 @@ $type = "type_example"; // string |
 $password = "password_example"; // string | 
 
 try {
-    $result = $apiInstance->exportOrdersControllerExportOrdersV2($from, $to, $type, $password);
+    $result = $apiInstance->exportOrdersV2($from, $to, $type, $password);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ExportOrdersApi->exportOrdersControllerExportOrdersV2: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ExportOrdersApi->exportOrdersV2: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

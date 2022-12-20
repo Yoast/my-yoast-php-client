@@ -1,16 +1,16 @@
 # Yoast\MyYoastApiClient\ProductApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**productControllerDeleteOne**](ProductApi.md#productcontrollerdeleteone) | **DELETE** /api/Products/{productId} | 
-[**productControllerGetMany**](ProductApi.md#productcontrollergetmany) | **GET** /api/Products | Get products
-[**productControllerGetOne**](ProductApi.md#productcontrollergetone) | **GET** /api/Products/{id} | Get a product
-[**productControllerPluginVersionDetails**](ProductApi.md#productcontrollerpluginversiondetails) | **GET** /api/Products/wordpressPluginVersionDetails | 
+[**deleteOne**](ProductApi.md#deleteone) | **DELETE** /api/Products/{productId} | 
+[**getMany**](ProductApi.md#getmany) | **GET** /api/Products | Get products
+[**getOne**](ProductApi.md#getone) | **GET** /api/Products/{id} | Get a product
+[**pluginVersionDetails**](ProductApi.md#pluginversiondetails) | **GET** /api/Products/wordpressPluginVersionDetails | 
 
-# **productControllerDeleteOne**
-> productControllerDeleteOne($id)
+# **deleteOne**
+> deleteOne($id)
 
 
 
@@ -27,9 +27,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $apiInstance->productControllerDeleteOne($id);
+    $apiInstance->deleteOne($id);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productControllerDeleteOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->deleteOne: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -55,8 +55,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productControllerGetMany**
-> \Yoast\MyYoastApiClient\Model\Product[] productControllerGetMany($filter)
+# **getMany**
+> \Yoast\MyYoastApiClient\Model\Product[] getMany($filter)
 
 Get products
 
@@ -75,10 +75,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->productControllerGetMany($filter);
+    $result = $apiInstance->getMany($filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productControllerGetMany: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->getMany: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -104,8 +104,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productControllerGetOne**
-> \Yoast\MyYoastApiClient\Model\Product productControllerGetOne($id, $filter)
+# **getOne**
+> \Yoast\MyYoastApiClient\Model\Product getOne($id, $filter)
 
 Get a product
 
@@ -125,10 +125,10 @@ $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string |
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->productControllerGetOne($id, $filter);
+    $result = $apiInstance->getOne($id, $filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productControllerGetOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->getOne: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -155,8 +155,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **productControllerPluginVersionDetails**
-> productControllerPluginVersionDetails($password)
+# **pluginVersionDetails**
+> pluginVersionDetails($password)
 
 
 
@@ -173,9 +173,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProductApi(
 $password = "password_example"; // string | 
 
 try {
-    $apiInstance->productControllerPluginVersionDetails($password);
+    $apiInstance->pluginVersionDetails($password);
 } catch (Exception $e) {
-    echo 'Exception when calling ProductApi->productControllerPluginVersionDetails: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProductApi->pluginVersionDetails: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

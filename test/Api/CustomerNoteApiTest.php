@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,42 +71,42 @@ class CustomerNoteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for customerNoteControllerCreateOne
+     * Test case for createOne
      *
      * .
      *
      */
-    public function testCustomerNoteControllerCreateOne()
+    public function testCreateOne()
     {
     }
 
     /**
-     * Test case for customerNoteControllerDeleteOne
+     * Test case for deleteOne
      *
      * .
      *
      */
-    public function testCustomerNoteControllerDeleteOne()
+    public function testDeleteOne()
     {
     }
 
     /**
-     * Test case for customerNoteControllerGetMany
+     * Test case for getMany
      *
      * Get customer notes.
      *
      */
-    public function testCustomerNoteControllerGetMany()
+    public function testGetMany()
     {
     }
 
     /**
-     * Test case for customerNoteControllerGetOne
+     * Test case for getOne
      *
      * Get a customer note.
      *
      */
-    public function testCustomerNoteControllerGetOne()
+    public function testGetOne()
     {
     }
 }

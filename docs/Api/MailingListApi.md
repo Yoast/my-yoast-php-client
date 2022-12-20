@@ -1,24 +1,24 @@
 # Yoast\MyYoastApiClient\MailingListApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**mailingListControllerCheckGetRoute**](MailingListApi.md#mailinglistcontrollercheckgetroute) | **GET** /api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | 
-[**mailingListControllerGetStatus**](MailingListApi.md#mailinglistcontrollergetstatus) | **GET** /api/Mailing-list/status | Get the subscription status.
-[**mailingListControllerIsSubscribedToNewsletter**](MailingListApi.md#mailinglistcontrollerissubscribedtonewsletter) | **GET** /api/Mailing-list/isSubscribedToNewsletter | Get the subscription status.
-[**mailingListControllerMailChimpWebhook**](MailingListApi.md#mailinglistcontrollermailchimpwebhook) | **POST** /api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | Entry point for the mailchimp webhooks
-[**mailingListControllerMailblueWebhook**](MailingListApi.md#mailinglistcontrollermailbluewebhook) | **POST** /api/Mailing-list/newsletter/wALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJV | Entry point for the mailblue webhooks
-[**mailingListControllerRemoveContactCustomField**](MailingListApi.md#mailinglistcontrollerremovecontactcustomfield) | **DELETE** /api/Mailing-list/fieldValue | Delete contact tags and/or fields.
-[**mailingListControllerSetContactCustomField**](MailingListApi.md#mailinglistcontrollersetcontactcustomfield) | **POST** /api/Mailing-list/fieldValue | Update contact tags and/or fields.
-[**mailingListControllerSetContactTag**](MailingListApi.md#mailinglistcontrollersetcontacttag) | **POST** /api/Mailing-list/contactTag | Update contact tags and/or fields.
-[**mailingListControllerSubscribe**](MailingListApi.md#mailinglistcontrollersubscribe) | **POST** /api/Mailing-list/subscribe | Subscribe contact to a mailing list.
-[**mailingListControllerSubscribeToNewsletter**](MailingListApi.md#mailinglistcontrollersubscribetonewsletter) | **POST** /api/Mailing-list/subscribeToNewsletter | Subscribe contact to the newsletter.
-[**mailingListControllerUnsubscribe**](MailingListApi.md#mailinglistcontrollerunsubscribe) | **POST** /api/Mailing-list/unsubscribe | Unsubscribe to a mailing list.
-[**mailingListControllerUnsubscribeFromNewsletter**](MailingListApi.md#mailinglistcontrollerunsubscribefromnewsletter) | **POST** /api/Mailing-list/unsubscribeFromNewsletter | Unsubscribe to a mailing list.
+[**checkGetRoute**](MailingListApi.md#checkgetroute) | **GET** /api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | 
+[**getStatus**](MailingListApi.md#getstatus) | **GET** /api/Mailing-list/status | Get the subscription status.
+[**isSubscribedToNewsletter**](MailingListApi.md#issubscribedtonewsletter) | **GET** /api/Mailing-list/isSubscribedToNewsletter | Get the subscription status.
+[**mailChimpWebhook**](MailingListApi.md#mailchimpwebhook) | **POST** /api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | Entry point for the mailchimp webhooks
+[**mailblueWebhook**](MailingListApi.md#mailbluewebhook) | **POST** /api/Mailing-list/newsletter/wALazNYUBfqZIeUDiqyzETbLdbkODeTCjKokMKcbJV | Entry point for the mailblue webhooks
+[**removeContactCustomField**](MailingListApi.md#removecontactcustomfield) | **DELETE** /api/Mailing-list/fieldValue | Delete contact tags and/or fields.
+[**setContactCustomField**](MailingListApi.md#setcontactcustomfield) | **POST** /api/Mailing-list/fieldValue | Update contact tags and/or fields.
+[**setContactTag**](MailingListApi.md#setcontacttag) | **POST** /api/Mailing-list/contactTag | Update contact tags and/or fields.
+[**subscribe**](MailingListApi.md#subscribe) | **POST** /api/Mailing-list/subscribe | Subscribe contact to a mailing list.
+[**subscribeToNewsletter**](MailingListApi.md#subscribetonewsletter) | **POST** /api/Mailing-list/subscribeToNewsletter | Subscribe contact to the newsletter.
+[**unsubscribe**](MailingListApi.md#unsubscribe) | **POST** /api/Mailing-list/unsubscribe | Unsubscribe to a mailing list.
+[**unsubscribeFromNewsletter**](MailingListApi.md#unsubscribefromnewsletter) | **POST** /api/Mailing-list/unsubscribeFromNewsletter | Unsubscribe to a mailing list.
 
-# **mailingListControllerCheckGetRoute**
-> mailingListControllerCheckGetRoute()
+# **checkGetRoute**
+> checkGetRoute()
 
 
 
@@ -34,9 +34,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
 );
 
 try {
-    $apiInstance->mailingListControllerCheckGetRoute();
+    $apiInstance->checkGetRoute();
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerCheckGetRoute: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->checkGetRoute: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -59,8 +59,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **mailingListControllerGetStatus**
-> mailingListControllerGetStatus($email, $list)
+# **getStatus**
+> getStatus($email, $list)
 
 Get the subscription status.
 
@@ -80,9 +80,9 @@ $email = "email_example"; // string |
 $list = "list_example"; // string | 
 
 try {
-    $apiInstance->mailingListControllerGetStatus($email, $list);
+    $apiInstance->getStatus($email, $list);
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerGetStatus: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->getStatus: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -109,8 +109,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **mailingListControllerIsSubscribedToNewsletter**
-> mailingListControllerIsSubscribedToNewsletter($email)
+# **isSubscribedToNewsletter**
+> isSubscribedToNewsletter($email)
 
 Get the subscription status.
 
@@ -129,9 +129,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
 $email = "email_example"; // string | 
 
 try {
-    $apiInstance->mailingListControllerIsSubscribedToNewsletter($email);
+    $apiInstance->isSubscribedToNewsletter($email);
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerIsSubscribedToNewsletter: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->isSubscribedToNewsletter: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -157,8 +157,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **mailingListControllerMailChimpWebhook**
-> mailingListControllerMailChimpWebhook()
+# **mailChimpWebhook**
+> mailChimpWebhook()
 
 Entry point for the mailchimp webhooks
 
@@ -176,9 +176,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
 );
 
 try {
-    $apiInstance->mailingListControllerMailChimpWebhook();
+    $apiInstance->mailChimpWebhook();
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerMailChimpWebhook: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->mailChimpWebhook: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -201,8 +201,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **mailingListControllerMailblueWebhook**
-> mailingListControllerMailblueWebhook()
+# **mailblueWebhook**
+> mailblueWebhook()
 
 Entry point for the mailblue webhooks
 
@@ -220,9 +220,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
 );
 
 try {
-    $apiInstance->mailingListControllerMailblueWebhook();
+    $apiInstance->mailblueWebhook();
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerMailblueWebhook: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->mailblueWebhook: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -245,8 +245,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **mailingListControllerRemoveContactCustomField**
-> mailingListControllerRemoveContactCustomField($body)
+# **removeContactCustomField**
+> removeContactCustomField($body)
 
 Delete contact tags and/or fields.
 
@@ -265,9 +265,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
 $body = new \Yoast\MyYoastApiClient\Model\FieldValueDto(); // \Yoast\MyYoastApiClient\Model\FieldValueDto | 
 
 try {
-    $apiInstance->mailingListControllerRemoveContactCustomField($body);
+    $apiInstance->removeContactCustomField($body);
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerRemoveContactCustomField: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->removeContactCustomField: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -293,8 +293,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **mailingListControllerSetContactCustomField**
-> mailingListControllerSetContactCustomField($body)
+# **setContactCustomField**
+> setContactCustomField($body)
 
 Update contact tags and/or fields.
 
@@ -313,9 +313,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
 $body = new \Yoast\MyYoastApiClient\Model\FieldValueDto(); // \Yoast\MyYoastApiClient\Model\FieldValueDto | 
 
 try {
-    $apiInstance->mailingListControllerSetContactCustomField($body);
+    $apiInstance->setContactCustomField($body);
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerSetContactCustomField: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->setContactCustomField: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -341,8 +341,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **mailingListControllerSetContactTag**
-> mailingListControllerSetContactTag($body)
+# **setContactTag**
+> setContactTag($body)
 
 Update contact tags and/or fields.
 
@@ -361,9 +361,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
 $body = new \Yoast\MyYoastApiClient\Model\TagDto(); // \Yoast\MyYoastApiClient\Model\TagDto | 
 
 try {
-    $apiInstance->mailingListControllerSetContactTag($body);
+    $apiInstance->setContactTag($body);
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerSetContactTag: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->setContactTag: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -389,8 +389,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **mailingListControllerSubscribe**
-> mailingListControllerSubscribe($body)
+# **subscribe**
+> subscribe($body)
 
 Subscribe contact to a mailing list.
 
@@ -409,9 +409,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
 $body = new \Yoast\MyYoastApiClient\Model\SubscribeDto(); // \Yoast\MyYoastApiClient\Model\SubscribeDto | 
 
 try {
-    $apiInstance->mailingListControllerSubscribe($body);
+    $apiInstance->subscribe($body);
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerSubscribe: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->subscribe: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -437,8 +437,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **mailingListControllerSubscribeToNewsletter**
-> mailingListControllerSubscribeToNewsletter()
+# **subscribeToNewsletter**
+> subscribeToNewsletter()
 
 Subscribe contact to the newsletter.
 
@@ -456,9 +456,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
 );
 
 try {
-    $apiInstance->mailingListControllerSubscribeToNewsletter();
+    $apiInstance->subscribeToNewsletter();
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerSubscribeToNewsletter: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->subscribeToNewsletter: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -481,8 +481,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **mailingListControllerUnsubscribe**
-> mailingListControllerUnsubscribe($body)
+# **unsubscribe**
+> unsubscribe($body)
 
 Unsubscribe to a mailing list.
 
@@ -501,9 +501,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
 $body = new \Yoast\MyYoastApiClient\Model\UnsubscribeDto(); // \Yoast\MyYoastApiClient\Model\UnsubscribeDto | 
 
 try {
-    $apiInstance->mailingListControllerUnsubscribe($body);
+    $apiInstance->unsubscribe($body);
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerUnsubscribe: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->unsubscribe: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -529,8 +529,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **mailingListControllerUnsubscribeFromNewsletter**
-> mailingListControllerUnsubscribeFromNewsletter()
+# **unsubscribeFromNewsletter**
+> unsubscribeFromNewsletter()
 
 Unsubscribe to a mailing list.
 
@@ -548,9 +548,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\MailingListApi(
 );
 
 try {
-    $apiInstance->mailingListControllerUnsubscribeFromNewsletter();
+    $apiInstance->unsubscribeFromNewsletter();
 } catch (Exception $e) {
-    echo 'Exception when calling MailingListApi->mailingListControllerUnsubscribeFromNewsletter: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MailingListApi->unsubscribeFromNewsletter: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

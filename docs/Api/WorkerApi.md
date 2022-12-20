@@ -1,19 +1,19 @@
 # Yoast\MyYoastApiClient\WorkerApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**queueControllerAddJob**](WorkerApi.md#queuecontrolleraddjob) | **POST** /api/Worker/job | 
-[**queueControllerGetJob**](WorkerApi.md#queuecontrollergetjob) | **GET** /api/Worker/job/{id} | 
-[**queueControllerGetRecurringJobs**](WorkerApi.md#queuecontrollergetrecurringjobs) | **GET** /api/Worker/getRecurringJobs | 
-[**queueControllerGetRecurringJobsInfo**](WorkerApi.md#queuecontrollergetrecurringjobsinfo) | **GET** /api/Worker/getRecurringJobs/{name} | 
-[**queueControllerGetScheduledJobs**](WorkerApi.md#queuecontrollergetscheduledjobs) | **GET** /api/Worker/getScheduledJobs/{name} | 
-[**queueControllerRemoveAllJobsWithName**](WorkerApi.md#queuecontrollerremovealljobswithname) | **DELETE** /api/Worker/jobsByName/{name} | 
-[**queueControllerRemoveJob**](WorkerApi.md#queuecontrollerremovejob) | **DELETE** /api/Worker/job/{id} | 
+[**addJob**](WorkerApi.md#addjob) | **POST** /api/Worker/job | 
+[**getJob**](WorkerApi.md#getjob) | **GET** /api/Worker/job/{id} | 
+[**getRecurringJobs**](WorkerApi.md#getrecurringjobs) | **GET** /api/Worker/getRecurringJobs | 
+[**getRecurringJobsInfo**](WorkerApi.md#getrecurringjobsinfo) | **GET** /api/Worker/getRecurringJobs/{name} | 
+[**getScheduledJobs**](WorkerApi.md#getscheduledjobs) | **GET** /api/Worker/getScheduledJobs/{name} | 
+[**removeAllJobsWithName**](WorkerApi.md#removealljobswithname) | **DELETE** /api/Worker/jobsByName/{name} | 
+[**removeJob**](WorkerApi.md#removejob) | **DELETE** /api/Worker/job/{id} | 
 
-# **queueControllerAddJob**
-> queueControllerAddJob($body)
+# **addJob**
+> addJob($body)
 
 
 
@@ -21,23 +21,18 @@ Method | HTTP request | Description
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\WorkerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $body = new \Yoast\MyYoastApiClient\Model\AddJobDto(); // \Yoast\MyYoastApiClient\Model\AddJobDto | 
 
 try {
-    $apiInstance->queueControllerAddJob($body);
+    $apiInstance->addJob($body);
 } catch (Exception $e) {
-    echo 'Exception when calling WorkerApi->queueControllerAddJob: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WorkerApi->addJob: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -54,7 +49,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -63,8 +58,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **queueControllerGetJob**
-> queueControllerGetJob($id)
+# **getJob**
+> getJob($id)
 
 
 
@@ -72,23 +67,18 @@ void (empty response body)
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\WorkerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | 
 
 try {
-    $apiInstance->queueControllerGetJob($id);
+    $apiInstance->getJob($id);
 } catch (Exception $e) {
-    echo 'Exception when calling WorkerApi->queueControllerGetJob: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WorkerApi->getJob: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -105,7 +95,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -114,8 +104,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **queueControllerGetRecurringJobs**
-> queueControllerGetRecurringJobs()
+# **getRecurringJobs**
+> getRecurringJobs()
 
 
 
@@ -123,22 +113,17 @@ void (empty response body)
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\WorkerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 
 try {
-    $apiInstance->queueControllerGetRecurringJobs();
+    $apiInstance->getRecurringJobs();
 } catch (Exception $e) {
-    echo 'Exception when calling WorkerApi->queueControllerGetRecurringJobs: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WorkerApi->getRecurringJobs: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -152,7 +137,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -161,8 +146,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **queueControllerGetRecurringJobsInfo**
-> queueControllerGetRecurringJobsInfo($name)
+# **getRecurringJobsInfo**
+> getRecurringJobsInfo($name)
 
 
 
@@ -170,23 +155,18 @@ void (empty response body)
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\WorkerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $name = "name_example"; // string | 
 
 try {
-    $apiInstance->queueControllerGetRecurringJobsInfo($name);
+    $apiInstance->getRecurringJobsInfo($name);
 } catch (Exception $e) {
-    echo 'Exception when calling WorkerApi->queueControllerGetRecurringJobsInfo: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WorkerApi->getRecurringJobsInfo: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -203,7 +183,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -212,8 +192,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **queueControllerGetScheduledJobs**
-> queueControllerGetScheduledJobs($name)
+# **getScheduledJobs**
+> getScheduledJobs($name)
 
 
 
@@ -221,23 +201,18 @@ void (empty response body)
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\WorkerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $name = "name_example"; // string | 
 
 try {
-    $apiInstance->queueControllerGetScheduledJobs($name);
+    $apiInstance->getScheduledJobs($name);
 } catch (Exception $e) {
-    echo 'Exception when calling WorkerApi->queueControllerGetScheduledJobs: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WorkerApi->getScheduledJobs: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -254,7 +229,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -263,8 +238,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **queueControllerRemoveAllJobsWithName**
-> queueControllerRemoveAllJobsWithName($name)
+# **removeAllJobsWithName**
+> removeAllJobsWithName($name)
 
 
 
@@ -272,23 +247,18 @@ void (empty response body)
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\WorkerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $name = "name_example"; // string | 
 
 try {
-    $apiInstance->queueControllerRemoveAllJobsWithName($name);
+    $apiInstance->removeAllJobsWithName($name);
 } catch (Exception $e) {
-    echo 'Exception when calling WorkerApi->queueControllerRemoveAllJobsWithName: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WorkerApi->removeAllJobsWithName: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -305,7 +275,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -314,8 +284,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **queueControllerRemoveJob**
-> queueControllerRemoveJob($id)
+# **removeJob**
+> removeJob($id)
 
 
 
@@ -323,23 +293,18 @@ void (empty response body)
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\WorkerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $id = "id_example"; // string | 
 
 try {
-    $apiInstance->queueControllerRemoveJob($id);
+    $apiInstance->removeJob($id);
 } catch (Exception $e) {
-    echo 'Exception when calling WorkerApi->queueControllerRemoveJob: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WorkerApi->removeJob: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -356,7 +321,7 @@ void (empty response body)
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 

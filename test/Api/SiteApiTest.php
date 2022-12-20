@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,142 +71,142 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for siteControllerCurrent
-     *
-     * Get the current connected site for an access token..
-     *
-     */
-    public function testSiteControllerCurrent()
-    {
-    }
-
-    /**
-     * Test case for siteControllerCurrentClone
-     *
-     * Get the current connected site for an access token..
-     *
-     */
-    public function testSiteControllerCurrentClone()
-    {
-    }
-
-    /**
-     * Test case for siteControllerDeleteOne
-     *
-     * .
-     *
-     */
-    public function testSiteControllerDeleteOne()
-    {
-    }
-
-    /**
-     * Test case for siteControllerGetMany
-     *
-     * Get sites.
-     *
-     */
-    public function testSiteControllerGetMany()
-    {
-    }
-
-    /**
-     * Test case for siteControllerGetManyPaged
-     *
-     * Get sites.
-     *
-     */
-    public function testSiteControllerGetManyPaged()
-    {
-    }
-
-    /**
-     * Test case for siteControllerGetOne
-     *
-     * Get a site.
-     *
-     */
-    public function testSiteControllerGetOne()
-    {
-    }
-
-    /**
-     * Test case for siteControllerGetSiteStatus
-     *
-     * Get a url's HTTP status.
-     *
-     */
-    public function testSiteControllerGetSiteStatus()
-    {
-    }
-
-    /**
-     * Test case for siteControllerIndex
-     *
-     * .
-     *
-     */
-    public function testSiteControllerIndex()
-    {
-    }
-
-    /**
-     * Test case for siteControllerSwitchSubscription
-     *
-     * Switches the subscription for a number of times..
-     *
-     */
-    public function testSiteControllerSwitchSubscription()
-    {
-    }
-
-    /**
-     * Test case for siteControllerSwitchSubscriptionNumberOfTimes
-     *
-     * Switches the subscription for a number of times..
-     *
-     */
-    public function testSiteControllerSwitchSubscriptionNumberOfTimes()
-    {
-    }
-
-    /**
-     * Test case for siteControllerUpdateOne
-     *
-     * .
-     *
-     */
-    public function testSiteControllerUpdateOne()
-    {
-    }
-
-    /**
-     * Test case for siteControllerUpdateSiteUrl
-     *
-     * .
-     *
-     */
-    public function testSiteControllerUpdateSiteUrl()
-    {
-    }
-
-    /**
-     * Test case for siteSubscriptionControllerAddSubscription
+     * Test case for addSubscription
      *
      * Adds a subscription to a site.
      *
      */
-    public function testSiteSubscriptionControllerAddSubscription()
+    public function testAddSubscription()
     {
     }
 
     /**
-     * Test case for siteSubscriptionControllerRemoveSubscription
+     * Test case for current
+     *
+     * Get the current connected site for an access token..
+     *
+     */
+    public function testCurrent()
+    {
+    }
+
+    /**
+     * Test case for currentClone
+     *
+     * Get the current connected site for an access token..
+     *
+     */
+    public function testCurrentClone()
+    {
+    }
+
+    /**
+     * Test case for deleteOne
+     *
+     * .
+     *
+     */
+    public function testDeleteOne()
+    {
+    }
+
+    /**
+     * Test case for getMany
+     *
+     * Get sites.
+     *
+     */
+    public function testGetMany()
+    {
+    }
+
+    /**
+     * Test case for getManyPaged
+     *
+     * Get sites.
+     *
+     */
+    public function testGetManyPaged()
+    {
+    }
+
+    /**
+     * Test case for getOne
+     *
+     * Get a site.
+     *
+     */
+    public function testGetOne()
+    {
+    }
+
+    /**
+     * Test case for getSiteStatus
+     *
+     * Get a url's HTTP status.
+     *
+     */
+    public function testGetSiteStatus()
+    {
+    }
+
+    /**
+     * Test case for index
+     *
+     * .
+     *
+     */
+    public function testIndex()
+    {
+    }
+
+    /**
+     * Test case for removeSubscription
      *
      * Removes a subscription from a site.
      *
      */
-    public function testSiteSubscriptionControllerRemoveSubscription()
+    public function testRemoveSubscription()
+    {
+    }
+
+    /**
+     * Test case for switchSubscription
+     *
+     * Switches the subscription for a number of times..
+     *
+     */
+    public function testSwitchSubscription()
+    {
+    }
+
+    /**
+     * Test case for switchSubscriptionNumberOfTimes
+     *
+     * Switches the subscription for a number of times..
+     *
+     */
+    public function testSwitchSubscriptionNumberOfTimes()
+    {
+    }
+
+    /**
+     * Test case for updateOne
+     *
+     * .
+     *
+     */
+    public function testUpdateOne()
+    {
+    }
+
+    /**
+     * Test case for updateSiteUrl
+     *
+     * .
+     *
+     */
+    public function testUpdateSiteUrl()
     {
     }
 }

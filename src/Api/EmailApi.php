@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class EmailApi
     }
 
     /**
-     * Operation emailControllerSendEmails
+     * Operation sendEmails
      *
      * @param  \Yoast\MyYoastApiClient\Model\BulkSendEmailDto $body body (required)
      *
@@ -95,14 +95,14 @@ class EmailApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\
      */
-    public function emailControllerSendEmails($body)
+    public function sendEmails($body)
     {
-        list($response) = $this->emailControllerSendEmailsWithHttpInfo($body);
+        list($response) = $this->sendEmailsWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation emailControllerSendEmailsWithHttpInfo
+     * Operation sendEmailsWithHttpInfo
      *
      * @param  \Yoast\MyYoastApiClient\Model\BulkSendEmailDto $body (required)
      *
@@ -110,10 +110,10 @@ class EmailApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\, HTTP status code, HTTP response headers (array of strings)
      */
-    public function emailControllerSendEmailsWithHttpInfo($body)
+    public function sendEmailsWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->emailControllerSendEmailsRequest($body);
+        $request = $this->sendEmailsRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -175,7 +175,7 @@ class EmailApi
     }
 
     /**
-     * Operation emailControllerSendEmailsAsync
+     * Operation sendEmailsAsync
      *
      * 
      *
@@ -184,9 +184,9 @@ class EmailApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function emailControllerSendEmailsAsync($body)
+    public function sendEmailsAsync($body)
     {
-        return $this->emailControllerSendEmailsAsyncWithHttpInfo($body)
+        return $this->sendEmailsAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -195,7 +195,7 @@ class EmailApi
     }
 
     /**
-     * Operation emailControllerSendEmailsAsyncWithHttpInfo
+     * Operation sendEmailsAsyncWithHttpInfo
      *
      * 
      *
@@ -204,10 +204,10 @@ class EmailApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function emailControllerSendEmailsAsyncWithHttpInfo($body)
+    public function sendEmailsAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\';
-        $request = $this->emailControllerSendEmailsRequest($body);
+        $request = $this->sendEmailsRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -247,19 +247,19 @@ class EmailApi
     }
 
     /**
-     * Create request for operation 'emailControllerSendEmails'
+     * Create request for operation 'sendEmails'
      *
      * @param  \Yoast\MyYoastApiClient\Model\BulkSendEmailDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function emailControllerSendEmailsRequest($body)
+    protected function sendEmailsRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling emailControllerSendEmails'
+                'Missing the required parameter $body when calling sendEmails'
             );
         }
 
@@ -318,10 +318,6 @@ class EmailApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

@@ -1,13 +1,13 @@
 # Yoast\MyYoastApiClient\HelpscoutApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**helpScoutControllerHelpscout**](HelpscoutApi.md#helpscoutcontrollerhelpscout) | **POST** /helpscout | Get information about a customer
+[**helpscout**](HelpscoutApi.md#helpscout) | **POST** /helpscout | Get information about a customer
 
-# **helpScoutControllerHelpscout**
-> \Yoast\MyYoastApiClient\Model\ helpScoutControllerHelpscout($body, $xHelpScoutSignature)
+# **helpscout**
+> \Yoast\MyYoastApiClient\Model\ helpscout($body, $xHelpScoutSignature)
 
 Get information about a customer
 
@@ -27,10 +27,10 @@ $body = new \Yoast\MyYoastApiClient\Model\HelpScoutDto(); // \Yoast\MyYoastApiCl
 $xHelpScoutSignature = "xHelpScoutSignature_example"; // string | The Helpscout signature
 
 try {
-    $result = $apiInstance->helpScoutControllerHelpscout($body, $xHelpScoutSignature);
+    $result = $apiInstance->helpscout($body, $xHelpScoutSignature);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HelpscoutApi->helpScoutControllerHelpscout: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HelpscoutApi->helpscout: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

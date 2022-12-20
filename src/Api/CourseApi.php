@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseControllerFromAcademy
+     * Operation fromAcademy
      *
      * Upserts a course
      *
@@ -97,14 +97,14 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Course
      */
-    public function courseControllerFromAcademy($body)
+    public function fromAcademy($body)
     {
-        list($response) = $this->courseControllerFromAcademyWithHttpInfo($body);
+        list($response) = $this->fromAcademyWithHttpInfo($body);
         return $response;
     }
 
     /**
-     * Operation courseControllerFromAcademyWithHttpInfo
+     * Operation fromAcademyWithHttpInfo
      *
      * Upserts a course
      *
@@ -114,10 +114,10 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Course, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseControllerFromAcademyWithHttpInfo($body)
+    public function fromAcademyWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Course';
-        $request = $this->courseControllerFromAcademyRequest($body);
+        $request = $this->fromAcademyRequest($body);
 
         try {
             $options = $this->createHttpClientOption();
@@ -179,7 +179,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseControllerFromAcademyAsync
+     * Operation fromAcademyAsync
      *
      * Upserts a course
      *
@@ -188,9 +188,9 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseControllerFromAcademyAsync($body)
+    public function fromAcademyAsync($body)
     {
-        return $this->courseControllerFromAcademyAsyncWithHttpInfo($body)
+        return $this->fromAcademyAsyncWithHttpInfo($body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,7 +199,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseControllerFromAcademyAsyncWithHttpInfo
+     * Operation fromAcademyAsyncWithHttpInfo
      *
      * Upserts a course
      *
@@ -208,10 +208,10 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseControllerFromAcademyAsyncWithHttpInfo($body)
+    public function fromAcademyAsyncWithHttpInfo($body)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Course';
-        $request = $this->courseControllerFromAcademyRequest($body);
+        $request = $this->fromAcademyRequest($body);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,19 +251,19 @@ class CourseApi
     }
 
     /**
-     * Create request for operation 'courseControllerFromAcademy'
+     * Create request for operation 'fromAcademy'
      *
      * @param  \Yoast\MyYoastApiClient\Model\FromAcademyDto $body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function courseControllerFromAcademyRequest($body)
+    protected function fromAcademyRequest($body)
     {
         // verify the required parameter 'body' is set
         if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling courseControllerFromAcademy'
+                'Missing the required parameter $body when calling fromAcademy'
             );
         }
 
@@ -322,10 +322,6 @@ class CourseApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -348,7 +344,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseControllerGetMany
+     * Operation getMany
      *
      * Get courses
      *
@@ -358,14 +354,14 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\Course[]
      */
-    public function courseControllerGetMany($filter = null)
+    public function getMany($filter = null)
     {
-        list($response) = $this->courseControllerGetManyWithHttpInfo($filter);
+        list($response) = $this->getManyWithHttpInfo($filter);
         return $response;
     }
 
     /**
-     * Operation courseControllerGetManyWithHttpInfo
+     * Operation getManyWithHttpInfo
      *
      * Get courses
      *
@@ -375,10 +371,10 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\Course[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseControllerGetManyWithHttpInfo($filter = null)
+    public function getManyWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Course[]';
-        $request = $this->courseControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         try {
             $options = $this->createHttpClientOption();
@@ -440,7 +436,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseControllerGetManyAsync
+     * Operation getManyAsync
      *
      * Get courses
      *
@@ -449,9 +445,9 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseControllerGetManyAsync($filter = null)
+    public function getManyAsync($filter = null)
     {
-        return $this->courseControllerGetManyAsyncWithHttpInfo($filter)
+        return $this->getManyAsyncWithHttpInfo($filter)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -460,7 +456,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseControllerGetManyAsyncWithHttpInfo
+     * Operation getManyAsyncWithHttpInfo
      *
      * Get courses
      *
@@ -469,10 +465,10 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseControllerGetManyAsyncWithHttpInfo($filter = null)
+    public function getManyAsyncWithHttpInfo($filter = null)
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\Course[]';
-        $request = $this->courseControllerGetManyRequest($filter);
+        $request = $this->getManyRequest($filter);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -512,14 +508,14 @@ class CourseApi
     }
 
     /**
-     * Create request for operation 'courseControllerGetMany'
+     * Create request for operation 'getMany'
      *
      * @param  object $filter Used for filtering/joining the results. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function courseControllerGetManyRequest($filter = null)
+    protected function getManyRequest($filter = null)
     {
 
         $resourcePath = '/api/Courses';
@@ -578,10 +574,6 @@ class CourseApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {
@@ -604,7 +596,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseControllerGetOne
+     * Operation getOne
      *
      * @param  string $id id (required)
      *
@@ -612,13 +604,13 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function courseControllerGetOne($id)
+    public function getOne($id)
     {
-        $this->courseControllerGetOneWithHttpInfo($id);
+        $this->getOneWithHttpInfo($id);
     }
 
     /**
-     * Operation courseControllerGetOneWithHttpInfo
+     * Operation getOneWithHttpInfo
      *
      * @param  string $id (required)
      *
@@ -626,10 +618,10 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function courseControllerGetOneWithHttpInfo($id)
+    public function getOneWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->courseControllerGetOneRequest($id);
+        $request = $this->getOneRequest($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -669,7 +661,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseControllerGetOneAsync
+     * Operation getOneAsync
      *
      * 
      *
@@ -678,9 +670,9 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseControllerGetOneAsync($id)
+    public function getOneAsync($id)
     {
-        return $this->courseControllerGetOneAsyncWithHttpInfo($id)
+        return $this->getOneAsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -689,7 +681,7 @@ class CourseApi
     }
 
     /**
-     * Operation courseControllerGetOneAsyncWithHttpInfo
+     * Operation getOneAsyncWithHttpInfo
      *
      * 
      *
@@ -698,10 +690,10 @@ class CourseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function courseControllerGetOneAsyncWithHttpInfo($id)
+    public function getOneAsyncWithHttpInfo($id)
     {
         $returnType = '';
-        $request = $this->courseControllerGetOneRequest($id);
+        $request = $this->getOneRequest($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -727,19 +719,19 @@ class CourseApi
     }
 
     /**
-     * Create request for operation 'courseControllerGetOne'
+     * Create request for operation 'getOne'
      *
      * @param  string $id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function courseControllerGetOneRequest($id)
+    protected function getOneRequest($id)
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $id when calling courseControllerGetOne'
+                'Missing the required parameter $id when calling getOne'
             );
         }
 
@@ -803,10 +795,6 @@ class CourseApi
             }
         }
 
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

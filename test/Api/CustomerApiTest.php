@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,442 +71,442 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for customerAcademyControllerGetCourseAccessList
-     *
-     * Academy Course access.
-     *
-     */
-    public function testCustomerAcademyControllerGetCourseAccessList()
-    {
-    }
-
-    /**
-     * Test case for customerAcademyControllerGetCourseAccessListByCustomerId
-     *
-     * Academy Course access.
-     *
-     */
-    public function testCustomerAcademyControllerGetCourseAccessListByCustomerId()
-    {
-    }
-
-    /**
-     * Test case for customerAccessTokenControllerCreateAccessToken
-     *
-     * Create an access token for a user.
-     *
-     */
-    public function testCustomerAccessTokenControllerCreateAccessToken()
-    {
-    }
-
-    /**
-     * Test case for customerAuthControllerActivate
+     * Test case for activate
      *
      * Activate the account of a user.
      *
      */
-    public function testCustomerAuthControllerActivate()
+    public function testActivate()
     {
     }
 
     /**
-     * Test case for customerAuthControllerChangePassword
-     *
-     * Update a customer's password in WordPress.
-     *
-     */
-    public function testCustomerAuthControllerChangePassword()
-    {
-    }
-
-    /**
-     * Test case for customerAuthControllerCreateAccount
-     *
-     * Creates an account for a customer on yoast.com without the signup flow..
-     *
-     */
-    public function testCustomerAuthControllerCreateAccount()
-    {
-    }
-
-    /**
-     * Test case for customerAuthControllerResetPassword
-     *
-     * Reset the user's password..
-     *
-     */
-    public function testCustomerAuthControllerResetPassword()
-    {
-    }
-
-    /**
-     * Test case for customerAuthControllerSendResetPasswordEmail
-     *
-     * Send a reset password email to the user..
-     *
-     */
-    public function testCustomerAuthControllerSendResetPasswordEmail()
-    {
-    }
-
-    /**
-     * Test case for customerAuthControllerSignup
-     *
-     * Signup a customer on yoast.com following the normal signup flow..
-     *
-     */
-    public function testCustomerAuthControllerSignup()
-    {
-    }
-
-    /**
-     * Test case for customerComposerTokenControllerGetMany
-     *
-     * Get composer tokens.
-     *
-     */
-    public function testCustomerComposerTokenControllerGetMany()
-    {
-    }
-
-    /**
-     * Test case for customerComposerTokenControllerGetOne
-     *
-     * Get a composer token.
-     *
-     */
-    public function testCustomerComposerTokenControllerGetOne()
-    {
-    }
-
-    /**
-     * Test case for customerControllerCurrent
-     *
-     * Get the current customer.
-     *
-     */
-    public function testCustomerControllerCurrent()
-    {
-    }
-
-    /**
-     * Test case for customerControllerDownloadProfile
-     *
-     * Download profile..
-     *
-     */
-    public function testCustomerControllerDownloadProfile()
-    {
-    }
-
-    /**
-     * Test case for customerControllerEnable
-     *
-     * Enables the customer with the given ID.
-     *
-     */
-    public function testCustomerControllerEnable()
-    {
-    }
-
-    /**
-     * Test case for customerControllerGetAllRoles
-     *
-     * Get all existing roles with their ID..
-     *
-     */
-    public function testCustomerControllerGetAllRoles()
-    {
-    }
-
-    /**
-     * Test case for customerControllerGetCustomersWithRole
-     *
-     * Get the ids of all customers with at least one role..
-     *
-     */
-    public function testCustomerControllerGetCustomersWithRole()
-    {
-    }
-
-    /**
-     * Test case for customerControllerGetMany
-     *
-     * Get customers.
-     *
-     */
-    public function testCustomerControllerGetMany()
-    {
-    }
-
-    /**
-     * Test case for customerControllerGetManyPaged
-     *
-     * Get customers.
-     *
-     */
-    public function testCustomerControllerGetManyPaged()
-    {
-    }
-
-    /**
-     * Test case for customerControllerGetOne
-     *
-     * Get a customer.
-     *
-     */
-    public function testCustomerControllerGetOne()
-    {
-    }
-
-    /**
-     * Test case for customerControllerPatchProfile
-     *
-     * Update a customer to WordPress.
-     *
-     */
-    public function testCustomerControllerPatchProfile()
-    {
-    }
-
-    /**
-     * Test case for customerControllerProfile
+     * Test case for addRole
      *
      * .
      *
      */
-    public function testCustomerControllerProfile()
+    public function testAddRole()
     {
     }
 
     /**
-     * Test case for customerControllerUpdateOne
-     *
-     * .
-     *
-     */
-    public function testCustomerControllerUpdateOne()
-    {
-    }
-
-    /**
-     * Test case for customerControllerUploadAvatar
-     *
-     * Upload a new UserAvatar to WordPress.
-     *
-     */
-    public function testCustomerControllerUploadAvatar()
-    {
-    }
-
-    /**
-     * Test case for customerCourseEnrollmentControllerGetBuyerCourseEnrollments
-     *
-     * Find Course Enrollments that a customer is buyer of.
-     *
-     */
-    public function testCustomerCourseEnrollmentControllerGetBuyerCourseEnrollments()
-    {
-    }
-
-    /**
-     * Test case for customerCourseEnrollmentControllerGetCourseEnrollments
-     *
-     * Find Course Enrollments.
-     *
-     */
-    public function testCustomerCourseEnrollmentControllerGetCourseEnrollments()
-    {
-    }
-
-    /**
-     * Test case for customerCourseEnrollmentControllerGetStudentCourseEnrollments
-     *
-     * Find Course Enrollments that a customer is student in.
-     *
-     */
-    public function testCustomerCourseEnrollmentControllerGetStudentCourseEnrollments()
-    {
-    }
-
-    /**
-     * Test case for customerGDPRControllerDeleteCustomer
-     *
-     * Performs a \"GDPR forget me\" request..
-     *
-     */
-    public function testCustomerGDPRControllerDeleteCustomer()
-    {
-    }
-
-    /**
-     * Test case for customerIdentityControllerGetMany
-     *
-     * Get user identities.
-     *
-     */
-    public function testCustomerIdentityControllerGetMany()
-    {
-    }
-
-    /**
-     * Test case for customerNewsletterControllerStatus
-     *
-     * Newsletter subscription status.
-     *
-     */
-    public function testCustomerNewsletterControllerStatus()
-    {
-    }
-
-    /**
-     * Test case for customerNewsletterControllerSubscribe
-     *
-     * Subscribe to the newsletter.
-     *
-     */
-    public function testCustomerNewsletterControllerSubscribe()
-    {
-    }
-
-    /**
-     * Test case for customerNewsletterControllerSubscribeByEmail
-     *
-     * Subscribes a user to a newsletter.
-     *
-     */
-    public function testCustomerNewsletterControllerSubscribeByEmail()
-    {
-    }
-
-    /**
-     * Test case for customerNewsletterControllerUnsubscribe
-     *
-     * Unsubscribe from the newsletter.
-     *
-     */
-    public function testCustomerNewsletterControllerUnsubscribe()
-    {
-    }
-
-    /**
-     * Test case for customerOrderControllerGetMany
-     *
-     * Get orders.
-     *
-     */
-    public function testCustomerOrderControllerGetMany()
-    {
-    }
-
-    /**
-     * Test case for customerOrderControllerGetOne
-     *
-     * Get a order.
-     *
-     */
-    public function testCustomerOrderControllerGetOne()
-    {
-    }
-
-    /**
-     * Test case for customerRefundControllerFindRefunds
-     *
-     * Find refunds for user.
-     *
-     */
-    public function testCustomerRefundControllerFindRefunds()
-    {
-    }
-
-    /**
-     * Test case for customerRolesControllerAddRole
-     *
-     * .
-     *
-     */
-    public function testCustomerRolesControllerAddRole()
-    {
-    }
-
-    /**
-     * Test case for customerRolesControllerDeleteRole
-     *
-     * .
-     *
-     */
-    public function testCustomerRolesControllerDeleteRole()
-    {
-    }
-
-    /**
-     * Test case for customerRolesControllerGetMany
-     *
-     * .
-     *
-     */
-    public function testCustomerRolesControllerGetMany()
-    {
-    }
-
-    /**
-     * Test case for customerSiteControllerCreateSite
-     *
-     * Create a site for a user.
-     *
-     */
-    public function testCustomerSiteControllerCreateSite()
-    {
-    }
-
-    /**
-     * Test case for customerSiteControllerGetMany
-     *
-     * Get sites.
-     *
-     */
-    public function testCustomerSiteControllerGetMany()
-    {
-    }
-
-    /**
-     * Test case for customerSiteControllerGetOne
-     *
-     * Get a site.
-     *
-     */
-    public function testCustomerSiteControllerGetOne()
-    {
-    }
-
-    /**
-     * Test case for customerSubscriptionControllerCancelSubscription
+     * Test case for cancelSubscription
      *
      * Cancel (part of) a subscription..
      *
      */
-    public function testCustomerSubscriptionControllerCancelSubscription()
+    public function testCancelSubscription()
     {
     }
 
     /**
-     * Test case for customerSubscriptionControllerGetMany
+     * Test case for changePassword
+     *
+     * Update a customer's password in WordPress.
+     *
+     */
+    public function testChangePassword()
+    {
+    }
+
+    /**
+     * Test case for createAccessToken
+     *
+     * Create an access token for a user.
+     *
+     */
+    public function testCreateAccessToken()
+    {
+    }
+
+    /**
+     * Test case for createAccount
+     *
+     * Creates an account for a customer on yoast.com without the signup flow..
+     *
+     */
+    public function testCreateAccount()
+    {
+    }
+
+    /**
+     * Test case for createSite
+     *
+     * Create a site for a user.
+     *
+     */
+    public function testCreateSite()
+    {
+    }
+
+    /**
+     * Test case for current
+     *
+     * Get the current customer.
+     *
+     */
+    public function testCurrent()
+    {
+    }
+
+    /**
+     * Test case for deleteCustomer
+     *
+     * Performs a \"GDPR forget me\" request..
+     *
+     */
+    public function testDeleteCustomer()
+    {
+    }
+
+    /**
+     * Test case for deleteRole
+     *
+     * .
+     *
+     */
+    public function testDeleteRole()
+    {
+    }
+
+    /**
+     * Test case for downloadProfile
+     *
+     * Download profile..
+     *
+     */
+    public function testDownloadProfile()
+    {
+    }
+
+    /**
+     * Test case for enable
+     *
+     * Enables the customer with the given ID.
+     *
+     */
+    public function testEnable()
+    {
+    }
+
+    /**
+     * Test case for findRefunds
+     *
+     * Find refunds for user.
+     *
+     */
+    public function testFindRefunds()
+    {
+    }
+
+    /**
+     * Test case for getAllRoles
+     *
+     * Get all existing roles with their ID..
+     *
+     */
+    public function testGetAllRoles()
+    {
+    }
+
+    /**
+     * Test case for getBuyerCourseEnrollments
+     *
+     * Find Course Enrollments that a customer is buyer of.
+     *
+     */
+    public function testGetBuyerCourseEnrollments()
+    {
+    }
+
+    /**
+     * Test case for getCourseAccessList
+     *
+     * Academy Course access.
+     *
+     */
+    public function testGetCourseAccessList()
+    {
+    }
+
+    /**
+     * Test case for getCourseAccessListByCustomerId
+     *
+     * Academy Course access.
+     *
+     */
+    public function testGetCourseAccessListByCustomerId()
+    {
+    }
+
+    /**
+     * Test case for getCourseEnrollments
+     *
+     * Find Course Enrollments.
+     *
+     */
+    public function testGetCourseEnrollments()
+    {
+    }
+
+    /**
+     * Test case for getCustomersWithRole
+     *
+     * Get the ids of all customers with at least one role..
+     *
+     */
+    public function testGetCustomersWithRole()
+    {
+    }
+
+    /**
+     * Test case for getMany
+     *
+     * Get composer tokens.
+     *
+     */
+    public function testGetMany()
+    {
+    }
+
+    /**
+     * Test case for getManyPaged
+     *
+     * Get customers.
+     *
+     */
+    public function testGetManyPaged()
+    {
+    }
+
+    /**
+     * Test case for getMany_0
      *
      * Get subscriptions.
      *
      */
-    public function testCustomerSubscriptionControllerGetMany()
+    public function testGetMany0()
     {
     }
 
     /**
-     * Test case for customerSubscriptionControllerGetOne
+     * Test case for getMany_1
+     *
+     * Get sites.
+     *
+     */
+    public function testGetMany1()
+    {
+    }
+
+    /**
+     * Test case for getMany_2
+     *
+     * Get orders.
+     *
+     */
+    public function testGetMany2()
+    {
+    }
+
+    /**
+     * Test case for getMany_3
+     *
+     * .
+     *
+     */
+    public function testGetMany3()
+    {
+    }
+
+    /**
+     * Test case for getMany_4
+     *
+     * Get user identities.
+     *
+     */
+    public function testGetMany4()
+    {
+    }
+
+    /**
+     * Test case for getMany_5
+     *
+     * Get customers.
+     *
+     */
+    public function testGetMany5()
+    {
+    }
+
+    /**
+     * Test case for getOne
+     *
+     * Get a composer token.
+     *
+     */
+    public function testGetOne()
+    {
+    }
+
+    /**
+     * Test case for getOne_0
      *
      * Get a subscriptions.
      *
      */
-    public function testCustomerSubscriptionControllerGetOne()
+    public function testGetOne0()
+    {
+    }
+
+    /**
+     * Test case for getOne_1
+     *
+     * Get a site.
+     *
+     */
+    public function testGetOne1()
+    {
+    }
+
+    /**
+     * Test case for getOne_2
+     *
+     * Get a order.
+     *
+     */
+    public function testGetOne2()
+    {
+    }
+
+    /**
+     * Test case for getOne_3
+     *
+     * Get a customer.
+     *
+     */
+    public function testGetOne3()
+    {
+    }
+
+    /**
+     * Test case for getStudentCourseEnrollments
+     *
+     * Find Course Enrollments that a customer is student in.
+     *
+     */
+    public function testGetStudentCourseEnrollments()
+    {
+    }
+
+    /**
+     * Test case for patchProfile
+     *
+     * Update a customer to WordPress.
+     *
+     */
+    public function testPatchProfile()
+    {
+    }
+
+    /**
+     * Test case for profile
+     *
+     * .
+     *
+     */
+    public function testProfile()
+    {
+    }
+
+    /**
+     * Test case for resetPassword
+     *
+     * Reset the user's password..
+     *
+     */
+    public function testResetPassword()
+    {
+    }
+
+    /**
+     * Test case for sendResetPasswordEmail
+     *
+     * Send a reset password email to the user..
+     *
+     */
+    public function testSendResetPasswordEmail()
+    {
+    }
+
+    /**
+     * Test case for signup
+     *
+     * Signup a customer on yoast.com following the normal signup flow..
+     *
+     */
+    public function testSignup()
+    {
+    }
+
+    /**
+     * Test case for status
+     *
+     * Newsletter subscription status.
+     *
+     */
+    public function testStatus()
+    {
+    }
+
+    /**
+     * Test case for subscribe
+     *
+     * Subscribe to the newsletter.
+     *
+     */
+    public function testSubscribe()
+    {
+    }
+
+    /**
+     * Test case for subscribeByEmail
+     *
+     * Subscribes a user to a newsletter.
+     *
+     */
+    public function testSubscribeByEmail()
+    {
+    }
+
+    /**
+     * Test case for unsubscribe
+     *
+     * Unsubscribe from the newsletter.
+     *
+     */
+    public function testUnsubscribe()
+    {
+    }
+
+    /**
+     * Test case for updateOne
+     *
+     * .
+     *
+     */
+    public function testUpdateOne()
+    {
+    }
+
+    /**
+     * Test case for uploadAvatar
+     *
+     * Upload a new UserAvatar to WordPress.
+     *
+     */
+    public function testUploadAvatar()
     {
     }
 }

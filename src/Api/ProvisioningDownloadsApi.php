@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -87,7 +87,7 @@ class ProvisioningDownloadsApi
     }
 
     /**
-     * Operation provisioningDownloadsControllerCurrentVersion
+     * Operation currentVersion
      *
      * Retrieve the current version for the productCode for the provisioner.
      *
@@ -97,14 +97,14 @@ class ProvisioningDownloadsApi
      * @throws \InvalidArgumentException
      * @return string
      */
-    public function provisioningDownloadsControllerCurrentVersion($productCode)
+    public function currentVersion($productCode)
     {
-        list($response) = $this->provisioningDownloadsControllerCurrentVersionWithHttpInfo($productCode);
+        list($response) = $this->currentVersionWithHttpInfo($productCode);
         return $response;
     }
 
     /**
-     * Operation provisioningDownloadsControllerCurrentVersionWithHttpInfo
+     * Operation currentVersionWithHttpInfo
      *
      * Retrieve the current version for the productCode for the provisioner.
      *
@@ -114,10 +114,10 @@ class ProvisioningDownloadsApi
      * @throws \InvalidArgumentException
      * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
-    public function provisioningDownloadsControllerCurrentVersionWithHttpInfo($productCode)
+    public function currentVersionWithHttpInfo($productCode)
     {
         $returnType = 'string';
-        $request = $this->provisioningDownloadsControllerCurrentVersionRequest($productCode);
+        $request = $this->currentVersionRequest($productCode);
 
         try {
             $options = $this->createHttpClientOption();
@@ -179,7 +179,7 @@ class ProvisioningDownloadsApi
     }
 
     /**
-     * Operation provisioningDownloadsControllerCurrentVersionAsync
+     * Operation currentVersionAsync
      *
      * Retrieve the current version for the productCode for the provisioner.
      *
@@ -188,9 +188,9 @@ class ProvisioningDownloadsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisioningDownloadsControllerCurrentVersionAsync($productCode)
+    public function currentVersionAsync($productCode)
     {
-        return $this->provisioningDownloadsControllerCurrentVersionAsyncWithHttpInfo($productCode)
+        return $this->currentVersionAsyncWithHttpInfo($productCode)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -199,7 +199,7 @@ class ProvisioningDownloadsApi
     }
 
     /**
-     * Operation provisioningDownloadsControllerCurrentVersionAsyncWithHttpInfo
+     * Operation currentVersionAsyncWithHttpInfo
      *
      * Retrieve the current version for the productCode for the provisioner.
      *
@@ -208,10 +208,10 @@ class ProvisioningDownloadsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisioningDownloadsControllerCurrentVersionAsyncWithHttpInfo($productCode)
+    public function currentVersionAsyncWithHttpInfo($productCode)
     {
         $returnType = 'string';
-        $request = $this->provisioningDownloadsControllerCurrentVersionRequest($productCode);
+        $request = $this->currentVersionRequest($productCode);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -251,19 +251,19 @@ class ProvisioningDownloadsApi
     }
 
     /**
-     * Create request for operation 'provisioningDownloadsControllerCurrentVersion'
+     * Create request for operation 'currentVersion'
      *
      * @param  string $productCode The code used to create the product. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function provisioningDownloadsControllerCurrentVersionRequest($productCode)
+    protected function currentVersionRequest($productCode)
     {
         // verify the required parameter 'productCode' is set
         if ($productCode === null || (is_array($productCode) && count($productCode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productCode when calling provisioningDownloadsControllerCurrentVersion'
+                'Missing the required parameter $productCode when calling currentVersion'
             );
         }
 
@@ -345,7 +345,7 @@ class ProvisioningDownloadsApi
     }
 
     /**
-     * Operation provisioningDownloadsControllerCurrentZip
+     * Operation currentZip
      *
      * Redirect to the current zip for the productCode.
      *
@@ -355,13 +355,13 @@ class ProvisioningDownloadsApi
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function provisioningDownloadsControllerCurrentZip($productCode)
+    public function currentZip($productCode)
     {
-        $this->provisioningDownloadsControllerCurrentZipWithHttpInfo($productCode);
+        $this->currentZipWithHttpInfo($productCode);
     }
 
     /**
-     * Operation provisioningDownloadsControllerCurrentZipWithHttpInfo
+     * Operation currentZipWithHttpInfo
      *
      * Redirect to the current zip for the productCode.
      *
@@ -371,10 +371,10 @@ class ProvisioningDownloadsApi
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function provisioningDownloadsControllerCurrentZipWithHttpInfo($productCode)
+    public function currentZipWithHttpInfo($productCode)
     {
         $returnType = '';
-        $request = $this->provisioningDownloadsControllerCurrentZipRequest($productCode);
+        $request = $this->currentZipRequest($productCode);
 
         try {
             $options = $this->createHttpClientOption();
@@ -414,7 +414,7 @@ class ProvisioningDownloadsApi
     }
 
     /**
-     * Operation provisioningDownloadsControllerCurrentZipAsync
+     * Operation currentZipAsync
      *
      * Redirect to the current zip for the productCode.
      *
@@ -423,9 +423,9 @@ class ProvisioningDownloadsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisioningDownloadsControllerCurrentZipAsync($productCode)
+    public function currentZipAsync($productCode)
     {
-        return $this->provisioningDownloadsControllerCurrentZipAsyncWithHttpInfo($productCode)
+        return $this->currentZipAsyncWithHttpInfo($productCode)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -434,7 +434,7 @@ class ProvisioningDownloadsApi
     }
 
     /**
-     * Operation provisioningDownloadsControllerCurrentZipAsyncWithHttpInfo
+     * Operation currentZipAsyncWithHttpInfo
      *
      * Redirect to the current zip for the productCode.
      *
@@ -443,10 +443,10 @@ class ProvisioningDownloadsApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function provisioningDownloadsControllerCurrentZipAsyncWithHttpInfo($productCode)
+    public function currentZipAsyncWithHttpInfo($productCode)
     {
         $returnType = '';
-        $request = $this->provisioningDownloadsControllerCurrentZipRequest($productCode);
+        $request = $this->currentZipRequest($productCode);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -472,19 +472,19 @@ class ProvisioningDownloadsApi
     }
 
     /**
-     * Create request for operation 'provisioningDownloadsControllerCurrentZip'
+     * Create request for operation 'currentZip'
      *
      * @param  string $productCode The code used to create the product. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function provisioningDownloadsControllerCurrentZipRequest($productCode)
+    protected function currentZipRequest($productCode)
     {
         // verify the required parameter 'productCode' is set
         if ($productCode === null || (is_array($productCode) && count($productCode) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $productCode when calling provisioningDownloadsControllerCurrentZip'
+                'Missing the required parameter $productCode when calling currentZip'
             );
         }
 

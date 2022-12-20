@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,22 +71,22 @@ class CloudflareApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for cloudflareControllerPurgeKVStore
+     * Test case for purgeKVStore
      *
      * Purge kv pairs from the registered domains key value store in Cloudflare.
      *
      */
-    public function testCloudflareControllerPurgeKVStore()
+    public function testPurgeKVStore()
     {
     }
 
     /**
-     * Test case for cloudflareControllerUpdateAll
+     * Test case for updateAll
      *
      * Update sites in the registered domains key value store in Cloudflare.
      *
      */
-    public function testCloudflareControllerUpdateAll()
+    public function testUpdateAll()
     {
     }
 }

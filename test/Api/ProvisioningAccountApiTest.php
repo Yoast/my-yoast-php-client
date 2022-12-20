@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,12 +71,12 @@ class ProvisioningAccountApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for provisioningAccountControllerSetSiteForSubscription
+     * Test case for setSiteForSubscription
      *
      * Generate a new auth token.
      *
      */
-    public function testProvisioningAccountControllerSetSiteForSubscription()
+    public function testSetSiteForSubscription()
     {
     }
 }

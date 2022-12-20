@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,42 +71,42 @@ class BlacklistApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for blacklistControllerCreateOne
+     * Test case for createOne
      *
      * Creates a blacklisted site.
      *
      */
-    public function testBlacklistControllerCreateOne()
+    public function testCreateOne()
     {
     }
 
     /**
-     * Test case for blacklistControllerDeleteOne
+     * Test case for deleteOne
      *
      * Remove a site from the blacklist.
      *
      */
-    public function testBlacklistControllerDeleteOne()
+    public function testDeleteOne()
     {
     }
 
     /**
-     * Test case for blacklistControllerGetMany
+     * Test case for getMany
      *
      * Gets blacklisted sites.
      *
      */
-    public function testBlacklistControllerGetMany()
+    public function testGetMany()
     {
     }
 
     /**
-     * Test case for blacklistControllerGetManyPaged
+     * Test case for getManyPaged
      *
      * Gets blacklisted sites.
      *
      */
-    public function testBlacklistControllerGetManyPaged()
+    public function testGetManyPaged()
     {
     }
 }

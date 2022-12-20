@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,22 +71,22 @@ class ProvisionerApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for provisionerDataControllerGetMany
+     * Test case for getMany
      *
      * Get provisioner data.
      *
      */
-    public function testProvisionerDataControllerGetMany()
+    public function testGetMany()
     {
     }
 
     /**
-     * Test case for provisionerDataControllerGetOne
+     * Test case for getOne
      *
      * Get provisioner data.
      *
      */
-    public function testProvisionerDataControllerGetOne()
+    public function testGetOne()
     {
     }
 }

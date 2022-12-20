@@ -1,15 +1,15 @@
 # Yoast\MyYoastApiClient\RefundApi
 
-All URIs are relative to *http://my.yoast.test:3000/*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**refundControllerExport**](RefundApi.md#refundcontrollerexport) | **GET** /api/Refunds/export | Get refunds
-[**refundControllerGetMany**](RefundApi.md#refundcontrollergetmany) | **GET** /api/Refunds | Get refunds
-[**refundControllerGetOne**](RefundApi.md#refundcontrollergetone) | **GET** /api/Refunds/{id} | Get a refund
+[**export**](RefundApi.md#export) | **GET** /api/Refunds/export | Get refunds
+[**getMany**](RefundApi.md#getmany) | **GET** /api/Refunds | Get refunds
+[**getOne**](RefundApi.md#getone) | **GET** /api/Refunds/{id} | Get a refund
 
-# **refundControllerExport**
-> \Yoast\MyYoastApiClient\Model\Refund[] refundControllerExport($startDate, $endDate)
+# **export**
+> \Yoast\MyYoastApiClient\Model\Refund[] export($startDate, $endDate)
 
 Get refunds
 
@@ -19,25 +19,20 @@ A large export of refunds between dates
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | 
 
 try {
-    $result = $apiInstance->refundControllerExport($startDate, $endDate);
+    $result = $apiInstance->export($startDate, $endDate);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundControllerExport: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundApi->export: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -55,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -64,8 +59,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **refundControllerGetMany**
-> \Yoast\MyYoastApiClient\Model\Refund[] refundControllerGetMany($filter)
+# **getMany**
+> \Yoast\MyYoastApiClient\Model\Refund[] getMany($filter)
 
 Get refunds
 
@@ -75,24 +70,19 @@ Get and filter refunds
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->refundControllerGetMany($filter);
+    $result = $apiInstance->getMany($filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundControllerGetMany: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundApi->getMany: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -109,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 
@@ -118,8 +108,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **refundControllerGetOne**
-> \Yoast\MyYoastApiClient\Model\Refund refundControllerGetOne($id, $filter)
+# **getOne**
+> \Yoast\MyYoastApiClient\Model\Refund getOne($id, $filter)
 
 Get a refund
 
@@ -129,25 +119,20 @@ Get a single refund
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\RefundApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->refundControllerGetOne($id, $filter);
+    $result = $apiInstance->getOne($id, $filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RefundApi->refundControllerGetOne: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RefundApi->getOne: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -165,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[bearer](../../README.md#bearer)
+No authorization required
 
 ### HTTP request headers
 

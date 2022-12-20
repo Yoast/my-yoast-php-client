@@ -10,9 +10,9 @@
  */
 
 /**
- * MyYoast server
+ * MyYoast
  *
- * The MyYoast server NestJS Api
+ * The MyYoast Api
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,32 +71,32 @@ class AuthenticationApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for authControllerGetAccessToken
+     * Test case for getAccessToken
      *
      * .
      *
      */
-    public function testAuthControllerGetAccessToken()
+    public function testGetAccessToken()
     {
     }
 
     /**
-     * Test case for authControllerGetProfile
+     * Test case for getProfile
      *
      * .
      *
      */
-    public function testAuthControllerGetProfile()
+    public function testGetProfile()
     {
     }
 
     /**
-     * Test case for authControllerLogin
+     * Test case for login
      *
      * .
      *
      */
-    public function testAuthControllerLogin()
+    public function testLogin()
     {
     }
 }
