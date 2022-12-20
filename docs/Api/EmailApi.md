@@ -4,10 +4,10 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiEmailsBulkSendPost**](EmailApi.md#apiemailsbulksendpost) | **POST** /api/Emails/bulk-send | 
+[**emailControllerSendEmails**](EmailApi.md#emailcontrollersendemails) | **POST** /api/Emails/bulk-send | 
 
-# **apiEmailsBulkSendPost**
-> int apiEmailsBulkSendPost($body)
+# **emailControllerSendEmails**
+> \Yoast\MyYoastApiClient\Model\ emailControllerSendEmails($body)
 
 
 
@@ -15,10 +15,10 @@ Method | HTTP request | Description
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\EmailApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -29,10 +29,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\EmailApi(
 $body = new \Yoast\MyYoastApiClient\Model\BulkSendEmailDto(); // \Yoast\MyYoastApiClient\Model\BulkSendEmailDto | 
 
 try {
-    $result = $apiInstance->apiEmailsBulkSendPost($body);
+    $result = $apiInstance->emailControllerSendEmails($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling EmailApi->apiEmailsBulkSendPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling EmailApi->emailControllerSendEmails: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**int**
+[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
 
 ### Authorization
 

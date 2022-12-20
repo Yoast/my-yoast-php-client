@@ -4,10 +4,10 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiProvisioningUserScheduleDeletePost**](ProvisioningUsersApi.md#apiprovisioninguserscheduledeletepost) | **POST** /api/provisioning/user/schedule-delete | Schedule a delete for a subscription
+[**provisioningUsersControllerScheduleDelete**](ProvisioningUsersApi.md#provisioninguserscontrollerscheduledelete) | **POST** /api/provisioning/user/schedule-delete | Schedule a delete for a subscription
 
-# **apiProvisioningUserScheduleDeletePost**
-> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto apiProvisioningUserScheduleDeletePost($body)
+# **provisioningUsersControllerScheduleDelete**
+> \Yoast\MyYoastApiClient\Model\SubscriptionProvisioningResponseDto provisioningUsersControllerScheduleDelete($body)
 
 Schedule a delete for a subscription
 
@@ -26,10 +26,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProvisioningUsersApi(
 $body = new \Yoast\MyYoastApiClient\Model\ScheduleDeleteUserDto(); // \Yoast\MyYoastApiClient\Model\ScheduleDeleteUserDto | 
 
 try {
-    $result = $apiInstance->apiProvisioningUserScheduleDeletePost($body);
+    $result = $apiInstance->provisioningUsersControllerScheduleDelete($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProvisioningUsersApi->apiProvisioningUserScheduleDeletePost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProvisioningUsersApi->provisioningUsersControllerScheduleDelete: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

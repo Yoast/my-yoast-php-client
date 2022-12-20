@@ -4,10 +4,10 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiCustomersIdGdprDeleteDelete**](GDPRApi.md#apicustomersidgdprdeletedelete) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
+[**customerGDPRControllerDeleteCustomer**](GDPRApi.md#customergdprcontrollerdeletecustomer) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 
-# **apiCustomersIdGdprDeleteDelete**
-> string apiCustomersIdGdprDeleteDelete($id)
+# **customerGDPRControllerDeleteCustomer**
+> \Yoast\MyYoastApiClient\Model\ customerGDPRControllerDeleteCustomer($id)
 
 Performs a \"GDPR forget me\" request.
 
@@ -17,10 +17,10 @@ Deletes and/or obfuscates all data related to a customer, except order data that
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\GDPRApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -31,10 +31,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\GDPRApi(
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->apiCustomersIdGdprDeleteDelete($id);
+    $result = $apiInstance->customerGDPRControllerDeleteCustomer($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling GDPRApi->apiCustomersIdGdprDeleteDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling GDPRApi->customerGDPRControllerDeleteCustomer: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
 
 ### Authorization
 

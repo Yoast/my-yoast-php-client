@@ -4,10 +4,10 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**robotsTxtGet**](RobotsApi.md#robotstxtget) | **GET** /robots.txt | 
+[**robotsControllerServeRobots**](RobotsApi.md#robotscontrollerserverobots) | **GET** /robots.txt | 
 
-# **robotsTxtGet**
-> string robotsTxtGet()
+# **robotsControllerServeRobots**
+> \Yoast\MyYoastApiClient\Model\ robotsControllerServeRobots()
 
 
 
@@ -23,10 +23,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\RobotsApi(
 );
 
 try {
-    $result = $apiInstance->robotsTxtGet();
+    $result = $apiInstance->robotsControllerServeRobots();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling RobotsApi->robotsTxtGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling RobotsApi->robotsControllerServeRobots: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -36,7 +36,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**string**
+[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
 
 ### Authorization
 

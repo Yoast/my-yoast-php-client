@@ -4,11 +4,11 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiProvisioningDownloadsCurrentVersionGet**](ProvisioningDownloadsApi.md#apiprovisioningdownloadscurrentversionget) | **GET** /api/provisioning/downloads/currentVersion | Retrieve the current version for the productCode for the provisioner.
-[**apiProvisioningDownloadsCurrentZipGet**](ProvisioningDownloadsApi.md#apiprovisioningdownloadscurrentzipget) | **GET** /api/provisioning/downloads/currentZip | Redirect to the current zip for the productCode.
+[**provisioningDownloadsControllerCurrentVersion**](ProvisioningDownloadsApi.md#provisioningdownloadscontrollercurrentversion) | **GET** /api/provisioning/downloads/currentVersion | Retrieve the current version for the productCode for the provisioner.
+[**provisioningDownloadsControllerCurrentZip**](ProvisioningDownloadsApi.md#provisioningdownloadscontrollercurrentzip) | **GET** /api/provisioning/downloads/currentZip | Redirect to the current zip for the productCode.
 
-# **apiProvisioningDownloadsCurrentVersionGet**
-> string apiProvisioningDownloadsCurrentVersionGet($productCode)
+# **provisioningDownloadsControllerCurrentVersion**
+> string provisioningDownloadsControllerCurrentVersion($productCode)
 
 Retrieve the current version for the productCode for the provisioner.
 
@@ -27,10 +27,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProvisioningDownloadsApi(
 $productCode = "productCode_example"; // string | The code used to create the product.
 
 try {
-    $result = $apiInstance->apiProvisioningDownloadsCurrentVersionGet($productCode);
+    $result = $apiInstance->provisioningDownloadsControllerCurrentVersion($productCode);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProvisioningDownloadsApi->apiProvisioningDownloadsCurrentVersionGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProvisioningDownloadsApi->provisioningDownloadsControllerCurrentVersion: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -56,8 +56,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiProvisioningDownloadsCurrentZipGet**
-> apiProvisioningDownloadsCurrentZipGet($productCode)
+# **provisioningDownloadsControllerCurrentZip**
+> provisioningDownloadsControllerCurrentZip($productCode)
 
 Redirect to the current zip for the productCode.
 
@@ -76,9 +76,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProvisioningDownloadsApi(
 $productCode = "productCode_example"; // string | The code used to create the product.
 
 try {
-    $apiInstance->apiProvisioningDownloadsCurrentZipGet($productCode);
+    $apiInstance->provisioningDownloadsControllerCurrentZip($productCode);
 } catch (Exception $e) {
-    echo 'Exception when calling ProvisioningDownloadsApi->apiProvisioningDownloadsCurrentZipGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProvisioningDownloadsApi->provisioningDownloadsControllerCurrentZip: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

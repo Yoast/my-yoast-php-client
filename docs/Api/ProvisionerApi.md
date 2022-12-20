@@ -4,11 +4,11 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiProvisionerDataGet**](ProvisionerApi.md#apiprovisionerdataget) | **GET** /api/ProvisionerData | Get provisioner data
-[**apiProvisionerDataIdGet**](ProvisionerApi.md#apiprovisionerdataidget) | **GET** /api/ProvisionerData/{id} | Get provisioner data
+[**provisionerDataControllerGetMany**](ProvisionerApi.md#provisionerdatacontrollergetmany) | **GET** /api/ProvisionerData | Get provisioner data
+[**provisionerDataControllerGetOne**](ProvisionerApi.md#provisionerdatacontrollergetone) | **GET** /api/ProvisionerData/{id} | Get provisioner data
 
-# **apiProvisionerDataGet**
-> \Yoast\MyYoastApiClient\Model\ProvisionerData[] apiProvisionerDataGet()
+# **provisionerDataControllerGetMany**
+> \Yoast\MyYoastApiClient\Model\ProvisionerData[] provisionerDataControllerGetMany()
 
 Get provisioner data
 
@@ -18,10 +18,10 @@ Get and filter provisioner data
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\ProvisionerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -31,10 +31,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProvisionerApi(
 );
 
 try {
-    $result = $apiInstance->apiProvisionerDataGet();
+    $result = $apiInstance->provisionerDataControllerGetMany();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProvisionerApi->apiProvisionerDataGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProvisionerApi->provisionerDataControllerGetMany: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -57,8 +57,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiProvisionerDataIdGet**
-> \Yoast\MyYoastApiClient\Model\Subscription apiProvisionerDataIdGet($id)
+# **provisionerDataControllerGetOne**
+> \Yoast\MyYoastApiClient\Model\Subscription provisionerDataControllerGetOne($id)
 
 Get provisioner data
 
@@ -68,10 +68,10 @@ Get provisioner data
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\ProvisionerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -82,10 +82,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProvisionerApi(
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->apiProvisionerDataIdGet($id);
+    $result = $apiInstance->provisionerDataControllerGetOne($id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProvisionerApi->apiProvisionerDataIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProvisionerApi->provisionerDataControllerGetOne: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

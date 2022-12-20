@@ -4,10 +4,10 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiProvisioningAccountRegenerateTokenPost**](ProvisioningAccountApi.md#apiprovisioningaccountregeneratetokenpost) | **POST** /api/provisioning/account/regenerate-token | Generate a new auth token
+[**provisioningAccountControllerSetSiteForSubscription**](ProvisioningAccountApi.md#provisioningaccountcontrollersetsiteforsubscription) | **POST** /api/provisioning/account/regenerate-token | Generate a new auth token
 
-# **apiProvisioningAccountRegenerateTokenPost**
-> \Yoast\MyYoastApiClient\Model\RegenerateTokenResponseDto apiProvisioningAccountRegenerateTokenPost()
+# **provisioningAccountControllerSetSiteForSubscription**
+> \Yoast\MyYoastApiClient\Model\RegenerateTokenResponseDto provisioningAccountControllerSetSiteForSubscription()
 
 Generate a new auth token
 
@@ -25,10 +25,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ProvisioningAccountApi(
 );
 
 try {
-    $result = $apiInstance->apiProvisioningAccountRegenerateTokenPost();
+    $result = $apiInstance->provisioningAccountControllerSetSiteForSubscription();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ProvisioningAccountApi->apiProvisioningAccountRegenerateTokenPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ProvisioningAccountApi->provisioningAccountControllerSetSiteForSubscription: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

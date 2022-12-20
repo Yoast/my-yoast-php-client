@@ -4,10 +4,10 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**serverCheckGet**](ServerCheckApi.md#servercheckget) | **GET** /server-check | Server health check
+[**serverHealthControllerCheckHealth**](ServerCheckApi.md#serverhealthcontrollercheckhealth) | **GET** /server-check | Server health check
 
-# **serverCheckGet**
-> string serverCheckGet()
+# **serverHealthControllerCheckHealth**
+> \Yoast\MyYoastApiClient\Model\ serverHealthControllerCheckHealth()
 
 Server health check
 
@@ -25,10 +25,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\ServerCheckApi(
 );
 
 try {
-    $result = $apiInstance->serverCheckGet();
+    $result = $apiInstance->serverHealthControllerCheckHealth();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ServerCheckApi->serverCheckGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ServerCheckApi->serverHealthControllerCheckHealth: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -38,7 +38,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**string**
+[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
 
 ### Authorization
 

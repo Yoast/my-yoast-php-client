@@ -4,13 +4,115 @@ All URIs are relative to *http://my.yoast.test:3000/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiCustomerNotesGet**](CustomerNoteApi.md#apicustomernotesget) | **GET** /api/CustomerNotes | Get customer notes
-[**apiCustomerNotesIdDelete**](CustomerNoteApi.md#apicustomernotesiddelete) | **DELETE** /api/CustomerNotes/{id} | 
-[**apiCustomerNotesIdGet**](CustomerNoteApi.md#apicustomernotesidget) | **GET** /api/CustomerNotes/{id} | Get a customer note
-[**apiCustomerNotesPost**](CustomerNoteApi.md#apicustomernotespost) | **POST** /api/CustomerNotes | 
+[**customerNoteControllerCreateOne**](CustomerNoteApi.md#customernotecontrollercreateone) | **POST** /api/CustomerNotes | 
+[**customerNoteControllerDeleteOne**](CustomerNoteApi.md#customernotecontrollerdeleteone) | **DELETE** /api/CustomerNotes/{id} | 
+[**customerNoteControllerGetMany**](CustomerNoteApi.md#customernotecontrollergetmany) | **GET** /api/CustomerNotes | Get customer notes
+[**customerNoteControllerGetOne**](CustomerNoteApi.md#customernotecontrollergetone) | **GET** /api/CustomerNotes/{id} | Get a customer note
 
-# **apiCustomerNotesGet**
-> \Yoast\MyYoastApiClient\Model\CustomerNote[] apiCustomerNotesGet($filter)
+# **customerNoteControllerCreateOne**
+> customerNoteControllerCreateOne($body)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Yoast\MyYoastApiClient\Model\CreateCustomerNoteDto(); // \Yoast\MyYoastApiClient\Model\CreateCustomerNoteDto | 
+
+try {
+    $apiInstance->customerNoteControllerCreateOne($body);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerNoteApi->customerNoteControllerCreateOne: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Yoast\MyYoastApiClient\Model\CreateCustomerNoteDto**](../Model/CreateCustomerNoteDto.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerNoteControllerDeleteOne**
+> customerNoteControllerDeleteOne($id)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $apiInstance->customerNoteControllerDeleteOne($id);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerNoteApi->customerNoteControllerDeleteOne: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **customerNoteControllerGetMany**
+> \Yoast\MyYoastApiClient\Model\CustomerNote[] customerNoteControllerGetMany($filter)
 
 Get customer notes
 
@@ -20,10 +122,10 @@ Get and filter customer notes
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -34,10 +136,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->apiCustomerNotesGet($filter);
+    $result = $apiInstance->customerNoteControllerGetMany($filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->apiCustomerNotesGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerNoteApi->customerNoteControllerGetMany: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -63,59 +165,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **apiCustomerNotesIdDelete**
-> apiCustomerNotesIdDelete($id)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-
-try {
-    $apiInstance->apiCustomerNotesIdDelete($id);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->apiCustomerNotesIdDelete: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**string**](../Model/.md)|  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **apiCustomerNotesIdGet**
-> \Yoast\MyYoastApiClient\Model\CustomerNote apiCustomerNotesIdGet($id, $filter)
+# **customerNoteControllerGetOne**
+> \Yoast\MyYoastApiClient\Model\CustomerNote customerNoteControllerGetOne($id, $filter)
 
 Get a customer note
 
@@ -125,10 +176,10 @@ Get a single customer note
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -140,10 +191,10 @@ $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string |
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
 try {
-    $result = $apiInstance->apiCustomerNotesIdGet($id, $filter);
+    $result = $apiInstance->customerNoteControllerGetOne($id, $filter);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->apiCustomerNotesIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerNoteApi->customerNoteControllerGetOne: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -167,57 +218,6 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **apiCustomerNotesPost**
-> apiCustomerNotesPost($body)
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-// Configure API key authorization: bearer
-$config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKey('Authorization', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Authorization', 'Bearer');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$body = new \Yoast\MyYoastApiClient\Model\CreateCustomerNoteDto(); // \Yoast\MyYoastApiClient\Model\CreateCustomerNoteDto | 
-
-try {
-    $apiInstance->apiCustomerNotesPost($body);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerNoteApi->apiCustomerNotesPost: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\CreateCustomerNoteDto**](../Model/CreateCustomerNoteDto.md)|  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
