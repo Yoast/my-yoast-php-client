@@ -157,11 +157,16 @@ No authorization required
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\AuthApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -181,7 +186,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 

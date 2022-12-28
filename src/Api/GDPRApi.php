@@ -327,6 +327,10 @@ class GDPRApi
             }
         }
 
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
 
         $defaultHeaders = [];
         if ($this->config->getUserAgent()) {

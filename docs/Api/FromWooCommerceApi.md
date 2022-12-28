@@ -20,11 +20,16 @@ This endpoint can be used by WooCommerce to update or create a customer in the M
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\CustomerFromWooDto(); // \Yoast\MyYoastApiClient\Model\CustomerFromWooDto | 
 
@@ -49,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -69,11 +74,16 @@ This route allows WooCommerce to sync order data to MyYoast.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\OrderFromWooDto(); // \Yoast\MyYoastApiClient\Model\OrderFromWooDto | 
 
@@ -98,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -118,11 +128,16 @@ This route allows WooCommerce to sync product data to MyYoast.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\ProductFromWooDto(); // \Yoast\MyYoastApiClient\Model\ProductFromWooDto | 
 
@@ -147,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -167,11 +182,16 @@ This route allows WooCommerce to sync product data to MyYoast.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\FromWooCommerceApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\ProductGroupFromWooDto(); // \Yoast\MyYoastApiClient\Model\ProductGroupFromWooDto | 
 
@@ -196,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 

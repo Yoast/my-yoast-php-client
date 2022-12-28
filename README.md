@@ -56,10 +56,12 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\UpdateDto(); // \Yoast\MyYoastApiClient\Model\UpdateDto | 
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -71,10 +73,12 @@ try {
     echo 'Exception when calling AdmissionApi->changeStudent: ', $e->getMessage(), PHP_EOL;
 }
 
+
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
@@ -85,10 +89,12 @@ try {
     echo 'Exception when calling AdmissionApi->getMany: ', $e->getMessage(), PHP_EOL;
 }
 
+
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
@@ -98,10 +104,12 @@ try {
     echo 'Exception when calling AdmissionApi->getManyPaged: ', $e->getMessage(), PHP_EOL;
 }
 
+
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -112,10 +120,12 @@ try {
     echo 'Exception when calling AdmissionApi->getOne: ', $e->getMessage(), PHP_EOL;
 }
 
+
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\CreateDto(); // \Yoast\MyYoastApiClient\Model\CreateDto | 
 
@@ -126,10 +136,12 @@ try {
     echo 'Exception when calling AdmissionApi->invite: ', $e->getMessage(), PHP_EOL;
 }
 
+
 $apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\TransferAdmissionDto(); // \Yoast\MyYoastApiClient\Model\TransferAdmissionDto | 
 
@@ -463,7 +475,10 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
- All endpoints do not require authorization.
+
+## bearer
+
+- **Type**: HTTP bearer authentication
 
 
 ## Author

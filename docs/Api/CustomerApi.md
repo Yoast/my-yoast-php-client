@@ -107,11 +107,16 @@ No authorization required
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\RoleIDDto(); // \Yoast\MyYoastApiClient\Model\RoleIDDto | 
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -137,7 +142,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -157,11 +162,16 @@ Communicates a (partial) subscription to yoast.com.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto(); // \Yoast\MyYoastApiClient\Model\CancelSubscriptionBodyDto | 
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -190,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -210,11 +220,16 @@ This route allows a customer to updates their password on WordPress.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\ChangePasswordDto(); // \Yoast\MyYoastApiClient\Model\ChangePasswordDto | 
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -241,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -356,11 +371,16 @@ Create a site record so we can link a subscription to a site which is linked to 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto(); // \Yoast\MyYoastApiClient\Model\CreateSiteBodyDto | 
 $customerId = "customerId_example"; // string | 
@@ -387,7 +407,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -405,11 +425,16 @@ Get the current customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -430,7 +455,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -450,11 +475,16 @@ Deletes and/or obfuscates all data related to a customer, except order data that
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -479,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -497,11 +527,16 @@ No authorization required
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\RoleIDDto(); // \Yoast\MyYoastApiClient\Model\RoleIDDto | 
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -527,7 +562,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -547,11 +582,16 @@ Downloads the data of the given customer as CSV files inside a ZIP file.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -576,7 +616,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -596,11 +636,16 @@ Used when customers accidentally disable their own account
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -625,7 +670,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -645,11 +690,16 @@ Find the refunds for provided user id.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -674,7 +724,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -692,11 +742,16 @@ Get all existing roles with their ID.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -717,7 +772,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -735,11 +790,16 @@ Find Course Enrollments that a customer is buyer of
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -764,7 +824,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -784,11 +844,16 @@ A list of Course IDs the customer has access to. Alongside some data in the case
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $sourceId = 56; // int | The WordPress User ID to retrieve the course IDs for.
 
@@ -813,7 +878,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -833,11 +898,16 @@ A list of Course IDs the customer has access to. Alongside some data in the case
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -862,7 +932,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -882,11 +952,16 @@ Find Course Enrollments and filter by course or ownership relation.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $ownershipRelation = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -915,7 +990,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -935,11 +1010,16 @@ Requires the caller to have the admin role.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 
 try {
@@ -960,7 +1040,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -980,11 +1060,16 @@ Get and filter composer tokens of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $filter = new \stdClass; // object | Used for filtering/joining the results.
@@ -1011,7 +1096,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1031,11 +1116,16 @@ Get and filter customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
@@ -1059,7 +1149,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1079,11 +1169,16 @@ Get and filter subscriptions of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $filter = new \stdClass; // object | Used for filtering/joining the results.
@@ -1110,7 +1205,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1130,11 +1225,16 @@ Get and filter sites of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $filter = new \stdClass; // object | Used for filtering/joining the results.
@@ -1161,7 +1261,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1181,11 +1281,16 @@ Get and filter orders of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $filter = new \stdClass; // object | Used for filtering/joining the results.
@@ -1212,7 +1317,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1230,11 +1335,16 @@ No authorization required
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -1258,7 +1368,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1278,11 +1388,16 @@ Get and filter user identities of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $filter = new \stdClass; // object | Used for filtering/joining the results.
@@ -1309,7 +1424,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1329,11 +1444,16 @@ Get and filter customers
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
@@ -1358,7 +1478,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1378,11 +1498,16 @@ Get a single composer token of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -1411,7 +1536,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1431,11 +1556,16 @@ Get a single subscriptions of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -1464,7 +1594,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1484,11 +1614,16 @@ Get a single site of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -1517,7 +1652,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1537,11 +1672,16 @@ Get a single order of a customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -1570,7 +1710,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1590,11 +1730,16 @@ Get a single customer
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $filter = new \stdClass; // object | Used for filtering/joining the results.
@@ -1621,7 +1766,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1639,11 +1784,16 @@ Find Course Enrollments that a customer is student in
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -1668,7 +1818,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1688,11 +1838,16 @@ This route allows a customer to updates their profile on WordPress.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\UpdateUserToWordpressDto(); // \Yoast\MyYoastApiClient\Model\UpdateUserToWordpressDto | 
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -1719,7 +1874,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1737,11 +1892,16 @@ No authorization required
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -1766,7 +1926,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1931,11 +2091,16 @@ Newsletter subscription status
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -1960,7 +2125,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -1978,11 +2143,16 @@ Subscribe to the newsletter
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -2007,7 +2177,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -2076,11 +2246,16 @@ Unsubscribe from the newsletter
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -2105,7 +2280,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -2123,11 +2298,16 @@ No authorization required
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\UpdateUserDto(); // \Yoast\MyYoastApiClient\Model\UpdateUserDto | 
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
@@ -2153,7 +2333,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -2173,11 +2353,16 @@ This route allows the user to upload a new UserAvatar to their WordPress account
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -2202,7 +2387,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 

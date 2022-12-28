@@ -18,11 +18,16 @@ Method | HTTP request | Description
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $body = new \Yoast\MyYoastApiClient\Model\CreateCustomerNoteDto(); // \Yoast\MyYoastApiClient\Model\CreateCustomerNoteDto | 
 
@@ -46,7 +51,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -64,11 +69,16 @@ No authorization required
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
@@ -92,7 +102,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -112,11 +122,16 @@ Get and filter customer notes
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $filter = new \stdClass; // object | Used for filtering/joining the results.
 
@@ -141,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
@@ -161,11 +176,16 @@ Get a single customer note
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Yoast\MyYoastApiClient\Api\CustomerNoteApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 $filter = new \stdClass; // object | Used for filtering/joining the results.
@@ -192,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../../README.md#bearer)
 
 ### HTTP request headers
 
