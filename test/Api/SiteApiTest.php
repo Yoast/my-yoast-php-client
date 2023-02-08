@@ -143,7 +143,7 @@ class SiteApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for getSiteStatus
      *
-     * Get a url's HTTP status.
+     * Get a urls HTTP status.
      *
      */
     public function testGetSiteStatus()

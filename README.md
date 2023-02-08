@@ -319,7 +319,7 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**getMany**](docs/Api/SiteApi.md#getmany) | **GET** /api/Sites | Get sites
 *SiteApi* | [**getManyPaged**](docs/Api/SiteApi.md#getmanypaged) | **GET** /api/Sites/paged | Get sites
 *SiteApi* | [**getOne**](docs/Api/SiteApi.md#getone) | **GET** /api/Sites/{id} | Get a site
-*SiteApi* | [**getSiteStatus**](docs/Api/SiteApi.md#getsitestatus) | **GET** /api/Sites/getSiteStatus | Get a url&#x27;s HTTP status
+*SiteApi* | [**getSiteStatus**](docs/Api/SiteApi.md#getsitestatus) | **GET** /api/Sites/getSiteStatus | Get a urls HTTP status
 *SiteApi* | [**index**](docs/Api/SiteApi.md#index) | **POST** /api/Sites/index | 
 *SiteApi* | [**removeSubscription**](docs/Api/SiteApi.md#removesubscription) | **DELETE** /api/Sites/{id}/subscriptions/{subscriptionId} | Removes a subscription from a site
 *SiteApi* | [**switchSubscription**](docs/Api/SiteApi.md#switchsubscription) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
@@ -332,7 +332,9 @@ Class | Method | HTTP request | Description
 *SubscriptionApi* | [**getExpiringSubscriptions**](docs/Api/SubscriptionApi.md#getexpiringsubscriptions) | **GET** /api/Subscriptions/expiring | 
 *SubscriptionApi* | [**getMany**](docs/Api/SubscriptionApi.md#getmany) | **GET** /api/Subscriptions | Get subscriptions
 *SubscriptionApi* | [**getManyPaged**](docs/Api/SubscriptionApi.md#getmanypaged) | **GET** /api/Subscriptions/paged | Get subscriptions
+*SubscriptionApi* | [**getMutations**](docs/Api/SubscriptionApi.md#getmutations) | **GET** /api/Subscriptions/{id}/mutations | Get all subscription mutation events
 *SubscriptionApi* | [**getOne**](docs/Api/SubscriptionApi.md#getone) | **GET** /api/Subscriptions/{id} | Get a subscription
+*SubscriptionApi* | [**getProductSwitchOptions**](docs/Api/SubscriptionApi.md#getproductswitchoptions) | **GET** /api/Subscriptions/{id}/product-switch-options | Fetch product switch options
 *SubscriptionApi* | [**linkSite**](docs/Api/SubscriptionApi.md#linksite) | **POST** /api/Subscriptions/link-site | Link a subscription to provided site URL
 *SubscriptionApi* | [**recalculateSubscriptionCount**](docs/Api/SubscriptionApi.md#recalculatesubscriptioncount) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 *SubscriptionApi* | [**renew**](docs/Api/SubscriptionApi.md#renew) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
@@ -446,6 +448,7 @@ Class | Method | HTTP request | Description
  - [SubscribeByEmailBodyDto](docs/Model/SubscribeByEmailBodyDto.md)
  - [SubscribeDto](docs/Model/SubscribeDto.md)
  - [Subscription](docs/Model/Subscription.md)
+ - [SubscriptionMutation](docs/Model/SubscriptionMutation.md)
  - [SubscriptionProvisioningResponseDto](docs/Model/SubscriptionProvisioningResponseDto.md)
  - [SubscriptionStatusDto](docs/Model/SubscriptionStatusDto.md)
  - [SwitchSubscriptionNumberOfTimesDto](docs/Model/SwitchSubscriptionNumberOfTimesDto.md)

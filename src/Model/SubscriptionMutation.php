@@ -1,6 +1,6 @@
 <?php
 /**
- * ExtraProductData
+ * SubscriptionMutation
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * ExtraProductData Class Doc Comment
+ * SubscriptionMutation Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ExtraProductData implements ModelInterface, ArrayAccess
+class SubscriptionMutation implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ExtraProductData';
+    protected static $swaggerModelName = 'SubscriptionMutation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,13 +56,12 @@ class ExtraProductData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'shopId' => 'int',
-'changelog' => 'string',
-'productGroupSlugs' => 'string[]',
-'billingType' => 'string',
-'billingTerm' => 'string',
-'activationLimit' => 'int',
-'currency' => 'string'    ];
+        'id' => 'string',
+'subscriptionId' => 'string',
+'mutatorId' => 'string',
+'event' => 'string',
+'data' => 'object',
+'createdAt' => '\DateTime'    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,13 +69,12 @@ class ExtraProductData implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'shopId' => null,
-'changelog' => null,
-'productGroupSlugs' => null,
-'billingType' => null,
-'billingTerm' => null,
-'activationLimit' => null,
-'currency' => null    ];
+        'id' => null,
+'subscriptionId' => 'uuid',
+'mutatorId' => 'uuid',
+'event' => null,
+'data' => null,
+'createdAt' => 'date-time'    ];
 
     /**
      * Array of property to type mappings. Used for (de)serialization
@@ -105,13 +103,12 @@ class ExtraProductData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'shopId' => 'shop_id',
-'changelog' => 'changelog',
-'productGroupSlugs' => 'product_group_slugs',
-'billingType' => 'billingType',
-'billingTerm' => 'billingTerm',
-'activationLimit' => 'activationLimit',
-'currency' => 'currency'    ];
+        'id' => 'id',
+'subscriptionId' => 'subscriptionId',
+'mutatorId' => 'mutatorId',
+'event' => 'event',
+'data' => 'data',
+'createdAt' => 'createdAt'    ];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
@@ -119,13 +116,12 @@ class ExtraProductData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'shopId' => 'setShopId',
-'changelog' => 'setChangelog',
-'productGroupSlugs' => 'setProductGroupSlugs',
-'billingType' => 'setBillingType',
-'billingTerm' => 'setBillingTerm',
-'activationLimit' => 'setActivationLimit',
-'currency' => 'setCurrency'    ];
+        'id' => 'setId',
+'subscriptionId' => 'setSubscriptionId',
+'mutatorId' => 'setMutatorId',
+'event' => 'setEvent',
+'data' => 'setData',
+'createdAt' => 'setCreatedAt'    ];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
@@ -133,13 +129,12 @@ class ExtraProductData implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'shopId' => 'getShopId',
-'changelog' => 'getChangelog',
-'productGroupSlugs' => 'getProductGroupSlugs',
-'billingType' => 'getBillingType',
-'billingTerm' => 'getBillingTerm',
-'activationLimit' => 'getActivationLimit',
-'currency' => 'getCurrency'    ];
+        'id' => 'getId',
+'subscriptionId' => 'getSubscriptionId',
+'mutatorId' => 'getMutatorId',
+'event' => 'getEvent',
+'data' => 'getData',
+'createdAt' => 'getCreatedAt'    ];
 
     /**
      * Array of attributes where the key is the local name,
@@ -199,13 +194,12 @@ class ExtraProductData implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['shopId'] = isset($data['shopId']) ? $data['shopId'] : null;
-        $this->container['changelog'] = isset($data['changelog']) ? $data['changelog'] : null;
-        $this->container['productGroupSlugs'] = isset($data['productGroupSlugs']) ? $data['productGroupSlugs'] : null;
-        $this->container['billingType'] = isset($data['billingType']) ? $data['billingType'] : null;
-        $this->container['billingTerm'] = isset($data['billingTerm']) ? $data['billingTerm'] : null;
-        $this->container['activationLimit'] = isset($data['activationLimit']) ? $data['activationLimit'] : null;
-        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['subscriptionId'] = isset($data['subscriptionId']) ? $data['subscriptionId'] : null;
+        $this->container['mutatorId'] = isset($data['mutatorId']) ? $data['mutatorId'] : null;
+        $this->container['event'] = isset($data['event']) ? $data['event'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['createdAt'] = isset($data['createdAt']) ? $data['createdAt'] : null;
     }
 
     /**
@@ -217,20 +211,23 @@ class ExtraProductData implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['shopId'] === null) {
-            $invalidProperties[] = "'shopId' can't be null";
+        if ($this->container['id'] === null) {
+            $invalidProperties[] = "'id' can't be null";
         }
-        if ($this->container['changelog'] === null) {
-            $invalidProperties[] = "'changelog' can't be null";
+        if ($this->container['subscriptionId'] === null) {
+            $invalidProperties[] = "'subscriptionId' can't be null";
         }
-        if ($this->container['productGroupSlugs'] === null) {
-            $invalidProperties[] = "'productGroupSlugs' can't be null";
+        if ($this->container['mutatorId'] === null) {
+            $invalidProperties[] = "'mutatorId' can't be null";
         }
-        if ($this->container['billingType'] === null) {
-            $invalidProperties[] = "'billingType' can't be null";
+        if ($this->container['event'] === null) {
+            $invalidProperties[] = "'event' can't be null";
         }
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
+        if ($this->container['data'] === null) {
+            $invalidProperties[] = "'data' can't be null";
+        }
+        if ($this->container['createdAt'] === null) {
+            $invalidProperties[] = "'createdAt' can't be null";
         }
         return $invalidProperties;
     }
@@ -248,169 +245,145 @@ class ExtraProductData implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets shopId
-     *
-     * @return int
-     */
-    public function getShopId()
-    {
-        return $this->container['shopId'];
-    }
-
-    /**
-     * Sets shopId
-     *
-     * @param int $shopId shopId
-     *
-     * @return $this
-     */
-    public function setShopId($shopId)
-    {
-        $this->container['shopId'] = $shopId;
-
-        return $this;
-    }
-
-    /**
-     * Gets changelog
+     * Gets id
      *
      * @return string
      */
-    public function getChangelog()
+    public function getId()
     {
-        return $this->container['changelog'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets changelog
+     * Sets id
      *
-     * @param string $changelog changelog
+     * @param string $id id
      *
      * @return $this
      */
-    public function setChangelog($changelog)
+    public function setId($id)
     {
-        $this->container['changelog'] = $changelog;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets productGroupSlugs
-     *
-     * @return string[]
-     */
-    public function getProductGroupSlugs()
-    {
-        return $this->container['productGroupSlugs'];
-    }
-
-    /**
-     * Sets productGroupSlugs
-     *
-     * @param string[] $productGroupSlugs productGroupSlugs
-     *
-     * @return $this
-     */
-    public function setProductGroupSlugs($productGroupSlugs)
-    {
-        $this->container['productGroupSlugs'] = $productGroupSlugs;
-
-        return $this;
-    }
-
-    /**
-     * Gets billingType
+     * Gets subscriptionId
      *
      * @return string
      */
-    public function getBillingType()
+    public function getSubscriptionId()
     {
-        return $this->container['billingType'];
+        return $this->container['subscriptionId'];
     }
 
     /**
-     * Sets billingType
+     * Sets subscriptionId
      *
-     * @param string $billingType billingType
+     * @param string $subscriptionId subscriptionId
      *
      * @return $this
      */
-    public function setBillingType($billingType)
+    public function setSubscriptionId($subscriptionId)
     {
-        $this->container['billingType'] = $billingType;
+        $this->container['subscriptionId'] = $subscriptionId;
 
         return $this;
     }
 
     /**
-     * Gets billingTerm
+     * Gets mutatorId
      *
      * @return string
      */
-    public function getBillingTerm()
+    public function getMutatorId()
     {
-        return $this->container['billingTerm'];
+        return $this->container['mutatorId'];
     }
 
     /**
-     * Sets billingTerm
+     * Sets mutatorId
      *
-     * @param string $billingTerm billingTerm
+     * @param string $mutatorId mutatorId
      *
      * @return $this
      */
-    public function setBillingTerm($billingTerm)
+    public function setMutatorId($mutatorId)
     {
-        $this->container['billingTerm'] = $billingTerm;
+        $this->container['mutatorId'] = $mutatorId;
 
         return $this;
     }
 
     /**
-     * Gets activationLimit
-     *
-     * @return int
-     */
-    public function getActivationLimit()
-    {
-        return $this->container['activationLimit'];
-    }
-
-    /**
-     * Sets activationLimit
-     *
-     * @param int $activationLimit activationLimit
-     *
-     * @return $this
-     */
-    public function setActivationLimit($activationLimit)
-    {
-        $this->container['activationLimit'] = $activationLimit;
-
-        return $this;
-    }
-
-    /**
-     * Gets currency
+     * Gets event
      *
      * @return string
      */
-    public function getCurrency()
+    public function getEvent()
     {
-        return $this->container['currency'];
+        return $this->container['event'];
     }
 
     /**
-     * Sets currency
+     * Sets event
      *
-     * @param string $currency currency
+     * @param string $event event
      *
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setEvent($event)
     {
-        $this->container['currency'] = $currency;
+        $this->container['event'] = $event;
+
+        return $this;
+    }
+
+    /**
+     * Gets data
+     *
+     * @return object
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     *
+     * @param object $data data
+     *
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets createdAt
+     *
+     * @return \DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['createdAt'];
+    }
+
+    /**
+     * Sets createdAt
+     *
+     * @param \DateTime $createdAt createdAt
+     *
+     * @return $this
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->container['createdAt'] = $createdAt;
 
         return $this;
     }

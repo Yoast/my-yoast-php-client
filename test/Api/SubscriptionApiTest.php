@@ -131,12 +131,32 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getMutations
+     *
+     * Get all subscription mutation events.
+     *
+     */
+    public function testGetMutations()
+    {
+    }
+
+    /**
      * Test case for getOne
      *
      * Get a subscription.
      *
      */
     public function testGetOne()
+    {
+    }
+
+    /**
+     * Test case for getProductSwitchOptions
+     *
+     * Fetch product switch options.
+     *
+     */
+    public function testGetProductSwitchOptions()
     {
     }
 

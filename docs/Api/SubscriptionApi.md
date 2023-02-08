@@ -10,7 +10,9 @@ Method | HTTP request | Description
 [**getExpiringSubscriptions**](SubscriptionApi.md#getexpiringsubscriptions) | **GET** /api/Subscriptions/expiring | 
 [**getMany**](SubscriptionApi.md#getmany) | **GET** /api/Subscriptions | Get subscriptions
 [**getManyPaged**](SubscriptionApi.md#getmanypaged) | **GET** /api/Subscriptions/paged | Get subscriptions
+[**getMutations**](SubscriptionApi.md#getmutations) | **GET** /api/Subscriptions/{id}/mutations | Get all subscription mutation events
 [**getOne**](SubscriptionApi.md#getone) | **GET** /api/Subscriptions/{id} | Get a subscription
+[**getProductSwitchOptions**](SubscriptionApi.md#getproductswitchoptions) | **GET** /api/Subscriptions/{id}/product-switch-options | Fetch product switch options
 [**linkSite**](SubscriptionApi.md#linksite) | **POST** /api/Subscriptions/link-site | Link a subscription to provided site URL
 [**recalculateSubscriptionCount**](SubscriptionApi.md#recalculatesubscriptioncount) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 [**renew**](SubscriptionApi.md#renew) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
@@ -345,6 +347,60 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getMutations**
+> \Yoast\MyYoastApiClient\Model\SubscriptionMutation[] getMutations($id)
+
+Get all subscription mutation events
+
+Fetch a list of occurred mutation events for a subscription
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $result = $apiInstance->getMutations($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->getMutations: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\SubscriptionMutation[]**](../Model/SubscriptionMutation.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getOne**
 > \Yoast\MyYoastApiClient\Model\Subscription getOne($id, $filter)
 
@@ -389,6 +445,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getProductSwitchOptions**
+> \Yoast\MyYoastApiClient\Model\Product[] getProductSwitchOptions($id)
+
+Fetch product switch options
+
+Route for fetching the products the caller can switch this subscription to.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $result = $apiInstance->getProductSwitchOptions($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->getProductSwitchOptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product[]**](../Model/Product.md)
 
 ### Authorization
 

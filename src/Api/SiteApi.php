@@ -1874,7 +1874,7 @@ class SiteApi
     /**
      * Operation getSiteStatus
      *
-     * Get a url's HTTP status
+     * Get a urls HTTP status
      *
      * @param  string $url url (required)
      *
@@ -1891,7 +1891,7 @@ class SiteApi
     /**
      * Operation getSiteStatusWithHttpInfo
      *
-     * Get a url's HTTP status
+     * Get a urls HTTP status
      *
      * @param  string $url (required)
      *
@@ -1966,7 +1966,7 @@ class SiteApi
     /**
      * Operation getSiteStatusAsync
      *
-     * Get a url's HTTP status
+     * Get a urls HTTP status
      *
      * @param  string $url (required)
      *
@@ -1986,7 +1986,7 @@ class SiteApi
     /**
      * Operation getSiteStatusAsyncWithHttpInfo
      *
-     * Get a url's HTTP status
+     * Get a urls HTTP status
      *
      * @param  string $url (required)
      *

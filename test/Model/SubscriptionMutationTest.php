@@ -1,6 +1,6 @@
 <?php
 /**
- * ExtraProductDataTest
+ * SubscriptionMutationTest
  *
  * PHP version 5
  *
@@ -29,15 +29,15 @@
 namespace Yoast\MyYoastApiClient;
 
 /**
- * ExtraProductDataTest Class Doc Comment
+ * SubscriptionMutationTest Class Doc Comment
  *
  * @category    Class
- * @description ExtraProductData
+ * @description SubscriptionMutation
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ExtraProductDataTest extends \PHPUnit_Framework_TestCase
+class SubscriptionMutationTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -69,58 +69,51 @@ class ExtraProductDataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ExtraProductData"
+     * Test "SubscriptionMutation"
      */
-    public function testExtraProductData()
+    public function testSubscriptionMutation()
     {
     }
 
     /**
-     * Test attribute "shopId"
+     * Test attribute "id"
      */
-    public function testPropertyShopId()
+    public function testPropertyId()
     {
     }
 
     /**
-     * Test attribute "changelog"
+     * Test attribute "subscriptionId"
      */
-    public function testPropertyChangelog()
+    public function testPropertySubscriptionId()
     {
     }
 
     /**
-     * Test attribute "productGroupSlugs"
+     * Test attribute "mutatorId"
      */
-    public function testPropertyProductGroupSlugs()
+    public function testPropertyMutatorId()
     {
     }
 
     /**
-     * Test attribute "billingType"
+     * Test attribute "event"
      */
-    public function testPropertyBillingType()
+    public function testPropertyEvent()
     {
     }
 
     /**
-     * Test attribute "billingTerm"
+     * Test attribute "data"
      */
-    public function testPropertyBillingTerm()
+    public function testPropertyData()
     {
     }
 
     /**
-     * Test attribute "activationLimit"
+     * Test attribute "createdAt"
      */
-    public function testPropertyActivationLimit()
-    {
-    }
-
-    /**
-     * Test attribute "currency"
-     */
-    public function testPropertyCurrency()
+    public function testPropertyCreatedAt()
     {
     }
 }

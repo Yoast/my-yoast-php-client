@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**getMany**](SiteApi.md#getmany) | **GET** /api/Sites | Get sites
 [**getManyPaged**](SiteApi.md#getmanypaged) | **GET** /api/Sites/paged | Get sites
 [**getOne**](SiteApi.md#getone) | **GET** /api/Sites/{id} | Get a site
-[**getSiteStatus**](SiteApi.md#getsitestatus) | **GET** /api/Sites/getSiteStatus | Get a url&#x27;s HTTP status
+[**getSiteStatus**](SiteApi.md#getsitestatus) | **GET** /api/Sites/getSiteStatus | Get a urls HTTP status
 [**index**](SiteApi.md#index) | **POST** /api/Sites/index | 
 [**removeSubscription**](SiteApi.md#removesubscription) | **DELETE** /api/Sites/{id}/subscriptions/{subscriptionId} | Removes a subscription from a site
 [**switchSubscription**](SiteApi.md#switchsubscription) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 # **getSiteStatus**
 > int getSiteStatus($url)
 
-Get a url's HTTP status
+Get a urls HTTP status
 
 Gets a http status code by a given URL
 
