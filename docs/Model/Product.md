@@ -19,7 +19,6 @@ Name | Type | Description | Notes
 **shopTaxStatus** | **string** |  | 
 **shopTaxClass** | **string** |  | 
 **currentVersion** | **string** |  | 
-**changelog** | **string** |  | 
 **type** | **string** |  | 
 **currency** | **string** |  | 
 **createdAt** | [**\DateTime**](\DateTime.md) |  | 

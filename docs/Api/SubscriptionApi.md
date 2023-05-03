@@ -12,12 +12,14 @@ Method | HTTP request | Description
 [**getManyPaged**](SubscriptionApi.md#getmanypaged) | **GET** /api/Subscriptions/paged | Get subscriptions
 [**getMutations**](SubscriptionApi.md#getmutations) | **GET** /api/Subscriptions/{id}/mutations | Get all subscription mutation events
 [**getOne**](SubscriptionApi.md#getone) | **GET** /api/Subscriptions/{id} | Get a subscription
+[**getOneAsEntity**](SubscriptionApi.md#getoneasentity) | **GET** /api/Subscriptions/{id}/asEntity | Get a subscription
 [**getProductSwitchOptions**](SubscriptionApi.md#getproductswitchoptions) | **GET** /api/Subscriptions/{id}/product-switch-options | Fetch product switch options
 [**linkSite**](SubscriptionApi.md#linksite) | **POST** /api/Subscriptions/link-site | Link a subscription to provided site URL
 [**recalculateSubscriptionCount**](SubscriptionApi.md#recalculatesubscriptioncount) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 [**renew**](SubscriptionApi.md#renew) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
 [**setExpiryDate**](SubscriptionApi.md#setexpirydate) | **POST** /api/Subscriptions/setExpiryDate | Set Date.
 [**switchPaymentMethod**](SubscriptionApi.md#switchpaymentmethod) | **GET** /api/Subscriptions/switchPaymentMethod/{id}/{subscriptionNumber} | 
+[**switchProduct**](SubscriptionApi.md#switchproduct) | **POST** /api/Subscriptions/{id}/switch-product | Switch to another product
 [**transferOwnership**](SubscriptionApi.md#transferownership) | **POST** /api/Subscriptions/transfer | Transfer subscription ownership
 [**upgrade**](SubscriptionApi.md#upgrade) | **GET** /api/Subscriptions/upgrade/{subscriptionNumber}/{secretKey} | Upgrade subscriptions
 
@@ -457,6 +459,62 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getOneAsEntity**
+> \Yoast\MyYoastApiClient\Model\Subscription getOneAsEntity($id, $filter)
+
+Get a subscription
+
+Get a single subscription
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$filter = new \stdClass; // object | Used for filtering/joining the results.
+
+try {
+    $result = $apiInstance->getOneAsEntity($id, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->getOneAsEntity: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+ **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getProductSwitchOptions**
 > \Yoast\MyYoastApiClient\Model\Product[] getProductSwitchOptions($id)
 
@@ -783,6 +841,62 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **switchProduct**
+> \Yoast\MyYoastApiClient\Model\Product[] switchProduct($body, $id)
+
+Switch to another product
+
+Trade in time remaining on a subscription to up- or downgrade to another product.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Yoast\MyYoastApiClient\Model\ProductDto(); // \Yoast\MyYoastApiClient\Model\ProductDto | 
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $result = $apiInstance->switchProduct($body, $id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->switchProduct: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Yoast\MyYoastApiClient\Model\ProductDto**](../Model/ProductDto.md)|  |
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Product[]**](../Model/Product.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

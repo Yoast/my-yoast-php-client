@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**getScheduledJobs**](WorkerApi.md#getscheduledjobs) | **GET** /api/Worker/getScheduledJobs/{name} | 
 [**removeAllJobsWithName**](WorkerApi.md#removealljobswithname) | **DELETE** /api/Worker/jobsByName/{name} | 
 [**removeJob**](WorkerApi.md#removejob) | **DELETE** /api/Worker/job/{id} | 
+[**replaceJob**](WorkerApi.md#replacejob) | **POST** /api/Worker/job/replace | 
 
 # **addJob**
 > addJob($body)
@@ -361,6 +362,57 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **replaceJob**
+> replaceJob($body)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\WorkerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Yoast\MyYoastApiClient\Model\AddJobDto(); // \Yoast\MyYoastApiClient\Model\AddJobDto | 
+
+try {
+    $apiInstance->replaceJob($body);
+} catch (Exception $e) {
+    echo 'Exception when calling WorkerApi->replaceJob: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Yoast\MyYoastApiClient\Model\AddJobDto**](../Model/AddJobDto.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

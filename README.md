@@ -56,100 +56,34 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
+$apiInstance = new Yoast\MyYoastApiClient\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
-$body = new \Yoast\MyYoastApiClient\Model\UpdateDto(); // \Yoast\MyYoastApiClient\Model\UpdateDto | 
+$body = new \Yoast\MyYoastApiClient\Model\UsernameCheckRequestDto(); // \Yoast\MyYoastApiClient\Model\UsernameCheckRequestDto | 
+$xAccountAppSharedSecret = "xAccountAppSharedSecret_example"; // string | The API shared secret
+
+try {
+    $result = $apiInstance->checkUsername($body, $xAccountAppSharedSecret);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountsApi->checkUsername: ', $e->getMessage(), PHP_EOL;
+}
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Yoast\MyYoastApiClient\Model\TOTPTwoFactorConfigDto(); // \Yoast\MyYoastApiClient\Model\TOTPTwoFactorConfigDto | 
+$xAccountAppSharedSecret = "xAccountAppSharedSecret_example"; // string | The API shared secret
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
 
 try {
-    $result = $apiInstance->changeStudent($body, $id);
-    print_r($result);
+    $apiInstance->setTOTPTwoFactorConfig($body, $xAccountAppSharedSecret, $id);
 } catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->changeStudent: ', $e->getMessage(), PHP_EOL;
-}
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$filter = new \stdClass; // object | Used for filtering/joining the results.
-
-try {
-    $result = $apiInstance->getMany($filter);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->getMany: ', $e->getMessage(), PHP_EOL;
-}
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$filter = new \stdClass; // object | Used for filtering/joining the results.
-
-try {
-    $apiInstance->getManyPaged($filter);
-} catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->getManyPaged: ', $e->getMessage(), PHP_EOL;
-}
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-
-try {
-    $result = $apiInstance->getOne($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->getOne: ', $e->getMessage(), PHP_EOL;
-}
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$body = new \Yoast\MyYoastApiClient\Model\CreateDto(); // \Yoast\MyYoastApiClient\Model\CreateDto | 
-
-try {
-    $result = $apiInstance->invite($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->invite: ', $e->getMessage(), PHP_EOL;
-}
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\AdmissionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$body = new \Yoast\MyYoastApiClient\Model\TransferAdmissionDto(); // \Yoast\MyYoastApiClient\Model\TransferAdmissionDto | 
-
-try {
-    $result = $apiInstance->transferAdmissions($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AdmissionApi->transferAdmissions: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountsApi->setTOTPTwoFactorConfig: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -160,6 +94,8 @@ All URIs are relative to *http://my.yoast.test:3000*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountsApi* | [**checkUsername**](docs/Api/AccountsApi.md#checkusername) | **GET** /api/accounts/checkUsername | Username availability check
+*AccountsApi* | [**setTOTPTwoFactorConfig**](docs/Api/AccountsApi.md#settotptwofactorconfig) | **POST** /api/accounts/{id}/TOTPTwoFactorConfig | 
 *AdmissionApi* | [**changeStudent**](docs/Api/AdmissionApi.md#changestudent) | **PUT** /api/Admissions/{id} | Update an admission
 *AdmissionApi* | [**getMany**](docs/Api/AdmissionApi.md#getmany) | **GET** /api/Admissions | Get admissions
 *AdmissionApi* | [**getManyPaged**](docs/Api/AdmissionApi.md#getmanypaged) | **GET** /api/Admissions/paged | Get admissions
@@ -174,6 +110,7 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**yoastComLogin**](docs/Api/AuthApi.md#yoastcomlogin) | **GET** /auth/yoast | 
 *AuthenticationApi* | [**getAccessToken**](docs/Api/AuthenticationApi.md#getaccesstoken) | **GET** /api/auth/{id}/getAccessToken | 
 *AuthenticationApi* | [**getProfile**](docs/Api/AuthenticationApi.md#getprofile) | **GET** /api/profile | 
+*AuthenticationApi* | [**impersonate**](docs/Api/AuthenticationApi.md#impersonate) | **POST** /api/auth/{id}/impersonate | 
 *AuthenticationApi* | [**login**](docs/Api/AuthenticationApi.md#login) | **POST** /api/auth/login | 
 *BlacklistApi* | [**createOne**](docs/Api/BlacklistApi.md#createone) | **POST** /api/Blacklist | Creates a blacklisted site
 *BlacklistApi* | [**deleteOne**](docs/Api/BlacklistApi.md#deleteone) | **DELETE** /api/Blacklist/{id} | Remove a site from the blacklist
@@ -243,20 +180,7 @@ Class | Method | HTTP request | Description
 *CustomerNoteApi* | [**deleteOne**](docs/Api/CustomerNoteApi.md#deleteone) | **DELETE** /api/CustomerNotes/{id} | 
 *CustomerNoteApi* | [**getMany**](docs/Api/CustomerNoteApi.md#getmany) | **GET** /api/CustomerNotes | Get customer notes
 *CustomerNoteApi* | [**getOne**](docs/Api/CustomerNoteApi.md#getone) | **GET** /api/CustomerNotes/{id} | Get a customer note
-*DefaultApi* | [**addAgency**](docs/Api/DefaultApi.md#addagency) | **POST** /api/SiteReview/Agency | 
-*DefaultApi* | [**addOwnerToAgency**](docs/Api/DefaultApi.md#addownertoagency) | **POST** /api/SiteReview/Agency/add-owner | 
-*DefaultApi* | [**createClient**](docs/Api/DefaultApi.md#createclient) | **POST** /api/SiteReview/Client | 
-*DefaultApi* | [**createReview**](docs/Api/DefaultApi.md#createreview) | **POST** /api/SiteReview/Review | 
-*DefaultApi* | [**disconnectOwnerFromAgency**](docs/Api/DefaultApi.md#disconnectownerfromagency) | **POST** /api/SiteReview/Agency/disconnect-owner | 
-*DefaultApi* | [**getAllAgenciesWithUsers**](docs/Api/DefaultApi.md#getallagencieswithusers) | **GET** /api/SiteReview/Agency/all | 
-*DefaultApi* | [**getAllForAgency**](docs/Api/DefaultApi.md#getallforagency) | **GET** /api/SiteReview/Client/Agency/{id} | 
-*DefaultApi* | [**getAllForCustomer**](docs/Api/DefaultApi.md#getallforcustomer) | **GET** /api/SiteReview/Agency | 
-*DefaultApi* | [**getAllReviews**](docs/Api/DefaultApi.md#getallreviews) | **GET** /api/SiteReview/Review/Agency/{id} | 
-*DefaultApi* | [**getById**](docs/Api/DefaultApi.md#getbyid) | **GET** /api/SiteReview/Agency/{id} | 
-*DefaultApi* | [**getClientById**](docs/Api/DefaultApi.md#getclientbyid) | **GET** /api/SiteReview/Client/{id} | 
-*DefaultApi* | [**setTOTPTwoFactorConfig**](docs/Api/DefaultApi.md#settotptwofactorconfig) | **POST** /api/accounts/{id}/TOTPTwoFactorConfig | 
-*DefaultApi* | [**updateClientById**](docs/Api/DefaultApi.md#updateclientbyid) | **PUT** /api/SiteReview/Agency/{id} | 
-*DefaultApi* | [**updateClientById_0**](docs/Api/DefaultApi.md#updateclientbyid_0) | **PATCH** /api/SiteReview/Client/{id} | 
+*DefaultApi* | [**checkHealth**](docs/Api/DefaultApi.md#checkhealth) | **POST** /api/tmp | 
 *DownloadApi* | [**downloadFile**](docs/Api/DownloadApi.md#downloadfile) | **GET** /api/downloads/file/{name} | Route to download a file
 *DownloadApi* | [**uploadFile**](docs/Api/DownloadApi.md#uploadfile) | **POST** /api/downloads/file/{name} | Route to update a file.
 *EDDApi* | [**handleGetRequest**](docs/Api/EDDApi.md#handlegetrequest) | **GET** /edd-sl-api | Activate or deactivate a site license
@@ -301,6 +225,8 @@ Class | Method | HTTP request | Description
 *ProductApi* | [**pluginVersionDetails**](docs/Api/ProductApi.md#pluginversiondetails) | **GET** /api/Products/wordpressPluginVersionDetails | 
 *ProductGroupApi* | [**getMany**](docs/Api/ProductGroupApi.md#getmany) | **GET** /api/ProductGroups | Get productgroups
 *ProductGroupApi* | [**updateDownload**](docs/Api/ProductGroupApi.md#updatedownload) | **PATCH** /api/ProductGroups/updateDownload | Update the download
+*ProductSwitchApi* | [**invoice**](docs/Api/ProductSwitchApi.md#invoice) | **GET** /api/ProductSwitch/{id}/invoice | Create invoice
+*ProductSwitchApi* | [**revert**](docs/Api/ProductSwitchApi.md#revert) | **GET** /api/ProductSwitch/{id}/revert | Create invoice
 *ProvisionerApi* | [**getMany**](docs/Api/ProvisionerApi.md#getmany) | **GET** /api/ProvisionerData | Get provisioner data
 *ProvisionerApi* | [**getOne**](docs/Api/ProvisionerApi.md#getone) | **GET** /api/ProvisionerData/{id} | Get provisioner data
 *ProvisioningAccountApi* | [**setSiteForSubscription**](docs/Api/ProvisioningAccountApi.md#setsiteforsubscription) | **POST** /api/provisioning/account/regenerate-token | Generate a new auth token
@@ -334,12 +260,14 @@ Class | Method | HTTP request | Description
 *SubscriptionApi* | [**getManyPaged**](docs/Api/SubscriptionApi.md#getmanypaged) | **GET** /api/Subscriptions/paged | Get subscriptions
 *SubscriptionApi* | [**getMutations**](docs/Api/SubscriptionApi.md#getmutations) | **GET** /api/Subscriptions/{id}/mutations | Get all subscription mutation events
 *SubscriptionApi* | [**getOne**](docs/Api/SubscriptionApi.md#getone) | **GET** /api/Subscriptions/{id} | Get a subscription
+*SubscriptionApi* | [**getOneAsEntity**](docs/Api/SubscriptionApi.md#getoneasentity) | **GET** /api/Subscriptions/{id}/asEntity | Get a subscription
 *SubscriptionApi* | [**getProductSwitchOptions**](docs/Api/SubscriptionApi.md#getproductswitchoptions) | **GET** /api/Subscriptions/{id}/product-switch-options | Fetch product switch options
 *SubscriptionApi* | [**linkSite**](docs/Api/SubscriptionApi.md#linksite) | **POST** /api/Subscriptions/link-site | Link a subscription to provided site URL
 *SubscriptionApi* | [**recalculateSubscriptionCount**](docs/Api/SubscriptionApi.md#recalculatesubscriptioncount) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 *SubscriptionApi* | [**renew**](docs/Api/SubscriptionApi.md#renew) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
 *SubscriptionApi* | [**setExpiryDate**](docs/Api/SubscriptionApi.md#setexpirydate) | **POST** /api/Subscriptions/setExpiryDate | Set Date.
 *SubscriptionApi* | [**switchPaymentMethod**](docs/Api/SubscriptionApi.md#switchpaymentmethod) | **GET** /api/Subscriptions/switchPaymentMethod/{id}/{subscriptionNumber} | 
+*SubscriptionApi* | [**switchProduct**](docs/Api/SubscriptionApi.md#switchproduct) | **POST** /api/Subscriptions/{id}/switch-product | Switch to another product
 *SubscriptionApi* | [**transferOwnership**](docs/Api/SubscriptionApi.md#transferownership) | **POST** /api/Subscriptions/transfer | Transfer subscription ownership
 *SubscriptionApi* | [**upgrade**](docs/Api/SubscriptionApi.md#upgrade) | **GET** /api/Subscriptions/upgrade/{subscriptionNumber}/{secretKey} | Upgrade subscriptions
 *SubscriptionProvisioningApi* | [**cancelSubscription**](docs/Api/SubscriptionProvisioningApi.md#cancelsubscription) | **POST** /api/provisioning/subscriptions/{id}/cancel | Cancel a single subscription
@@ -355,6 +283,7 @@ Class | Method | HTTP request | Description
 *WorkerApi* | [**getScheduledJobs**](docs/Api/WorkerApi.md#getscheduledjobs) | **GET** /api/Worker/getScheduledJobs/{name} | 
 *WorkerApi* | [**removeAllJobsWithName**](docs/Api/WorkerApi.md#removealljobswithname) | **DELETE** /api/Worker/jobsByName/{name} | 
 *WorkerApi* | [**removeJob**](docs/Api/WorkerApi.md#removejob) | **DELETE** /api/Worker/job/{id} | 
+*WorkerApi* | [**replaceJob**](docs/Api/WorkerApi.md#replacejob) | **POST** /api/Worker/job/replace | 
 
 ## Documentation For Models
 
@@ -362,9 +291,7 @@ Class | Method | HTTP request | Description
  - [AccessTokenResponse](docs/Model/AccessTokenResponse.md)
  - [ActivateAccountDto](docs/Model/ActivateAccountDto.md)
  - [ActivateAccountResponseDto](docs/Model/ActivateAccountResponseDto.md)
- - [AddAgencyDto](docs/Model/AddAgencyDto.md)
  - [AddJobDto](docs/Model/AddJobDto.md)
- - [AddOwnerToAgencyDto](docs/Model/AddOwnerToAgencyDto.md)
  - [AddSubscriptionDto](docs/Model/AddSubscriptionDto.md)
  - [Admission](docs/Model/Admission.md)
  - [AutoRenewalCountResponseDto](docs/Model/AutoRenewalCountResponseDto.md)
@@ -383,18 +310,15 @@ Class | Method | HTTP request | Description
  - [CourseEnrollmentFromAcademyDto](docs/Model/CourseEnrollmentFromAcademyDto.md)
  - [CreateAccountDto](docs/Model/CreateAccountDto.md)
  - [CreateBlacklistSiteDto](docs/Model/CreateBlacklistSiteDto.md)
- - [CreateClientDto](docs/Model/CreateClientDto.md)
  - [CreateCustomerNoteDto](docs/Model/CreateCustomerNoteDto.md)
  - [CreateDto](docs/Model/CreateDto.md)
  - [CreateProvisionedSubscriptionDto](docs/Model/CreateProvisionedSubscriptionDto.md)
- - [CreateReviewDto](docs/Model/CreateReviewDto.md)
  - [CreateSiteBodyDto](docs/Model/CreateSiteBodyDto.md)
  - [Customer](docs/Model/Customer.md)
  - [CustomerData](docs/Model/CustomerData.md)
  - [CustomerDetails](docs/Model/CustomerDetails.md)
  - [CustomerFromWooDto](docs/Model/CustomerFromWooDto.md)
  - [CustomerNote](docs/Model/CustomerNote.md)
- - [DisconnectOwnerFromAgencyDto](docs/Model/DisconnectOwnerFromAgencyDto.md)
  - [EddDTO](docs/Model/EddDTO.md)
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)
@@ -422,6 +346,7 @@ Class | Method | HTTP request | Description
  - [ProductCategory](docs/Model/ProductCategory.md)
  - [ProductData](docs/Model/ProductData.md)
  - [ProductDownload](docs/Model/ProductDownload.md)
+ - [ProductDto](docs/Model/ProductDto.md)
  - [ProductFromWooDto](docs/Model/ProductFromWooDto.md)
  - [ProductGroup](docs/Model/ProductGroup.md)
  - [ProductGroupExtraData](docs/Model/ProductGroupExtraData.md)
@@ -464,9 +389,7 @@ Class | Method | HTTP request | Description
  - [TwoFactorConfigDto](docs/Model/TwoFactorConfigDto.md)
  - [UnspecifiedResponseDto](docs/Model/UnspecifiedResponseDto.md)
  - [UnsubscribeDto](docs/Model/UnsubscribeDto.md)
- - [UpdateAgencyDto](docs/Model/UpdateAgencyDto.md)
  - [UpdateAllKVRequestDto](docs/Model/UpdateAllKVRequestDto.md)
- - [UpdateClientDto](docs/Model/UpdateClientDto.md)
  - [UpdateDownloadDto](docs/Model/UpdateDownloadDto.md)
  - [UpdateDto](docs/Model/UpdateDto.md)
  - [UpdateFileDto](docs/Model/UpdateFileDto.md)
@@ -475,6 +398,8 @@ Class | Method | HTTP request | Description
  - [UpdateUserDto](docs/Model/UpdateUserDto.md)
  - [UpdateUserToWordpressDto](docs/Model/UpdateUserToWordpressDto.md)
  - [UserIdentity](docs/Model/UserIdentity.md)
+ - [UsernameCheckRequestDto](docs/Model/UsernameCheckRequestDto.md)
+ - [UsernameCheckResponseDto](docs/Model/UsernameCheckResponseDto.md)
 
 ## Documentation For Authorization
 
