@@ -1,6 +1,6 @@
 # Yoast\MyYoastApiClient\SubscriptionApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**linkSite**](SubscriptionApi.md#linksite) | **POST** /api/Subscriptions/link-site | Link a subscription to provided site URL
 [**recalculateSubscriptionCount**](SubscriptionApi.md#recalculatesubscriptioncount) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 [**renew**](SubscriptionApi.md#renew) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
+[**runScript**](SubscriptionApi.md#runscript) | **GET** /api/Subscriptions/runscript | 
 [**setExpiryDate**](SubscriptionApi.md#setexpirydate) | **POST** /api/Subscriptions/setExpiryDate | Set Date.
 [**switchPaymentMethod**](SubscriptionApi.md#switchpaymentmethod) | **GET** /api/Subscriptions/switchPaymentMethod/{id}/{subscriptionNumber} | 
 [**switchProduct**](SubscriptionApi.md#switchproduct) | **POST** /api/Subscriptions/{id}/switch-product | Switch to another product
@@ -734,6 +735,53 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **runScript**
+> runScript()
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $apiInstance->runScript();
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->runScript: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

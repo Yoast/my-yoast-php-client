@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **permalink** | **string** |  | 
 **downloads** | [**\Yoast\MyYoastApiClient\Model\ProductDownload[]**](ProductDownload.md) |  | 
 **sku** | **string** |  | 
+**uSProductId** | **int** |  | 
 **type** | **string** |  | 
 **status** | **string** |  | 
 **regularPrice** | **string** |  | 
