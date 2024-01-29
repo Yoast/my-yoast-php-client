@@ -62,7 +62,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         'billingType' => 'string',
         'billingTerm' => 'string',
         'activationLimit' => 'int',
-        'currency' => 'string'
+        'currency' => 'string[]'
     ];
 
     /**
@@ -399,7 +399,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
     /**
      * Gets currency
      *
-     * @return string
+     * @return string[]
      */
     public function getCurrency()
     {
@@ -409,7 +409,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string $currency currency
+     * @param string[] $currency currency
      *
      * @return $this
      */

@@ -59,16 +59,16 @@ class ProductData implements ModelInterface, ArrayAccess
         'metaData' => '\Yoast\MyYoastApiClient\Model\MetaDataDto[]',
         'images' => '\Yoast\MyYoastApiClient\Model\ProductImage[]',
         'id' => 'int',
+        'uSProductId' => 'int',
         'name' => 'string',
         'description' => 'string',
         'permalink' => 'string',
         'downloads' => '\Yoast\MyYoastApiClient\Model\ProductDownload[]',
         'sku' => 'string',
-        'uSProductId' => 'int',
         'type' => 'string',
         'status' => 'string',
-        'regularPrice' => 'string',
-        'price' => 'string',
+        'regularPrice' => 'string[]',
+        'price' => 'string[]',
         'purchasable' => 'bool',
         'taxStatus' => 'string',
         'taxClass' => 'string',
@@ -84,12 +84,12 @@ class ProductData implements ModelInterface, ArrayAccess
         'metaData' => null,
         'images' => null,
         'id' => null,
+        'uSProductId' => null,
         'name' => null,
         'description' => null,
         'permalink' => null,
         'downloads' => null,
         'sku' => null,
-        'uSProductId' => null,
         'type' => null,
         'status' => null,
         'regularPrice' => null,
@@ -130,12 +130,12 @@ class ProductData implements ModelInterface, ArrayAccess
         'metaData' => 'meta_data',
         'images' => 'images',
         'id' => 'id',
+        'uSProductId' => 'USProductId',
         'name' => 'name',
         'description' => 'description',
         'permalink' => 'permalink',
         'downloads' => 'downloads',
         'sku' => 'sku',
-        'uSProductId' => 'USProductId',
         'type' => 'type',
         'status' => 'status',
         'regularPrice' => 'regular_price',
@@ -155,12 +155,12 @@ class ProductData implements ModelInterface, ArrayAccess
         'metaData' => 'setMetaData',
         'images' => 'setImages',
         'id' => 'setId',
+        'uSProductId' => 'setUSProductId',
         'name' => 'setName',
         'description' => 'setDescription',
         'permalink' => 'setPermalink',
         'downloads' => 'setDownloads',
         'sku' => 'setSku',
-        'uSProductId' => 'setUSProductId',
         'type' => 'setType',
         'status' => 'setStatus',
         'regularPrice' => 'setRegularPrice',
@@ -180,12 +180,12 @@ class ProductData implements ModelInterface, ArrayAccess
         'metaData' => 'getMetaData',
         'images' => 'getImages',
         'id' => 'getId',
+        'uSProductId' => 'getUSProductId',
         'name' => 'getName',
         'description' => 'getDescription',
         'permalink' => 'getPermalink',
         'downloads' => 'getDownloads',
         'sku' => 'getSku',
-        'uSProductId' => 'getUSProductId',
         'type' => 'getType',
         'status' => 'getStatus',
         'regularPrice' => 'getRegularPrice',
@@ -257,12 +257,12 @@ class ProductData implements ModelInterface, ArrayAccess
         $this->container['metaData'] = isset($data['metaData']) ? $data['metaData'] : null;
         $this->container['images'] = isset($data['images']) ? $data['images'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['uSProductId'] = isset($data['uSProductId']) ? $data['uSProductId'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['permalink'] = isset($data['permalink']) ? $data['permalink'] : null;
         $this->container['downloads'] = isset($data['downloads']) ? $data['downloads'] : null;
         $this->container['sku'] = isset($data['sku']) ? $data['sku'] : null;
-        $this->container['uSProductId'] = isset($data['uSProductId']) ? $data['uSProductId'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['regularPrice'] = isset($data['regularPrice']) ? $data['regularPrice'] : null;
@@ -291,6 +291,9 @@ class ProductData implements ModelInterface, ArrayAccess
         if ($this->container['id'] === null) {
             $invalidProperties[] = "'id' can't be null";
         }
+        if ($this->container['uSProductId'] === null) {
+            $invalidProperties[] = "'uSProductId' can't be null";
+        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -305,9 +308,6 @@ class ProductData implements ModelInterface, ArrayAccess
         }
         if ($this->container['sku'] === null) {
             $invalidProperties[] = "'sku' can't be null";
-        }
-        if ($this->container['uSProductId'] === null) {
-            $invalidProperties[] = "'uSProductId' can't be null";
         }
         if ($this->container['type'] === null) {
             $invalidProperties[] = "'type' can't be null";
@@ -416,6 +416,30 @@ class ProductData implements ModelInterface, ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets uSProductId
+     *
+     * @return int
+     */
+    public function getUSProductId()
+    {
+        return $this->container['uSProductId'];
+    }
+
+    /**
+     * Sets uSProductId
+     *
+     * @param int $uSProductId uSProductId
+     *
+     * @return $this
+     */
+    public function setUSProductId($uSProductId)
+    {
+        $this->container['uSProductId'] = $uSProductId;
 
         return $this;
     }
@@ -541,30 +565,6 @@ class ProductData implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets uSProductId
-     *
-     * @return int
-     */
-    public function getUSProductId()
-    {
-        return $this->container['uSProductId'];
-    }
-
-    /**
-     * Sets uSProductId
-     *
-     * @param int $uSProductId uSProductId
-     *
-     * @return $this
-     */
-    public function setUSProductId($uSProductId)
-    {
-        $this->container['uSProductId'] = $uSProductId;
-
-        return $this;
-    }
-
-    /**
      * Gets type
      *
      * @return string
@@ -615,7 +615,7 @@ class ProductData implements ModelInterface, ArrayAccess
     /**
      * Gets regularPrice
      *
-     * @return string
+     * @return string[]
      */
     public function getRegularPrice()
     {
@@ -625,7 +625,7 @@ class ProductData implements ModelInterface, ArrayAccess
     /**
      * Sets regularPrice
      *
-     * @param string $regularPrice regularPrice
+     * @param string[] $regularPrice regularPrice
      *
      * @return $this
      */
@@ -639,7 +639,7 @@ class ProductData implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return string
+     * @return string[]
      */
     public function getPrice()
     {
@@ -649,7 +649,7 @@ class ProductData implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param string $price price
+     * @param string[] $price price
      *
      * @return $this
      */

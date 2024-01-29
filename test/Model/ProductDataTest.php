@@ -99,6 +99,13 @@ class ProductDataTest extends TestCase
     }
 
     /**
+     * Test attribute "uSProductId"
+     */
+    public function testPropertyUSProductId()
+    {
+    }
+
+    /**
      * Test attribute "name"
      */
     public function testPropertyName()
@@ -130,13 +137,6 @@ class ProductDataTest extends TestCase
      * Test attribute "sku"
      */
     public function testPropertySku()
-    {
-    }
-
-    /**
-     * Test attribute "uSProductId"
-     */
-    public function testPropertyUSProductId()
     {
     }
 
