@@ -90,7 +90,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://my.yoast.test*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -159,7 +159,6 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**getMany_3**](docs/Api/CustomerApi.md#getmany_3) | **GET** /api/Customers/{id}/roles | 
 *CustomerApi* | [**getMany_4**](docs/Api/CustomerApi.md#getmany_4) | **GET** /api/Customers/{customerId}/identities | Get user identities
 *CustomerApi* | [**getMany_5**](docs/Api/CustomerApi.md#getmany_5) | **GET** /api/Customers | Get customers
-*CustomerApi* | [**getMany_6**](docs/Api/CustomerApi.md#getmany_6) | **GET** /api/Customers/{customerId}/licenses | Get licenses
 *CustomerApi* | [**getOne**](docs/Api/CustomerApi.md#getone) | **GET** /api/Customers/{customerId}/composerTokens/{id} | Get a composer token
 *CustomerApi* | [**getOne_0**](docs/Api/CustomerApi.md#getone_0) | **GET** /api/Customers/{customerId}/subscriptions/{id} | Get a subscriptions
 *CustomerApi* | [**getOne_1**](docs/Api/CustomerApi.md#getone_1) | **GET** /api/Customers/{customerId}/sites/{id} | Get a site
@@ -171,7 +170,12 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**resetPassword**](docs/Api/CustomerApi.md#resetpassword) | **PATCH** /api/Customers/resetPassword | Reset the user&#x27;s password.
 *CustomerApi* | [**sendResetPasswordEmail**](docs/Api/CustomerApi.md#sendresetpasswordemail) | **POST** /api/Customers/sendResetPasswordEmail | Send a reset password email to the user.
 *CustomerApi* | [**signup**](docs/Api/CustomerApi.md#signup) | **POST** /api/Customers/signup | Signup a customer on yoast.com following the normal signup flow.
+*CustomerApi* | [**status**](docs/Api/CustomerApi.md#status) | **GET** /api/Customers/{customerId}/newsletter | Newsletter subscription status
+*CustomerApi* | [**subscribe**](docs/Api/CustomerApi.md#subscribe) | **POST** /api/Customers/{customerId}/newsletter | Subscribe to the newsletter
+*CustomerApi* | [**subscribeByEmail**](docs/Api/CustomerApi.md#subscribebyemail) | **POST** /api/Customers/newsletter/{list}/subscribe | Subscribes a user to a newsletter
+*CustomerApi* | [**unsubscribe**](docs/Api/CustomerApi.md#unsubscribe) | **DELETE** /api/Customers/{customerId}/newsletter | Unsubscribe from the newsletter
 *CustomerApi* | [**updateOne**](docs/Api/CustomerApi.md#updateone) | **PATCH** /api/Customers/{id} | 
+*CustomerApi* | [**uploadAvatar**](docs/Api/CustomerApi.md#uploadavatar) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
 *CustomerNoteApi* | [**createOne**](docs/Api/CustomerNoteApi.md#createone) | **POST** /api/CustomerNotes | 
 *CustomerNoteApi* | [**deleteOne**](docs/Api/CustomerNoteApi.md#deleteone) | **DELETE** /api/CustomerNotes/{id} | 
 *CustomerNoteApi* | [**getMany**](docs/Api/CustomerNoteApi.md#getmany) | **GET** /api/CustomerNotes | Get customer notes
@@ -190,10 +194,6 @@ Class | Method | HTTP request | Description
 *FromWooCommerceApi* | [**productGroupFromWooCommerce**](docs/Api/FromWooCommerceApi.md#productgroupfromwoocommerce) | **PUT** /api/ProductGroups/fromWooCommerce | Sync products to MyYoast.
 *GDPRApi* | [**deleteCustomer**](docs/Api/GDPRApi.md#deletecustomer) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 *HelpscoutApi* | [**helpscout**](docs/Api/HelpscoutApi.md#helpscout) | **POST** /helpscout | Get information about a customer
-*LicensingApi* | [**getMany**](docs/Api/LicensingApi.md#getmany) | **GET** /api/licenses | Gets licenses
-*LicensingApi* | [**getManyPaged**](docs/Api/LicensingApi.md#getmanypaged) | **GET** /api/licenses/paged | Gets licenses
-*LicensingApi* | [**getValidity**](docs/Api/LicensingApi.md#getvalidity) | **GET** /api/licenses/{id}/validity | Gets the current status of a license
-*LicensingApi* | [**processEvent**](docs/Api/LicensingApi.md#processevent) | **POST** /api/licensing/events | 
 *MailingListApi* | [**checkGetRoute**](docs/Api/MailingListApi.md#checkgetroute) | **GET** /api/Mailing-list/newsletter/tZhjyjwsYFUMPzNNhJaVADZZIrixRSbXOFgptZJyyK | 
 *MailingListApi* | [**getStatus**](docs/Api/MailingListApi.md#getstatus) | **GET** /api/Mailing-list/status | Get the subscription status.
 *MailingListApi* | [**isSubscribedToNewsletter**](docs/Api/MailingListApi.md#issubscribedtonewsletter) | **GET** /api/Mailing-list/isSubscribedToNewsletter | Get the subscription status.
@@ -225,11 +225,8 @@ Class | Method | HTTP request | Description
 *ProductApi* | [**pluginVersionDetails**](docs/Api/ProductApi.md#pluginversiondetails) | **GET** /api/Products/wordpressPluginVersionDetails | 
 *ProductGroupApi* | [**getMany**](docs/Api/ProductGroupApi.md#getmany) | **GET** /api/ProductGroups | Get productgroups
 *ProductGroupApi* | [**updateDownload**](docs/Api/ProductGroupApi.md#updatedownload) | **PATCH** /api/ProductGroups/updateDownload | Update the download
-*ProductSwitchApi* | [**getManyPaged**](docs/Api/ProductSwitchApi.md#getmanypaged) | **GET** /api/ProductSwitches/paged | Get product switches
-*ProductSwitchApi* | [**invoice**](docs/Api/ProductSwitchApi.md#invoice) | **GET** /api/ProductSwitches/{id}/invoice | Create invoice
-*ProductSwitchApi* | [**invoice_0**](docs/Api/ProductSwitchApi.md#invoice_0) | **GET** /api/ProductSwitch/{id}/invoice | Create invoice
-*ProductSwitchApi* | [**revert**](docs/Api/ProductSwitchApi.md#revert) | **GET** /api/ProductSwitches/{id}/revert | Create invoice
-*ProductSwitchApi* | [**revert_0**](docs/Api/ProductSwitchApi.md#revert_0) | **GET** /api/ProductSwitch/{id}/revert | Create invoice
+*ProductSwitchApi* | [**invoice**](docs/Api/ProductSwitchApi.md#invoice) | **GET** /api/ProductSwitch/{id}/invoice | Create invoice
+*ProductSwitchApi* | [**revert**](docs/Api/ProductSwitchApi.md#revert) | **GET** /api/ProductSwitch/{id}/revert | Create invoice
 *ProvisionerApi* | [**getMany**](docs/Api/ProvisionerApi.md#getmany) | **GET** /api/ProvisionerData | Get provisioner data
 *ProvisionerApi* | [**getOne**](docs/Api/ProvisionerApi.md#getone) | **GET** /api/ProvisionerData/{id} | Get provisioner data
 *ProvisioningAccountApi* | [**setSiteForSubscription**](docs/Api/ProvisioningAccountApi.md#setsiteforsubscription) | **POST** /api/provisioning/account/regenerate-token | Generate a new auth token
@@ -248,6 +245,7 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**getMany**](docs/Api/SiteApi.md#getmany) | **GET** /api/Sites | Get sites
 *SiteApi* | [**getManyPaged**](docs/Api/SiteApi.md#getmanypaged) | **GET** /api/Sites/paged | Get sites
 *SiteApi* | [**getOne**](docs/Api/SiteApi.md#getone) | **GET** /api/Sites/{id} | Get a site
+*SiteApi* | [**getSiteStatus**](docs/Api/SiteApi.md#getsitestatus) | **GET** /api/Sites/getSiteStatus | Get a urls HTTP status
 *SiteApi* | [**index**](docs/Api/SiteApi.md#index) | **POST** /api/Sites/index | 
 *SiteApi* | [**removeSubscription**](docs/Api/SiteApi.md#removesubscription) | **DELETE** /api/Sites/{id}/subscriptions/{subscriptionId} | Removes a subscription from a site
 *SiteApi* | [**switchSubscription**](docs/Api/SiteApi.md#switchsubscription) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
@@ -267,7 +265,6 @@ Class | Method | HTTP request | Description
 *SubscriptionApi* | [**linkSite**](docs/Api/SubscriptionApi.md#linksite) | **POST** /api/Subscriptions/link-site | Link a subscription to provided site URL
 *SubscriptionApi* | [**recalculateSubscriptionCount**](docs/Api/SubscriptionApi.md#recalculatesubscriptioncount) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 *SubscriptionApi* | [**renew**](docs/Api/SubscriptionApi.md#renew) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
-*SubscriptionApi* | [**runScript**](docs/Api/SubscriptionApi.md#runscript) | **GET** /api/Subscriptions/runscript | 
 *SubscriptionApi* | [**setExpiryDate**](docs/Api/SubscriptionApi.md#setexpirydate) | **POST** /api/Subscriptions/setExpiryDate | Set Date.
 *SubscriptionApi* | [**switchPaymentMethod**](docs/Api/SubscriptionApi.md#switchpaymentmethod) | **GET** /api/Subscriptions/switchPaymentMethod/{id}/{subscriptionNumber} | 
 *SubscriptionApi* | [**switchProduct**](docs/Api/SubscriptionApi.md#switchproduct) | **POST** /api/Subscriptions/{id}/switch-product | Switch to another product
@@ -323,7 +320,6 @@ Class | Method | HTTP request | Description
  - [CustomerFromWooDto](docs/Model/CustomerFromWooDto.md)
  - [CustomerNote](docs/Model/CustomerNote.md)
  - [EddDTO](docs/Model/EddDTO.md)
- - [EventDto](docs/Model/EventDto.md)
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)
  - [ExtraProductData](docs/Model/ExtraProductData.md)
@@ -335,8 +331,6 @@ Class | Method | HTTP request | Description
  - [InviteDto](docs/Model/InviteDto.md)
  - [JSZip](docs/Model/JSZip.md)
  - [JobOptionsDto](docs/Model/JobOptionsDto.md)
- - [License](docs/Model/License.md)
- - [LicenseDTO](docs/Model/LicenseDTO.md)
  - [LineItemDto](docs/Model/LineItemDto.md)
  - [LineItemTax](docs/Model/LineItemTax.md)
  - [LinkSiteDto](docs/Model/LinkSiteDto.md)
@@ -376,10 +370,12 @@ Class | Method | HTTP request | Description
  - [ShippingDto](docs/Model/ShippingDto.md)
  - [SignupAccountDto](docs/Model/SignupAccountDto.md)
  - [Site](docs/Model/Site.md)
+ - [SubscribeByEmailBodyDto](docs/Model/SubscribeByEmailBodyDto.md)
  - [SubscribeDto](docs/Model/SubscribeDto.md)
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionMutation](docs/Model/SubscriptionMutation.md)
  - [SubscriptionProvisioningResponseDto](docs/Model/SubscriptionProvisioningResponseDto.md)
+ - [SubscriptionStatusDto](docs/Model/SubscriptionStatusDto.md)
  - [SwitchSubscriptionNumberOfTimesDto](docs/Model/SwitchSubscriptionNumberOfTimesDto.md)
  - [TOTPTwoFactorConfigDto](docs/Model/TOTPTwoFactorConfigDto.md)
  - [TagDto](docs/Model/TagDto.md)

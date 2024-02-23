@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 **metaData** | [**\Yoast\MyYoastApiClient\Model\MetaDataDto[]**](MetaDataDto.md) |  | 
 **images** | [**\Yoast\MyYoastApiClient\Model\ProductImage[]**](ProductImage.md) |  | 
 **id** | **int** |  | 
-**uSProductId** | **int** |  | 
 **name** | **string** |  | 
 **description** | **string** |  | 
 **permalink** | **string** |  | 
@@ -14,8 +13,8 @@ Name | Type | Description | Notes
 **sku** | **string** |  | 
 **type** | **string** |  | 
 **status** | **string** |  | 
-**regularPrice** | **string[]** |  | 
-**price** | **string[]** |  | 
+**regularPrice** | **string** |  | 
+**price** | **string** |  | 
 **purchasable** | **bool** |  | 
 **taxStatus** | **string** |  | 
 **taxClass** | **string** |  | 

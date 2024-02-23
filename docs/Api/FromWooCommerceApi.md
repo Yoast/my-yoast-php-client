@@ -1,6 +1,6 @@
 # Yoast\MyYoastApiClient\FromWooCommerceApi
 
-All URIs are relative to *https://my.yoast.test*
+All URIs are relative to *http://my.yoast.test:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
