@@ -1,13 +1,13 @@
 # Yoast\MyYoastApiClient\EmailApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**sendEmails**](EmailApi.md#sendemails) | **POST** /api/Emails/bulk-send | 
 
 # **sendEmails**
-> \Yoast\MyYoastApiClient\Model\ sendEmails($body)
+> int sendEmails($body)
 
 
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+**int**
 
 ### Authorization
 

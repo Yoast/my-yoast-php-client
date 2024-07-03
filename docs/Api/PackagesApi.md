@@ -1,6 +1,6 @@
 # Yoast\MyYoastApiClient\PackagesApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**serveProviderJSON**](PackagesApi.md#serveproviderjson) | **GET** /packages/p/{org}/{nameAndHash}.json | Serves the requested provider.json
 
 # **serveArchiveZIP**
-> \Yoast\MyYoastApiClient\Model\ serveArchiveZIP($org, $archive, $name)
+> serveArchiveZIP($org, $archive, $name)
 
 Serves an .zip of the plugin.
 
@@ -31,8 +31,7 @@ $archive = "archive_example"; // string |
 $name = "name_example"; // string | 
 
 try {
-    $result = $apiInstance->serveArchiveZIP($org, $archive, $name);
-    print_r($result);
+    $apiInstance->serveArchiveZIP($org, $archive, $name);
 } catch (Exception $e) {
     echo 'Exception when calling PackagesApi->serveArchiveZIP: ', $e->getMessage(), PHP_EOL;
 }
@@ -49,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+void (empty response body)
 
 ### Authorization
 
@@ -58,12 +57,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **servePackagesJSON**
-> \Yoast\MyYoastApiClient\Model\ servePackagesJSON()
+> servePackagesJSON()
 
 Serves the general packages.json file.
 
@@ -81,8 +80,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\PackagesApi(
 );
 
 try {
-    $result = $apiInstance->servePackagesJSON();
-    print_r($result);
+    $apiInstance->servePackagesJSON();
 } catch (Exception $e) {
     echo 'Exception when calling PackagesApi->servePackagesJSON: ', $e->getMessage(), PHP_EOL;
 }
@@ -94,7 +92,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+void (empty response body)
 
 ### Authorization
 
@@ -103,12 +101,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **serveProvider2JSON**
-> \Yoast\MyYoastApiClient\Model\ serveProvider2JSON($org, $name)
+> serveProvider2JSON($org, $name)
 
 Serves the requested provider.json
 
@@ -128,8 +126,7 @@ $org = "org_example"; // string |
 $name = "name_example"; // string | The package name, optionally suffixed with -dev
 
 try {
-    $result = $apiInstance->serveProvider2JSON($org, $name);
-    print_r($result);
+    $apiInstance->serveProvider2JSON($org, $name);
 } catch (Exception $e) {
     echo 'Exception when calling PackagesApi->serveProvider2JSON: ', $e->getMessage(), PHP_EOL;
 }
@@ -145,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+void (empty response body)
 
 ### Authorization
 
@@ -154,12 +151,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **serveProviderJSON**
-> \Yoast\MyYoastApiClient\Model\ serveProviderJSON($org, $nameAndHash)
+> serveProviderJSON($org, $nameAndHash)
 
 Serves the requested provider.json
 
@@ -179,8 +176,7 @@ $org = "org_example"; // string |
 $nameAndHash = "nameAndHash_example"; // string | The package name and package hash separated by a $ character
 
 try {
-    $result = $apiInstance->serveProviderJSON($org, $nameAndHash);
-    print_r($result);
+    $apiInstance->serveProviderJSON($org, $nameAndHash);
 } catch (Exception $e) {
     echo 'Exception when calling PackagesApi->serveProviderJSON: ', $e->getMessage(), PHP_EOL;
 }
@@ -196,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+void (empty response body)
 
 ### Authorization
 
@@ -205,7 +201,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

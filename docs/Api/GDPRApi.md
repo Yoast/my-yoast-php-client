@@ -1,13 +1,13 @@
 # Yoast\MyYoastApiClient\GDPRApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteCustomer**](GDPRApi.md#deletecustomer) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 
 # **deleteCustomer**
-> \Yoast\MyYoastApiClient\Model\ deleteCustomer($id)
+> string deleteCustomer($id)
 
 Performs a \"GDPR forget me\" request.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+**string**
 
 ### Authorization
 

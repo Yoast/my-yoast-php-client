@@ -1,11 +1,12 @@
 # Yoast\MyYoastApiClient\SubscriptionApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**calculateExpansionPrice**](SubscriptionApi.md#calculateexpansionprice) | **GET** /api/Subscriptions/calculateExpansionPrice/{id}/{subscriptionNumber} | Calculate expansion price
 [**deleteOne**](SubscriptionApi.md#deleteone) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
+[**ensureAdmissionScript**](SubscriptionApi.md#ensureadmissionscript) | **GET** /api/Subscriptions/ensureAdmissions | Ensure Admission for subscriptions script
 [**forceCancel**](SubscriptionApi.md#forcecancel) | **POST** /api/Subscriptions/{id}/force-cancel | Forcefully cancel a subscription
 [**getExpiringSubscriptions**](SubscriptionApi.md#getexpiringsubscriptions) | **GET** /api/Subscriptions/expiring | 
 [**getMany**](SubscriptionApi.md#getmany) | **GET** /api/Subscriptions | Get subscriptions
@@ -20,6 +21,7 @@ Method | HTTP request | Description
 [**setExpiryDate**](SubscriptionApi.md#setexpirydate) | **POST** /api/Subscriptions/setExpiryDate | Set Date.
 [**switchPaymentMethod**](SubscriptionApi.md#switchpaymentmethod) | **GET** /api/Subscriptions/switchPaymentMethod/{id}/{subscriptionNumber} | 
 [**switchProduct**](SubscriptionApi.md#switchproduct) | **POST** /api/Subscriptions/{id}/switch-product | Switch to another product
+[**switchToAutomatic**](SubscriptionApi.md#switchtoautomatic) | **GET** /api/Subscriptions/enable-automatic-billing/{id}/{subscriptionNumber} | 
 [**transferOwnership**](SubscriptionApi.md#transferownership) | **POST** /api/Subscriptions/transfer | Transfer subscription ownership
 [**upgrade**](SubscriptionApi.md#upgrade) | **GET** /api/Subscriptions/upgrade/{subscriptionNumber}/{secretKey} | Upgrade subscriptions
 
@@ -80,7 +82,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteOne**
-> \Yoast\MyYoastApiClient\Model\ deleteOne($id)
+> string deleteOne($id)
 
 Delete a subscription
 
@@ -120,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+**string**
 
 ### Authorization
 
@@ -130,6 +132,55 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **ensureAdmissionScript**
+> ensureAdmissionScript()
+
+Ensure Admission for subscriptions script
+
+One time use script to give a set of subscriptions the admission they should have
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $apiInstance->ensureAdmissionScript();
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->ensureAdmissionScript: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -897,6 +948,59 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **switchToAutomatic**
+> switchToAutomatic($id, $subscriptionNumber)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | 
+$subscriptionNumber = "subscriptionNumber_example"; // string | 
+
+try {
+    $apiInstance->switchToAutomatic($id, $subscriptionNumber);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->switchToAutomatic: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  |
+ **subscriptionNumber** | **string**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

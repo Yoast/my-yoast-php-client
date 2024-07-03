@@ -1,10 +1,11 @@
 # Yoast\MyYoastApiClient\ProductGroupApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getMany**](ProductGroupApi.md#getmany) | **GET** /api/ProductGroups | Get productgroups
+[**getReleaseDetails**](ProductGroupApi.md#getreleasedetails) | **GET** /api/ProductGroups/releaseDetails | 
 [**updateDownload**](ProductGroupApi.md#updatedownload) | **PATCH** /api/ProductGroups/updateDownload | Update the download
 
 # **getMany**
@@ -49,6 +50,58 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\ProductGroup[]**](../Model/ProductGroup.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getReleaseDetails**
+> \Yoast\MyYoastApiClient\Model\ReleaseDetailsDto getReleaseDetails($slug)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\ProductGroupApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$slug = "slug_example"; // string | The slug of the product group to get release details for.
+
+try {
+    $result = $apiInstance->getReleaseDetails($slug);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ProductGroupApi->getReleaseDetails: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **slug** | **string**| The slug of the product group to get release details for. |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\ReleaseDetailsDto**](../Model/ReleaseDetailsDto.md)
 
 ### Authorization
 

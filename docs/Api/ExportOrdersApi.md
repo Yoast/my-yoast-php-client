@@ -1,6 +1,6 @@
 # Yoast\MyYoastApiClient\ExportOrdersApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**exportOrdersV2**](ExportOrdersApi.md#exportordersv2) | **GET** /export-orders/v2/{from}/{to}/{type} | Creates an export for orders
 
 # **exportOrders**
-> \Yoast\MyYoastApiClient\Model\ exportOrders($year, $month, $type, $password)
+> exportOrders($year, $month, $type, $password)
 
 Creates an export for orders
 
@@ -30,8 +30,7 @@ $type = "type_example"; // string |
 $password = "password_example"; // string | 
 
 try {
-    $result = $apiInstance->exportOrders($year, $month, $type, $password);
-    print_r($result);
+    $apiInstance->exportOrders($year, $month, $type, $password);
 } catch (Exception $e) {
     echo 'Exception when calling ExportOrdersApi->exportOrders: ', $e->getMessage(), PHP_EOL;
 }
@@ -49,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+void (empty response body)
 
 ### Authorization
 
@@ -58,12 +57,12 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **exportOrdersV2**
-> \Yoast\MyYoastApiClient\Model\ exportOrdersV2($from, $to, $type, $password)
+> exportOrdersV2($from, $to, $type, $password)
 
 Creates an export for orders
 
@@ -85,8 +84,7 @@ $type = "type_example"; // string |
 $password = "password_example"; // string | 
 
 try {
-    $result = $apiInstance->exportOrdersV2($from, $to, $type, $password);
-    print_r($result);
+    $apiInstance->exportOrdersV2($from, $to, $type, $password);
 } catch (Exception $e) {
     echo 'Exception when calling ExportOrdersApi->exportOrdersV2: ', $e->getMessage(), PHP_EOL;
 }
@@ -104,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+void (empty response body)
 
 ### Authorization
 
@@ -113,7 +111,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

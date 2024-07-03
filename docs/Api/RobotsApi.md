@@ -1,13 +1,13 @@
 # Yoast\MyYoastApiClient\RobotsApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**serveRobots**](RobotsApi.md#serverobots) | **GET** /robots.txt | 
 
 # **serveRobots**
-> \Yoast\MyYoastApiClient\Model\ serveRobots()
+> serveRobots()
 
 
 
@@ -23,8 +23,7 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\RobotsApi(
 );
 
 try {
-    $result = $apiInstance->serveRobots();
-    print_r($result);
+    $apiInstance->serveRobots();
 } catch (Exception $e) {
     echo 'Exception when calling RobotsApi->serveRobots: ', $e->getMessage(), PHP_EOL;
 }
@@ -36,7 +35,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+void (empty response body)
 
 ### Authorization
 
@@ -45,7 +44,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -1,6 +1,6 @@
 # Yoast\MyYoastApiClient\CustomerApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,6 +31,7 @@ Method | HTTP request | Description
 [**getMany_3**](CustomerApi.md#getmany_3) | **GET** /api/Customers/{id}/roles | 
 [**getMany_4**](CustomerApi.md#getmany_4) | **GET** /api/Customers/{customerId}/identities | Get user identities
 [**getMany_5**](CustomerApi.md#getmany_5) | **GET** /api/Customers | Get customers
+[**getMany_6**](CustomerApi.md#getmany_6) | **GET** /api/Customers/{customerId}/licenses | Get licenses
 [**getOne**](CustomerApi.md#getone) | **GET** /api/Customers/{customerId}/composerTokens/{id} | Get a composer token
 [**getOne_0**](CustomerApi.md#getone_0) | **GET** /api/Customers/{customerId}/subscriptions/{id} | Get a subscriptions
 [**getOne_1**](CustomerApi.md#getone_1) | **GET** /api/Customers/{customerId}/sites/{id} | Get a site
@@ -42,12 +43,7 @@ Method | HTTP request | Description
 [**resetPassword**](CustomerApi.md#resetpassword) | **PATCH** /api/Customers/resetPassword | Reset the user&#x27;s password.
 [**sendResetPasswordEmail**](CustomerApi.md#sendresetpasswordemail) | **POST** /api/Customers/sendResetPasswordEmail | Send a reset password email to the user.
 [**signup**](CustomerApi.md#signup) | **POST** /api/Customers/signup | Signup a customer on yoast.com following the normal signup flow.
-[**status**](CustomerApi.md#status) | **GET** /api/Customers/{customerId}/newsletter | Newsletter subscription status
-[**subscribe**](CustomerApi.md#subscribe) | **POST** /api/Customers/{customerId}/newsletter | Subscribe to the newsletter
-[**subscribeByEmail**](CustomerApi.md#subscribebyemail) | **POST** /api/Customers/newsletter/{list}/subscribe | Subscribes a user to a newsletter
-[**unsubscribe**](CustomerApi.md#unsubscribe) | **DELETE** /api/Customers/{customerId}/newsletter | Unsubscribe from the newsletter
 [**updateOne**](CustomerApi.md#updateone) | **PATCH** /api/Customers/{id} | 
-[**uploadAvatar**](CustomerApi.md#uploadavatar) | **POST** /api/Customers/{id}/avatar | Upload a new UserAvatar to WordPress
 
 # **activate**
 > \Yoast\MyYoastApiClient\Model\ActivateAccountResponseDto activate($body)
@@ -465,7 +461,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCustomer**
-> \Yoast\MyYoastApiClient\Model\ deleteCustomer($id)
+> string deleteCustomer($id)
 
 Performs a \"GDPR forget me\" request.
 
@@ -505,7 +501,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+**string**
 
 ### Authorization
 
@@ -1000,7 +996,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomersWithRole**
-> \Yoast\MyYoastApiClient\Model\[] getCustomersWithRole()
+> string[] getCustomersWithRole()
 
 Get the ids of all customers with at least one role.
 
@@ -1036,7 +1032,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\[]**](../Model/.md)
+**string[]**
 
 ### Authorization
 
@@ -1475,6 +1471,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Customer[]**](../Model/Customer.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getMany_6**
+> \Yoast\MyYoastApiClient\Model\License[] getMany_6($customerId, $filter)
+
+Get licenses
+
+Get and filter licenses of a customer
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$filter = new \stdClass; // object | Used for filtering/joining the results.
+
+try {
+    $result = $apiInstance->getMany_6($customerId, $filter);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->getMany_6: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | [**string**](../Model/.md)|  |
+ **filter** | [**object**](../Model/.md)| Used for filtering/joining the results. | [optional]
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\License[]**](../Model/License.md)
 
 ### Authorization
 
@@ -2082,213 +2134,6 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **status**
-> \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto status($customerId)
-
-Newsletter subscription status
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-
-try {
-    $result = $apiInstance->status($customerId);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->status: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerId** | [**string**](../Model/.md)|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto**](../Model/SubscriptionStatusDto.md)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **subscribe**
-> \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto subscribe($customerId)
-
-Subscribe to the newsletter
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-
-try {
-    $result = $apiInstance->subscribe($customerId);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->subscribe: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerId** | [**string**](../Model/.md)|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto**](../Model/SubscriptionStatusDto.md)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **subscribeByEmail**
-> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto subscribeByEmail($body, $list)
-
-Subscribes a user to a newsletter
-
-Subscribes a user to the given (url) newsletter.
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$body = new \Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto(); // \Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto | 
-$list = "list_example"; // string | 
-
-try {
-    $result = $apiInstance->subscribeByEmail($body, $list);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->subscribeByEmail: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Yoast\MyYoastApiClient\Model\SubscribeByEmailBodyDto**](../Model/SubscribeByEmailBodyDto.md)|  |
- **list** | **string**|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto**](../Model/UnspecifiedResponseDto.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **unsubscribe**
-> \Yoast\MyYoastApiClient\Model\SubscriptionStatusDto unsubscribe($customerId)
-
-Unsubscribe from the newsletter
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-
-try {
-    $result = $apiInstance->unsubscribe($customerId);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->unsubscribe: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerId** | [**string**](../Model/.md)|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\SubscriptionStatusDto**](../Model/SubscriptionStatusDto.md)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **updateOne**
 > updateOne($body, $id)
 
@@ -2339,60 +2184,6 @@ void (empty response body)
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **uploadAvatar**
-> \Yoast\MyYoastApiClient\Model\Customer uploadAvatar($id)
-
-Upload a new UserAvatar to WordPress
-
-This route allows the user to upload a new UserAvatar to their WordPress account
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
-
-try {
-    $result = $apiInstance->uploadAvatar($id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->uploadAvatar: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | [**string**](../Model/.md)|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Customer**](../Model/Customer.md)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

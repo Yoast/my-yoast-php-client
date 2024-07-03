@@ -1,17 +1,16 @@
 # Yoast\MyYoastApiClient\SiteApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addSubscription**](SiteApi.md#addsubscription) | **PUT** /api/Sites/{id}/subscriptions | Adds a subscription to a site
 [**current**](SiteApi.md#current) | **GET** /api/Sites/current | Get the current connected site for an access token.
-[**currentClone**](SiteApi.md#currentclone) | **GET** /api/Sites/info | Get the current connected site for an access token.
+[**currentClone**](SiteApi.md#currentclone) | **GET** /api/Sites/info | Get the current connected site for a URL.
 [**deleteOne**](SiteApi.md#deleteone) | **DELETE** /api/Sites/{id} | 
 [**getMany**](SiteApi.md#getmany) | **GET** /api/Sites | Get sites
 [**getManyPaged**](SiteApi.md#getmanypaged) | **GET** /api/Sites/paged | Get sites
 [**getOne**](SiteApi.md#getone) | **GET** /api/Sites/{id} | Get a site
-[**getSiteStatus**](SiteApi.md#getsitestatus) | **GET** /api/Sites/getSiteStatus | Get a urls HTTP status
 [**index**](SiteApi.md#index) | **POST** /api/Sites/index | 
 [**removeSubscription**](SiteApi.md#removesubscription) | **DELETE** /api/Sites/{id}/subscriptions/{subscriptionId} | Removes a subscription from a site
 [**switchSubscription**](SiteApi.md#switchsubscription) | **POST** /api/Sites/switchSubscription | Switches the subscription for a number of times.
@@ -74,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **current**
-> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto current($token, $url)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto current()
 
 Get the current connected site for an access token.
 
@@ -93,11 +92,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$token = "token_example"; // string | 
-$url = "url_example"; // string | 
 
 try {
-    $result = $apiInstance->current($token, $url);
+    $result = $apiInstance->current();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->current: ', $e->getMessage(), PHP_EOL;
@@ -106,11 +103,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **token** | **string**|  | [optional]
- **url** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -128,9 +121,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **currentClone**
-> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto currentClone($token, $url)
+> \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto currentClone()
 
-Get the current connected site for an access token.
+Get the current connected site for a URL.
 
 ### Example
 ```php
@@ -147,11 +140,9 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
     new GuzzleHttp\Client(),
     $config
 );
-$token = "token_example"; // string | 
-$url = "url_example"; // string | 
 
 try {
-    $result = $apiInstance->currentClone($token, $url);
+    $result = $apiInstance->currentClone();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SiteApi->currentClone: ', $e->getMessage(), PHP_EOL;
@@ -160,11 +151,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **token** | **string**|  | [optional]
- **url** | **string**|  | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -395,60 +382,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getSiteStatus**
-> int getSiteStatus($url)
-
-Get a urls HTTP status
-
-Gets a http status code by a given URL
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\SiteApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$url = "url_example"; // string | 
-
-try {
-    $result = $apiInstance->getSiteStatus($url);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SiteApi->getSiteStatus: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **url** | **string**|  |
-
-### Return type
-
-**int**
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
 # **index**
 > \Yoast\MyYoastApiClient\Model\UnspecifiedResponseDto index($token, $url, $method)
 
@@ -560,7 +493,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **switchSubscription**
-> \Yoast\MyYoastApiClient\Model\ switchSubscription($body)
+> int switchSubscription($body)
 
 Switches the subscription for a number of times.
 
@@ -600,7 +533,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+**int**
 
 ### Authorization
 

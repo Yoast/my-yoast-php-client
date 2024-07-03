@@ -1,13 +1,13 @@
 # Yoast\MyYoastApiClient\ServerCheckApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**checkHealth**](ServerCheckApi.md#checkhealth) | **GET** /server-check | Server health check
 
 # **checkHealth**
-> \Yoast\MyYoastApiClient\Model\ checkHealth()
+> string checkHealth()
 
 Server health check
 
@@ -38,7 +38,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+**string**
 
 ### Authorization
 

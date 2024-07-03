@@ -1,6 +1,6 @@
 # Yoast\MyYoastApiClient\BlacklistApi
 
-All URIs are relative to *http://my.yoast.test:3000*
+All URIs are relative to *https://my.yoast.test*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**getManyPaged**](BlacklistApi.md#getmanypaged) | **GET** /api/Blacklist/paged | Gets blacklisted sites
 
 # **createOne**
-> \Yoast\MyYoastApiClient\Model\ createOne($body)
+> string createOne($body)
 
 Creates a blacklisted site
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+**string**
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteOne**
-> \Yoast\MyYoastApiClient\Model\ deleteOne($id)
+> string deleteOne($id)
 
 Remove a site from the blacklist
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\**](../Model/.md)
+**string**
 
 ### Authorization
 
