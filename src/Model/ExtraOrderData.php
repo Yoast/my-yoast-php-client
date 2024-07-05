@@ -67,7 +67,8 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         'transactions' => '\Yoast\MyYoastApiClient\Model\TransactionDataDto[]',
         'wooRefunds' => '\Yoast\MyYoastApiClient\Model\RefundDataDto[]',
         'orderIntent' => 'string',
-        'relatedSubscriptionNumber' => 'string'
+        'relatedSubscriptionNumber' => 'string',
+        'experiments' => 'string[]'
     ];
 
     /**
@@ -87,7 +88,8 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         'transactions' => null,
         'wooRefunds' => null,
         'orderIntent' => null,
-        'relatedSubscriptionNumber' => null
+        'relatedSubscriptionNumber' => null,
+        'experiments' => null
     ];
 
     /**
@@ -128,7 +130,8 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         'transactions' => 'transactions',
         'wooRefunds' => 'woo_refunds',
         'orderIntent' => 'order_intent',
-        'relatedSubscriptionNumber' => 'related_subscription_number'
+        'relatedSubscriptionNumber' => 'related_subscription_number',
+        'experiments' => 'experiments'
     ];
 
     /**
@@ -148,7 +151,8 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         'transactions' => 'setTransactions',
         'wooRefunds' => 'setWooRefunds',
         'orderIntent' => 'setOrderIntent',
-        'relatedSubscriptionNumber' => 'setRelatedSubscriptionNumber'
+        'relatedSubscriptionNumber' => 'setRelatedSubscriptionNumber',
+        'experiments' => 'setExperiments'
     ];
 
     /**
@@ -168,7 +172,8 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         'transactions' => 'getTransactions',
         'wooRefunds' => 'getWooRefunds',
         'orderIntent' => 'getOrderIntent',
-        'relatedSubscriptionNumber' => 'getRelatedSubscriptionNumber'
+        'relatedSubscriptionNumber' => 'getRelatedSubscriptionNumber',
+        'experiments' => 'getExperiments'
     ];
 
     /**
@@ -261,6 +266,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
         $this->container['wooRefunds'] = isset($data['wooRefunds']) ? $data['wooRefunds'] : null;
         $this->container['orderIntent'] = isset($data['orderIntent']) ? $data['orderIntent'] : null;
         $this->container['relatedSubscriptionNumber'] = isset($data['relatedSubscriptionNumber']) ? $data['relatedSubscriptionNumber'] : null;
+        $this->container['experiments'] = isset($data['experiments']) ? $data['experiments'] : null;
     }
 
     /**
@@ -301,6 +307,9 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
             );
         }
 
+        if ($this->container['experiments'] === null) {
+            $invalidProperties[] = "'experiments' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -609,6 +618,30 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
     public function setRelatedSubscriptionNumber($relatedSubscriptionNumber)
     {
         $this->container['relatedSubscriptionNumber'] = $relatedSubscriptionNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets experiments
+     *
+     * @return string[]
+     */
+    public function getExperiments()
+    {
+        return $this->container['experiments'];
+    }
+
+    /**
+     * Sets experiments
+     *
+     * @param string[] $experiments experiments
+     *
+     * @return $this
+     */
+    public function setExperiments($experiments)
+    {
+        $this->container['experiments'] = $experiments;
 
         return $this;
     }

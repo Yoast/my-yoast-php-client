@@ -160,4 +160,11 @@ class ExtraOrderDataTest extends TestCase
     public function testPropertyRelatedSubscriptionNumber()
     {
     }
+
+    /**
+     * Test attribute "experiments"
+     */
+    public function testPropertyExperiments()
+    {
+    }
 }

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **wooRefunds** | [**\Yoast\MyYoastApiClient\Model\RefundDataDto[]**](RefundDataDto.md) |  | 
 **orderIntent** | **string** |  | [optional] 
 **relatedSubscriptionNumber** | **string** |  | [optional] 
+**experiments** | **string[]** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
