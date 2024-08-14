@@ -106,6 +106,13 @@ class ExtraProductDataTest extends TestCase
     }
 
     /**
+     * Test attribute "getsRenewalDiscount"
+     */
+    public function testPropertyGetsRenewalDiscount()
+    {
+    }
+
+    /**
      * Test attribute "billingTerm"
      */
     public function testPropertyBillingTerm()

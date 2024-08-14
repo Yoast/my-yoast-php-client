@@ -67,8 +67,8 @@ class ProductData implements ModelInterface, ArrayAccess
         'sku' => 'string',
         'type' => 'string',
         'status' => 'string',
-        'regularPrice' => 'string',
-        'price' => 'string',
+        'regularPrice' => 'string[]',
+        'price' => 'string[]',
         'purchasable' => 'bool',
         'taxStatus' => 'string',
         'taxClass' => 'string',
@@ -615,7 +615,7 @@ class ProductData implements ModelInterface, ArrayAccess
     /**
      * Gets regularPrice
      *
-     * @return string
+     * @return string[]
      */
     public function getRegularPrice()
     {
@@ -625,7 +625,7 @@ class ProductData implements ModelInterface, ArrayAccess
     /**
      * Sets regularPrice
      *
-     * @param string $regularPrice regularPrice
+     * @param string[] $regularPrice regularPrice
      *
      * @return $this
      */
@@ -639,7 +639,7 @@ class ProductData implements ModelInterface, ArrayAccess
     /**
      * Gets price
      *
-     * @return string
+     * @return string[]
      */
     public function getPrice()
     {
@@ -649,7 +649,7 @@ class ProductData implements ModelInterface, ArrayAccess
     /**
      * Sets price
      *
-     * @param string $price price
+     * @param string[] $price price
      *
      * @return $this
      */

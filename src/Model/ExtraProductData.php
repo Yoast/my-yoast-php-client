@@ -60,9 +60,10 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         'changelog' => 'string',
         'productGroupSlugs' => 'string[]',
         'billingType' => 'string',
+        'getsRenewalDiscount' => 'bool',
         'billingTerm' => 'string',
         'activationLimit' => 'int',
-        'currency' => 'string'
+        'currency' => 'string[]'
     ];
 
     /**
@@ -75,6 +76,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         'changelog' => null,
         'productGroupSlugs' => null,
         'billingType' => null,
+        'getsRenewalDiscount' => null,
         'billingTerm' => null,
         'activationLimit' => null,
         'currency' => null
@@ -111,6 +113,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         'changelog' => 'changelog',
         'productGroupSlugs' => 'product_group_slugs',
         'billingType' => 'billingType',
+        'getsRenewalDiscount' => 'getsRenewalDiscount',
         'billingTerm' => 'billingTerm',
         'activationLimit' => 'activationLimit',
         'currency' => 'currency'
@@ -126,6 +129,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         'changelog' => 'setChangelog',
         'productGroupSlugs' => 'setProductGroupSlugs',
         'billingType' => 'setBillingType',
+        'getsRenewalDiscount' => 'setGetsRenewalDiscount',
         'billingTerm' => 'setBillingTerm',
         'activationLimit' => 'setActivationLimit',
         'currency' => 'setCurrency'
@@ -141,6 +145,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         'changelog' => 'getChangelog',
         'productGroupSlugs' => 'getProductGroupSlugs',
         'billingType' => 'getBillingType',
+        'getsRenewalDiscount' => 'getGetsRenewalDiscount',
         'billingTerm' => 'getBillingTerm',
         'activationLimit' => 'getActivationLimit',
         'currency' => 'getCurrency'
@@ -208,6 +213,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         $this->container['changelog'] = isset($data['changelog']) ? $data['changelog'] : null;
         $this->container['productGroupSlugs'] = isset($data['productGroupSlugs']) ? $data['productGroupSlugs'] : null;
         $this->container['billingType'] = isset($data['billingType']) ? $data['billingType'] : null;
+        $this->container['getsRenewalDiscount'] = isset($data['getsRenewalDiscount']) ? $data['getsRenewalDiscount'] : null;
         $this->container['billingTerm'] = isset($data['billingTerm']) ? $data['billingTerm'] : null;
         $this->container['activationLimit'] = isset($data['activationLimit']) ? $data['activationLimit'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
@@ -233,6 +239,9 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         }
         if ($this->container['billingType'] === null) {
             $invalidProperties[] = "'billingType' can't be null";
+        }
+        if ($this->container['getsRenewalDiscount'] === null) {
+            $invalidProperties[] = "'getsRenewalDiscount' can't be null";
         }
         if ($this->container['currency'] === null) {
             $invalidProperties[] = "'currency' can't be null";
@@ -349,6 +358,30 @@ class ExtraProductData implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets getsRenewalDiscount
+     *
+     * @return bool
+     */
+    public function getGetsRenewalDiscount()
+    {
+        return $this->container['getsRenewalDiscount'];
+    }
+
+    /**
+     * Sets getsRenewalDiscount
+     *
+     * @param bool $getsRenewalDiscount getsRenewalDiscount
+     *
+     * @return $this
+     */
+    public function setGetsRenewalDiscount($getsRenewalDiscount)
+    {
+        $this->container['getsRenewalDiscount'] = $getsRenewalDiscount;
+
+        return $this;
+    }
+
+    /**
      * Gets billingTerm
      *
      * @return string
@@ -399,7 +432,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
     /**
      * Gets currency
      *
-     * @return string
+     * @return string[]
      */
     public function getCurrency()
     {
@@ -409,7 +442,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string $currency currency
+     * @param string[] $currency currency
      *
      * @return $this
      */

@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **sku** | **string** |  | 
 **type** | **string** |  | 
 **status** | **string** |  | 
-**regularPrice** | **string** |  | 
-**price** | **string** |  | 
+**regularPrice** | **string[]** |  | 
+**price** | **string[]** |  | 
 **purchasable** | **bool** |  | 
 **taxStatus** | **string** |  | 
 **taxClass** | **string** |  | 

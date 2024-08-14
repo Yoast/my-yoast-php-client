@@ -7,9 +7,10 @@ Name | Type | Description | Notes
 **changelog** | **string** |  | 
 **productGroupSlugs** | **string[]** |  | 
 **billingType** | **string** |  | 
+**getsRenewalDiscount** | **bool** |  | 
 **billingTerm** | **string** |  | [optional] 
 **activationLimit** | **int** |  | [optional] 
-**currency** | **string** |  | 
+**currency** | **string[]** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
