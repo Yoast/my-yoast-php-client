@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **svgIcon** | **string** |  | 
 **icon** | **string** |  | 
 **type** | **string** |  | 
-**parentSlug** | **string** |  | 
-**courseId** | **string** |  | 
-**version** | **string** |  | 
-**downloadUrl** | **string** |  | 
+**parentSlug** | **string** |  | [optional] 
+**courseId** | **string** |  | [optional] 
+**version** | **string** |  | [optional] 
+**downloadUrl** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

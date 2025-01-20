@@ -282,18 +282,6 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
             );
         }
 
-        if ($this->container['parentSlug'] === null) {
-            $invalidProperties[] = "'parentSlug' can't be null";
-        }
-        if ($this->container['courseId'] === null) {
-            $invalidProperties[] = "'courseId' can't be null";
-        }
-        if ($this->container['version'] === null) {
-            $invalidProperties[] = "'version' can't be null";
-        }
-        if ($this->container['downloadUrl'] === null) {
-            $invalidProperties[] = "'downloadUrl' can't be null";
-        }
         return $invalidProperties;
     }
 
