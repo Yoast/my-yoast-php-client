@@ -567,7 +567,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getProductSwitchOptions**
-> \Yoast\MyYoastApiClient\Model\Product[] getProductSwitchOptions($id)
+> \Yoast\MyYoastApiClient\Model\ProductSwitchOptionDto[] getProductSwitchOptions($id)
 
 Fetch product switch options
 
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Product[]**](../Model/Product.md)
+[**\Yoast\MyYoastApiClient\Model\ProductSwitchOptionDto[]**](../Model/ProductSwitchOptionDto.md)
 
 ### Authorization
 
@@ -896,7 +896,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **switchProduct**
-> \Yoast\MyYoastApiClient\Model\Product[] switchProduct($body, $id)
+> \Yoast\MyYoastApiClient\Model\Subscription[] switchProduct($body, $id)
 
 Switch to another product
 
@@ -938,7 +938,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Product[]**](../Model/Product.md)
+[**\Yoast\MyYoastApiClient\Model\Subscription[]**](../Model/Subscription.md)
 
 ### Authorization
 

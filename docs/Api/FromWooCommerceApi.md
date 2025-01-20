@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Update or create a customer
 
-This endpoint can be used by WooCommerce to update or create a customer in the MyYoast database.
+This endpoint can be used by WooCommerce to update or create a customer in the MyYoast databaqqqqse.
 
 ### Example
 ```php
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **productFromWooCommerce**
-> \Yoast\MyYoastApiClient\Model\Product productFromWooCommerce($body)
+> \Yoast\MyYoastApiClient\Model\ProductOffering productFromWooCommerce($body)
 
 Sync products to MyYoast.
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Yoast\MyYoastApiClient\Model\Product**](../Model/Product.md)
+[**\Yoast\MyYoastApiClient\Model\ProductOffering**](../Model/ProductOffering.md)
 
 ### Authorization
 

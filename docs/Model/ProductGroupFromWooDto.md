@@ -3,9 +3,16 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**productGroupTerm** | [**\Yoast\MyYoastApiClient\Model\ProductGroupTerm**](ProductGroupTerm.md) |  | 
-**productGroupMeta** | [**\Yoast\MyYoastApiClient\Model\ProductGroupMeta**](ProductGroupMeta.md) |  | 
-**extraData** | [**\Yoast\MyYoastApiClient\Model\ProductGroupExtraData**](ProductGroupExtraData.md) |  | 
+**name** | **string** |  | 
+**slug** | **string** |  | 
+**description** | **string** |  | 
+**svgIcon** | **string** |  | 
+**icon** | **string** |  | 
+**type** | **string** |  | 
+**parentSlug** | **string** |  | 
+**courseId** | **string** |  | 
+**version** | **string** |  | 
+**downloadUrl** | **string** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

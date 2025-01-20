@@ -11,8 +11,6 @@ Name | Type | Description | Notes
 **description** | **string** |  | 
 **icon** | **string** |  | 
 **svgIcon** | **string** |  | 
-**version** | **string** |  | 
-**downloadUrl** | **string** |  | 
 **courseId** | **string** |  | 
 **parentId** | **string** |  | 
 
