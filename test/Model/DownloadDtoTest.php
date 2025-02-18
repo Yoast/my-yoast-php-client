@@ -1,6 +1,6 @@
 <?php
 /**
- * EddDTOTest
+ * DownloadDtoTest
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace Yoast\MyYoastApiClient;
 use PHPUnit\Framework\TestCase;
 
 /**
- * EddDTOTest Class Doc Comment
+ * DownloadDtoTest Class Doc Comment
  *
  * @category    Class
- * @description EddDTO
+ * @description DownloadDto
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class EddDTOTest extends TestCase
+class DownloadDtoTest extends TestCase
 {
 
     /**
@@ -71,16 +71,37 @@ class EddDTOTest extends TestCase
     }
 
     /**
-     * Test "EddDTO"
+     * Test "DownloadDto"
      */
-    public function testEddDTO()
+    public function testDownloadDto()
     {
     }
 
     /**
-     * Test attribute "eddAction"
+     * Test attribute "name"
      */
-    public function testPropertyEddAction()
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "slug"
+     */
+    public function testPropertySlug()
+    {
+    }
+
+    /**
+     * Test attribute "icon"
+     */
+    public function testPropertyIcon()
+    {
+    }
+
+    /**
+     * Test attribute "version"
+     */
+    public function testPropertyVersion()
     {
     }
 
@@ -92,9 +113,9 @@ class EddDTOTest extends TestCase
     }
 
     /**
-     * Test attribute "itemName"
+     * Test attribute "isWordPressPlugin"
      */
-    public function testPropertyItemName()
+    public function testPropertyIsWordPressPlugin()
     {
     }
 }

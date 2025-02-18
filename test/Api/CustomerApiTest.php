@@ -202,6 +202,16 @@ class CustomerApiTest extends TestCase
     }
 
     /**
+     * Test case for getAll
+     *
+     * Get all latest downloadable releases.
+     *
+     */
+    public function testGetAll()
+    {
+    }
+
+    /**
      * Test case for getAllRoles
      *
      * Get all existing roles with their ID..

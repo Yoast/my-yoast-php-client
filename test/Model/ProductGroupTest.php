@@ -134,6 +134,13 @@ class ProductGroupTest extends TestCase
     }
 
     /**
+     * Test attribute "latestDownloadableReleaseId"
+     */
+    public function testPropertyLatestDownloadableReleaseId()
+    {
+    }
+
+    /**
      * Test attribute "courseId"
      */
     public function testPropertyCourseId()

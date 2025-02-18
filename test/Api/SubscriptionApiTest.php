@@ -112,6 +112,16 @@ class SubscriptionApiTest extends TestCase
     }
 
     /**
+     * Test case for getDetails
+     *
+     * .
+     *
+     */
+    public function testGetDetails()
+    {
+    }
+
+    /**
      * Test case for getExpiringSubscriptions
      *
      * .

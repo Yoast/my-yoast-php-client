@@ -72,22 +72,72 @@ class EDDApiTest extends TestCase
     }
 
     /**
-     * Test case for handleGetRequest
+     * Test case for handleDelete
      *
-     * Activate or deactivate a site license.
+     * Sunset API for old EDD license checks.
      *
      */
-    public function testHandleGetRequest()
+    public function testHandleDelete()
     {
     }
 
     /**
-     * Test case for handlePostRequest
+     * Test case for handleGet
      *
-     * .
+     * Sunset API for old EDD license checks.
      *
      */
-    public function testHandlePostRequest()
+    public function testHandleGet()
+    {
+    }
+
+    /**
+     * Test case for handleHead
+     *
+     * Sunset API for old EDD license checks.
+     *
+     */
+    public function testHandleHead()
+    {
+    }
+
+    /**
+     * Test case for handleOptions
+     *
+     * Sunset API for old EDD license checks.
+     *
+     */
+    public function testHandleOptions()
+    {
+    }
+
+    /**
+     * Test case for handlePatch
+     *
+     * Sunset API for old EDD license checks.
+     *
+     */
+    public function testHandlePatch()
+    {
+    }
+
+    /**
+     * Test case for handlePost
+     *
+     * Sunset API for old EDD license checks.
+     *
+     */
+    public function testHandlePost()
+    {
+    }
+
+    /**
+     * Test case for handlePut
+     *
+     * Sunset API for old EDD license checks.
+     *
+     */
+    public function testHandlePut()
     {
     }
 }

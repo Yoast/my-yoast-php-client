@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **description** | **string** |  | 
 **icon** | **string** |  | 
 **svgIcon** | **string** |  | 
+**latestDownloadableReleaseId** | **string** |  | 
 **courseId** | **string** |  | 
 **parentId** | **string** |  | 
 

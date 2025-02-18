@@ -145,6 +145,7 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**downloadProfile**](docs/Api/CustomerApi.md#downloadprofile) | **GET** /api/Customers/{id}/download | Download profile.
 *CustomerApi* | [**enable**](docs/Api/CustomerApi.md#enable) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
 *CustomerApi* | [**findRefunds**](docs/Api/CustomerApi.md#findrefunds) | **GET** /api/Customers/{id}/findRefunds | Find refunds for user
+*CustomerApi* | [**getAll**](docs/Api/CustomerApi.md#getall) | **GET** /api/Customers/{id}/downloads | Get all latest downloadable releases
 *CustomerApi* | [**getAllRoles**](docs/Api/CustomerApi.md#getallroles) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
 *CustomerApi* | [**getBuyerCourseEnrollments**](docs/Api/CustomerApi.md#getbuyercourseenrollments) | **GET** /api/Customers/{customerId}/buyerCourseEnrollments | Find Course Enrollments that a customer is buyer of
 *CustomerApi* | [**getCourseAccessList**](docs/Api/CustomerApi.md#getcourseaccesslist) | **GET** /api/Customers/academyCourseAccessList/{sourceId} | Academy Course access
@@ -177,10 +178,16 @@ Class | Method | HTTP request | Description
 *CustomerNoteApi* | [**getMany**](docs/Api/CustomerNoteApi.md#getmany) | **GET** /api/CustomerNotes | Get customer notes
 *CustomerNoteApi* | [**getOne**](docs/Api/CustomerNoteApi.md#getone) | **GET** /api/CustomerNotes/{id} | Get a customer note
 *DefaultApi* | [**checkHealth**](docs/Api/DefaultApi.md#checkhealth) | **POST** /api/tmp | 
+*DefaultApi* | [**getLicenseStatus**](docs/Api/DefaultApi.md#getlicensestatus) | **GET** /api/v1/license-validation/{product_id} | 
 *DownloadApi* | [**downloadFile**](docs/Api/DownloadApi.md#downloadfile) | **GET** /api/downloads/file/{name} | Route to download a file
 *DownloadApi* | [**uploadFile**](docs/Api/DownloadApi.md#uploadfile) | **POST** /api/downloads/file/{name} | Route to update a file.
-*EDDApi* | [**handleGetRequest**](docs/Api/EDDApi.md#handlegetrequest) | **GET** /edd-sl-api | Activate or deactivate a site license
-*EDDApi* | [**handlePostRequest**](docs/Api/EDDApi.md#handlepostrequest) | **POST** /edd-sl-api | 
+*EDDApi* | [**handleDelete**](docs/Api/EDDApi.md#handledelete) | **DELETE** /edd-sl-api | Sunset API for old EDD license checks
+*EDDApi* | [**handleGet**](docs/Api/EDDApi.md#handleget) | **GET** /edd-sl-api | Sunset API for old EDD license checks
+*EDDApi* | [**handleHead**](docs/Api/EDDApi.md#handlehead) | **HEAD** /edd-sl-api | Sunset API for old EDD license checks
+*EDDApi* | [**handleOptions**](docs/Api/EDDApi.md#handleoptions) | **OPTIONS** /edd-sl-api | Sunset API for old EDD license checks
+*EDDApi* | [**handlePatch**](docs/Api/EDDApi.md#handlepatch) | **PATCH** /edd-sl-api | Sunset API for old EDD license checks
+*EDDApi* | [**handlePost**](docs/Api/EDDApi.md#handlepost) | **POST** /edd-sl-api | Sunset API for old EDD license checks
+*EDDApi* | [**handlePut**](docs/Api/EDDApi.md#handleput) | **PUT** /edd-sl-api | Sunset API for old EDD license checks
 *EmailApi* | [**sendEmails**](docs/Api/EmailApi.md#sendemails) | **POST** /api/Emails/bulk-send | 
 *ExportOrdersApi* | [**exportOrders**](docs/Api/ExportOrdersApi.md#exportorders) | **GET** /export-orders/{year}/{month}/{type} | Creates an export for orders
 *ExportOrdersApi* | [**exportOrdersV2**](docs/Api/ExportOrdersApi.md#exportordersv2) | **GET** /export-orders/v2/{from}/{to}/{type} | Creates an export for orders
@@ -208,6 +215,7 @@ Class | Method | HTTP request | Description
 *MailingListApi* | [**unsubscribeFromNewsletter**](docs/Api/MailingListApi.md#unsubscribefromnewsletter) | **POST** /api/Mailing-list/unsubscribeFromNewsletter | Unsubscribe to a mailing list.
 *OrderApi* | [**export**](docs/Api/OrderApi.md#export) | **GET** /api/Orders/export | Get orders
 *OrderApi* | [**getAutoRenewalCount**](docs/Api/OrderApi.md#getautorenewalcount) | **GET** /api/Orders/auto-renewal-count | 
+*OrderApi* | [**getDownloads**](docs/Api/OrderApi.md#getdownloads) | **GET** /api/Orders/{invoiceNumber}/downloads | Get downloads
 *OrderApi* | [**getMany**](docs/Api/OrderApi.md#getmany) | **GET** /api/Orders | Get orders
 *OrderApi* | [**getManyPaged**](docs/Api/OrderApi.md#getmanypaged) | **GET** /api/Orders/paged | Get orders
 *OrderApi* | [**getOne**](docs/Api/OrderApi.md#getone) | **GET** /api/Orders/{id} | Get a order
@@ -259,6 +267,7 @@ Class | Method | HTTP request | Description
 *SubscriptionApi* | [**deleteOne**](docs/Api/SubscriptionApi.md#deleteone) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
 *SubscriptionApi* | [**ensureAdmissionScript**](docs/Api/SubscriptionApi.md#ensureadmissionscript) | **GET** /api/Subscriptions/ensureAdmissions | Ensure Admission for subscriptions script
 *SubscriptionApi* | [**forceCancel**](docs/Api/SubscriptionApi.md#forcecancel) | **POST** /api/Subscriptions/{id}/force-cancel | Forcefully cancel a subscription
+*SubscriptionApi* | [**getDetails**](docs/Api/SubscriptionApi.md#getdetails) | **GET** /api/Subscriptions/{id}/details | 
 *SubscriptionApi* | [**getExpiringSubscriptions**](docs/Api/SubscriptionApi.md#getexpiringsubscriptions) | **GET** /api/Subscriptions/expiring | 
 *SubscriptionApi* | [**getMany**](docs/Api/SubscriptionApi.md#getmany) | **GET** /api/Subscriptions | Get subscriptions
 *SubscriptionApi* | [**getManyPaged**](docs/Api/SubscriptionApi.md#getmanypaged) | **GET** /api/Subscriptions/paged | Get subscriptions
@@ -324,7 +333,7 @@ Class | Method | HTTP request | Description
  - [CustomerDetails](docs/Model/CustomerDetails.md)
  - [CustomerFromWooDto](docs/Model/CustomerFromWooDto.md)
  - [CustomerNote](docs/Model/CustomerNote.md)
- - [EddDTO](docs/Model/EddDTO.md)
+ - [DownloadDto](docs/Model/DownloadDto.md)
  - [EventDto](docs/Model/EventDto.md)
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)

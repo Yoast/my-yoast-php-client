@@ -92,6 +92,16 @@ class OrderApiTest extends TestCase
     }
 
     /**
+     * Test case for getDownloads
+     *
+     * Get downloads.
+     *
+     */
+    public function testGetDownloads()
+    {
+    }
+
+    /**
      * Test case for getMany
      *
      * Get orders.

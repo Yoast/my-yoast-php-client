@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**export**](OrderApi.md#export) | **GET** /api/Orders/export | Get orders
 [**getAutoRenewalCount**](OrderApi.md#getautorenewalcount) | **GET** /api/Orders/auto-renewal-count | 
+[**getDownloads**](OrderApi.md#getdownloads) | **GET** /api/Orders/{invoiceNumber}/downloads | Get downloads
 [**getMany**](OrderApi.md#getmany) | **GET** /api/Orders | Get orders
 [**getManyPaged**](OrderApi.md#getmanypaged) | **GET** /api/Orders/paged | Get orders
 [**getOne**](OrderApi.md#getone) | **GET** /api/Orders/{id} | Get a order
@@ -114,6 +115,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\AutoRenewalCountResponseDto**](../Model/AutoRenewalCountResponseDto.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getDownloads**
+> \Yoast\MyYoastApiClient\Model\DownloadDto[] getDownloads($invoiceNumber)
+
+Get downloads
+
+Get available downloads for all products purchased in an order
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\OrderApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$invoiceNumber = "invoiceNumber_example"; // string | 
+
+try {
+    $result = $apiInstance->getDownloads($invoiceNumber);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling OrderApi->getDownloads: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **invoiceNumber** | **string**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\DownloadDto[]**](../Model/DownloadDto.md)
 
 ### Authorization
 

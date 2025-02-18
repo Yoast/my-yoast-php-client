@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Update or create a customer
 
-This endpoint can be used by WooCommerce to update or create a customer in the MyYoast databaqqqqse.
+This endpoint can be used by WooCommerce to update or create a customer in the MyYoast database.
 
 ### Example
 ```php

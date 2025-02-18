@@ -204,6 +204,7 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
 
     const TYPE_COURSE = 'course';
     const TYPE_DOWNLOADABLE = 'downloadable';
+    const TYPE_SERVICE = 'service';
     const TYPE_COLLECTION = 'collection';
 
     /**
@@ -216,6 +217,7 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
         return [
             self::TYPE_COURSE,
             self::TYPE_DOWNLOADABLE,
+            self::TYPE_SERVICE,
             self::TYPE_COLLECTION,
         ];
     }

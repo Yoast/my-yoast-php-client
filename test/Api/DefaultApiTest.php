@@ -80,4 +80,14 @@ class DefaultApiTest extends TestCase
     public function testCheckHealth()
     {
     }
+
+    /**
+     * Test case for getLicenseStatus
+     *
+     * .
+     *
+     */
+    public function testGetLicenseStatus()
+    {
+    }
 }

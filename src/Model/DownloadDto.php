@@ -1,6 +1,6 @@
 <?php
 /**
- * EddDTO
+ * DownloadDto
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * EddDTO Class Doc Comment
+ * DownloadDto Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class EddDTO implements ModelInterface, ArrayAccess
+class DownloadDto implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class EddDTO implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'EddDTO';
+    protected static $swaggerModelName = 'DownloadDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,12 @@ class EddDTO implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'eddAction' => 'string',
+        'name' => 'string',
+        'slug' => 'string',
+        'icon' => 'string',
+        'version' => 'string',
         'url' => 'string',
-        'itemName' => 'string'
+        'isWordPressPlugin' => 'bool'
     ];
 
     /**
@@ -67,9 +70,12 @@ class EddDTO implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'eddAction' => null,
+        'name' => null,
+        'slug' => null,
+        'icon' => null,
+        'version' => null,
         'url' => null,
-        'itemName' => null
+        'isWordPressPlugin' => null
     ];
 
     /**
@@ -99,9 +105,12 @@ class EddDTO implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'eddAction' => 'edd_action',
+        'name' => 'name',
+        'slug' => 'slug',
+        'icon' => 'icon',
+        'version' => 'version',
         'url' => 'url',
-        'itemName' => 'item_name'
+        'isWordPressPlugin' => 'isWordPressPlugin'
     ];
 
     /**
@@ -110,9 +119,12 @@ class EddDTO implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'eddAction' => 'setEddAction',
+        'name' => 'setName',
+        'slug' => 'setSlug',
+        'icon' => 'setIcon',
+        'version' => 'setVersion',
         'url' => 'setUrl',
-        'itemName' => 'setItemName'
+        'isWordPressPlugin' => 'setIsWordPressPlugin'
     ];
 
     /**
@@ -121,9 +133,12 @@ class EddDTO implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'eddAction' => 'getEddAction',
+        'name' => 'getName',
+        'slug' => 'getSlug',
+        'icon' => 'getIcon',
+        'version' => 'getVersion',
         'url' => 'getUrl',
-        'itemName' => 'getItemName'
+        'isWordPressPlugin' => 'getIsWordPressPlugin'
     ];
 
     /**
@@ -184,9 +199,12 @@ class EddDTO implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['eddAction'] = isset($data['eddAction']) ? $data['eddAction'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['slug'] = isset($data['slug']) ? $data['slug'] : null;
+        $this->container['icon'] = isset($data['icon']) ? $data['icon'] : null;
+        $this->container['version'] = isset($data['version']) ? $data['version'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['itemName'] = isset($data['itemName']) ? $data['itemName'] : null;
+        $this->container['isWordPressPlugin'] = isset($data['isWordPressPlugin']) ? $data['isWordPressPlugin'] : null;
     }
 
     /**
@@ -198,14 +216,23 @@ class EddDTO implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['eddAction'] === null) {
-            $invalidProperties[] = "'eddAction' can't be null";
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['slug'] === null) {
+            $invalidProperties[] = "'slug' can't be null";
+        }
+        if ($this->container['icon'] === null) {
+            $invalidProperties[] = "'icon' can't be null";
+        }
+        if ($this->container['version'] === null) {
+            $invalidProperties[] = "'version' can't be null";
         }
         if ($this->container['url'] === null) {
             $invalidProperties[] = "'url' can't be null";
         }
-        if ($this->container['itemName'] === null) {
-            $invalidProperties[] = "'itemName' can't be null";
+        if ($this->container['isWordPressPlugin'] === null) {
+            $invalidProperties[] = "'isWordPressPlugin' can't be null";
         }
         return $invalidProperties;
     }
@@ -223,25 +250,97 @@ class EddDTO implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets eddAction
+     * Gets name
      *
      * @return string
      */
-    public function getEddAction()
+    public function getName()
     {
-        return $this->container['eddAction'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets eddAction
+     * Sets name
      *
-     * @param string $eddAction eddAction
+     * @param string $name name
      *
      * @return $this
      */
-    public function setEddAction($eddAction)
+    public function setName($name)
     {
-        $this->container['eddAction'] = $eddAction;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->container['slug'];
+    }
+
+    /**
+     * Sets slug
+     *
+     * @param string $slug slug
+     *
+     * @return $this
+     */
+    public function setSlug($slug)
+    {
+        $this->container['slug'] = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Gets icon
+     *
+     * @return string
+     */
+    public function getIcon()
+    {
+        return $this->container['icon'];
+    }
+
+    /**
+     * Sets icon
+     *
+     * @param string $icon icon
+     *
+     * @return $this
+     */
+    public function setIcon($icon)
+    {
+        $this->container['icon'] = $icon;
+
+        return $this;
+    }
+
+    /**
+     * Gets version
+     *
+     * @return string
+     */
+    public function getVersion()
+    {
+        return $this->container['version'];
+    }
+
+    /**
+     * Sets version
+     *
+     * @param string $version version
+     *
+     * @return $this
+     */
+    public function setVersion($version)
+    {
+        $this->container['version'] = $version;
 
         return $this;
     }
@@ -271,25 +370,25 @@ class EddDTO implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets itemName
+     * Gets isWordPressPlugin
      *
-     * @return string
+     * @return bool
      */
-    public function getItemName()
+    public function getIsWordPressPlugin()
     {
-        return $this->container['itemName'];
+        return $this->container['isWordPressPlugin'];
     }
 
     /**
-     * Sets itemName
+     * Sets isWordPressPlugin
      *
-     * @param string $itemName itemName
+     * @param bool $isWordPressPlugin isWordPressPlugin
      *
      * @return $this
      */
-    public function setItemName($itemName)
+    public function setIsWordPressPlugin($isWordPressPlugin)
     {
-        $this->container['itemName'] = $itemName;
+        $this->container['isWordPressPlugin'] = $isWordPressPlugin;
 
         return $this;
     }

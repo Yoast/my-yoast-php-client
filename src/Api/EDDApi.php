@@ -87,40 +87,34 @@ class EDDApi
     }
 
     /**
-     * Operation handleGetRequest
+     * Operation handleDelete
      *
-     * Activate or deactivate a site license
+     * Sunset API for old EDD license checks
      *
-     * @param  string $eddAction eddAction (required)
-     * @param  string $url url (required)
-     * @param  string $itemName itemName (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function handleGetRequest($eddAction, $url, $itemName)
+    public function handleDelete()
     {
-        $this->handleGetRequestWithHttpInfo($eddAction, $url, $itemName);
+        $this->handleDeleteWithHttpInfo();
     }
 
     /**
-     * Operation handleGetRequestWithHttpInfo
+     * Operation handleDeleteWithHttpInfo
      *
-     * Activate or deactivate a site license
+     * Sunset API for old EDD license checks
      *
-     * @param  string $eddAction (required)
-     * @param  string $url (required)
-     * @param  string $itemName (required)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function handleGetRequestWithHttpInfo($eddAction, $url, $itemName)
+    public function handleDeleteWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->handleGetRequestRequest($eddAction, $url, $itemName);
+        $request = $this->handleDeleteRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -160,20 +154,17 @@ class EDDApi
     }
 
     /**
-     * Operation handleGetRequestAsync
+     * Operation handleDeleteAsync
      *
-     * Activate or deactivate a site license
+     * Sunset API for old EDD license checks
      *
-     * @param  string $eddAction (required)
-     * @param  string $url (required)
-     * @param  string $itemName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function handleGetRequestAsync($eddAction, $url, $itemName)
+    public function handleDeleteAsync()
     {
-        return $this->handleGetRequestAsyncWithHttpInfo($eddAction, $url, $itemName)
+        return $this->handleDeleteAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -182,21 +173,18 @@ class EDDApi
     }
 
     /**
-     * Operation handleGetRequestAsyncWithHttpInfo
+     * Operation handleDeleteAsyncWithHttpInfo
      *
-     * Activate or deactivate a site license
+     * Sunset API for old EDD license checks
      *
-     * @param  string $eddAction (required)
-     * @param  string $url (required)
-     * @param  string $itemName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function handleGetRequestAsyncWithHttpInfo($eddAction, $url, $itemName)
+    public function handleDeleteAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->handleGetRequestRequest($eddAction, $url, $itemName);
+        $request = $this->handleDeleteRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -222,35 +210,14 @@ class EDDApi
     }
 
     /**
-     * Create request for operation 'handleGetRequest'
+     * Create request for operation 'handleDelete'
      *
-     * @param  string $eddAction (required)
-     * @param  string $url (required)
-     * @param  string $itemName (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function handleGetRequestRequest($eddAction, $url, $itemName)
+    protected function handleDeleteRequest()
     {
-        // verify the required parameter 'eddAction' is set
-        if ($eddAction === null || (is_array($eddAction) && count($eddAction) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $eddAction when calling handleGetRequest'
-            );
-        }
-        // verify the required parameter 'url' is set
-        if ($url === null || (is_array($url) && count($url) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $url when calling handleGetRequest'
-            );
-        }
-        // verify the required parameter 'itemName' is set
-        if ($itemName === null || (is_array($itemName) && count($itemName) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $itemName when calling handleGetRequest'
-            );
-        }
 
         $resourcePath = '/edd-sl-api';
         $formParams = [];
@@ -259,18 +226,212 @@ class EDDApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($eddAction !== null) {
-            $queryParams['edd_action'] = ObjectSerializer::toQueryValue($eddAction, null);
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
         }
-        // query params
-        if ($url !== null) {
-            $queryParams['url'] = ObjectSerializer::toQueryValue($url, null);
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
         }
-        // query params
-        if ($itemName !== null) {
-            $queryParams['item_name'] = ObjectSerializer::toQueryValue($itemName, null);
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
         }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'DELETE',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation handleGet
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function handleGet()
+    {
+        $this->handleGetWithHttpInfo();
+    }
+
+    /**
+     * Operation handleGetWithHttpInfo
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function handleGetWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->handleGetRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation handleGetAsync
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function handleGetAsync()
+    {
+        return $this->handleGetAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation handleGetAsyncWithHttpInfo
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function handleGetAsyncWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->handleGetRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'handleGet'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function handleGetRequest()
+    {
+
+        $resourcePath = '/edd-sl-api';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
 
 
         // body params
@@ -338,34 +499,34 @@ class EDDApi
     }
 
     /**
-     * Operation handlePostRequest
+     * Operation handleHead
      *
-     * @param  \Yoast\MyYoastApiClient\Model\EddDTO $body body (required)
-     * @param  string $eddAction eddAction (required)
+     * Sunset API for old EDD license checks
+     *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function handlePostRequest($body, $eddAction)
+    public function handleHead()
     {
-        $this->handlePostRequestWithHttpInfo($body, $eddAction);
+        $this->handleHeadWithHttpInfo();
     }
 
     /**
-     * Operation handlePostRequestWithHttpInfo
+     * Operation handleHeadWithHttpInfo
      *
-     * @param  \Yoast\MyYoastApiClient\Model\EddDTO $body (required)
-     * @param  string $eddAction (required)
+     * Sunset API for old EDD license checks
+     *
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function handlePostRequestWithHttpInfo($body, $eddAction)
+    public function handleHeadWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->handlePostRequestRequest($body, $eddAction);
+        $request = $this->handleHeadRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -405,19 +566,17 @@ class EDDApi
     }
 
     /**
-     * Operation handlePostRequestAsync
+     * Operation handleHeadAsync
      *
-     * 
+     * Sunset API for old EDD license checks
      *
-     * @param  \Yoast\MyYoastApiClient\Model\EddDTO $body (required)
-     * @param  string $eddAction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function handlePostRequestAsync($body, $eddAction)
+    public function handleHeadAsync()
     {
-        return $this->handlePostRequestAsyncWithHttpInfo($body, $eddAction)
+        return $this->handleHeadAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -426,20 +585,18 @@ class EDDApi
     }
 
     /**
-     * Operation handlePostRequestAsyncWithHttpInfo
+     * Operation handleHeadAsyncWithHttpInfo
      *
-     * 
+     * Sunset API for old EDD license checks
      *
-     * @param  \Yoast\MyYoastApiClient\Model\EddDTO $body (required)
-     * @param  string $eddAction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function handlePostRequestAsyncWithHttpInfo($body, $eddAction)
+    public function handleHeadAsyncWithHttpInfo()
     {
         $returnType = '';
-        $request = $this->handlePostRequestRequest($body, $eddAction);
+        $request = $this->handleHeadRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -465,28 +622,14 @@ class EDDApi
     }
 
     /**
-     * Create request for operation 'handlePostRequest'
+     * Create request for operation 'handleHead'
      *
-     * @param  \Yoast\MyYoastApiClient\Model\EddDTO $body (required)
-     * @param  string $eddAction (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function handlePostRequestRequest($body, $eddAction)
+    protected function handleHeadRequest()
     {
-        // verify the required parameter 'body' is set
-        if ($body === null || (is_array($body) && count($body) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $body when calling handlePostRequest'
-            );
-        }
-        // verify the required parameter 'eddAction' is set
-        if ($eddAction === null || (is_array($eddAction) && count($eddAction) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $eddAction when calling handlePostRequest'
-            );
-        }
 
         $resourcePath = '/edd-sl-api';
         $formParams = [];
@@ -495,17 +638,10 @@ class EDDApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        if ($eddAction !== null) {
-            $queryParams['edd_action'] = ObjectSerializer::toQueryValue($eddAction, null);
-        }
 
 
         // body params
         $_tempBody = null;
-        if (isset($body)) {
-            $_tempBody = $body;
-        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -514,7 +650,625 @@ class EDDApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 [],
-                ['application/json']
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'HEAD',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation handleOptions
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function handleOptions()
+    {
+        $this->handleOptionsWithHttpInfo();
+    }
+
+    /**
+     * Operation handleOptionsWithHttpInfo
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function handleOptionsWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->handleOptionsRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation handleOptionsAsync
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function handleOptionsAsync()
+    {
+        return $this->handleOptionsAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation handleOptionsAsyncWithHttpInfo
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function handleOptionsAsyncWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->handleOptionsRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'handleOptions'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function handleOptionsRequest()
+    {
+
+        $resourcePath = '/edd-sl-api';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'OPTIONS',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation handlePatch
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function handlePatch()
+    {
+        $this->handlePatchWithHttpInfo();
+    }
+
+    /**
+     * Operation handlePatchWithHttpInfo
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function handlePatchWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->handlePatchRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation handlePatchAsync
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function handlePatchAsync()
+    {
+        return $this->handlePatchAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation handlePatchAsyncWithHttpInfo
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function handlePatchAsyncWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->handlePatchRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'handlePatch'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function handlePatchRequest()
+    {
+
+        $resourcePath = '/edd-sl-api';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PATCH',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation handlePost
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function handlePost()
+    {
+        $this->handlePostWithHttpInfo();
+    }
+
+    /**
+     * Operation handlePostWithHttpInfo
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function handlePostWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->handlePostRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation handlePostAsync
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function handlePostAsync()
+    {
+        return $this->handlePostAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation handlePostAsyncWithHttpInfo
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function handlePostAsyncWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->handlePostRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'handlePost'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function handlePostRequest()
+    {
+
+        $resourcePath = '/edd-sl-api';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
             );
         }
 
@@ -562,6 +1316,212 @@ class EDDApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation handlePut
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function handlePut()
+    {
+        $this->handlePutWithHttpInfo();
+    }
+
+    /**
+     * Operation handlePutWithHttpInfo
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function handlePutWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->handlePutRequest();
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation handlePutAsync
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function handlePutAsync()
+    {
+        return $this->handlePutAsyncWithHttpInfo()
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation handlePutAsyncWithHttpInfo
+     *
+     * Sunset API for old EDD license checks
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function handlePutAsyncWithHttpInfo()
+    {
+        $returnType = '';
+        $request = $this->handlePutRequest();
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'handlePut'
+     *
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function handlePutRequest()
+    {
+
+        $resourcePath = '/edd-sl-api';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

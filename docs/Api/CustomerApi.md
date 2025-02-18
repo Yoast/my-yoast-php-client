@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**downloadProfile**](CustomerApi.md#downloadprofile) | **GET** /api/Customers/{id}/download | Download profile.
 [**enable**](CustomerApi.md#enable) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
 [**findRefunds**](CustomerApi.md#findrefunds) | **GET** /api/Customers/{id}/findRefunds | Find refunds for user
+[**getAll**](CustomerApi.md#getall) | **GET** /api/Customers/{id}/downloads | Get all latest downloadable releases
 [**getAllRoles**](CustomerApi.md#getallroles) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
 [**getBuyerCourseEnrollments**](CustomerApi.md#getbuyercourseenrollments) | **GET** /api/Customers/{customerId}/buyerCourseEnrollments | Find Course Enrollments that a customer is buyer of
 [**getCourseAccessList**](CustomerApi.md#getcourseaccesslist) | **GET** /api/Customers/academyCourseAccessList/{sourceId} | Academy Course access
@@ -717,6 +718,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\Refund[]**](../Model/Refund.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getAll**
+> \Yoast\MyYoastApiClient\Model\DownloadDto[] getAll($id)
+
+Get all latest downloadable releases
+
+Gets all latest downloadable releases for products the customer has access to.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $result = $apiInstance->getAll($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->getAll: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\DownloadDto[]**](../Model/DownloadDto.md)
 
 ### Authorization
 

@@ -64,6 +64,7 @@ class ProductGroup implements ModelInterface, ArrayAccess
         'description' => 'string',
         'icon' => 'string',
         'svgIcon' => 'string',
+        'latestDownloadableReleaseId' => 'string',
         'courseId' => 'string',
         'parentId' => 'string'
     ];
@@ -82,6 +83,7 @@ class ProductGroup implements ModelInterface, ArrayAccess
         'description' => null,
         'icon' => null,
         'svgIcon' => null,
+        'latestDownloadableReleaseId' => 'uuid',
         'courseId' => 'uuid',
         'parentId' => 'uuid'
     ];
@@ -121,6 +123,7 @@ class ProductGroup implements ModelInterface, ArrayAccess
         'description' => 'description',
         'icon' => 'icon',
         'svgIcon' => 'svgIcon',
+        'latestDownloadableReleaseId' => 'latestDownloadableReleaseId',
         'courseId' => 'courseId',
         'parentId' => 'parentId'
     ];
@@ -139,6 +142,7 @@ class ProductGroup implements ModelInterface, ArrayAccess
         'description' => 'setDescription',
         'icon' => 'setIcon',
         'svgIcon' => 'setSvgIcon',
+        'latestDownloadableReleaseId' => 'setLatestDownloadableReleaseId',
         'courseId' => 'setCourseId',
         'parentId' => 'setParentId'
     ];
@@ -157,6 +161,7 @@ class ProductGroup implements ModelInterface, ArrayAccess
         'description' => 'getDescription',
         'icon' => 'getIcon',
         'svgIcon' => 'getSvgIcon',
+        'latestDownloadableReleaseId' => 'getLatestDownloadableReleaseId',
         'courseId' => 'getCourseId',
         'parentId' => 'getParentId'
     ];
@@ -227,6 +232,7 @@ class ProductGroup implements ModelInterface, ArrayAccess
         $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['icon'] = isset($data['icon']) ? $data['icon'] : null;
         $this->container['svgIcon'] = isset($data['svgIcon']) ? $data['svgIcon'] : null;
+        $this->container['latestDownloadableReleaseId'] = isset($data['latestDownloadableReleaseId']) ? $data['latestDownloadableReleaseId'] : null;
         $this->container['courseId'] = isset($data['courseId']) ? $data['courseId'] : null;
         $this->container['parentId'] = isset($data['parentId']) ? $data['parentId'] : null;
     }
@@ -263,6 +269,9 @@ class ProductGroup implements ModelInterface, ArrayAccess
         }
         if ($this->container['svgIcon'] === null) {
             $invalidProperties[] = "'svgIcon' can't be null";
+        }
+        if ($this->container['latestDownloadableReleaseId'] === null) {
+            $invalidProperties[] = "'latestDownloadableReleaseId' can't be null";
         }
         if ($this->container['courseId'] === null) {
             $invalidProperties[] = "'courseId' can't be null";
@@ -473,6 +482,30 @@ class ProductGroup implements ModelInterface, ArrayAccess
     public function setSvgIcon($svgIcon)
     {
         $this->container['svgIcon'] = $svgIcon;
+
+        return $this;
+    }
+
+    /**
+     * Gets latestDownloadableReleaseId
+     *
+     * @return string
+     */
+    public function getLatestDownloadableReleaseId()
+    {
+        return $this->container['latestDownloadableReleaseId'];
+    }
+
+    /**
+     * Sets latestDownloadableReleaseId
+     *
+     * @param string $latestDownloadableReleaseId latestDownloadableReleaseId
+     *
+     * @return $this
+     */
+    public function setLatestDownloadableReleaseId($latestDownloadableReleaseId)
+    {
+        $this->container['latestDownloadableReleaseId'] = $latestDownloadableReleaseId;
 
         return $this;
     }

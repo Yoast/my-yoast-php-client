@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**deleteOne**](SubscriptionApi.md#deleteone) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
 [**ensureAdmissionScript**](SubscriptionApi.md#ensureadmissionscript) | **GET** /api/Subscriptions/ensureAdmissions | Ensure Admission for subscriptions script
 [**forceCancel**](SubscriptionApi.md#forcecancel) | **POST** /api/Subscriptions/{id}/force-cancel | Forcefully cancel a subscription
+[**getDetails**](SubscriptionApi.md#getdetails) | **GET** /api/Subscriptions/{id}/details | 
 [**getExpiringSubscriptions**](SubscriptionApi.md#getexpiringsubscriptions) | **GET** /api/Subscriptions/expiring | 
 [**getMany**](SubscriptionApi.md#getmany) | **GET** /api/Subscriptions | Get subscriptions
 [**getManyPaged**](SubscriptionApi.md#getmanypaged) | **GET** /api/Subscriptions/paged | Get subscriptions
@@ -212,6 +213,57 @@ try {
     $apiInstance->forceCancel($id);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->forceCancel: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getDetails**
+> getDetails($id)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $apiInstance->getDetails($id);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->getDetails: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
