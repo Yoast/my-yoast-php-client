@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  | 
 **storeUrl** | **string** |  | 
-**downloads** | [**\Yoast\MyYoastApiClient\Model\ProductDownload[]**](ProductDownload.md) |  | [optional] 
 **sourceId** | **int** |  | 
 **sourceShopId** | **int** |  | 
 **shopStatus** | **string** |  | 

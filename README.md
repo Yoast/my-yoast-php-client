@@ -179,6 +179,8 @@ Class | Method | HTTP request | Description
 *CustomerNoteApi* | [**getOne**](docs/Api/CustomerNoteApi.md#getone) | **GET** /api/CustomerNotes/{id} | Get a customer note
 *DefaultApi* | [**checkHealth**](docs/Api/DefaultApi.md#checkhealth) | **POST** /api/tmp | 
 *DefaultApi* | [**getLicenseStatus**](docs/Api/DefaultApi.md#getlicensestatus) | **GET** /api/v1/license-validation/{product_id} | 
+*DefaultApi* | [**inviteEmail**](docs/Api/DefaultApi.md#inviteemail) | **POST** /api/v1/access/{subscriptionId}/invites | 
+*DefaultApi* | [**revokeInvitation**](docs/Api/DefaultApi.md#revokeinvitation) | **DELETE** /api/v1/access/{subscriptionId}/invites/{id} | 
 *DownloadApi* | [**downloadFile**](docs/Api/DownloadApi.md#downloadfile) | **GET** /api/downloads/file/{name} | Route to download a file
 *DownloadApi* | [**uploadFile**](docs/Api/DownloadApi.md#uploadfile) | **POST** /api/downloads/file/{name} | Route to update a file.
 *EDDApi* | [**handleDelete**](docs/Api/EDDApi.md#handledelete) | **DELETE** /edd-sl-api | Sunset API for old EDD license checks
@@ -189,6 +191,8 @@ Class | Method | HTTP request | Description
 *EDDApi* | [**handlePost**](docs/Api/EDDApi.md#handlepost) | **POST** /edd-sl-api | Sunset API for old EDD license checks
 *EDDApi* | [**handlePut**](docs/Api/EDDApi.md#handleput) | **PUT** /edd-sl-api | Sunset API for old EDD license checks
 *EmailApi* | [**sendEmails**](docs/Api/EmailApi.md#sendemails) | **POST** /api/Emails/bulk-send | 
+*EmailAccessApi* | [**getMany**](docs/Api/EmailAccessApi.md#getmany) | **GET** /api/EmailAccess | Gets email access
+*EmailAccessApi* | [**getManyPaged**](docs/Api/EmailAccessApi.md#getmanypaged) | **GET** /api/EmailAccess/paged | Gets email access
 *ExportOrdersApi* | [**exportOrders**](docs/Api/ExportOrdersApi.md#exportorders) | **GET** /export-orders/{year}/{month}/{type} | Creates an export for orders
 *ExportOrdersApi* | [**exportOrdersV2**](docs/Api/ExportOrdersApi.md#exportordersv2) | **GET** /export-orders/v2/{from}/{to}/{type} | Creates an export for orders
 *FromWooCommerceApi* | [**customerFromWooCommerce**](docs/Api/FromWooCommerceApi.md#customerfromwoocommerce) | **PUT** /api/Customers/fromWooCommerce | Update or create a customer
@@ -227,6 +231,9 @@ Class | Method | HTTP request | Description
 *PackagesApi* | [**servePackagesJSON**](docs/Api/PackagesApi.md#servepackagesjson) | **GET** /packages/packages.json | Serves the general packages.json file.
 *PackagesApi* | [**serveProvider2JSON**](docs/Api/PackagesApi.md#serveprovider2json) | **GET** /packages/p2/{org}/{name}.json | Serves the requested provider.json
 *PackagesApi* | [**serveProviderJSON**](docs/Api/PackagesApi.md#serveproviderjson) | **GET** /packages/p/{org}/{nameAndHash}.json | Serves the requested provider.json
+*PluginInstallationApi* | [**getContactForSite**](docs/Api/PluginInstallationApi.md#getcontactforsite) | **POST** /api/PluginInstallation/getContactEmail | 
+*PluginInstallationApi* | [**installAndActivatePlugin**](docs/Api/PluginInstallationApi.md#installandactivateplugin) | **POST** /api/PluginInstallation/installAndActivatePlugin | 
+*PluginInstallationApi* | [**revokeToken**](docs/Api/PluginInstallationApi.md#revoketoken) | **POST** /api/PluginInstallation/revokeToken | 
 *ProductApi* | [**deleteOne**](docs/Api/ProductApi.md#deleteone) | **DELETE** /api/Products/{productId} | 
 *ProductApi* | [**getMany**](docs/Api/ProductApi.md#getmany) | **GET** /api/Products | Get products
 *ProductApi* | [**getOne**](docs/Api/ProductApi.md#getone) | **GET** /api/Products/{id} | Get a product
@@ -308,6 +315,7 @@ Class | Method | HTTP request | Description
  - [AddJobDto](docs/Model/AddJobDto.md)
  - [AddSubscriptionDto](docs/Model/AddSubscriptionDto.md)
  - [Admission](docs/Model/Admission.md)
+ - [ApplicationPasswordCredentialsDto](docs/Model/ApplicationPasswordCredentialsDto.md)
  - [AutoRenewalCountResponseDto](docs/Model/AutoRenewalCountResponseDto.md)
  - [BillingDto](docs/Model/BillingDto.md)
  - [Blacklist](docs/Model/Blacklist.md)
@@ -334,6 +342,7 @@ Class | Method | HTTP request | Description
  - [CustomerFromWooDto](docs/Model/CustomerFromWooDto.md)
  - [CustomerNote](docs/Model/CustomerNote.md)
  - [DownloadDto](docs/Model/DownloadDto.md)
+ - [EmailAccess](docs/Model/EmailAccess.md)
  - [EventDto](docs/Model/EventDto.md)
  - [ExtraCourseDataDto](docs/Model/ExtraCourseDataDto.md)
  - [ExtraOrderData](docs/Model/ExtraOrderData.md)
@@ -343,7 +352,9 @@ Class | Method | HTTP request | Description
  - [FromAcademyDto](docs/Model/FromAcademyDto.md)
  - [GenerateDto](docs/Model/GenerateDto.md)
  - [HelpScoutDto](docs/Model/HelpScoutDto.md)
+ - [InviteBodyDto](docs/Model/InviteBodyDto.md)
  - [InviteDto](docs/Model/InviteDto.md)
+ - [InviteResponseDto](docs/Model/InviteResponseDto.md)
  - [JSZip](docs/Model/JSZip.md)
  - [JobOptionsDto](docs/Model/JobOptionsDto.md)
  - [License](docs/Model/License.md)
@@ -386,6 +397,7 @@ Class | Method | HTTP request | Description
  - [ShippingDto](docs/Model/ShippingDto.md)
  - [SignupAccountDto](docs/Model/SignupAccountDto.md)
  - [Site](docs/Model/Site.md)
+ - [SiteInstallationActorDto](docs/Model/SiteInstallationActorDto.md)
  - [SubscribeDto](docs/Model/SubscribeDto.md)
  - [Subscription](docs/Model/Subscription.md)
  - [SubscriptionMutation](docs/Model/SubscriptionMutation.md)

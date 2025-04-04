@@ -8,9 +8,11 @@ Name | Type | Description | Notes
 **createdAt** | [**\DateTime**](\DateTime.md) |  | 
 **name** | **string** |  | 
 **slug** | **string** |  | 
+**type** | **string** |  | 
 **description** | **string** |  | 
 **icon** | **string** |  | 
 **svgIcon** | **string** |  | 
+**installURL** | **string** |  | 
 **latestDownloadableReleaseId** | **string** |  | 
 **courseId** | **string** |  | 
 **parentId** | **string** |  | 
