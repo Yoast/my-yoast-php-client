@@ -66,7 +66,8 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
         'courseId' => 'string',
         'version' => 'string',
         'downloadUrl' => 'string',
-        'installUrl' => 'string'
+        'installUrl' => 'string',
+        'usesEmailInvitations' => 'bool'
     ];
 
     /**
@@ -85,7 +86,8 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
         'courseId' => null,
         'version' => null,
         'downloadUrl' => null,
-        'installUrl' => null
+        'installUrl' => null,
+        'usesEmailInvitations' => null
     ];
 
     /**
@@ -125,7 +127,8 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
         'courseId' => 'course_id',
         'version' => 'version',
         'downloadUrl' => 'download_url',
-        'installUrl' => 'install_url'
+        'installUrl' => 'install_url',
+        'usesEmailInvitations' => 'uses_email_invitations'
     ];
 
     /**
@@ -144,7 +147,8 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
         'courseId' => 'setCourseId',
         'version' => 'setVersion',
         'downloadUrl' => 'setDownloadUrl',
-        'installUrl' => 'setInstallUrl'
+        'installUrl' => 'setInstallUrl',
+        'usesEmailInvitations' => 'setUsesEmailInvitations'
     ];
 
     /**
@@ -163,7 +167,8 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
         'courseId' => 'getCourseId',
         'version' => 'getVersion',
         'downloadUrl' => 'getDownloadUrl',
-        'installUrl' => 'getInstallUrl'
+        'installUrl' => 'getInstallUrl',
+        'usesEmailInvitations' => 'getUsesEmailInvitations'
     ];
 
     /**
@@ -253,6 +258,7 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
         $this->container['version'] = isset($data['version']) ? $data['version'] : null;
         $this->container['downloadUrl'] = isset($data['downloadUrl']) ? $data['downloadUrl'] : null;
         $this->container['installUrl'] = isset($data['installUrl']) ? $data['installUrl'] : null;
+        $this->container['usesEmailInvitations'] = isset($data['usesEmailInvitations']) ? $data['usesEmailInvitations'] : null;
     }
 
     /**
@@ -574,6 +580,30 @@ class ProductGroupFromWooDto implements ModelInterface, ArrayAccess
     public function setInstallUrl($installUrl)
     {
         $this->container['installUrl'] = $installUrl;
+
+        return $this;
+    }
+
+    /**
+     * Gets usesEmailInvitations
+     *
+     * @return bool
+     */
+    public function getUsesEmailInvitations()
+    {
+        return $this->container['usesEmailInvitations'];
+    }
+
+    /**
+     * Sets usesEmailInvitations
+     *
+     * @param bool $usesEmailInvitations usesEmailInvitations
+     *
+     * @return $this
+     */
+    public function setUsesEmailInvitations($usesEmailInvitations)
+    {
+        $this->container['usesEmailInvitations'] = $usesEmailInvitations;
 
         return $this;
     }

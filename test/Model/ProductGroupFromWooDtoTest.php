@@ -153,4 +153,11 @@ class ProductGroupFromWooDtoTest extends TestCase
     public function testPropertyInstallUrl()
     {
     }
+
+    /**
+     * Test attribute "usesEmailInvitations"
+     */
+    public function testPropertyUsesEmailInvitations()
+    {
+    }
 }
