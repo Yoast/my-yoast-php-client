@@ -56,7 +56,9 @@ class CancelSubscriptionBodyDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'amount' => 'int'
+        'amount' => 'int',
+        'preferredSitesToKeep' => 'string[]',
+        'preferredEmailAccessToKeep' => 'string[]'
     ];
 
     /**
@@ -65,7 +67,9 @@ class CancelSubscriptionBodyDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'amount' => null
+        'amount' => null,
+        'preferredSitesToKeep' => null,
+        'preferredEmailAccessToKeep' => null
     ];
 
     /**
@@ -95,7 +99,9 @@ class CancelSubscriptionBodyDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'amount' => 'amount'
+        'amount' => 'amount',
+        'preferredSitesToKeep' => 'preferredSitesToKeep',
+        'preferredEmailAccessToKeep' => 'preferredEmailAccessToKeep'
     ];
 
     /**
@@ -104,7 +110,9 @@ class CancelSubscriptionBodyDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'amount' => 'setAmount'
+        'amount' => 'setAmount',
+        'preferredSitesToKeep' => 'setPreferredSitesToKeep',
+        'preferredEmailAccessToKeep' => 'setPreferredEmailAccessToKeep'
     ];
 
     /**
@@ -113,7 +121,9 @@ class CancelSubscriptionBodyDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'amount' => 'getAmount'
+        'amount' => 'getAmount',
+        'preferredSitesToKeep' => 'getPreferredSitesToKeep',
+        'preferredEmailAccessToKeep' => 'getPreferredEmailAccessToKeep'
     ];
 
     /**
@@ -175,6 +185,8 @@ class CancelSubscriptionBodyDto implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['preferredSitesToKeep'] = isset($data['preferredSitesToKeep']) ? $data['preferredSitesToKeep'] : null;
+        $this->container['preferredEmailAccessToKeep'] = isset($data['preferredEmailAccessToKeep']) ? $data['preferredEmailAccessToKeep'] : null;
     }
 
     /**
@@ -188,6 +200,12 @@ class CancelSubscriptionBodyDto implements ModelInterface, ArrayAccess
 
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
+        }
+        if ($this->container['preferredSitesToKeep'] === null) {
+            $invalidProperties[] = "'preferredSitesToKeep' can't be null";
+        }
+        if ($this->container['preferredEmailAccessToKeep'] === null) {
+            $invalidProperties[] = "'preferredEmailAccessToKeep' can't be null";
         }
         return $invalidProperties;
     }
@@ -224,6 +242,54 @@ class CancelSubscriptionBodyDto implements ModelInterface, ArrayAccess
     public function setAmount($amount)
     {
         $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets preferredSitesToKeep
+     *
+     * @return string[]
+     */
+    public function getPreferredSitesToKeep()
+    {
+        return $this->container['preferredSitesToKeep'];
+    }
+
+    /**
+     * Sets preferredSitesToKeep
+     *
+     * @param string[] $preferredSitesToKeep preferredSitesToKeep
+     *
+     * @return $this
+     */
+    public function setPreferredSitesToKeep($preferredSitesToKeep)
+    {
+        $this->container['preferredSitesToKeep'] = $preferredSitesToKeep;
+
+        return $this;
+    }
+
+    /**
+     * Gets preferredEmailAccessToKeep
+     *
+     * @return string[]
+     */
+    public function getPreferredEmailAccessToKeep()
+    {
+        return $this->container['preferredEmailAccessToKeep'];
+    }
+
+    /**
+     * Sets preferredEmailAccessToKeep
+     *
+     * @param string[] $preferredEmailAccessToKeep preferredEmailAccessToKeep
+     *
+     * @return $this
+     */
+    public function setPreferredEmailAccessToKeep($preferredEmailAccessToKeep)
+    {
+        $this->container['preferredEmailAccessToKeep'] = $preferredEmailAccessToKeep;
 
         return $this;
     }

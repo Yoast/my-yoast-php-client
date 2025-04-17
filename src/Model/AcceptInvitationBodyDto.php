@@ -1,6 +1,6 @@
 <?php
 /**
- * InviteResponseDto
+ * AcceptInvitationBodyDto
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * InviteResponseDto Class Doc Comment
+ * AcceptInvitationBodyDto Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InviteResponseDto implements ModelInterface, ArrayAccess
+class AcceptInvitationBodyDto implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InviteResponseDto';
+    protected static $swaggerModelName = 'AcceptInvitationBodyDto';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,7 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-        'errorCode' => 'string',
-        'needsVerification' => 'bool'
+        'verificationToken' => 'string'
     ];
 
     /**
@@ -67,9 +65,7 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-        'errorCode' => null,
-        'needsVerification' => null
+        'verificationToken' => null
     ];
 
     /**
@@ -99,9 +95,7 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-        'errorCode' => 'errorCode',
-        'needsVerification' => 'needsVerification'
+        'verificationToken' => 'verificationToken'
     ];
 
     /**
@@ -110,9 +104,7 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'errorCode' => 'setErrorCode',
-        'needsVerification' => 'setNeedsVerification'
+        'verificationToken' => 'setVerificationToken'
     ];
 
     /**
@@ -121,9 +113,7 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'errorCode' => 'getErrorCode',
-        'needsVerification' => 'getNeedsVerification'
+        'verificationToken' => 'getVerificationToken'
     ];
 
     /**
@@ -167,23 +157,7 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const ERROR_CODE_NO_SEATS_AVAILABLE = 'NO_SEATS_AVAILABLE';
-    const ERROR_CODE_ALREADY_GRANTED = 'ALREADY_GRANTED';
-    const ERROR_CODE_FAILED_TO_SEND_INVITATION = 'FAILED_TO_SEND_INVITATION';
 
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getErrorCodeAllowableValues()
-    {
-        return [
-            self::ERROR_CODE_NO_SEATS_AVAILABLE,
-            self::ERROR_CODE_ALREADY_GRANTED,
-            self::ERROR_CODE_FAILED_TO_SEND_INVITATION,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -200,9 +174,7 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['errorCode'] = isset($data['errorCode']) ? $data['errorCode'] : null;
-        $this->container['needsVerification'] = isset($data['needsVerification']) ? $data['needsVerification'] : null;
+        $this->container['verificationToken'] = isset($data['verificationToken']) ? $data['verificationToken'] : null;
     }
 
     /**
@@ -214,17 +186,9 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['success'] === null) {
-            $invalidProperties[] = "'success' can't be null";
+        if ($this->container['verificationToken'] === null) {
+            $invalidProperties[] = "'verificationToken' can't be null";
         }
-        $allowedValues = $this->getErrorCodeAllowableValues();
-        if (!is_null($this->container['errorCode']) && !in_array($this->container['errorCode'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'errorCode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -241,82 +205,25 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets errorCode
+     * Gets verificationToken
      *
      * @return string
      */
-    public function getErrorCode()
+    public function getVerificationToken()
     {
-        return $this->container['errorCode'];
+        return $this->container['verificationToken'];
     }
 
     /**
-     * Sets errorCode
+     * Sets verificationToken
      *
-     * @param string $errorCode errorCode
+     * @param string $verificationToken verificationToken
      *
      * @return $this
      */
-    public function setErrorCode($errorCode)
+    public function setVerificationToken($verificationToken)
     {
-        $allowedValues = $this->getErrorCodeAllowableValues();
-        if (!is_null($errorCode) && !in_array($errorCode, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'errorCode', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['errorCode'] = $errorCode;
-
-        return $this;
-    }
-
-    /**
-     * Gets needsVerification
-     *
-     * @return bool
-     */
-    public function getNeedsVerification()
-    {
-        return $this->container['needsVerification'];
-    }
-
-    /**
-     * Sets needsVerification
-     *
-     * @param bool $needsVerification needsVerification
-     *
-     * @return $this
-     */
-    public function setNeedsVerification($needsVerification)
-    {
-        $this->container['needsVerification'] = $needsVerification;
+        $this->container['verificationToken'] = $verificationToken;
 
         return $this;
     }

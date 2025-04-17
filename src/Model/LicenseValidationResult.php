@@ -1,6 +1,6 @@
 <?php
 /**
- * InviteResponseDto
+ * LicenseValidationResult
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ use \ArrayAccess;
 use \Yoast\MyYoastApiClient\ObjectSerializer;
 
 /**
- * InviteResponseDto Class Doc Comment
+ * LicenseValidationResult Class Doc Comment
  *
  * @category Class
  * @package  Yoast\MyYoastApiClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class InviteResponseDto implements ModelInterface, ArrayAccess
+class LicenseValidationResult implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'InviteResponseDto';
+    protected static $swaggerModelName = 'LicenseValidationResult';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -56,9 +56,10 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-        'errorCode' => 'string',
-        'needsVerification' => 'bool'
+        'productId' => 'string',
+        'licenseeEmail' => 'string',
+        'isValid' => 'bool',
+        'validUntil' => '\DateTime'
     ];
 
     /**
@@ -67,9 +68,10 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-        'errorCode' => null,
-        'needsVerification' => null
+        'productId' => null,
+        'licenseeEmail' => 'email',
+        'isValid' => null,
+        'validUntil' => 'date-time'
     ];
 
     /**
@@ -99,9 +101,10 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'success',
-        'errorCode' => 'errorCode',
-        'needsVerification' => 'needsVerification'
+        'productId' => 'productId',
+        'licenseeEmail' => 'licenseeEmail',
+        'isValid' => 'isValid',
+        'validUntil' => 'validUntil'
     ];
 
     /**
@@ -110,9 +113,10 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'errorCode' => 'setErrorCode',
-        'needsVerification' => 'setNeedsVerification'
+        'productId' => 'setProductId',
+        'licenseeEmail' => 'setLicenseeEmail',
+        'isValid' => 'setIsValid',
+        'validUntil' => 'setValidUntil'
     ];
 
     /**
@@ -121,9 +125,10 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'errorCode' => 'getErrorCode',
-        'needsVerification' => 'getNeedsVerification'
+        'productId' => 'getProductId',
+        'licenseeEmail' => 'getLicenseeEmail',
+        'isValid' => 'getIsValid',
+        'validUntil' => 'getValidUntil'
     ];
 
     /**
@@ -167,23 +172,7 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
-    const ERROR_CODE_NO_SEATS_AVAILABLE = 'NO_SEATS_AVAILABLE';
-    const ERROR_CODE_ALREADY_GRANTED = 'ALREADY_GRANTED';
-    const ERROR_CODE_FAILED_TO_SEND_INVITATION = 'FAILED_TO_SEND_INVITATION';
 
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getErrorCodeAllowableValues()
-    {
-        return [
-            self::ERROR_CODE_NO_SEATS_AVAILABLE,
-            self::ERROR_CODE_ALREADY_GRANTED,
-            self::ERROR_CODE_FAILED_TO_SEND_INVITATION,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -200,9 +189,10 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['errorCode'] = isset($data['errorCode']) ? $data['errorCode'] : null;
-        $this->container['needsVerification'] = isset($data['needsVerification']) ? $data['needsVerification'] : null;
+        $this->container['productId'] = isset($data['productId']) ? $data['productId'] : null;
+        $this->container['licenseeEmail'] = isset($data['licenseeEmail']) ? $data['licenseeEmail'] : null;
+        $this->container['isValid'] = isset($data['isValid']) ? $data['isValid'] : null;
+        $this->container['validUntil'] = isset($data['validUntil']) ? $data['validUntil'] : null;
     }
 
     /**
@@ -214,17 +204,15 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['success'] === null) {
-            $invalidProperties[] = "'success' can't be null";
+        if ($this->container['productId'] === null) {
+            $invalidProperties[] = "'productId' can't be null";
         }
-        $allowedValues = $this->getErrorCodeAllowableValues();
-        if (!is_null($this->container['errorCode']) && !in_array($this->container['errorCode'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'errorCode', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
+        if ($this->container['licenseeEmail'] === null) {
+            $invalidProperties[] = "'licenseeEmail' can't be null";
         }
-
+        if ($this->container['isValid'] === null) {
+            $invalidProperties[] = "'isValid' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -241,82 +229,97 @@ class InviteResponseDto implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
-     *
-     * @return bool
-     */
-    public function getSuccess()
-    {
-        return $this->container['success'];
-    }
-
-    /**
-     * Sets success
-     *
-     * @param bool $success success
-     *
-     * @return $this
-     */
-    public function setSuccess($success)
-    {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets errorCode
+     * Gets productId
      *
      * @return string
      */
-    public function getErrorCode()
+    public function getProductId()
     {
-        return $this->container['errorCode'];
+        return $this->container['productId'];
     }
 
     /**
-     * Sets errorCode
+     * Sets productId
      *
-     * @param string $errorCode errorCode
+     * @param string $productId productId
      *
      * @return $this
      */
-    public function setErrorCode($errorCode)
+    public function setProductId($productId)
     {
-        $allowedValues = $this->getErrorCodeAllowableValues();
-        if (!is_null($errorCode) && !in_array($errorCode, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'errorCode', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['errorCode'] = $errorCode;
+        $this->container['productId'] = $productId;
 
         return $this;
     }
 
     /**
-     * Gets needsVerification
+     * Gets licenseeEmail
      *
-     * @return bool
+     * @return string
      */
-    public function getNeedsVerification()
+    public function getLicenseeEmail()
     {
-        return $this->container['needsVerification'];
+        return $this->container['licenseeEmail'];
     }
 
     /**
-     * Sets needsVerification
+     * Sets licenseeEmail
      *
-     * @param bool $needsVerification needsVerification
+     * @param string $licenseeEmail licenseeEmail
      *
      * @return $this
      */
-    public function setNeedsVerification($needsVerification)
+    public function setLicenseeEmail($licenseeEmail)
     {
-        $this->container['needsVerification'] = $needsVerification;
+        $this->container['licenseeEmail'] = $licenseeEmail;
+
+        return $this;
+    }
+
+    /**
+     * Gets isValid
+     *
+     * @return bool
+     */
+    public function getIsValid()
+    {
+        return $this->container['isValid'];
+    }
+
+    /**
+     * Sets isValid
+     *
+     * @param bool $isValid isValid
+     *
+     * @return $this
+     */
+    public function setIsValid($isValid)
+    {
+        $this->container['isValid'] = $isValid;
+
+        return $this;
+    }
+
+    /**
+     * Gets validUntil
+     *
+     * @return \DateTime
+     */
+    public function getValidUntil()
+    {
+        return $this->container['validUntil'];
+    }
+
+    /**
+     * Sets validUntil
+     *
+     * @param \DateTime $validUntil validUntil
+     *
+     * @return $this
+     */
+    public function setValidUntil($validUntil)
+    {
+        $this->container['validUntil'] = $validUntil;
 
         return $this;
     }

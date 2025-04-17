@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductOfferingTest
+ * LicenseValidationResultTest
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace Yoast\MyYoastApiClient;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ProductOfferingTest Class Doc Comment
+ * LicenseValidationResultTest Class Doc Comment
  *
  * @category    Class
- * @description ProductOffering
+ * @description LicenseValidationResult
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ProductOfferingTest extends TestCase
+class LicenseValidationResultTest extends TestCase
 {
 
     /**
@@ -71,86 +71,9 @@ class ProductOfferingTest extends TestCase
     }
 
     /**
-     * Test "ProductOffering"
+     * Test "LicenseValidationResult"
      */
-    public function testProductOffering()
-    {
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-    }
-
-    /**
-     * Test attribute "storeUrl"
-     */
-    public function testPropertyStoreUrl()
-    {
-    }
-
-    /**
-     * Test attribute "sourceId"
-     */
-    public function testPropertySourceId()
-    {
-    }
-
-    /**
-     * Test attribute "sourceShopId"
-     */
-    public function testPropertySourceShopId()
-    {
-    }
-
-    /**
-     * Test attribute "shopStatus"
-     */
-    public function testPropertyShopStatus()
-    {
-    }
-
-    /**
-     * Test attribute "canBePurchased"
-     */
-    public function testPropertyCanBePurchased()
-    {
-    }
-
-    /**
-     * Test attribute "price"
-     */
-    public function testPropertyPrice()
-    {
-    }
-
-    /**
-     * Test attribute "shopRegularPrice"
-     */
-    public function testPropertyShopRegularPrice()
-    {
-    }
-
-    /**
-     * Test attribute "currency"
-     */
-    public function testPropertyCurrency()
-    {
-    }
-
-    /**
-     * Test attribute "createdAt"
-     */
-    public function testPropertyCreatedAt()
-    {
-    }
-
-    /**
-     * Test attribute "modifiedAt"
-     */
-    public function testPropertyModifiedAt()
+    public function testLicenseValidationResult()
     {
     }
 
@@ -158,6 +81,27 @@ class ProductOfferingTest extends TestCase
      * Test attribute "productId"
      */
     public function testPropertyProductId()
+    {
+    }
+
+    /**
+     * Test attribute "licenseeEmail"
+     */
+    public function testPropertyLicenseeEmail()
+    {
+    }
+
+    /**
+     * Test attribute "isValid"
+     */
+    public function testPropertyIsValid()
+    {
+    }
+
+    /**
+     * Test attribute "validUntil"
+     */
+    public function testPropertyValidUntil()
     {
     }
 }

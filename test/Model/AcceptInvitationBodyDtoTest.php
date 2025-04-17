@@ -1,6 +1,6 @@
 <?php
 /**
- * InviteResponseDtoTest
+ * AcceptInvitationBodyDtoTest
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace Yoast\MyYoastApiClient;
 use PHPUnit\Framework\TestCase;
 
 /**
- * InviteResponseDtoTest Class Doc Comment
+ * AcceptInvitationBodyDtoTest Class Doc Comment
  *
  * @category    Class
- * @description InviteResponseDto
+ * @description AcceptInvitationBodyDto
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class InviteResponseDtoTest extends TestCase
+class AcceptInvitationBodyDtoTest extends TestCase
 {
 
     /**
@@ -71,30 +71,16 @@ class InviteResponseDtoTest extends TestCase
     }
 
     /**
-     * Test "InviteResponseDto"
+     * Test "AcceptInvitationBodyDto"
      */
-    public function testInviteResponseDto()
+    public function testAcceptInvitationBodyDto()
     {
     }
 
     /**
-     * Test attribute "success"
+     * Test attribute "verificationToken"
      */
-    public function testPropertySuccess()
-    {
-    }
-
-    /**
-     * Test attribute "errorCode"
-     */
-    public function testPropertyErrorCode()
-    {
-    }
-
-    /**
-     * Test attribute "needsVerification"
-     */
-    public function testPropertyNeedsVerification()
+    public function testPropertyVerificationToken()
     {
     }
 }

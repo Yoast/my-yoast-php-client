@@ -177,6 +177,7 @@ Class | Method | HTTP request | Description
 *CustomerNoteApi* | [**deleteOne**](docs/Api/CustomerNoteApi.md#deleteone) | **DELETE** /api/CustomerNotes/{id} | 
 *CustomerNoteApi* | [**getMany**](docs/Api/CustomerNoteApi.md#getmany) | **GET** /api/CustomerNotes | Get customer notes
 *CustomerNoteApi* | [**getOne**](docs/Api/CustomerNoteApi.md#getone) | **GET** /api/CustomerNotes/{id} | Get a customer note
+*DefaultApi* | [**acceptInvitation**](docs/Api/DefaultApi.md#acceptinvitation) | **POST** /api/v1/access/{subscriptionId}/invites/{id}/accept | 
 *DefaultApi* | [**checkHealth**](docs/Api/DefaultApi.md#checkhealth) | **POST** /api/tmp | 
 *DefaultApi* | [**getLicenseStatus**](docs/Api/DefaultApi.md#getlicensestatus) | **GET** /api/v1/license-validation/{product_id} | 
 *DefaultApi* | [**inviteEmail**](docs/Api/DefaultApi.md#inviteemail) | **POST** /api/v1/access/{subscriptionId}/invites | 
@@ -309,6 +310,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [AcademyCourseAccessListDto](docs/Model/AcademyCourseAccessListDto.md)
+ - [AcceptInvitationBodyDto](docs/Model/AcceptInvitationBodyDto.md)
  - [AccessTokenResponse](docs/Model/AccessTokenResponse.md)
  - [ActivateAccountDto](docs/Model/ActivateAccountDto.md)
  - [ActivateAccountResponseDto](docs/Model/ActivateAccountResponseDto.md)
@@ -359,6 +361,7 @@ Class | Method | HTTP request | Description
  - [JobOptionsDto](docs/Model/JobOptionsDto.md)
  - [License](docs/Model/License.md)
  - [LicenseDTO](docs/Model/LicenseDTO.md)
+ - [LicenseValidationResult](docs/Model/LicenseValidationResult.md)
  - [LineItemDto](docs/Model/LineItemDto.md)
  - [LineItemTax](docs/Model/LineItemTax.md)
  - [LinkSiteDto](docs/Model/LinkSiteDto.md)

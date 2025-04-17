@@ -72,6 +72,16 @@ class DefaultApiTest extends TestCase
     }
 
     /**
+     * Test case for acceptInvitation
+     *
+     * .
+     *
+     */
+    public function testAcceptInvitation()
+    {
+    }
+
+    /**
      * Test case for checkHealth
      *
      * .

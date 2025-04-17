@@ -83,4 +83,18 @@ class CancelSubscriptionBodyDtoTest extends TestCase
     public function testPropertyAmount()
     {
     }
+
+    /**
+     * Test attribute "preferredSitesToKeep"
+     */
+    public function testPropertyPreferredSitesToKeep()
+    {
+    }
+
+    /**
+     * Test attribute "preferredEmailAccessToKeep"
+     */
+    public function testPropertyPreferredEmailAccessToKeep()
+    {
+    }
 }

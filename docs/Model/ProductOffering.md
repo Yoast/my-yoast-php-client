@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **sourceId** | **int** |  | 
 **sourceShopId** | **int** |  | 
 **shopStatus** | **string** |  | 
+**canBePurchased** | **bool** |  | 
 **price** | **int** |  | 
 **shopRegularPrice** | **int** |  | 
 **currency** | **string** |  | 

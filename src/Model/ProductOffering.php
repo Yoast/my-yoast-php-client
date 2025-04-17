@@ -61,6 +61,7 @@ class ProductOffering implements ModelInterface, ArrayAccess
         'sourceId' => 'int',
         'sourceShopId' => 'int',
         'shopStatus' => 'string',
+        'canBePurchased' => 'bool',
         'price' => 'int',
         'shopRegularPrice' => 'int',
         'currency' => 'string',
@@ -80,6 +81,7 @@ class ProductOffering implements ModelInterface, ArrayAccess
         'sourceId' => null,
         'sourceShopId' => null,
         'shopStatus' => null,
+        'canBePurchased' => null,
         'price' => null,
         'shopRegularPrice' => null,
         'currency' => null,
@@ -120,6 +122,7 @@ class ProductOffering implements ModelInterface, ArrayAccess
         'sourceId' => 'sourceId',
         'sourceShopId' => 'sourceShopId',
         'shopStatus' => 'shopStatus',
+        'canBePurchased' => 'canBePurchased',
         'price' => 'price',
         'shopRegularPrice' => 'shopRegularPrice',
         'currency' => 'currency',
@@ -139,6 +142,7 @@ class ProductOffering implements ModelInterface, ArrayAccess
         'sourceId' => 'setSourceId',
         'sourceShopId' => 'setSourceShopId',
         'shopStatus' => 'setShopStatus',
+        'canBePurchased' => 'setCanBePurchased',
         'price' => 'setPrice',
         'shopRegularPrice' => 'setShopRegularPrice',
         'currency' => 'setCurrency',
@@ -158,6 +162,7 @@ class ProductOffering implements ModelInterface, ArrayAccess
         'sourceId' => 'getSourceId',
         'sourceShopId' => 'getSourceShopId',
         'shopStatus' => 'getShopStatus',
+        'canBePurchased' => 'getCanBePurchased',
         'price' => 'getPrice',
         'shopRegularPrice' => 'getShopRegularPrice',
         'currency' => 'getCurrency',
@@ -229,6 +234,7 @@ class ProductOffering implements ModelInterface, ArrayAccess
         $this->container['sourceId'] = isset($data['sourceId']) ? $data['sourceId'] : null;
         $this->container['sourceShopId'] = isset($data['sourceShopId']) ? $data['sourceShopId'] : null;
         $this->container['shopStatus'] = isset($data['shopStatus']) ? $data['shopStatus'] : null;
+        $this->container['canBePurchased'] = isset($data['canBePurchased']) ? $data['canBePurchased'] : null;
         $this->container['price'] = isset($data['price']) ? $data['price'] : null;
         $this->container['shopRegularPrice'] = isset($data['shopRegularPrice']) ? $data['shopRegularPrice'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
@@ -260,6 +266,9 @@ class ProductOffering implements ModelInterface, ArrayAccess
         }
         if ($this->container['shopStatus'] === null) {
             $invalidProperties[] = "'shopStatus' can't be null";
+        }
+        if ($this->container['canBePurchased'] === null) {
+            $invalidProperties[] = "'canBePurchased' can't be null";
         }
         if ($this->container['price'] === null) {
             $invalidProperties[] = "'price' can't be null";
@@ -410,6 +419,30 @@ class ProductOffering implements ModelInterface, ArrayAccess
     public function setShopStatus($shopStatus)
     {
         $this->container['shopStatus'] = $shopStatus;
+
+        return $this;
+    }
+
+    /**
+     * Gets canBePurchased
+     *
+     * @return bool
+     */
+    public function getCanBePurchased()
+    {
+        return $this->container['canBePurchased'];
+    }
+
+    /**
+     * Sets canBePurchased
+     *
+     * @param bool $canBePurchased canBePurchased
+     *
+     * @return $this
+     */
+    public function setCanBePurchased($canBePurchased)
+    {
+        $this->container['canBePurchased'] = $canBePurchased;
 
         return $this;
     }
