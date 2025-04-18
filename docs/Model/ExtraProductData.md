@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **billingTerm** | **string** |  | [optional] 
 **activationLimit** | **int** |  | [optional] 
 **currency** | **string[]** |  | 
+**canBePurchased** | **bool** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

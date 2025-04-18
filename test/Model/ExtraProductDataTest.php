@@ -132,4 +132,11 @@ class ExtraProductDataTest extends TestCase
     public function testPropertyCurrency()
     {
     }
+
+    /**
+     * Test attribute "canBePurchased"
+     */
+    public function testPropertyCanBePurchased()
+    {
+    }
 }

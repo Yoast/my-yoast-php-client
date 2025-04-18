@@ -63,7 +63,8 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         'getsRenewalDiscount' => 'bool',
         'billingTerm' => 'string',
         'activationLimit' => 'int',
-        'currency' => 'string[]'
+        'currency' => 'string[]',
+        'canBePurchased' => 'bool'
     ];
 
     /**
@@ -79,7 +80,8 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         'getsRenewalDiscount' => null,
         'billingTerm' => null,
         'activationLimit' => null,
-        'currency' => null
+        'currency' => null,
+        'canBePurchased' => null
     ];
 
     /**
@@ -116,7 +118,8 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         'getsRenewalDiscount' => 'getsRenewalDiscount',
         'billingTerm' => 'billingTerm',
         'activationLimit' => 'activationLimit',
-        'currency' => 'currency'
+        'currency' => 'currency',
+        'canBePurchased' => 'can_be_purchased'
     ];
 
     /**
@@ -132,7 +135,8 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         'getsRenewalDiscount' => 'setGetsRenewalDiscount',
         'billingTerm' => 'setBillingTerm',
         'activationLimit' => 'setActivationLimit',
-        'currency' => 'setCurrency'
+        'currency' => 'setCurrency',
+        'canBePurchased' => 'setCanBePurchased'
     ];
 
     /**
@@ -148,7 +152,8 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         'getsRenewalDiscount' => 'getGetsRenewalDiscount',
         'billingTerm' => 'getBillingTerm',
         'activationLimit' => 'getActivationLimit',
-        'currency' => 'getCurrency'
+        'currency' => 'getCurrency',
+        'canBePurchased' => 'getCanBePurchased'
     ];
 
     /**
@@ -217,6 +222,7 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         $this->container['billingTerm'] = isset($data['billingTerm']) ? $data['billingTerm'] : null;
         $this->container['activationLimit'] = isset($data['activationLimit']) ? $data['activationLimit'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['canBePurchased'] = isset($data['canBePurchased']) ? $data['canBePurchased'] : null;
     }
 
     /**
@@ -245,6 +251,9 @@ class ExtraProductData implements ModelInterface, ArrayAccess
         }
         if ($this->container['currency'] === null) {
             $invalidProperties[] = "'currency' can't be null";
+        }
+        if ($this->container['canBePurchased'] === null) {
+            $invalidProperties[] = "'canBePurchased' can't be null";
         }
         return $invalidProperties;
     }
@@ -449,6 +458,30 @@ class ExtraProductData implements ModelInterface, ArrayAccess
     public function setCurrency($currency)
     {
         $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets canBePurchased
+     *
+     * @return bool
+     */
+    public function getCanBePurchased()
+    {
+        return $this->container['canBePurchased'];
+    }
+
+    /**
+     * Sets canBePurchased
+     *
+     * @param bool $canBePurchased canBePurchased
+     *
+     * @return $this
+     */
+    public function setCanBePurchased($canBePurchased)
+    {
+        $this->container['canBePurchased'] = $canBePurchased;
 
         return $this;
     }

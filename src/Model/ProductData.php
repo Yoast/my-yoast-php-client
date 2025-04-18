@@ -72,8 +72,7 @@ class ProductData implements ModelInterface, ArrayAccess
         'purchasable' => 'bool',
         'taxStatus' => 'string',
         'taxClass' => 'string',
-        'categories' => '\Yoast\MyYoastApiClient\Model\ProductCategory[]',
-        'canBePurchased' => 'bool'
+        'categories' => '\Yoast\MyYoastApiClient\Model\ProductCategory[]'
     ];
 
     /**
@@ -98,8 +97,7 @@ class ProductData implements ModelInterface, ArrayAccess
         'purchasable' => null,
         'taxStatus' => null,
         'taxClass' => null,
-        'categories' => null,
-        'canBePurchased' => null
+        'categories' => null
     ];
 
     /**
@@ -145,8 +143,7 @@ class ProductData implements ModelInterface, ArrayAccess
         'purchasable' => 'purchasable',
         'taxStatus' => 'tax_status',
         'taxClass' => 'tax_class',
-        'categories' => 'categories',
-        'canBePurchased' => 'can_be_purchased'
+        'categories' => 'categories'
     ];
 
     /**
@@ -171,8 +168,7 @@ class ProductData implements ModelInterface, ArrayAccess
         'purchasable' => 'setPurchasable',
         'taxStatus' => 'setTaxStatus',
         'taxClass' => 'setTaxClass',
-        'categories' => 'setCategories',
-        'canBePurchased' => 'setCanBePurchased'
+        'categories' => 'setCategories'
     ];
 
     /**
@@ -197,8 +193,7 @@ class ProductData implements ModelInterface, ArrayAccess
         'purchasable' => 'getPurchasable',
         'taxStatus' => 'getTaxStatus',
         'taxClass' => 'getTaxClass',
-        'categories' => 'getCategories',
-        'canBePurchased' => 'getCanBePurchased'
+        'categories' => 'getCategories'
     ];
 
     /**
@@ -276,7 +271,6 @@ class ProductData implements ModelInterface, ArrayAccess
         $this->container['taxStatus'] = isset($data['taxStatus']) ? $data['taxStatus'] : null;
         $this->container['taxClass'] = isset($data['taxClass']) ? $data['taxClass'] : null;
         $this->container['categories'] = isset($data['categories']) ? $data['categories'] : null;
-        $this->container['canBePurchased'] = isset($data['canBePurchased']) ? $data['canBePurchased'] : null;
     }
 
     /**
@@ -338,9 +332,6 @@ class ProductData implements ModelInterface, ArrayAccess
         }
         if ($this->container['categories'] === null) {
             $invalidProperties[] = "'categories' can't be null";
-        }
-        if ($this->container['canBePurchased'] === null) {
-            $invalidProperties[] = "'canBePurchased' can't be null";
         }
         return $invalidProperties;
     }
@@ -761,30 +752,6 @@ class ProductData implements ModelInterface, ArrayAccess
     public function setCategories($categories)
     {
         $this->container['categories'] = $categories;
-
-        return $this;
-    }
-
-    /**
-     * Gets canBePurchased
-     *
-     * @return bool
-     */
-    public function getCanBePurchased()
-    {
-        return $this->container['canBePurchased'];
-    }
-
-    /**
-     * Sets canBePurchased
-     *
-     * @param bool $canBePurchased canBePurchased
-     *
-     * @return $this
-     */
-    public function setCanBePurchased($canBePurchased)
-    {
-        $this->container['canBePurchased'] = $canBePurchased;
 
         return $this;
     }

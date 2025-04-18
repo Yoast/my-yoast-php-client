@@ -195,11 +195,4 @@ class ProductDataTest extends TestCase
     public function testPropertyCategories()
     {
     }
-
-    /**
-     * Test attribute "canBePurchased"
-     */
-    public function testPropertyCanBePurchased()
-    {
-    }
 }
