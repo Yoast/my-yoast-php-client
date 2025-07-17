@@ -6,7 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**acceptInvitation**](DefaultApi.md#acceptinvitation) | **POST** /api/v1/access/{subscriptionId}/invites/{id}/accept | 
 [**checkHealth**](DefaultApi.md#checkhealth) | **POST** /api/tmp | 
+[**deprecationsProvisioningDownloadsCurrentVersionV1**](DefaultApi.md#deprecationsprovisioningdownloadscurrentversionv1) | **GET** /api/docs/deprecations/provisioning-downloads-v1 | 
 [**getLicenseStatus**](DefaultApi.md#getlicensestatus) | **GET** /api/v1/license-validation/{product_id} | 
+[**getOptions**](DefaultApi.md#getoptions) | **GET** /api/v1/installation/options | 
+[**getOptionsForOrder**](DefaultApi.md#getoptionsfororder) | **GET** /api/v1/installation/options/{invoiceNumber} | 
+[**getSites**](DefaultApi.md#getsites) | **GET** /api/v1/installation/sites | 
+[**getSitesForOrder**](DefaultApi.md#getsitesfororder) | **GET** /api/v1/installation/sites/{invoiceNumber} | 
 [**inviteEmail**](DefaultApi.md#inviteemail) | **POST** /api/v1/access/{subscriptionId}/invites | 
 [**revokeInvitation**](DefaultApi.md#revokeinvitation) | **DELETE** /api/v1/access/{subscriptionId}/invites/{id} | 
 
@@ -102,6 +107,48 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **deprecationsProvisioningDownloadsCurrentVersionV1**
+> deprecationsProvisioningDownloadsCurrentVersionV1()
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $apiInstance->deprecationsProvisioningDownloadsCurrentVersionV1();
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->deprecationsProvisioningDownloadsCurrentVersionV1: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getLicenseStatus**
 > \Yoast\MyYoastApiClient\Model\LicenseValidationResult getLicenseStatus($productId, $email)
 
@@ -148,6 +195,202 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getOptions**
+> getOptions()
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $apiInstance->getOptions();
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getOptions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getOptionsForOrder**
+> getOptionsForOrder($invoiceNumber)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$invoiceNumber = "invoiceNumber_example"; // string | 
+
+try {
+    $apiInstance->getOptionsForOrder($invoiceNumber);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getOptionsForOrder: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **invoiceNumber** | **string**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getSites**
+> getSites()
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $apiInstance->getSites();
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getSites: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getSitesForOrder**
+> getSitesForOrder($invoiceNumber)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$invoiceNumber = "invoiceNumber_example"; // string | 
+
+try {
+    $apiInstance->getSitesForOrder($invoiceNumber);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->getSitesForOrder: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **invoiceNumber** | **string**|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

@@ -202,6 +202,16 @@ class SubscriptionApiTest extends TestCase
     }
 
     /**
+     * Test case for linkSiteToSubscription
+     *
+     * Link a new or existing site to a subscription.
+     *
+     */
+    public function testLinkSiteToSubscription()
+    {
+    }
+
+    /**
      * Test case for recalculateSubscriptionCount
      *
      * Recalculate SubscriptionCount..

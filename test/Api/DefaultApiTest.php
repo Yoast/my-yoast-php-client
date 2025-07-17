@@ -92,12 +92,62 @@ class DefaultApiTest extends TestCase
     }
 
     /**
+     * Test case for deprecationsProvisioningDownloadsCurrentVersionV1
+     *
+     * .
+     *
+     */
+    public function testDeprecationsProvisioningDownloadsCurrentVersionV1()
+    {
+    }
+
+    /**
      * Test case for getLicenseStatus
      *
      * .
      *
      */
     public function testGetLicenseStatus()
+    {
+    }
+
+    /**
+     * Test case for getOptions
+     *
+     * .
+     *
+     */
+    public function testGetOptions()
+    {
+    }
+
+    /**
+     * Test case for getOptionsForOrder
+     *
+     * .
+     *
+     */
+    public function testGetOptionsForOrder()
+    {
+    }
+
+    /**
+     * Test case for getSites
+     *
+     * .
+     *
+     */
+    public function testGetSites()
+    {
+    }
+
+    /**
+     * Test case for getSitesForOrder
+     *
+     * .
+     *
+     */
+    public function testGetSitesForOrder()
     {
     }
 

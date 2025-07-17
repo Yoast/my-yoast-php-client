@@ -179,7 +179,12 @@ Class | Method | HTTP request | Description
 *CustomerNoteApi* | [**getOne**](docs/Api/CustomerNoteApi.md#getone) | **GET** /api/CustomerNotes/{id} | Get a customer note
 *DefaultApi* | [**acceptInvitation**](docs/Api/DefaultApi.md#acceptinvitation) | **POST** /api/v1/access/{subscriptionId}/invites/{id}/accept | 
 *DefaultApi* | [**checkHealth**](docs/Api/DefaultApi.md#checkhealth) | **POST** /api/tmp | 
+*DefaultApi* | [**deprecationsProvisioningDownloadsCurrentVersionV1**](docs/Api/DefaultApi.md#deprecationsprovisioningdownloadscurrentversionv1) | **GET** /api/docs/deprecations/provisioning-downloads-v1 | 
 *DefaultApi* | [**getLicenseStatus**](docs/Api/DefaultApi.md#getlicensestatus) | **GET** /api/v1/license-validation/{product_id} | 
+*DefaultApi* | [**getOptions**](docs/Api/DefaultApi.md#getoptions) | **GET** /api/v1/installation/options | 
+*DefaultApi* | [**getOptionsForOrder**](docs/Api/DefaultApi.md#getoptionsfororder) | **GET** /api/v1/installation/options/{invoiceNumber} | 
+*DefaultApi* | [**getSites**](docs/Api/DefaultApi.md#getsites) | **GET** /api/v1/installation/sites | 
+*DefaultApi* | [**getSitesForOrder**](docs/Api/DefaultApi.md#getsitesfororder) | **GET** /api/v1/installation/sites/{invoiceNumber} | 
 *DefaultApi* | [**inviteEmail**](docs/Api/DefaultApi.md#inviteemail) | **POST** /api/v1/access/{subscriptionId}/invites | 
 *DefaultApi* | [**revokeInvitation**](docs/Api/DefaultApi.md#revokeinvitation) | **DELETE** /api/v1/access/{subscriptionId}/invites/{id} | 
 *DownloadApi* | [**downloadFile**](docs/Api/DownloadApi.md#downloadfile) | **GET** /api/downloads/file/{name} | Route to download a file
@@ -251,6 +256,7 @@ Class | Method | HTTP request | Description
 *ProvisionerApi* | [**getOne**](docs/Api/ProvisionerApi.md#getone) | **GET** /api/ProvisionerData/{id} | Get provisioner data
 *ProvisioningAccountApi* | [**setSiteForSubscription**](docs/Api/ProvisioningAccountApi.md#setsiteforsubscription) | **POST** /api/provisioning/account/regenerate-token | Generate a new auth token
 *ProvisioningDownloadsApi* | [**currentVersion**](docs/Api/ProvisioningDownloadsApi.md#currentversion) | **GET** /api/provisioning/downloads/currentVersion | Retrieve the current version for the productCode for the provisioner.
+*ProvisioningDownloadsApi* | [**currentVersionV2**](docs/Api/ProvisioningDownloadsApi.md#currentversionv2) | **GET** /api/v2/provisioning/downloads/currentVersion | Get current version of downloads for a product.
 *ProvisioningDownloadsApi* | [**currentZip**](docs/Api/ProvisioningDownloadsApi.md#currentzip) | **GET** /api/provisioning/downloads/currentZip | Redirect to the current zip for the productCode.
 *ProvisioningUsersApi* | [**scheduleDelete**](docs/Api/ProvisioningUsersApi.md#scheduledelete) | **POST** /api/provisioning/user/schedule-delete | Schedule a delete for a subscription
 *RefundApi* | [**export**](docs/Api/RefundApi.md#export) | **GET** /api/Refunds/export | Get refunds
@@ -284,6 +290,7 @@ Class | Method | HTTP request | Description
 *SubscriptionApi* | [**getOneAsEntity**](docs/Api/SubscriptionApi.md#getoneasentity) | **GET** /api/Subscriptions/{id}/asEntity | Get a subscription
 *SubscriptionApi* | [**getProductSwitchOptions**](docs/Api/SubscriptionApi.md#getproductswitchoptions) | **GET** /api/Subscriptions/{id}/product-switch-options | Fetch product switch options
 *SubscriptionApi* | [**linkSite**](docs/Api/SubscriptionApi.md#linksite) | **POST** /api/Subscriptions/link-site | Link a subscription to provided site URL
+*SubscriptionApi* | [**linkSiteToSubscription**](docs/Api/SubscriptionApi.md#linksitetosubscription) | **POST** /api/Subscriptions/{id}/sites | Link a new or existing site to a subscription
 *SubscriptionApi* | [**recalculateSubscriptionCount**](docs/Api/SubscriptionApi.md#recalculatesubscriptioncount) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
 *SubscriptionApi* | [**renew**](docs/Api/SubscriptionApi.md#renew) | **GET** /api/Subscriptions/renew/{subscriptionNumber}/{secretKey} | Renew subscriptions
 *SubscriptionApi* | [**setExpiryDate**](docs/Api/SubscriptionApi.md#setexpirydate) | **POST** /api/Subscriptions/setExpiryDate | Set Date.
@@ -383,6 +390,8 @@ Class | Method | HTTP request | Description
  - [ProductImage](docs/Model/ProductImage.md)
  - [ProductOffering](docs/Model/ProductOffering.md)
  - [ProductSwitchOptionDto](docs/Model/ProductSwitchOptionDto.md)
+ - [ProductVersionDto](docs/Model/ProductVersionDto.md)
+ - [ProductVersionsDto](docs/Model/ProductVersionsDto.md)
  - [ProgressData](docs/Model/ProgressData.md)
  - [ProvisionerData](docs/Model/ProvisionerData.md)
  - [PurgeKVRequestDto](docs/Model/PurgeKVRequestDto.md)
