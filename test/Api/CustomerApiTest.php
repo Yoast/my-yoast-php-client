@@ -172,6 +172,16 @@ class CustomerApiTest extends TestCase
     }
 
     /**
+     * Test case for disableBiennialBilling
+     *
+     * .
+     *
+     */
+    public function testDisableBiennialBilling()
+    {
+    }
+
+    /**
      * Test case for downloadProfile
      *
      * Download profile..
@@ -192,6 +202,16 @@ class CustomerApiTest extends TestCase
     }
 
     /**
+     * Test case for enableBiennialBilling
+     *
+     * .
+     *
+     */
+    public function testEnableBiennialBilling()
+    {
+    }
+
+    /**
      * Test case for findRefunds
      *
      * Find refunds for user.
@@ -208,6 +228,16 @@ class CustomerApiTest extends TestCase
      *
      */
     public function testGetAll()
+    {
+    }
+
+    /**
+     * Test case for getAllBiennialEligible
+     *
+     * .
+     *
+     */
+    public function testGetAllBiennialEligible()
     {
     }
 

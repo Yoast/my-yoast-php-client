@@ -365,13 +365,6 @@ class OrderTest extends TestCase
     }
 
     /**
-     * Test attribute "upgradesSubscription"
-     */
-    public function testPropertyUpgradesSubscription()
-    {
-    }
-
-    /**
      * Test attribute "forceFailAutomaticRenewal"
      */
     public function testPropertyForceFailAutomaticRenewal()

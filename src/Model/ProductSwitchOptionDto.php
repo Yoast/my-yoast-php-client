@@ -60,7 +60,7 @@ class ProductSwitchOptionDto implements ModelInterface, ArrayAccess
         'newNextBilling' => '\DateTime',
         'switchAt' => '\DateTime',
         'newEstimatedRenewalPriceInCents' => 'int',
-        'estimatedBundleDiscountPercentage' => 'int'
+        'type' => 'string'
     ];
 
     /**
@@ -73,7 +73,7 @@ class ProductSwitchOptionDto implements ModelInterface, ArrayAccess
         'newNextBilling' => 'date-time',
         'switchAt' => 'date-time',
         'newEstimatedRenewalPriceInCents' => null,
-        'estimatedBundleDiscountPercentage' => null
+        'type' => null
     ];
 
     /**
@@ -107,7 +107,7 @@ class ProductSwitchOptionDto implements ModelInterface, ArrayAccess
         'newNextBilling' => 'newNextBilling',
         'switchAt' => 'switchAt',
         'newEstimatedRenewalPriceInCents' => 'newEstimatedRenewalPriceInCents',
-        'estimatedBundleDiscountPercentage' => 'estimatedBundleDiscountPercentage'
+        'type' => 'type'
     ];
 
     /**
@@ -120,7 +120,7 @@ class ProductSwitchOptionDto implements ModelInterface, ArrayAccess
         'newNextBilling' => 'setNewNextBilling',
         'switchAt' => 'setSwitchAt',
         'newEstimatedRenewalPriceInCents' => 'setNewEstimatedRenewalPriceInCents',
-        'estimatedBundleDiscountPercentage' => 'setEstimatedBundleDiscountPercentage'
+        'type' => 'setType'
     ];
 
     /**
@@ -133,7 +133,7 @@ class ProductSwitchOptionDto implements ModelInterface, ArrayAccess
         'newNextBilling' => 'getNewNextBilling',
         'switchAt' => 'getSwitchAt',
         'newEstimatedRenewalPriceInCents' => 'getNewEstimatedRenewalPriceInCents',
-        'estimatedBundleDiscountPercentage' => 'getEstimatedBundleDiscountPercentage'
+        'type' => 'getType'
     ];
 
     /**
@@ -177,7 +177,23 @@ class ProductSwitchOptionDto implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const TYPE_RUNTIME_TRADE_IN = 'runtime_trade_in';
+    const TYPE_COMPLEMENTARY = 'complementary';
+    const TYPE_PAID_PRORATED = 'paid_prorated';
 
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_RUNTIME_TRADE_IN
+            self::TYPE_COMPLEMENTARY
+            self::TYPE_PAID_PRORATED
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -198,7 +214,7 @@ class ProductSwitchOptionDto implements ModelInterface, ArrayAccess
         $this->container['newNextBilling'] = isset($data['newNextBilling']) ? $data['newNextBilling'] : null;
         $this->container['switchAt'] = isset($data['switchAt']) ? $data['switchAt'] : null;
         $this->container['newEstimatedRenewalPriceInCents'] = isset($data['newEstimatedRenewalPriceInCents']) ? $data['newEstimatedRenewalPriceInCents'] : null;
-        $this->container['estimatedBundleDiscountPercentage'] = isset($data['estimatedBundleDiscountPercentage']) ? $data['estimatedBundleDiscountPercentage'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
     }
 
     /**
@@ -222,9 +238,17 @@ class ProductSwitchOptionDto implements ModelInterface, ArrayAccess
         if ($this->container['newEstimatedRenewalPriceInCents'] === null) {
             $invalidProperties[] = "'newEstimatedRenewalPriceInCents' can't be null";
         }
-        if ($this->container['estimatedBundleDiscountPercentage'] === null) {
-            $invalidProperties[] = "'estimatedBundleDiscountPercentage' can't be null";
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
         }
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -337,25 +361,34 @@ class ProductSwitchOptionDto implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets estimatedBundleDiscountPercentage
+     * Gets type
      *
-     * @return int
+     * @return string
      */
-    public function getEstimatedBundleDiscountPercentage()
+    public function getType()
     {
-        return $this->container['estimatedBundleDiscountPercentage'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets estimatedBundleDiscountPercentage
+     * Sets type
      *
-     * @param int $estimatedBundleDiscountPercentage estimatedBundleDiscountPercentage
+     * @param string $type type
      *
      * @return $this
      */
-    public function setEstimatedBundleDiscountPercentage($estimatedBundleDiscountPercentage)
+    public function setType($type)
     {
-        $this->container['estimatedBundleDiscountPercentage'] = $estimatedBundleDiscountPercentage;
+        $allowedValues = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['type'] = $type;
 
         return $this;
     }

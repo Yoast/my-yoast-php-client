@@ -116,6 +116,7 @@ Class | Method | HTTP request | Description
 *BlacklistApi* | [**deleteOne**](docs/Api/BlacklistApi.md#deleteone) | **DELETE** /api/Blacklist/{id} | Remove a site from the blacklist
 *BlacklistApi* | [**getMany**](docs/Api/BlacklistApi.md#getmany) | **GET** /api/Blacklist | Gets blacklisted sites
 *BlacklistApi* | [**getManyPaged**](docs/Api/BlacklistApi.md#getmanypaged) | **GET** /api/Blacklist/paged | Gets blacklisted sites
+*BrandInsightsApi* | [**brandInsightsLicensesForCustomer**](docs/Api/BrandInsightsApi.md#brandinsightslicensesforcustomer) | **GET** /api/BrandInsights/licensing/{id} | 
 *CloudflareApi* | [**purgeKVStore**](docs/Api/CloudflareApi.md#purgekvstore) | **POST** /api/cloudflare/kv/registered-domains/purge | Purge kv pairs from the registered domains key value store in Cloudflare
 *CloudflareApi* | [**updateAll**](docs/Api/CloudflareApi.md#updateall) | **POST** /api/cloudflare/kv/registered-domains/update-all | Update sites in the registered domains key value store in Cloudflare
 *ComposerTokenApi* | [**disable**](docs/Api/ComposerTokenApi.md#disable) | **POST** /api/ComposerTokens/{id}/delete | Disable a composer token
@@ -142,10 +143,13 @@ Class | Method | HTTP request | Description
 *CustomerApi* | [**current**](docs/Api/CustomerApi.md#current) | **GET** /api/Customers/current | Get the current customer
 *CustomerApi* | [**deleteCustomer**](docs/Api/CustomerApi.md#deletecustomer) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 *CustomerApi* | [**deleteRole**](docs/Api/CustomerApi.md#deleterole) | **DELETE** /api/Customers/{id}/roleMapping | 
+*CustomerApi* | [**disableBiennialBilling**](docs/Api/CustomerApi.md#disablebiennialbilling) | **POST** /api/Customers/{customerId}/subscriptions/{id}/disable-biennial-billing | 
 *CustomerApi* | [**downloadProfile**](docs/Api/CustomerApi.md#downloadprofile) | **GET** /api/Customers/{id}/download | Download profile.
 *CustomerApi* | [**enable**](docs/Api/CustomerApi.md#enable) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
+*CustomerApi* | [**enableBiennialBilling**](docs/Api/CustomerApi.md#enablebiennialbilling) | **POST** /api/Customers/{customerId}/subscriptions/{id}/enable-biennial-billing | 
 *CustomerApi* | [**findRefunds**](docs/Api/CustomerApi.md#findrefunds) | **GET** /api/Customers/{id}/findRefunds | Find refunds for user
 *CustomerApi* | [**getAll**](docs/Api/CustomerApi.md#getall) | **GET** /api/Customers/{id}/downloads | Get all latest downloadable releases
+*CustomerApi* | [**getAllBiennialEligible**](docs/Api/CustomerApi.md#getallbiennialeligible) | **GET** /api/Customers/{customerId}/subscriptions/biennial-eligible | 
 *CustomerApi* | [**getAllRoles**](docs/Api/CustomerApi.md#getallroles) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
 *CustomerApi* | [**getBuyerCourseEnrollments**](docs/Api/CustomerApi.md#getbuyercourseenrollments) | **GET** /api/Customers/{customerId}/buyerCourseEnrollments | Find Course Enrollments that a customer is buyer of
 *CustomerApi* | [**getCourseAccessList**](docs/Api/CustomerApi.md#getcourseaccesslist) | **GET** /api/Customers/academyCourseAccessList/{sourceId} | Academy Course access
@@ -278,8 +282,10 @@ Class | Method | HTTP request | Description
 *SiteApi* | [**updateOne**](docs/Api/SiteApi.md#updateone) | **PATCH** /api/Sites/{id} | 
 *SiteApi* | [**updateSiteUrl**](docs/Api/SiteApi.md#updatesiteurl) | **PATCH** /api/Sites/{id}/url | 
 *SubscriptionApi* | [**calculateExpansionPrice**](docs/Api/SubscriptionApi.md#calculateexpansionprice) | **GET** /api/Subscriptions/calculateExpansionPrice/{id}/{subscriptionNumber} | Calculate expansion price
+*SubscriptionApi* | [**createUpgradeOrder**](docs/Api/SubscriptionApi.md#createupgradeorder) | **POST** /api/Subscriptions/{id}/create-upgrade-order | Create upgrade order
 *SubscriptionApi* | [**deleteOne**](docs/Api/SubscriptionApi.md#deleteone) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
 *SubscriptionApi* | [**ensureAdmissionScript**](docs/Api/SubscriptionApi.md#ensureadmissionscript) | **GET** /api/Subscriptions/ensureAdmissions | Ensure Admission for subscriptions script
+*SubscriptionApi* | [**expand**](docs/Api/SubscriptionApi.md#expand) | **GET** /api/Subscriptions/expand/{subscriptionNumber}/{secretKey} | Expand subscriptions
 *SubscriptionApi* | [**forceCancel**](docs/Api/SubscriptionApi.md#forcecancel) | **POST** /api/Subscriptions/{id}/force-cancel | Forcefully cancel a subscription
 *SubscriptionApi* | [**getDetails**](docs/Api/SubscriptionApi.md#getdetails) | **GET** /api/Subscriptions/{id}/details | 
 *SubscriptionApi* | [**getExpiringSubscriptions**](docs/Api/SubscriptionApi.md#getexpiringsubscriptions) | **GET** /api/Subscriptions/expiring | 
@@ -289,6 +295,7 @@ Class | Method | HTTP request | Description
 *SubscriptionApi* | [**getOne**](docs/Api/SubscriptionApi.md#getone) | **GET** /api/Subscriptions/{id} | Get a subscription
 *SubscriptionApi* | [**getOneAsEntity**](docs/Api/SubscriptionApi.md#getoneasentity) | **GET** /api/Subscriptions/{id}/asEntity | Get a subscription
 *SubscriptionApi* | [**getProductSwitchOptions**](docs/Api/SubscriptionApi.md#getproductswitchoptions) | **GET** /api/Subscriptions/{id}/product-switch-options | Fetch product switch options
+*SubscriptionApi* | [**getUpgradePricePreview**](docs/Api/SubscriptionApi.md#getupgradepricepreview) | **GET** /api/Subscriptions/{id}/product-switch-options/{productId}/preview-price | Get upgrade price preview
 *SubscriptionApi* | [**linkSite**](docs/Api/SubscriptionApi.md#linksite) | **POST** /api/Subscriptions/link-site | Link a subscription to provided site URL
 *SubscriptionApi* | [**linkSiteToSubscription**](docs/Api/SubscriptionApi.md#linksitetosubscription) | **POST** /api/Subscriptions/{id}/sites | Link a new or existing site to a subscription
 *SubscriptionApi* | [**recalculateSubscriptionCount**](docs/Api/SubscriptionApi.md#recalculatesubscriptioncount) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
@@ -298,7 +305,6 @@ Class | Method | HTTP request | Description
 *SubscriptionApi* | [**switchProduct**](docs/Api/SubscriptionApi.md#switchproduct) | **POST** /api/Subscriptions/{id}/switch-product | Switch to another product
 *SubscriptionApi* | [**switchToAutomatic**](docs/Api/SubscriptionApi.md#switchtoautomatic) | **GET** /api/Subscriptions/enable-automatic-billing/{id}/{subscriptionNumber} | 
 *SubscriptionApi* | [**transferOwnership**](docs/Api/SubscriptionApi.md#transferownership) | **POST** /api/Subscriptions/transfer | Transfer subscription ownership
-*SubscriptionApi* | [**upgrade**](docs/Api/SubscriptionApi.md#upgrade) | **GET** /api/Subscriptions/upgrade/{subscriptionNumber}/{secretKey} | Upgrade subscriptions
 *SubscriptionProvisioningApi* | [**cancelSubscription**](docs/Api/SubscriptionProvisioningApi.md#cancelsubscription) | **POST** /api/provisioning/subscriptions/{id}/cancel | Cancel a single subscription
 *SubscriptionProvisioningApi* | [**create**](docs/Api/SubscriptionProvisioningApi.md#create) | **POST** /api/provisioning/subscriptions/create | Create a subscription
 *SubscriptionProvisioningApi* | [**getOne**](docs/Api/SubscriptionProvisioningApi.md#getone) | **GET** /api/provisioning/subscriptions/{id} | Get a subscription
@@ -361,6 +367,7 @@ Class | Method | HTTP request | Description
  - [FromAcademyDto](docs/Model/FromAcademyDto.md)
  - [GenerateDto](docs/Model/GenerateDto.md)
  - [HelpScoutDto](docs/Model/HelpScoutDto.md)
+ - [InlineResponse200](docs/Model/InlineResponse200.md)
  - [InviteBodyDto](docs/Model/InviteBodyDto.md)
  - [InviteDto](docs/Model/InviteDto.md)
  - [InviteResponseDto](docs/Model/InviteResponseDto.md)

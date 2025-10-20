@@ -14,10 +14,13 @@ Method | HTTP request | Description
 [**current**](CustomerApi.md#current) | **GET** /api/Customers/current | Get the current customer
 [**deleteCustomer**](CustomerApi.md#deletecustomer) | **DELETE** /api/Customers/{id}/gdpr-delete | Performs a \&quot;GDPR forget me\&quot; request.
 [**deleteRole**](CustomerApi.md#deleterole) | **DELETE** /api/Customers/{id}/roleMapping | 
+[**disableBiennialBilling**](CustomerApi.md#disablebiennialbilling) | **POST** /api/Customers/{customerId}/subscriptions/{id}/disable-biennial-billing | 
 [**downloadProfile**](CustomerApi.md#downloadprofile) | **GET** /api/Customers/{id}/download | Download profile.
 [**enable**](CustomerApi.md#enable) | **POST** /api/Customers/{id}/enable | Enables the customer with the given ID
+[**enableBiennialBilling**](CustomerApi.md#enablebiennialbilling) | **POST** /api/Customers/{customerId}/subscriptions/{id}/enable-biennial-billing | 
 [**findRefunds**](CustomerApi.md#findrefunds) | **GET** /api/Customers/{id}/findRefunds | Find refunds for user
 [**getAll**](CustomerApi.md#getall) | **GET** /api/Customers/{id}/downloads | Get all latest downloadable releases
+[**getAllBiennialEligible**](CustomerApi.md#getallbiennialeligible) | **GET** /api/Customers/{customerId}/subscriptions/biennial-eligible | 
 [**getAllRoles**](CustomerApi.md#getallroles) | **GET** /api/Customers/allroles | Get all existing roles with their ID.
 [**getBuyerCourseEnrollments**](CustomerApi.md#getbuyercourseenrollments) | **GET** /api/Customers/{customerId}/buyerCourseEnrollments | Find Course Enrollments that a customer is buyer of
 [**getCourseAccessList**](CustomerApi.md#getcourseaccesslist) | **GET** /api/Customers/academyCourseAccessList/{sourceId} | Academy Course access
@@ -568,6 +571,59 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **disableBiennialBilling**
+> disableBiennialBilling($customerId, $id)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $apiInstance->disableBiennialBilling($customerId, $id);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->disableBiennialBilling: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | [**string**](../Model/.md)|  |
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **downloadProfile**
 > \Yoast\MyYoastApiClient\Model\JSZip downloadProfile($id)
 
@@ -676,6 +732,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **enableBiennialBilling**
+> enableBiennialBilling($customerId, $id)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $apiInstance->enableBiennialBilling($customerId, $id);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->enableBiennialBilling: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | [**string**](../Model/.md)|  |
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **findRefunds**
 > \Yoast\MyYoastApiClient\Model\Refund[] findRefunds($id)
 
@@ -781,6 +890,57 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getAllBiennialEligible**
+> getAllBiennialEligible($customerId)
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$customerId = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $apiInstance->getAllBiennialEligible($customerId);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->getAllBiennialEligible: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerId** | [**string**](../Model/.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 

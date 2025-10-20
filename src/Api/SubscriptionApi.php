@@ -372,6 +372,249 @@ class SubscriptionApi
     }
 
     /**
+     * Operation createUpgradeOrder
+     *
+     * Create upgrade order
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\ProductDto $body body (required)
+     * @param  string $id id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function createUpgradeOrder($body, $id)
+    {
+        $this->createUpgradeOrderWithHttpInfo($body, $id);
+    }
+
+    /**
+     * Operation createUpgradeOrderWithHttpInfo
+     *
+     * Create upgrade order
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\ProductDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createUpgradeOrderWithHttpInfo($body, $id)
+    {
+        $returnType = '';
+        $request = $this->createUpgradeOrderRequest($body, $id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createUpgradeOrderAsync
+     *
+     * Create upgrade order
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\ProductDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createUpgradeOrderAsync($body, $id)
+    {
+        return $this->createUpgradeOrderAsyncWithHttpInfo($body, $id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createUpgradeOrderAsyncWithHttpInfo
+     *
+     * Create upgrade order
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\ProductDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createUpgradeOrderAsyncWithHttpInfo($body, $id)
+    {
+        $returnType = '';
+        $request = $this->createUpgradeOrderRequest($body, $id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createUpgradeOrder'
+     *
+     * @param  \Yoast\MyYoastApiClient\Model\ProductDto $body (required)
+     * @param  string $id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function createUpgradeOrderRequest($body, $id)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling createUpgradeOrder'
+            );
+        }
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling createUpgradeOrder'
+            );
+        }
+
+        $resourcePath = '/api/Subscriptions/{id}/create-upgrade-order';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+        if (isset($body)) {
+            $_tempBody = $body;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                []
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                [],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation deleteOne
      *
      * Delete a subscription
@@ -789,6 +1032,291 @@ class SubscriptionApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 [],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation expand
+     *
+     * Expand subscriptions
+     *
+     * @param  string $subscriptionNumber subscriptionNumber (required)
+     * @param  string $secretKey secretKey (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yoast\MyYoastApiClient\Model\Subscription
+     */
+    public function expand($subscriptionNumber, $secretKey)
+    {
+        list($response) = $this->expandWithHttpInfo($subscriptionNumber, $secretKey);
+        return $response;
+    }
+
+    /**
+     * Operation expandWithHttpInfo
+     *
+     * Expand subscriptions
+     *
+     * @param  string $subscriptionNumber (required)
+     * @param  string $secretKey (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function expandWithHttpInfo($subscriptionNumber, $secretKey)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription';
+        $request = $this->expandRequest($subscriptionNumber, $secretKey);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\Subscription',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation expandAsync
+     *
+     * Expand subscriptions
+     *
+     * @param  string $subscriptionNumber (required)
+     * @param  string $secretKey (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function expandAsync($subscriptionNumber, $secretKey)
+    {
+        return $this->expandAsyncWithHttpInfo($subscriptionNumber, $secretKey)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation expandAsyncWithHttpInfo
+     *
+     * Expand subscriptions
+     *
+     * @param  string $subscriptionNumber (required)
+     * @param  string $secretKey (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function expandAsyncWithHttpInfo($subscriptionNumber, $secretKey)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription';
+        $request = $this->expandRequest($subscriptionNumber, $secretKey);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'expand'
+     *
+     * @param  string $subscriptionNumber (required)
+     * @param  string $secretKey (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function expandRequest($subscriptionNumber, $secretKey)
+    {
+        // verify the required parameter 'subscriptionNumber' is set
+        if ($subscriptionNumber === null || (is_array($subscriptionNumber) && count($subscriptionNumber) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $subscriptionNumber when calling expand'
+            );
+        }
+        // verify the required parameter 'secretKey' is set
+        if ($secretKey === null || (is_array($secretKey) && count($secretKey) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $secretKey when calling expand'
+            );
+        }
+
+        $resourcePath = '/api/Subscriptions/expand/{subscriptionNumber}/{secretKey}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($subscriptionNumber !== null) {
+            $resourcePath = str_replace(
+                '{' . 'subscriptionNumber' . '}',
+                ObjectSerializer::toPathValue($subscriptionNumber),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($secretKey !== null) {
+            $resourcePath = str_replace(
+                '{' . 'secretKey' . '}',
+                ObjectSerializer::toPathValue($secretKey),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
                 []
             );
         }
@@ -2880,14 +3408,15 @@ class SubscriptionApi
      * Fetch product switch options
      *
      * @param  string $id id (required)
+     * @param  string $type The type of product switch to calculate options for (optional, default to runtime_trade_in)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Yoast\MyYoastApiClient\Model\ProductSwitchOptionDto[]
      */
-    public function getProductSwitchOptions($id)
+    public function getProductSwitchOptions($id, $type = 'runtime_trade_in')
     {
-        list($response) = $this->getProductSwitchOptionsWithHttpInfo($id);
+        list($response) = $this->getProductSwitchOptionsWithHttpInfo($id, $type);
         return $response;
     }
 
@@ -2897,15 +3426,16 @@ class SubscriptionApi
      * Fetch product switch options
      *
      * @param  string $id (required)
+     * @param  string $type The type of product switch to calculate options for (optional, default to runtime_trade_in)
      *
      * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Yoast\MyYoastApiClient\Model\ProductSwitchOptionDto[], HTTP status code, HTTP response headers (array of strings)
      */
-    public function getProductSwitchOptionsWithHttpInfo($id)
+    public function getProductSwitchOptionsWithHttpInfo($id, $type = 'runtime_trade_in')
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProductSwitchOptionDto[]';
-        $request = $this->getProductSwitchOptionsRequest($id);
+        $request = $this->getProductSwitchOptionsRequest($id, $type);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2972,13 +3502,14 @@ class SubscriptionApi
      * Fetch product switch options
      *
      * @param  string $id (required)
+     * @param  string $type The type of product switch to calculate options for (optional, default to runtime_trade_in)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductSwitchOptionsAsync($id)
+    public function getProductSwitchOptionsAsync($id, $type = 'runtime_trade_in')
     {
-        return $this->getProductSwitchOptionsAsyncWithHttpInfo($id)
+        return $this->getProductSwitchOptionsAsyncWithHttpInfo($id, $type)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2992,14 +3523,15 @@ class SubscriptionApi
      * Fetch product switch options
      *
      * @param  string $id (required)
+     * @param  string $type The type of product switch to calculate options for (optional, default to runtime_trade_in)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getProductSwitchOptionsAsyncWithHttpInfo($id)
+    public function getProductSwitchOptionsAsyncWithHttpInfo($id, $type = 'runtime_trade_in')
     {
         $returnType = '\Yoast\MyYoastApiClient\Model\ProductSwitchOptionDto[]';
-        $request = $this->getProductSwitchOptionsRequest($id);
+        $request = $this->getProductSwitchOptionsRequest($id, $type);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3042,11 +3574,12 @@ class SubscriptionApi
      * Create request for operation 'getProductSwitchOptions'
      *
      * @param  string $id (required)
+     * @param  string $type The type of product switch to calculate options for (optional, default to runtime_trade_in)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getProductSwitchOptionsRequest($id)
+    protected function getProductSwitchOptionsRequest($id, $type = 'runtime_trade_in')
     {
         // verify the required parameter 'id' is set
         if ($id === null || (is_array($id) && count($id) === 0)) {
@@ -3062,12 +3595,301 @@ class SubscriptionApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($type !== null) {
+            $queryParams['type'] = ObjectSerializer::toQueryValue($type, null);
+        }
 
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
                 '{' . 'id' . '}',
                 ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
+            }
+        }
+
+            // // this endpoint requires Bearer token
+            if ($this->config->getAccessToken() !== null) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+            }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getUpgradePricePreview
+     *
+     * Get upgrade price preview
+     *
+     * @param  string $id id (required)
+     * @param  string $productId productId (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Yoast\MyYoastApiClient\Model\InlineResponse200
+     */
+    public function getUpgradePricePreview($id, $productId)
+    {
+        list($response) = $this->getUpgradePricePreviewWithHttpInfo($id, $productId);
+        return $response;
+    }
+
+    /**
+     * Operation getUpgradePricePreviewWithHttpInfo
+     *
+     * Get upgrade price preview
+     *
+     * @param  string $id (required)
+     * @param  string $productId (required)
+     *
+     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Yoast\MyYoastApiClient\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getUpgradePricePreviewWithHttpInfo($id, $productId)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\InlineResponse200';
+        $request = $this->getUpgradePricePreviewRequest($id, $productId);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if (!in_array($returnType, ['string','integer','bool'])) {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Yoast\MyYoastApiClient\Model\InlineResponse200',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getUpgradePricePreviewAsync
+     *
+     * Get upgrade price preview
+     *
+     * @param  string $id (required)
+     * @param  string $productId (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getUpgradePricePreviewAsync($id, $productId)
+    {
+        return $this->getUpgradePricePreviewAsyncWithHttpInfo($id, $productId)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getUpgradePricePreviewAsyncWithHttpInfo
+     *
+     * Get upgrade price preview
+     *
+     * @param  string $id (required)
+     * @param  string $productId (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getUpgradePricePreviewAsyncWithHttpInfo($id, $productId)
+    {
+        $returnType = '\Yoast\MyYoastApiClient\Model\InlineResponse200';
+        $request = $this->getUpgradePricePreviewRequest($id, $productId);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getUpgradePricePreview'
+     *
+     * @param  string $id (required)
+     * @param  string $productId (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getUpgradePricePreviewRequest($id, $productId)
+    {
+        // verify the required parameter 'id' is set
+        if ($id === null || (is_array($id) && count($id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $id when calling getUpgradePricePreview'
+            );
+        }
+        // verify the required parameter 'productId' is set
+        if ($productId === null || (is_array($productId) && count($productId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $productId when calling getUpgradePricePreview'
+            );
+        }
+
+        $resourcePath = '/api/Subscriptions/{id}/product-switch-options/{productId}/preview-price';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($productId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'productId' . '}',
+                ObjectSerializer::toPathValue($productId),
                 $resourcePath
             );
         }
@@ -5509,291 +6331,6 @@ class SubscriptionApi
         $query = \GuzzleHttp\Psr7\Query::build($queryParams);
         return new Request(
             'POST',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation upgrade
-     *
-     * Upgrade subscriptions
-     *
-     * @param  string $subscriptionNumber subscriptionNumber (required)
-     * @param  string $secretKey secretKey (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Yoast\MyYoastApiClient\Model\Subscription
-     */
-    public function upgrade($subscriptionNumber, $secretKey)
-    {
-        list($response) = $this->upgradeWithHttpInfo($subscriptionNumber, $secretKey);
-        return $response;
-    }
-
-    /**
-     * Operation upgradeWithHttpInfo
-     *
-     * Upgrade subscriptions
-     *
-     * @param  string $subscriptionNumber (required)
-     * @param  string $secretKey (required)
-     *
-     * @throws \Yoast\MyYoastApiClient\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Yoast\MyYoastApiClient\Model\Subscription, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function upgradeWithHttpInfo($subscriptionNumber, $secretKey)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription';
-        $request = $this->upgradeRequest($subscriptionNumber, $secretKey);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    $response->getBody()
-                );
-            }
-
-            $responseBody = $response->getBody();
-            if ($returnType === '\SplFileObject') {
-                $content = $responseBody; //stream goes to serializer
-            } else {
-                $content = $responseBody->getContents();
-                if (!in_array($returnType, ['string','integer','bool'])) {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Yoast\MyYoastApiClient\Model\Subscription',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation upgradeAsync
-     *
-     * Upgrade subscriptions
-     *
-     * @param  string $subscriptionNumber (required)
-     * @param  string $secretKey (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function upgradeAsync($subscriptionNumber, $secretKey)
-    {
-        return $this->upgradeAsyncWithHttpInfo($subscriptionNumber, $secretKey)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation upgradeAsyncWithHttpInfo
-     *
-     * Upgrade subscriptions
-     *
-     * @param  string $subscriptionNumber (required)
-     * @param  string $secretKey (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function upgradeAsyncWithHttpInfo($subscriptionNumber, $secretKey)
-    {
-        $returnType = '\Yoast\MyYoastApiClient\Model\Subscription';
-        $request = $this->upgradeRequest($subscriptionNumber, $secretKey);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $responseBody = $response->getBody();
-                    if ($returnType === '\SplFileObject') {
-                        $content = $responseBody; //stream goes to serializer
-                    } else {
-                        $content = $responseBody->getContents();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'upgrade'
-     *
-     * @param  string $subscriptionNumber (required)
-     * @param  string $secretKey (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function upgradeRequest($subscriptionNumber, $secretKey)
-    {
-        // verify the required parameter 'subscriptionNumber' is set
-        if ($subscriptionNumber === null || (is_array($subscriptionNumber) && count($subscriptionNumber) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $subscriptionNumber when calling upgrade'
-            );
-        }
-        // verify the required parameter 'secretKey' is set
-        if ($secretKey === null || (is_array($secretKey) && count($secretKey) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $secretKey when calling upgrade'
-            );
-        }
-
-        $resourcePath = '/api/Subscriptions/upgrade/{subscriptionNumber}/{secretKey}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-        // path params
-        if ($subscriptionNumber !== null) {
-            $resourcePath = str_replace(
-                '{' . 'subscriptionNumber' . '}',
-                ObjectSerializer::toPathValue($subscriptionNumber),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($secretKey !== null) {
-            $resourcePath = str_replace(
-                '{' . 'secretKey' . '}',
-                ObjectSerializer::toPathValue($secretKey),
-                $resourcePath
-            );
-        }
-
-        // body params
-        $_tempBody = null;
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            // $_tempBody is the method argument, if present
-            $httpBody = $_tempBody;
-            // \stdClass has no __toString(), so we should encode it manually
-            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($httpBody);
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $multipartContents[] = [
-                        'name' => $formParamName,
-                        'contents' => $formParamValue
-                    ];
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
-            }
-        }
-
-            // // this endpoint requires Bearer token
-            if ($this->config->getAccessToken() !== null) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-            }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
-        return new Request(
-            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

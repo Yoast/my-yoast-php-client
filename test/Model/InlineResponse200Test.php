@@ -1,6 +1,6 @@
 <?php
 /**
- * ProductSwitchOptionDtoTest
+ * InlineResponse200Test
  *
  * PHP version 5
  *
@@ -31,15 +31,15 @@ namespace Yoast\MyYoastApiClient;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ProductSwitchOptionDtoTest Class Doc Comment
+ * InlineResponse200Test Class Doc Comment
  *
  * @category    Class
- * @description ProductSwitchOptionDto
+ * @description InlineResponse200
  * @package     Yoast\MyYoastApiClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ProductSwitchOptionDtoTest extends TestCase
+class InlineResponse200Test extends TestCase
 {
 
     /**
@@ -71,44 +71,16 @@ class ProductSwitchOptionDtoTest extends TestCase
     }
 
     /**
-     * Test "ProductSwitchOptionDto"
+     * Test "InlineResponse200"
      */
-    public function testProductSwitchOptionDto()
+    public function testInlineResponse200()
     {
     }
 
     /**
-     * Test attribute "newProduct"
+     * Test attribute "proratedPriceInCents"
      */
-    public function testPropertyNewProduct()
-    {
-    }
-
-    /**
-     * Test attribute "newNextBilling"
-     */
-    public function testPropertyNewNextBilling()
-    {
-    }
-
-    /**
-     * Test attribute "switchAt"
-     */
-    public function testPropertySwitchAt()
-    {
-    }
-
-    /**
-     * Test attribute "newEstimatedRenewalPriceInCents"
-     */
-    public function testPropertyNewEstimatedRenewalPriceInCents()
-    {
-    }
-
-    /**
-     * Test attribute "type"
-     */
-    public function testPropertyType()
+    public function testPropertyProratedPriceInCents()
     {
     }
 }

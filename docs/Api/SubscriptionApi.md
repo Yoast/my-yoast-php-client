@@ -5,8 +5,10 @@ All URIs are relative to *https://my.yoast.test*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**calculateExpansionPrice**](SubscriptionApi.md#calculateexpansionprice) | **GET** /api/Subscriptions/calculateExpansionPrice/{id}/{subscriptionNumber} | Calculate expansion price
+[**createUpgradeOrder**](SubscriptionApi.md#createupgradeorder) | **POST** /api/Subscriptions/{id}/create-upgrade-order | Create upgrade order
 [**deleteOne**](SubscriptionApi.md#deleteone) | **DELETE** /api/Subscriptions/{id} | Delete a subscription
 [**ensureAdmissionScript**](SubscriptionApi.md#ensureadmissionscript) | **GET** /api/Subscriptions/ensureAdmissions | Ensure Admission for subscriptions script
+[**expand**](SubscriptionApi.md#expand) | **GET** /api/Subscriptions/expand/{subscriptionNumber}/{secretKey} | Expand subscriptions
 [**forceCancel**](SubscriptionApi.md#forcecancel) | **POST** /api/Subscriptions/{id}/force-cancel | Forcefully cancel a subscription
 [**getDetails**](SubscriptionApi.md#getdetails) | **GET** /api/Subscriptions/{id}/details | 
 [**getExpiringSubscriptions**](SubscriptionApi.md#getexpiringsubscriptions) | **GET** /api/Subscriptions/expiring | 
@@ -16,6 +18,7 @@ Method | HTTP request | Description
 [**getOne**](SubscriptionApi.md#getone) | **GET** /api/Subscriptions/{id} | Get a subscription
 [**getOneAsEntity**](SubscriptionApi.md#getoneasentity) | **GET** /api/Subscriptions/{id}/asEntity | Get a subscription
 [**getProductSwitchOptions**](SubscriptionApi.md#getproductswitchoptions) | **GET** /api/Subscriptions/{id}/product-switch-options | Fetch product switch options
+[**getUpgradePricePreview**](SubscriptionApi.md#getupgradepricepreview) | **GET** /api/Subscriptions/{id}/product-switch-options/{productId}/preview-price | Get upgrade price preview
 [**linkSite**](SubscriptionApi.md#linksite) | **POST** /api/Subscriptions/link-site | Link a subscription to provided site URL
 [**linkSiteToSubscription**](SubscriptionApi.md#linksitetosubscription) | **POST** /api/Subscriptions/{id}/sites | Link a new or existing site to a subscription
 [**recalculateSubscriptionCount**](SubscriptionApi.md#recalculatesubscriptioncount) | **POST** /api/Subscriptions/{id}/recalculateSubscriptionCount | Recalculate SubscriptionCount.
@@ -25,7 +28,6 @@ Method | HTTP request | Description
 [**switchProduct**](SubscriptionApi.md#switchproduct) | **POST** /api/Subscriptions/{id}/switch-product | Switch to another product
 [**switchToAutomatic**](SubscriptionApi.md#switchtoautomatic) | **GET** /api/Subscriptions/enable-automatic-billing/{id}/{subscriptionNumber} | 
 [**transferOwnership**](SubscriptionApi.md#transferownership) | **POST** /api/Subscriptions/transfer | Transfer subscription ownership
-[**upgrade**](SubscriptionApi.md#upgrade) | **GET** /api/Subscriptions/upgrade/{subscriptionNumber}/{secretKey} | Upgrade subscriptions
 
 # **calculateExpansionPrice**
 > string calculateExpansionPrice($id, $subscriptionNumber)
@@ -80,6 +82,61 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createUpgradeOrder**
+> createUpgradeOrder($body, $id)
+
+Create upgrade order
+
+Create a paid prorated upgrade order and present a link to the checkout.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Yoast\MyYoastApiClient\Model\ProductDto(); // \Yoast\MyYoastApiClient\Model\ProductDto | 
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+
+try {
+    $apiInstance->createUpgradeOrder($body, $id);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->createUpgradeOrder: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Yoast\MyYoastApiClient\Model\ProductDto**](../Model/ProductDto.md)|  |
+ **id** | [**string**](../Model/.md)|  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -183,6 +240,62 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **expand**
+> \Yoast\MyYoastApiClient\Model\Subscription expand($subscriptionNumber, $secretKey)
+
+Expand subscriptions
+
+Route for expanding subscriptions (adding more quantity/seats)
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$subscriptionNumber = "subscriptionNumber_example"; // string | 
+$secretKey = "secretKey_example"; // string | 
+
+try {
+    $result = $apiInstance->expand($subscriptionNumber, $secretKey);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->expand: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **subscriptionNumber** | **string**|  |
+ **secretKey** | **string**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
@@ -620,7 +733,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getProductSwitchOptions**
-> \Yoast\MyYoastApiClient\Model\ProductSwitchOptionDto[] getProductSwitchOptions($id)
+> \Yoast\MyYoastApiClient\Model\ProductSwitchOptionDto[] getProductSwitchOptions($id, $type)
 
 Fetch product switch options
 
@@ -642,9 +755,10 @@ $apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
     $config
 );
 $id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$type = "runtime_trade_in"; // string | The type of product switch to calculate options for
 
 try {
-    $result = $apiInstance->getProductSwitchOptions($id);
+    $result = $apiInstance->getProductSwitchOptions($id, $type);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getProductSwitchOptions: ', $e->getMessage(), PHP_EOL;
@@ -657,10 +771,67 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | [**string**](../Model/.md)|  |
+ **type** | **string**| The type of product switch to calculate options for | [optional] [default to runtime_trade_in]
 
 ### Return type
 
 [**\Yoast\MyYoastApiClient\Model\ProductSwitchOptionDto[]**](../Model/ProductSwitchOptionDto.md)
+
+### Authorization
+
+[bearer](../../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getUpgradePricePreview**
+> \Yoast\MyYoastApiClient\Model\InlineResponse200 getUpgradePricePreview($id, $productId)
+
+Get upgrade price preview
+
+Fetch the real calculated prorated price from WooCommerce for a specific upgrade option.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+    // Configure HTTP bearer authorization: bearer
+    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
+    ->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "38400000-8cf0-11bd-b23e-10b96e4ef00d"; // string | 
+$productId = "productId_example"; // string | 
+
+try {
+    $result = $apiInstance->getUpgradePricePreview($id, $productId);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SubscriptionApi->getUpgradePricePreview: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | [**string**](../Model/.md)|  |
+ **productId** | **string**|  |
+
+### Return type
+
+[**\Yoast\MyYoastApiClient\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -1162,62 +1333,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **upgrade**
-> \Yoast\MyYoastApiClient\Model\Subscription upgrade($subscriptionNumber, $secretKey)
-
-Upgrade subscriptions
-
-Route for upgrading subscriptions
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-    // Configure HTTP bearer authorization: bearer
-    $config = Yoast\MyYoastApiClient\Configuration::getDefaultConfiguration()
-    ->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Yoast\MyYoastApiClient\Api\SubscriptionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$subscriptionNumber = "subscriptionNumber_example"; // string | 
-$secretKey = "secretKey_example"; // string | 
-
-try {
-    $result = $apiInstance->upgrade($subscriptionNumber, $secretKey);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling SubscriptionApi->upgrade: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **subscriptionNumber** | **string**|  |
- **secretKey** | **string**|  |
-
-### Return type
-
-[**\Yoast\MyYoastApiClient\Model\Subscription**](../Model/Subscription.md)
-
-### Authorization
-
-[bearer](../../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

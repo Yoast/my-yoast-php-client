@@ -82,6 +82,16 @@ class SubscriptionApiTest extends TestCase
     }
 
     /**
+     * Test case for createUpgradeOrder
+     *
+     * Create upgrade order.
+     *
+     */
+    public function testCreateUpgradeOrder()
+    {
+    }
+
+    /**
      * Test case for deleteOne
      *
      * Delete a subscription.
@@ -98,6 +108,16 @@ class SubscriptionApiTest extends TestCase
      *
      */
     public function testEnsureAdmissionScript()
+    {
+    }
+
+    /**
+     * Test case for expand
+     *
+     * Expand subscriptions.
+     *
+     */
+    public function testExpand()
     {
     }
 
@@ -192,6 +212,16 @@ class SubscriptionApiTest extends TestCase
     }
 
     /**
+     * Test case for getUpgradePricePreview
+     *
+     * Get upgrade price preview.
+     *
+     */
+    public function testGetUpgradePricePreview()
+    {
+    }
+
+    /**
      * Test case for linkSite
      *
      * Link a subscription to provided site URL.
@@ -278,16 +308,6 @@ class SubscriptionApiTest extends TestCase
      *
      */
     public function testTransferOwnership()
-    {
-    }
-
-    /**
-     * Test case for upgrade
-     *
-     * Upgrade subscriptions.
-     *
-     */
-    public function testUpgrade()
     {
     }
 }

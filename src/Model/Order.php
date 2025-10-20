@@ -97,7 +97,6 @@ class Order implements ModelInterface, ArrayAccess
         'processedCompletionAt' => '\DateTime',
         'renewalKey' => 'string',
         'vatNumberValid' => 'bool',
-        'upgradesSubscription' => 'string',
         'forceFailAutomaticRenewal' => 'bool'
     ];
 
@@ -148,7 +147,6 @@ class Order implements ModelInterface, ArrayAccess
         'processedCompletionAt' => 'date-time',
         'renewalKey' => null,
         'vatNumberValid' => null,
-        'upgradesSubscription' => null,
         'forceFailAutomaticRenewal' => null
     ];
 
@@ -220,7 +218,6 @@ class Order implements ModelInterface, ArrayAccess
         'processedCompletionAt' => 'processedCompletionAt',
         'renewalKey' => 'renewalKey',
         'vatNumberValid' => 'vatNumberValid',
-        'upgradesSubscription' => 'upgradesSubscription',
         'forceFailAutomaticRenewal' => 'forceFailAutomaticRenewal'
     ];
 
@@ -271,7 +268,6 @@ class Order implements ModelInterface, ArrayAccess
         'processedCompletionAt' => 'setProcessedCompletionAt',
         'renewalKey' => 'setRenewalKey',
         'vatNumberValid' => 'setVatNumberValid',
-        'upgradesSubscription' => 'setUpgradesSubscription',
         'forceFailAutomaticRenewal' => 'setForceFailAutomaticRenewal'
     ];
 
@@ -322,7 +318,6 @@ class Order implements ModelInterface, ArrayAccess
         'processedCompletionAt' => 'getProcessedCompletionAt',
         'renewalKey' => 'getRenewalKey',
         'vatNumberValid' => 'getVatNumberValid',
-        'upgradesSubscription' => 'getUpgradesSubscription',
         'forceFailAutomaticRenewal' => 'getForceFailAutomaticRenewal'
     ];
 
@@ -425,7 +420,6 @@ class Order implements ModelInterface, ArrayAccess
         $this->container['processedCompletionAt'] = isset($data['processedCompletionAt']) ? $data['processedCompletionAt'] : null;
         $this->container['renewalKey'] = isset($data['renewalKey']) ? $data['renewalKey'] : null;
         $this->container['vatNumberValid'] = isset($data['vatNumberValid']) ? $data['vatNumberValid'] : null;
-        $this->container['upgradesSubscription'] = isset($data['upgradesSubscription']) ? $data['upgradesSubscription'] : null;
         $this->container['forceFailAutomaticRenewal'] = isset($data['forceFailAutomaticRenewal']) ? $data['forceFailAutomaticRenewal'] : null;
     }
 
@@ -560,9 +554,6 @@ class Order implements ModelInterface, ArrayAccess
         }
         if ($this->container['vatNumberValid'] === null) {
             $invalidProperties[] = "'vatNumberValid' can't be null";
-        }
-        if ($this->container['upgradesSubscription'] === null) {
-            $invalidProperties[] = "'upgradesSubscription' can't be null";
         }
         if ($this->container['forceFailAutomaticRenewal'] === null) {
             $invalidProperties[] = "'forceFailAutomaticRenewal' can't be null";
@@ -1562,30 +1553,6 @@ class Order implements ModelInterface, ArrayAccess
     public function setVatNumberValid($vatNumberValid)
     {
         $this->container['vatNumberValid'] = $vatNumberValid;
-
-        return $this;
-    }
-
-    /**
-     * Gets upgradesSubscription
-     *
-     * @return string
-     */
-    public function getUpgradesSubscription()
-    {
-        return $this->container['upgradesSubscription'];
-    }
-
-    /**
-     * Sets upgradesSubscription
-     *
-     * @param string $upgradesSubscription upgradesSubscription
-     *
-     * @return $this
-     */
-    public function setUpgradesSubscription($upgradesSubscription)
-    {
-        $this->container['upgradesSubscription'] = $upgradesSubscription;
 
         return $this;
     }

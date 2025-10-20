@@ -222,6 +222,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
     const ORDER_INTENT_UPGRADE = 'Upgrade';
     const ORDER_INTENT_SWITCH_PAYMENT_METHOD = 'SwitchPaymentMethod';
     const ORDER_INTENT_SWITCH_TO_AUTOMATIC = 'SwitchToAutomatic';
+    const ORDER_INTENT_PRORATED_UPGRADE = 'ProratedUpgrade';
 
     /**
      * Gets allowable values of the enum
@@ -236,6 +237,7 @@ class ExtraOrderData implements ModelInterface, ArrayAccess
             self::ORDER_INTENT_UPGRADE,
             self::ORDER_INTENT_SWITCH_PAYMENT_METHOD,
             self::ORDER_INTENT_SWITCH_TO_AUTOMATIC,
+            self::ORDER_INTENT_PRORATED_UPGRADE,
         ];
     }
 
